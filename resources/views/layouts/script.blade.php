@@ -7,6 +7,7 @@
 
 <!--Plugins JS-->
 <script src="{{ asset('assets/js/plugins/swiper-bundle.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/nouislider.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/countdownTimer.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/scrollup.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/jquery.zoom.min.js') }}"></script>
