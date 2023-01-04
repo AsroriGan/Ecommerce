@@ -1459,6 +1459,6 @@
 
      @include('layouts.script')
 
-     <!-- End Script
+     <!-- End Script -->
  </body>
  </html>
