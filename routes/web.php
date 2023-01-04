@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+
+//pruduk
+Route::get('/product', function () {
+    return view('produk.produk');
+});
