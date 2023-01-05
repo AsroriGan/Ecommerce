@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +20,18 @@ use Illuminate\Support\Facades\Route;
 //     return view('index');
 // });
 
-
 //pruduk
+Route::get('/product', function () {return view('produk.produk');});
+
+// Blog
+Route::get('/landingBlog', function () {return view('landingBlog.blog');});
+
 Route::get('/product', function () {
     return view('produk.produk');
 });
 
 Route::get('/', [LandingpageController::class, 'home']);
+Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
+
+//Kategori
+Route::get('/kategori',[KategoriController::class,'index'])->name('index.kategori');
