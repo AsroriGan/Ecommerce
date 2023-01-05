@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
@@ -25,7 +26,7 @@ Route::get('/product', function () {return view('produk.produk');});
 Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
 Route::get('/detail',[ProdukController::class,'detail'])->name('detail');
 // Blog
-Route::get('/landingBlog', function () {return view('landingBlog.blog');});
+Route::get('/blog', [BlogController::class, 'blog']);
 
 Route::get('/product', function () {
     return view('produk.produk');
