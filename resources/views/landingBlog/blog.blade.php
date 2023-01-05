@@ -166,13 +166,13 @@
                                     <div class="ec-blog-inner">
                                         <div class="ec-blog-image">
                                             <a href="blog-detail-left-sidebar.html">
-                                                <img class="blog-image" src="assets/images/blog-image/1.jpg"
+                                                <img class="blog-image" src="assets/images/blog-image/16.jpg"
                                                     alt="Blog" />
                                             </a>
                                         </div>
                                         <div class="ec-blog-content">
                                             <h5 class="ec-blog-title"><a
-                                                    href="blog-detail-left-sidebar.html">The best fashion influencers.</a></h5>
+                                                    href="blog-detail-left-sidebar.html">Shop at the Velvet figures</a></h5>
 
                                             <div class="ec-blog-date">By <span>Mr Admin</span> / February 10, 2021-2022</div>
                                             <div class="ec-blog-desc">Lorem Ipsum is simply dummy text of the printing

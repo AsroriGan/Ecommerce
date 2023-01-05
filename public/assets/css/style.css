@@ -24077,6 +24077,8 @@ i.ecicon.eci-star-o {
 }
 .ec-blog-inner .ec-blog-image {
   margin-bottom: 15px;
+  width: 350px;
+  height: 250px;
 }
 .ec-blog-inner .ec-blog-title {
   margin: 0 0 3px;
