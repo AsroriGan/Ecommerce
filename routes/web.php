@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\KategoriController;
@@ -36,4 +37,4 @@ Route::get('/', [LandingpageController::class, 'home']);
 
 
 //Kategori
-Route::get('/kategori',[KategoriController::class,'index'])->name('index.kategori');
+Route::get('/kategori',[AdminKategoriController::class,'index'])->name('index.kategori');
