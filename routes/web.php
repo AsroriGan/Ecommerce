@@ -34,6 +34,10 @@ Route::get('/product', function () {
     return view('produk.produk');
 });
 
+Route::get('/test', function () {
+    return view('landingpage.testsofyan');
+});
+
 Route::get('/', [LandingpageController::class, 'home']);
 
 
