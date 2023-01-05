@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('layouts.Head')
+
 <body class="shop_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
@@ -9,79 +10,7 @@
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
-    <div class="ec-side-cart-overlay"></div>
-    <div id="ec-side-cart" class="ec-side-cart">
-        <div class="ec-cart-inner">
-            <div class="ec-cart-top">
-                <div class="ec-cart-title">
-                    <span class="cart_title">My Cart</span>
-                    <button class="ec-close">×</button>
-                </div>
-                <ul class="eccart-pro-items">
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
-                            <span class="cart-price"><span>$76.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
-                            <span class="cart-price"><span>$64.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
-                            <span class="cart-price"><span>$59.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="ec-cart-bottom">
-                <div class="cart-sub-total">
-                    <table class="table cart-table">
-                        <tbody>
-                            <tr>
-                                <td class="text-left">Sub-Total :</td>
-                                <td class="text-right">$300.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">VAT (20%) :</td>
-                                <td class="text-right">$60.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Total :</td>
-                                <td class="text-right primary-color">$360.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="cart_btn">
-                    <a href="cart.html" class="btn btn-primary">View Cart</a>
-                    <a href="checkout.html" class="btn btn-secondary">Checkout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- ekka Cart End -->
 
     <!-- Ec breadcrumb start -->
@@ -112,7 +41,7 @@
     <section class="ec-page-content section-space-p">
         <div class="container">
             <div class="row">
-                <div class="ec-shop-rightside col-lg-9 order-lg-last col-md-12 order-md-first margin-b-30">
+                <div class="ec-shop-rightside col-lg-9 col-md-12 margin-b-30">
                     <!-- Shop Top Start -->
                     <div class="ec-pro-list-top d-flex">
                         <div class="col-md-6 ec-grid-list">
@@ -143,7 +72,7 @@
                     <div class="shop-pro-content">
                         <div class="shop-pro-inner">
                             <div class="row">
-                               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
@@ -154,9 +83,7 @@
                                                         src="assets/images/product-image/6_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><img
+                                                <a href="/detail" class="quickview"><img
                                                         src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
                                                         alt="" /></a>
                                                 <div class="ec-pro-actions">
@@ -839,7 +766,7 @@
                     <!--Shop content End -->
                 </div>
                 <!-- Sidebar Area Start -->
-                <div class="ec-shop-leftside col-lg-3 order-lg-first col-md-12 order-md-last">
+                <div class="ec-shop-leftside col-lg-3 col-md-12">
                     <div id="shop_sidebar">
                         <div class="ec-sidebar-heading">
                             <h1>Filter Products By</h1>
@@ -1039,49 +966,61 @@
     <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-xs-12">
                             <!-- Swiper -->
                             <div class="qty-product-cover">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
+                                        alt="">
                                 </div>
                             </div>
                             <div class="qty-nav-thumb">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
+                                        alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-7 col-sm-12 col-xs-12">
                             <div class="quickview-pro-content">
-                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse for women</a>
+                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse
+                                        for women</a>
                                 </h5>
                                 <div class="ec-quickview-rating">
                                     <i class="ecicon eci-star fill"></i>
@@ -1117,16 +1056,20 @@
                                             <ul class="ec-opt-size">
                                                 <li class="active"><a href="#" class="ec-opt-sz"
                                                         data-tooltip="Small">S</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Extra Large">XL</a></li>
+                                                <li><a href="#" class="ec-opt-sz"
+                                                        data-tooltip="Medium">M</a></li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a>
+                                                </li>
+                                                <li><a href="#" class="ec-opt-sz"
+                                                        data-tooltip="Extra Large">XL</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="ec-quickview-qty">
                                     <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                                        <input class="qty-input" type="text" name="ec_qtybtn"
+                                            value="1" />
                                     </div>
                                     <div class="ec-quickview-cart ">
                                         <button class="btn btn-primary"><img src="assets/images/icons/cart.svg"
@@ -1188,7 +1131,8 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
+            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg"
+                    alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -1386,7 +1330,7 @@
             <div class="ec-tools-sidebar-content">
                 <h3>Clear local storage</h3>
                 <a class="clear-cach" href="javascript:void(0)">Clear Cache & Default</a>
-            </div>  
+            </div>
         </div>
     </div>
     <!-- Feature tools end -->
@@ -1394,4 +1338,5 @@
     @include('layouts.script')
 
 </body>
+
 </html>
