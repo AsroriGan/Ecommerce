@@ -41,7 +41,7 @@
     <section class="ec-page-content section-space-p">
         <div class="container">
             <div class="row">
-                <div class="ec-shop-rightside col-lg-9 order-lg-last col-md-12 order-md-first margin-b-30">
+                <div class="ec-shop-rightside col-lg-9 col-md-12 margin-b-30">
                     <!-- Shop Top Start -->
                     <div class="ec-pro-list-top d-flex">
                         <div class="col-md-6 ec-grid-list">
@@ -77,10 +77,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/6_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/6_2.jpg"
-                                                        alt="Product" />
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/6_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/6_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <a href="/detail" class="quickview"><img
@@ -100,8 +100,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck
-                                                    T-Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck T-Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -109,9 +108,7 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$27.00</span>
                                                 <span class="new-price">$22.00</span>
@@ -143,8 +140,7 @@
                                                         <li><a href="#" class="ec-opt-sz" data-old="$30.00"
                                                                 data-new="$25.00" data-tooltip="Large">X</a></li>
                                                         <li><a href="#" class="ec-opt-sz" data-old="$35.00"
-                                                                data-new="$30.00" data-tooltip="Extra Large">XL</a>
-                                                        </li>
+                                                                data-new="$30.00" data-tooltip="Extra Large">XL</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -156,10 +152,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/7_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/7_2.jpg"
-                                                        alt="Product" />
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/7_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/7_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -168,8 +164,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg"
-                                                        class="svg_img pro_svg" alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -184,8 +180,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve
-                                                    Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -193,9 +188,7 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$12.00</span>
                                                 <span class="new-price">$10.00</span>
@@ -227,8 +220,7 @@
                                                         <li><a href="#" class="ec-opt-sz" data-old="$18.00"
                                                                 data-new="$15.00" data-tooltip="Large">X</a></li>
                                                         <li><a href="#" class="ec-opt-sz" data-old="$20.00"
-                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a>
-                                                        </li>
+                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -240,10 +232,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/1_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/1_2.jpg"
-                                                        alt="Product" />
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/1_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/1_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -252,8 +244,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg"
-                                                        class="svg_img pro_svg" alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -268,8 +260,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cute Baby
-                                                    Toy's</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cute Baby Toy's</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -277,9 +268,7 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$40.00</span>
                                                 <span class="new-price">$30.00</span>
@@ -329,10 +318,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/2_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/2_2.jpg"
-                                                        alt="Product" />
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/2_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/2_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -341,8 +330,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg"
-                                                        class="svg_img pro_svg" alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -357,8 +346,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Jumbo Carry
-                                                    Bag</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Jumbo Carry Bag</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -366,9 +354,7 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$50.00</span>
                                                 <span class="new-price">$40.00</span>
@@ -393,10 +379,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/3_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/3_2.jpg"
-                                                        alt="Product" />
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/3_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/3_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -405,8 +391,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg"
-                                                        class="svg_img pro_svg" alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -421,8 +407,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Designer
-                                                    Leather Purses</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Designer Leather Purses</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -430,9 +415,7 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$40.00</span>
                                                 <span class="new-price">$30.00</span>
@@ -472,16 +455,16 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/4_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/4_2.jpg"
-                                                        alt="Product" />
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/4_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/4_2.jpg" alt="Product" />
                                                 </a>
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg"
-                                                        class="svg_img pro_svg" alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -496,8 +479,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Canvas Cowboy
-                                                    Hat</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Canvas Cowboy Hat</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -505,9 +487,7 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$12.00</span>
                                                 <span class="new-price">$10.00</span>
@@ -547,10 +527,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/5_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/5_2.jpg"
-                                                        alt="Product" />
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/5_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/5_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="flags">
                                                     <span class="new">New</span>
@@ -558,8 +538,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg"
-                                                        class="svg_img pro_svg" alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -574,8 +554,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Leather Belt
-                                                    for Men</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Leather Belt for Men</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -583,9 +562,7 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$15.00</span>
                                                 <span class="new-price">$10.00</span>
@@ -627,10 +604,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/8_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/8_2.jpg"
-                                                        alt="Product" />
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/8_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/8_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -639,8 +616,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg"
-                                                        class="svg_img pro_svg" alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -655,8 +632,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Digital Smart
-                                                    Watches</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Digital Smart Watches</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -664,9 +640,7 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$100.00</span>
                                                 <span class="new-price">$80.00</span>
@@ -701,17 +675,17 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/6_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/6_2.jpg"
-                                                        alt="Product" />
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/6_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/6_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg"
-                                                        class="svg_img pro_svg" alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -726,8 +700,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck
-                                                    T-Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck T-Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -735,9 +708,7 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$27.00</span>
                                                 <span class="new-price">$22.00</span>
@@ -769,8 +740,7 @@
                                                         <li><a href="#" class="ec-opt-sz" data-old="$30.00"
                                                                 data-new="$25.00" data-tooltip="Large">X</a></li>
                                                         <li><a href="#" class="ec-opt-sz" data-old="$35.00"
-                                                                data-new="$30.00" data-tooltip="Extra Large">XL</a>
-                                                        </li>
+                                                                data-new="$30.00" data-tooltip="Extra Large">XL</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -788,8 +758,7 @@
                                 <li><a href="#">3</a></li>
                                 <li><a href="#">4</a></li>
                                 <li><a href="#">5</a></li>
-                                <li><a class="next" href="#">Next <i class="ecicon eci-angle-right"></i></a>
-                                </li>
+                                <li><a class="next" href="#">Next <i class="ecicon eci-angle-right"></i></a></li>
                             </ul>
                         </div>
                         <!-- Ec Pagination End -->
@@ -797,7 +766,7 @@
                     <!--Shop content End -->
                 </div>
                 <!-- Sidebar Area Start -->
-                <div class="ec-shop-leftside col-lg-3 order-lg-first col-md-12 order-md-last">
+                <div class="ec-shop-leftside col-lg-3 col-md-12">
                     <div id="shop_sidebar">
                         <div class="ec-sidebar-heading">
                             <h1>Filter Products By</h1>
@@ -881,8 +850,8 @@
                                     <ul>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" value="" checked /><a
-                                                    href="#">S</a><span class="checked"></span>
+                                                <input type="checkbox" value="" checked /><a href="#">S</a><span
+                                                    class="checked"></span>
                                             </div>
                                         </li>
                                         <li>
@@ -905,8 +874,8 @@
                                         </li>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" value="" /><a
-                                                    href="#">XXL</a><span class="checked"></span>
+                                                <input type="checkbox" value="" /><a href="#">XXL</a><span
+                                                    class="checked"></span>
                                             </div>
                                         </li>
                                     </ul>
