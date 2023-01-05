@@ -1200,8 +1200,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
+                                </div
                                 <div class="col-sm-12 shop-all-btn"><a href="shop-left-sidebar-col-3.html">Shop All
                                         Collection</a></div>
                             </div>
@@ -2497,7 +2496,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-sm-12 shop-all-btn"><a href="shop-left-sidebar-col-3.html">Shop All
                                         Collection</a></div>
                             </div>

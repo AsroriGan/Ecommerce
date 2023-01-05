@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
@@ -16,22 +18,24 @@ use App\Http\Controllers\ProdukController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/beranda', function () {
+    return view('template.beranda');
+});
 
 //pruduk
 Route::get('/product', function () {return view('produk.produk');});
-
+Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
+Route::get('/detail',[ProdukController::class,'detail'])->name('detail');
 // Blog
-Route::get('/landingBlog', function () {return view('landingBlog.blog');});
+Route::get('/blog', [BlogController::class, 'blog']);
+Route::get('/detailblog', [BlogController::class, 'detailblog']);
 
 Route::get('/product', function () {
     return view('produk.produk');
 });
 
 Route::get('/', [LandingpageController::class, 'home']);
-Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
+
 
 //Kategori
-Route::get('/kategori',[KategoriController::class,'index'])->name('index.kategori');
+Route::get('/kategori',[AdminKategoriController::class,'index'])->name('index.kategori');
