@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
+use App\Http\Controllers\Landing\KategoriController as LandingKategoriController;
 use App\Http\Controllers\LandingpageController;
-use App\Http\Controllers\Admin\BlogController as AdminBlogController;
-use App\Http\Controllers\Landing\KategoriController;
-use App\Http\Controllers\Landing\p;
+use App\Http\Controllers\Landing\BlogController as LandingBlogController;
+use App\Http\Controllers\Landing\PromoController as LandingPromoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 
@@ -31,8 +30,12 @@ Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
 Route::get('/detail',[ProdukController::class,'detail'])->name('detail');
 
 // Blog
-Route::get('/blog', [AdminBlogController::class, 'blog']);
-Route::get('/detailblog', [AdminBlogController::class, 'detailblog']);
+Route::get('/blog', [LandingBlogController::class, 'blog']);
+Route::get('/detailblog', [LandingBlogController::class, 'detailblog']);
+
+// promo
+Route::get('/promo', [LandingPromoController::class, 'promo']);
+
 
 Route::get('/test', function () {
     return view('landingpage.testsofyan');
@@ -40,5 +43,5 @@ Route::get('/test', function () {
 
 Route::get('/', [LandingpageController::class, 'home']);
 //Kategori
-Route::get('/kategori',[KategoriController::class,'index'])->name('index.kategori');
+Route::get('/kategori',[LandingKategoriController::class,'index'])->name('index.kategori');
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
