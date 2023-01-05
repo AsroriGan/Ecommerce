@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Landing\KategoriController;
+use App\Http\Controllers\Landing\Logincontroller;
 use App\Http\Controllers\Landing\p;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
@@ -20,6 +21,9 @@ use App\Http\Controllers\ProdukController;
 */
 /////////////////////////// START ROUTE LANDING PAGE /////////////////////
 //login
+Route::get('/login',[Logincontroller::class,'login'])->name('login');
+//register
+Route::get('/register',[Logincontroller::class,'register'])->name('register');
 
 // berandah admin
 Route::get('/beranda', function () {

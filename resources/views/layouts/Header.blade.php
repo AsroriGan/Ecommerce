@@ -119,9 +119,9 @@
                                 <button class="dropdown-toggle" data-bs-toggle="dropdown"><img
                                         src="assets/images/icons/user.svg" class="svg_img header_svg" alt="" /></button>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a class="dropdown-item" href="register.html">Register</a></li>
-                                    <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
-                                    <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                    <li><a class="dropdown-item" href="/register">Register</a></li>
+                                    {{-- <li><a class="dropdown-item" href="checkout.html">Checkout</a></li> --}}
+                                    <li><a class="dropdown-item" href="/login">Login</a></li>
                                 </ul>
                             </div>
                             <!-- Header User End -->

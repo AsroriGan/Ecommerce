@@ -1,10 +1,3 @@
-<!--=========================================================
-    Item Name: Ekka - Ecommerce HTML Template.
-    Author: ashishmaraviya
-    Version: 3.3
-    Copyright 2022-2023
- Author URI: https://themeforest.net/user/ashishmaraviya
- ============================================================-->
 <!DOCTYPE html>
 <html lang="en">
 
