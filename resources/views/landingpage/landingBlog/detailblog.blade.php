@@ -3,46 +3,17 @@
     Author: ashishmaraviya
     Version: 3.3
     Copyright 2022-2023
-	Author URI: https://themeforest.net/user/ashishmaraviya
+ Author URI: https://themeforest.net/user/ashishmaraviya
  ============================================================-->
- <!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
- <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<!-- Head -->
 
-     <title>Ekka - Ecommerce HTML Template.</title>
-     <meta name="keywords" content="apparel, catalog, clean, ecommerce, ecommerce HTML, electronics, fashion, html eCommerce, html store, minimal, multipurpose, multipurpose ecommerce, online store, responsive ecommerce template, shops" />
-     <meta name="description" content="Best ecommerce html template for single and multi vendor store.">
-     <meta name="author" content="ashishmaraviya">
+@include('layouts.Head')
 
-    <!-- site Favicon -->
-    <link rel="icon" href="assets/images/favicon/favicon.png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="assets/images/favicon/favicon.png" />
-    <meta name="msapplication-TileImage" content="assets/images/favicon/favicon.png" />
+<!-- End Head -->
 
-    <!-- css Icon Font -->
-    <link rel="stylesheet" href="assets/css/vendor/ecicons.min.css" />
-
-    <!-- css All Plugins Files -->
-    <link rel="stylesheet" href="assets/css/plugins/animate.css" />
-    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/countdownTimer.css" />
-    <link rel="stylesheet" href="assets/css/plugins/slick.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/nouislider.css" />
-    <link rel="stylesheet" href="assets/css/plugins/bootstrap.css" />
-
-    <!-- Main Style -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-
-    <!-- Background css -->
-    <link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css">
-
-</head>
 <body class="blog_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
@@ -53,7 +24,7 @@
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
-    <div class="ec-side-cart-overlay"></div>
+    {{-- <div class="ec-side-cart-overlay"></div>
     <div id="ec-side-cart" class="ec-side-cart">
         <div class="ec-cart-inner">
             <div class="ec-cart-top">
@@ -125,7 +96,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- ekka Cart End -->
 
     <!-- Ec breadcrumb start -->
@@ -162,7 +133,8 @@
                     <div class="ec-blogs-content">
                         <div class="ec-blogs-inner">
                             <div class="ec-blog-main-img">
-                                <img class="blog-image" src="assets/images/blog-image/7.jpg" alt="Blog" />
+                                <img class="blog-image bi-detail" src="assets/images/blog-image/batik3.jpg"
+                                    alt="Blog" />
                             </div>
                             <div class="ec-blog-date">
                                 <p class="date">28 JUNE, 2021-2022 - </p><a href="javascript:void(0)">5 Comments</a>
@@ -188,10 +160,12 @@
                                 <div class="ec-blog-sub-imgs">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <img class="blog-image" src="assets/images/blog-image/2.jpg" alt="Blog" />
+                                            <img class="blog-image" src="assets/images/blog-image/2.jpg"
+                                                alt="Blog" />
                                         </div>
                                         <div class="col-md-6">
-                                            <img class="blog-image" src="assets/images/blog-image/3.jpg" alt="Blog" />
+                                            <img class="blog-image" src="assets/images/blog-image/3.jpg"
+                                                alt="Blog" />
                                         </div>
                                     </div>
                                 </div>
@@ -297,7 +271,8 @@
                             </div>
                             <div class="ec-sb-block-content">
                                 <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">The best fashion influencers.</a></h5>
+                                    <h5 class="ec-blog-title"><a href="/detailblog">The best fashion influencers.</a>
+                                    </h5>
                                     <div class="ec-blog-date">February 10, 2021-2022</div>
                                 </div>
                                 <div class="ec-sidebar-block-item">
@@ -305,15 +280,18 @@
                                     <div class="ec-blog-date">March 14, 2021-2022</div>
                                 </div>
                                 <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Fashion Market Reveals Her Jacket.</a></h5>
+                                    <h5 class="ec-blog-title"><a href="/detailblog">Fashion Market Reveals Her
+                                            Jacket.</a></h5>
                                     <div class="ec-blog-date">June 09, 2021-2022</div>
                                 </div>
                                 <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Summer Trending Fashion Market.</a></h5>
+                                    <h5 class="ec-blog-title"><a href="/detailblog">Summer Trending Fashion
+                                            Market.</a></h5>
                                     <div class="ec-blog-date">July 17, 2021-2022</div>
                                 </div>
                                 <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Winter 2021 Trending Fashion Market</a></h5>
+                                    <h5 class="ec-blog-title"><a href="/detailblog">Winter 2021 Trending Fashion
+                                            Market</a></h5>
                                     <div class="ec-blog-date">August 02, 2021-2022</div>
                                 </div>
                             </div>
@@ -334,12 +312,14 @@
                                     </li>
                                     <li>
                                         <div class="ec-sidebar-block-item">
-                                            <input type="checkbox" /> <a href="#">Bags</a><span class="checked"></span>
+                                            <input type="checkbox" /> <a href="#">Bags</a><span
+                                                class="checked"></span>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="ec-sidebar-block-item">
-                                            <input type="checkbox" /> <a href="#">Shoes</a><span class="checked"></span>
+                                            <input type="checkbox" /> <a href="#">Shoes</a><span
+                                                class="checked"></span>
                                         </div>
                                     </li>
                                     <li>
@@ -356,7 +336,8 @@
                                     </li>
                                     <li>
                                         <div class="ec-sidebar-block-item">
-                                            <input type="checkbox" /> <a href="#">phone</a><span class="checked"></span>
+                                            <input type="checkbox" /> <a href="#">phone</a><span
+                                                class="checked"></span>
                                         </div>
                                     </li>
                                     <li id="ec-more-toggle-content" style="padding: 0; display: none;">
@@ -410,14 +391,16 @@
                     <div class="row">
                         <div class="col-sm-12 col-lg-3 ec-footer-contact">
                             <div class="ec-footer-widget">
-                                <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/footer-logo.png"
-                                            alt=""><img class="dark-footer-logo" src="assets/images/logo/dark-logo.png"
+                                <div class="ec-footer-logo"><a href="#"><img
+                                            src="assets/images/logo/footer-logo.png" alt=""><img
+                                            class="dark-footer-logo" src="assets/images/logo/dark-logo.png"
                                             alt="Site Logo" style="display: none;" /></a></div>
                                 <h4 class="ec-footer-heading">Contact us</h4>
                                 <div class="ec-footer-links">
                                     <ul class="align-items-center">
                                         <li class="ec-footer-link">71 Pilgrim Avenue Chevy Chase, east california.</li>
-                                        <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">+44
+                                        <li class="ec-footer-link"><span>Call Us:</span><a
+                                                href="tel:+440123456789">+44
                                                 0123 456 789</a></li>
                                         <li class="ec-footer-link"><span>Email:</span><a
                                                 href="mailto:example@ec-email.com">+example@ec-email.com</a></li>
@@ -478,9 +461,11 @@
                                             action="#">
                                             <div id="ec_news_signup" class="ec-form">
                                                 <input class="ec-email" type="email" required=""
-                                                    placeholder="Enter your email here..." name="ec-email" value="" />
+                                                    placeholder="Enter your email here..." name="ec-email"
+                                                    value="" />
                                                 <button id="ec-news-btn" class="button btn-primary" type="submit"
-                                                    name="subscribe" value=""><i class="ecicon eci-paper-plane-o"
+                                                    name="subscribe" value=""><i
+                                                        class="ecicon eci-paper-plane-o"
                                                         aria-hidden="true"></i></button>
                                             </div>
                                         </form>
@@ -499,10 +484,14 @@
                             <div class="footer-bottom-social">
                                 <span class="social-text text-upper">Follow us on:</span>
                                 <ul class="mb-0">
-                                    <li class="list-inline-item"><a class="hdr-facebook" href="#"><i class="ecicon eci-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-twitter" href="#"><i class="ecicon eci-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-instagram" href="#"><i class="ecicon eci-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i class="ecicon eci-linkedin"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-facebook" href="#"><i
+                                                class="ecicon eci-facebook"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-twitter" href="#"><i
+                                                class="ecicon eci-twitter"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-instagram" href="#"><i
+                                                class="ecicon eci-instagram"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i
+                                                class="ecicon eci-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -578,7 +567,8 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
+            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg"
+                    alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -788,4 +778,5 @@
     <!-- End Script -->
 
 </body>
+
 </html>
