@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LandingpageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 
 //pruduk
 Route::get('/product', function () {
     return view('produk.produk');
 });
+
+Route::get('/', [LandingpageController::class, 'home']);
