@@ -28,10 +28,10 @@
                 </div>
                 <ul class="eccart-pro-items">
                     <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                        <a href="#" class="sidekka_pro_img"><img
                                 src="assets/images/product-image/6_1.jpg" alt="product"></a>
                         <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
+                            <a href="#" class="cart_pro_title">T-shirt For Women</a>
                             <span class="cart-price"><span>$76.00</span> x 1</span>
                             <div class="qty-plus-minus">
                                 <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
@@ -40,10 +40,10 @@
                         </div>
                     </li>
                     <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                        <a href="#" class="sidekka_pro_img"><img
                                 src="assets/images/product-image/12_1.jpg" alt="product"></a>
                         <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
+                            <a href="#" class="cart_pro_title">Women Leather Shoes</a>
                             <span class="cart-price"><span>$64.00</span> x 1</span>
                             <div class="qty-plus-minus">
                                 <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
@@ -52,10 +52,10 @@
                         </div>
                     </li>
                     <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                        <a href="#" class="sidekka_pro_img"><img
                                 src="assets/images/product-image/3_1.jpg" alt="product"></a>
                         <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
+                            <a href="#" class="cart_pro_title">Girls Nylon Purse</a>
                             <span class="cart-price"><span>$59.00</span> x 1</span>
                             <div class="qty-plus-minus">
                                 <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
@@ -327,23 +327,26 @@
                     </div>
                     <!-- Sidebar Category Block -->
                 </div>
-            </div>
-            <div class="ec-sidebar-slider-cat">
-                <div class="ec-sb-slider-title">Best Sellers</div>
-                <div class="ec-sb-pro-sl">
-                    <div>
-                        <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/1.jpg" alt="product" /></a>
-                            <div class="ec-pro-content">
-                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">baby fabric shoes</a>
-                                </h5>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
+                <div class="ec-sidebar-slider-cat">
+                    <div class="ec-sb-slider-title">Best Sellers</div>
+                    <div class="ec-sb-pro-sl">
+                        <div>
+                            <div class="ec-sb-pro-sl-item">
+                                <a href="#" class="sidekka_pro_img"><img
+                                        src="assets/images/product-image/1.jpg" alt="product" /></a>
+                                <div class="ec-pro-content">
+                                    <h5 class="ec-pro-title"><a href="#">baby fabric shoes</a></h5>
+                                    <div class="ec-pro-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                    </div>
+                                    <span class="ec-price">
+                                        <span class="old-price">$5.00</span>
+                                        <span class="new-price">$4.00</span>
+                                    </span>
                                 </div>
                                 <span class="ec-price">
                                     <span class="old-price">$5.00</span>
@@ -351,20 +354,23 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/2.jpg" alt="product" /></a>
-                            <div class="ec-pro-content">
-                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Men's hoodies t-shirt</a>
-                                </h5>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star"></i>
+                        <div>
+                            <div class="ec-sb-pro-sl-item">
+                                <a href="#" class="sidekka_pro_img"><img
+                                        src="assets/images/product-image/2.jpg" alt="product" /></a>
+                                <div class="ec-pro-content">
+                                    <h5 class="ec-pro-title"><a href="#">Men's hoodies t-shirt</a></h5>
+                                    <div class="ec-pro-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star"></i>
+                                    </div>
+                                    <span class="ec-price">
+                                        <span class="old-price">$10.00</span>
+                                        <span class="new-price">$7.00</span>
+                                    </span>
                                 </div>
                                 <span class="ec-price">
                                     <span class="old-price">$10.00</span>
@@ -372,19 +378,23 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/3.jpg" alt="product" /></a>
-                            <div class="ec-pro-content">
-                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Girls t-shirt</a></h5>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star"></i>
-                                    <i class="ecicon eci-star"></i>
+                        <div>
+                            <div class="ec-sb-pro-sl-item">
+                                <a href="#" class="sidekka_pro_img"><img
+                                        src="assets/images/product-image/3.jpg" alt="product" /></a>
+                                <div class="ec-pro-content">
+                                    <h5 class="ec-pro-title"><a href="#">Girls t-shirt</a></h5>
+                                    <div class="ec-pro-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star"></i>
+                                        <i class="ecicon eci-star"></i>
+                                    </div>
+                                    <span class="ec-price">
+                                        <span class="old-price">$5.00</span>
+                                        <span class="new-price">$3.00</span>
+                                    </span>
                                 </div>
                                 <span class="ec-price">
                                     <span class="old-price">$5.00</span>
@@ -392,20 +402,23 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/4.jpg" alt="product" /></a>
-                            <div class="ec-pro-content">
-                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">woolen hat for men</a>
-                                </h5>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
+                        <div>
+                            <div class="ec-sb-pro-sl-item">
+                                <a href="#" class="sidekka_pro_img"><img
+                                        src="assets/images/product-image/4.jpg" alt="product" /></a>
+                                <div class="ec-pro-content">
+                                    <h5 class="ec-pro-title"><a href="#">woolen hat for men</a></h5>
+                                    <div class="ec-pro-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                    </div>
+                                    <span class="ec-price">
+                                        <span class="old-price">$15.00</span>
+                                        <span class="new-price">$12.00</span>
+                                    </span>
                                 </div>
                                 <span class="ec-price">
                                     <span class="old-price">$15.00</span>
@@ -413,19 +426,23 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/5.jpg" alt="product" /></a>
-                            <div class="ec-pro-content">
-                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Womens purse</a></h5>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star"></i>
+                        <div>
+                            <div class="ec-sb-pro-sl-item">
+                                <a href="#" class="sidekka_pro_img"><img
+                                        src="assets/images/product-image/5.jpg" alt="product" /></a>
+                                <div class="ec-pro-content">
+                                    <h5 class="ec-pro-title"><a href="#">Womens purse</a></h5>
+                                    <div class="ec-pro-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star"></i>
+                                    </div>
+                                    <span class="ec-price">
+                                        <span class="old-price">$15.00</span>
+                                        <span class="new-price">$12.00</span>
+                                    </span>
                                 </div>
                                 <span class="ec-price">
                                     <span class="old-price">$15.00</span>
@@ -433,20 +450,23 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/6.jpg" alt="product" /></a>
-                            <div class="ec-pro-content">
-                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Baby toy doctor kit</a>
-                                </h5>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star"></i>
-                                    <i class="ecicon eci-star"></i>
-                                    <i class="ecicon eci-star"></i>
+                        <div>
+                            <div class="ec-sb-pro-sl-item">
+                                <a href="#" class="sidekka_pro_img"><img
+                                        src="assets/images/product-image/6.jpg" alt="product" /></a>
+                                <div class="ec-pro-content">
+                                    <h5 class="ec-pro-title"><a href="#">Baby toy doctor kit</a></h5>
+                                    <div class="ec-pro-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star"></i>
+                                        <i class="ecicon eci-star"></i>
+                                        <i class="ecicon eci-star"></i>
+                                    </div>
+                                    <span class="ec-price">
+                                        <span class="old-price">$50.00</span>
+                                        <span class="new-price">$45.00</span>
+                                    </span>
                                 </div>
                                 <span class="ec-price">
                                     <span class="old-price">$50.00</span>
@@ -454,20 +474,23 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/7.jpg" alt="product" /></a>
-                            <div class="ec-pro-content">
-                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">teddy bear baby toy</a>
-                                </h5>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
+                        <div>
+                            <div class="ec-sb-pro-sl-item">
+                                <a href="#" class="sidekka_pro_img"><img
+                                        src="assets/images/product-image/7.jpg" alt="product" /></a>
+                                <div class="ec-pro-content">
+                                    <h5 class="ec-pro-title"><a href="#">teddy bear baby toy</a></h5>
+                                    <div class="ec-pro-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                    </div>
+                                    <span class="ec-price">
+                                        <span class="old-price">$35.00</span>
+                                        <span class="new-price">$25.00</span>
+                                    </span>
                                 </div>
                                 <span class="ec-price">
                                     <span class="old-price">$35.00</span>
@@ -475,20 +498,23 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/2.jpg" alt="product" /></a>
-                            <div class="ec-pro-content">
-                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Mens hoodies blue</a>
-                                </h5>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star"></i>
-                                    <i class="ecicon eci-star"></i>
+                        <div>
+                            <div class="ec-sb-pro-sl-item">
+                                <a href="#" class="sidekka_pro_img"><img
+                                        src="assets/images/product-image/2.jpg" alt="product" /></a>
+                                <div class="ec-pro-content">
+                                    <h5 class="ec-pro-title"><a href="#">Mens hoodies blue</a></h5>
+                                    <div class="ec-pro-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star"></i>
+                                        <i class="ecicon eci-star"></i>
+                                    </div>
+                                    <span class="ec-price">
+                                        <span class="old-price">$15.00</span>
+                                        <span class="new-price">$13.00</span>
+                                    </span>
                                 </div>
                                 <span class="ec-price">
                                     <span class="old-price">$15.00</span>
@@ -585,11 +611,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/6_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/6_2.jpg"
-                                                        alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/6_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/6_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <a href="#" class="quickview" data-link-action="quickview"
@@ -611,8 +637,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck
-                                                    T-Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Sweater</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -621,8 +646,8 @@
                                                 <i class="ecicon eci-star"></i>
                                             </div>
                                             <span class="ec-price">
-                                                <span class="old-price">$27.00</span>
-                                                <span class="new-price">$22.00</span>
+                                                <span class="old-price">Rp.10000</span>
+                                                <span class="new-price">Rp.8000</span>
                                             </span>
                                             <div class="ec-pro-option">
                                                 <div class="ec-pro-color">
@@ -664,11 +689,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/7_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/7_2.jpg"
-                                                        alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/7_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/7_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="flags">
                                                     <span class="sale">Sale</span>
@@ -692,8 +717,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve
-                                                    Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Kemeja</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -702,8 +726,8 @@
                                                 <i class="ecicon eci-star"></i>
                                             </div>
                                             <span class="ec-price">
-                                                <span class="old-price">$12.00</span>
-                                                <span class="new-price">$10.00</span>
+                                                <span class="old-price">Rp.120000</span>
+                                                <span class="new-price">Rp.100000</span>
                                             </span>
                                             <div class="ec-pro-option">
                                                 <div class="ec-pro-color">
@@ -745,11 +769,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/1_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/1_2.jpg"
-                                                        alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/1_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/1_2.jpg" alt="Product" />
                                                 </a>
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
@@ -770,8 +794,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cute Baby
-                                                    Toy's</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Cute Baby Toy's</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -828,11 +851,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/2_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/2_2.jpg"
-                                                        alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/2_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/2_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="flags">
                                                     <span class="new">New</span>
@@ -856,8 +879,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Jumbo Carry
-                                                    Bag</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Jumbo Carry Bag</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -889,11 +911,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/3_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/3_2.jpg"
-                                                        alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/3_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/3_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">15%</span>
                                                 <a href="#" class="quickview" data-link-action="quickview"
@@ -915,8 +937,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Designer
-                                                    Leather Purses</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Designer Leather Purses</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -963,11 +984,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/4_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/4_2.jpg"
-                                                        alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/4_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/4_2.jpg" alt="Product" />
                                                 </a>
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
@@ -988,8 +1009,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Canvas Cowboy
-                                                    Hat</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Canvas Cowboy Hat</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1036,11 +1056,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/5_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/5_2.jpg"
-                                                        alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/5_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/5_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="flags">
                                                     <span class="new">New</span>
@@ -1064,8 +1084,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Leather Belt
-                                                    for Men</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Leather Belt for Men</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1114,11 +1133,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/8_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/8_2.jpg"
-                                                        alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/8_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/8_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">35%</span>
                                                 <span class="flags">
@@ -1144,8 +1163,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Digital
-                                                    Smart Watches</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Digital Smart Watches</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1182,8 +1200,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
+                                </div
                                 <div class="col-sm-12 shop-all-btn"><a href="shop-left-sidebar-col-3.html">Shop All
                                         Collection</a></div>
                             </div>
@@ -1197,7 +1214,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/6_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -1224,8 +1241,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck
-                                                    T-Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Round Neck T-Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1277,7 +1293,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/7_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -1307,8 +1323,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve
-                                                    Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Full Sleeve Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1360,7 +1375,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/2_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -1390,8 +1405,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Jumbo Carry
-                                                    Bag</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Jumbo Carry Bag</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1423,7 +1437,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/4_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -1449,8 +1463,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Canvas
-                                                    Cowboy Hat</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Canvas Cowboy Hat</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1497,7 +1510,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/5_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -1526,8 +1539,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Leather
-                                                    Belt for Men</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Leather Belt for Men</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1576,7 +1588,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/8_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -1606,8 +1618,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Digital
-                                                    Smart Watches</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Digital Smart Watches</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1649,7 +1660,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/10_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -1679,8 +1690,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Canvas
-                                                    Shoes for Men</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Canvas Shoes for Men</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1742,7 +1752,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/9_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -1772,8 +1782,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve
-                                                    T-Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Full Sleeve T-Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1839,7 +1848,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/9_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -1869,8 +1878,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Canvas
-                                                    Shoes for Men</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Canvas Shoes for Men</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -1927,7 +1935,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/6_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -1954,8 +1962,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck
-                                                    T-Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Round Neck T-Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2007,7 +2014,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/8_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -2037,8 +2044,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Digital
-                                                    Smart Watches</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Digital Smart Watches</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2080,7 +2086,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/3_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -2110,8 +2116,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Designer
-                                                    Leather Purses</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Designer Leather Purses</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2158,11 +2163,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/11_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/11_2.jpg" alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image" src="assets/images/product-image/11_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/11_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -2188,8 +2193,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Classic
-                                                    Leather purse</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Classic Leather purse</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2238,11 +2242,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/12_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/12_2.jpg" alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image" src="assets/images/product-image/12_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/12_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -2268,8 +2272,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Fancy
-                                                    Ladies Sandal</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Fancy Ladies Sandal</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2333,11 +2336,11 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/13_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/13_2.jpg" alt="Product" />
+                                                <a href="#" class="image">
+                                                    <img class="main-image" src="assets/images/product-image/13_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/13_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
@@ -2359,8 +2362,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Womens
-                                                    Leather Backpack</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Womens Leather Backpack</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2409,7 +2411,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/14_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -2436,8 +2438,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Beautiful
-                                                    Watch for Women</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Beautiful Watch for Women</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2495,7 +2496,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-sm-12 shop-all-btn"><a href="shop-left-sidebar-col-3.html">Shop All
                                         Collection</a></div>
                             </div>
@@ -2509,7 +2509,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/1_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -2539,8 +2539,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cute Baby
-                                                    Toy's</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Cute Baby Toy's</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2597,7 +2596,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/15_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -2627,9 +2626,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Clasic Baby
-                                                    Shoes
-                                                </a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Clasic Baby Shoes
+                                            </a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2691,7 +2689,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/16_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -2721,8 +2719,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Baby Doctor
-                                                    Toy Kit</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Baby Doctor Toy Kit</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2769,7 +2766,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/17_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -2799,8 +2796,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Baby
-                                                    Leather Purse</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Baby Leather Purse</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2847,7 +2843,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/9_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -2877,8 +2873,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Canvas
-                                                    Shoes for Boy</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Canvas Shoes for Boy</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -2935,7 +2930,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/6_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -2962,8 +2957,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck
-                                                    T-Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Round Neck T-Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -3015,7 +3009,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/8_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -3045,8 +3039,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Digital
-                                                    Smart Watches</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Digital Smart Watches</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -3088,7 +3081,7 @@
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
+                                                <a href="#" class="image">
                                                     <img class="main-image"
                                                         src="assets/images/product-image/3_1.jpg" alt="Product" />
                                                     <img class="hover-image"
@@ -3118,8 +3111,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Designer
-                                                    Leather Purses</a></h5>
+                                            <h5 class="ec-pro-title"><a href="#">Designer Leather Purses</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -3332,7 +3324,7 @@
                             <div class="ec-fs-pro-inner">
                                 <div class="ec-fs-pro-image-outer col-lg-6 col-md-6 col-sm-6">
                                     <div class="ec-fs-pro-image">
-                                        <a href="product-left-sidebar.html" class="image"><img class="main-image"
+                                        <a href="#" class="image"><img class="main-image"
                                                 src="assets/images/product-image/1_1.jpg" alt="Product" /></a>
                                         <a href="#" class="quickview" data-link-action="quickview"
                                             title="Quick view" data-bs-toggle="modal"
@@ -3342,8 +3334,7 @@
                                     </div>
                                 </div>
                                 <div class="ec-fs-pro-content col-lg-6 col-md-6 col-sm-6">
-                                    <h5 class="ec-fs-pro-title"><a href="product-left-sidebar.html">Baby Toy
-                                            Teddybear</a>
+                                    <h5 class="ec-fs-pro-title"><a href="#">Baby Toy Teddybear</a>
                                     </h5>
                                     <div class="ec-fs-pro-rating">
                                         <span class="ec-fs-rating-icon">
@@ -3366,8 +3357,8 @@
                                     </div>
                                     <div class="ec-fs-pro-book">Total Booking: <span>25</span></div>
                                     <div class="ec-fs-pro-btn">
-                                        <a href="#" class="btn btn-lg btn-secondary">Remind Me</a>
-                                        <a href="#" class="btn btn-lg btn-primary">Book Now</a>
+                                        {{-- <a href="#" class="btn btn-lg btn-secondary">Remind Me</a> --}}
+                                        <a href="#" class="btn btn-lg btn-primary">Beli Sekarang</a>
                                     </div>
                                 </div>
                             </div>
@@ -3376,7 +3367,7 @@
                             <div class="ec-fs-pro-inner">
                                 <div class="ec-fs-pro-image-outer col-lg-6 col-md-6 col-sm-6">
                                     <div class="ec-fs-pro-image">
-                                        <a href="product-left-sidebar.html" class="image"><img class="main-image"
+                                        <a href="#" class="image"><img class="main-image"
                                                 src="assets/images/product-image/3_1.jpg" alt="Product" /></a>
                                         <a href="#" class="quickview" data-link-action="quickview"
                                             title="Quick view" data-bs-toggle="modal"
@@ -3386,8 +3377,7 @@
                                     </div>
                                 </div>
                                 <div class="ec-fs-pro-content col-lg-6 col-md-6 col-sm-6">
-                                    <h5 class="ec-fs-pro-title"><a href="product-left-sidebar.html">Leather Purse
-                                            For Women</a>
+                                    <h5 class="ec-fs-pro-title"><a href="#">Leather Purse For Women</a>
                                     </h5>
                                     <div class="ec-fs-pro-rating">
                                         <span class="ec-fs-rating-icon">
@@ -3410,8 +3400,8 @@
                                     </div>
                                     <div class="ec-fs-pro-book">Total Booking: <span>25</span></div>
                                     <div class="ec-fs-pro-btn">
-                                        <a href="#" class="btn btn-lg btn-secondary">Remind Me</a>
-                                        <a href="#" class="btn btn-lg btn-primary">Book Now</a>
+                                        {{-- <a href="#" class="btn btn-lg btn-secondary">Remind Me</a> --}}
+                                        <a href="#" class="btn btn-lg btn-primary">Beli Sekarang</a>
                                     </div>
                                 </div>
                             </div>
@@ -3433,7 +3423,7 @@
                             <div class="ec-fs-pro-inner">
                                 <div class="ec-fs-pro-image-outer col-lg-6 col-md-6 col-sm-6">
                                     <div class="ec-fs-pro-image">
-                                        <a href="product-left-sidebar.html" class="image"><img class="main-image"
+                                        <a href="#" class="image"><img class="main-image"
                                                 src="assets/images/product-image/8_1.jpg" alt="Product" /></a>
                                         <a href="#" class="quickview" data-link-action="quickview"
                                             title="Quick view" data-bs-toggle="modal"
@@ -3443,8 +3433,7 @@
                                     </div>
                                 </div>
                                 <div class="ec-fs-pro-content col-lg-6 col-md-6 col-sm-6">
-                                    <h5 class="ec-fs-pro-title"><a href="product-left-sidebar.html">Smart watch
-                                            Firebolt</a>
+                                    <h5 class="ec-fs-pro-title"><a href="#">Smart watch Firebolt</a>
                                     </h5>
                                     <div class="ec-fs-pro-rating">
                                         <span class="ec-fs-rating-icon">
@@ -3466,8 +3455,8 @@
                                     </div>
                                     <div class="ec-fs-pro-book">Total Booking: <span>25</span></div>
                                     <div class="ec-fs-pro-btn">
-                                        <a href="#" class="btn btn-lg btn-secondary">Remind Me</a>
-                                        <a href="#" class="btn btn-lg btn-primary">Book Now</a>
+                                        {{-- <a href="#" class="btn btn-lg btn-secondary">Remind Me</a> --}}
+                                        <a href="#" class="btn btn-lg btn-primary">Beli Sekarang</a>
                                     </div>
                                 </div>
                             </div>
@@ -3476,7 +3465,7 @@
                             <div class="ec-fs-pro-inner">
                                 <div class="ec-fs-pro-image-outer col-lg-6 col-md-6 col-sm-6">
                                     <div class="ec-fs-pro-image">
-                                        <a href="product-left-sidebar.html" class="image"><img class="main-image"
+                                        <a href="#" class="image"><img class="main-image"
                                                 src="assets/images/product-image/10_1.jpg" alt="Product" /></a>
                                         <a href="#" class="quickview" data-link-action="quickview"
                                             title="Quick view" data-bs-toggle="modal"
@@ -3486,8 +3475,7 @@
                                     </div>
                                 </div>
                                 <div class="ec-fs-pro-content col-lg-6 col-md-6 col-sm-6">
-                                    <h5 class="ec-fs-pro-title"><a href="product-left-sidebar.html">Casual Shoes
-                                            Men</a>
+                                    <h5 class="ec-fs-pro-title"><a href="#">Casual Shoes Men</a>
                                     </h5>
                                     <div class="ec-fs-pro-rating">
                                         <span class="ec-fs-rating-icon">
@@ -3510,8 +3498,8 @@
                                     </div>
                                     <div class="ec-fs-pro-book">Total Booking: <span>25</span></div>
                                     <div class="ec-fs-pro-btn">
-                                        <a href="#" class="btn btn-lg btn-secondary">Remind Me</a>
-                                        <a href="#" class="btn btn-lg btn-primary">Book Now</a>
+                                        {{-- <a href="#" class="btn btn-lg btn-secondary">Remind Me</a> --}}
+                                        <a href="#" class="btn btn-lg btn-primary">Beli Sekarang</a>
                                     </div>
                                 </div>
                             </div>
@@ -3530,10 +3518,9 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">Top Vendor</h2>
-                        <h2 class="ec-title">Top Vendor</h2>
-                        <p class="sub-title">Browse The Collection of <a href="catalog-multi-vendor.html">All
-                                Vendors.</a></p>
+                        <h2 class="ec-bg-title">Top Brand</h2>
+                        <h2 class="ec-title">Top Brand</h2>
+                        <p class="sub-title">Browse The Collection of <a href="catalog-multi-vendor.html">All Vendors.</a></p>
                     </div>
                 </div>
             </div>
@@ -3561,20 +3548,16 @@
                         </div>
                         <div class="ec-vendor-prod">
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/1_1.jpg"
-                                        alt="vendor img"></a>
+                               <a href="#"><img src="assets/images/product-image/1_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/2_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/2_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/3_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/3_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/4_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/4_1.jpg" alt="vendor img"></a>
                             </div>
                         </div>
                     </div>
@@ -3602,20 +3585,16 @@
                         </div>
                         <div class="ec-vendor-prod">
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/5_1.jpg"
-                                        alt="vendor img"></a>
+                            <a href="#"><img src="assets/images/product-image/5_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/6_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/6_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/7_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/7_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/8_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/8_1.jpg" alt="vendor img"></a>
                             </div>
                         </div>
                     </div>
@@ -3643,20 +3622,16 @@
                         </div>
                         <div class="ec-vendor-prod">
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/9_1.jpg"
-                                        alt="vendor img"></a>
+                               <a href="#"><img src="assets/images/product-image/9_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/10_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/10_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/11_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/11_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/12_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/12_1.jpg" alt="vendor img"></a>
                             </div>
                         </div>
                     </div>
@@ -3684,20 +3659,16 @@
                         </div>
                         <div class="ec-vendor-prod">
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/13_1.jpg"
-                                        alt="vendor img"></a>
+                               <a href="#"><img src="assets/images/product-image/13_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/14_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/14_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/15_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/15_1.jpg" alt="vendor img"></a>
                             </div>
                             <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/16_1.jpg"
-                                        alt="vendor img"></a>
+                                <a href="#"><img src="assets/images/product-image/16_1.jpg" alt="vendor img"></a>
                             </div>
                         </div>
                     </div>
@@ -3762,7 +3733,7 @@
     <!--services Section End -->
 
     <!--  offer Section Start -->
-    <section class="section ec-offer-section section-space-p section-space-m">
+    {{-- <section class="section ec-offer-section section-space-p section-space-m">
         <h2 class="d-none">Offer</h2>
         <div class="container">
             <div class="row justify-content-end">
@@ -3778,7 +3749,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- offer Section End -->
 
     <!-- New Product Start -->
@@ -3787,8 +3758,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">New Arrivals</h2>
-                        <h2 class="ec-title">New Arrivals</h2>
+                        <h2 class="ec-bg-title">Produk terbaru</h2>
+                        <h2 class="ec-title">Produk terbaru</h2>
                         <p class="sub-title">Browse The Collection of Top Products</p>
                     </div>
                 </div>
@@ -3799,7 +3770,7 @@
                     <div class="ec-product-inner">
                         <div class="ec-pro-image-outer">
                             <div class="ec-pro-image">
-                                <a href="product-left-sidebar.html" class="image">
+                                <a href="#" class="image">
                                     <img class="main-image" src="assets/images/product-image/9_1.jpg"
                                         alt="Product" />
                                     <img class="hover-image" src="assets/images/product-image/9_2.jpg"
@@ -3828,8 +3799,7 @@
                             </div>
                         </div>
                         <div class="ec-pro-content">
-                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve Cap T-Shirt</a>
-                            </h5>
+                            <h5 class="ec-pro-title"><a href="#">Full Sleeve Cap T-Shirt</a></h5>
                             <div class="ec-pro-rating">
                                 <i class="ecicon eci-star fill"></i>
                                 <i class="ecicon eci-star fill"></i>
@@ -3884,7 +3854,7 @@
                     <div class="ec-product-inner">
                         <div class="ec-pro-image-outer">
                             <div class="ec-pro-image">
-                                <a href="product-left-sidebar.html" class="image">
+                                <a href="#" class="image">
                                     <img class="main-image" src="assets/images/product-image/11_1.jpg"
                                         alt="Product" />
                                     <img class="hover-image" src="assets/images/product-image/11_2.jpg"
@@ -3913,8 +3883,7 @@
                             </div>
                         </div>
                         <div class="ec-pro-content">
-                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Classic Leather purse</a>
-                            </h5>
+                            <h5 class="ec-pro-title"><a href="#">Classic Leather purse</a></h5>
                             <div class="ec-pro-rating">
                                 <i class="ecicon eci-star fill"></i>
                                 <i class="ecicon eci-star fill"></i>
@@ -3962,7 +3931,7 @@
                     <div class="ec-product-inner">
                         <div class="ec-pro-image-outer">
                             <div class="ec-pro-image">
-                                <a href="product-left-sidebar.html" class="image">
+                                <a href="#" class="image">
                                     <img class="main-image" src="assets/images/product-image/12_1.jpg"
                                         alt="Product" />
                                     <img class="hover-image" src="assets/images/product-image/12_2.jpg"
@@ -3989,8 +3958,7 @@
                             </div>
                         </div>
                         <div class="ec-pro-content">
-                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Fancy Ladies Sandal</a>
-                            </h5>
+                            <h5 class="ec-pro-title"><a href="#">Fancy Ladies Sandal</a></h5>
                             <div class="ec-pro-rating">
                                 <i class="ecicon eci-star fill"></i>
                                 <i class="ecicon eci-star fill"></i>
@@ -4051,7 +4019,7 @@
                     <div class="ec-product-inner">
                         <div class="ec-pro-image-outer">
                             <div class="ec-pro-image">
-                                <a href="product-left-sidebar.html" class="image">
+                                <a href="#" class="image">
                                     <img class="main-image" src="assets/images/product-image/13_1.jpg"
                                         alt="Product" />
                                     <img class="hover-image" src="assets/images/product-image/13_2.jpg"
@@ -4077,8 +4045,7 @@
                             </div>
                         </div>
                         <div class="ec-pro-content">
-                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Womens Leather Backpack</a>
-                            </h5>
+                            <h5 class="ec-pro-title"><a href="#">Womens Leather Backpack</a></h5>
                             <div class="ec-pro-rating">
                                 <i class="ecicon eci-star fill"></i>
                                 <i class="ecicon eci-star fill"></i>
@@ -4227,7 +4194,7 @@
     <!-- ec testmonial end -->
 
     <!-- Ec Brand Section Start -->
-    <section class="section ec-brand-area section-space-p">
+    {{-- <section class="section ec-brand-area section-space-p">
         <h2 class="d-none">Brand</h2>
         <div class="container">
             <div class="row">
@@ -4269,7 +4236,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Ec Brand Section End -->
 
     <!-- Ec Instagram Start -->
@@ -4278,8 +4245,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">Instagram Feed</h2>
-                        <h2 class="ec-title">Instagram Feed</h2>
+                        <h2 class="ec-bg-title">Toko</h2>
+                        <h2 class="ec-title">Toko</h2>
                         <p class="sub-title">Share your store with us</p>
                     </div>
                 </div>
@@ -4291,53 +4258,53 @@
                     <div class="insta-auto">
                         <!-- instagram item -->
                         <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/1.jpg"
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/1.png"
                                         alt="insta"></a>
                             </div>
                         </div>
                         <!-- instagram item -->
                         <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/2.jpg"
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/2.png"
                                         alt="insta"></a>
                             </div>
                         </div>
                         <!-- instagram item -->
                         <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/3.jpg"
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/3.png"
                                         alt="insta"></a>
                             </div>
                         </div>
                         <!-- instagram item -->
                         <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/4.jpg"
-                                        alt="insta"></a>
-                            </div>
-                        </div>
-                        <!-- instagram item -->
-                        <!-- instagram item -->
-                        <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/5.jpg"
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/4.png"
                                         alt="insta"></a>
                             </div>
                         </div>
                         <!-- instagram item -->
                         <!-- instagram item -->
                         <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/6.jpg"
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/5.png"
                                         alt="insta"></a>
                             </div>
                         </div>
                         <!-- instagram item -->
                         <!-- instagram item -->
                         <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/7.jpg"
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/6.png"
+                                        alt="insta"></a>
+                            </div>
+                        </div>
+                        <!-- instagram item -->
+                        <!-- instagram item -->
+                        <div class="ec-insta-item">
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/7.png"
                                         alt="insta"></a>
                             </div>
                         </div>
@@ -4561,8 +4528,7 @@
                         </div>
                         <div class="col-md-7 col-sm-12 col-xs-12">
                             <div class="quickview-pro-content">
-                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse
-                                        for women</a>
+                                <h5 class="ec-quick-title"><a href="#">Handbag leather purse for women</a>
                                 </h5>
                                 <div class="ec-quickview-rating">
                                     <i class="ecicon eci-star fill"></i>
