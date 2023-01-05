@@ -22,7 +22,8 @@ use App\Http\Controllers\ProdukController;
 
 //pruduk
 Route::get('/product', function () {return view('produk.produk');});
-
+Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
+Route::get('/detail',[ProdukController::class,'detail'])->name('detail');
 // Blog
 Route::get('/landingBlog', function () {return view('landingBlog.blog');});
 
@@ -31,7 +32,7 @@ Route::get('/product', function () {
 });
 
 Route::get('/', [LandingpageController::class, 'home']);
-Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
+
 
 //Kategori
 Route::get('/kategori',[KategoriController::class,'index'])->name('index.kategori');
