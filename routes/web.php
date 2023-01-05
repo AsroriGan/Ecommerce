@@ -38,6 +38,14 @@ Route::get('/detailblog', [AdminBlogController::class, 'detailblog']);
 Route::get('/product', function () {
     return view('produk.produk');
 });
+<<<<<<< HEAD
+=======
+
+Route::get('/test', function () {
+    return view('landingpage.testsofyan');
+});
+
+>>>>>>> 5043850844a0de84315e58ba11f3a003bc1af32b
 Route::get('/', [LandingpageController::class, 'home']);
 //Kategori
 Route::get('/kategori',[KategoriController::class,'index'])->name('index.kategori');
