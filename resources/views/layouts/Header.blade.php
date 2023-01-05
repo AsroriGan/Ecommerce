@@ -327,21 +327,11 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="/landingBlog.blog">Blog</a>
-                            </li>
-                            <li class="dropdown"><a href="javascript:void(0)">Elements</a>
-                                <ul class="sub-menu">
-                                    <li><a href="elemets-products.html">Products</a></li>
-                                    <li><a href="elemets-typography.html">Typography</a></li>
-                                    <li><a href="elemets-title.html">Titles</a></li>
-                                    <li><a href="elemets-categories.html">Categories</a></li>
-                                    <li><a href="elemets-buttons.html">Buttons</a></li>
-                                    <li><a href="elemets-tabs.html">Tabs</a></li>
-                                    <li><a href="elemets-accordions.html">Accordions</a></li>
-                                    <li><a href="elemets-blog.html">Blogs</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="offer.html">Hot Offers</a></li>
+
+                            <li><a href="/blog">Blog</a></li>
+
+                            <li><a href="/promo">Hot Offers</a></li>
+
                             <li class="dropdown scroll-to {{ Route::is('index.kategori') ? 'd-none' : '' }}"><a href="javascript:void(0)"><img
                                 src="assets/images/icons/scroll.svg" class="svg_img header_svg scroll" alt="" /></a>
                                 <ul class="sub-menu">
@@ -535,28 +525,8 @@
                             <li><a href="privacy-policy.html">Privacy Policy</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="javascript:void(0)">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                            <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                            <li><a href="blog-detail-left-sidebar.html">Blog detail left sidebar</a></li>
-                            <li><a href="blog-detail-right-sidebar.html">Blog detail right sidebar</a></li>
-                            <li><a href="blog-full-width.html">Blog full width</a></li>
-                            <li><a href="blog-detail-full-width.html">Blog detail full width</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="javascript:void(0)">Elements</a>
-                        <ul class="sub-menu">
-                            <li><a href="elemets-products.html">Products</a></li>
-                            <li><a href="elemets-typography.html">Typography</a></li>
-                            <li><a href="elemets-title.html">Titles</a></li>
-                            <li><a href="elemets-categories.html">Categories</a></li>
-                            <li><a href="elemets-buttons.html">Buttons</a></li>
-                            <li><a href="elemets-tabs.html">Tabs</a></li>
-                            <li><a href="elemets-accordions.html">Accordions</a></li>
-                            <li><a href="elemets-blog.html">Blogs</a></li>
-                        </ul>
-                    </li>
+                    <li class="dropdown"><a href="/blog">Blog</a></li>
+
                     <li><a href="offer.html">Hot Offers</a></li>
                 </ul>
             </div>
