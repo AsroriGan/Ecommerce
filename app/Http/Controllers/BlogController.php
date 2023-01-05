@@ -9,4 +9,8 @@ class BlogController extends Controller
     public function blog(){
         return view('landingpage.landingBlog.blog');
     }
+
+    public function detailblog(){
+        return view('landingpage.landingBlog.detailblog');
+    }
 }

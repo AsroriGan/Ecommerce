@@ -26,6 +26,7 @@ Route::get('/product', function () {return view('produk.produk');});
 
 // Blog
 Route::get('/blog', [BlogController::class, 'blog']);
+Route::get('/detailblog', [BlogController::class, 'detailblog']);
 
 Route::get('/product', function () {
     return view('produk.produk');
