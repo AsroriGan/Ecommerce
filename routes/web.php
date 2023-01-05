@@ -18,6 +18,9 @@ use App\Http\Controllers\ProdukController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/////////////////////////// START ROUTE LANDING PAGE /////////////////////
+//login
+
 // berandah admin
 Route::get('/beranda', function () {
     return view('dashboardadmin.beranda');
@@ -38,3 +41,4 @@ Route::get('/product', function () {
 Route::get('/', [LandingpageController::class, 'home']);
 //Kategori
 Route::get('/kategori',[KategoriController::class,'index'])->name('index.kategori');
+/////////////////////////// END ROUTE LANDING PAGE /////////////////////
