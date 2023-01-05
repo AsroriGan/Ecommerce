@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
+use App\Http\Controllers\Landing\KategoriController;
+use App\Http\Controllers\Landing\p;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 
@@ -33,9 +35,6 @@ Route::get('/detailblog', [AdminBlogController::class, 'detailblog']);
 Route::get('/product', function () {
     return view('produk.produk');
 });
-
 Route::get('/', [LandingpageController::class, 'home']);
-
-
 //Kategori
-Route::get('/kategori',[AdminKategoriController::class,'index'])->name('index.kategori');
+Route::get('/kategori',[KategoriController::class,'index'])->name('index.kategori');
