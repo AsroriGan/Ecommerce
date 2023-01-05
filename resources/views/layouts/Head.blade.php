@@ -17,15 +17,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/vendor/ecicons.min.css')}}" />
 
     <!-- css All Plugins Files -->
-<<<<<<< HEAD
-    <link rel="stylesheet" href="assets/css/plugins/animate.css" />
-    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/countdownTimer.css" />
-    <link rel="stylesheet" href="assets/css/plugins/slick.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/nouislider.css" />
-    <link rel="stylesheet" href="assets/css/plugins/bootstrap.css" />
-=======
     <link rel="stylesheet" href="{{asset('assets/css/plugins/animate.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/plugins/swiper-bundle.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/plugins/jquery-ui.min.css')}}" />
@@ -33,7 +24,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/plugins/nouislider.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/plugins/slick.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/plugins/bootstrap.css')}}" />
->>>>>>> d196e60dd7cc1408757740269ab71da839009750
 
     <!-- Main Style -->
     <link rel="stylesheet" href="{{asset('assets/css/demo1.css')}}" />

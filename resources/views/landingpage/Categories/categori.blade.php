@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('layouts.Head')
+
 <body class="shop_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
@@ -9,79 +10,7 @@
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
-    <div class="ec-side-cart-overlay"></div>
-    <div id="ec-side-cart" class="ec-side-cart">
-        <div class="ec-cart-inner">
-            <div class="ec-cart-top">
-                <div class="ec-cart-title">
-                    <span class="cart_title">My Cart</span>
-                    <button class="ec-close">×</button>
-                </div>
-                <ul class="eccart-pro-items">
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
-                            <span class="cart-price"><span>$76.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
-                            <span class="cart-price"><span>$64.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
-                            <span class="cart-price"><span>$59.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="ec-cart-bottom">
-                <div class="cart-sub-total">
-                    <table class="table cart-table">
-                        <tbody>
-                            <tr>
-                                <td class="text-left">Sub-Total :</td>
-                                <td class="text-right">$300.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">VAT (20%) :</td>
-                                <td class="text-right">$60.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Total :</td>
-                                <td class="text-right primary-color">$360.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="cart_btn">
-                    <a href="cart.html" class="btn btn-primary">View Cart</a>
-                    <a href="checkout.html" class="btn btn-secondary">Checkout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- ekka Cart End -->
 
     <!-- Ec breadcrumb start -->
@@ -143,20 +72,18 @@
                     <div class="shop-pro-content">
                         <div class="shop-pro-inner">
                             <div class="row">
-                               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/6_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/6_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/6_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/6_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><img
+                                                <a href="/detail" class="quickview"><img
                                                         src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
                                                         alt="" /></a>
                                                 <div class="ec-pro-actions">
@@ -173,7 +100,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck T-Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck
+                                                    T-Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -181,7 +109,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$27.00</span>
                                                 <span class="new-price">$22.00</span>
@@ -213,7 +143,8 @@
                                                         <li><a href="#" class="ec-opt-sz" data-old="$30.00"
                                                                 data-new="$25.00" data-tooltip="Large">X</a></li>
                                                         <li><a href="#" class="ec-opt-sz" data-old="$35.00"
-                                                                data-new="$30.00" data-tooltip="Extra Large">XL</a></li>
+                                                                data-new="$30.00" data-tooltip="Extra Large">XL</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -225,10 +156,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/7_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/7_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/7_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/7_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -237,8 +168,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg"
+                                                        class="svg_img pro_svg" alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -253,7 +184,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve
+                                                    Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -261,7 +193,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$12.00</span>
                                                 <span class="new-price">$10.00</span>
@@ -293,7 +227,8 @@
                                                         <li><a href="#" class="ec-opt-sz" data-old="$18.00"
                                                                 data-new="$15.00" data-tooltip="Large">X</a></li>
                                                         <li><a href="#" class="ec-opt-sz" data-old="$20.00"
-                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a></li>
+                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -305,10 +240,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/1_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/1_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/1_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/1_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -317,8 +252,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg"
+                                                        class="svg_img pro_svg" alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -333,7 +268,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cute Baby Toy's</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cute Baby
+                                                    Toy's</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -341,7 +277,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$40.00</span>
                                                 <span class="new-price">$30.00</span>
@@ -391,10 +329,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/2_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/2_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/2_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/2_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -403,8 +341,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg"
+                                                        class="svg_img pro_svg" alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -419,7 +357,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Jumbo Carry Bag</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Jumbo Carry
+                                                    Bag</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -427,7 +366,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$50.00</span>
                                                 <span class="new-price">$40.00</span>
@@ -452,10 +393,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/3_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/3_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/3_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/3_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -464,8 +405,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg"
+                                                        class="svg_img pro_svg" alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -480,7 +421,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Designer Leather Purses</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Designer
+                                                    Leather Purses</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -488,7 +430,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$40.00</span>
                                                 <span class="new-price">$30.00</span>
@@ -528,16 +472,16 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/4_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/4_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/4_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/4_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg"
+                                                        class="svg_img pro_svg" alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -552,7 +496,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Canvas Cowboy Hat</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Canvas Cowboy
+                                                    Hat</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -560,7 +505,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$12.00</span>
                                                 <span class="new-price">$10.00</span>
@@ -600,10 +547,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/5_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/5_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/5_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/5_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="flags">
                                                     <span class="new">New</span>
@@ -611,8 +558,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg"
+                                                        class="svg_img pro_svg" alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -627,7 +574,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Leather Belt for Men</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Leather Belt
+                                                    for Men</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -635,7 +583,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$15.00</span>
                                                 <span class="new-price">$10.00</span>
@@ -677,10 +627,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/8_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/8_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/8_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/8_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <span class="flags">
@@ -689,8 +639,8 @@
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg"
+                                                        class="svg_img pro_svg" alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -705,7 +655,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Digital Smart Watches</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Digital Smart
+                                                    Watches</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -713,7 +664,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$100.00</span>
                                                 <span class="new-price">$80.00</span>
@@ -748,17 +701,17 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/6_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/6_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/6_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/6_2.jpg"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
+                                                        src="assets/images/icons/quickview.svg"
+                                                        class="svg_img pro_svg" alt="" /></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><img src="assets/images/icons/compare.svg"
@@ -773,7 +726,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck T-Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck
+                                                    T-Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -781,7 +735,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$27.00</span>
                                                 <span class="new-price">$22.00</span>
@@ -813,7 +769,8 @@
                                                         <li><a href="#" class="ec-opt-sz" data-old="$30.00"
                                                                 data-new="$25.00" data-tooltip="Large">X</a></li>
                                                         <li><a href="#" class="ec-opt-sz" data-old="$35.00"
-                                                                data-new="$30.00" data-tooltip="Extra Large">XL</a></li>
+                                                                data-new="$30.00" data-tooltip="Extra Large">XL</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -831,7 +788,8 @@
                                 <li><a href="#">3</a></li>
                                 <li><a href="#">4</a></li>
                                 <li><a href="#">5</a></li>
-                                <li><a class="next" href="#">Next <i class="ecicon eci-angle-right"></i></a></li>
+                                <li><a class="next" href="#">Next <i class="ecicon eci-angle-right"></i></a>
+                                </li>
                             </ul>
                         </div>
                         <!-- Ec Pagination End -->
@@ -923,8 +881,8 @@
                                     <ul>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" value="" checked /><a href="#">S</a><span
-                                                    class="checked"></span>
+                                                <input type="checkbox" value="" checked /><a
+                                                    href="#">S</a><span class="checked"></span>
                                             </div>
                                         </li>
                                         <li>
@@ -947,8 +905,8 @@
                                         </li>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" value="" /><a href="#">XXL</a><span
-                                                    class="checked"></span>
+                                                <input type="checkbox" value="" /><a
+                                                    href="#">XXL</a><span class="checked"></span>
                                             </div>
                                         </li>
                                     </ul>
@@ -1039,49 +997,61 @@
     <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-xs-12">
                             <!-- Swiper -->
                             <div class="qty-product-cover">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
+                                        alt="">
                                 </div>
                             </div>
                             <div class="qty-nav-thumb">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
+                                        alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-7 col-sm-12 col-xs-12">
                             <div class="quickview-pro-content">
-                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse for women</a>
+                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse
+                                        for women</a>
                                 </h5>
                                 <div class="ec-quickview-rating">
                                     <i class="ecicon eci-star fill"></i>
@@ -1117,16 +1087,20 @@
                                             <ul class="ec-opt-size">
                                                 <li class="active"><a href="#" class="ec-opt-sz"
                                                         data-tooltip="Small">S</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Extra Large">XL</a></li>
+                                                <li><a href="#" class="ec-opt-sz"
+                                                        data-tooltip="Medium">M</a></li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a>
+                                                </li>
+                                                <li><a href="#" class="ec-opt-sz"
+                                                        data-tooltip="Extra Large">XL</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="ec-quickview-qty">
                                     <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                                        <input class="qty-input" type="text" name="ec_qtybtn"
+                                            value="1" />
                                     </div>
                                     <div class="ec-quickview-cart ">
                                         <button class="btn btn-primary"><img src="assets/images/icons/cart.svg"
@@ -1188,7 +1162,8 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
+            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg"
+                    alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -1386,7 +1361,7 @@
             <div class="ec-tools-sidebar-content">
                 <h3>Clear local storage</h3>
                 <a class="clear-cach" href="javascript:void(0)">Clear Cache & Default</a>
-            </div>  
+            </div>
         </div>
     </div>
     <!-- Feature tools end -->
@@ -1394,4 +1369,5 @@
     @include('layouts.script')
 
 </body>
+
 </html>
