@@ -20,7 +20,7 @@
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
-    <div class="ec-side-cart-overlay"></div>
+    {{-- <div class="ec-side-cart-overlay"></div>
     <div id="ec-side-cart" class="ec-side-cart">
         <div class="ec-cart-inner">
             <div class="ec-cart-top">
@@ -92,7 +92,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- ekka Cart End -->
 
     <!-- Ec breadcrumb start -->
