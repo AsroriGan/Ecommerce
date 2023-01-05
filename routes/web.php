@@ -17,9 +17,9 @@ use App\Http\Controllers\ProdukController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/beranda', function () {
+    return view('template.beranda');
+});
 
 //pruduk
 Route::get('/product', function () {return view('produk.produk');});
