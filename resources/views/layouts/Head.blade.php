@@ -32,4 +32,6 @@
 
     <!-- Background css -->
     <link rel="stylesheet" id="bg-switcher-css" href="{{asset('assets/css/backgrounds/bg-4.css')}}">
+
+    <link rel="stylesheet" href="{{asset('rori.css')}}">
 </head>

@@ -8,6 +8,10 @@ class ProdukController extends Controller
 {
     public function produk()
     {
-        return view('produk.produk');
+        return view('landingpage.produk.produk');
+    }
+    public function detail()
+    {
+        return view('landingpage.produk.detail');
     }
 }
