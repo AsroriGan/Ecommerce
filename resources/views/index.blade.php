@@ -183,11 +183,6 @@
                                         <span class="new-price">$250.00</span>
                                     </div>
 
-<<<<<<< HEAD
-     <!-- End Script -->
- </body>
- </html>
-=======
                                     <div class="countdowntimer"><span id="ec-fs-count-2"></span></div>
                                     <div class="ec-fs-pro-desc">Lorem Ipsum is simply dummy text the printing and
                                         typesetting.
@@ -1540,4 +1535,3 @@
 </body>
 
 </html>
->>>>>>> d196e60dd7cc1408757740269ab71da839009750
