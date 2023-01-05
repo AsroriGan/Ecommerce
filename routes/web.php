@@ -19,8 +19,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-
 //pruduk
+<<<<<<< HEAD
+Route::get('/product', function () {return view('produk.produk');});
+
+// Blog
+Route::get('/landingBlog', function () {return view('landingBlog.blog');});
+
+=======
 Route::get('/product', function () {
     return view('produk.produk');
 });
@@ -28,3 +34,4 @@ Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
 
 //Kategori
 Route::get('/kategori',[KategoriController::class,'index'])->name('index.kategori');
+>>>>>>> d196e60dd7cc1408757740269ab71da839009750

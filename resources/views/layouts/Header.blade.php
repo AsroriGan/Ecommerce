@@ -396,15 +396,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="javascript:void(0)">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                    <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                                    <li><a href="blog-detail-left-sidebar.html">Blog detail left sidebar</a></li>
-                                    <li><a href="blog-detail-right-sidebar.html">Blog detail right sidebar</a></li>
-                                    <li><a href="blog-full-width.html">Blog full width</a></li>
-                                    <li><a href="blog-detail-full-width.html">Blog detail full width</a></li>
-                                </ul>
+                            <li class="dropdown"><a href="/landingBlog.blog">Blog</a>
                             </li>
                             <li class="dropdown"><a href="javascript:void(0)">Elements</a>
                                 <ul class="sub-menu">
