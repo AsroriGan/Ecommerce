@@ -6,6 +6,7 @@ use App\Http\Controllers\Landing\LandingpageController;
 use App\Http\Controllers\Landing\BlogController as LandingBlogController;
 use App\Http\Controllers\Landing\PromoController as LandingPromoController;
 use App\Http\Controllers\Landing\ProdukController as LandingProdukController;
+use App\Http\Controllers\Landing\TrackorderController as LandingTrackorderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,4 +54,6 @@ Route::get('/', [LandingpageController::class, 'home']);
 //Kategori
 Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('index.kategori');
 
+//Trackorder
+Route::get('/trackorder', [LandingTrackorderController::class, 'indextrack'])->name('trackorder');
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
