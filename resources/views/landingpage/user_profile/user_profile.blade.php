@@ -1,20 +1,13 @@
-<!--=========================================================
-    Item Name: Ekka - Ecommerce HTML Template.
-    Author: ashishmaraviya
-    Version: 3.3
-    Copyright 2022-2023
-	Author URI: https://themeforest.net/user/ashishmaraviya
- ============================================================-->
- <!DOCTYPE html>
- <html lang="en">
- @include('layouts.Head')
-<body>
+<!DOCTYPE html>
+<html lang="en">
+
+@include('layouts.Head')
+
+<body class="shop_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
     <!-- Header start  -->
-
     @include('layouts.Header')
-
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
@@ -100,13 +93,13 @@
                 <div class="col-12">
                     <div class="row ec_breadcrumb_inner">
                         <div class="col-md-6 col-sm-12">
-                            <h2 class="ec-breadcrumb-title">Hot Offer</h2>
+                            <h2 class="ec-breadcrumb-title">User Profile</h2>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <!-- ec-breadcrumb-list start -->
                             <ul class="ec-breadcrumb-list">
                                 <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="ec-breadcrumb-item active">Offer</li>
+                                <li class="ec-breadcrumb-item active">Profile</li>
                             </ul>
                             <!-- ec-breadcrumb-list end -->
                         </div>
@@ -117,88 +110,116 @@
     </div>
     <!-- Ec breadcrumb end -->
 
-    <!-- Start Offer section -->
-    <section class="labels section-space-p">
+    <!-- User profile section -->
+    <section class="ec-page-content ec-vendor-uploads ec-user-account section-space-p">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <h2 class="ec-bg-title">Existing Discounts</h2>
-                        <h2 class="ec-title">Existing Discounts</h2>
-                        <p class="sub-title">Browse The Collection of Top Categories</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
-                    <div class="ec-offer-coupon">
-                        <div class="ec-cpn-brand">
-                            <img class="ec-brand-img" src="assets/images/offer-image/2.jpg" alt="" />
-                        </div>
-                        <div class="ec-cpn-title">
-                            <h2 class="coupon-title">Get 15% off on branded Shoes</h2>
-                        </div>
-                        <div class="ec-cpn-desc">
-                            <p class="coupon-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry has been.</p>
-                        </div>
-                        <div class="ec-cpn-code">
-                            <a href="/detail" class="btn btn-secondary">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
-                    <div class="ec-offer-coupon">
-                        <div class="ec-cpn-brand">
-                            <img class="ec-brand-img" src="assets/images/offer-image/3.jpg" alt="" />
-                        </div>
-                        <div class="ec-cpn-title">
-                            <h2 class="coupon-title">Get 30% off on branded chair</h2>
-                        </div>
-                        <div class="ec-cpn-desc">
-                            <p class="coupon-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry has been.</p>
-                        </div>
-                        <div class="ec-cpn-code">
-                            <a href="/detail" class="btn btn-secondary">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 m-auto">
-                    <div class="ec-offer-coupon">
-                        <div class="ec-cpn-brand">
-                            <img class="ec-brand-img" src="assets/images/offer-image/4.jpg" alt="" />
-                        </div>
-                        <div class="ec-cpn-title">
-                            <h2 class="coupon-title">Get 50% off on branded Hand Bags</h2>
-                        </div>
-                        <div class="ec-cpn-desc">
-                            <p class="coupon-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry has been.</p>
-                        </div>
-                        <div class="ec-cpn-code">
-                            <a href="/detail" class="btn btn-secondary">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Offer section -->
+                <!-- Sidebar Area Start -->
+                <div class="ec-shop-rightside col-lg-9 col-md-12">
+                    <div class="ec-vendor-dashboard-card ec-vendor-setting-card">
+                        <div class="ec-vendor-card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="ec-vendor-block-profile">
+                                        <div class="ec-vendor-block-img space-bottom-30">
+                                            <div class="ec-vendor-block-bg">
+                                                <a href="#" class="btn btn-lg btn-primary"
+                                                    data-link-action="editmodal" title="Edit Detail"
+                                                    data-bs-toggle="modal" data-bs-target="#edit_modal">Edit
+                                                    Detail</a>
+                                            </div>
+                                            <div class="ec-vendor-block-detail">
+                                                <img class="v-img" src="assets/images/user/1.jpg"
+                                                    alt="vendor image">
+                                                <h5 class="name">Mariana Johns</h5>
+                                                <p>( Business Man )</p>
+                                            </div>
+                                            <p>Hello <span>Mariana Johns!</span></p>
+                                            <p>From your account you can easily view and track orders. You can manage
+                                                and change your account information like address, contact information
+                                                and history of orders.</p>
+                                        </div>
+                                        <h5>Account Information</h5>
 
-    <!-- Start Offer section -->
-    <section class="labels section-space-p">
-        <div class="container">
-            <div class="ec-line-offer" style="background-image: url('assets/images/offer-image/offer-banner-06.jpg');">
-                <div class="ec-line-offer-info">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h6>On Furniture</h6>
-                                <h2 class="offer-upto">Upto <span>45%</span> OFF</h2>
-                                <p class="offer-desc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's.</p>
-                                <div class="offer-btn"><a class="btn-shop-now">SHOP NOW!</a></div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12">
+                                                <div
+                                                    class="ec-vendor-detail-block ec-vendor-block-email space-bottom-30">
+                                                    <h6>E-mail address <a href="javasript:void(0)"
+                                                            data-link-action="editmodal" title="Edit Detail"
+                                                            data-bs-toggle="modal" data-bs-target="#edit_modal"><img
+                                                                src="assets/images/icons/edit.svg"
+                                                                class="svg_img pro_svg" alt="edit" /></a></h6>
+                                                    <ul>
+                                                        <li><strong>Email : </strong>unluading123@exapmle.com</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <div
+                                                    class="ec-vendor-detail-block ec-vendor-block-contact space-bottom-30">
+                                                    <h6>Contact nubmer<a href="javasript:void(0)"
+                                                            data-link-action="editmodal" title="Edit Detail"
+                                                            data-bs-toggle="modal" data-bs-target="#edit_modal"><img
+                                                                src="assets/images/icons/edit.svg"
+                                                                class="svg_img pro_svg" alt="edit" /></a></h6>
+                                                    <ul>
+                                                        <li><strong>Phone Nubmer : </strong>0812 5305 5876</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <div class="ec-vendor-detail-block ec-vendor-block-address mar-b-30">
+                                                    <h6>Address<a href="javasript:void(0)"
+                                                            data-link-action="editmodal" title="Edit Detail"
+                                                            data-bs-toggle="modal" data-bs-target="#edit_modal"><img
+                                                                src="assets/images/icons/edit.svg"
+                                                                class="svg_img pro_svg" alt="edit" /></a></h6>
+                                                    <ul>
+                                                        <li><strong>Home : </strong>JAWA TIMUR, KAB. PASURUAN, SUKOREJO, 67171</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <div class="ec-vendor-detail-block ec-vendor-block-address">
+                                                    <h6>Shipping Address<a href="javasript:void(0)"
+                                                            data-link-action="editmodal" title="Edit Detail"
+                                                            data-bs-toggle="modal" data-bs-target="#edit_modal"><img
+                                                                src="assets/images/icons/edit.svg"
+                                                                class="svg_img pro_svg" alt="edit" /></a></h6>
+                                                    <ul>
+                                                        <li><strong>Office : </strong>Jalan Smpn II, RT.2/RW.4, Sebandung, Sukorejo</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ec-shop-leftside ec-vendor-sidebar col-lg-3 col-md-12">
+                    <div class="ec-sidebar-wrap">
+                        <!-- Sidebar Category Block -->
+                        <div class="ec-sidebar-block">
+                            <div class="ec-vendor-block">
+                                <!-- <div class="ec-vendor-block-bg"></div>
+                                 <div class="ec-vendor-block-detail">
+                                     <img class="v-img" src="assets/images/user/1.jpg" alt="vendor image">
+                                     <h5>Mariana Johns</h5>
+                                 </div> -->
+                                <div class="ec-vendor-block-items">
+                                    <ul>
+                                        <li><a href="user-profile.html">User Profile</a></li>
+                                        <li><a href="user-history.html">History</a></li>
+                                        <li><a href="wishlist.html">Wishlist</a></li>
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">Checkout</a></li>
+                                        <li><a href="track-order.html">Track Order</a></li>
+                                        <li><a href="/urllogout">Logout</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -206,7 +227,7 @@
             </div>
         </div>
     </section>
-     <!-- End Offer section -->
+    <!-- End User profile section -->
 
     <!-- Footer Start -->
     <footer class="ec-footer section-space-mt">
@@ -226,14 +247,16 @@
                     <div class="row">
                         <div class="col-sm-12 col-lg-3 ec-footer-contact">
                             <div class="ec-footer-widget">
-                                <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/footer-logo.png"
-                                            alt=""><img class="dark-footer-logo" src="assets/images/logo/dark-logo.png"
+                                <div class="ec-footer-logo"><a href="#"><img
+                                            src="assets/images/logo/footer-logo.png" alt=""><img
+                                            class="dark-footer-logo" src="assets/images/logo/dark-logo.png"
                                             alt="Site Logo" style="display: none;" /></a></div>
                                 <h4 class="ec-footer-heading">Contact us</h4>
                                 <div class="ec-footer-links">
                                     <ul class="align-items-center">
                                         <li class="ec-footer-link">71 Pilgrim Avenue Chevy Chase, east california.</li>
-                                        <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">+44
+                                        <li class="ec-footer-link"><span>Call Us:</span><a
+                                                href="tel:+440123456789">+44
                                                 0123 456 789</a></li>
                                         <li class="ec-footer-link"><span>Email:</span><a
                                                 href="mailto:example@ec-email.com">+example@ec-email.com</a></li>
@@ -294,9 +317,11 @@
                                             action="#">
                                             <div id="ec_news_signup" class="ec-form">
                                                 <input class="ec-email" type="email" required=""
-                                                    placeholder="Enter your email here..." name="ec-email" value="" />
+                                                    placeholder="Enter your email here..." name="ec-email"
+                                                    value="" />
                                                 <button id="ec-news-btn" class="button btn-primary" type="submit"
-                                                    name="subscribe" value=""><i class="ecicon eci-paper-plane-o"
+                                                    name="subscribe" value=""><i
+                                                        class="ecicon eci-paper-plane-o"
                                                         aria-hidden="true"></i></button>
                                             </div>
                                         </form>
@@ -315,10 +340,14 @@
                             <div class="footer-bottom-social">
                                 <span class="social-text text-upper">Follow us on:</span>
                                 <ul class="mb-0">
-                                    <li class="list-inline-item"><a class="hdr-facebook" href="#"><i class="ecicon eci-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-twitter" href="#"><i class="ecicon eci-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-instagram" href="#"><i class="ecicon eci-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i class="ecicon eci-linkedin"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-facebook" href="#"><i
+                                                class="ecicon eci-facebook"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-twitter" href="#"><i
+                                                class="ecicon eci-twitter"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-instagram" href="#"><i
+                                                class="ecicon eci-instagram"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i
+                                                class="ecicon eci-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -348,6 +377,94 @@
     </footer>
     <!-- Footer Area End -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="ec-vendor-block-img space-bottom-30">
+                            <div class="ec-vendor-block-bg cover-upload">
+                                <div class="thumb-upload">
+                                    <div class="thumb-edit">
+                                        <input type='file' id="thumbUpload01" class="ec-image-upload"
+                                            accept=".png, .jpg, .jpeg" />
+                                        <label><img src="assets/images/icons/edit.svg" class="svg_img header_svg"
+                                                alt="edit" /></label>
+                                    </div>
+                                    <div class="thumb-preview ec-preview">
+                                        <div class="image-thumb-preview">
+                                            <img class="image-thumb-preview ec-image-preview v-img"
+                                                src="assets/images/banner/8.jpg" alt="edit" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec-vendor-block-detail">
+                                <div class="thumb-upload">
+                                    <div class="thumb-edit">
+                                        <input type='file' id="thumbUpload02" class="ec-image-upload"
+                                            accept=".png, .jpg, .jpeg" />
+                                        <label><img src="assets/images/icons/edit.svg" class="svg_img header_svg"
+                                                alt="edit" /></label>
+                                    </div>
+                                    <div class="thumb-preview ec-preview">
+                                        <div class="image-thumb-preview">
+                                            <img class="image-thumb-preview ec-image-preview v-img"
+                                                src="assets/images/user/1.jpg" alt="edit" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec-vendor-upload-detail">
+                                <form class="row g-3">
+                                    <div class="col-md-6 space-t-15">
+                                        <label class="form-label">First name</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 space-t-15">
+                                        <label class="form-label">Last name</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-12 space-t-15">
+                                        <label class="form-label">Address 1</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 space-t-15">
+                                        <label class="form-label">City </label>
+                                        <span class="ec-bl-select-inner">
+                                            <select name="ec_select_city" id="ec-select-city" class="ec-bill-select">
+                                                <option selected="" disabled="">City</option>
+                                                <option value="1">City 1</option>
+                                                <option value="2">City 2</option>
+                                                <option value="3">City 3</option>
+                                                <option value="4">City 4</option>
+                                                <option value="5">City 5</option>
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6 space-t-15">
+                                        <label class="form-label">Email </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 space-t-15">
+                                        <label class="form-label">Phone </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-12 space-t-15">
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        <a href="#" class="btn btn-lg btn-secondary qty_close"
+                                            data-bs-dismiss="modal" aria-label="Close">Close</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal end -->
 
     <!-- Footer navigation panel for responsive display -->
     <div class="ec-nav-toolbar">
@@ -395,7 +512,8 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
+            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg"
+                    alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -599,32 +717,7 @@
     <!-- Feature tools end -->
 
     <!-- Vendor JS -->
-    <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
-    <script src="assets/js/vendor/popper.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
-
-    <!--Plugins JS-->
-    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-    <script src="assets/js/plugins/countdownTimer.min.js"></script>
-    <script src="assets/js/plugins/scrollup.js"></script>
-    <script src="assets/js/plugins/jquery.zoom.min.js"></script>
-    <script src="assets/js/plugins/slick.min.js"></script>
-    <script src="assets/js/plugins/infiniteslidev2.js"></script>
-    <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/plugins/jquery.sticky-sidebar.js"></script>
-    <script src="assets/js/plugins/hot-offer.js"></script>
-    <!-- Google translate Js -->
-    <script src="assets/js/vendor/google-translate.js"></script>
-    <script>
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-        }
-    </script>
-    <!-- Main Js -->
-    <script src="assets/js/vendor/index.js"></script>
-    <script src="assets/js/main.js"></script>
-
+    @include('layouts.script')
 </body>
+
 </html>

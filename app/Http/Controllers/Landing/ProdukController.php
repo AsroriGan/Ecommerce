@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Landing;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -14,4 +15,9 @@ class ProdukController extends Controller
     {
         return view('landingpage.produk.detail');
     }
+     public function keranjang()
+    {
+        return view('landingpage.keranjang.keranjang');
+    }
+
 }

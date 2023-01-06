@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\Landing\KategoriController as LandingKategoriController;
-use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\Landing\Logincontroller as LandingLogincontroller;
+use App\Http\Controllers\Landing\LandingpageController;
 use App\Http\Controllers\Landing\BlogController as LandingBlogController;
 use App\Http\Controllers\Landing\PromoController as LandingPromoController;
+use App\Http\Controllers\Landing\ProdukController as LandingProdukController;
+use App\Http\Controllers\Landing\Userprofilecontroller as LandingUserprofilecontroller;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +20,12 @@ use App\Http\Controllers\ProdukController;
 |
 */
 /////////////////////////// START ROUTE LANDING PAGE /////////////////////
+
 //login
-Route::get('/login',[Logincontroller::class,'login'])->name('login');
+Route::get('/login', [LandingLogincontroller::class, 'login'])->name('login');
+
 //register
-Route::get('/register',[Logincontroller::class,'register'])->name('register');
+Route::get('/register', [LandingLogincontroller::class, 'register'])->name('register');
 
 // berandah admin
 Route::get('/beranda', function () {
@@ -29,8 +33,9 @@ Route::get('/beranda', function () {
 });
 
 //pruduk
-Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
-Route::get('/detail',[ProdukController::class,'detail'])->name('detail');
+Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
+Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
+Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
 
 // Blog
 Route::get('/blog', [LandingBlogController::class, 'blog']);
@@ -44,7 +49,10 @@ Route::get('/test', function () {
     return view('landingpage.testsofyan');
 });
 
-Route::get('/', [LandingpageController::class, 'home']);
+Route::get('/', [LandingpageController::class, 'home'])->name('home');
+
 //Kategori
-Route::get('/kategori',[LandingKategoriController::class,'index'])->name('index.kategori');
+Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('index.kategori');
+//user profile
+Route::get('/user-profile',[LandingUserprofilecontroller::class,'index'])->name('user-profle');
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
