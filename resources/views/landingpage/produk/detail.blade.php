@@ -1,44 +1,54 @@
+
 <!--=========================================================
     Item Name: Ekka - Ecommerce HTML Template.
     Author: ashishmaraviya
     Version: 3.3
     Copyright 2022-2023
-    Author URI: https://themeforest.net/user/ashishmaraviya
+	Author URI: https://themeforest.net/user/ashishmaraviya
  ============================================================-->
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+ <html lang="en">
 
-<link rel="icon" href="assets/images/favicon/favicon.png" sizes="32x32" />
-<link rel="apple-touch-icon" href="assets/images/favicon/favicon.png" />
-<meta name="msapplication-TileImage" content="assets/images/favicon/favicon.png" />
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-<!-- css Icon Font -->
-<link rel="stylesheet" href="assets/css/vendor/ecicons.min.css" />
+     <title>Ekka - Ecommerce HTML Template.</title>
+     <meta name="keywords" content="apparel, catalog, clean, ecommerce, ecommerce HTML, electronics, fashion, html eCommerce, html store, minimal, multipurpose, multipurpose ecommerce, online store, responsive ecommerce template, shops" />
+     <meta name="description" content="Best ecommerce html template for single and multi vendor store.">
+     <meta name="author" content="ashishmaraviya">
 
-<!-- css All Plugins Files -->
-<link rel="stylesheet" href="assets/css/plugins/animate.css" />
-<link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
-<link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css" />
-<link rel="stylesheet" href="assets/css/plugins/countdownTimer.css" />
-<link rel="stylesheet" href="assets/css/plugins/slick.min.css" />
-<link rel="stylesheet" href="assets/css/plugins/nouislider.css" />
-<link rel="stylesheet" href="assets/css/plugins/bootstrap.css" />
+    <!-- site Favicon -->
+    <link rel="icon" href="assets/images/favicon/favicon.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="assets/images/favicon/favicon.png" />
+    <meta name="msapplication-TileImage" content="assets/images/favicon/favicon.png" />
 
-<!-- Main Style -->
-<link rel="stylesheet" href="assets/css/style.css" />
-<link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- css Icon Font -->
+    <link rel="stylesheet" href="assets/css/vendor/ecicons.min.css" />
 
-<!-- Background css -->
-<link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css">
-@include('layouts.Head')
+    <!-- css All Plugins Files -->
+    <link rel="stylesheet" href="assets/css/plugins/animate.css" />
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/countdownTimer.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slick.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/nouislider.css" />
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.css" />
 
-<body>
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <!-- Background css -->
+    <link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css">
+
+</head>
+<body class="product_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
     <!-- Header start  -->
-
     @include('layouts.Header')
-
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
@@ -48,7 +58,7 @@
             <div class="ec-cart-top">
                 <div class="ec-cart-title">
                     <span class="cart_title">My Cart</span>
-                    <button class="ec-close">x</button>
+                    <button class="ec-close">×</button>
                 </div>
                 <ul class="eccart-pro-items">
                     <li>
@@ -60,7 +70,7 @@
                             <div class="qty-plus-minus">
                                 <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
                             </div>
-                            <a href="javascript:void(0)" class="remove">x</a>
+                            <a href="javascript:void(0)" class="remove">×</a>
                         </div>
                     </li>
                     <li>
@@ -72,7 +82,7 @@
                             <div class="qty-plus-minus">
                                 <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
                             </div>
-                            <a href="javascript:void(0)" class="remove">x</a>
+                            <a href="javascript:void(0)" class="remove">×</a>
                         </div>
                     </li>
                     <li>
@@ -84,7 +94,7 @@
                             <div class="qty-plus-minus">
                                 <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
                             </div>
-                            <a href="javascript:void(0)" class="remove">x</a>
+                            <a href="javascript:void(0)" class="remove">×</a>
                         </div>
                     </li>
                 </ul>
@@ -116,6 +126,30 @@
         </div>
     </div>
     <!-- ekka Cart End -->
+
+    <!-- Ec breadcrumb start -->
+    <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row ec_breadcrumb_inner">
+                        <div class="col-md-6 col-sm-12">
+                            <h2 class="ec-breadcrumb-title">Single Products</h2>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <!-- ec-breadcrumb-list start -->
+                            <ul class="ec-breadcrumb-list">
+                                <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="ec-breadcrumb-item active">Products</li>
+                            </ul>
+                            <!-- ec-breadcrumb-list end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ec breadcrumb end -->
 
     <!-- Sart Single product -->
     <section class="ec-page-content section-space-p">
@@ -189,8 +223,7 @@
                                             <span class="ec-read-review"><a href="#ec-spt-nav-review">Be the first to
                                                     review this product</a></span>
                                         </div>
-                                        <div class="ec-single-desc">Lorem Ipsum is simply dummy text of the printing
-                                            and
+                                        <div class="ec-single-desc">Lorem Ipsum is simply dummy text of the printing and
                                             typesetting industry. Lorem Ipsum has been the industry's standard dummy
                                             text ever since the 1990</div>
 
@@ -249,8 +282,7 @@
                                         </div>
                                         <div class="ec-single-qty">
                                             <div class="qty-plus-minus">
-                                                <input class="qty-input" type="text" name="ec_qtybtn"
-                                                    value="1" />
+                                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
                                             </div>
                                             <div class="ec-single-cart ">
                                                 <button class="btn btn-primary">Add To Cart</button>
@@ -261,11 +293,11 @@
                                                         alt="" /></a>
                                             </div>
                                             <div class="ec-single-quickview">
-                                                <a href="#" class="ec-btn-group quickview"
-                                                    data-link-action="quickview" title="Quick view"
-                                                    data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg"
-                                                        class="svg_img pro_svg" alt="" /></a>
+                                                <a href="#" class="ec-btn-group quickview" data-link-action="quickview"
+                                                    title="Quick view" data-bs-toggle="modal"
+                                                    data-bs-target="#ec_quickview_modal"><img
+                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a>
                                             </div>
                                         </div>
                                         <div class="ec-single-social">
@@ -415,7 +447,8 @@
                                                             required />
                                                     </div>
                                                     <div class="ec-ratting-input form-submit">
-                                                        <textarea name="your-commemt" placeholder="Enter Your Comment"></textarea>
+                                                        <textarea name="your-commemt"
+                                                            placeholder="Enter Your Comment"></textarea>
                                                         <button class="btn btn-primary" type="submit"
                                                             value="Submit">Submit</button>
                                                     </div>
@@ -443,23 +476,19 @@
                                         <div class="ec-sidebar-block-item">clothes</div>
                                         <ul style="display: block;">
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Men
-                                                        <span>-25</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Men <span>-25</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Women
-                                                        <span>-52</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Women <span>-52</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Boy
-                                                        <span>-40</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Boy <span>-40</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Girl
-                                                        <span>-35</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Girl <span>-35</span></a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -472,23 +501,19 @@
                                         <div class="ec-sidebar-block-item">shoes</div>
                                         <ul>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Men
-                                                        <span>-25</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Men <span>-25</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Women
-                                                        <span>-52</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Women <span>-52</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Boy
-                                                        <span>-40</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Boy <span>-40</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Girl
-                                                        <span>-35</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Girl <span>-35</span></a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -501,23 +526,19 @@
                                         <div class="ec-sidebar-block-item">bag</div>
                                         <ul>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Men
-                                                        <span>-25</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Men <span>-25</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Women
-                                                        <span>-52</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Women <span>-52</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Boy
-                                                        <span>-40</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Boy <span>-40</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Girl
-                                                        <span>-35</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Girl <span>-35</span></a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -530,23 +551,19 @@
                                         <div class="ec-sidebar-block-item">cosmetics</div>
                                         <ul>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Men
-                                                        <span>-25</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Men <span>-25</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Women
-                                                        <span>-52</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Women <span>-52</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Boy
-                                                        <span>-40</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Boy <span>-40</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Girl
-                                                        <span>-35</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Girl <span>-35</span></a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -559,23 +576,19 @@
                                         <div class="ec-sidebar-block-item">electronics</div>
                                         <ul>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Men
-                                                        <span>-25</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Men <span>-25</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Women
-                                                        <span>-52</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Women <span>-52</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Boy
-                                                        <span>-40</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Boy <span>-40</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Girl
-                                                        <span>-35</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Girl <span>-35</span></a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -588,23 +601,19 @@
                                         <div class="ec-sidebar-block-item">phone</div>
                                         <ul>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Men
-                                                        <span>-25</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Men <span>-25</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Women
-                                                        <span>-52</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Women <span>-52</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Boy
-                                                        <span>-40</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Boy <span>-40</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Girl
-                                                        <span>-35</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Girl <span>-35</span></a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -617,23 +626,19 @@
                                         <div class="ec-sidebar-block-item">accessories</div>
                                         <ul>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Men
-                                                        <span>-25</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Men <span>-25</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Women
-                                                        <span>-52</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Women <span>-52</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Boy
-                                                        <span>-40</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Boy <span>-40</span></a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="ec-sidebar-sub-item"><a href="#">Girl
-                                                        <span>-35</span></a>
+                                                <div class="ec-sidebar-sub-item"><a href="#">Girl <span>-35</span></a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -651,8 +656,7 @@
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
                                             src="assets/images/product-image/1_1.jpg" alt="product" /></a>
                                     <div class="ec-pro-content">
-                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Beautiful Teddy
-                                                Bear</a></h5>
+                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Beautiful Teddy Bear</a></h5>
                                         <div class="ec-pro-rating">
                                             <i class="ecicon eci-star fill"></i>
                                             <i class="ecicon eci-star fill"></i>
@@ -672,8 +676,7 @@
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
                                             src="assets/images/product-image/2_1.jpg" alt="product" /></a>
                                     <div class="ec-pro-content">
-                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Gym Backpack</a>
-                                        </h5>
+                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Gym Backpack</a></h5>
                                         <div class="ec-pro-rating">
                                             <i class="ecicon eci-star fill"></i>
                                             <i class="ecicon eci-star fill"></i>
@@ -693,8 +696,7 @@
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
                                             src="assets/images/product-image/3_1.jpg" alt="product" /></a>
                                     <div class="ec-pro-content">
-                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Beautiful Purse
-                                                for Women</a></h5>
+                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Beautiful Purse for Women</a></h5>
                                         <div class="ec-pro-rating">
                                             <i class="ecicon eci-star fill"></i>
                                             <i class="ecicon eci-star fill"></i>
@@ -714,8 +716,7 @@
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
                                             src="assets/images/product-image/4_1.jpg" alt="product" /></a>
                                     <div class="ec-pro-content">
-                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Wool Felt Long
-                                                Brim Hat</a></h5>
+                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Wool Felt Long Brim Hat</a></h5>
                                         <div class="ec-pro-rating">
                                             <i class="ecicon eci-star fill"></i>
                                             <i class="ecicon eci-star fill"></i>
@@ -735,8 +736,7 @@
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
                                             src="assets/images/product-image/5_1.jpg" alt="product" /></a>
                                     <div class="ec-pro-content">
-                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Black Leather
-                                                Belt</a></h5>
+                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Black Leather Belt</a></h5>
                                         <div class="ec-pro-rating">
                                             <i class="ecicon eci-star fill"></i>
                                             <i class="ecicon eci-star fill"></i>
@@ -756,8 +756,7 @@
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
                                             src="assets/images/product-image/6_2.jpg" alt="product" /></a>
                                     <div class="ec-pro-content">
-                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Beautiful Tee for
-                                                Women</a></h5>
+                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Beautiful Tee for Women</a></h5>
                                         <div class="ec-pro-rating">
                                             <i class="ecicon eci-star fill"></i>
                                             <i class="ecicon eci-star fill"></i>
@@ -777,8 +776,7 @@
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
                                             src="assets/images/product-image/7_1.jpg" alt="product" /></a>
                                     <div class="ec-pro-content">
-                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cotton Shirt for
-                                                Men</a></h5>
+                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cotton Shirt for Men</a></h5>
                                         <div class="ec-pro-rating">
                                             <i class="ecicon eci-star fill"></i>
                                             <i class="ecicon eci-star fill"></i>
@@ -798,8 +796,7 @@
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
                                             src="assets/images/product-image/8_2.jpg" alt="product" /></a>
                                     <div class="ec-pro-content">
-                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">I Watch for
-                                                Men</a></h5>
+                                        <h5 class="ec-pro-title"><a href="product-left-sidebar.html">I Watch for Men</a></h5>
                                         <div class="ec-pro-rating">
                                             <i class="ecicon eci-star fill"></i>
                                             <i class="ecicon eci-star fill"></i>
@@ -842,26 +839,27 @@
                         <div class="ec-pro-image-outer">
                             <div class="ec-pro-image">
                                 <a href="product-left-sidebar.html" class="image">
-                                    <img class="main-image" src="assets/images/product-image/6_1.jpg"
-                                        alt="Product" />
-                                    <img class="hover-image" src="assets/images/product-image/6_2.jpg"
-                                        alt="Product" />
+                                    <img class="main-image"
+                                        src="assets/images/product-image/6_1.jpg" alt="Product" />
+                                    <img class="hover-image"
+                                        src="assets/images/product-image/6_2.jpg" alt="Product" />
                                 </a>
                                 <span class="percentage">20%</span>
-                                <a href="#" class="quickview" data-link-action="quickview" title="Quick view"
-                                    data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><img
+                                <a href="#" class="quickview" data-link-action="quickview"
+                                    title="Quick view" data-bs-toggle="modal"
+                                    data-bs-target="#ec_quickview_modal"><img
                                         src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
                                         alt="" /></a>
                                 <div class="ec-pro-actions">
-                                    <a href="compare.html" class="ec-btn-group compare" title="Compare"><img
-                                            src="assets/images/icons/compare.svg" class="svg_img pro_svg"
-                                            alt="" /></a>
+                                    <a href="compare.html" class="ec-btn-group compare"
+                                        title="Compare"><img src="assets/images/icons/compare.svg"
+                                            class="svg_img pro_svg" alt="" /></a>
                                     <button title="Add To Cart" class=" add-to-cart"><img
                                             src="assets/images/icons/cart.svg" class="svg_img pro_svg"
                                             alt="" /> Add To Cart</button>
                                     <a class="ec-btn-group wishlist" title="Wishlist"><img
-                                            src="assets/images/icons/wishlist.svg" class="svg_img pro_svg"
-                                            alt="" /></a>
+                                            src="assets/images/icons/wishlist.svg"
+                                            class="svg_img pro_svg" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -874,9 +872,7 @@
                                 <i class="ecicon eci-star fill"></i>
                                 <i class="ecicon eci-star"></i>
                             </div>
-                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an
-                                unknown printer took a galley.</div>
+                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                             <span class="ec-price">
                                 <span class="old-price">$27.00</span>
                                 <span class="new-price">$22.00</span>
@@ -900,12 +896,13 @@
                                 <div class="ec-pro-size">
                                     <span class="ec-pro-opt-label">Size</span>
                                     <ul class="ec-opt-size">
-                                        <li class="active"><a href="#" class="ec-opt-sz" data-old="$25.00"
-                                                data-new="$20.00" data-tooltip="Small">S</a></li>
-                                        <li><a href="#" class="ec-opt-sz" data-old="$27.00" data-new="$22.00"
-                                                data-tooltip="Medium">M</a></li>
-                                        <li><a href="#" class="ec-opt-sz" data-old="$35.00" data-new="$30.00"
-                                                data-tooltip="Extra Large">XL</a></li>
+                                        <li class="active"><a href="#" class="ec-opt-sz"
+                                                data-old="$25.00" data-new="$20.00"
+                                                data-tooltip="Small">S</a></li>
+                                        <li><a href="#" class="ec-opt-sz" data-old="$27.00"
+                                                data-new="$22.00" data-tooltip="Medium">M</a></li>
+                                        <li><a href="#" class="ec-opt-sz" data-old="$35.00"
+                                                data-new="$30.00" data-tooltip="Extra Large">XL</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -917,29 +914,30 @@
                         <div class="ec-pro-image-outer">
                             <div class="ec-pro-image">
                                 <a href="product-left-sidebar.html" class="image">
-                                    <img class="main-image" src="assets/images/product-image/7_1.jpg"
-                                        alt="Product" />
-                                    <img class="hover-image" src="assets/images/product-image/7_2.jpg"
-                                        alt="Product" />
+                                    <img class="main-image"
+                                        src="assets/images/product-image/7_1.jpg" alt="Product" />
+                                    <img class="hover-image"
+                                        src="assets/images/product-image/7_2.jpg" alt="Product" />
                                 </a>
                                 <span class="percentage">20%</span>
                                 <span class="flags">
                                     <span class="sale">Sale</span>
                                 </span>
-                                <a href="#" class="quickview" data-link-action="quickview" title="Quick view"
-                                    data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><img
+                                <a href="#" class="quickview" data-link-action="quickview"
+                                    title="Quick view" data-bs-toggle="modal"
+                                    data-bs-target="#ec_quickview_modal"><img
                                         src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
                                         alt="" /></a>
                                 <div class="ec-pro-actions">
-                                    <a href="compare.html" class="ec-btn-group compare" title="Compare"><img
-                                            src="assets/images/icons/compare.svg" class="svg_img pro_svg"
-                                            alt="" /></a>
+                                    <a href="compare.html" class="ec-btn-group compare"
+                                        title="Compare"><img src="assets/images/icons/compare.svg"
+                                            class="svg_img pro_svg" alt="" /></a>
                                     <button title="Add To Cart" class=" add-to-cart"><img
                                             src="assets/images/icons/cart.svg" class="svg_img pro_svg"
                                             alt="" /> Add To Cart</button>
                                     <a class="ec-btn-group wishlist" title="Wishlist"><img
-                                            src="assets/images/icons/wishlist.svg" class="svg_img pro_svg"
-                                            alt="" /></a>
+                                            src="assets/images/icons/wishlist.svg"
+                                            class="svg_img pro_svg" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -952,9 +950,7 @@
                                 <i class="ecicon eci-star fill"></i>
                                 <i class="ecicon eci-star"></i>
                             </div>
-                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an
-                                unknown printer took a galley.</div>
+                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                             <span class="ec-price">
                                 <span class="old-price">$12.00</span>
                                 <span class="new-price">$10.00</span>
@@ -978,12 +974,13 @@
                                 <div class="ec-pro-size">
                                     <span class="ec-pro-opt-label">Size</span>
                                     <ul class="ec-opt-size">
-                                        <li class="active"><a href="#" class="ec-opt-sz" data-old="$12.00"
-                                                data-new="$10.00" data-tooltip="Small">S</a></li>
-                                        <li><a href="#" class="ec-opt-sz" data-old="$15.00" data-new="$12.00"
-                                                data-tooltip="Medium">M</a></li>
-                                        <li><a href="#" class="ec-opt-sz" data-old="$20.00" data-new="$17.00"
-                                                data-tooltip="Extra Large">XL</a></li>
+                                        <li class="active"><a href="#" class="ec-opt-sz"
+                                                data-old="$12.00" data-new="$10.00"
+                                                data-tooltip="Small">S</a></li>
+                                        <li><a href="#" class="ec-opt-sz" data-old="$15.00"
+                                                data-new="$12.00" data-tooltip="Medium">M</a></li>
+                                        <li><a href="#" class="ec-opt-sz" data-old="$20.00"
+                                                data-new="$17.00" data-tooltip="Extra Large">XL</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -995,29 +992,30 @@
                         <div class="ec-pro-image-outer">
                             <div class="ec-pro-image">
                                 <a href="product-left-sidebar.html" class="image">
-                                    <img class="main-image" src="assets/images/product-image/1_1.jpg"
-                                        alt="Product" />
-                                    <img class="hover-image" src="assets/images/product-image/1_2.jpg"
-                                        alt="Product" />
+                                    <img class="main-image"
+                                        src="assets/images/product-image/1_1.jpg" alt="Product" />
+                                    <img class="hover-image"
+                                        src="assets/images/product-image/1_2.jpg" alt="Product" />
                                 </a>
                                 <span class="percentage">20%</span>
                                 <span class="flags">
                                     <span class="sale">Sale</span>
                                 </span>
-                                <a href="#" class="quickview" data-link-action="quickview" title="Quick view"
-                                    data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><img
+                                <a href="#" class="quickview" data-link-action="quickview"
+                                    title="Quick view" data-bs-toggle="modal"
+                                    data-bs-target="#ec_quickview_modal"><img
                                         src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
                                         alt="" /></a>
                                 <div class="ec-pro-actions">
-                                    <a href="compare.html" class="ec-btn-group compare" title="Compare"><img
-                                            src="assets/images/icons/compare.svg" class="svg_img pro_svg"
-                                            alt="" /></a>
+                                    <a href="compare.html" class="ec-btn-group compare"
+                                        title="Compare"><img src="assets/images/icons/compare.svg"
+                                            class="svg_img pro_svg" alt="" /></a>
                                     <button title="Add To Cart" class=" add-to-cart"><img
                                             src="assets/images/icons/cart.svg" class="svg_img pro_svg"
                                             alt="" /> Add To Cart</button>
                                     <a class="ec-btn-group wishlist" title="Wishlist"><img
-                                            src="assets/images/icons/wishlist.svg" class="svg_img pro_svg"
-                                            alt="" /></a>
+                                            src="assets/images/icons/wishlist.svg"
+                                            class="svg_img pro_svg" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -1030,9 +1028,7 @@
                                 <i class="ecicon eci-star fill"></i>
                                 <i class="ecicon eci-star"></i>
                             </div>
-                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an
-                                unknown printer took a galley.</div>
+                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                             <span class="ec-price">
                                 <span class="old-price">$40.00</span>
                                 <span class="new-price">$30.00</span>
@@ -1066,10 +1062,11 @@
                                 <div class="ec-pro-size">
                                     <span class="ec-pro-opt-label">Size</span>
                                     <ul class="ec-opt-size">
-                                        <li class="active"><a href="#" class="ec-opt-sz" data-old="$40.00"
-                                                data-new="$30.00" data-tooltip="Small">S</a></li>
-                                        <li><a href="#" class="ec-opt-sz" data-old="$50.00" data-new="$40.00"
-                                                data-tooltip="Medium">M</a></li>
+                                        <li class="active"><a href="#" class="ec-opt-sz"
+                                                data-old="$40.00" data-new="$30.00"
+                                                data-tooltip="Small">S</a></li>
+                                        <li><a href="#" class="ec-opt-sz" data-old="$50.00"
+                                                data-new="$40.00" data-tooltip="Medium">M</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1081,29 +1078,30 @@
                         <div class="ec-pro-image-outer">
                             <div class="ec-pro-image">
                                 <a href="product-left-sidebar.html" class="image">
-                                    <img class="main-image" src="assets/images/product-image/2_1.jpg"
-                                        alt="Product" />
-                                    <img class="hover-image" src="assets/images/product-image/2_2.jpg"
-                                        alt="Product" />
+                                    <img class="main-image"
+                                        src="assets/images/product-image/2_1.jpg" alt="Product" />
+                                    <img class="hover-image"
+                                        src="assets/images/product-image/2_2.jpg" alt="Product" />
                                 </a>
                                 <span class="percentage">20%</span>
                                 <span class="flags">
                                     <span class="new">New</span>
                                 </span>
-                                <a href="#" class="quickview" data-link-action="quickview" title="Quick view"
-                                    data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><img
+                                <a href="#" class="quickview" data-link-action="quickview"
+                                    title="Quick view" data-bs-toggle="modal"
+                                    data-bs-target="#ec_quickview_modal"><img
                                         src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
                                         alt="" /></a>
                                 <div class="ec-pro-actions">
-                                    <a href="compare.html" class="ec-btn-group compare" title="Compare"><img
-                                            src="assets/images/icons/compare.svg" class="svg_img pro_svg"
-                                            alt="" /></a>
+                                    <a href="compare.html" class="ec-btn-group compare"
+                                        title="Compare"><img src="assets/images/icons/compare.svg"
+                                            class="svg_img pro_svg" alt="" /></a>
                                     <button title="Add To Cart" class=" add-to-cart"><img
                                             src="assets/images/icons/cart.svg" class="svg_img pro_svg"
                                             alt="" /> Add To Cart</button>
                                     <a class="ec-btn-group wishlist" title="Wishlist"><img
-                                            src="assets/images/icons/wishlist.svg" class="svg_img pro_svg"
-                                            alt="" /></a>
+                                            src="assets/images/icons/wishlist.svg"
+                                            class="svg_img pro_svg" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -1116,9 +1114,7 @@
                                 <i class="ecicon eci-star fill"></i>
                                 <i class="ecicon eci-star"></i>
                             </div>
-                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an
-                                unknown printer took a galley.</div>
+                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
                             <span class="ec-price">
                                 <span class="old-price">$50.00</span>
                                 <span class="new-price">$40.00</span>
@@ -1141,71 +1137,59 @@
             </div>
         </div>
     </section>
+    <!-- Related Product end -->
+
     <!-- Footer Start -->
-
     @include('layouts.Footer')
-
     <!-- Footer Area End -->
 
     <!-- Modal -->
     <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-xs-12">
                             <!-- Swiper -->
                             <div class="qty-product-cover">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
                                 </div>
                             </div>
                             <div class="qty-nav-thumb">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-7 col-sm-12 col-xs-12">
                             <div class="quickview-pro-content">
-                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse
-                                        for women</a>
+                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse for women</a>
                                 </h5>
                                 <div class="ec-quickview-rating">
                                     <i class="ecicon eci-star fill"></i>
@@ -1228,11 +1212,10 @@
                                         <span>Color</span>
                                         <div class="ec-pro-color">
                                             <ul class="ec-opt-swatch">
-                                                <li><span style="background-color:#ebbf60;"></span></li>
-                                                <li><span style="background-color:#75e3ff;"></span></li>
-                                                <li><span style="background-color:#11f7d8;"></span></li>
-                                                <li><span style="background-color:#acff7c;"></span></li>
-                                                <li><span style="background-color:#e996fa;"></span></li>
+                                                <li><span style="background-color:#696d62;"></span></li>
+                                                <li><span style="background-color:#d73808;"></span></li>
+                                                <li><span style="background-color:#577023;"></span></li>
+                                                <li><span style="background-color:#2ea1cd;"></span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1242,12 +1225,9 @@
                                             <ul class="ec-opt-size">
                                                 <li class="active"><a href="#" class="ec-opt-sz"
                                                         data-tooltip="Small">S</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a>
-                                                </li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a>
-                                                </li>
-                                                <li><a href="#" class="ec-opt-sz"
-                                                        data-tooltip="Extra Large">XL</a></li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a></li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a></li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Extra Large">XL</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1270,19 +1250,17 @@
     </div>
     <!-- Modal end -->
 
-
-
     <!-- Footer navigation panel for responsive display -->
     <div class="ec-nav-toolbar">
         <div class="container">
             <div class="ec-nav-panel">
                 <div class="ec-nav-panel-icons">
                     <a href="#ec-mobile-menu" class="navbar-toggler-btn ec-header-btn ec-side-toggle"><img
-                            src="assets/images/icons/menu.svg" class="svg_img header_svg" alt="icon" /></a>
+                            src="assets/images/icons/menu.svg" class="svg_img header_svg" alt="" /></a>
                 </div>
                 <div class="ec-nav-panel-icons">
                     <a href="#ec-side-cart" class="toggle-cart ec-header-btn ec-side-toggle"><img
-                            src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="icon" /><span
+                            src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /><span
                             class="ec-cart-noti ec-header-count cart-count-lable">3</span></a>
                 </div>
                 <div class="ec-nav-panel-icons">
@@ -1318,9 +1296,7 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg"
-                    alt="cart" />
-            </div>
+            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -1442,7 +1418,7 @@
         <div class="ec-right-bottom">
             <div class="ec-box">
                 <div class="ec-button rotateBackward">
-                    <img class="whatsapp" src="assets/images/common/whatsapp.png" alt="whatsapp icon">
+                    <img class="whatsapp" src="assets/images/common/whatsapp.png" alt="whatsapp icon" />
                 </div>
             </div>
         </div>
@@ -1457,7 +1433,7 @@
             <h3>Features</h3>
         </div>
         <a href="#" class="ec-tools-sidebar-toggle in-out">
-            <img alt="icon" src="assets/images/common/settings.png">
+            <img alt="icon" src="assets/images/common/settings.png" />
         </a>
         <div class="ec-tools-detail">
             <div class="ec-tools-sidebar-content ec-change-color ec-color-desc">
@@ -1523,9 +1499,7 @@
     </div>
     <!-- Feature tools end -->
 
-
-    <!-- Script -->
-
+    <!-- Vendor JS -->
     <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
     <script src="assets/js/vendor/popper.min.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>
@@ -1545,16 +1519,12 @@
     <script src="assets/js/vendor/google-translate.js"></script>
     <script>
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en'
-            }, 'google_translate_element');
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
         }
     </script>
     <!-- Main Js -->
     <script src="assets/js/vendor/index.js"></script>
     <script src="assets/js/main.js"></script>
-    @include('layouts.script')
 
-    <!-- End Script
- </body>
- </html>
+</body>
+</html>
