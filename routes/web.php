@@ -3,8 +3,7 @@
 use App\Http\Controllers\Landing\KategoriController as LandingKategoriController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\Landing\BlogController as LandingBlogController;
-use App\Http\Controllers\Landing\Logincontroller;
-use App\Http\Controllers\Landing\PromoController;
+use App\Http\Controllers\Landing\PromoController as LandingPromoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 
@@ -38,7 +37,7 @@ Route::get('/blog', [LandingBlogController::class, 'blog']);
 Route::get('/detailblog', [LandingBlogController::class, 'detailblog']);
 
 // promo
-Route::get('/promo', [PromoController::class, 'promo']);
+Route::get('/promo', [LandingPromoController::class, 'promo']);
 
 
 Route::get('/test', function () {

@@ -182,7 +182,7 @@
                 <div class="col-md-12 align-self-center">
                     <div class="ec-main-menu">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="/kategori">Categories</a></li>
                             <li class="dropdown"><a href="javascript:void(0)">Products</a>
                                 <ul class="sub-menu">
