@@ -83,12 +83,12 @@
                                                         src="assets/images/product-image/6_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
-                                                <a href="/detail" class="quickview"><img
+                                                {{-- <a href="/detail" class="quickview"><img
                                                         src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
+                                                        alt="" /></a> --}}
                                                 <div class="ec-pro-actions">
-                                                    <a href="compare.html" class="ec-btn-group compare"
-                                                        title="Compare"><img src="assets/images/icons/compare.svg"
+                                                    <a href="/detail" class="ec-btn-group compare"
+                                                        title="Compare"><img src="assets/images/icons/quickview.svg"
                                                             class="svg_img pro_svg" alt="" /></a>
                                                     <button title="Add To Cart" class=" add-to-cart"><img
                                                             src="assets/images/icons/cart.svg" class="svg_img pro_svg"
@@ -120,7 +120,7 @@
                                                         <li class="active"><a href="#" class="ec-opt-clr-img"
                                                                 data-src="assets/images/product-image/6_1.jpg"
                                                                 data-src-hover="assets/images/product-image/6_1.jpg"
-                                                                data-tooltip="Gray"><span
+                                                                data-tooltip="Orange"><span
                                                                     style="background-color:#e8c2ff;"></span></a></li>
                                                         <li><a href="#" class="ec-opt-clr-img"
                                                                 data-src="assets/images/product-image/6_2.jpg"
