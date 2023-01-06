@@ -6,7 +6,11 @@ use App\Http\Controllers\Landing\LandingpageController;
 use App\Http\Controllers\Landing\BlogController as LandingBlogController;
 use App\Http\Controllers\Landing\PromoController as LandingPromoController;
 use App\Http\Controllers\Landing\ProdukController as LandingProdukController;
+<<<<<<< HEAD
 use App\Http\Controllers\Landing\Userprofilecontroller as LandingUserprofilecontroller;
+=======
+use App\Http\Controllers\Landing\TrackorderController as LandingTrackorderController;
+>>>>>>> 44599fe3711d269831ad91edea261ab32145630b
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +57,12 @@ Route::get('/', [LandingpageController::class, 'home'])->name('home');
 
 //Kategori
 Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('index.kategori');
+<<<<<<< HEAD
 //user profile
 Route::get('/user-profile',[LandingUserprofilecontroller::class,'index'])->name('user-profle');
+=======
+
+//Trackorder
+Route::get('/trackorder', [LandingTrackorderController::class, 'indextrack'])->name('trackorder');
+>>>>>>> 44599fe3711d269831ad91edea261ab32145630b
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
