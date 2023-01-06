@@ -3778,7 +3778,7 @@
     <!--services Section End -->
 
     <!--  offer Section Start -->
-    <section class="section ec-offer-section section-space-p section-space-m">
+    {{-- <section class="section ec-offer-section section-space-p section-space-m">
         <h2 class="d-none">Offer</h2>
         <div class="container">
             <div class="row justify-content-end">
@@ -3794,7 +3794,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- offer Section End -->
 
     <!-- New Product Start -->
