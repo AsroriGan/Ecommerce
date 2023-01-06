@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\Landing\KategoriController as LandingKategoriController;
+use App\Http\Controllers\Landing\Logincontroller as LandingLogincontroller;
+use App\Http\Controllers\Landing\LandingpageController;
+use App\Http\Controllers\Landing\BlogController as LandingBlogController;
+use App\Http\Controllers\Landing\PromoController as LandingPromoController;
+use App\Http\Controllers\Landing\ProdukController as LandingProdukController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +18,38 @@ use App\Http\Controllers\ProdukController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/////////////////////////// START ROUTE LANDING PAGE /////////////////////
 
-Route::get('/', function () {
-    return view('index');
+//login
+Route::get('/login', [LandingLogincontroller::class, 'login'])->name('login');
+
+//register
+Route::get('/register', [LandingLogincontroller::class, 'register'])->name('register');
+
+// berandah admin
+Route::get('/beranda', function () {
+    return view('dashboardadmin.beranda');
 });
-
 
 //pruduk
-Route::get('/product', function () {
-    return view('produk.produk');
+Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
+Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
+
+// Blog
+Route::get('/blog', [LandingBlogController::class, 'blog']);
+Route::get('/detailblog', [LandingBlogController::class, 'detailblog']);
+
+// promo
+Route::get('/promo', [LandingPromoController::class, 'promo']);
+
+
+Route::get('/test', function () {
+    return view('landingpage.testsofyan');
 });
-Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
+
+Route::get('/', [LandingpageController::class, 'home']);
+
+//Kategori
+Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('index.kategori');
+
+/////////////////////////// END ROUTE LANDING PAGE /////////////////////
