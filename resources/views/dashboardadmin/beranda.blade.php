@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    @include('dashboardadmin.head')
+    @include('layoutsadmin.head')
 </head>
 
 <body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme">
 
     <div class="main-wrapper">
 
-       @include('dashboardadmin.navbar')
+       @include('layoutsadmin.navbar')
 
 
-        @include('dashboardadmin.sidebar')
+        @include('layoutsadmin.sidebar')
 
 
         <div class="page-wrapper">
@@ -732,7 +732,7 @@
 
     </div>
 
-    @include('dashboardadmin.script')
+    @include('layoutsadmin.script')
 </body>
 
 </html>

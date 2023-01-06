@@ -1,8 +1,16 @@
 <?php
 
+use App\Http\Controllers\Landing\KategoriController as LandingKategoriController;
 use App\Http\Controllers\LandingpageController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\KategoriController;
+<<<<<<< HEAD
+use App\Http\Controllers\Admin\BlogController as AdminBlogController;
+use App\Http\Controllers\Landing\KategoriController;
+use App\Http\Controllers\Landing\Logincontroller;
+use App\Http\Controllers\Landing\p;
+=======
+use App\Http\Controllers\Landing\BlogController as LandingBlogController;
+use App\Http\Controllers\Landing\PromoController as LandingPromoController;
+>>>>>>> 102de75b4dd962d30ec4b52c0c20097a454bec48
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 
@@ -16,24 +24,34 @@ use App\Http\Controllers\ProdukController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/////////////////////////// START ROUTE LANDING PAGE /////////////////////
+//login
+Route::get('/login',[Logincontroller::class,'login'])->name('login');
+//register
+Route::get('/register',[Logincontroller::class,'register'])->name('register');
 
+// berandah admin
 Route::get('/beranda', function () {
-    return view('template.beranda');
+    return view('dashboardadmin.beranda');
 });
 
 //pruduk
-Route::get('/product', function () {return view('produk.produk');});
 Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
 Route::get('/detail',[ProdukController::class,'detail'])->name('detail');
-// Blog
-Route::get('/blog', [BlogController::class, 'blog']);
 
-Route::get('/product', function () {
-    return view('produk.produk');
+// Blog
+Route::get('/blog', [LandingBlogController::class, 'blog']);
+Route::get('/detailblog', [LandingBlogController::class, 'detailblog']);
+
+// promo
+Route::get('/promo', [LandingPromoController::class, 'promo']);
+
+
+Route::get('/test', function () {
+    return view('landingpage.testsofyan');
 });
 
 Route::get('/', [LandingpageController::class, 'home']);
-
-
 //Kategori
-Route::get('/kategori',[KategoriController::class,'index'])->name('index.kategori');
+Route::get('/kategori',[LandingKategoriController::class,'index'])->name('index.kategori');
+/////////////////////////// END ROUTE LANDING PAGE /////////////////////
