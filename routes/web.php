@@ -2,15 +2,9 @@
 
 use App\Http\Controllers\Landing\KategoriController as LandingKategoriController;
 use App\Http\Controllers\LandingpageController;
-<<<<<<< HEAD
-use App\Http\Controllers\Admin\BlogController as AdminBlogController;
-use App\Http\Controllers\Landing\KategoriController;
 use App\Http\Controllers\Landing\Logincontroller;
-use App\Http\Controllers\Landing\p;
-=======
 use App\Http\Controllers\Landing\BlogController as LandingBlogController;
 use App\Http\Controllers\Landing\PromoController as LandingPromoController;
->>>>>>> 102de75b4dd962d30ec4b52c0c20097a454bec48
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 
@@ -26,9 +20,9 @@ use App\Http\Controllers\ProdukController;
 */
 /////////////////////////// START ROUTE LANDING PAGE /////////////////////
 //login
-Route::get('/login',[Logincontroller::class,'login'])->name('login');
+Route::get('/login', [Logincontroller::class, 'login'])->name('login');
 //register
-Route::get('/register',[Logincontroller::class,'register'])->name('register');
+Route::get('/register', [Logincontroller::class, 'register'])->name('register');
 
 // berandah admin
 Route::get('/beranda', function () {
@@ -36,8 +30,8 @@ Route::get('/beranda', function () {
 });
 
 //pruduk
-Route::get('/produk',[ProdukController::class,'produk'])->name('produk');
-Route::get('/detail',[ProdukController::class,'detail'])->name('detail');
+Route::get('/produk', [ProdukController::class, 'produk'])->name('produk');
+Route::get('/detail', [ProdukController::class, 'detail'])->name('detail');
 
 // Blog
 Route::get('/blog', [LandingBlogController::class, 'blog']);
@@ -53,5 +47,5 @@ Route::get('/test', function () {
 
 Route::get('/', [LandingpageController::class, 'home']);
 //Kategori
-Route::get('/kategori',[LandingKategoriController::class,'index'])->name('index.kategori');
+Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('index.kategori');
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
