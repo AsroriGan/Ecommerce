@@ -2,15 +2,9 @@
 
 use App\Http\Controllers\Landing\KategoriController as LandingKategoriController;
 use App\Http\Controllers\LandingpageController;
-<<<<<<< HEAD
-use App\Http\Controllers\Admin\BlogController as AdminBlogController;
-use App\Http\Controllers\Landing\KategoriController;
-use App\Http\Controllers\Landing\Logincontroller;
-use App\Http\Controllers\Landing\p;
-=======
 use App\Http\Controllers\Landing\BlogController as LandingBlogController;
-use App\Http\Controllers\Landing\PromoController as LandingPromoController;
->>>>>>> 102de75b4dd962d30ec4b52c0c20097a454bec48
+use App\Http\Controllers\Landing\Logincontroller;
+use App\Http\Controllers\Landing\PromoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 
@@ -44,7 +38,7 @@ Route::get('/blog', [LandingBlogController::class, 'blog']);
 Route::get('/detailblog', [LandingBlogController::class, 'detailblog']);
 
 // promo
-Route::get('/promo', [LandingPromoController::class, 'promo']);
+Route::get('/promo', [PromoController::class, 'promo']);
 
 
 Route::get('/test', function () {
