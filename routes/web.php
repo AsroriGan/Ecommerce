@@ -34,6 +34,7 @@ Route::get('/beranda', function () {
 //pruduk
 Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
 Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
+Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
 
 // Blog
 Route::get('/blog', [LandingBlogController::class, 'blog']);
