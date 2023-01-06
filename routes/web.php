@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\Landing\KategoriController as LandingKategoriController;
 use App\Http\Controllers\LandingpageController;
+<<<<<<< HEAD
 use App\Http\Controllers\Landing\Logincontroller;
+=======
+>>>>>>> 642e8340de81f0ec360d14972598b8c02cf34f1d
 use App\Http\Controllers\Landing\BlogController as LandingBlogController;
 use App\Http\Controllers\Landing\PromoController as LandingPromoController;
 use Illuminate\Support\Facades\Route;
