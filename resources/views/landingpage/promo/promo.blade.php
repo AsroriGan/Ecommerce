@@ -1,4 +1,4 @@
-<!--========================================================= 
+<!--=========================================================
     Item Name: Ekka - Ecommerce HTML Template.
     Author: ashishmaraviya
     Version: 3.3
@@ -7,47 +7,12 @@
  ============================================================-->
  <!DOCTYPE html>
  <html lang="en">
- 
- <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-     
-     <title>Ekka - Ecommerce HTML Template.</title>
-     <meta name="keywords" content="apparel, catalog, clean, ecommerce, ecommerce HTML, electronics, fashion, html eCommerce, html store, minimal, multipurpose, multipurpose ecommerce, online store, responsive ecommerce template, shops" />
-     <meta name="description" content="Best ecommerce html template for single and multi vendor store.">
-     <meta name="author" content="ashishmaraviya">
-     
-    <!-- site Favicon -->
-    <link rel="icon" href="assets/images/favicon/favicon.png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="assets/images/favicon/favicon.png" />
-    <meta name="msapplication-TileImage" content="assets/images/favicon/favicon.png" />
-
-    <!-- css Icon Font -->
-    <link rel="stylesheet" href="assets/css/vendor/ecicons.min.css" />
-
-    <!-- css All Plugins Files -->
-    <link rel="stylesheet" href="assets/css/plugins/animate.css" />
-    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/countdownTimer.css" />
-    <link rel="stylesheet" href="assets/css/plugins/slick.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/nouislider.css" />
-    <link rel="stylesheet" href="assets/css/plugins/bootstrap.css" />
-
-    <!-- Main Style -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-
-    <!-- Background css -->
-    <link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css">
-    
-</head>
+ @include('layouts.Head')
 <body>
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
     <!-- Header start  -->
-    
+
     @include('layouts.Header')
 
     <!-- Header End  -->
@@ -158,8 +123,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">Style 1</h2>
-                        <h2 class="ec-title">Style 1</h2>
+                        <h2 class="ec-bg-title">Existing Discounts</h2>
+                        <h2 class="ec-title">Existing Discounts</h2>
                         <p class="sub-title">Browse The Collection of Top Categories</p>
                     </div>
                 </div>
@@ -224,15 +189,6 @@
     <!-- Start Offer section -->
     <section class="labels section-space-p">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <h2 class="ec-bg-title">Style 2</h2>
-                        <h2 class="ec-title">Style 2</h2>
-                        <p class="sub-title">Browse The Collection of Top Categories</p>
-                    </div>
-                </div>
-            </div>
             <div class="ec-line-offer" style="background-image: url('assets/images/offer-image/offer-banner-06.jpg');">
                 <div class="ec-line-offer-info">
                     <div class="container">
