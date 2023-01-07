@@ -11,4 +11,8 @@ class LandingpageController extends Controller
     public function home(){
         return view('landingpage.home.home');
     }
+
+    public function checkout(){
+        return view('landingpage.checkout.checkout');
+    }
 }

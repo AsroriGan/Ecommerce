@@ -46,8 +46,11 @@ Route::get('/promo', [LandingPromoController::class, 'promo']);
 Route::get('/test', function () {
     return view('landingpage.testsofyan');
 });
-
+/////HOME
 Route::get('/', [LandingpageController::class, 'home']);
+
+////////CHECKOUT
+Route::get('/checkout', [LandingpageController::class, 'checkout']);
 
 //Kategori
 Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('index.kategori');
