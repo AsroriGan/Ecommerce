@@ -15,4 +15,9 @@ class ProdukController extends Controller
     {
         return view('landingpage.produk.detail');
     }
+     public function keranjang()
+    {
+        return view('landingpage.keranjang.keranjang');
+    }
+
 }

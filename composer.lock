@@ -2150,7 +2150,7 @@
         },
         {
             "name": "php-flasher/flasher",
-            "version": "v1.10.4",
+            "version": "v1.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher.git",
@@ -2206,7 +2206,7 @@
                 "toastr"
             ],
             "support": {
-                "source": "https://github.com/php-flasher/flasher/tree/v1.10.4"
+                "source": "https://github.com/php-flasher/flasher/tree/v1.10.5"
             },
             "funding": [
                 {
@@ -2234,16 +2234,16 @@
         },
         {
             "name": "php-flasher/flasher-laravel",
-            "version": "v1.10.4",
+            "version": "v1.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher-laravel.git",
-                "reference": "ab2a91da4021788efbfb8ec0354b5bd09bfa06f5"
+                "reference": "6c491d125c229c01f36fef619a7ec5b5a885d55c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher-laravel/zipball/ab2a91da4021788efbfb8ec0354b5bd09bfa06f5",
-                "reference": "ab2a91da4021788efbfb8ec0354b5bd09bfa06f5",
+                "url": "https://api.github.com/repos/php-flasher/flasher-laravel/zipball/6c491d125c229c01f36fef619a7ec5b5a885d55c",
+                "reference": "6c491d125c229c01f36fef619a7ec5b5a885d55c",
                 "shasum": ""
             },
             "require": {
@@ -2298,7 +2298,7 @@
                 "yoeunes"
             ],
             "support": {
-                "source": "https://github.com/php-flasher/flasher-laravel/tree/v1.10.4"
+                "source": "https://github.com/php-flasher/flasher-laravel/tree/v1.10.5"
             },
             "funding": [
                 {
@@ -2322,11 +2322,11 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-12-30T11:58:54+00:00"
+            "time": "2023-01-05T15:54:46+00:00"
         },
         {
             "name": "php-flasher/flasher-toastr",
-            "version": "v1.10.4",
+            "version": "v1.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher-toastr.git",
@@ -2378,7 +2378,7 @@
                 "toastr"
             ],
             "support": {
-                "source": "https://github.com/php-flasher/flasher-toastr/tree/v1.10.4"
+                "source": "https://github.com/php-flasher/flasher-toastr/tree/v1.10.5"
             },
             "funding": [
                 {
@@ -8153,5 +8153,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

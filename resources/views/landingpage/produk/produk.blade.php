@@ -124,8 +124,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">Style 1</h2>
-                        <h2 class="ec-title">Style 1</h2>
+                        <h2 class="ec-bg-title">All Produk</h2>
+                        <h2 class="ec-title">All Produk</h2>
                         <p class="sub-title">Browse The Collection of Top Categories</p>
                     </div>
                 </div>
@@ -142,8 +142,6 @@
                             <ul class="links">
                                 <li><a href="#" data-tip="Add to Wishlist"><img src="assets/images/icons/wishlist.svg"
                                             class="svg_img header_svg pro_svg" alt="wishlist" /></a></li>
-                                <li><a href="#" data-tip="Compare"><img src="assets/images/icons/compare.svg"
-                                            class="svg_img pro_svg" alt="compare" /></a></li>
                                 <li><a href="/detail" data-tip="Quick View"><img src="assets/images/icons/quickview.svg"
                                             class="svg_img pro_svg" alt="quick view" /></a></li>
                             </ul>
@@ -173,8 +171,6 @@
                             <ul class="links">
                                 <li><a href="#" data-tip="Add to Wishlist"><img src="assets/images/icons/wishlist.svg"
                                             class="svg_img header_svg pro_svg" alt="wishlist" /></a></li>
-                                <li><a href="#" data-tip="Compare"><img src="assets/images/icons/compare.svg"
-                                            class="svg_img pro_svg" alt="compare" /></a></li>
                                 <li><a href="/detail" data-tip="Quick View"><img src="assets/images/icons/quickview.svg"
                                             class="svg_img pro_svg" alt="quick view" /></a></li>
                             </ul>
@@ -363,8 +359,8 @@
                             <ul class="links">
                                 <li><a href="#" data-tip="Add to Wishlist"><img src="assets/images/icons/wishlist.svg"
                                             class="svg_img header_svg pro_svg" alt="wishlist" /></a></li>
-                                <li><a href="#" data-tip="Compare"><img src="assets/images/icons/compare.svg"
-                                            class="svg_img pro_svg" alt="compare" /></a></li>
+                                {{-- <li><a href="#" data-tip="Compare"><img src="assets/images/icons/compare.svg"
+                                            class="svg_img pro_svg" alt="compare" /></a></li> --}}
                                 <li><a href="#" data-tip="Quick View"><img src="assets/images/icons/quickview.svg"
                                             class="svg_img pro_svg" alt="quick view" /></a></li>
                             </ul>

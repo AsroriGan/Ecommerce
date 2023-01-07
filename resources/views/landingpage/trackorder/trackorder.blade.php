@@ -1,4 +1,5 @@
-<!--=========================================================
+
+<!--========================================================= 
     Item Name: Ekka - Ecommerce HTML Template.
     Author: ashishmaraviya
     Version: 3.3
@@ -7,14 +8,13 @@
  ============================================================-->
  <!DOCTYPE html>
  <html lang="en">
- @include('layouts.Head')
-<body>
+ 
+ @include("layouts.Head")
+<body class="track_order_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
     <!-- Header start  -->
-
-    @include('layouts.Header')
-
+    @include("layouts.Header")
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
@@ -29,7 +29,7 @@
                 <ul class="eccart-pro-items">
                     <li>
                         <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
+                                src="../../assets/images/product-image/6_1.jpg" alt="product"></a>
                         <div class="ec-pro-content">
                             <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
                             <span class="cart-price"><span>$76.00</span> x 1</span>
@@ -41,7 +41,7 @@
                     </li>
                     <li>
                         <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
+                                src="../../assets/images/product-image/12_1.jpg" alt="product"></a>
                         <div class="ec-pro-content">
                             <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
                             <span class="cart-price"><span>$64.00</span> x 1</span>
@@ -53,7 +53,7 @@
                     </li>
                     <li>
                         <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
+                                src="../../assets/images/product-image/3_1.jpg" alt="product"></a>
                         <div class="ec-pro-content">
                             <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
                             <span class="cart-price"><span>$59.00</span> x 1</span>
@@ -100,13 +100,13 @@
                 <div class="col-12">
                     <div class="row ec_breadcrumb_inner">
                         <div class="col-md-6 col-sm-12">
-                            <h2 class="ec-breadcrumb-title">Hot Offer</h2>
+                            <h2 class="ec-breadcrumb-title">Track Order</h2>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <!-- ec-breadcrumb-list start -->
                             <ul class="ec-breadcrumb-list">
                                 <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="ec-breadcrumb-item active">Offer</li>
+                                <li class="ec-breadcrumb-item active">Track</li>
                             </ul>
                             <!-- ec-breadcrumb-list end -->
                         </div>
@@ -117,96 +117,51 @@
     </div>
     <!-- Ec breadcrumb end -->
 
-    <!-- Start Offer section -->
-    <section class="labels section-space-p">
+    <!-- Ec Track Order section -->
+    <section class="ec-page-content section-space-p">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <h2 class="ec-bg-title">Existing Discounts</h2>
-                        <h2 class="ec-title">Existing Discounts</h2>
-                        <p class="sub-title">Browse The Collection of Top Categories</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
-                    <div class="ec-offer-coupon">
-                        <div class="ec-cpn-brand">
-                            <img class="ec-brand-img" src="assets/images/offer-image/2.jpg" alt="" />
-                        </div>
-                        <div class="ec-cpn-title">
-                            <h2 class="coupon-title">Get 15% off on branded Shoes</h2>
-                        </div>
-                        <div class="ec-cpn-desc">
-                            <p class="coupon-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry has been.</p>
-                        </div>
-                        <div class="ec-cpn-code">
-                            <a href="/detail" class="btn btn-secondary">Shop Now</a>
+            <!-- Track Order Content Start -->
+            <div class="ec-trackorder-content col-md-12">
+                <div class="ec-trackorder-inner">
+                    <div class="ec-trackorder-top">
+                        <h2 class="ec-order-id">No. Pesanan #6152</h2>
+                        <div class="ec-order-detail">
+                            <div>Perkiraan sampai 14-02-2021-2022</div>
+                            <div>Toko Serba Ada <span>v534hb</span></div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
-                    <div class="ec-offer-coupon">
-                        <div class="ec-cpn-brand">
-                            <img class="ec-brand-img" src="assets/images/offer-image/3.jpg" alt="" />
-                        </div>
-                        <div class="ec-cpn-title">
-                            <h2 class="coupon-title">Get 30% off on branded chair</h2>
-                        </div>
-                        <div class="ec-cpn-desc">
-                            <p class="coupon-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry has been.</p>
-                        </div>
-                        <div class="ec-cpn-code">
-                            <a href="/detail" class="btn btn-secondary">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 m-auto">
-                    <div class="ec-offer-coupon">
-                        <div class="ec-cpn-brand">
-                            <img class="ec-brand-img" src="assets/images/offer-image/4.jpg" alt="" />
-                        </div>
-                        <div class="ec-cpn-title">
-                            <h2 class="coupon-title">Get 50% off on branded Hand Bags</h2>
-                        </div>
-                        <div class="ec-cpn-desc">
-                            <p class="coupon-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry has been.</p>
-                        </div>
-                        <div class="ec-cpn-code">
-                            <a href="/detail" class="btn btn-secondary">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Offer section -->
+                    <div class="ec-trackorder-bottom">
+                        <div class="ec-progress-track">
+                            <ul id="ec-progressbar">
+                                <li class="step0 active"><span class="ec-track-icon"> <img
+                                            src="../../assets/images/icons/track_1.png" alt="track_order"></span><span
+                                        class="ec-progressbar-track"></span><span class="ec-track-title">pesanan
+                                        <br>diproses</span></li>
+                                <li class="step0 active"><span class="ec-track-icon"> <img
+                                            src="../../assets/images/icons/track_2.png" alt="track_order"></span><span
+                                        class="ec-progressbar-track"></span><span class="ec-track-title">pesanan
+                                            <br>dikemas</span></li>
+                                <li class="step0 active"><span class="ec-track-icon"> <img
+                                            src="../../assets/images/icons/track_3.png" alt="track_order"></span><span
+                                        class="ec-progressbar-track"></span><span class="ec-track-title">pesanan
+                                            <br>dikirim</span></li>
+                                <li class="step0"><span class="ec-track-icon"> <img
+                                            src="../../assets/images/icons/track_4.png" alt="track_order"></span><span
+                                        class="ec-progressbar-track"></span><span class="ec-track-title">pesanan <br>dijalan</span></li>
+                                <li class="step0"><span class="ec-track-icon"> <img
+                                            src="../../assets/images/icons/track_5.png" alt="track_order"></span><span
+                                        class="ec-progressbar-track"></span><span class="ec-track-title">pesanan
+                                            <br>diterima</span></li>
 
-    <!-- Start Offer section -->
-    <section class="labels section-space-p">
-        <div class="container">
-            <div class="ec-line-offer" style="background-image: url('assets/images/offer-image/offer-banner-06.jpg');">
-                <div class="ec-line-offer-info">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h6>On Furniture</h6>
-                                <h2 class="offer-upto">Upto <span>45%</span> OFF</h2>
-                                <p class="offer-desc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's.</p>
-                                <div class="offer-btn"><a class="btn-shop-now">SHOP NOW!</a></div>
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Track Order Content end -->
         </div>
     </section>
-     <!-- End Offer section -->
+    <!-- End Track Order section -->
 
     <!-- Footer Start -->
     <footer class="ec-footer section-space-mt">
@@ -226,8 +181,8 @@
                     <div class="row">
                         <div class="col-sm-12 col-lg-3 ec-footer-contact">
                             <div class="ec-footer-widget">
-                                <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/footer-logo.png"
-                                            alt=""><img class="dark-footer-logo" src="assets/images/logo/dark-logo.png"
+                                <div class="ec-footer-logo"><a href="#"><img src="../../assets/images/logo/footer-logo.png"
+                                            alt=""><img class="dark-footer-logo" src="../../assets/images/logo/dark-logo.png"
                                             alt="Site Logo" style="display: none;" /></a></div>
                                 <h4 class="ec-footer-heading">Contact us</h4>
                                 <div class="ec-footer-links">
@@ -335,7 +290,7 @@
                         <div class="col footer-bottom-right">
                             <div class="footer-bottom-payment d-flex justify-content-end">
                                 <div class="payment-link">
-                                    <img src="assets/images/icons/payment.png" alt="">
+                                    <img src="../../assets/images/icons/payment.png" alt="">
                                 </div>
 
                             </div>
@@ -348,6 +303,112 @@
     </footer>
     <!-- Footer Area End -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12 col-xs-12">
+                            <!-- Swiper -->
+                            <div class="qty-product-cover">
+                                <div class="qty-slide">
+                                    <img class="img-responsive" src="../../assets/images/product-image/3_1.jpg" alt="">
+                                </div>
+                                <div class="qty-slide">
+                                    <img class="img-responsive" src="../../assets/images/product-image/3_2.jpg" alt="">
+                                </div>
+                                <div class="qty-slide">
+                                    <img class="img-responsive" src="../../assets/images/product-image/3_3.jpg" alt="">
+                                </div>
+                                <div class="qty-slide">
+                                    <img class="img-responsive" src="../../assets/images/product-image/3_4.jpg" alt="">
+                                </div>
+                                <div class="qty-slide">
+                                    <img class="img-responsive" src="../../assets/images/product-image/3_5.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="qty-nav-thumb">
+                                <div class="qty-slide">
+                                    <img class="img-responsive" src="../../assets/images/product-image/3_1.jpg" alt="">
+                                </div>
+                                <div class="qty-slide">
+                                    <img class="img-responsive" src="../../assets/images/product-image/3_2.jpg" alt="">
+                                </div>
+                                <div class="qty-slide">
+                                    <img class="img-responsive" src="../../assets/images/product-image/3_3.jpg" alt="">
+                                </div>
+                                <div class="qty-slide">
+                                    <img class="img-responsive" src="../../assets/images/product-image/3_4.jpg" alt="">
+                                </div>
+                                <div class="qty-slide">
+                                    <img class="img-responsive" src="../../assets/images/product-image/3_5.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-12 col-xs-12">
+                            <div class="quickview-pro-content">
+                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse for women</a>
+                                </h5>
+                                <div class="ec-quickview-rating">
+                                    <i class="ecicon eci-star fill"></i>
+                                    <i class="ecicon eci-star fill"></i>
+                                    <i class="ecicon eci-star fill"></i>
+                                    <i class="ecicon eci-star fill"></i>
+                                    <i class="ecicon eci-star"></i>
+                                </div>
+
+                                <div class="ec-quickview-desc">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                                    since the 1500s,</div>
+                                <div class="ec-quickview-price">
+                                    <span class="old-price">$100.00</span>
+                                    <span class="new-price">$80.00</span>
+                                </div>
+
+                                <div class="ec-pro-variation">
+                                    <div class="ec-pro-variation-inner ec-pro-variation-color">
+                                        <span>Color</span>
+                                        <div class="ec-pro-color">
+                                            <ul class="ec-opt-swatch">
+                                                <li><span style="background-color:#696d62;"></span></li>
+                                                <li><span style="background-color:#d73808;"></span></li>
+                                                <li><span style="background-color:#577023;"></span></li>
+                                                <li><span style="background-color:#2ea1cd;"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ec-pro-variation-inner ec-pro-variation-size ec-pro-size">
+                                        <span>Size</span>
+                                        <div class="ec-pro-variation-content">
+                                            <ul class="ec-opt-size">
+                                                <li class="active"><a href="#" class="ec-opt-sz"
+                                                        data-tooltip="Small">S</a></li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a></li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a></li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Extra Large">XL</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ec-quickview-qty">
+                                    <div class="qty-plus-minus">
+                                        <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                                    </div>
+                                    <div class="ec-quickview-cart ">
+                                        <button class="btn btn-primary"><img src="../../assets/images/icons/cart.svg"
+                                                class="svg_img pro_svg" alt="" /> Add To Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal end -->
 
     <!-- Footer navigation panel for responsive display -->
     <div class="ec-nav-toolbar">
@@ -355,23 +416,23 @@
             <div class="ec-nav-panel">
                 <div class="ec-nav-panel-icons">
                     <a href="#ec-mobile-menu" class="navbar-toggler-btn ec-header-btn ec-side-toggle"><img
-                            src="assets/images/icons/menu.svg" class="svg_img header_svg" alt="" /></a>
+                            src="../../assets/images/icons/menu.svg" class="svg_img header_svg" alt="" /></a>
                 </div>
                 <div class="ec-nav-panel-icons">
                     <a href="#ec-side-cart" class="toggle-cart ec-header-btn ec-side-toggle"><img
-                            src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /><span
+                            src="../../assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /><span
                             class="ec-cart-noti ec-header-count cart-count-lable">3</span></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="index.html" class="ec-header-btn"><img src="assets/images/icons/home.svg"
+                    <a href="index.html" class="ec-header-btn"><img src="../../assets/images/icons/home.svg"
                             class="svg_img header_svg" alt="icon" /></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="wishlist.html" class="ec-header-btn"><img src="assets/images/icons/wishlist.svg"
+                    <a href="wishlist.html" class="ec-header-btn"><img src="../../assets/images/icons/wishlist.svg"
                             class="svg_img header_svg" alt="icon" /><span class="ec-cart-noti">4</span></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="login.html" class="ec-header-btn"><img src="assets/images/icons/user.svg"
+                    <a href="login.html" class="ec-header-btn"><img src="../../assets/images/icons/user.svg"
                             class="svg_img header_svg" alt="icon" /></a>
                 </div>
 
@@ -382,7 +443,7 @@
 
     <!-- Recent Purchase Popup  -->
     <div class="recent-purchase">
-        <img src="assets/images/product-image/1.jpg" alt="payment image">
+        <img src="../../assets/images/product-image/1.jpg" alt="payment image">
         <div class="detail">
             <p>Someone in new just bought</p>
             <h6>stylish baby shoes</h6>
@@ -395,7 +456,7 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
+            <div class="header-icon"><img src="../../assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -420,7 +481,7 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_01.jpg" class="ec-user-img"
+                                    <img src="../../assets/images/whatsapp/profile_01.jpg" class="ec-user-img"
                                         alt="Profile image">
                                     <span class="ec-status-icon"></span>
                                 </div>
@@ -444,7 +505,7 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_02.jpg" class="ec-user-img"
+                                    <img src="../../assets/images/whatsapp/profile_02.jpg" class="ec-user-img"
                                         alt="Profile image">
                                     <span class="ec-status-icon ec-online"></span>
                                 </div>
@@ -468,7 +529,7 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_03.jpg" class="ec-user-img"
+                                    <img src="../../assets/images/whatsapp/profile_03.jpg" class="ec-user-img"
                                         alt="Profile image">
                                     <span class="ec-status-icon ec-offline"></span>
                                 </div>
@@ -492,7 +553,7 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_04.jpg" class="ec-user-img"
+                                    <img src="../../assets/images/whatsapp/profile_04.jpg" class="ec-user-img"
                                         alt="Profile image">
                                     <span class="ec-status-icon ec-offline"></span>
                                 </div>
@@ -517,7 +578,7 @@
         <div class="ec-right-bottom">
             <div class="ec-box">
                 <div class="ec-button rotateBackward">
-                    <img class="whatsapp" src="assets/images/common/whatsapp.png" alt="whatsapp icon" />
+                    <img class="whatsapp" src="../../assets/images/common/whatsapp.png" alt="whatsapp icon" />
                 </div>
             </div>
         </div>
@@ -532,7 +593,7 @@
             <h3>Features</h3>
         </div>
         <a href="#" class="ec-tools-sidebar-toggle in-out">
-            <img alt="icon" src="assets/images/common/settings.png" />
+            <img alt="icon" src="../../assets/images/common/settings.png" />
         </a>
         <div class="ec-tools-detail">
             <div class="ec-tools-sidebar-content ec-change-color ec-color-desc">
@@ -599,32 +660,31 @@
     <!-- Feature tools end -->
 
     <!-- Vendor JS -->
-    <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
-    <script src="assets/js/vendor/popper.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="../../assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../assets/js/vendor/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="../../assets/js/vendor/modernizr-3.11.2.min.js"></script>
 
     <!--Plugins JS-->
-    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-    <script src="assets/js/plugins/countdownTimer.min.js"></script>
-    <script src="assets/js/plugins/scrollup.js"></script>
-    <script src="assets/js/plugins/jquery.zoom.min.js"></script>
-    <script src="assets/js/plugins/slick.min.js"></script>
-    <script src="assets/js/plugins/infiniteslidev2.js"></script>
-    <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/plugins/jquery.sticky-sidebar.js"></script>
-    <script src="assets/js/plugins/hot-offer.js"></script>
+    <script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
+    <script src="../../assets/js/plugins/countdownTimer.min.js"></script>
+    <script src="../../assets/js/plugins/scrollup.js"></script>
+    <script src="../../assets/js/plugins/jquery.zoom.min.js"></script>
+    <script src="../../assets/js/plugins/slick.min.js"></script>
+    <script src="../../assets/js/plugins/infiniteslidev2.js"></script>
+    <script src="../../assets/js/vendor/jquery.magnific-popup.min.js"></script>
+    <script src="../../assets/js/plugins/jquery.sticky-sidebar.js"></script>
     <!-- Google translate Js -->
-    <script src="assets/js/vendor/google-translate.js"></script>
+    <script src="../../assets/js/vendor/google-translate.js"></script>
     <script>
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
         }
     </script>
     <!-- Main Js -->
-    <script src="assets/js/vendor/index.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="../../assets/js/vendor/index.js"></script>
+    <script src="../../assets/js/main.js"></script>
 
 </body>
 </html>

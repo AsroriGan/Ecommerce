@@ -6,6 +6,9 @@ use App\Http\Controllers\Landing\LandingpageController;
 use App\Http\Controllers\Landing\BlogController as LandingBlogController;
 use App\Http\Controllers\Landing\PromoController as LandingPromoController;
 use App\Http\Controllers\Landing\ProdukController as LandingProdukController;
+use App\Http\Controllers\Landing\Userprofilecontroller as LandingUserprofilecontroller;
+use App\Http\Controllers\Landing\TrackorderController as LandingTrackorderController;
+use App\Http\Controllers\Landing\WhislistController as LandingWhislistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +37,7 @@ Route::get('/beranda', function () {
 //pruduk
 Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
 Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
+Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
 
 // Blog
 Route::get('/blog', [LandingBlogController::class, 'blog']);
@@ -46,13 +50,22 @@ Route::get('/promo', [LandingPromoController::class, 'promo']);
 Route::get('/test', function () {
     return view('landingpage.testsofyan');
 });
-/////HOME
-Route::get('/', [LandingpageController::class, 'home']);
+
+Route::get('/', [LandingpageController::class, 'home'])->name('home');
 
 ////////CHECKOUT
-Route::get('/checkout', [LandingpageController::class, 'checkout']);
+Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
 
 //Kategori
 Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('index.kategori');
+
+//user profile
+Route::get('/user-profile',[LandingUserprofilecontroller::class,'index'])->name('user-profle');
+
+//Trackorder
+Route::get('/trackorder', [LandingTrackorderController::class, 'indextrack'])->name('trackorder');
+
+// daftar keinginan (whislist)
+Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->name('wishlist');
 
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
