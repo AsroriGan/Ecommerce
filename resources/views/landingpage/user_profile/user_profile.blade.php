@@ -176,7 +176,8 @@
                                                                 src="assets/images/icons/edit.svg"
                                                                 class="svg_img pro_svg" alt="edit" /></a></h6>
                                                     <ul>
-                                                        <li><strong>Home : </strong>JAWA TIMUR, KAB. PASURUAN, SUKOREJO, 67171</li>
+                                                        <li><strong>Home : </strong>JAWA TIMUR, KAB. PASURUAN, SUKOREJO,
+                                                            67171</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -188,7 +189,8 @@
                                                                 src="assets/images/icons/edit.svg"
                                                                 class="svg_img pro_svg" alt="edit" /></a></h6>
                                                     <ul>
-                                                        <li><strong>Office : </strong>Jalan Smpn II, RT.2/RW.4, Sebandung, Sukorejo</li>
+                                                        <li><strong>Office : </strong>Jalan Smpn II, RT.2/RW.4,
+                                                            Sebandung, Sukorejo</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -427,21 +429,36 @@
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-md-12 space-t-15">
-                                        <label class="form-label">Address 1</label>
+                                        <label class="form-label">Address</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-md-6 space-t-15">
-                                        <label class="form-label">City </label>
-                                        <span class="ec-bl-select-inner">
-                                            <select name="ec_select_city" id="ec-select-city" class="ec-bill-select">
-                                                <option selected="" disabled="">City</option>
-                                                <option value="1">City 1</option>
-                                                <option value="2">City 2</option>
-                                                <option value="3">City 3</option>
-                                                <option value="4">City 4</option>
-                                                <option value="5">City 5</option>
-                                            </select>
-                                        </span>
+                                        <label class="form-label">City *</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 space-t-15">
+                                        <label class="form-label">Post Code </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 space-t-15">
+                                        <label class="form-label">Country *</label>
+                                        <select class="form-select" aria-label="Disabled select example" disabled>
+                                            <option selected>Indonesia</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 space-t-15">
+                                        <label class="form-label">Region State *</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Email </label>
