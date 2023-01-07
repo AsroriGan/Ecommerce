@@ -10,4 +10,8 @@ class Userprofilecontroller extends Controller
     public function index(){
         return view('landingpage.user_profile.user_profile');
     }
+
+    public function history(){
+        return view('landingpage.History.history');
+    }
 }

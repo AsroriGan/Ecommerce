@@ -61,6 +61,7 @@ Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('inde
 
 //user profile
 Route::get('/user-profile',[LandingUserprofilecontroller::class,'index'])->name('user-profle');
+Route::get('/history',[LandingUserprofilecontroller::class,'history'])->name('history');
 
 //Trackorder
 Route::get('/trackorder', [LandingTrackorderController::class, 'indextrack'])->name('trackorder');
