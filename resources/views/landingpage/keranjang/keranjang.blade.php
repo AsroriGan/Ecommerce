@@ -225,7 +225,7 @@
                                         <div class="col-lg-12">
                                             <div class="ec-cart-update-bottom">
                                                 <a href="/">Continue Shopping</a>
-                                                <button class="btn btn-primary">Check Out</button>
+                                              
                                             </div>
                                         </div>
                                     </div>
@@ -237,53 +237,13 @@
                 </div>
                 <!-- Sidebar Area Start -->
                 <div class="ec-cart-rightside col-lg-4 col-md-12">
-                    <div class="ec-sidebar-wrap">
+                    <div class="ec-sidebar-wrap mb-2">
                         <!-- Sidebar Summary Block -->
                         <div class="ec-sidebar-block">
                             <div class="ec-sb-title">
                                 <h3 class="ec-sidebar-title">Summary</h3>
                             </div>
-                            <div class="ec-sb-block-content">
-                                <h4 class="ec-ship-title">Estimate Shipping</h4>
-                                <div class="ec-cart-form">
-                                    <p>Enter your destination to get a shipping estimate</p>
-                                    <form action="#" method="post">
-                                        <span class="ec-cart-wrap">
-                                            <label>Country *</label>
-                                            <span class="ec-cart-select-inner">
-                                                <select name="ec_cart_country" id="ec-cart-select-country"
-                                                    class="ec-cart-select">
-                                                    <option selected="" disabled="">United States</option>
-                                                    <option value="1">Country 1</option>
-                                                    <option value="2">Country 2</option>
-                                                    <option value="3">Country 3</option>
-                                                    <option value="4">Country 4</option>
-                                                    <option value="5">Country 5</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        <span class="ec-cart-wrap">
-                                            <label>State/Province</label>
-                                            <span class="ec-cart-select-inner">
-                                                <select name="ec_cart_state" id="ec-cart-select-state"
-                                                    class="ec-cart-select">
-                                                    <option selected="" disabled="">Please Select a region, state
-                                                    </option>
-                                                    <option value="1">Region/State 1</option>
-                                                    <option value="2">Region/State 2</option>
-                                                    <option value="3">Region/State 3</option>
-                                                    <option value="4">Region/State 4</option>
-                                                    <option value="5">Region/State 5</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        <span class="ec-cart-wrap">
-                                            <label>Zip/Postal Code</label>
-                                            <input type="text" name="postalcode" placeholder="Zip/Postal Code">
-                                        </span>
-                                    </form>
-                                </div>
-                            </div>
+                           
 
                             <div class="ec-sb-block-content">
                                 <div class="ec-cart-summary-bottom">
@@ -317,10 +277,15 @@
 
                                 </div>
                             </div>
+
                         </div>
+
                         <!-- Sidebar Summary Block -->
                     </div>
+
+                    <center><button class="btn btn-primary">Check Out</button></center>
                 </div>
+
             </div>
         </div>
     </section>
