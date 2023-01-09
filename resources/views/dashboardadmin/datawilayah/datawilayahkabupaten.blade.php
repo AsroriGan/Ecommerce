@@ -27,7 +27,7 @@
                         <div class="page-header">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="page-title">Data wilayah / Kabupaten</h3>
+                                    <h3 class="page-title">Data wilayah / Porvinsi</h3>
                                 </div>
                             </div>
                         </div>
@@ -51,6 +51,7 @@
                                             mt-1" data-bs-toggle="modal"
                                             data-bs-target="#con-close-modal">Responsive
                                             Modal</button> --}}
+
                                             </div>
                                         </div>
                                     </div>
@@ -105,6 +106,7 @@
                                             <tr>
                                                 <th>N0 .</th>
                                                 <th>Provinsi</th>
+                                                <th>Kabupaten / Kota</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -112,6 +114,7 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>Jawa timur</td>
+                                                <td>Pasuruan</td>
                                                 <td><a href="javascript:void(0);"
                                                         class="btn btn-sm
                                                     btn-white
