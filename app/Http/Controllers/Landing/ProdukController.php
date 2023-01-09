@@ -20,4 +20,10 @@ class ProdukController extends Controller
         return view('landingpage.keranjang.keranjang');
     }
 
+
+    //admin
+    public function product()
+    {
+        return view('dashboardadmin.produk.produk');
+    }
 }

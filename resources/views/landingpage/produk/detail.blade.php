@@ -13,6 +13,7 @@
 
     @include('layouts.Head')
 
+
 </head>
 <body class="product_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>

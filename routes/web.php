@@ -12,7 +12,11 @@ use App\Http\Controllers\Landing\WhislistController as LandingWhislistController
 
 // Admin
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
+<<<<<<< HEAD
 use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
+=======
+use App\Http\Controllers\SliderController;
+>>>>>>> fe6c11b12df23d91958d5213d1c28c801924e1a4
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +46,7 @@ Route::get('/beranda', function () {
 Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
 Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
 Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
+Route::get('/product', [LandingProdukController::class, 'product'])->name('product');
 
 // Blog
 Route::get('/blog', [LandingBlogController::class, 'blog']);
@@ -78,5 +83,11 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 // kategroi Admin
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
 
+<<<<<<< HEAD
 //data wilayah
 Route::get('/datawilayah', [AdminDatawilayahController::class, 'datawilayah'])->name('datawilayah');
+=======
+
+////////Sliders
+Route::get('/slider', [SliderController::class, 'slider'])->name('slider');
+>>>>>>> fe6c11b12df23d91958d5213d1c28c801924e1a4
