@@ -21,3 +21,14 @@
     align-items: center;
     color: #777777;
 }
+
+.mt-22px{
+    margin-top: 17px !important;
+}
+.h-55px{
+    height: 55px !important;
+}
+.p-trackorder{
+    position: relative;
+    top: 6px;
+}
