@@ -21,12 +21,12 @@
                         <li><a href="invoice-grid-two.html">Sub->SubKategori</a></li>
                     </ul>
                 </li>
-                <li class="submenu {{ Route::is('datawilayahprovinsi') ? 'active' : '' }}">
+                <li class="submenu {{ Route::is('datawilayahprovinsi','datawilayahkabupaten') ? 'active' : '' }}">
                     <a href="#"><i data-feather="clipboard"></i> <span>Data wilayah</span> <span
                             class="menu-arrow"></span></a>
-                    <ul class="{{ Route::is('datawilayahprovinsi') ? 'd-block' : '' }}">
-                        <li {{ Route::is('datawilayahprovinsi') ? 'active' : '' }}><a href="/datawilayahprovinsi">Provinsi</a></li>
-                        <li><a href="invoice-grid.html">Kota / Kabupaten</a></li>
+                    <ul>
+                        <li><a {{ Route::is('datawilayahprovinsi') ? 'class=active' : '' }} href="/datawilayahprovinsi">Provinsi</a></li>
+                        <li><a {{ Route::is('datawilayahkabupaten') ? 'class=active' : '' }} href="/datawilayahkabupaten">Kota / Kabupaten</a></li>
                         <li><a href="invoice-grid-two.html">Kecamatan</a></li>
                     </ul>
                 </li>

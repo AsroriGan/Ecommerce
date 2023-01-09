@@ -15,4 +15,8 @@ class DatawilayahController extends Controller
         $data = Datawilayah::create($request->all());
         return redirect('/datawilayahprovinsi');
     }
+
+    public function datawilayahkabupaten(){
+        return view('dashboardadmin.datawilayah.datawilayahkabupaten');
+    }
 }
