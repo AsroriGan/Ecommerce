@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('datawilayahs', function (Blueprint $table) {
+        Schema::create('datawilayah', function (Blueprint $table) {
             $table->id();
+            $table->string("provinsi");
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datawilayahs');
+        Schema::dropIfExists('datawilayah');
     }
 };

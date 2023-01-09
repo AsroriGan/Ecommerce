@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Datawilayah extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+    protected $table = "datawilayah";
+    protected $primaryKey = "id";
 }
