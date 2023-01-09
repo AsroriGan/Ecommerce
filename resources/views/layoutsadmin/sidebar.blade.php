@@ -13,17 +13,12 @@
                     <a href="estimates.html"><i data-feather="file-text"></i> <span>Estimates</span></a>
                 </li>
                 <li class="submenu">
-                    <a href="#"><i data-feather="clipboard"></i> <span> Invoices</span> <span
+                    <a href="#"><i data-feather="clipboard"></i> <span> Kategori</span> <span
                             class="menu-arrow"></span></a>
                     <ul>
-                        <li><a href="invoices.html">Invoices List</a></li>
-                        <li><a href="invoice-grid.html">Invoices Grid</a></li>
-                        <li><a href="invoice-grid-two.html">Invoices Grid 2</a></li>
-                        <li><a href="add-invoice.html">Add Invoices</a></li>
-                        <li><a href="edit-invoice.html">Edit Invoices</a></li>
-                        <li><a href="view-invoice.html">Invoices Details</a></li>
-                        <li><a href="view-invoice-two.html">Invoices Details 2</a></li>
-                        <li><a href="invoices-settings.html">Invoices Settings</a></li>
+                        <li><a href="/kategori">Kategori</a></li>
+                        <li><a href="invoice-grid.html">Sub Kategori</a></li>
+                        <li><a href="invoice-grid-two.html">Sub->SubKategori</a></li>
                     </ul>
                 </li>
                 <li>
