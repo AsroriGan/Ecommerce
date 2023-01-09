@@ -12,6 +12,7 @@ use App\Http\Controllers\Landing\WhislistController as LandingWhislistController
 
 // Admin
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
+use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -80,6 +81,10 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 
-
+//start data wilayah
+Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
+    //add provinsi
+Route::post('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');
+//end data wilayah
 ////////Sliders
 Route::get('/slider', [SliderController::class, 'slider'])->name('slider');
