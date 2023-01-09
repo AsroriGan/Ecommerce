@@ -120,16 +120,9 @@
                     <!-- Ec Header Button Start -->
                     <div class="align-self-center">
                         <div class="ec-header-bottons">
-
-                            <!-- Headre Track Order Star -->
-                            <a href="/trackorder" class="ec-header-btn ec-header-trackorder">
-                                <div class="header-icon"><img src="assets/images/icons/track_4.svg"
-                                        class="svg_img header_svg" alt="" /></div>
-                            </a>
-                            <!-- Header Track Order End -->
                             <!-- Header User Start -->
                             <div class="ec-header-user dropdown">
-                                <a href="/user-profile" class="dropdown-toggle" data-bs-toggle="dropdown"><img
+                                <a href="/user-profile" class="dropdown-toggle mt-22px" data-bs-toggle="dropdown"><img
                                         src="assets/images/icons/user.svg" class="svg_img header_svg"
                                         alt="" /></a>
                                 <ul class="dropdown-menu dropdown-menu-right">
@@ -153,6 +146,12 @@
                                 <span class="ec-header-count cart-count-lable">3</span>
                             </a>
                             <!-- Header Cart End -->
+                            <!-- Headre Track Order Star -->
+                            <a href="/trackorder" class="ec-header-btn ec-header-trackorder">
+                                <div class="header-icon"><img src="assets/images/icons/track_4.png"
+                                        class="h-55px p-trackorder" alt="" /></div>
+                            </a>
+                            <!-- Header Track Order End -->
                         </div>
                     </div>
                 </div>

@@ -9,10 +9,18 @@
 
     <div class="main-wrapper">
 
-       @include('layoutsadmin.navbar')
+        <!-- navbar Star -->
 
+        @include('layoutsadmin.navbar')
+
+        <!-- End Navbar -->
+
+
+        <!-- Sidebar Star -->
 
         @include('layoutsadmin.sidebar')
+
+        <!-- End Sidebar -->
 
 
         <div class="page-wrapper">
@@ -732,7 +740,12 @@
 
     </div>
 
+    <!-- Scrip Star -->
+
     @include('layoutsadmin.script')
+
+    <!-- End Scrip -->
+
 </body>
 
 </html>
