@@ -12,4 +12,9 @@ class Datawilayah extends Model
     protected $guarded = [];
     protected $table = "datawilayah";
     protected $primaryKey = "id";
+
+    public function sprovinsi()
+    {
+        return $this->hasMany(datawilayahkabupaten::class);
+    }
 }
