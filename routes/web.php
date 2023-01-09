@@ -12,6 +12,7 @@ use App\Http\Controllers\Landing\WhislistController as LandingWhislistController
 
 // Admin
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
+use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,3 +77,6 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 
 // kategroi Admin
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
+
+//data wilayah
+Route::get('/datawilayah', [AdminDatawilayahController::class, 'datawilayah'])->name('datawilayah');
