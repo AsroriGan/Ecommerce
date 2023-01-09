@@ -586,6 +586,11 @@
                         </div>
                         <!-- Sidebar Summary Block -->
                     </div>
+                    <span class="ec-check-order-btn">
+                        <span style="float: right">
+                                <a class="btn btn-primary" href="#">Checkout</a>
+                                </span>
+                            </span>
                 </div>
 
     </section>
