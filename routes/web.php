@@ -12,6 +12,7 @@ use App\Http\Controllers\Landing\WhislistController as LandingWhislistController
 
 // Admin
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
+use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,3 +77,7 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 
 // kategroi Admin
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
+
+
+////////Sliders
+Route::get('/slider', [SliderController::class, 'slider'])->name('slider');
