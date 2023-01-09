@@ -1,22 +1,17 @@
-<!--========================================================= 
-    Item Name: Ekka - Ecommerce HTML Template.
-    Author: ashishmaraviya
-    Version: 3.3
-    Copyright 2022-2023
-	Author URI: https://themeforest.net/user/ashishmaraviya
- ============================================================-->
- <!DOCTYPE html>
- <html lang="en">
- <!-- Star Head -->
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Star Head -->
 
- @include('layouts.Head')
+@include('layouts.Head')
 
- <!-- End Head -->
+<!-- End Head -->
+
 <body class="compare_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
     <!-- Header start  -->
-    
+
     @include('layouts.Header')
 
     <!-- Header End  -->
@@ -131,18 +126,19 @@
                     <div class="ec-compare-content">
                         <div class="ec-compare-inner">
                             <div class="row margin-minus-b-30">
-                                
+
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-6 pro-gl-content">
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/7_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/7_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/7_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/7_2.jpg"
+                                                        alt="Product" />
                                                 </a>
-                                                <span class="ec-com-remove ec-remove-wish"><a href="javascript:void(0)">×</a></span>
+                                                <span class="ec-com-remove ec-remove-wish"><a
+                                                        href="javascript:void(0)">×</a></span>
                                                 <span class="percentage">20%</span>
                                                 <div class="ec-pro-actions">
                                                     <a href="/detail" class="ec-btn-group compare"
@@ -151,14 +147,15 @@
                                                     <button title="Add To Cart" class=" add-to-cart"><img
                                                             src="assets/images/icons/cart.svg" class="svg_img pro_svg"
                                                             alt="" /> Add To Cart</button>
-                                                    <a class="ec-btn-group wishlist" title="Wishlist"><img
-                                                            src="assets/images/icons/wishlist.svg"
+                                                    <a href="/wishlist" class="ec-btn-group wishlist"
+                                                        title="Wishlist"><img src="assets/images/icons/wishlist.svg"
                                                             class="svg_img pro_svg " alt="" /></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve Shirt</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve
+                                                    Shirt</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -166,7 +163,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$12.00</span>
                                                 <span class="new-price">$10.00</span>
@@ -196,7 +195,8 @@
                                                         <li><a href="#" class="ec-opt-sz" data-old="$15.00"
                                                                 data-new="$12.00" data-tooltip="Medium">M</a></li>
                                                         <li><a href="#" class="ec-opt-sz" data-old="$20.00"
-                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a></li>
+                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -208,12 +208,13 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/1_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/1_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/1_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/1_2.jpg"
+                                                        alt="Product" />
                                                 </a>
-                                                <span class="ec-com-remove ec-remove-wish"><a href="javascript:void(0)">×</a></span>
+                                                <span class="ec-com-remove ec-remove-wish"><a
+                                                        href="javascript:void(0)">×</a></span>
                                                 <span class="percentage">20%</span>
                                                 <div class="ec-pro-actions">
                                                     <a href="/detail" class="ec-btn-group compare"
@@ -229,7 +230,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cute Baby Toy's</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cute Baby
+                                                    Toy's</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -237,7 +239,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$40.00</span>
                                                 <span class="new-price">$30.00</span>
@@ -287,12 +291,13 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/2_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/2_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/2_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/2_2.jpg"
+                                                        alt="Product" />
                                                 </a>
-                                                <span class="ec-com-remove ec-remove-wish"><a href="javascript:void(0)">×</a></span>
+                                                <span class="ec-com-remove ec-remove-wish"><a
+                                                        href="javascript:void(0)">×</a></span>
                                                 <span class="percentage">20%</span>
                                                 <div class="ec-pro-actions">
                                                     <a href="/detail" class="ec-btn-group compare"
@@ -308,7 +313,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Jumbo Carry Bag</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Jumbo Carry
+                                                    Bag</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -316,11 +322,13 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$50.00</span>
                                                 <span class="new-price">$40.00</span>
-                                            </span>                                                
+                                            </span>
                                             <div class="ec-pro-option">
                                                 <div class="ec-pro-color">
                                                     <span class="ec-pro-opt-label">Color</span>
@@ -341,12 +349,13 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/8_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/8_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="assets/images/product-image/8_1.jpg"
+                                                        alt="Product" />
+                                                    <img class="hover-image" src="assets/images/product-image/8_2.jpg"
+                                                        alt="Product" />
                                                 </a>
-                                                <span class="ec-com-remove ec-remove-wish"><a href="javascript:void(0)">×</a></span>
+                                                <span class="ec-com-remove ec-remove-wish"><a
+                                                        href="javascript:void(0)">×</a></span>
                                                 <span class="percentage">20%</span>
                                                 <div class="ec-pro-actions">
                                                     <a href="/detail" class="ec-btn-group compare"
@@ -362,7 +371,8 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">I smart watch 6gb</a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">I smart watch
+                                                    6gb</a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -370,7 +380,9 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
+                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
+                                                ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
                                                 <span class="old-price">$12.00</span>
                                                 <span class="new-price">$10.00</span>
@@ -400,7 +412,8 @@
                                                         <li><a href="#" class="ec-opt-sz" data-old="$15.00"
                                                                 data-new="$12.00" data-tooltip="Medium">M</a></li>
                                                         <li><a href="#" class="ec-opt-sz" data-old="$20.00"
-                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a></li>
+                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -418,7 +431,7 @@
     </section>
 
     <!-- Footer Start -->
-    
+
     @include('layouts.Footer')
 
     <!-- Footer Area End -->
@@ -427,49 +440,61 @@
     <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-xs-12">
                             <!-- Swiper -->
                             <div class="qty-product-cover">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
+                                        alt="">
                                 </div>
                             </div>
                             <div class="qty-nav-thumb">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
+                                        alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-7 col-sm-12 col-xs-12">
                             <div class="quickview-pro-content">
-                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse for women</a>
+                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse
+                                        for women</a>
                                 </h5>
                                 <div class="ec-quickview-rating">
                                     <i class="ecicon eci-star fill"></i>
@@ -505,9 +530,12 @@
                                             <ul class="ec-opt-size">
                                                 <li class="active"><a href="#" class="ec-opt-sz"
                                                         data-tooltip="Small">S</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Extra Large">XL</a></li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a>
+                                                </li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a>
+                                                </li>
+                                                <li><a href="#" class="ec-opt-sz"
+                                                        data-tooltip="Extra Large">XL</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -529,7 +557,7 @@
         </div>
     </div>
     <!-- Modal end -->
-    
+
     <!-- Footer navigation panel for responsive display -->
     <div class="ec-nav-toolbar">
         <div class="container">
@@ -576,7 +604,8 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
+            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg"
+                    alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -786,4 +815,5 @@
     <!-- End Script -->
 
 </body>
+
 </html>

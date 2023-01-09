@@ -1,5 +1,5 @@
 <?php
-
+// Landing
 use App\Http\Controllers\Landing\KategoriController as LandingKategoriController;
 use App\Http\Controllers\Landing\Logincontroller as LandingLogincontroller;
 use App\Http\Controllers\Landing\LandingpageController;
@@ -9,6 +9,9 @@ use App\Http\Controllers\Landing\ProdukController as LandingProdukController;
 use App\Http\Controllers\Landing\Userprofilecontroller as LandingUserprofilecontroller;
 use App\Http\Controllers\Landing\TrackorderController as LandingTrackorderController;
 use App\Http\Controllers\Landing\WhislistController as LandingWhislistController;
+
+// Admin
+use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,6 +64,7 @@ Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('inde
 
 //user profile
 Route::get('/user-profile',[LandingUserprofilecontroller::class,'index'])->name('user-profle');
+Route::get('/history',[LandingUserprofilecontroller::class,'history'])->name('history');
 
 //Trackorder
 Route::get('/trackorder', [LandingTrackorderController::class, 'indextrack'])->name('trackorder');
@@ -69,3 +73,6 @@ Route::get('/trackorder', [LandingTrackorderController::class, 'indextrack'])->n
 Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->name('wishlist');
 
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
+
+// kategroi Admin
+Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');

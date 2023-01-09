@@ -34,4 +34,5 @@
     <link rel="stylesheet" id="bg-switcher-css" href="{{asset('assets/css/backgrounds/bg-4.css')}}">
 
     <link rel="stylesheet" href="{{asset('rori.css')}}">
+    <link rel="stylesheet" href="{{asset('zaki.css')}}">
 </head>
