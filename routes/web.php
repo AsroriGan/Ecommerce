@@ -78,6 +78,7 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 
 // kategroi Admin
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
+Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 
 
 ////////Sliders
