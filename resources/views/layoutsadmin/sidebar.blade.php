@@ -17,12 +17,18 @@
                             class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="/kategori">Kategori</a></li>
-                        <li><a href="invoice-grid.html">Sub Kategori</a></li>
+                        <li><a href="/subkategori">Sub Kategori</a></li>
                         <li><a href="invoice-grid-two.html">Sub->SubKategori</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="invoice-items.html"><i data-feather="star"></i> <span>Items</span></a>
+                <li class="submenu {{ Route::is('datawilayahprovinsi','datawilayahkabupaten','datawilayahkecamatan') ? 'active' : '' }}">
+                    <a href="#"><i data-feather="clipboard"></i> <span>Data wilayah</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a {{ Route::is('datawilayahprovinsi') ? 'class=active' : '' }} href="/datawilayahprovinsi">Provinsi</a></li>
+                        <li><a {{ Route::is('datawilayahkabupaten') ? 'class=active' : '' }} href="/datawilayahkabupaten">Kota / Kabupaten</a></li>
+                        <li><a {{ Route::is('datawilayahkecamatan') ? 'class=active' : '' }} href="/datawilayahkecamatan">Kecamatan</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="payments.html"><i data-feather="credit-card"></i> <span>Payments</span></a>

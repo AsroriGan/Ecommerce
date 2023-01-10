@@ -2,19 +2,19 @@
 
 namespace App\Models;
 
-use App\Models\subkategori;
+use App\Models\kategori;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class kategori extends Model
+class subkategori extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
     protected $dates = ['created_at'];
 
-    public function idkategori()
+    public function idkategoris()
     {
-        return $this->hasMany(subkategori::class);
+        return $this->belongsTo(kategori::class,'id');
     }
 }

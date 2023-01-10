@@ -12,6 +12,7 @@ use App\Http\Controllers\Landing\WhislistController as LandingWhislistController
 
 // Admin
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
+use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,7 @@ Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk'
 Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
 Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
 Route::get('/product', [LandingProdukController::class, 'product'])->name('product');
+Route::get('/tambahproduct', [LandingProdukController::class, 'tambahproduct'])->name('tambahproduct');
 
 // Blog
 Route::get('/blog', [LandingBlogController::class, 'blog']);
@@ -76,10 +78,31 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 
-// kategroi Admin
+// Star kategroi Admin
+    //Kategori
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
+Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
+Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
+    //SubKategori
+Route::get('/subkategori', [AdminKategoriController::class, 'subkategori'])->name('subkategori');
+Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
 
-
+// End Kategori Admin
+//start data wilayah
+    //provinsi
+Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
+    //insert and edit provinsi
+Route::post('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');
+Route::post('/editprovinsi/{id}', [AdminDatawilayahController::class, 'editprovinsi'])->name('editprovinsi');
+    //kabupaten
+Route::get('/datawilayahkabupaten', [AdminDatawilayahController::class, 'datawilayahkabupaten'])->name('datawilayahkabupaten');
+    //insert kabupaten
+Route::post('/insertkabupaten', [AdminDatawilayahController::class, 'insertkabupaten'])->name('insertkabupaten');
+    //kecamatan
+Route::get('/datawilayahkecamatan', [AdminDatawilayahController::class, 'datawilayahkecamatan'])->name('datawilayahkecamatan');
+    //insert kecamatan
+Route::post('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecamatan'])->name('insertkecamatan');
+//end data wilayah
 ////////Sliders
 Route::get('/sliderr', [SliderController::class, 'slider'])->name('slider');
 Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);
