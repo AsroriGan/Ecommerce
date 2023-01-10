@@ -26,21 +26,37 @@
 
         <div class="page-wrapper">
             <div class="content container-fluid">
-
-                <div class="page-header">
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="page-title">Data Kategori / Kategori</h3>
-                            {{-- <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Kategori</a></li>
-                            </ul> --}}
+                <div class="row">
+                    <div class="col-6">
+                        <div class="page-header">
+                            <div class="row">
+                                <div class="col">
+                                    <h3 class="page-title">Data Kategori / Kategori</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="card-header">
-                    <button type="button" class="btn btn-info waves-effect waves-light mt-1" data-bs-toggle="modal"
-                        data-bs-target="#modal-kategori">Tambah Kategori</button>
+                    <div class="col-6">
+                        <div class="card invoices-tabs-card">
+                            <div class="card-body card-body pt-0 pb-0">
+                                <div class="invoices-main-tabs border-0 pb-0">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12 col-md-12">
+                                            <div
+                                                class="invoices-settings-btn
+                                    invoices-settings-btn-one">
+                                                <a href="#" class="btn" data-bs-toggle="modal"
+                                                data-bs-target="#modal-kategori">
+                                                    <i data-feather="plus-circle"></i>
+                                                    Tambah Item
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -62,13 +78,16 @@
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
                                                     <td>{{ $data->kategori }}</td>
+
                                                     <td><a data-bs-toggle="modal"
                                                             data-bs-target="#edit-kategori{{ $data->id }}"
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
-                                                        <a href="javascript:void(0);"
-                                                            class="btn btn-sm btn-white text-danger me-2"><i
+
+                                                        <a id="delete"
+                                                            class="btn btn-sm btn-white text-danger me-2 " data-kategori="{{ $data->kategori }}" ><i
                                                                 class="far fa-trash-altme-1"></i>Hapus</a>
+
                                                     </td>
 
 
@@ -169,6 +188,36 @@
         @if (Session::has('success'))
             toastr.success("{{ Session::get('success') }}")
         @endif
+    </script>
+
+    <script>
+        $("#delete").click( function() {
+            var kategori = $(this).attr('data-kategori')
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You won't be able to revert this!",
+			type: "warning",
+			showCancelButton: !0,
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Yes, delete it!",
+			confirmButtonClass: "btn btn-primary",
+			cancelButtonClass: "btn btn-danger ml-1",
+			buttonsStyling: !1
+		}).then(function(t) {
+			t.value ? Swal.fire({
+				type: "success",
+				title: "Deleted!",
+				text: "Your file has been deleted.",
+				confirmButtonClass: "btn btn-success"
+			}) : t.dismiss === Swal.DismissReason.cancel && Swal.fire({
+				title: "Cancelled",
+				text: "Your imaginary file is safe :)",
+				type: "error",
+				confirmButtonClass: "btn btn-success"
+			})
+		})
+	})
     </script>
 
     <script>

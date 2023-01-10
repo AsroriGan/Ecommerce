@@ -11,4 +11,15 @@ class Sub_Subkategori extends Model
 
     protected $guarded = [];
     protected $dates = ['created_at'];
+
+
+    public function datakategori()
+    {
+        return $this->belongsTo(kategori::class, 'kategori', 'id');
+    }
+
+    public function datasubkategori()
+    {
+        return $this->belongsTo(subkategori::class, 'subkategori', 'id');
+    }
 }

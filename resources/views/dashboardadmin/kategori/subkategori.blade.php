@@ -26,14 +26,35 @@
 
         <div class="page-wrapper">
             <div class="content container-fluid">
-
-                <div class="page-header">
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="page-title">Data Kategori / Kategori</h3>
-                            {{-- <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Kategori</a></li>
-                            </ul> --}}
+                <div class="row">
+                    <div class="col-6">
+                        <div class="page-header">
+                            <div class="row">
+                                <div class="col">
+                                    <h3 class="page-title">Data Kategori / SubKategori</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card invoices-tabs-card">
+                            <div class="card-body card-body pt-0 pb-0">
+                                <div class="invoices-main-tabs border-0 pb-0">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12 col-md-12">
+                                            <div
+                                                class="invoices-settings-btn
+                                    invoices-settings-btn-one">
+                                                <a href="#" class="btn" data-bs-toggle="modal"
+                                                data-bs-target="#modal-subkategori">
+                                                    <i data-feather="plus-circle"></i>
+                                                    Tambah Item
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -41,10 +62,6 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-                            <div class="card-header">
-                                <button type="button" class="btn btn-info waves-effect waves-light mt-1"
-                                    data-bs-toggle="modal" data-bs-target="#modal-subkategori">Tambah Kategori</button>
-                            </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="datatable table table-stripped" id="myTable">

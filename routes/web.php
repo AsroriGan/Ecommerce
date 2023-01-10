@@ -83,13 +83,16 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
+Route::get('/deletekategori', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
+
+
     //SubKategori
 Route::get('/subkategori', [AdminKategoriController::class, 'subkategori'])->name('subkategori');
 Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
 Route::post('/editsubkategoripost/{id}', [AdminKategoriController::class, 'editsub_kategoripost'])->name('editsubkategoripost');
     //Sub_Subkategori
 Route::get('/sub_subkategori', [AdminKategoriController::class, 'sub_subkategori'])->name('sub_subkategori');
-Route::get('/sub_subkategoripost', [AdminKategoriController::class, 'sub_subkategoripost'])->name('sub_subkategoripost');
+Route::post('/sub_subkategoripost', [AdminKategoriController::class, 'sub_subkategoripost'])->name('sub_subkategoripost');
 
 
 // End Kategori Admin

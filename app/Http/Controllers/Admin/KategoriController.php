@@ -41,6 +41,15 @@ class KategoriController extends Controller
         return redirect()->route('kategori')->with('success','Data Berhasil DiUpdate');
     }
 
+    public function deletekategori($id){
+
+        $data = kategori::find($id);
+        $data->delete();
+
+        return redirect()->route('kategori')->with('success','Data Berhasil DiHapus');
+
+    }
+
     //Sub Kategori
 
     public function subkategori(){
@@ -74,11 +83,16 @@ class KategoriController extends Controller
     }
 
     public function sub_subkategori(){
-        return view('dashboardadmin.kategori.sub_subkategori');
+
+        $kategori = kategori::all();
+        $subkategori = subkategori::all();
+        $_subsubkategori = Sub_Subkategori::with('datasubkategori','datakategori');
+
+        return view('dashboardadmin.kategori.sub_subkategori', compact('kategori', 'subkategori', '_subsubkategori'));
     }
 
     public function sub_subkategoripost(Request $request){
-        $subkategori = Sub_Subkategori::create ([
+        $data = Sub_Subkategori::create ([
 
             'kategori' => $request->kategori,
             'sub_kategori' => $request->sub_kategori,
