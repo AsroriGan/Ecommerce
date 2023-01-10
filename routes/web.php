@@ -101,9 +101,9 @@ Route::post('/insertkabupaten', [AdminDatawilayahController::class, 'insertkabup
 Route::post('/editkabupaten/{id}', [AdminDatawilayahController::class, 'editkabupaten'])->name('editkabupaten');
     //kecamatan
 Route::get('/datawilayahkecamatan', [AdminDatawilayahController::class, 'datawilayahkecamatan'])->name('datawilayahkecamatan');
-    //insert kecamatan
+    //insert and edit kecamatan
 Route::post('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecamatan'])->name('insertkecamatan');
-Route::post('/editkecamatan', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
+Route::post('/editkecamatan/{id}', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
 //end data wilayah
 ////////Sliders
 Route::get('/slider', [SliderController::class, 'slider'])->name('slider');
