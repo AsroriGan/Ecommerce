@@ -13,8 +13,8 @@ class subkategori extends Model
     protected $guarded = [];
     protected $dates = ['created_at'];
 
-    public function idkategori()
+    public function idkategoris()
     {
-        return $this->belongsTo(kategori::class, 'kategori','id');
+        return $this->belongsTo(kategori::class,'id');
     }
 }

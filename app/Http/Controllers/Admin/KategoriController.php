@@ -43,9 +43,9 @@ class KategoriController extends Controller
     //Sub Kategori
 
     public function subkategori(){
-        $kategori = subkategori::with('idkategori')->get();
+        $kate = subkategori::all();
         $data = kategori::all();
-        return view('dashboardadmin.kategori.subkategori', compact('data','kategori'));
+        return view('dashboardadmin.kategori.subkategori', compact('data','kate'));
     }
 
     public function sub_kategoripost(Request $request){

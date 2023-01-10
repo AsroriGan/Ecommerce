@@ -15,6 +15,6 @@ class kategori extends Model
 
     public function idkategori()
     {
-        return $this->hasMany(subkategori::class    ,'id');
+        return $this->hasMany(subkategori::class);
     }
 }
