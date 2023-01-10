@@ -81,4 +81,5 @@ Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kat
 
 
 ////////Sliders
-Route::get('/slider', [SliderController::class, 'slider'])->name('slider');
+Route::get('/sliderr', [SliderController::class, 'slider'])->name('slider');
+Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);

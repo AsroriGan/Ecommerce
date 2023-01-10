@@ -7,7 +7,7 @@
                     <a href="index.html"><i data-feather="home"></i> <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="customers.html"><i data-feather="users"></i> <span>Customers</span></a>
+                    <a href="/sliderr"><i data-feather="users"></i> <span>Slider</span></a>
                 </li>
                 <li>
                     <a href="estimates.html"><i data-feather="file-text"></i> <span>Estimates</span></a>
