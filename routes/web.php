@@ -106,4 +106,5 @@ Route::post('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecam
 Route::post('/editkecamatan/{id}', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
 //end data wilayah
 ////////Sliders
-Route::get('/slider', [SliderController::class, 'slider'])->name('slider');
+Route::get('/sliderr', [SliderController::class, 'slider'])->name('slider');
+Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);
