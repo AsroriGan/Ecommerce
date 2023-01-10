@@ -77,12 +77,18 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 
-// kategroi Admin
+// Star kategroi Admin
+    //Kategori
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
+Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
+    //SubKategori
+Route::get('/subkategori', [AdminKategoriController::class, 'subkategori'])->name('subkategori');
+Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
 
+// End Kategori Admin
 //start data wilayah
-    //provinsi
+    //provinsi 
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
     //insert provinsi
 Route::post('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');

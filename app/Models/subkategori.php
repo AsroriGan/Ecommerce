@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use App\Models\subkategori;
+use App\Models\kategori;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class kategori extends Model
+class subkategori extends Model
 {
     use HasFactory;
 
@@ -15,6 +15,6 @@ class kategori extends Model
 
     public function idkategori()
     {
-        return $this->hasMany(subkategori::class    ,'id');
+        return $this->belongsTo(kategori::class, 'kategori','id');
     }
 }

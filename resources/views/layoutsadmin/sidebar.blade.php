@@ -17,7 +17,7 @@
                             class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="/kategori">Kategori</a></li>
-                        <li><a href="invoice-grid.html">Sub Kategori</a></li>
+                        <li><a href="/subkategori">Sub Kategori</a></li>
                         <li><a href="invoice-grid-two.html">Sub->SubKategori</a></li>
                     </ul>
                 </li>
