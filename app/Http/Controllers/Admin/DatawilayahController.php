@@ -58,6 +58,11 @@ class DatawilayahController extends Controller
         $data = datawilayahkecamatan::create($request->all());
         return redirect('/datawilayahkecamatan');
     }
+    public function editkecamatan(Request $request,$id){
+        $data = datawilayahkecamatan::findorfail($id);
+        $data->update($request->all());
+        return redirect('/datawilayahkecamatan');
+    }
     public function deletekecamatan($id){
         $data = datawilayahkecamatan::findorfail($id);
         $data->delete();
