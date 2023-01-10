@@ -85,10 +85,15 @@ Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkate
     //SubKategori
 Route::get('/subkategori', [AdminKategoriController::class, 'subkategori'])->name('subkategori');
 Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
+Route::post('/editsubkategoripost/{id}', [AdminKategoriController::class, 'editsub_kategoripost'])->name('editsubkategoripost');
+    //Sub_Subkategori
+Route::get('/sub_subkategori', [AdminKategoriController::class, 'sub_subkategori'])->name('sub_subkategori');
+Route::get('/sub_subkategoripost', [AdminKategoriController::class, 'sub_subkategoripost'])->name('sub_subkategoripost');
+
 
 // End Kategori Admin
 //start data wilayah
-    //provinsi 
+    //provinsi
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
     //insert and edit provinsi
 Route::post('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');
