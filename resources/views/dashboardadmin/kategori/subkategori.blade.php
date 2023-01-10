@@ -57,10 +57,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($kategori as $datasub)
+                                            @foreach ($kate as $datasub)
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
-                                                    <td>{{ $datasub->idkategori->kategori }}</td>
+                                                    <td>{{ $datasub->idkategoris->kategori }}</td>
                                                     <td>{{ $datasub->sub_kategori }}</td>
                                                     <td><a data-bs-toggle="modal" data-bs-target="#edit-kategori"
                                                             class="btn btn-sm  btn-white text-success me-2"><i
@@ -97,14 +97,14 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Kategori :</label>
-                                    <select id="kategori" class="form-control"
-                                    name="kategori" aria-label="Default select example">
-                                    <option value="" disabled selected>Pilih Kategori </option>
-                                    @foreach ($data as $datas)
-                                        <option value="{{ $datas->kategori }}" data-sub_kategori="{{ $datas->sub_kategori }}" >{{ $datas->kategori }}</option>
-                                    @endforeach
-                                   
-                                </select>
+                                    <select id="kategori" class="form-control" name="kategori"
+                                        aria-label="Default select example">
+                                        <option value="" disabled selected>Pilih Kategori </option>
+                                        @foreach ($data as $datas)
+                                            <option value="{{ $datas->id }}">{{ $datas->kategori }}</option>
+                                        @endforeach
+
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
