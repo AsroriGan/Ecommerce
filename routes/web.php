@@ -44,6 +44,7 @@ Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk'
 Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
 Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
 Route::get('/product', [LandingProdukController::class, 'product'])->name('product');
+Route::get('/tambahproduct', [LandingProdukController::class, 'tambahproduct'])->name('tambahproduct');
 
 // Blog
 Route::get('/blog', [LandingBlogController::class, 'blog']);
@@ -88,7 +89,7 @@ Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripo
 
 // End Kategori Admin
 //start data wilayah
-    //provinsi 
+    //provinsi
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
     //insert and edit provinsi
 Route::post('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');

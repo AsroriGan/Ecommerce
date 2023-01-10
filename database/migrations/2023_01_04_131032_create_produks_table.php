@@ -25,6 +25,7 @@ return new class extends Migration
             $table->text('deskirpsi_panjang');
             $table->string('foto_produk');
             $table->string('galeri_produk');
+            $table->string('status');
             $table->timestamps();
         });
     }
