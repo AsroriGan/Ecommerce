@@ -69,6 +69,7 @@ class KategoriController extends Controller
     }
 
     public function editsub_kategoripost(Request $request, $id){
+        // dd($request->all());
         $data = subkategori::findOrFail($id);
 
         $data->update ([
@@ -86,8 +87,8 @@ class KategoriController extends Controller
 
         $kategori = kategori::all();
         $subkategori = subkategori::all();
-        $_subsubkategori = Sub_Subkategori::with('datasubkategori','datakategori');
-
+        $_subsubkategori = Sub_Subkategori::with('datasubkategori','datakategori')->get();
+        // dd($_subsubkategori);
         return view('dashboardadmin.kategori.sub_subkategori', compact('kategori', 'subkategori', '_subsubkategori'));
     }
 
@@ -102,6 +103,22 @@ class KategoriController extends Controller
 
         return redirect()->route('sub_subkategori')->with('success', 'Data Berhasil Ditambahkan');
 
+    }
+
+    public function updatesub_subkategori(Request $request, $id)
+    {
+        // dd($request- >all());
+        $data =Sub_Subkategori::findOrFail($id);
+
+        $data->update([
+
+                'kategori' => $request->kategori,
+                'sub_kategori' => $request->sub_kategori,
+                'sub_subkategori' => $request->sub_subkategori,
+
+            ]);
+
+        return redirect()->route('sub_subkategori')->with('success', 'Data Berhasil DiUpdate');
     }
 
 }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sub_Subkategori extends Model
+class   Sub_Subkategori extends Model
 {
     use HasFactory;
 
@@ -20,6 +20,6 @@ class Sub_Subkategori extends Model
 
     public function datasubkategori()
     {
-        return $this->belongsTo(subkategori::class, 'subkategori', 'id');
+        return $this->belongsTo(subkategori::class, 'sub_kategori', 'id');
     }
 }

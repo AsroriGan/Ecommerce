@@ -93,6 +93,7 @@ Route::post('/editsubkategoripost/{id}', [AdminKategoriController::class, 'edits
     //Sub_Subkategori
 Route::get('/sub_subkategori', [AdminKategoriController::class, 'sub_subkategori'])->name('sub_subkategori');
 Route::post('/sub_subkategoripost', [AdminKategoriController::class, 'sub_subkategoripost'])->name('sub_subkategoripost');
+Route::post('/updatesub_subkategori/{id}', [AdminKategoriController::class, 'updatesub_subkategori'])->name('updatesub_subkategori');
 
 
 // End Kategori Admin
