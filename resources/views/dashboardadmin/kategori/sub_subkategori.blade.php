@@ -136,16 +136,17 @@
                                                                                     class="form-label">Sub Kategori
                                                                                     :</label>
                                                                                 <select id="kategori"
-                                                                                    class="form-control" name="sub_kategori"
+                                                                                    class="form-control"
+                                                                                    name="sub_kategori"
                                                                                     aria-label="Default select example">
                                                                                     <option
                                                                                         value="{{ $row->datasubkategori->sub_kategori }}">
                                                                                         {{ $row->datasubkategori->sub_kategori }}
                                                                                     </option>
-                                                                                    @foreach ($subkategori as $datakate)
+                                                                                    @foreach ($_subsubkategori as $datakate)
                                                                                         <option
-                                                                                            value="{{ $datakate->id }}">
-                                                                                            {{ $datakate->sub_kategori }}
+                                                                                            value="{{ $datakate->datasubkategori->id }}">
+                                                                                            {{ $datakate->datasubkategori->sub_kategori }}
                                                                                         </option>
                                                                                     @endforeach
                                                                                 </select>
@@ -213,10 +214,6 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Sub-Kategori</label>
-            <<<<<<< HEAD
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="field-1" class="form-label">Sub-Kategori</label>
                                     <select class="form-select" name="sub_kategori">
                                         <option>Pilih Sub-Kategori</option>
                                         @foreach ($subkategori as $row)
@@ -224,59 +221,29 @@
                                             </option>
                                         @endforeach
                                     </select>
-=======
-                            <form action="/sub_subkategoripost" method="POST">
-                                @csrf
-                                <div class="modal-body p-4">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label for="field-1" class="form-label">Kategori</label>
-                                                <select class="form-select" name="kategori">
-                                                    <option>Pilih Kategori</option>
-                                                    @foreach ($kategori as $row)
-                                                        <option value="{{ $row->id }}">{{ $row->kategori }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label for="field-1" class="form-label">Sub-Kategori</label>
-                                                <select class="form-select" name="sub_subkategori">
-                                                    <option>Pilih Sub-Kategori</option>
-                                                    @foreach ($subkategori as $data)
-                                                        <option value="{{ $data->id }}">{{ $data->sub_kategori }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label for="field-1" class="form-label">Sub->SubKategori</label>
-                                                <input type="text" name="sub_kategori" class="form-control"
-                                                    id="field-1" placeholder="Masukkan Sub SubKategori">
-                                            </div>
-                                        </div>
-                                    </div>
->>>>>>> 5c50617065419be963f5d493f525627710592533
-label">Sub->SubKategori</label>
-                                    <input type="text" name="sub_subkategori" class="form-control" id="field-1"
-                                        placeholder="Masukkan Sub SubKategori">
                                 </div>
                             </div>
                         </div>
+                        <label for="">Sub Subkategori</label>
+                        <input type="text" name="sub_subkategori" class="form-control" id="field-1"
+                            placeholder="Masukkan Sub SubKategori">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary waves-effect"
-                            data-bs-dismiss="modal">Kembali</button>
-                        <button type="submit" class="btn btn-info waves-effect waves-light">Tambah</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save
+                            changes</button>
                     </div>
-                </form>
+
             </div>
+
         </div>
+        {{-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Kembali</button>
+            <button type="submit" class="btn btn-info waves-effect waves-light">Tambah</button>
+        </div> --}}
+        </form>
+    </div>
+    </div>
     </div>
 
     <!-- Star Script -->
