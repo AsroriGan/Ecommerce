@@ -188,11 +188,14 @@
         });
     </script>
     <script>
-<<<<<<< HEAD
         @if (Session::has('success'))
             toastr.success("{{ Session::get('success') }}")
         @endif
-=======
+        @if (Session::has('error'))
+            toastr.success("{{ Session::get('error') }}")
+        @endif
+    </script>
+    <script>
         $("#delete").click(function() {
             var nama = $(this).attr('data-provinsi');
             var id = $(this).attr('data-id');
@@ -208,20 +211,24 @@
                 cancelButtonClass: "btn btn-danger ml-1",
                 buttonsStyling: !1
             }).then(function(t) {
-                t.value ? Swal.fire({
-				type: "success",
-				title: "Deleted!",
-				text: "Your file has been deleted.",
-				confirmButtonClass: "btn btn-success"
-			}) : t.dismiss === Swal.DismissReason.cancel && Swal.fire({
-				title: "Cancelled",
-				text: "Your imaginary file is safe :)",
-				type: "error",
-				confirmButtonClass: "btn btn-success"
-			})
+                if (t.value) {
+                    window.location = "/deleteprovinsi/" + id;
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        type: "error",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                }
             })
         })
->>>>>>> 541853822dc71e8658a327ed94c35d4580f1cbd9
     </script>
     <!-- End Scrip -->
 

@@ -148,7 +148,7 @@
                                                                 class="far
                                                         fa-edit me-1"></i>
                                                             Edit</a>
-                                                        <a href="javascript:void(0);"
+                                                        <a id="delete" data-id="{{ $row->id }}" data-nama="{{ $row->kecamatan }}" href="javascript:void(0);"
                                                             class="btn btn-sm
                                                     btn-white
                                                     text-danger me-2"><i
@@ -168,7 +168,7 @@
                                                                     data-bs-dismiss="modal"
                                                                     aria-label="Close"></button>
                                                             </div>
-                                                            <form action="/insertkabupaten" method="POST">
+                                                            <form action="/editkecamatan/{{$row->id}}" method="POST">
                                                                 @csrf
                                                                 <div class="modal-body p-4">
                                                                     <div class="row">
@@ -217,19 +217,20 @@
                                                                                 <input type="text" name="kecamatan"
                                                                                     class="form-control"
                                                                                     id="field-1"
-                                                                                    placeholder="{{ $row->kecamatan }}" value="{{ $row->kecamatan }}"
+                                                                                    placeholder="{{ $row->kecamatan }}"
+                                                                                    value="{{ $row->kecamatan }}"
+                                                                                    </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button"
-                                                                        class="btn btn-secondary waves-effect"
-                                                                        data-bs-dismiss="modal">Close</button>
-                                                                    <button type="submit"
-                                                                        class="btn btn-info waves-effect waves-light">Save
-                                                                        changes</button>
-                                                                </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button"
+                                                                            class="btn btn-secondary waves-effect"
+                                                                            data-bs-dismiss="modal">Close</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-info waves-effect waves-light">Save
+                                                                            changes</button>
+                                                                    </div>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -259,6 +260,41 @@
         @if (Session::has('error'))
             toastr.success("{{ Session::get('error') }}")
         @endif
+    </script>
+    <script>
+        $("#delete").click(function() {
+            var nama = $(this).attr('data-nama');
+            var id = $(this).attr('data-id');
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1
+            }).then(function(t) {
+                if (t.value) {
+                    window.location = "/deletekecamatan/" + id;
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        type: "error",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                }
+            })
+        })
     </script>
     <!-- End Scrip -->
 
