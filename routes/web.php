@@ -89,7 +89,7 @@ Route::get('/deletekategori', [AdminKategoriController::class, 'deletekategori']
     //SubKategori
 Route::get('/subkategori', [AdminKategoriController::class, 'subkategori'])->name('subkategori');
 Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
-Route::post('/editsubkategoripost/{id}', [AdminKategoriController::class, 'editsub_kategoripost'])->name('editsubkategoripost');
+Route::post('/editsubkategoripost/{id}', [AdminKategoriController::class, 'editsubkategoripost'])->name('editsubkategoripost');
     //Sub_Subkategori
 Route::get('/sub_subkategori', [AdminKategoriController::class, 'sub_subkategori'])->name('sub_subkategori');
 Route::post('/sub_subkategoripost', [AdminKategoriController::class, 'sub_subkategoripost'])->name('sub_subkategoripost');

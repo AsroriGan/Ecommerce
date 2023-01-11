@@ -21,6 +21,6 @@ class subkategori extends Model
 
     public function idkategoris()
     {
-        return $this->belongsTo(kategori::class,'id');
+        return $this->belongsTo(kategori::class, 'kategori', 'id');
     }
 }

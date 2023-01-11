@@ -46,7 +46,7 @@
                                                 class="invoices-settings-btn
                                     invoices-settings-btn-one">
                                                 <a href="#" class="btn" data-bs-toggle="modal"
-                                                data-bs-target="#modal-subkategori">
+                                                    data-bs-target="#modal-subkategori">
                                                     <i data-feather="plus-circle"></i>
                                                     Tambah Item
                                                 </a>
@@ -97,10 +97,12 @@
                                                                 <div class="modal-header">
                                                                     <h4 class="modal-title">Edit Kategori</h4>
                                                                     <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body p-4">
-                                                                    <form action="editsubkategoripost/{{ $datasub->id }}"
+                                                                    <form
+                                                                        action="editsubkategoripost/{{ $datasub->id }}"
                                                                         method="POST">
                                                                         @csrf
                                                                         <div class="row">
@@ -110,10 +112,11 @@
                                                                                         class="form-label">Kategori
                                                                                         :</label>
                                                                                     <select id="kategori"
-                                                                                        class="form-control" name="kategori"
+                                                                                        class="form-control"
+                                                                                        name="kategori"
                                                                                         aria-label="Default select example">
                                                                                         <option
-                                                                                            value="{{ $datasub->idkategoris->kategori }}">
+                                                                                            value="{{ $datasub->idkategoris->kategori }}" disabled selected>
                                                                                             {{ $datasub->idkategoris->kategori }}
                                                                                         </option>
                                                                                         @foreach ($data as $datakate)
@@ -130,8 +133,10 @@
                                                                                     <label for="field-3"
                                                                                         class="form-label">Sub Kategori
                                                                                         :</label>
-                                                                                    <input type="text" id="sub_kategori"
-                                                                                        name="sub_kategori" class="form-control"
+                                                                                    <input type="text"
+                                                                                        id="sub_kategori"
+                                                                                        name="sub_kategori"
+                                                                                        class="form-control"
                                                                                         value="{{ $datasub->sub_kategori }}"
                                                                                         id="field-3"
                                                                                         placeholder="Masukan Kategori">
@@ -152,17 +157,17 @@
                                                     </div>
                                                 </tr>
 
-                                             </div>
-                                            @endforeach
-                                        </tbody>
-                                     </table>
-                                 </div>
+                                            </div>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <div id="modal-subkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
