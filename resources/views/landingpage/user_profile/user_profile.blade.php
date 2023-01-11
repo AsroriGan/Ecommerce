@@ -380,7 +380,7 @@
     <!-- Footer Area End -->
 
     <!-- Modal -->
-    <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog">
+    <div class="modal fade show" id="edit_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -433,32 +433,29 @@
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-md-6 space-t-15">
+                                        <label class="form-label">Region state *</label>
+                                        <select id="regionstate" class="form-select" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            @foreach ($regionstate as $row)
+                                            <option value="{{ $row->id }}">{{ $row->provinsi }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 space-t-15">
                                         <label class="form-label">City *</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                        <select id="city" class="form-select" aria-label="Default select example" disabled>
+                                            <option>-- City List --</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6 space-t-15">
-                                        <label class="form-label">Post Code </label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-md-6 space-t-15">
-                                        <label class="form-label">Country *</label>
-                                        <select class="form-select" aria-label="Disabled select example" disabled>
-                                            <option selected>Indonesia</option>
+                                        <label class="form-label">Districts *</label>
+                                        <select id="distric" class="form-select" aria-label="Default select example" disabled>
+                                            <option>-- Distric List --</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6 space-t-15">
-                                        <label class="form-label">Region State *</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                        <label class="form-label">Post Code *</label>
+                                        <input type="text" class="form-control" placeholder="Post Code">
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Email </label>
@@ -735,6 +732,21 @@
 
     <!-- Vendor JS -->
     @include('layouts.script')
+    <script>
+        $(document).ready(function(){
+            $('#regionstate').change(function(){
+                let rsi = $(this).val();
+                $.ajax({
+                    url :'/getkabupaten',
+                    type:'post',
+                    data:'rsi='+rsi+'&_token={{ csrf_token() }}',
+                    success:function(result){
+                        $('#city').html(result)
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
