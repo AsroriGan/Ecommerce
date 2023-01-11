@@ -65,7 +65,7 @@ Route::get('/', [LandingpageController::class, 'home'])->name('home');
 Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
 
 //Kategori
-Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('index.kategori');
+Route::get('/categories', [LandingKategoriController::class, 'index'])->name('index.kategori');
 
 //user profile
 Route::get('/user-profile',[LandingUserprofilecontroller::class,'index'])->name('user-profle');
