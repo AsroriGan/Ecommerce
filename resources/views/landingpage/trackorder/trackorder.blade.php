@@ -132,7 +132,7 @@
                         <h2 class="ec-order-id">No. Pesanan #6152</h2>
                         <div class="ec-order-detail">
                             <div>Perkiraan sampai 14-02-2021-2022</div>
-                            <div>Toko Serba Ada <span>v534hb</span></div>
+                            <div>Toserba <span>v534hb</span></div>
                         </div>
                     </div>
                     <div class="ec-trackorder-bottom">

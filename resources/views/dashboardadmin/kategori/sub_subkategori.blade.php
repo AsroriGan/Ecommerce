@@ -133,8 +133,8 @@
                                                 <label for="field-1" class="form-label">Sub-Kategori</label>
                                                 <select class="form-select" name="sub_subkategori">
                                                     <option>Pilih Sub-Kategori</option>
-                                                    @foreach ($subkategori as $row)
-                                                        <option value="{{ $row->id }}">{{ $row->subkategori }}
+                                                    @foreach ($subkategori as $data)
+                                                        <option value="{{ $data->id }}">{{ $data->sub_kategori }}
                                                         </option>
                                                     @endforeach
                                                 </select>

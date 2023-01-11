@@ -447,7 +447,7 @@
                                             </div>
                                             <div class="modal-body p-4">
                                                 <div class="row">
-                                                    <form action="/updateslider/{{ $slider->id }}" method="post"
+                                                    {{-- <form action="/updateslider/{{ $slider->id }}" method="post"
                                                         enctype="multipart/form-data">
                                                         @csrf
                                                         <div class="col-md-12">
@@ -469,7 +469,7 @@
                                                                 data-dismiss="modal">Close</button>
                                                             <button type="submit" class="btn btn-primary">Save
                                                                 changes</button>
-                                                    </form>
+                                                    </form> --}}
                                                 </div>
                                             </div>
                                             <div class="modal-footer">

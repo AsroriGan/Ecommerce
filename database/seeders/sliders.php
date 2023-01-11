@@ -17,12 +17,14 @@ class sliders extends Seeder
     {
         DB::table('sliders')->insert([
             'foto1' => 'slider-03.png',
+            'foto2' => 'slider-03.png',
+            'foto3' => 'slider-03.png',
         ]);
-        DB::table('sliders')->insert([
-            'foto1' => 'slider-03.png',
-        ]);
-        DB::table('sliders')->insert([
-            'foto1' => 'slider-03.png',
-        ]);
+        // DB::table('sliders')->insert([
+        //     'foto2' => 'slider-03.png',
+        // ]);
+        // DB::table('sliders')->insert([
+        //     'foto3' => 'slider-03.png',
+        // ]);
     }
 }

@@ -7,7 +7,7 @@
                     <a href="index.html"><i data-feather="home"></i> <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="/sliderr"><i data-feather="users"></i> <span>Slider</span></a>
+                    <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i> <span>Slider</span></a>
                 </li>
                 <li>
                     <a href="estimates.html"><i data-feather="file-text"></i> <span>Estimates</span></a>
