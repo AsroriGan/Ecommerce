@@ -213,6 +213,10 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Sub-Kategori</label>
+            <<<<<<< HEAD
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Sub-Kategori</label>
                                     <select class="form-select" name="sub_kategori">
                                         <option>Pilih Sub-Kategori</option>
                                         @foreach ($subkategori as $row)
@@ -220,11 +224,45 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="field-1" class="form-label">Sub->SubKategori</label>
+=======
+                            <form action="/sub_subkategoripost" method="POST">
+                                @csrf
+                                <div class="modal-body p-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="field-1" class="form-label">Kategori</label>
+                                                <select class="form-select" name="kategori">
+                                                    <option>Pilih Kategori</option>
+                                                    @foreach ($kategori as $row)
+                                                        <option value="{{ $row->id }}">{{ $row->kategori }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="field-1" class="form-label">Sub-Kategori</label>
+                                                <select class="form-select" name="sub_subkategori">
+                                                    <option>Pilih Sub-Kategori</option>
+                                                    @foreach ($subkategori as $data)
+                                                        <option value="{{ $data->id }}">{{ $data->sub_kategori }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="field-1" class="form-label">Sub->SubKategori</label>
+                                                <input type="text" name="sub_kategori" class="form-control"
+                                                    id="field-1" placeholder="Masukkan Sub SubKategori">
+                                            </div>
+                                        </div>
+                                    </div>
+>>>>>>> 5c50617065419be963f5d493f525627710592533
+label">Sub->SubKategori</label>
                                     <input type="text" name="sub_subkategori" class="form-control" id="field-1"
                                         placeholder="Masukkan Sub SubKategori">
                                 </div>

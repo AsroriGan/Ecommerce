@@ -72,12 +72,7 @@ class KategoriController extends Controller
         // dd($request->all());
         $data = subkategori::findOrFail($id);
 
-        $data->update ([
-
-            'kategori' => $request->kategori,
-            'sub_kategori' => $request->sub_kategori,
-
-        ]);
+        $data->update($request->all());
 
          return redirect()->route('subkategori')->with('success', 'Data Berhasil DiUpdate');
 
