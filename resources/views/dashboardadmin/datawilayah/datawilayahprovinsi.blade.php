@@ -116,14 +116,20 @@
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
                                                     <td>{{ $row->provinsi }}</td>
-                                                    <td><a href="javascript:void(0);" class="btn btn-sm btn-white text-success me-2" data-bs-toggle="modal"
-                                                        data-bs-target="#con-close-modal{{$row->id}}"><i class="far fa-edit me-1"></i>Edit</a>
-                                                        <a href="javascript:void(0);" class="btn btn-sm btn-white text-danger me-2"><i class="far fa-trash-alt me-1"></i>Delete</a>
+                                                    <td><a href="javascript:void(0);"
+                                                            class="btn btn-sm btn-white text-success me-2"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#con-close-modal{{ $row->id }}"><i
+                                                                class="far fa-edit me-1"></i>Edit</a>
+                                                        <a id="delete" data-provinsi="{{ $row->provinsi }}"
+                                                            data-id="{{ $row->id }}" href="javascript:void(0);"
+                                                            class="btn btn-sm btn-white text-danger me-2"><i
+                                                                class="far fa-trash-alt me-1"></i>Delete</a>
                                                     </td>
                                                 </tr>
-                                                <div id="con-close-modal{{$row->id}}" class="modal fade" tabindex="-1"
-                                                    role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-                                                    style="display:none;">
+                                                <div id="con-close-modal{{ $row->id }}" class="modal fade"
+                                                    tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                    aria-hidden="true" style="display:none;">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -131,7 +137,8 @@
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
-                                                            <form action="/editprovinsi/{{$row->id}}" method="POST">
+                                                            <form action="/editprovinsi/{{ $row->id }}"
+                                                                method="POST">
                                                                 @csrf
                                                                 <div class="modal-body p-4">
                                                                     <div class="row">
@@ -140,7 +147,9 @@
                                                                                 <label for="field-1"
                                                                                     class="form-label">Provinsi</label>
                                                                                 <input type="text" name="provinsi"
-                                                                                    class="form-control" id="field-1" value="{{$row->provinsi}}">
+                                                                                    class="form-control"
+                                                                                    id="field-1"
+                                                                                    value="{{ $row->provinsi }}">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -179,9 +188,40 @@
         });
     </script>
     <script>
+<<<<<<< HEAD
         @if (Session::has('success'))
             toastr.success("{{ Session::get('success') }}")
         @endif
+=======
+        $("#delete").click(function() {
+            var nama = $(this).attr('data-provinsi');
+            var id = $(this).attr('data-id');
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1
+            }).then(function(t) {
+                t.value ? Swal.fire({
+				type: "success",
+				title: "Deleted!",
+				text: "Your file has been deleted.",
+				confirmButtonClass: "btn btn-success"
+			}) : t.dismiss === Swal.DismissReason.cancel && Swal.fire({
+				title: "Cancelled",
+				text: "Your imaginary file is safe :)",
+				type: "error",
+				confirmButtonClass: "btn btn-success"
+			})
+            })
+        })
+>>>>>>> 541853822dc71e8658a327ed94c35d4580f1cbd9
     </script>
     <!-- End Scrip -->
 

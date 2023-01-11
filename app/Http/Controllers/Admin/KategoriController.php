@@ -6,11 +6,12 @@ use App\Models\kategori;
 use App\Models\subkategori;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Sub_Subkategori;
 
 class KategoriController extends Controller
 {
 
-    // Kategori 
+    // Kategori
 
     public function kategori(){
         $data = kategori::all();
@@ -40,6 +41,15 @@ class KategoriController extends Controller
         return redirect()->route('kategori')->with('success','Data Berhasil DiUpdate');
     }
 
+    public function deletekategori($id){
+
+        $data = kategori::find($id);
+        $data->delete();
+
+        return redirect()->route('kategori')->with('success','Data Berhasil DiHapus');
+
+    }
+
     //Sub Kategori
 
     public function subkategori(){
@@ -56,6 +66,42 @@ class KategoriController extends Controller
         ]);
 
         return redirect()->route('subkategori')->with('success','Data Berhasil Ditambahkan');
+    }
+
+    public function editsub_kategoripost(Request $request, $id){
+        $data = subkategori::findOrFail($id);
+
+        $data->update ([
+
+            'kategori' => $request->kategori,
+            'sub_kategori' => $request->sub_kategori,
+
+        ]);
+
+         return redirect()->route('subkategori')->with('success', 'Data Berhasil DiUpdate');
+
+    }
+
+    public function sub_subkategori(){
+
+        $kategori = kategori::all();
+        $subkategori = subkategori::all();
+        $_subsubkategori = Sub_Subkategori::with('datasubkategori','datakategori');
+
+        return view('dashboardadmin.kategori.sub_subkategori', compact('kategori', 'subkategori', '_subsubkategori'));
+    }
+
+    public function sub_subkategoripost(Request $request){
+        $data = Sub_Subkategori::create ([
+
+            'kategori' => $request->kategori,
+            'sub_kategori' => $request->sub_kategori,
+            'sub_subkategori' => $request->sub_subkategori,
+
+        ]);
+
+        return redirect()->route('sub_subkategori')->with('success', 'Data Berhasil Ditambahkan');
+
     }
 
 }

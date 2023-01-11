@@ -18,7 +18,7 @@
                     <ul>
                         <li><a href="/kategori">Kategori</a></li>
                         <li><a href="/subkategori">Sub Kategori</a></li>
-                        <li><a href="invoice-grid-two.html">Sub->SubKategori</a></li>
+                        <li><a href="/sub_subkategori">Sub->SubKategori</a></li>
                     </ul>
                 </li>
                 <li class="submenu {{ Route::is('datawilayahprovinsi','datawilayahkabupaten','datawilayahkecamatan') ? 'active' : '' }}">

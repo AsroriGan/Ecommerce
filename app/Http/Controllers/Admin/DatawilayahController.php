@@ -26,6 +26,11 @@ class DatawilayahController extends Controller
         // dd($data);
         return redirect('/datawilayahprovinsi')->with('success','Data berhasil di edit');
     }
+    public function deleteprovinsi($id){
+        $data = Datawilayah::findorfail($id);
+        $data->delete();
+        return redirect('/datawilayahprovinsi');
+    }
 
     public function datawilayahkabupaten(){
         $provinsi = Datawilayah::all();
@@ -43,6 +48,11 @@ class DatawilayahController extends Controller
         $data->update($request->all());
         return redirect('/datawilayahkabupaten')->with("sucess","Data Berhasil di update");
     }
+    public function deletekabupaten($id){
+        $data = datawilayahkabupaten::findorfail($id);
+        $data->delete();
+        return redirect('/datawilayahkabupaten');
+    }
 
     public function datawilayahkecamatan(){
         $provinsi = Datawilayah::all();
@@ -58,5 +68,15 @@ class DatawilayahController extends Controller
         $data = datawilayahkecamatan::findorfail($id);
         $data->update($request->all());
         return redirect('/datawilayahkecamatan')->with("success","data berhasil di edit");
+    }
+    public function editkecamatan(Request $request,$id){
+        $data = datawilayahkecamatan::findorfail($id);
+        $data->update($request->all());
+        return redirect('/datawilayahkecamatan');
+    }
+    public function deletekecamatan($id){
+        $data = datawilayahkecamatan::findorfail($id);
+        $data->delete();
+        return redirect('/datawilayahkecamatan');
     }
 }
