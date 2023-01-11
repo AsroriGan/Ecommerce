@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Landing;
 
+use App\Models\Produk;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -20,4 +21,15 @@ class ProdukController extends Controller
         return view('landingpage.keranjang.keranjang');
     }
 
+
+    //admin
+    public function product()
+    {
+        $data = Produk::get();
+        return view('dashboardadmin.produk.produk',compact('data'));
+    }
+    public function tambahproduct()
+    {
+        return view('dashboardadmin.produk.tambahproduk');
+    }
 }

@@ -8,10 +8,14 @@
                     <div class="header-top-social">
                         <span class="social-text text-upper">Follow us on:</span>
                         <ul class="mb-0">
-                            <li class="list-inline-item"><a class="hdr-facebook" href="#"><i class="ecicon eci-facebook"></i></a></li>
-                            <li class="list-inline-item"><a class="hdr-twitter" href="#"><i class="ecicon eci-twitter"></i></a></li>
-                            <li class="list-inline-item"><a class="hdr-instagram" href="#"><i class="ecicon eci-instagram"></i></a></li>
-                            <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i class="ecicon eci-linkedin"></i></a></li>
+                            <li class="list-inline-item"><a class="hdr-facebook" href="#"><i
+                                        class="ecicon eci-facebook"></i></a></li>
+                            <li class="list-inline-item"><a class="hdr-twitter" href="#"><i
+                                        class="ecicon eci-twitter"></i></a></li>
+                            <li class="list-inline-item"><a class="hdr-instagram" href="#"><i
+                                        class="ecicon eci-instagram"></i></a></li>
+                            <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i
+                                        class="ecicon eci-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,7 +50,8 @@
                         <!-- Header User Start -->
                         <div class="ec-header-user dropdown">
                             <button class="dropdown-toggle" data-bs-toggle="dropdown"><img
-                                    src="assets/images/icons/user.svg" class="svg_img header_svg" alt="" /></button>
+                                    src="assets/images/icons/user.svg" class="svg_img header_svg"
+                                    alt="" /></button>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li><a class="dropdown-item" href="register.html">Register</a></li>
                                 <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
@@ -63,13 +68,14 @@
                         <!-- Header Cart End -->
                         <!-- Header Cart Start -->
                         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-                            <div class="header-icon"><img src="assets/images/icons/cart.svg"
-                                    class="svg_img header_svg" alt="" /></div>
+                            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg"
+                                    alt="" /></div>
                             <span class="ec-header-count cart-count-lable">3</span>
                         </a>
                         <!-- Header Cart End -->
                         <a href="javascript:void(0)" class="ec-header-btn ec-sidebar-toggle">
-                            <img src="assets/images/icons/category-icon.svg" class="svg_img header_svg" alt="icon" />
+                            <img src="assets/images/icons/category-icon.svg" class="svg_img header_svg"
+                                alt="icon" />
                         </a>
                         <!-- Header menu Start -->
                         <a href="#ec-mobile-menu" class="ec-header-btn ec-side-toggle d-lg-none">
@@ -102,7 +108,8 @@
                     <div class="align-self-center">
                         <div class="header-search">
                             <form class="ec-btn-group-form" action="#">
-                                <input class="form-control ec-search-bar" placeholder="Search products..." type="text">
+                                <input class="form-control ec-search-bar" placeholder="Search products..."
+                                    type="text">
                                 <button class="submit" type="submit"><img src="assets/images/icons/search.svg"
                                         class="svg_img header_svg" alt="" /></button>
                             </form>
@@ -113,20 +120,20 @@
                     <!-- Ec Header Button Start -->
                     <div class="align-self-center">
                         <div class="ec-header-bottons">
-
                             <!-- Header User Start -->
                             <div class="ec-header-user dropdown">
-                                <button class="dropdown-toggle" data-bs-toggle="dropdown"><img
-                                        src="assets/images/icons/user.svg" class="svg_img header_svg" alt="" /></button>
+                                <a href="/user-profile" class="dropdown-toggle mt-22px" data-bs-toggle="dropdown"><img
+                                        src="assets/images/icons/user.svg" class="svg_img header_svg"
+                                        alt="" /></a>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li><a class="dropdown-item" href="/register">Register</a></li>
-                                    {{-- <li><a class="dropdown-item" href="checkout.html">Checkout</a></li> --}}
+                                    <li><a class="dropdown-item" href="/user-profile">My profile</a></li>
                                     <li><a class="dropdown-item" href="/login">Login</a></li>
                                 </ul>
                             </div>
                             <!-- Header User End -->
                             <!-- Header wishlist Start -->
-                            <a href="wishlist.html" class="ec-header-btn ec-header-wishlist">
+                            <a href="/wishlist" class="ec-header-btn ec-header-wishlist">
                                 <div class="header-icon"><img src="assets/images/icons/wishlist.svg"
                                         class="svg_img header_svg" alt="" /></div>
                                 <span class="ec-header-count">4</span>
@@ -139,6 +146,12 @@
                                 <span class="ec-header-count cart-count-lable">3</span>
                             </a>
                             <!-- Header Cart End -->
+                            <!-- Headre Track Order Star -->
+                            <a href="/trackorder" class="ec-header-btn ec-header-trackorder">
+                                <div class="header-icon"><img src="assets/images/icons/track_4.png"
+                                        class="h-55px p-trackorder" alt="" /></div>
+                            </a>
+                            <!-- Header Track Order End -->
                         </div>
                     </div>
                 </div>
@@ -164,7 +177,8 @@
                 <div class="col">
                     <div class="header-search">
                         <form class="ec-btn-group-form" action="#">
-                            <input class="form-control ec-search-bar" placeholder="Search products..." type="text">
+                            <input class="form-control ec-search-bar" placeholder="Search products..."
+                                type="text">
                             <button class="submit" type="submit"><img src="assets/images/icons/search.svg"
                                     class="svg_img header_svg" alt="icon" /></button>
                         </form>
@@ -191,18 +205,27 @@
 
                             <li><a href="/promo">Hot Offers</a></li>
 
-                            <li class="dropdown scroll-to {{ Route::is('index.kategori') ? 'd-none' : '' }}"><a href="javascript:void(0)"><img
-                                src="assets/images/icons/scroll.svg" class="svg_img header_svg scroll" alt="" /></a>
+                            <li class="dropdown scroll-to {{ !Route::is('home') ? 'd-none' : '' }}"><a
+                                    href="javascript:void(0)"><img src="assets/images/icons/scroll.svg"
+                                        class="svg_img header_svg scroll" alt="" /></a>
                                 <ul class="sub-menu">
                                     <li class="menu_title">Scroll To Section</li>
-                                    <li><a href="javascript:void(0)" data-scroll="collection" class="nav-scroll">Top Collection</a></li>
-                                    <li><a href="javascript:void(0)" data-scroll="categories" class="nav-scroll">Categories</a></li>
-                                    <li><a href="javascript:void(0)" data-scroll="offers" class="nav-scroll">Offers</a></li>
-                                    <li><a href="javascript:void(0)" data-scroll="vendors" class="nav-scroll">Top Vendors</a></li>
-                                    <li><a href="javascript:void(0)" data-scroll="services" class="nav-scroll">Services</a></li>
-                                    <li><a href="javascript:void(0)" data-scroll="arrivals" class="nav-scroll">New Arrivals</a></li>
-                                    <li><a href="javascript:void(0)" data-scroll="reviews" class="nav-scroll">Client Review</a></li>
-                                    <li><a href="javascript:void(0)" data-scroll="insta" class="nav-scroll">Instagram Feed</a></li>
+                                    <li><a href="javascript:void(0)" data-scroll="collection" class="nav-scroll">Top
+                                            Collection</a></li>
+                                    <li><a href="javascript:void(0)" data-scroll="categories"
+                                            class="nav-scroll">Categories</a></li>
+                                    <li><a href="javascript:void(0)" data-scroll="offers"
+                                            class="nav-scroll">Offers</a></li>
+                                    <li><a href="javascript:void(0)" data-scroll="vendors" class="nav-scroll">Top
+                                            Vendors</a></li>
+                                    <li><a href="javascript:void(0)" data-scroll="services"
+                                            class="nav-scroll">Services</a></li>
+                                    <li><a href="javascript:void(0)" data-scroll="arrivals" class="nav-scroll">New
+                                            Arrivals</a></li>
+                                    <li><a href="javascript:void(0)" data-scroll="reviews" class="nav-scroll">Client
+                                            Review</a></li>
+                                    <li><a href="javascript:void(0)" data-scroll="insta" class="nav-scroll">Instagram
+                                            Feed</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -416,10 +439,14 @@
                 <div class="header-res-social">
                     <div class="header-top-social">
                         <ul class="mb-0">
-                            <li class="list-inline-item"><a class="hdr-facebook" href="#"><i class="ecicon eci-facebook"></i></a></li>
-                            <li class="list-inline-item"><a class="hdr-twitter" href="#"><i class="ecicon eci-twitter"></i></a></li>
-                            <li class="list-inline-item"><a class="hdr-instagram" href="#"><i class="ecicon eci-instagram"></i></a></li>
-                            <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i class="ecicon eci-linkedin"></i></a></li>
+                            <li class="list-inline-item"><a class="hdr-facebook" href="#"><i
+                                        class="ecicon eci-facebook"></i></a></li>
+                            <li class="list-inline-item"><a class="hdr-twitter" href="#"><i
+                                        class="ecicon eci-twitter"></i></a></li>
+                            <li class="list-inline-item"><a class="hdr-instagram" href="#"><i
+                                        class="ecicon eci-instagram"></i></a></li>
+                            <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i
+                                        class="ecicon eci-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
