@@ -18,7 +18,7 @@ class DatawilayahController extends Controller
     }
     public function insertprovinsi(Request $request){
         $data = Datawilayah::create($request->all());
-        return redirect('/datawilayahprovinsi')->with('error','Data berhasil di tambahkan');
+        return redirect('/datawilayahprovinsi')->with('success','Data berhasil di tambahkan');
     }
     public function editprovinsi(Request $request,$id){
         $data = Datawilayah::findorfail($id);
@@ -27,9 +27,13 @@ class DatawilayahController extends Controller
         return redirect('/datawilayahprovinsi')->with('success','Data berhasil di edit');
     }
     public function deleteprovinsi($id){
+        $relasi = datawilayahkabupaten::where('provinsi',$id)->count();
+        if($relasi > 0 ){
+            return redirect()->back()->with("error","Data masih digunakan di data kabupaten");
+        }
         $data = Datawilayah::findorfail($id);
         $data->delete();
-        return redirect('/datawilayahprovinsi');
+        return redirect('/datawilayahprovinsi')->with("success","Data Berhasil Dihapus");
     }
 
     public function datawilayahkabupaten(){
@@ -49,9 +53,13 @@ class DatawilayahController extends Controller
         return redirect('/datawilayahkabupaten')->with("sucess","Data Berhasil di update");
     }
     public function deletekabupaten($id){
+        $relasi = datawilayahkecamatan::where('kabupaten',$id)->count();
+        if($relasi > 0 ){
+            return redirect()->back()->with("error","Data masih digunakan di data kecamatan");
+        }
         $data = datawilayahkabupaten::findorfail($id);
         $data->delete();
-        return redirect('/datawilayahkabupaten');
+        return redirect('/datawilayahkabupaten')->with("success","Data berhasil dihapus");
     }
 
     public function datawilayahkecamatan(){
@@ -69,14 +77,9 @@ class DatawilayahController extends Controller
         $data->update($request->all());
         return redirect('/datawilayahkecamatan')->with("success","data berhasil di edit");
     }
-    public function editkecamatan(Request $request,$id){
-        $data = datawilayahkecamatan::findorfail($id);
-        $data->update($request->all());
-        return redirect('/datawilayahkecamatan');
-    }
     public function deletekecamatan($id){
         $data = datawilayahkecamatan::findorfail($id);
         $data->delete();
-        return redirect('/datawilayahkecamatan');
+        return redirect('/datawilayahkecamatan')->with("success","Data berhasil Dihapus");
     }
 }

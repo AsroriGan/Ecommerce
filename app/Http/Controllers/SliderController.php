@@ -26,6 +26,16 @@ class SliderController extends Controller
             $data->foto1 = $request->file('foto1')->getClientOriginalName();
             $data->save();
         }
+        if ($request->hasFile('foto2')) {
+            $request->file('foto2')->move('slider/', $request->file('foto2')->getClientOriginalName());
+            $data->foto2 = $request->file('foto2')->getClientOriginalName();
+            $data->save();
+        }
+        if ($request->hasFile('foto3')) {
+            $request->file('foto3')->move('slider/', $request->file('foto3')->getClientOriginalName());
+            $data->foto3 = $request->file('foto3')->getClientOriginalName();
+            $data->save();
+        }
 
         return redirect()->route('slider')->with('success', 'Berhasil Di Update');
     }

@@ -18,7 +18,7 @@
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
-    <div class="ec-side-cart-overlay"></div>
+    {{-- <div class="ec-side-cart-overlay"></div>
     <div id="ec-side-cart" class="ec-side-cart">
         <div class="ec-cart-inner">
             <div class="ec-cart-top">
@@ -28,8 +28,8 @@
                 </div>
                 <ul class="eccart-pro-items">
                     <li>
-                        <a href="#" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
+                        <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/6_1.jpg"
+                                alt="product"></a>
                         <div class="ec-pro-content">
                             <a href="#" class="cart_pro_title">T-shirt For Women</a>
                             <span class="cart-price"><span>$76.00</span> x 1</span>
@@ -40,8 +40,8 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
+                        <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/12_1.jpg"
+                                alt="product"></a>
                         <div class="ec-pro-content">
                             <a href="#" class="cart_pro_title">Women Leather Shoes</a>
                             <span class="cart-price"><span>$64.00</span> x 1</span>
@@ -52,8 +52,8 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
+                        <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/3_1.jpg"
+                                alt="product"></a>
                         <div class="ec-pro-content">
                             <a href="#" class="cart_pro_title">Girls Nylon Purse</a>
                             <span class="cart-price"><span>$59.00</span> x 1</span>
@@ -90,11 +90,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- ekka Cart End -->
 
     <!-- Category Sidebar start -->
-    <div class="ec-side-cat-overlay"></div>
+    {{-- <div class="ec-side-cat-overlay"></div>
     <div class="col-lg-3 category-sidebar" data-animation="fadeIn">
         <div class="cat-sidebar">
             <div class="cat-sidebar-box">
@@ -333,8 +333,8 @@
                 <div class="ec-sb-pro-sl">
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="#" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/1.jpg" alt="product" /></a>
+                            <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/1.jpg"
+                                    alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="#">baby fabric shoes</a>
                                 </h5>
@@ -354,8 +354,8 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="#" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/2.jpg" alt="product" /></a>
+                            <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/2.jpg"
+                                    alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="#">Men's hoodies t-shirt</a>
                                 </h5>
@@ -375,8 +375,8 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="#" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/3.jpg" alt="product" /></a>
+                            <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/3.jpg"
+                                    alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="#">Girls t-shirt</a></h5>
                                 <div class="ec-pro-rating">
@@ -395,8 +395,8 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="#" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/4.jpg" alt="product" /></a>
+                            <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/4.jpg"
+                                    alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="#">woolen hat for men</a>
                                 </h5>
@@ -416,8 +416,8 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="#" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/5.jpg" alt="product" /></a>
+                            <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/5.jpg"
+                                    alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="#">Womens purse</a></h5>
                                 <div class="ec-pro-rating">
@@ -436,8 +436,8 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="#" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/6.jpg" alt="product" /></a>
+                            <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/6.jpg"
+                                    alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="#">Baby toy doctor kit</a>
                                 </h5>
@@ -457,8 +457,8 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="#" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/7.jpg" alt="product" /></a>
+                            <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/7.jpg"
+                                    alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="#">teddy bear baby toy</a>
                                 </h5>
@@ -478,8 +478,8 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="#" class="sidekka_pro_img"><img
-                                    src="assets/images/product-image/2.jpg" alt="product" /></a>
+                            <a href="#" class="sidekka_pro_img"><img src="assets/images/product-image/2.jpg"
+                                    alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="#">Mens hoodies blue</a>
                                 </h5>
@@ -500,47 +500,46 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Main Slider Start -->
     <div class="sticky-header-next-sec ec-main-slider section section-space-pb">
         <div class="ec-slider swiper-container main-slider-nav main-slider-dot">
             <!-- Main slider -->
-            <div class="swiper-wrapper">
-                <div class="ec-slide-item swiper-slide d-flex ec-slide-1">
-                    <div class="container align-self-center">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 align-self-center">
-                                <div class="ec-slide-content slider-animation">
-                                    <h1 class="ec-slide-title">New Fashion Collection</h1>
-                                    <h2 class="ec-slide-stitle">Sale Offer</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                                    <a href="#" class="btn btn-lg btn-secondary">Order Now</a>
-                                </div>
-                            </div>
-                        </div>
+             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                @foreach ($data as $slider)
+
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{{ asset('slider/'. $slider->foto1) }}" alt="First slide"
+                            style="height: 40pc;">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('slider/'. $slider->foto2) }}" alt="Second slide"
+                            style="height: 40pc;">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('slider/'. $slider->foto3) }}" alt="Third slide"
+                            style="height: 40pc;">
                     </div>
                 </div>
-                <div class="ec-slide-item swiper-slide d-flex ec-slide-2">
-                    <div class="container align-self-center">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 align-self-center">
-                                <div class="ec-slide-content slider-animation">
-                                    <h1 class="ec-slide-title">Boat Headphone Sets</h1>
-                                    <h2 class="ec-slide-stitle">Sale Offer</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                                    <a href="#" class="btn btn-lg btn-secondary">Order Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination swiper-pagination-white"></div>
-            <div class="swiper-buttons">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
+                @endforeach
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+        </div>
+    </div>
         </div>
     </div>
     <!-- Main Slider End -->
@@ -1115,10 +1114,10 @@
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
                                                 <a href="#" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/8_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/8_2.jpg"
-                                                        alt="Product" />
+                                                    <img class="main-image"
+                                                        src="assets/images/product-image/8_1.jpg" alt="Product" />
+                                                    <img class="hover-image"
+                                                        src="assets/images/product-image/8_2.jpg" alt="Product" />
                                                 </a>
                                                 <span class="percentage">35%</span>
                                                 <span class="flags">
@@ -4290,79 +4289,79 @@
 
     <!-- Ec Instagram Start -->
     <section class="section ec-instagram-section module section-space-p" id="insta">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <div class="section-title">
-                    <h2 class="ec-bg-title">Toko</h2>
-                    <h2 class="ec-title">Toko</h2>
-                    <p class="sub-title">Share your store with us</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="section-title">
+                        <h2 class="ec-bg-title">Toko</h2>
+                        <h2 class="ec-title">Toko</h2>
+                        <p class="sub-title">Share your store with us</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ec-insta-wrapper">
-        <div class="ec-insta-outer">
-            <div class="container" data-animation="fadeIn">
-                <div class="insta-auto">
-                    <!-- instagram item -->
-                    <div class="ec-insta-item">
-                        <div class="">
-                            <a href="#" target="_blank"><img src="assets/images/brand-image/1.png"
-                                    alt="insta"></a>
+        <div class="ec-insta-wrapper">
+            <div class="ec-insta-outer">
+                <div class="container" data-animation="fadeIn">
+                    <div class="insta-auto">
+                        <!-- instagram item -->
+                        <div class="ec-insta-item">
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/1.png"
+                                        alt="insta"></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- instagram item -->
-                    <div class="ec-insta-item">
-                        <div class="">
-                            <a href="#" target="_blank"><img src="assets/images/brand-image/2.png"
-                                    alt="insta"></a>
+                        <!-- instagram item -->
+                        <div class="ec-insta-item">
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/2.png"
+                                        alt="insta"></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- instagram item -->
-                    <div class="ec-insta-item">
-                        <div class="">
-                            <a href="#" target="_blank"><img src="assets/images/brand-image/3.png"
-                                    alt="insta"></a>
+                        <!-- instagram item -->
+                        <div class="ec-insta-item">
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/3.png"
+                                        alt="insta"></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- instagram item -->
-                    <div class="ec-insta-item">
-                        <div class="">
-                            <a href="#" target="_blank"><img src="assets/images/brand-image/4.png"
-                                    alt="insta"></a>
+                        <!-- instagram item -->
+                        <div class="ec-insta-item">
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/4.png"
+                                        alt="insta"></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- instagram item -->
-                    <!-- instagram item -->
-                    <div class="ec-insta-item">
-                        <div class="">
-                            <a href="#" target="_blank"><img src="assets/images/brand-image/5.png"
-                                    alt="insta"></a>
+                        <!-- instagram item -->
+                        <!-- instagram item -->
+                        <div class="ec-insta-item">
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/5.png"
+                                        alt="insta"></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- instagram item -->
-                    <!-- instagram item -->
-                    <div class="ec-insta-item">
-                        <div class="">
-                            <a href="#" target="_blank"><img src="assets/images/brand-image/6.png"
-                                    alt="insta"></a>
+                        <!-- instagram item -->
+                        <!-- instagram item -->
+                        <div class="ec-insta-item">
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/6.png"
+                                        alt="insta"></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- instagram item -->
-                    <!-- instagram item -->
-                    <div class="ec-insta-item">
-                        <div class="">
-                            <a href="#" target="_blank"><img src="assets/images/brand-image/7.png"
-                                    alt="insta"></a>
+                        <!-- instagram item -->
+                        <!-- instagram item -->
+                        <div class="ec-insta-item">
+                            <div class="">
+                                <a href="#" target="_blank"><img src="assets/images/brand-image/7.png"
+                                        alt="insta"></a>
+                            </div>
                         </div>
+                        <!-- instagram item -->
                     </div>
-                    <!-- instagram item -->
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <!-- Ec Instagram End -->
 
     <!-- Footer Start -->
@@ -4769,6 +4768,31 @@
 
     <!-- Vendor JS -->
     @include('layouts.script')
+    <script>
+        // Hide all item in .carousel-item initially
+        $(".carousel-item *").addClass("d-none");
+        // Animate the first slide
+        setTimeout(function() {
+            $(".carousel-item.active *")
+                .removeClass("d-none")
+                .addClass("animated");
+        }, 1000);
+        // Animate after the slider changes
+        $("#mainBanner").on("slid.bs.carousel", function(e) {
+            // Add .d-none to previous shown slide
+            $(".carousel-item *").addClass("d-none");
+            // Element for new slide
+            var c = e["relatedTarget"];
+            // After 0.7 sec slide changes, then make the animation for new slide
+            setTimeout(function() {
+                $(c)
+                    .find("*")
+                    .removeClass("d-none")
+                    .addClass("animated");
+                console.log("c");
+            }, 1000);
+        });
+    </script>
 </body>
 
 </html>

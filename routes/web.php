@@ -13,6 +13,7 @@ use App\Http\Controllers\Landing\WhislistController as LandingWhislistController
 // Admin
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
+use App\Http\Controllers\Admin\MerekController as AdminMerekController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -116,6 +117,13 @@ Route::post('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecam
 Route::post('/editkecamatan/{id}', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
 Route::get('/deletekecamatan/{id}', [AdminDatawilayahController::class, 'deletekecamatan'])->name('deletekecamatan');
 //end data wilayah
+
+//start data merek
+Route::get('/merek',[AdminMerekController::class, 'index'])->name('merek');
+Route::post('/merekpost', [AdminMerekController::class, 'merekpost'])->name('merekpost');
+Route::post('/editmerekpost/{id}', [AdminMerekController::class, 'edit'])->name('editmerekpost');
+Route::get('/deletemerek/{id}', [AdminMerekController::class, 'delete'])->name('deletemerek');
+//end data merek
 ////////Sliders
 Route::get('/sliderr', [SliderController::class, 'slider'])->name('slider');
 Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);

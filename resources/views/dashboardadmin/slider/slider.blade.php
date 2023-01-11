@@ -44,7 +44,9 @@
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
-                                                <th>Foto</th>
+                                                <th>Foto 1</th>
+                                                <th>Foto 2</th>
+                                                <th>Foto 3</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -56,58 +58,81 @@
                                                     <td><img src="{{ asset('slider/' . $slider->foto1) }}"
                                                             height="120px" width="240px" alt="" srcset="">
                                                     </td>
-                                                    <td> <button type="button" class="btn btn-primary"
-                                                            data-toggle="modal" data-target="#exampleModalCenter{{ $slider->id }}">
+                                                    <td><img src="{{ asset('slider/' . $slider->foto2) }}"
+                                                            height="120px" width="240px" alt="" srcset="">
+                                                    </td>
+                                                    <td><img src="{{ asset('slider/' . $slider->foto3) }}"
+                                                            height="120px" width="240px" alt="" srcset="">
+                                                    </td>
+                                                    <td> <button type="button" class="btn btn-success waves-effect waves-light mt-1"
+                                        data-bs-toggle="modal" data-bs-target="#con-close-modal{{ $slider->id }}">
                                                             <i class="fa-solid fa-pen-to-square"></i>
                                                         </button></td>
                                                 </tr>
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="exampleModalCenter{{ $slider->id }}" tabindex="-1"
-                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
-                                                    aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLongTitle">
-                                                                    Update Slider</h5>
-                                                                <button type="button" class="close"
-                                                                    data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="row">
-                                                                    <form action="/updateslider/{{ $slider->id }}"
-                                                                        method="post" enctype="multipart/form-data">
-                                                                        @csrf
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label for="exampleInputEmail1"
-                                                                                    class="form-label">Update
-                                                                                    Foto</label>
-                                                                                <br />
-                                                                                <img class="img mb-3"
+                                                <div id="con-close-modal{{ $slider->id }}" class="modal fade" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Modal Content is Responsive</h4>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body p-4">
+                                                <div class="row">
+                                                    <form action="/updateslider/{{ $slider->id }}" method="post"
+                                                        enctype="multipart/form-data">
+                                                        @csrf
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label for="exampleInputEmail1"
+                                                                    class="form-label">Update
+                                                                    Foto 1</label>
+                                                                <br />
+                                                                <img class="img mb-3"
                                                                     src="{{ asset('slider/' . $slider->foto1) }}"
                                                                     alt="" style="width: 100px;">
-                                                                                <input type="file" name="foto1"
-                                                                                    class="form-control"
-                                                                                    id="exampleInputEmail1"
-                                                                                    aria-describedby="emailHelp">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button"
-                                                                                class="btn btn-secondary"
-                                                                                data-dismiss="modal">Close</button>
-                                                                            <button type="submit"
-                                                                                class="btn btn-primary">Save
-                                                                                changes</button>
-                                                                    </form>
-                                                                </div>
+                                                                <input type="file" name="foto1"
+                                                                    class="form-control" id="exampleInputEmail1"
+                                                                    aria-describedby="emailHelp">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="exampleInputEmail1"
+                                                                    class="form-label">Update
+                                                                    Foto 2</label>
+                                                                <br />
+                                                                <img class="img mb-3"
+                                                                    src="{{ asset('slider/' . $slider->foto2) }}"
+                                                                    alt="" style="width: 100px;">
+                                                                <input type="file" name="foto2"
+                                                                    class="form-control" id="exampleInputEmail1"
+                                                                    aria-describedby="emailHelp">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="exampleInputEmail1"
+                                                                    class="form-label">Update
+                                                                    Foto 3</label>
+                                                                <br />
+                                                                <img class="img mb-3"
+                                                                    src="{{ asset('slider/' . $slider->foto3) }}"
+                                                                    alt="" style="width: 100px;">
+                                                                <input type="file" name="foto3"
+                                                                    class="form-control" id="exampleInputEmail1"
+                                                                    aria-describedby="emailHelp">
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save
+                                                                changes</button>
+                                                    </form>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                                 <?php $no++; ?>
                                                 @endforeach
                                         </tbody>
