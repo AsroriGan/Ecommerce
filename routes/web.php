@@ -14,6 +14,7 @@ use App\Http\Controllers\Landing\WhislistController as LandingWhislistController
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
 use App\Http\Controllers\Admin\MerekController as AdminMerekController;
+use App\Http\Controllers\Admin\ProdukController as AdminProdukController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,8 +45,8 @@ Route::get('/beranda', function () {
 Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
 Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
 Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
-Route::get('/product', [LandingProdukController::class, 'product'])->name('product');
-Route::get('/tambahproduct', [LandingProdukController::class, 'tambahproduct'])->name('tambahproduct');
+// Route::get('/product', [LandingProdukController::class, 'product'])->name('product');
+// Route::get('/tambahproduct', [LandingProdukController::class, 'tambahproduct'])->name('tambahproduct');
 
 // Blog
 Route::get('/blog', [LandingBlogController::class, 'blog']);
@@ -65,7 +66,7 @@ Route::get('/', [LandingpageController::class, 'home'])->name('home');
 Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
 
 //Kategori
-Route::get('/kategori', [LandingKategoriController::class, 'index'])->name('index.kategori');
+Route::get('/categories', [LandingKategoriController::class, 'index'])->name('index.kategori');
 
 //user profile
 Route::get('/user-profile',[LandingUserprofilecontroller::class,'index'])->name('user-profle');
@@ -121,6 +122,10 @@ Route::post('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecam
 Route::post('/editkecamatan/{id}', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
 Route::get('/deletekecamatan/{id}', [AdminDatawilayahController::class, 'deletekecamatan'])->name('deletekecamatan');
 //end data wilayah
+//start add Produk
+Route::get('/produkadmin', [AdminProdukController::class, 'index'])->name('produkadmin');
+Route::get('/addproduk', [AdminProdukController::class, 'addproduct'])->name('addproduk');
+//end add Produk
 
 //start data merek
 Route::get('/merek',[AdminMerekController::class, 'index'])->name('merek');

@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/plugins/swiper-bundle.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/plugins/jquery-ui.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/plugins/countdownTimer.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/plugins/nouislider.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/plugins/slick.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/nouislider.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/plugins/bootstrap.css')}}" />
 
     <!-- Main Style -->
@@ -35,6 +35,7 @@
 
     <link rel="stylesheet" href="{{asset('rori.css')}}">
     <link rel="stylesheet" href="{{asset('zaki.css')}}">
-
+    @if (Route::is('home'))
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    @endif
 </head>
