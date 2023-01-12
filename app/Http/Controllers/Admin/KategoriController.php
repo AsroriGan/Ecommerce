@@ -115,5 +115,11 @@ class KategoriController extends Controller
 
         return redirect()->route('sub_subkategori')->with('success', 'Data Berhasil DiUpdate');
     }
+    public function deletesub_sub($id)
+    {
+        $data = Sub_Subkategori::findorfail($id);
+        $data->delete();
+        return redirect('/sub_subkategori')->with("success", "Data berhasil Dihapus");
+    }
 
 }

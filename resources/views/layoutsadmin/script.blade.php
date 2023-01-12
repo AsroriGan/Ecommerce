@@ -8,6 +8,9 @@
 
 <script src="template/assets/plugins/apexchart/apexcharts.min.js"></script>
 <script src="template/assets/plugins/apexchart/chart-data.js"></script>
+    {{-- Select tagging --}}
+<script src="template/assets/plugins/select2/js/select2.min.js"></script>
+<script src="template/assets/plugins/select2/js/custom-select.js"></script>
 
 <script src="template/assets/js/script.js"></script>
 

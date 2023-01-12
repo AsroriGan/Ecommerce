@@ -52,12 +52,23 @@ v
                                         <div class="col-md-6 row">
                                             <div class="form-group row">
                                                 <div class="col-md-6">
-                                                    <label>Nama Produk</label>
-                                                    <input type="text" class="form-control">
+                                                    <label>Merk</label>
+                                                    <select class="form-select">
+                                                        <option>-- Select --</option>
+                                                        <option>Option 1</option>
+                                                        <option>Option 2</option>
+                                                        <option>Option 3</option>
+                                                        <option>Option 4</option>
+                                                        <option>Option 5</option>
+                                                    </select>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label>Berat Produk</label>
-                                                    <input type="text" class="form-control">
+                                                    <select class="form-control tagging select" multiple="multiple">
+                                                        <option>orange</option>
+                                                        <option>white</option>
+                                                        <option>purple</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
