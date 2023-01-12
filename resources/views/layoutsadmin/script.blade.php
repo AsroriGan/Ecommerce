@@ -11,7 +11,11 @@
     {{-- Select tagging --}}
 <script src="template/assets/plugins/select2/js/select2.min.js"></script>
 <script src="template/assets/plugins/select2/js/custom-select.js"></script>
-
+    {{-- select multiple image --}}
+<script src="template/assets/plugins/fileupload/fileupload.min.js"></script>
+    {{-- text editor summer note --}}
+<script src="template/assets/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="template/assets/js/jquery-ui.min.js"></script>
 <script src="template/assets/js/script.js"></script>
 
 <!-- data Table -->

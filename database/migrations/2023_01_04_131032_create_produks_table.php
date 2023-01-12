@@ -15,16 +15,21 @@ return new class extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
+            $table->string('merk_produk');
             $table->string('nama_produk');
-            $table->string('berat_pruduk');
-            $table->string('stok_produk');
-            $table->string('harga_produk');
             $table->string('ukuran_produk');
             $table->string('warna_produk');
+            $table->string('berat_produk');
+            $table->string('kategori');
+            $table->string('sub_kategori');
+            $table->string('sub_subkategori');
+            $table->string('stok_produk');
+            $table->string('harga_produk');
+            $table->string('harga_diskon');
+            $table->string('galeri_produk');
+            $table->string('status_produk');
             $table->text('deskirpsi_pendek');
             $table->text('deskirpsi_panjang');
-            $table->string('foto_produk');
-            $table->string('galeri_produk');
             $table->string('status');
             $table->timestamps();
         });
