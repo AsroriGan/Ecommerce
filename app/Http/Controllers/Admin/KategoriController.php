@@ -68,7 +68,7 @@ class KategoriController extends Controller
         return redirect()->route('subkategori')->with('success','Data Berhasil Ditambahkan');
     }
 
-    public function editsub_kategoripost(Request $request, $id){
+    public function editsubkategoripost(Request $request, $id){
         // dd($request->all());
         $data = subkategori::findOrFail($id);
 
@@ -102,7 +102,7 @@ class KategoriController extends Controller
 
     public function updatesub_subkategori(Request $request, $id)
     {
-        // dd($request- >all());
+        // dd($request->all());
         $data =Sub_Subkategori::findOrFail($id);
 
         $data->update([

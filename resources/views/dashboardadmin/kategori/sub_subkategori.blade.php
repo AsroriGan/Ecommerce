@@ -120,7 +120,7 @@
                                                                                 name="kategori"
                                                                                 aria-label="Default select example">
                                                                                 <option
-                                                                                    value="{{ $row->datakategori->kategori }}">
+                                                                                    value="{{ $row->datakategori->id }}">
                                                                                     {{ $row->datakategori->kategori }}
                                                                                 </option>
                                                                                 @foreach ($kategori as $datakate)
@@ -140,7 +140,7 @@
                                                                                     name="sub_kategori"
                                                                                     aria-label="Default select example">
                                                                                     <option
-                                                                                        value="{{ $row->datasubkategori->sub_kategori }}">
+                                                                                        value="{{ $row->datasubkategori->id  }}">
                                                                                         {{ $row->datasubkategori->sub_kategori }}
                                                                                     </option>
                                                                                     @foreach ($_subsubkategori as $datakate)

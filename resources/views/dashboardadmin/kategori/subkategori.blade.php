@@ -102,7 +102,7 @@
                                                                 </div>
                                                                 <div class="modal-body p-4">
                                                                     <form
-                                                                        action="editsubkategoripost/{{ $datasub->id }}"
+                                                                        action="/editsubkategoripost/{{ $datasub->id }}"
                                                                         method="POST">
                                                                         @csrf
                                                                         <div class="row">
