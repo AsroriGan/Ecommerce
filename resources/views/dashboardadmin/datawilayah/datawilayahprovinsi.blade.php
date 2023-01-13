@@ -121,9 +121,9 @@
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#con-close-modal{{ $row->id }}"><i
                                                                 class="far fa-edit me-1"></i>Edit</a>
-                                                        <a id="delete" data-provinsi="{{ $row->provinsi }}"
+                                                        <a data-provinsi="{{ $row->provinsi }}"
                                                             data-id="{{ $row->id }}" href="javascript:void(0);"
-                                                            class="btn btn-sm btn-white text-danger me-2"><i
+                                                            class="btn btn-sm btn-white text-danger me-2 delete"><i
                                                                 class="far fa-trash-alt me-1"></i>Delete</a>
                                                     </td>
                                                 </tr>
@@ -196,7 +196,7 @@
         @endif
     </script>
     <script>
-        $("#delete").click(function() {
+        $(".delete").click(function() {
             var nama = $(this).attr('data-provinsi');
             var id = $(this).attr('data-id');
             Swal.fire({

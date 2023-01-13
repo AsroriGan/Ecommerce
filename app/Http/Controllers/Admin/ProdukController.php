@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Merek;
 
 class ProdukController extends Controller
 {
@@ -15,7 +16,9 @@ class ProdukController extends Controller
     }
     public function addproduct()
     {
-        return view('dashboardadmin.produk.tambahproduk');
+        $merk = Merek::all();
+        // dd($merk);
+        return view('dashboardadmin.produk.tambahproduk',compact('merk'));
     }
     public function insertproduk(Request $request){
         $files = [];
@@ -26,14 +29,27 @@ class ProdukController extends Controller
                 $files[] = $name;
             }
         }
-        // dd($files);
+        // dd($request->all());
         $model = new Produk();
         $model->merk_produk = $request->merk_produk;
         $model->nama_produk = $request->nama_produk;
-        $model->ukuran_produk = json_encode($request->ukuran_produk);
-        $model->warna_produk = json_encode($request->warna_produk);
-        $model->merk_produk = $request->merk_produk;
-        $model->merk_produk = $request->merk_produk;
+        $model->ukuran_produk = implode(',',$request->ukuran_produk);
+        $model->warna_produk = implode(',',$request->warna_produk);
+        $model->berat_produk = $request->berat_produk;
+        $model->kategori = $request->kategori;
+        $model->sub_kategori = $request->sub_kategori;
+        $model->sub_subkategori = $request->sub_subkategori;
+        $model->stok_produk = $request->stok_produk;
+        $model->harga_diskonproduk = (($request->harga_asliproduk*$request->diskon)/100);
+        $model->harga_asliproduk = $request->harga_asliproduk;
+        $model->diskon = $request->diskon;
+        $model->galeri_produk = implode(',',$files);
+        $model->status_produk = implode(',',$request->status_produk);
+        $model->deskirpsi_pendek = $request->deskirpsi_pendek;
+        $model->deskirpsi_panjang = $request->deskirpsi_panjang;
+        $model->status = $request->status;
         $model->save();
+        // dd($model->harga_diskonproduk);
+        return redirect('/produkadmin')->with('success','Data Berhasil Dihapus');
     }
 }

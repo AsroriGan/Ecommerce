@@ -55,12 +55,10 @@ v
                                                 <div class="col-md-6 mb-3">
                                                     <label>Merk</label>
                                                     <select name="merk_produk" class="form-select select">
-                                                        <option>-- Select --</option>
-                                                        <option>Option 1</option>
-                                                        <option>Option 2</option>
-                                                        <option>Option 3</option>
-                                                        <option>Option 4</option>
-                                                        <option>Option 5</option>
+                                                        <option value="null">-- Select --</option>
+                                                        @foreach ($merk as $row )
+                                                        <option value="{{ $row->id }}"> {{$row->nama_merek}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
@@ -71,8 +69,6 @@ v
                                                     <label>Ukuran Produk</label>
                                                     <select name="ukuran_produk[]" class="form-control tagging" multiple="multiple">
                                                         <option>25</option>
-                                                        <option>35</option>
-                                                        <option>40</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
@@ -88,18 +84,13 @@ v
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Kategori</label>
-                                                    <select name="kategori" class="form-select select">
+                                                    <select id="kategori" name="kategori" class="form-select select">
                                                         <option>-- Select --</option>
-                                                        <option>Option 1</option>
-                                                        <option>Option 2</option>
-                                                        <option>Option 3</option>
-                                                        <option>Option 4</option>
-                                                        <option>Option 5</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Sub Kategori</label>
-                                                    <select name="sub_kategori" class="form-select select">
+                                                    <select id="sub_kategori" name="sub_kategori" class="form-select select">
                                                         <option>-- Select --</option>
                                                         <option>Option 1</option>
                                                         <option>Option 2</option>
@@ -110,7 +101,7 @@ v
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Sub-sub Kategori</label>
-                                                    <select name="sub_subkategori" class="form-select select">
+                                                    <select id="sub_subkategori" name="sub_subkategori" class="form-select select">
                                                         <option>-- Select --</option>
                                                         <option>Option 1</option>
                                                         <option>Option 2</option>
@@ -125,11 +116,11 @@ v
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Harga Produk</label>
-                                                    <input name="harga_produk" class="form-control" type="number">
+                                                    <input name="harga_asliproduk" class="form-control" type="number">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Harga Diskon</label>
-                                                    <input name="harga_diskon" class="form-control" type="number">
+                                                    <input name="diskon" class="form-control" type="number">
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="custom-file-container" data-upload-id="mySecondImage">

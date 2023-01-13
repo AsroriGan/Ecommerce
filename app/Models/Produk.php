@@ -10,4 +10,9 @@ class Produk extends Model
     use HasFactory;
     protected $guarded = [];
     protected $dates = ['created_at'];
+
+    public function rproduktmerk()
+    {
+        return $this->belongsTo(Merek::class, 'nama_merek ', 'id');
+    }
 }
