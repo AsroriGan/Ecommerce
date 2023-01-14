@@ -32,9 +32,11 @@ use Illuminate\Support\Facades\Route;
 
 //login
 Route::get('/login', [LandingLogincontroller::class, 'login'])->name('login');
+Route::post('/loginpost', [LandingLogincontroller::class, 'loginpost'])->name('loginpost');
 
 //register
 Route::get('/register', [LandingLogincontroller::class, 'register'])->name('register');
+Route::post('/registerpost', [LandingLogincontroller::class, 'registerpost'])->name('registerpost');
 
 // berandah admin
 Route::get('/beranda', function () {
