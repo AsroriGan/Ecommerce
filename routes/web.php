@@ -127,7 +127,10 @@ Route::get('/deletekecamatan/{id}', [AdminDatawilayahController::class, 'deletek
 //start add Produk
 Route::get('/produkadmin', [AdminProdukController::class, 'index'])->name('produkadmin');
 Route::get('/addproduk', [AdminProdukController::class, 'addproduct'])->name('addproduk');
+Route::post('/get_subkategori', [AdminProdukController::class, 'get_subkategori'])->name('get_subkategori');
+Route::post('/get_sub_subkategori', [AdminProdukController::class, 'get_sub_subkategori'])->name('get_sub_subkategori');
 Route::post('/insertproduk', [AdminProdukController::class, 'insertproduk'])->name('insertproduk');
+Route::get('/view_produk/{id}', [AdminProdukController::class, 'view_produk'])->name('view_produk');
 //end add Produk
 
 //start data merek
