@@ -95,11 +95,16 @@ v
                                                 @endphp
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
-                                                    <td><img src="{{asset('fotoproduk/'.$fotoproduk)}}" alt=""></td>
+                                                    <td><img src="{{asset('fotoproduk/'.$fotoproduk)}}" alt="" width="100px" height="100px"></td>
                                                     <td>{{ $data->nama_produk }}</td>
-                                                    <td>{{ $data->harga_produk}}</td>
-                                                    <td>{{ $data->harga_asliproduk}}</td>
-                                                    <td>{{ $data->diskon}}</td>
+                                                    <td><?php
+                                                        if ($data->diskon == null) {
+                                                            echo 'Rp.'.$data->harga_asliproduk;
+                                                        }else {
+                                                            echo 'Rp.'.$data->harga_diskonproduk;
+                                                        }
+                                                    ?></td>
+                                                    <td>{{ $data->diskon}}%</td>
                                                     <td>{{ $data->stok_produk }}</td>
                                                     <td>{{ $data->status }}</td>
                                                     <td><a data-bs-toggle="modal"

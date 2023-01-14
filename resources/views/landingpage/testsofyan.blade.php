@@ -1,53 +1,19 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<!-- Head Star -->
-
-@include('layoutsadmin.head')
-
-<!-- End Head -->
+@include('layoutsadmin.Head')
 
 <body>
-
-    <div class="main-wrapper">
-
-        <!-- Navbar Star -->
-
-        @include('layoutsadmin.navbar')
-
-        <!-- End Navbar -->
-
-        <!-- Star Sidebar -->
-
-        @include('layoutsadmin.sidebar')
-
-        <!-- End sidebar -->
-        <div class="form-small d-none"></div>
-
-        <div class="page-wrapper">
-            <textarea name="" id="summernote"></textarea>
-        </div>
-
-
-
-        <!-- Star Script -->
-
-        @include('layoutsadmin.script')
-
-        <script>
-            @if (Session::has('success'))
-                toastr.success("{{ Session::get('success') }}")
-            @endif
-        </script>
-
-        <script>
-            $(document).ready(function() {
-                $('#myTable').DataTable();
-            });
-        </script>
-
-        <!-- End Script -->
-
+    <div class="m-5 col-md-6">
+        <input id="tags" name='tags' value='PHP,Laravel' class="form-control">
+    </div>
 </body>
+@include('layoutsadmin.script')
+<script>
+    // The DOM element you wish to replace with Tagify
+    var input = document.querySelector('#tags');
+
+    // initialize Tagify on the above input node reference
+    new Tagify(input)
+</script>
 
 </html>

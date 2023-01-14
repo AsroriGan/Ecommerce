@@ -13,6 +13,18 @@ class Produk extends Model
 
     public function rproduktmerk()
     {
-        return $this->belongsTo(Merek::class, 'nama_merek ', 'id');
+        return $this->belongsTo(Merek::class, 'merk_produk', 'id');
+    }
+    public function rkategoritkategori()
+    {
+        return $this->belongsTo(kategori::class, 'kategori', 'id');
+    }
+    public function rsub_kategoritkategori()
+    {
+        return $this->belongsTo(subkategori::class, 'sub_kategori', 'id');
+    }
+    public function rsub_subkategoritkategori()
+    {
+        return $this->belongsTo(Sub_Subkategori::class, 'sub_subkategori', 'id');
     }
 }

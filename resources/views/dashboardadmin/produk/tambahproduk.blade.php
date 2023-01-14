@@ -56,8 +56,9 @@ v
                                                     <label>Merk</label>
                                                     <select name="merk_produk" class="form-select select">
                                                         <option value="null">-- Select --</option>
-                                                        @foreach ($merk as $row )
-                                                        <option value="{{ $row->id }}"> {{$row->nama_merek}}</option>
+                                                        @foreach ($merk as $row)
+                                                            <option value="{{ $row->id }}"> {{ $row->nama_merek }}
+                                                            </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -67,47 +68,41 @@ v
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Ukuran Produk</label>
-                                                    <select name="ukuran_produk[]" class="form-control tagging" multiple="multiple">
-                                                        <option>25</option>
-                                                    </select>
+                                                    <input id="ukuran_produk" name="ukuran_produk" type="text" class="form-control" value="26,27">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Warna Produk</label>
-                                                    <select name="warna_produk[]" class="form-control tagging" multiple="multiple">
-                                                        <option>Kuning</option>
-                                                        <option>Biru</option>
-                                                    </select>
+                                                    <input id="warna_produk" name="warna_produk[]" type="text" class="form-control" value="kuning,biru">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>
-                                                    <input name="berat_produk" type="number" class="form-control">
+                                                    <div class="input-group">
+                                                        <input name="berat_produk" type="number" class="form-control">
+                                                        <span class="input-group-text">Gram</span>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Kategori</label>
                                                     <select id="kategori" name="kategori" class="form-select select">
                                                         <option>-- Select --</option>
+                                                        @foreach ($kategori as $row)
+                                                            <option value="{{ $row->id }}">{{ $row->kategori }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Sub Kategori</label>
-                                                    <select id="sub_kategori" name="sub_kategori" class="form-select select">
+                                                    <select id="sub_kategori" name="sub_kategori"
+                                                        class="form-select select">
                                                         <option>-- Select --</option>
-                                                        <option>Option 1</option>
-                                                        <option>Option 2</option>
-                                                        <option>Option 3</option>
-                                                        <option>Option 4</option>
-                                                        <option>Option 5</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Sub-sub Kategori</label>
-                                                    <select id="sub_subkategori" name="sub_subkategori" class="form-select select">
+                                                    <select id="sub_subkategori" name="sub_subkategori"
+                                                        class="form-select select">
                                                         <option>-- Select --</option>
-                                                        <option>Option 1</option>
-                                                        <option>Option 2</option>
-                                                        <option>Option 3</option>
-                                                        <option>Option 4</option>
-                                                        <option>Option 5</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
@@ -116,23 +111,36 @@ v
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Harga Produk</label>
-                                                    <input name="harga_asliproduk" class="form-control" type="number">
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">Rp.</span>
+                                                        <input id="harga_asliproduk" name="harga_asliproduk" class="form-control" type="number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label>Diskon</label>
+                                                    <div class="input-group">
+                                                        <input id="diskon" name="diskon" class="form-control" type="number" min="0" max="100">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Harga Diskon</label>
-                                                    <input name="diskon" class="form-control" type="number">
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">Rp.</span>
+                                                        <input id="harga_diskonproduk" name="harga_diskonproduk" class="form-control" type="number" readonly>
+                                                    </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="custom-file-container" data-upload-id="mySecondImage">
-                                                        <label>Upload Foto Produk (Foto Pertama Akan Menjadi thumbnail) <a href="javascript:void(0)"
+                                                        <label>Upload Foto Produk (Foto Pertama Akan Menjadi thumbnail)
+                                                            <a href="javascript:void(0)"
                                                                 class="custom-file-container__image-clear"
                                                                 title="Clear Image">x</a></label>
                                                         <label class="custom-file-container__custom-file">
                                                             <input name="galeri_produk[]" type="file"
                                                                 class="custom-file-container__custom-file__custom-file-input"
                                                                 multiple>
-                                                            <input type="hidden"
-                                                                value="10485760" />
+                                                            <input type="hidden" value="10485760" />
                                                             <span
                                                                 class="custom-file-container__custom-file__custom-file-control"></span>
                                                         </label>
@@ -148,24 +156,24 @@ v
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"> Option 1
+                                                                <input type="checkbox" name="status_produk[]" value="promo"> Promo
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"> Option 1
+                                                                <input type="checkbox" name="status_produk[]" value="Produk Baru"> Produk Baru
                                                             </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"> Option 1
+                                                                <input type="checkbox" name="status_produk[]" value="Baru Datang"> Baru Datang
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"> Option 1
+                                                                <input type="checkbox" name="status_produk[]" value="Best Seller"> Best Seller
                                                             </label>
                                                         </div>
                                                     </div>
@@ -180,7 +188,8 @@ v
                                                 </div>
                                                 <input type="hidden" name="status" value="aktif">
                                                 <div class="col-12 d-flex">
-                                                    <button type="submit" class="btn btn-rounded btn-primary mx-auto w-50">Submit</button>
+                                                    <button type="submit"
+                                                        class="btn btn-rounded btn-primary mx-auto w-50">Submit</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -195,7 +204,53 @@ v
         <!-- Star Script -->
         @include('layoutsadmin.script')
         <!-- End Script -->
+        <script>
+            $(document).ready(function() {
+                $('#diskon').keyup(function() {
+                    let hargaasli = $('#harga_asliproduk').val();
+                    let diskon = $(this).val();
+                    let harga_diskon = (hargaasli*diskon)/100;
+                    let harga_total = hargaasli - harga_diskon;
+                    $('#harga_diskonproduk').val(harga_total)
+                });
+            });
+            $(document).ready(function() {
+                $('#kategori').change(function() {
+                    let ik = $(this).val();
+                    $.ajax({
+                        url: '/get_subkategori',
+                        type: 'post',
+                        data: 'ik=' + ik + '&_token={{ csrf_token() }}',
+                        success: function(result) {
+                            $('#sub_kategori').html(result);
+                            // $('#sub_kategori').removeAttr('disabled');
+                        }
+                    });
+                });
+            });
 
+            $(document).ready(function() {
+                $('#sub_kategori').change(function() {
+                    let isk = $(this).val();
+                    $.ajax({
+                        url: '/get_sub_subkategori',
+                        type: 'post',
+                        data: 'isk=' + isk + '&_token={{ csrf_token() }}',
+                        success: function(result) {
+                            $('#sub_subkategori').html(result);
+                            // $('#sub_kategori').removeAttr('disabled');
+                        }
+                    });
+                });
+            });
+        </script>
+        <script>
+            var input1 = document.querySelector('#warna_produk');
+            var input2 = document.querySelector('#ukuran_produk');
+
+            new Tagify(input1);
+            new Tagify(input2);
+        </script>
 </body>
 
 </html>

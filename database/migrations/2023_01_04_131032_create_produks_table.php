@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('stok_produk');
             $table->string('harga_diskonproduk');
             $table->string('harga_asliproduk');
-            $table->string('diskon');
+            $table->integer('diskon')->nullable();
             $table->string('galeri_produk');
             $table->string('status_produk');
             $table->text('deskirpsi_pendek');
