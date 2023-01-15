@@ -89,11 +89,12 @@
                                                             data-bs-target="#edit-sub-subkategori{{ $row->id }}"
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
-                                                        <a href="javascript:void(0);"
-                                                            class="btn btn-sm btn-white text-danger me-2"><i
-                                                                class="far fa-trash-altme-1"></i>Hapus</a>
+                                                                <a id="delete" data-provinsi="{{ $row->provinsi }}"
+                                                                    data-id="{{ $row->id }}" href="javascript:void(0);"
+                                                                    class="btn btn-sm btn-white text-danger me-2"><i
+                                                                        class="far fa-trash-alt me-1"></i>Delete</a>
                                                     </td>
-                                                </tr>
+                                                </tr> 
                                             </tbody>
                                             <div id="edit-sub-subkategori{{ $row->id }}" class="modal fade"
                                                 tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -101,7 +102,7 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title">Edit</h4>
+                                                            <h4 class="modal-title">Edit Sub->SubKategori</h4>
                                                             <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
@@ -116,11 +117,11 @@
                                                                             <label for="field-3"
                                                                                 class="form-label">Kategori
                                                                                 :</label>
-                                                                            <select id="kategori" class="form-control"
+                                                                            <select class="form-control"
                                                                                 name="kategori"
                                                                                 aria-label="Default select example">
                                                                                 <option
-                                                                                    value="{{ $row->datakategori->kategori }}">
+                                                                                    value="{{ $row->kategori }}">
                                                                                     {{ $row->datakategori->kategori }}
                                                                                 </option>
                                                                                 @foreach ($kategori as $datakate)
@@ -135,18 +136,18 @@
                                                                                 <label for="field-3"
                                                                                     class="form-label">Sub Kategori
                                                                                     :</label>
-                                                                                <select id="kategori"
+                                                                                <select
                                                                                     class="form-control"
                                                                                     name="sub_kategori"
                                                                                     aria-label="Default select example">
                                                                                     <option
-                                                                                        value="{{ $row->datasubkategori->sub_kategori }}">
+                                                                                        value="{{ $row->sub_kategori }}">
                                                                                         {{ $row->datasubkategori->sub_kategori }}
                                                                                     </option>
-                                                                                    @foreach ($_subsubkategori as $datakate)
+                                                                                    @foreach ($subkategori as $datas)
                                                                                         <option
-                                                                                            value="{{ $datakate->datasubkategori->id }}">
-                                                                                            {{ $datakate->datasubkategori->sub_kategori }}
+                                                                                            value="{{ $datas->id }}">
+                                                                                            {{ $datas->sub_kategori }}
                                                                                         </option>
                                                                                     @endforeach
                                                                                 </select>

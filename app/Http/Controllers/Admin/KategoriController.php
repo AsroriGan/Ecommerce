@@ -43,7 +43,7 @@ class KategoriController extends Controller
 
     public function deletekategori($id){
 
-        $data = kategori::find($id);
+        $data = kategori::findorfail($id);
         $data->delete();
 
         return redirect()->route('kategori')->with('success','Data Berhasil DiHapus');
@@ -77,6 +77,14 @@ class KategoriController extends Controller
          return redirect()->route('subkategori')->with('success', 'Data Berhasil DiUpdate');
 
     }
+
+    public function deletesubkategori($id){
+        $data = subkategori::find($id);
+        $data->delete();
+        return redirect()->route('subkategori')->with('success','Data Berhasil DiHapus');
+    }
+
+    //Sub-Subkategori
 
     public function sub_subkategori(){
 
