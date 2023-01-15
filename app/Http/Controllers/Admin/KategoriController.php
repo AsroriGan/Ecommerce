@@ -110,7 +110,7 @@ class KategoriController extends Controller
 
     public function updatesub_subkategori(Request $request, $id)
     {
-        // dd($request- >all());
+        // dd($request->all());
         $data =Sub_Subkategori::findOrFail($id);
 
         $data->update([
@@ -122,6 +122,12 @@ class KategoriController extends Controller
             ]);
 
         return redirect()->route('sub_subkategori')->with('success', 'Data Berhasil DiUpdate');
+    }
+    public function deletesub_sub($id)
+    {
+        $data = Sub_Subkategori::findorfail($id);
+        $data->delete();
+        return redirect('/sub_subkategori')->with("success", "Data berhasil Dihapus");
     }
 
 }

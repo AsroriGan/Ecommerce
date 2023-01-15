@@ -19,6 +19,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('role');
+            $table->string('notelepon');
+            $table->string('fotosampul')->default('defaultsampul.jpgl');
+            $table->string('foto')->default('defaultfoto.jpg');
+            $table->string('alamat')->nullable();
+            $table->string('provinsi')->nullable();
+            $table->string('kabupaten')->nullable();
+            $table->string('kecamatan')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

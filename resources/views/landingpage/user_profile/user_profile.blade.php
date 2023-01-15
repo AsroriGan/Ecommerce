@@ -380,7 +380,7 @@
     <!-- Footer Area End -->
 
     <!-- Modal -->
-    <div class="modal fade show" id="edit_modal" tabindex="-1" role="dialog">
+    <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -434,23 +434,26 @@
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Region state *</label>
-                                        <select id="regionstate" class="form-select" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
+                                        <select id="regionstate" class="form-select"
+                                            aria-label="Default select example">
+                                            <option value="null" selected>-- Region State List --</option>
                                             @foreach ($regionstate as $row)
-                                            <option value="{{ $row->id }}">{{ $row->provinsi }}</option>
+                                                <option value="{{ $row->id }}">{{ $row->provinsi }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">City *</label>
-                                        <select id="city" class="form-select" aria-label="Default select example" disabled>
-                                            <option>-- City List --</option>
+                                        <select id="city" class="form-select"
+                                            aria-label="Default select example" disabled>
+                                            <option value="">-- City List --</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Districts *</label>
-                                        <select id="distric" class="form-select" aria-label="Default select example" disabled>
-                                            <option>-- Distric List --</option>
+                                        <select id="distric" class="form-select"
+                                            aria-label="Default select example" disabled>
+                                            <option value="">-- Districs List --</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6 space-t-15">
@@ -733,15 +736,46 @@
     <!-- Vendor JS -->
     @include('layouts.script')
     <script>
-        $(document).ready(function(){
-            $('#regionstate').change(function(){
+        $(document).ready(function() {
+            $('#regionstate').change(function() {
                 let rsi = $(this).val();
+                let ci = rsi;
+                // alert(ci);
                 $.ajax({
-                    url :'/getkabupaten',
-                    type:'post',
-                    data:'rsi='+rsi+'&_token={{ csrf_token() }}',
-                    success:function(result){
-                        $('#city').html(result)
+                    url: '/getkabupaten',
+                    type: 'post',
+                    data: 'rsi=' + rsi + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#city').html(result);
+                        $('#city').removeAttr('disabled');
+                    }
+                });
+                if (ci == 'null') {
+                    $.ajax({
+                        url: '/getkecamatan',
+                        type: 'post',
+                        data: 'ci=' + ci + '&_token={{ csrf_token() }}',
+                        success: function(result) {
+                            $('#distric').html(result);
+                            $('#distric').removeAttr('disabled');
+                        }
+                    });
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            $('#city').change(function() {
+                // alert("p");
+                let ci = $(this).val();
+                // console.log(ci);
+                $.ajax({
+                    url: '/getkecamatan',
+                    type: 'post',
+                    data: 'ci=' + ci + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#distric').html(result);
+                        $('#distric').removeAttr('disabled');
                     }
                 });
             });

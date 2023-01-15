@@ -32,3 +32,11 @@
     position: relative;
     top: 6px;
 }
+
+.custom-file-container__image-multi-preview__single-image-clear{
+    display: none !important;
+}
+.tagify{
+    height: auto !important;
+    padding: 5px !important;
+}

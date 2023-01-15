@@ -2,13 +2,13 @@
 
     <div class="header-left header-left-one">
         <a href="index.html" class="logo">
-            <img src="template/assets/img/logo.png" alt="Logo">
+            <img src="{{asset('template/assets/img/logo.png')}}" alt="Logo">
         </a>
         <a href="index.html" class="white-logo">
-            <img src="template/assets/img/logo-white.png" alt="Logo">
+            <img src="{{asset('template/assets/img/logo-white.png')}}" alt="Logo">
         </a>
         <a href="index.html" class="logo logo-small">
-            <img src="template/assets/img/logo-small.png" alt="Logo" width="30" height="30">
+            <img src="{{asset('template/assets/img/logo-small.png')}}" alt="Logo" width="30" height="30">
         </a>
     </div>
 
@@ -35,20 +35,20 @@
 
         <li class="nav-item dropdown has-arrow flag-nav">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">
-                <img src="template/assets/img/flags/us.png" alt="" height="20"> <span>English</span>
+                <img src="{{asset('template/assets/img/flags/us.png')}}" alt="" height="20"> <span>English</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="javascript:void(0);" class="dropdown-item">
-                    <img src="template/assets/img/flags/us.png" alt="" height="16"> English
+                    <img src="{{asset('template/assets/img/flags/us.png')}}" alt="" height="16"> English
                 </a>
                 <a href="javascript:void(0);" class="dropdown-item">
-                    <img src="template/assets/img/flags/fr.png" alt="" height="16"> French
+                    <img src="{{asset('template/assets/img/flags/fr.png')}}" alt="" height="16"> French
                 </a>
                 <a href="javascript:void(0);" class="dropdown-item">
-                    <img src="template/assets/img/flags/es.png" alt="" height="16"> Spanish
+                    <img src="{{asset('template/assets/img/flags/es.png')}}" alt="" height="16"> Spanish
                 </a>
                 <a href="javascript:void(0);" class="dropdown-item">
-                    <img src="template/assets/img/flags/de.png" alt="" height="16"> German
+                    <img src="{{asset('template/assets/img/flags/de.png')}}" alt="" height="16"> German
                 </a>
             </div>
         </li>
@@ -70,7 +70,7 @@
                                 <div class="media d-flex">
                                     <span class="avatar avatar-sm">
                                         <img class="avatar-img rounded-circle" alt=""
-                                            src="template/assets/img/profiles/avatar-02.jpg">
+                                            src="{{asset('template/assets/img/profiles/avatar-02.jpg')}}">
                                     </span>
                                     <div class="media-body">
                                         <p class="noti-details"><span class="noti-title">Brian Johnson</span>
@@ -86,7 +86,7 @@
                                 <div class="media d-flex">
                                     <span class="avatar avatar-sm">
                                         <img class="avatar-img rounded-circle" alt=""
-                                            src="template/assets/img/profiles/avatar-03.jpg">
+                                            src="{{asset('template/assets/img/profiles/avatar-03.jpg')}}">
                                     </span>
                                     <div class="media-body">
                                         <p class="noti-details"><span class="noti-title">Marie Canales</span>
@@ -119,7 +119,7 @@
                                 <div class="media d-flex">
                                     <span class="avatar avatar-sm">
                                         <img class="avatar-img rounded-circle" alt=""
-                                            src="template/assets/img/profiles/avatar-04.jpg">
+                                            src="{{asset('template/assets/img/profiles/avatar-04.jpg')}}">
                                     </span>
                                     <div class="media-body">
                                         <p class="noti-details"><span class="noti-title">Barbara Moore</span>
@@ -158,7 +158,7 @@
         <li class="nav-item dropdown has-arrow main-drop">
             <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                 <span class="user-img">
-                    <img src="template/assets/img/profiles/avatar-01.jpg" alt="">
+                    <img src="{{asset('template/assets/img/profiles/avatar-01.jpg')}}" alt="">
                     <span class="status online"></span>
                 </span>
                 <span>Admin</span>
