@@ -89,7 +89,7 @@
                                                             data-bs-target="#edit-sub-subkategori{{ $row->id }}"
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
-                                                        <a href="javascript:void(0);" id="delete" data-provinsi="{{ $row->sub_subkategori }}"
+                                                        <a href="javascript:void(0);" id="delete" data-sub_subkategori="{{ $row->sub_subkategori }}"
                                                             data-id="{{ $row->id }}"
                                                             class="btn btn-sm btn-white text-danger me-2"><i
                                                                 class="far fa-trash-altme-1"></i>Hapus</a>
@@ -266,7 +266,7 @@
     <!-- End Script -->
          <script>
         $("#delete").click(function() {
-            var nama = $(this).attr('data-provinsi');
+            var nama = $(this).attr('data-sub_subkategori');
             var id = $(this).attr('data-id');
             Swal.fire({
                 title: "Are you sure?",

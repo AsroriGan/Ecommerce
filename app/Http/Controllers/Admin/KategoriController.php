@@ -69,13 +69,20 @@ class KategoriController extends Controller
     }
 
     public function editsubkategoripost(Request $request, $id){
-        // dd($request->all());
+        dd($request->all());
         $data = subkategori::findOrFail($id);
 
         $data->update($request->all());
 
          return redirect()->route('subkategori')->with('success', 'Data Berhasil DiUpdate');
 
+    }
+
+    public function deletesubkategori($id)
+    {
+        $data = subkategori::findorfail($id);
+        $data->delete();
+        return redirect('/subkategori')->with("success", "Data berhasil Dihapus");
     }
 
     public function sub_subkategori(){
@@ -122,4 +129,7 @@ class KategoriController extends Controller
         return redirect('/sub_subkategori')->with("success", "Data berhasil Dihapus");
     }
 
+
+
+    // kategori
 }
