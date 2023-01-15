@@ -27,7 +27,7 @@
                         <div class="page-header">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="page-title">Data wilayah / Porvinsi</h3>
+                                    <h3 class="page-title">Data wilayah / Kecamatan</h3>
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                                                 <a href="#" class="btn" data-bs-toggle="modal"
                                                     data-bs-target="#con-close-modal">
                                                     <i data-feather="plus-circle"></i>
-                                                    Add New Item
+                                                    Tambah data baru
                                                 </a>
                                             </div>
                                         </div>
@@ -114,9 +114,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-                            <div class="card-header">
+                            {{-- <div class="card-header">
                                 <h4 class="card-title">Default Datatable</h4>
-                            </div>
+                            </div> --}}
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table id="table" class="datatable table table-stripped">

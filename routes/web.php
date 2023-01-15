@@ -133,6 +133,9 @@ Route::post('/get_subkategori', [AdminProdukController::class, 'get_subkategori'
 Route::post('/get_sub_subkategori', [AdminProdukController::class, 'get_sub_subkategori'])->name('get_sub_subkategori');
 Route::post('/insertproduk', [AdminProdukController::class, 'insertproduk'])->name('insertproduk');
 Route::get('/view_produk/{id}', [AdminProdukController::class, 'view_produk'])->name('view_produk');
+Route::post('/editgaleri_produk/{id}/{key}', [AdminProdukController::class, 'editgaleri_produk'])->name('editgaleri_produk');
+Route::post('/edit_produk/{id}', [AdminProdukController::class, 'edit_produk'])->name('edit_produk');
+Route::get('/delete_produk/{id}', [AdminProdukController::class, 'delete_produk'])->name('delete_produk');
 //end add Produk
 
 //start data merek

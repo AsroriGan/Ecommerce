@@ -28,33 +28,31 @@ v
         <div class="page-wrapper">
             <div class="content container-fluid">
 
-                <div class="page-header">
-                    <div class="row">
-                        <div class="col-6">
-                            <h3 class="page-title">Data Produk / ProduK</h3>
-                            {{-- <ul class="breadcrumb">
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="page-title">Produk</h3>
+                        {{-- <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Kategori</a></li>
                             </ul> --}}
-                        </div>
-                        <div class="col-6">
-                            <div class="card invoices-tabs-card">
-                                <div class="card-body card-body pt-0 pb-0">
-                                    <div class="invoices-main-tabs border-0 pb-0">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-12 col-md-12">
-                                                <div
-                                                    class="invoices-settings-btn
+                    </div>
+                    <div class="col-6">
+                        <div class="card invoices-tabs-card">
+                            <div class="card-body card-body pt-0 pb-0">
+                                <div class="invoices-main-tabs border-0 pb-0">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12 col-md-12">
+                                            <div
+                                                class="invoices-settings-btn
                                             invoices-settings-btn-one">
-                                                    <a href="/addproduk" class="btn">
-                                                        <i data-feather="plus-circle"></i>
-                                                        Tambah Produk Baru
-                                                    </a>
-                                                    {{-- <button type="button" class="btn
+                                                <a href="/addproduk" class="btn">
+                                                    <i data-feather="plus-circle"></i>
+                                                    Tambah Produk Baru
+                                                </a>
+                                                {{-- <button type="button" class="btn
                                                 btn-success waves-effect waves-light
                                                 mt-1" data-bs-toggle="modal"
                                                 data-bs-target="#con-close-modal">Responsive
                                                 Modal</button> --}}
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -63,6 +61,7 @@ v
                         </div>
                     </div>
                 </div>
+
 
                 {{-- <div class="card-header">
                     <a type="button" class="btn btn-info waves-effect waves-light mt-1" href="tambahproduct">Tambah Produk</a>
@@ -90,29 +89,30 @@ v
                                         <tbody>
                                             @foreach ($data as $data)
                                                 @php
-                                                    $getfoto = explode(',',$data->galeri_produk);
+                                                    $getfoto = explode(',', $data->galeri_produk);
                                                     $fotoproduk = $getfoto[0];
                                                 @endphp
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
-                                                    <td><img src="{{asset('fotoproduk/'.$fotoproduk)}}" alt="" width="100px" height="100px"></td>
+                                                    <td><img src="{{ asset('fotoproduk/' . $fotoproduk) }}" alt=""
+                                                            width="100px" height="100px"></td>
                                                     <td>{{ $data->nama_produk }}</td>
                                                     <td><?php
-                                                        if ($data->diskon == null) {
-                                                            echo 'Rp.'.$data->harga_asliproduk;
-                                                        }else {
-                                                            echo 'Rp.'.$data->harga_diskonproduk;
-                                                        }
+                                                    if ($data->diskon == null) {
+                                                        echo 'Rp.' . $data->harga_asliproduk;
+                                                    } else {
+                                                        echo 'Rp.' . $data->harga_diskonproduk;
+                                                    }
                                                     ?></td>
-                                                    <td>{{ $data->diskon}}%</td>
+                                                    <td>{{ $data->diskon }}%</td>
                                                     <td>{{ $data->stok_produk }}</td>
                                                     <td>{{ $data->status }}</td>
-                                                    <td><a data-bs-toggle="modal"
-                                                            data-bs-target="#edit-kategori{{ $data->id }}"
-                                                            class="btn btn-sm  btn-white text-success me-2"><i
+                                                    <td><a class="btn btn-sm  btn-white text-success me-2"
+                                                            href="/view_produk/{{ $data->id }}"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
-                                                        <a href="javascript:void(0);"
-                                                            class="btn btn-sm btn-white text-danger me-2"><i
+                                                        <a class="btn btn-sm btn-white text-danger me-2 delete"
+                                                            data-id="{{ $data->id }}"
+                                                            data-nama="{{ $data->nama_produk }}"><i
                                                                 class="far fa-trash-altme-1"></i>Hapus</a>
                                                     </td>
 
@@ -129,7 +129,8 @@ v
                                                                         aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body p-4">
-                                                                    <form action="/editkategoripost/{{ $data->id }}"
+                                                                    <form
+                                                                        action="/editkategoripost/{{ $data->id }}"
                                                                         method="POST">
                                                                         @csrf
                                                                         <div class="row">
@@ -184,7 +185,41 @@ v
             toastr.success("{{ Session::get('success') }}")
         @endif
     </script>
-
+    <script>
+        $(".delete").click(function() {
+            var nama = $(this).attr('data-nama');
+            var id = $(this).attr('data-id');
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1
+            }).then(function(t) {
+                if (t.value) {
+                    window.location = "/delete_produk/" + id;
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        type: "error",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                }
+            })
+        })
+    </script>
     <script>
         $(document).ready(function() {
             $('#myTable').DataTable();
