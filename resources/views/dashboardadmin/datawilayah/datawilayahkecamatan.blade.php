@@ -218,7 +218,7 @@
                                                                                     class="form-control"
                                                                                     id="field-1"
                                                                                     placeholder="{{ $row->kecamatan }}"
-                                                                                    value="{{ $row->kecamatan }}"
+                                                                                    value="{{ $row->kecamatan }}">
                                                                                     </div>
                                                                             </div>
                                                                         </div>

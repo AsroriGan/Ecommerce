@@ -46,7 +46,7 @@
                                                 class="invoices-settings-btn
                                     invoices-settings-btn-one">
                                                 <a href="#" class="btn" data-bs-toggle="modal"
-                                                data-bs-target="#modal-kategori">
+                                                    data-bs-target="#modal-kategori">
                                                     <i data-feather="plus-circle"></i>
                                                     Tambah Item
                                                 </a>
@@ -84,9 +84,9 @@
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
 
-                                                        <a id="delete"
-                                                            class="btn btn-sm btn-white text-danger me-2 " data-kategori="{{ $data->kategori }}" ><i
-                                                                class="far fa-trash-altme-1"></i>Hapus</a>
+                                                        <a id="delete" class="btn btn-sm btn-white text-danger me-2"
+                                                            data-kategori="{{ $data->kategori }}" data-id="{{ $data->id }}"><i
+                                                            class="far fa-trash-alt me-1"></i>Hapus</a>
 
                                                     </td>
 
@@ -191,33 +191,39 @@
     </script>
 
     <script>
-        $("#delete").click( function() {
-            var kategori = $(this).attr('data-kategori')
-		Swal.fire({
-			title: "Are you sure?",
-			text: "You won't be able to revert this!",
-			type: "warning",
-			showCancelButton: !0,
-			confirmButtonColor: "#3085d6",
-			cancelButtonColor: "#d33",
-			confirmButtonText: "Yes, delete it!",
-			confirmButtonClass: "btn btn-primary",
-			cancelButtonClass: "btn btn-danger ml-1",
-			buttonsStyling: !1
-		}).then(function(t) {
-			t.value ? Swal.fire({
-				type: "success",
-				title: "Deleted!",
-				text: "Your file has been deleted.",
-				confirmButtonClass: "btn btn-success"
-			}) : t.dismiss === Swal.DismissReason.cancel && Swal.fire({
-				title: "Cancelled",
-				text: "Your imaginary file is safe :)",
-				type: "error",
-				confirmButtonClass: "btn btn-success"
-			})
-		})
-	})
+        $("#delete").click(function() {
+            var kategori = $(this).attr('data-kategori');
+            var id = $(this).attr('data-id');
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1
+            }).then(function(t) {
+                if (t.value) {
+                    window.location = "/deletekategori/" + id;
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        type: "error",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                }
+            })
+        })
     </script>
 
     <script>
