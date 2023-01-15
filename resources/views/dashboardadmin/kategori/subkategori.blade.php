@@ -84,10 +84,9 @@
                                                             data-bs-target="#edit-subkategori{{ $datasub->id }}"
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
-                                                        <a href="javascript:void(0);"
+                                                        <a href="javascript:void(0);" id="deletesubkategori" data-id="{{ $datasub->id }}" data-sub_kategori="{{ $datasub->sub_kategori }}"
                                                             class="btn btn-sm btn-white text-danger me-2"><i
-                                                                class="far fa-trash-altme-1" id="deletee" data-subkategori="{{ $datasub->sub_kategori }}"
-                                                            data-id="{{ $datasub->id }}"></i>Hapus</a>
+                                                            class="far fa-trash-alt me-1"></i>Hapus</a>
                                                     </td>
 
                                                     <div id="edit-subkategori{{ $datasub->id }}" class="modal fade"
@@ -103,7 +102,7 @@
                                                                 </div>
                                                                 <div class="modal-body p-4">
                                                                     <form
-                                                                        action="/editsubkategoripost/{{ $datasub->id }}"
+                                                                        action="editsub_kategoripost/{{ $datasub->id }}"
                                                                         method="POST">
                                                                         @csrf
                                                                         <div class="row">
@@ -117,7 +116,7 @@
                                                                                         name="kategori"
                                                                                         aria-label="Default select example">
                                                                                         <option
-                                                                                            value="{{ $datasub->idkategoris->id }}">
+                                                                                            value="{{ $datasub->idkategoris->kategori }}" disabled selected>
                                                                                             {{ $datasub->idkategoris->kategori }}
                                                                                         </option>
                                                                                         @foreach ($data as $datakate)
@@ -226,47 +225,48 @@
         @endif
     </script>
 
+<script>
+    $("#deletesubkategori").click(function() {
+        var kategori = $(this).attr('data-kategori');
+        var id = $(this).attr('data-id');
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            type: "warning",
+            showCancelButton: !0,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+            confirmButtonClass: "btn btn-primary",
+            cancelButtonClass: "btn btn-danger ml-1",
+            buttonsStyling: !1
+        }).then(function(t) {
+            if (t.value) {
+                window.location = "/deletesubkategori/" + id;
+                Swal.fire({
+                    type: "success",
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    confirmButtonClass: "btn btn-success"
+                })
+            } else {
+                Swal.fire({
+                    title: "Cancelled",
+                    text: "Your imaginary file is safe :)",
+                    type: "error",
+                    confirmButtonClass: "btn btn-success"
+                })
+            }
+        })
+    })
+</script>
+
     <script>
         $(document).ready(function() {
             $('#myTable').DataTable();
         });
     </script>
 
-         <script>
-        $("#deletee").click(function() {
-            var nama = $(this).attr('data-subkategori');
-            var id = $(this).attr('data-id');
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                type: "warning",
-                showCancelButton: !0,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
-                confirmButtonClass: "btn btn-primary",
-                cancelButtonClass: "btn btn-danger ml-1",
-                buttonsStyling: !1
-            }).then(function(t) {
-                if (t.value) {
-                    window.location = "/subkategori/" + id;
-                    Swal.fire({
-                        type: "success",
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                } else {
-                    Swal.fire({
-                        title: "Cancelled",
-                        text: "Your imaginary file is safe :)",
-                        type: "error",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                }
-            })
-        })
-    </script>
     <!-- End Script -->
 
 </body>

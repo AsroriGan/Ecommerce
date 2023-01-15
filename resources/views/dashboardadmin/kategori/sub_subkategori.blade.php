@@ -67,7 +67,7 @@
                                     <table class="datatable table table-stripped" id="myTable">
                                         <thead>
                                             <tr>
-                                                {{-- <th>No.</th> --}}
+                                                <th>No.</th>
                                                 <th>Kategori</th>
                                                 <th>SubKategori</th>
                                                 <th>Sub-SubKategori</th>
@@ -80,7 +80,7 @@
                                         @foreach ($_subsubkategori as $row)
                                             <tbody>
                                                 <tr>
-                                                    {{-- <td scope="row">{{ $loop->iteration }}</td> --}}
+                                                    <td scope="row">{{ $loop->iteration }}</td>
                                                     <td>{{ $row->datakategori->kategori }}</td>
                                                     <td>{{ $row->datasubkategori->sub_kategori }}</td>
                                                     <td>{{ $row->sub_subkategori }}</td>
@@ -89,7 +89,8 @@
                                                             data-bs-target="#edit-sub-subkategori{{ $row->id }}"
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
-                                                        <a href="javascript:void(0);" id="delete" data-sub_subkategori="{{ $row->sub_subkategori }}"
+                                                        <a id="delete"
+                                                            data-sub_subkategori="{{ $row->sub_subkategori }}"
                                                             data-id="{{ $row->id }}"
                                                             class="btn btn-sm btn-white text-danger me-2"><i
                                                                 class="far fa-trash-altme-1"></i>Hapus</a>
@@ -102,7 +103,7 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title">Edit</h4>
+                                                            <h4 class="modal-title">Edit Sub->SubKategori</h4>
                                                             <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
@@ -117,60 +118,56 @@
                                                                             <label for="field-3"
                                                                                 class="form-label">Kategori
                                                                                 :</label>
-                                                                            <select id="kategori" class="form-control"
-                                                                                name="kategori"
+                                                                            <select class="form-control" name="kategori"
                                                                                 aria-label="Default select example">
                                                                                 <option
                                                                                     value="{{ $row->datakategori->id }}">
                                                                                     {{ $row->datakategori->kategori }}
                                                                                 </option>
-                                                                                @foreach ($kategori as $datakate)
-                                                                                    <option value="{{ $datakate->id }}">
-                                                                                        {{ $datakate->kategori }}
+                                                                                @foreach ($kategori as $data)
+                                                                                    <option
+                                                                                        value="{{ $data->id }}">
+                                                                                        {{ $data->kategori }}
+                                                                                    </option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="field-3"
+                                                                                class="form-label">Sub Kategori
+                                                                                :</label>
+                                                                            <select class="form-control" name="sub_kategori"
+                                                                                aria-label="Default select example">
+                                                                                <option
+                                                                                    value="{{ $row->datasubkategori->id }}">
+                                                                                    {{ $row->datasubkategori->sub_kategori }}
+                                                                                </option>
+                                                                                @foreach ($subkategori as $datas)
+                                                                                    <option
+                                                                                        value="{{ $datas->id }}">
+                                                                                        {{ $datas->sub_kategori }}
                                                                                     </option>
                                                                                 @endforeach
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-12">
                                                                             <div class="mb-3">
-                                                                                <label for="field-3"
-                                                                                    class="form-label">Sub Kategori
-                                                                                    :</label>
-                                                                                <select id="kategori"
-                                                                                    class="form-control"
-                                                                                    name="sub_kategori"
-                                                                                    aria-label="Default select example">
-                                                                                    <option
-                                                                                        value="{{ $row->datasubkategori->id }}">
-                                                                                        {{ $row->datasubkategori->sub_kategori }}
-                                                                                    </option>
-                                                                                    @foreach ($_subsubkategori as $datakate)
-                                                                                        <option
-                                                                                            value="{{ $datakate->datasubkategori->id }}">
-                                                                                            {{ $datakate->datasubkategori->sub_kategori }}
-                                                                                        </option>
-                                                                                    @endforeach
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                                <div class="mb-3">
-                                                                                    <label for="field-1"
-                                                                                        class="form-label">Sub->SubKategori</label>
-                                                                                    <input type="text"
-                                                                                        name="sub_subkategori"
-                                                                                        class="form-control"
-                                                                                        id="field-1"
-                                                                                        value="{{ $row->sub_subkategori }}">
-                                                                                </div>
+                                                                                <label for="field-1"
+                                                                                    class="form-label">Sub->SubKategori</label>
+                                                                                <input type="text"
+                                                                                    name="sub_subkategori"
+                                                                                    class="form-control" id="field-1"
+                                                                                    value="{{ $row->sub_subkategori }}">
                                                                             </div>
                                                                         </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button"
-                                                                                class="btn btn-secondary"
-                                                                                data-dismiss="modal">Close</button>
-                                                                            <button type="submit"
-                                                                                class="btn btn-primary">Save
-                                                                                changes</button>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary">Save
+                                                                            changes</button>
+                                                                    </div>
                                                                 </form>
                                                             </div>
                                                         </div>
@@ -263,8 +260,7 @@
         });
     </script>
 
-    <!-- End Script -->
-         <script>
+    <script>
         $("#delete").click(function() {
             var nama = $(this).attr('data-sub_subkategori');
             var id = $(this).attr('data-id');
@@ -299,6 +295,7 @@
             })
         })
     </script>
+    <!-- End Script -->
 
 </body>
 

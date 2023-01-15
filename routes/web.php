@@ -32,9 +32,11 @@ use Illuminate\Support\Facades\Route;
 
 //login
 Route::get('/login', [LandingLogincontroller::class, 'login'])->name('login');
+Route::post('/loginpost', [LandingLogincontroller::class, 'loginpost'])->name('loginpost');
 
 //register
 Route::get('/register', [LandingLogincontroller::class, 'register'])->name('register');
+Route::post('/registerpost', [LandingLogincontroller::class, 'registerpost'])->name('registerpost');
 
 // berandah admin
 Route::get('/beranda', function () {
@@ -88,17 +90,13 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
-Route::get('/deletekategori', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
-
-
-
-//SubKategori
+Route::get('/deletekategori/{id}', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
+    //SubKategori
 Route::get('/subkategori', [AdminKategoriController::class, 'subkategori'])->name('subkategori');
 Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
-Route::post('/editsubkategoripost/{id}', [AdminKategoriController::class, 'editsubkategoripost'])->name('editsubkategoripost');
-Route::get('/deletesubkategori', [AdminKategoriController::class, 'deletesubkategori'])->name('deletesubkategori');
-
-//Sub_Subkategori
+Route::post('/editsub_kategoripost/{id}', [AdminKategoriController::class, 'editsub_kategoripost'])->name('editsub_kategoripost');
+Route::get('/deletesubkategori/{id}', [AdminKategoriController::class, 'deletesubkategori'])->name('deletesubkategori');
+    //Sub_Subkategori
 Route::get('/sub_subkategori', [AdminKategoriController::class, 'sub_subkategori'])->name('sub_subkategori');
 Route::post('/sub_subkategoripost', [AdminKategoriController::class, 'sub_subkategoripost'])->name('sub_subkategoripost');
 Route::post('/updatesub_subkategori/{id}', [AdminKategoriController::class, 'updatesub_subkategori'])->name('updatesub_subkategori');
@@ -130,6 +128,10 @@ Route::get('/deletekecamatan/{id}', [AdminDatawilayahController::class, 'deletek
 //start add Produk
 Route::get('/produkadmin', [AdminProdukController::class, 'index'])->name('produkadmin');
 Route::get('/addproduk', [AdminProdukController::class, 'addproduct'])->name('addproduk');
+Route::post('/get_subkategori', [AdminProdukController::class, 'get_subkategori'])->name('get_subkategori');
+Route::post('/get_sub_subkategori', [AdminProdukController::class, 'get_sub_subkategori'])->name('get_sub_subkategori');
+Route::post('/insertproduk', [AdminProdukController::class, 'insertproduk'])->name('insertproduk');
+Route::get('/view_produk/{id}', [AdminProdukController::class, 'view_produk'])->name('view_produk');
 //end add Produk
 
 //start data merek

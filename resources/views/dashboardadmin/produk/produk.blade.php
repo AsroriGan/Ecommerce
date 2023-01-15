@@ -30,18 +30,43 @@ v
 
                 <div class="page-header">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-6">
                             <h3 class="page-title">Data Produk / ProduK</h3>
                             {{-- <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Kategori</a></li>
                             </ul> --}}
                         </div>
+                        <div class="col-6">
+                            <div class="card invoices-tabs-card">
+                                <div class="card-body card-body pt-0 pb-0">
+                                    <div class="invoices-main-tabs border-0 pb-0">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-12 col-md-12">
+                                                <div
+                                                    class="invoices-settings-btn
+                                            invoices-settings-btn-one">
+                                                    <a href="/addproduk" class="btn">
+                                                        <i data-feather="plus-circle"></i>
+                                                        Tambah Produk Baru
+                                                    </a>
+                                                    {{-- <button type="button" class="btn
+                                                btn-success waves-effect waves-light
+                                                mt-1" data-bs-toggle="modal"
+                                                data-bs-target="#con-close-modal">Responsive
+                                                Modal</button> --}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="card-header">
+                {{-- <div class="card-header">
                     <a type="button" class="btn btn-info waves-effect waves-light mt-1" href="tambahproduct">Tambah Produk</a>
-                </div>
+                </div> --}}
 
                 <div class="row">
                     <div class="col-sm-12">
@@ -54,20 +79,34 @@ v
                                             <tr>
                                                 <th>No.</th>
                                                 <th>Foto</th>
-                                                <th>Nama Product</th>
+                                                <th>Nama Produk</th>
                                                 <th>Harga</th>
-                                                <th>Stok</th>
+                                                <th>Diskon</th>
+                                                <th>Stock</th>
+                                                <th>Status</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($data as $data)
+                                                @php
+                                                    $getfoto = explode(',',$data->galeri_produk);
+                                                    $fotoproduk = $getfoto[0];
+                                                @endphp
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
-                                                    <td>{{ $data->foto_produk }}</td>
+                                                    <td><img src="{{asset('fotoproduk/'.$fotoproduk)}}" alt="" width="100px" height="100px"></td>
                                                     <td>{{ $data->nama_produk }}</td>
-                                                    <td>{{ $data->harga_produk}}</td>
+                                                    <td><?php
+                                                        if ($data->diskon == null) {
+                                                            echo 'Rp.'.$data->harga_asliproduk;
+                                                        }else {
+                                                            echo 'Rp.'.$data->harga_diskonproduk;
+                                                        }
+                                                    ?></td>
+                                                    <td>{{ $data->diskon}}%</td>
                                                     <td>{{ $data->stok_produk }}</td>
+                                                    <td>{{ $data->status }}</td>
                                                     <td><a data-bs-toggle="modal"
                                                             data-bs-target="#edit-kategori{{ $data->id }}"
                                                             class="btn btn-sm  btn-white text-success me-2"><i

@@ -148,10 +148,10 @@
                                                                 class="far
                                                         fa-edit me-1"></i>
                                                             Edit</a>
-                                                        <a id="delete" data-id="{{ $row->id }}" data-nama="{{ $row->kecamatan }}" href="javascript:void(0);"
+                                                        <a data-id="{{ $row->id }}" data-nama="{{ $row->kecamatan }}" href="javascript:void(0);"
                                                             class="btn btn-sm
                                                     btn-white
-                                                    text-danger me-2"><i
+                                                    text-danger me-2 delete"><i
                                                                 class="far
                                                         fa-trash-alt
                                                         me-1"></i>Delete</a>
@@ -262,7 +262,7 @@
         @endif
     </script>
     <script>
-        $("#delete").click(function() {
+        $(".delete").click(function() {
             var nama = $(this).attr('data-nama');
             var id = $(this).attr('data-id');
             Swal.fire({

@@ -84,10 +84,10 @@
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
 
-                                                        <a class="btn btn-sm btn-white text-danger me-2"
-                                                            data-kategori="{{ $data->kategori }}"><i
-                                                                class="far fa-trash-altme-1 delete"></i>Hapus</a>
-                                                        {{-- <a id="delete" href="#">delete</a> --}}
+                                                        <a id="delete" class="btn btn-sm btn-white text-danger me-2"
+                                                            data-kategori="{{ $data->kategori }}" data-id="{{ $data->id }}"><i
+                                                            class="far fa-trash-alt me-1"></i>Hapus</a>
+
                                                     </td>
 
 
@@ -192,7 +192,7 @@
 
     <script>
         $("#delete").click(function() {
-            var nama = $(this).attr('data-subkategori');
+            var kategori = $(this).attr('data-kategori');
             var id = $(this).attr('data-id');
             Swal.fire({
                 title: "Are you sure?",
