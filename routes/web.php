@@ -38,7 +38,8 @@ Route::post('/loginpost', [LandingLogincontroller::class, 'loginpost'])->name('l
 //register
 Route::get('/register', [LandingLogincontroller::class, 'register'])->name('register');
 Route::post('/registerpost', [LandingLogincontroller::class, 'registerpost'])->name('registerpost');
-
+//logout
+Route::get('/logout', [LandingLogincontroller::class, 'logout'])->name('logout');
 // berandah admin
 Route::get('/beranda', function () {
     return view('dashboardadmin.beranda');
@@ -75,6 +76,7 @@ Route::get('/categories', [LandingKategoriController::class, 'index'])->name('in
 
 //user profile
 Route::get('/user-profile', [LandingUserprofilecontroller::class, 'index'])->name('user-profle');
+Route::get('/change-password', [LandingUserprofilecontroller::class, 'change_password'])->name('change_password');
     //edit profile
 Route::post('/edit-profile/{id}', [LandingUserprofilecontroller::class, 'edit_profile'])->name('edit-profile');
 //get address

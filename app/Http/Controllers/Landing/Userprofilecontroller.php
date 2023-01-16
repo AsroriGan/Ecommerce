@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Landing;
 
-use User;
+use App\Models\User;
 use App\Models\Datawilayah;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -23,6 +23,29 @@ class Userprofilecontroller extends Controller
     }
     public function edit_profile(Request $request,$id){
         $user = User::findorfail($id);
+        // dd($request->all());
+        if ($request->hasFile('foto')) {
+            $request->file('foto')->move('assets/images/user/',$request->file('foto')->getClientOriginalName());
+            $user->foto = $request->file('foto')->getClientOriginalName();
+            $user->save();
+        }
+        if ($request->hasFile('fotosampul')) {
+            $request->file('fotosampul')->move('assets/images/banner/',$request->file('fotosampul')->getClientOriginalName());
+            $user->fotosampul = $request->file('fotosampul')->getClientOriginalName();
+            $user->save();
+            // dd($user);
+        }
+        $user->update([
+            'name' => $request->fristname.' '.$request->lastname,
+            'email' => $request->email,
+            'notelepon' => $request->notelepon,
+            'alamat' => $request->alamat,
+            'provinsi' => $request->provinsi,
+            'kabupaten' => $request->kabupaten,
+            'kecamatan' => $request->kecamatan,
+        ]);
+        // dd($user);
+        return redirect('/user-profile')->with("success","Your profile has been successfully updated");
     }
     public function getkabupaten(Request $request){
         $rsi = $request->post('rsi');
@@ -44,5 +67,8 @@ class Userprofilecontroller extends Controller
     }
     public function history(){
         return view('landingpage.History.history');
+    }
+    public function change_password(){
+        return view('landingpage.user_profile.change_password');
     }
 }

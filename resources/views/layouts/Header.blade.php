@@ -129,8 +129,9 @@
                                     @if (!Auth::check())
                                     <li><a class="dropdown-item" href="/register">Register</a></li>
                                     <li><a class="dropdown-item" href="/login">Login</a></li>
-                                    @endif
+                                    @else
                                     <li><a class="dropdown-item" href="/user-profile">My profile</a></li>
+                                    @endif
                                 </ul>
                             </div>
                             <!-- Header User End -->
