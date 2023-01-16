@@ -96,7 +96,7 @@ Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kat
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
 Route::get('/deletekategori/{id}', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
-Route::post('/validasikategori', [AdminKategoriController::class, 'validasikategori'])->name('validasikategori');
+Route::post('/_validation', [AdminKategoriController::class, '_validation'])->name('_validation');
     //SubKategori
 Route::get('/subkategori', [AdminKategoriController::class, 'subkategori'])->name('subkategori');
 Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
