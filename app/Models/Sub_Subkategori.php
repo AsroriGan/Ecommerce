@@ -20,6 +20,6 @@ class Sub_Subkategori extends Model
 
     public function datasubkategori()
     {
-        return $this->belongsTo(subkategori::class, 'subkategori', 'id');
+        return $this->belongsTo(subkategori::class, 'sub_kategori', 'id');
     }
 }

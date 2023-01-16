@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Merek extends Model
 {
     use HasFactory;
-    
+
     protected $guarded = [];
+
+    public function rmerekhproduk()
+    {
+        return $this->hasMany(Produk::class);
+    }
 }

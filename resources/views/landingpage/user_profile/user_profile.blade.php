@@ -433,32 +433,32 @@
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-md-6 space-t-15">
+                                        <label class="form-label">Region state *</label>
+                                        <select id="regionstate" class="form-select"
+                                            aria-label="Default select example">
+                                            <option value="null" selected>-- Region State List --</option>
+                                            @foreach ($regionstate as $row)
+                                                <option value="{{ $row->id }}">{{ $row->provinsi }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 space-t-15">
                                         <label class="form-label">City *</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                        <select id="city" class="form-select"
+                                            aria-label="Default select example" disabled>
+                                            <option value="">-- City List --</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6 space-t-15">
-                                        <label class="form-label">Post Code </label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-md-6 space-t-15">
-                                        <label class="form-label">Country *</label>
-                                        <select class="form-select" aria-label="Disabled select example" disabled>
-                                            <option selected>Indonesia</option>
+                                        <label class="form-label">Districts *</label>
+                                        <select id="distric" class="form-select"
+                                            aria-label="Default select example" disabled>
+                                            <option value="">-- Districs List --</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6 space-t-15">
-                                        <label class="form-label">Region State *</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                        <label class="form-label">Post Code *</label>
+                                        <input type="text" class="form-control" placeholder="Post Code">
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Email </label>
@@ -735,6 +735,52 @@
 
     <!-- Vendor JS -->
     @include('layouts.script')
+    <script>
+        $(document).ready(function() {
+            $('#regionstate').change(function() {
+                let rsi = $(this).val();
+                let ci = rsi;
+                // alert(ci);
+                $.ajax({
+                    url: '/getkabupaten',
+                    type: 'post',
+                    data: 'rsi=' + rsi + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#city').html(result);
+                        $('#city').removeAttr('disabled');
+                    }
+                });
+                if (ci == 'null') {
+                    $.ajax({
+                        url: '/getkecamatan',
+                        type: 'post',
+                        data: 'ci=' + ci + '&_token={{ csrf_token() }}',
+                        success: function(result) {
+                            $('#distric').html(result);
+                            $('#distric').removeAttr('disabled');
+                        }
+                    });
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            $('#city').change(function() {
+                // alert("p");
+                let ci = $(this).val();
+                // console.log(ci);
+                $.ajax({
+                    url: '/getkecamatan',
+                    type: 'post',
+                    data: 'ci=' + ci + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#distric').html(result);
+                        $('#distric').removeAttr('disabled');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

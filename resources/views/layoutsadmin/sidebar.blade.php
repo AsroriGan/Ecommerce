@@ -7,12 +7,13 @@
                     <a href="index.html"><i data-feather="home"></i> <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i> <span>Slider</span></a>
+                    <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i>
+                        <span>Slider</span></a>
                 </li>
-                <li>
-                    <a href="estimates.html"><i data-feather="file-text"></i> <span>Estimates</span></a>
+                <li class="active">
+                    <a href="/merek"><i data-feather="home"></i> <span>Merk</span></a>
                 </li>
-                <li class="submenu">
+                <li class="submenu active">
                     <a href="#"><i data-feather="clipboard"></i> <span> Kategori</span> <span
                             class="menu-arrow"></span></a>
                     <ul>
@@ -21,14 +22,27 @@
                         <li><a href="/sub_subkategori">Sub->SubKategori</a></li>
                     </ul>
                 </li>
-                <li class="submenu {{ Route::is('datawilayahprovinsi','datawilayahkabupaten','datawilayahkecamatan') ? 'active' : '' }}">
+                <li
+                    class="submenu {{ Route::is('datawilayahprovinsi', 'datawilayahkabupaten', 'datawilayahkecamatan') ? 'active' : '' }}">
                     <a href="#"><i data-feather="clipboard"></i> <span>Data wilayah</span> <span
                             class="menu-arrow"></span></a>
                     <ul>
-                        <li><a {{ Route::is('datawilayahprovinsi') ? 'class=active' : '' }} href="/datawilayahprovinsi">Provinsi</a></li>
-                        <li><a {{ Route::is('datawilayahkabupaten') ? 'class=active' : '' }} href="/datawilayahkabupaten">Kota / Kabupaten</a></li>
-                        <li><a {{ Route::is('datawilayahkecamatan') ? 'class=active' : '' }} href="/datawilayahkecamatan">Kecamatan</a></li>
+                        <li><a {{ Route::is('datawilayahprovinsi') ? 'class=active' : '' }}
+                                href="/datawilayahprovinsi">Provinsi</a></li>
+                        <li><a {{ Route::is('datawilayahkabupaten') ? 'class=active' : '' }}
+                                href="/datawilayahkabupaten">Kota / Kabupaten</a></li>
+                        <li><a {{ Route::is('datawilayahkecamatan') ? 'class=active' : '' }}
+                                href="/datawilayahkecamatan">Kecamatan</a></li>
                     </ul>
+                </li>
+                <li class="{{Route::is('produkadmin','addproduk','view_produk') ? 'active' : ''}}">
+                    <a href="/produkadmin"><i data-feather="credit-card"></i> <span>Produk</span></a>
+                </li>
+                <li>
+                    <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i> <span>Slider</span></a>
+                </li>
+                <li>
+                    <a href="estimates.html"><i data-feather="file-text"></i> <span>Estimates</span></a>
                 </li>
                 <li>
                     <a href="/promosi"><i data-feather="credit-card"></i> <span>Tambah Promo</span></a>

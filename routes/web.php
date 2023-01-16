@@ -14,6 +14,7 @@ use App\Http\Controllers\Landing\WhislistController as LandingWhislistController
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
 use App\Http\Controllers\Admin\MerekController as AdminMerekController;
+use App\Http\Controllers\Admin\ProdukController as AdminProdukController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\Admin\PromosiController as AdminPromosiController;
 use Illuminate\Support\Facades\Route;
@@ -32,9 +33,11 @@ use Illuminate\Support\Facades\Route;
 
 //login
 Route::get('/login', [LandingLogincontroller::class, 'login'])->name('login');
+Route::post('/loginpost', [LandingLogincontroller::class, 'loginpost'])->name('loginpost');
 
 //register
 Route::get('/register', [LandingLogincontroller::class, 'register'])->name('register');
+Route::post('/registerpost', [LandingLogincontroller::class, 'registerpost'])->name('registerpost');
 
 // berandah admin
 Route::get('/beranda', function () {
@@ -45,8 +48,8 @@ Route::get('/beranda', function () {
 Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
 Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
 Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
-Route::get('/product', [LandingProdukController::class, 'product'])->name('product');
-Route::get('/tambahproduct', [LandingProdukController::class, 'tambahproduct'])->name('tambahproduct');
+// Route::get('/product', [LandingProdukController::class, 'product'])->name('product');
+// Route::get('/tambahproduct', [LandingProdukController::class, 'tambahproduct'])->name('tambahproduct');
 
 // Blog
 Route::get('/blog', [LandingBlogController::class, 'blog']);
@@ -66,11 +69,18 @@ Route::get('/', [LandingpageController::class, 'home'])->name('home');
 Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
 
 //Kategori
+<<<<<<< HEAD
 Route::get('/kategori-landing', [LandingKategoriController::class, 'index'])->name('index.kategori');
+=======
+Route::get('/categories', [LandingKategoriController::class, 'index'])->name('index.kategori');
+>>>>>>> 644360c3afda9335c4a2c74fc9d90ec5ac13a6eb
 
 //user profile
-Route::get('/user-profile',[LandingUserprofilecontroller::class,'index'])->name('user-profle');
-Route::get('/history',[LandingUserprofilecontroller::class,'history'])->name('history');
+Route::get('/user-profile', [LandingUserprofilecontroller::class, 'index'])->name('user-profle');
+//get address
+Route::post('/getkabupaten', [LandingUserprofilecontroller::class, 'getkabupaten'])->name('getkabupaten');
+Route::post('/getkecamatan', [LandingUserprofilecontroller::class, 'getkecamatan'])->name('getkecamatan');
+Route::get('/history', [LandingUserprofilecontroller::class, 'history'])->name('history');
 
 //Trackorder
 Route::get('/trackorder', [LandingTrackorderController::class, 'indextrack'])->name('trackorder');
@@ -81,44 +91,63 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 
 // Star kategroi Admin
-    //Kategori
+//Kategori
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
+<<<<<<< HEAD
 Route::get('/deletekategori', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
+=======
+Route::get('/deletekategori/{id}', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
+>>>>>>> 644360c3afda9335c4a2c74fc9d90ec5ac13a6eb
     //SubKategori
 Route::get('/subkategori', [AdminKategoriController::class, 'subkategori'])->name('subkategori');
 Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
-Route::post('/editsubkategoripost/{id}', [AdminKategoriController::class, 'editsubkategoripost'])->name('editsubkategoripost');
+Route::post('/editsub_kategoripost/{id}', [AdminKategoriController::class, 'editsub_kategoripost'])->name('editsub_kategoripost');
+Route::get('/deletesubkategori/{id}', [AdminKategoriController::class, 'deletesubkategori'])->name('deletesubkategori');
     //Sub_Subkategori
 Route::get('/sub_subkategori', [AdminKategoriController::class, 'sub_subkategori'])->name('sub_subkategori');
 Route::post('/sub_subkategoripost', [AdminKategoriController::class, 'sub_subkategoripost'])->name('sub_subkategoripost');
+Route::post('/updatesub_subkategori/{id}', [AdminKategoriController::class, 'updatesub_subkategori'])->name('updatesub_subkategori');
+Route::get('/deletesub_sub/{id}', [AdminKategoriController::class, 'deletesub_sub'])->name('deletesub_sub');
+
 
 // End Kategori Admin
 
 //start data wilayah
-    //provinsi
+//provinsi
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
-    //insert & edit & delete provinsi
+//insert & edit & delete provinsi
 Route::post('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');
 Route::post('/editprovinsi/{id}', [AdminDatawilayahController::class, 'editprovinsi'])->name('editprovinsi');
 Route::get('/deleteprovinsi/{id}', [AdminDatawilayahController::class, 'deleteprovinsi'])->name('deleteprovinsi');
-    //kabupaten
+//kabupaten
 Route::get('/datawilayahkabupaten', [AdminDatawilayahController::class, 'datawilayahkabupaten'])->name('datawilayahkabupaten');
-    //insert & edit & delete kabupaten
+//insert & edit & delete kabupaten
 Route::post('/insertkabupaten', [AdminDatawilayahController::class, 'insertkabupaten'])->name('insertkabupaten');
 Route::post('/editkabupaten/{id}', [AdminDatawilayahController::class, 'editkabupaten'])->name('editkabupaten');
 Route::get('/deletekabupaten/{id}', [AdminDatawilayahController::class, 'deletekabupaten'])->name('deletekabupaten');
-    //kecamatan
+//kecamatan
 Route::get('/datawilayahkecamatan', [AdminDatawilayahController::class, 'datawilayahkecamatan'])->name('datawilayahkecamatan');
-    //insert & edit & delete kecamatan
+//insert & edit & delete kecamatan
 Route::post('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecamatan'])->name('insertkecamatan');
 Route::post('/editkecamatan/{id}', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
 Route::get('/deletekecamatan/{id}', [AdminDatawilayahController::class, 'deletekecamatan'])->name('deletekecamatan');
 //end data wilayah
+//start add Produk
+Route::get('/produkadmin', [AdminProdukController::class, 'index'])->name('produkadmin');
+Route::get('/addproduk', [AdminProdukController::class, 'addproduct'])->name('addproduk');
+Route::post('/get_subkategori', [AdminProdukController::class, 'get_subkategori'])->name('get_subkategori');
+Route::post('/get_sub_subkategori', [AdminProdukController::class, 'get_sub_subkategori'])->name('get_sub_subkategori');
+Route::post('/insertproduk', [AdminProdukController::class, 'insertproduk'])->name('insertproduk');
+Route::get('/view_produk/{id}', [AdminProdukController::class, 'view_produk'])->name('view_produk');
+Route::post('/editgaleri_produk/{id}/{key}', [AdminProdukController::class, 'editgaleri_produk'])->name('editgaleri_produk');
+Route::post('/edit_produk/{id}', [AdminProdukController::class, 'edit_produk'])->name('edit_produk');
+Route::get('/delete_produk/{id}', [AdminProdukController::class, 'delete_produk'])->name('delete_produk');
+//end add Produk
 
 //start data merek
-Route::get('/merek',[AdminMerekController::class, 'index'])->name('merek');
+Route::get('/merek', [AdminMerekController::class, 'index'])->name('merek');
 Route::post('/merekpost', [AdminMerekController::class, 'merekpost'])->name('merekpost');
 Route::post('/editmerekpost/{id}', [AdminMerekController::class, 'edit'])->name('editmerekpost');
 Route::get('/deletemerek/{id}', [AdminMerekController::class, 'delete'])->name('deletemerek');

@@ -74,25 +74,107 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            @foreach ($_subsubkategori as $row)
+                                        {{-- @foreach ($_subsubkategori as $tes)
+                                            echo $tes->kategori
+                                        @endforeach --}}
+                                        @foreach ($_subsubkategori as $row)
+                                            <tbody>
                                                 <tr>
-                                                    {{-- <td scope="row">{{ $loop->iteration }}</td> --}}
+                                                    <td scope="row">{{ $loop->iteration }}</td>
                                                     <td>{{ $row->datakategori->kategori }}</td>
-                                                    <td>{{ $row->datasubkategori->subkategori }}</td>
-                                                    <td>{{ $row->kategori }}</td>
+                                                    <td>{{ $row->datasubkategori->sub_kategori }}</td>
+                                                    <td>{{ $row->sub_subkategori }}</td>
 
                                                     <td><a data-bs-toggle="modal"
-                                                            data-bs-target="#edit-kategori{{ $data->id }}"
+                                                            data-bs-target="#edit-sub-subkategori{{ $row->id }}"
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
-                                                        <a href="javascript:void(0);"
+                                                        <a id="delete"
+                                                            data-sub_subkategori="{{ $row->sub_subkategori }}"
+                                                            data-id="{{ $row->id }}"
                                                             class="btn btn-sm btn-white text-danger me-2"><i
                                                                 class="far fa-trash-altme-1"></i>Hapus</a>
                                                     </td>
                                                 </tr>
-                                            @endforeach
-                                        </tbody>
+                                            </tbody>
+                                            <div id="edit-sub-subkategori{{ $row->id }}" class="modal fade"
+                                                tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                aria-hidden="true" style="display: none;">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Edit Sub->SubKategori</h4>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body p-4">
+                                                            <div class="row">
+                                                                <form
+                                                                    action="/updatesub_subkategori/{{ $row->id }}"
+                                                                    method="post" enctype="multipart/form-data">
+                                                                    @csrf
+                                                                    <div class="col-md-12">
+                                                                        <div class="mb-3">
+                                                                            <label for="field-3"
+                                                                                class="form-label">Kategori
+                                                                                :</label>
+                                                                            <select class="form-control" name="kategori"
+                                                                                aria-label="Default select example">
+                                                                                <option
+                                                                                    value="{{ $row->datakategori->id }}">
+                                                                                    {{ $row->datakategori->kategori }}
+                                                                                </option>
+                                                                                @foreach ($kategori as $data)
+                                                                                    <option
+                                                                                        value="{{ $data->id }}">
+                                                                                        {{ $data->kategori }}
+                                                                                    </option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="field-3"
+                                                                                class="form-label">Sub Kategori
+                                                                                :</label>
+                                                                            <select class="form-control" name="sub_kategori"
+                                                                                aria-label="Default select example">
+                                                                                <option
+                                                                                    value="{{ $row->datasubkategori->id }}">
+                                                                                    {{ $row->datasubkategori->sub_kategori }}
+                                                                                </option>
+                                                                                @foreach ($subkategori as $datas)
+                                                                                    <option
+                                                                                        value="{{ $datas->id }}">
+                                                                                        {{ $datas->sub_kategori }}
+                                                                                    </option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <div class="mb-3">
+                                                                                <label for="field-1"
+                                                                                    class="form-label">Sub->SubKategori</label>
+                                                                                <input type="text"
+                                                                                    name="sub_subkategori"
+                                                                                    class="form-control" id="field-1"
+                                                                                    value="{{ $row->sub_subkategori }}">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary">Save
+                                                                            changes</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
                                     </table>
                                 </div>
                             </div>
@@ -103,61 +185,64 @@
         </div>
     </div>
 
-    <div id="modal-sub_subkategori" class="modal fade" tabindex="-1" role="dialog"
-                    aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Tambah Sub->SubKategori</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <form action="/sub_subkategoripost" method="POST">
-                                @csrf
-                                <div class="modal-body p-4">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label for="field-1" class="form-label">Kategori</label>
-                                                <select class="form-select" name="kategori">
-                                                    <option>Pilih Kategori</option>
-                                                    @foreach ($kategori as $row)
-                                                        <option value="{{ $row->id }}">{{ $row->kategori }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label for="field-1" class="form-label">Sub-Kategori</label>
-                                                <select class="form-select" name="sub_subkategori">
-                                                    <option>Pilih Sub-Kategori</option>
-                                                    @foreach ($subkategori as $data)
-                                                        <option value="{{ $data->id }}">{{ $data->sub_kategori }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label for="field-1" class="form-label">Sub->SubKategori</label>
-                                                <input type="text" name="sub_kategori" class="form-control"
-                                                    id="field-1" placeholder="Masukkan Sub SubKategori">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary waves-effect"
-                                        data-bs-dismiss="modal">Kembali</button>
-                                    <button type="submit" class="btn btn-info waves-effect waves-light">Tambah</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+    <div id="modal-sub_subkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" style="display:none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Tambah Sub->SubKategori</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="/sub_subkategoripost" method="POST">
+                    @csrf
+                    <div class="modal-body p-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Kategori</label>
+                                    <select class="form-select" name="kategori">
+                                        <option>Pilih Kategori</option>
+                                        @foreach ($kategori as $row)
+                                            <option value="{{ $row->id }}">{{ $row->kategori }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Sub-Kategori</label>
+                                    <select class="form-select" name="sub_kategori">
+                                        <option>Pilih Sub-Kategori</option>
+                                        @foreach ($subkategori as $row)
+                                            <option value="{{ $row->id }}">{{ $row->sub_kategori }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="">Sub Subkategori</label>
+                        <input type="text" name="sub_subkategori" class="form-control" id="field-1"
+                            placeholder="Masukkan Sub SubKategori">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save
+                            changes</button>
+                    </div>
+
+            </div>
+
+        </div>
+        {{-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Kembali</button>
+            <button type="submit" class="btn btn-info waves-effect waves-light">Tambah</button>
+        </div> --}}
+        </form>
+    </div>
+    </div>
+    </div>
 
     <!-- Star Script -->
 
@@ -175,6 +260,41 @@
         });
     </script>
 
+    <script>
+        $("#delete").click(function() {
+            var nama = $(this).attr('data-sub_subkategori');
+            var id = $(this).attr('data-id');
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1
+            }).then(function(t) {
+                if (t.value) {
+                    window.location = "/deletesub_sub/" + id;
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        type: "error",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                }
+            })
+        })
+    </script>
     <!-- End Script -->
 
 </body>
