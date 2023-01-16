@@ -23,7 +23,7 @@
         <div class="ec-cart-inner">
             <div class="ec-cart-top">
                 <div class="ec-cart-title">
-                    <span class="cart_title">My Cart</span>
+                    <span class="cart_title">My Cart</span> 
                     <button class="ec-close">×</button>
                 </div>
                 <ul class="eccart-pro-items">

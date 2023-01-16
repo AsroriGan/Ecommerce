@@ -31,7 +31,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="payments.html"><i data-feather="credit-card"></i> <span>Payments</span></a>
+                    <a href="/promosi"><i data-feather="credit-card"></i> <span>Tambah Promo</span></a>
                 </li>
                 <li class="menu-title"><span>Pesanan</span></li>
                 <li>
