@@ -9,6 +9,7 @@ use App\Http\Controllers\Landing\ProdukController as LandingProdukController;
 use App\Http\Controllers\Landing\Userprofilecontroller as LandingUserprofilecontroller;
 use App\Http\Controllers\Landing\TrackorderController as LandingTrackorderController;
 use App\Http\Controllers\Landing\WhislistController as LandingWhislistController;
+use App\Http\Controllers\Landing\CartController as LandingCartController;
 
 // Admin
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
@@ -47,9 +48,12 @@ Route::get('/beranda', function () {
 //pruduk
 Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
 Route::get('/detail/{id}', [LandingProdukController::class, 'detail'])->name('detail');
-Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
-// Route::get('/product', [LandingProdukController::class, 'product'])->name('product');
-// Route::get('/tambahproduct', [LandingProdukController::class, 'tambahproduct'])->name('tambahproduct');
+
+//cart
+Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang');
+Route::get('/hapuscart/{id}', [LandingCartController::class, 'hapuscart'])->name('hapuscart');
+Route::post('/cartpost/{id}', [LandingCartController::class, 'cartpost'])->name('cartpost');
+
 
 // Blog
 Route::get('/blog', [LandingBlogController::class, 'blog']);
