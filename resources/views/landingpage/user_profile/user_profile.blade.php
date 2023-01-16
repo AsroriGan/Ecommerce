@@ -151,7 +151,7 @@
                                                                 src="assets/images/icons/edit.svg"
                                                                 class="svg_img pro_svg" alt="edit" /></a></h6>
                                                     <ul>
-                                                        <li><strong>Email : </strong>unluading123@exapmle.com</li>
+                                                        <li><strong>Email : </strong>{{ Auth::user()->email }}</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -164,7 +164,7 @@
                                                                 src="assets/images/icons/edit.svg"
                                                                 class="svg_img pro_svg" alt="edit" /></a></h6>
                                                     <ul>
-                                                        <li><strong>Phone Nubmer : </strong>0812 5305 5876</li>
+                                                        <li><strong>Phone Nubmer : </strong>{{ Auth::user()->notelepon }}</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -422,16 +422,16 @@
                                 <form class="row g-3">
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">First name</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" value="{{ Auth::user()->name }}" class="form-control">
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Last name</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col-md-12 space-t-15">
+                                    {{-- <div class="col-md-12 space-t-15">
                                         <label class="form-label">Address</label>
-                                        <input type="text" class="form-control">
-                                    </div>
+                                        <input type="text" value="{{ Auth::user()->notelepon }}" class="form-control">
+                                    </div> --}}
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Region state *</label>
                                         <select id="regionstate" class="form-select"
@@ -462,11 +462,11 @@
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Email </label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" value="{{ Auth::user()->email }}" class="form-control">
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Phone </label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" value="{{ Auth::user()->notelepon }}" class="form-control">
                                     </div>
                                     <div class="col-md-12 space-t-15">
                                         <button type="submit" class="btn btn-primary">Update</button>

@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahControll
 use App\Http\Controllers\Admin\MerekController as AdminMerekController;
 use App\Http\Controllers\Admin\ProdukController as AdminProdukController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\Admin\PromosiController as AdminPromosiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,7 +69,9 @@ Route::get('/', [LandingpageController::class, 'home'])->name('home');
 Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
 
 //Kategori
+Route::get('/kategori-landing', [LandingKategoriController::class, 'index'])->name('index.kategori');
 Route::get('/categories', [LandingKategoriController::class, 'index'])->name('index.kategori');
+
 
 //user profile
 Route::get('/user-profile', [LandingUserprofilecontroller::class, 'index'])->name('user-profle');
@@ -103,8 +106,8 @@ Route::post('/updatesub_subkategori/{id}', [AdminKategoriController::class, 'upd
 Route::get('/deletesub_sub/{id}', [AdminKategoriController::class, 'deletesub_sub'])->name('deletesub_sub');
 
 
-
 // End Kategori Admin
+
 //start data wilayah
 //provinsi
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
@@ -143,6 +146,14 @@ Route::post('/merekpost', [AdminMerekController::class, 'merekpost'])->name('mer
 Route::post('/editmerekpost/{id}', [AdminMerekController::class, 'edit'])->name('editmerekpost');
 Route::get('/deletemerek/{id}', [AdminMerekController::class, 'delete'])->name('deletemerek');
 //end data merek
+
 ////////Sliders
 Route::get('/sliderr', [SliderController::class, 'slider'])->name('slider');
 Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);
+
+// End Sliders
+
+// Start Promosi
+Route::get('/promosi', [AdminPromosiController::class, 'promosi'])->name('promosi');
+
+//End Promosi

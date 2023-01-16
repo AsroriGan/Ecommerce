@@ -6,6 +6,10 @@
                 <li class="active">
                     <a href="index.html"><i data-feather="home"></i> <span>Dashboard</span></a>
                 </li>
+                <li>
+                    <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i>
+                        <span>Slider</span></a>
+                </li>
                 <li class="active">
                     <a href="/merek"><i data-feather="home"></i> <span>Merk</span></a>
                 </li>
@@ -41,7 +45,7 @@
                     <a href="estimates.html"><i data-feather="file-text"></i> <span>Estimates</span></a>
                 </li>
                 <li>
-                    <a href="payments.html"><i data-feather="credit-card"></i> <span>Payments</span></a>
+                    <a href="/promosi"><i data-feather="credit-card"></i> <span>Tambah Promo</span></a>
                 </li>
                 <li class="menu-title"><span>Pesanan</span></li>
                 <li>
