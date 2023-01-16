@@ -95,7 +95,7 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Warna Produk</label>
-                                                    <input id="warna_produk" name="warna_produk[]" type="text" class="form-control" value="kuning,biru">
+                                                    <input id="warna_produk" name="warna_produk" type="text" class="form-control" value="kuning,biru">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>

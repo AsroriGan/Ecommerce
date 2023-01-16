@@ -64,7 +64,9 @@ class ProdukController extends Controller
         $ukuran = json_decode($request->ukuran_produk,true);
         $insukuran = array_column($ukuran,'value');
         $model->ukuran_produk = implode(',',$insukuran);
+        // dd($request->warna_produk);
         $warna = json_decode($request->warna_produk,true);
+        
         $inswarna = array_column($warna,'value');
         $model->warna_produk = implode(',',$inswarna);
         $model->berat_produk = $request->berat_produk;
