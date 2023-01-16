@@ -6,14 +6,8 @@
                 <li class="active">
                     <a href="index.html"><i data-feather="home"></i> <span>Dashboard</span></a>
                 </li>
-<<<<<<< HEAD
-                <li>
-                    <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i>
-                        <span>Slider</span></a>
-=======
                 <li class="active">
                     <a href="/merek"><i data-feather="home"></i> <span>Merk</span></a>
->>>>>>> 95e88acc190a7bf70a914b83cba4a6f160a93fd4
                 </li>
                 <li class="submenu active">
                     <a href="#"><i data-feather="clipboard"></i> <span> Kategori</span> <span

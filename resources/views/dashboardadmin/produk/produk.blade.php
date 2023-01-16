@@ -95,7 +95,7 @@ v
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
                                                     <td><img src="{{ asset('fotoproduk/' . $fotoproduk) }}" alt=""
-                                                            width="100px" height="100px"></td>
+                                                            width="100px"    height="100px"></td>
                                                     <td>{{ $data->nama_produk }}</td>
                                                     <td><?php
                                                     if ($data->diskon == null) {
