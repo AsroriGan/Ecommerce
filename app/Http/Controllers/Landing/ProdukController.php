@@ -21,10 +21,7 @@ class ProdukController extends Controller
         $warna_produk = explode(',',$data->warna_produk);
         return view('landingpage.produk.detail',compact('data','galeri_produk','ukuran_produk','warna_produk'));
     }
-     public function keranjang()
-    {
-        return view('landingpage.keranjang.keranjang');
-    }
+    
 
 
     //admin

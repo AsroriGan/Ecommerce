@@ -189,6 +189,10 @@
                                                 <div class="col-12 d-flex">
                                                     <button type="submit"
                                                         class="btn btn-rounded btn-primary mx-auto w-50">Submit</button>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 67afbc11bc7a05a6e92ba8de18bd9e916cab2c3f
                                                 </div>
                                                 <div class="col-md-6">
 

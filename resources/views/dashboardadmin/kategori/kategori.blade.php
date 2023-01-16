@@ -84,7 +84,7 @@
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
 
-                                                        <a id="delete" class="btn btn-sm btn-white text-danger me-2"
+                                                        <a class="btn btn-sm btn-white text-danger me-2 delete"
                                                             data-kategori="{{ $data->kategori }}"
                                                             data-id="{{ $data->id }}"><i
                                                                 class="far fa-trash-alt me-1"></i>Hapus</a>
@@ -160,19 +160,28 @@
                     <form action="/kategoripost" method="POST">
                         @csrf
                         <div class="row">
+                            {{-- <ul id="validasi"></ul> --}}
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="field-3" class="form-label">Kategori
-                                        :</label>
-                                    <input type="text" id="kategori" name="kategori" class="form-control"
-                                        id="field-3" placeholder="Masukan Kategori">
+                                    <label
+                                        @error('kategori')
+                                        class="text-danger "
+                                    @enderror
+                                        class="form-label">Kategori
+                                        @error('kategori')
+                                            {{ $message }}
+                                        @enderror
+                                    </label>
+                                    <input type="text" id="kategori" name="kategori" class="form-control kategori"
+                                        placeholder="Masukan Kategori">
                                 </div>
+                                <ul id="validasi"></ul>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary waves-effect"
                                 data-bs-dismiss="modal">Kembali</button>
-                            <button class="btn btn-info waves-effect waves-light" >Tambah
+                            <button class="btn btn-info waves-effect waves-light save_data">Tambah
                                 Kategori</button>
                         </div>
                     </form>
@@ -190,6 +199,57 @@
             toastr.success("{{ Session::get('success') }}")
         @endif
     </script>
+
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '.save_data', function(e) {
+                e.preventDefault();
+                // console.log("hallo");
+
+                var data = {
+                    'kategori': $('.kategori').val(),
+                }
+                console.log(data);
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    type: "POST",
+                    url: "/kategoripost",
+                    data: data,
+                    datatype: 'json',
+                    success: function(response) {
+                        // console.log(response.errors.kategori);
+                        if(response.status == 400 ){
+                            $('#validasi').html("");
+                            $('#validasi').addClass('alert alert-danger');
+                            $.each(response.errors, function (key, err_values) {
+                                $('#validasi').append('<li>'+err_values+'</li>');
+                            });
+                            console.log(response.status);
+                        } else {
+                            $('#validasi').html("");
+                            // $('#succses').addClass("alert alert-danger")
+                            // $('#success').text(response.massage)
+                            $('#modal-kategori').modal('hide');
+                            $('#modal-kategori').find('input').val("");
+                        }
+                    }
+
+                });
+            });
+        });
+    </script>
+
+    {{-- <script type="text/javascript">
+        @if ($errors->any())
+        $('#modal-kategori').modal('show');
+        @endif
+    </script> --}}
 
     {{-- <script>
         function openmodal() {
@@ -228,7 +288,7 @@
     </script> --}}
 
     <script>
-        $("#delete").click(function() {
+        $('.delete').click(function() {
             var kategori = $(this).attr('data-kategori');
             var id = $(this).attr('data-id');
             Swal.fire({
