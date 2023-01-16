@@ -9,10 +9,7 @@
                 <li>
                     <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i>
                         <span>Slider</span></a>
-<<<<<<< HEAD
-=======
                 </li>
->>>>>>> c6725062b3c31e0f8f316bacc39624c21d306e5d
                 <li class="active">
                     <a href="/merek"><i data-feather="home"></i> <span>Merk</span></a>
                 </li>
