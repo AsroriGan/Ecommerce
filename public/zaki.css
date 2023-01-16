@@ -40,3 +40,32 @@
     height: auto !important;
     padding: 5px !important;
 }
+.img-vproduk{
+    /* position: absolute; */
+}
+.edit-delete-img{
+    position: absolute;
+    /* left: 142px; */
+    /* transform: translate(-50%, -50%); */
+    transform: translate(29%, -38%);
+    /* bottom: 224px; */
+    z-index: 1;
+}
+.btn-aksi-edit,.btn-aksi-delete{
+    margin-right: 7px;
+}
+.btn-aksi-delete{
+    padding: 7px;
+    background-color:#377dff;
+    border-radius: 50%;
+    color:#183153;
+}
+.btn-aksi-edit{
+    padding: 7px;
+    background-color:#377dff;
+    border-radius: 50%;
+    color:#183153;
+}
+.edit-delete-img a:hover{
+    color: #183153 !important;
+}

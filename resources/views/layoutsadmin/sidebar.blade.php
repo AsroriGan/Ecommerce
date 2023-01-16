@@ -34,6 +34,9 @@
                                 href="/datawilayahkecamatan">Kecamatan</a></li>
                     </ul>
                 </li>
+                <li class="{{Route::is('produkadmin','addproduk','view_produk') ? 'active' : ''}}">
+                    <a href="/produkadmin"><i data-feather="credit-card"></i> <span>Produk</span></a>
+                </li>
                 <li>
                     <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i> <span>Slider</span></a>
                 </li>

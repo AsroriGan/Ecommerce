@@ -23,7 +23,7 @@ v
         @include('layoutsadmin.sidebar')
 
         <!-- End sidebar -->
-        @include('layoutsadmin.bugsc')
+        @include('layoutsadmin.bugscview')
 
         <div class="page-wrapper">
             <div class="content container-fluid">
@@ -31,7 +31,7 @@ v
                 <div class="page-header">
                     <div class="row">
                         <div class="col">
-                            <h3 class="page-title">Edit Produk</h3>
+                            <h3 class="page-title">Produk / Edit Produk</h3>
                             {{-- <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Basic Inputs</li>
@@ -68,11 +68,13 @@ v
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Ukuran Produk</label>
-                                                    <input id="ukuran_produk" name="ukuran_produk" type="text" class="form-control" value="{{$produk->ukuran_produk}}">
+                                                    <input id="ukuran_produk" name="ukuran_produk" type="text"
+                                                        class="form-control" value="{{ $produk->ukuran_produk }}">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Warna Produk</label>
-                                                    <input id="warna_produk" name="warna_produk" type="text" class="form-control" value="{{$produk->warna_produk}}">
+                                                    <input id="warna_produk" name="warna_produk" type="text"
+                                                        class="form-control" value="{{ $produk->warna_produk }}">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>
@@ -121,14 +123,16 @@ v
                                                     <div class="input-group">
                                                         <span class="input-group-text">Rp.</span>
                                                         <input id="harga_asliproduk" name="harga_asliproduk"
-                                                            class="form-control" type="number" value="{{$produk->harga_asliproduk}}">
+                                                            class="form-control" type="number"
+                                                            value="{{ $produk->harga_asliproduk }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Diskon</label>
                                                     <div class="input-group">
                                                         <input id="diskon" name="diskon" class="form-control"
-                                                            type="number" min="0" max="100" value="{{$produk->diskon}}">
+                                                            type="number" min="0" max="100"
+                                                            value="{{ $produk->diskon }}">
                                                         <span class="input-group-text">%</span>
                                                     </div>
                                                 </div>
@@ -137,25 +141,34 @@ v
                                                     <div class="input-group">
                                                         <span class="input-group-text">Rp.</span>
                                                         <input id="harga_diskonproduk" name="harga_diskonproduk"
-                                                            class="form-control" type="number" value="{{$produk->harga_diskonproduk}}" readonly>
+                                                            class="form-control" type="number"
+                                                            value="{{ $produk->harga_diskonproduk }}" readonly>
                                                     </div>
                                                 </div>
-                                                <div class="col-12">
-                                                    <div class="custom-file-container" data-upload-id="mySecondImage">
-                                                        <label>Upload Foto Produk (Foto Pertama Akan Menjadi thumbnail)
-                                                            <a href="javascript:void(0)"
-                                                                class="custom-file-container__image-clear"
-                                                                title="Clear Image">x</a></label>
-                                                        <label class="custom-file-container__custom-file">
-                                                            <input name="galeri_produk[]" type="file"
-                                                                class="custom-file-container__custom-file__custom-file-input"
-                                                                multiple>
-                                                            <input type="hidden" value="10485760" />
-                                                            <span
-                                                                class="custom-file-container__custom-file__custom-file-control"></span>
-                                                        </label>
-                                                        <div class="custom-file-container__image-preview"></div>
-                                                    </div>
+                                                <div class="col-12 row">
+                                                    <label style="color:#4361ee">Galeri Produk(Foto Pertama yang akan
+                                                        menjadi thumbnail)</label>
+                                                    @php
+                                                        $key = -1;
+                                                    @endphp
+                                                    @foreach ($galeri_produk as $galeri)
+                                                        @php
+                                                            $key++;
+                                                            // echo $key;
+                                                        @endphp
+                                                        <div class="col-6 d-flex align-items-end flex-column mb-3">
+                                                            <div class="p-2 edit-delete-img">
+                                                                <a class="btn-aksi-delete delete"><i
+                                                                        class="fa-solid fa-trash"></i></a>
+                                                                <a class="btn-aksi-edit" data-bs-toggle="modal"
+                                                                    data-bs-target="#con-close-modal{{ $key }}"><i
+                                                                        class="fa-solid fa-pen-to-square"></i></a>
+                                                            </div>
+                                                            <img class="img-vproduk"
+                                                                src="{{ asset('fotoproduk/' . $galeri) }}"
+                                                                alt="" style="height:175px;width:175px">
+                                                        </div>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
@@ -163,17 +176,23 @@ v
                                             <div class="form-group row">
                                                 <div class="col-12 row">
                                                     <label class="mb-3">Status Produk</label>
+                                                    @php
+                                                        $status = explode(',', $produk->status_produk);
+                                                    @endphp
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input type="checkbox" name="status_produk[]"
-                                                                    value="promo"> Promo
+                                                                    value="promo" <?php if (in_array('promo', $status)) {
+                                                                        echo 'checked';
+                                                                    } ?>> Promo
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input type="checkbox" name="status_produk[]"
-                                                                    value="Produk Baru"> Produk Baru
+                                                                    value="Produk Baru" <?php echo in_array('Produk Baru', $status) ? 'checked' : ''; ?>> Produk
+                                                                Baru
                                                             </label>
                                                         </div>
                                                     </div>
@@ -181,24 +200,26 @@ v
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input type="checkbox" name="status_produk[]"
-                                                                    value="Baru Datang"> Baru Datang
+                                                                    value="Baru Datang" <?php echo in_array('Baru Datang', $status) ? 'checked' : ''; ?>> Baru
+                                                                Datang
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input type="checkbox" name="status_produk[]"
-                                                                    value="Best Seller"> Best Seller
+                                                                    value="Best Seller" <?php echo in_array('Best Seller', $status) ? 'checked' : ''; ?>> Best
+                                                                Seller
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <label>Deskripsi Pendek</label>
-                                                    <textarea name="deskirpsi_pendek" rows="4" cols="5" class="form-control" placeholder="Enter message"></textarea>
+                                                    <textarea name="deskirpsi_pendek" rows="4" cols="5" class="form-control" placeholder="Enter message">{{ $produk->deskirpsi_pendek }}</textarea>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <label>Deskripsi Panjang</label>
-                                                    <textarea name="deskirpsi_panjang" id="summernote"></textarea>
+                                                    <textarea name="deskirpsi_panjang" id="summernote">{!! $produk->deskirpsi_panjang !!}</textarea>
                                                 </div>
                                                 <input type="hidden" name="status" value="aktif">
                                                 <div class="col-12 d-flex">
@@ -210,6 +231,61 @@ v
                                     </div>
                                 </form>
                             </div>
+                            @php
+                                $key =  -1;
+                            @endphp
+                            @foreach ($galeri_produk as $galeri)
+                                @php
+                                    $key++;
+                                    // echo $key;
+                                @endphp
+                                <div id="con-close-modal{{ $key }}" class="modal fade" tabindex="-1"
+                                    role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+                                    style="display:none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">{{ $key }}</h4>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form action="/editgaleri_produk/{{ $produk->id }}/{{ $key }}"
+                                                method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="modal-body p-4">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label for="field-1" class="form-label">Foto
+                                                                    Produk</label>
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <img src="{{ asset('fotoproduk/' . $galeri) }}"
+                                                                            alt=""
+                                                                            style="height:175px;width:175px">
+                                                                    </div>
+                                                                    <div class="col-6 d-flex">
+                                                                        <input class="mt-auto" name="galeri_produk"
+                                                                            class="form-control" type="file">
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary waves-effect"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit"
+                                                        class="btn btn-info waves-effect waves-light">Save
+                                                        changes</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -219,6 +295,7 @@ v
         @include('layoutsadmin.script')
         <!-- End Script -->
         <script>
+            //start depended dropdown
             $(document).ready(function() {
                 $('#diskon').keyup(function() {
                     let hargaasli = $('#harga_asliproduk').val();
@@ -258,6 +335,43 @@ v
                     });
                 });
             });
+            // end depended dropdown
+
+            //start sweet alert
+            $(".delete").click(function() {
+                var nama = $(this).attr('data-nama');
+                var id = $(this).attr('data-id');
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    type: "warning",
+                    showCancelButton: !0,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!",
+                    confirmButtonClass: "btn btn-primary",
+                    cancelButtonClass: "btn btn-danger ml-1",
+                    buttonsStyling: !1
+                }).then(function(t) {
+                    if (t.value) {
+                        window.location = "/deletekabupaten/" + id;
+                        Swal.fire({
+                            type: "success",
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            confirmButtonClass: "btn btn-success"
+                        })
+                    } else {
+                        Swal.fire({
+                            title: "Cancelled",
+                            text: "Your imaginary file is safe :)",
+                            type: "error",
+                            confirmButtonClass: "btn btn-success"
+                        })
+                    }
+                })
+            })
+            //end sweet alert
         </script>
         <script>
             var input1 = document.querySelector('#warna_produk');

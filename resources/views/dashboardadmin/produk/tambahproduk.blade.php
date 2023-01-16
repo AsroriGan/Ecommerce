@@ -31,7 +31,7 @@ v
                 <div class="page-header">
                     <div class="row">
                         <div class="col">
-                            <h3 class="page-title">Tambah Produk</h3>
+                            <h3 class="page-title">Produk / Tambah Produk</h3>
                             {{-- <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Basic Inputs</li>
@@ -43,9 +43,9 @@ v
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header">
+                            {{-- <div class="card-header">
                                 <h5 class="card-title">Tambah Produk</h5>
-                            </div>
+                            </div> --}}
                             <div class="card-body">
                                 <form action="/insertproduk" method="POST" enctype="multipart/form-data">
                                     @csrf
