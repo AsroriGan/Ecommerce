@@ -1,4 +1,3 @@
-v
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,12 +51,30 @@ v
                                         <div class="col-md-6 row">
                                             <div class="form-group row">
                                                 <div class="col-md-6">
+                                                    <label>Merek</label>
+                                                    <select class="form-select">
+                                                        <option>-- Select --</option>
+                                                        <option>Option 1</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
                                                     <label>Nama Produk</label>
                                                     <input type="text" class="form-control">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label>Berat Produk</label>
+                                                    <label>Ukuran Produk</label>
+                                                    <select class="form-control tagging" multiple="multiple">
+                                                        <option>orange</option>
+                                                        <option>white</option>
+                                                        <option>purple</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Stock Produk</label>
                                                     <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-6">
+
                                                 </div>
                                             </div>
                                         </div>
