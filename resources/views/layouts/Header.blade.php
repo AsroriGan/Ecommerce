@@ -197,7 +197,7 @@
                     <div class="ec-main-menu">
                         <ul>
                             <li><a href="/">Home</a></li>
-                            <li><a href="/kategori">Categories</a></li>
+                            <li><a href="/categories">Categories</a></li>
 
                             <li class="dropdown"><a href="/produk">Products</a></li>
 

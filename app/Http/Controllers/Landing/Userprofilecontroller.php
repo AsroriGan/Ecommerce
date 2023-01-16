@@ -14,9 +14,9 @@ class Userprofilecontroller extends Controller
 {
     public function index(){
         $regionstate = Datawilayah::orderBy('provinsi','asc')->get();
-        $city = Datawilayah::get();
-        $distric = Datawilayah::get();
-        return view('landingpage.user_profile.user_profile',compact('regionstate','city','distric'));
+        // $city = Datawilayah::get();
+        // $distric = Datawilayah::get();
+        return view('landingpage.user_profile.user_profile',compact('regionstate'));
     }
     public function getkabupaten(Request $request){
         $rsi = $request->post('rsi');

@@ -87,7 +87,7 @@
                                                                 class="far fa-edit me-1"></i> Edit</a>
 
                                                         <a id="delete"
-                                                            class="btn btn-sm btn-white text-danger me-2 " data-id="{{$data->id}}" data-nama="{{ $data->nama_merek }}" ><i
+                                                            class="btn btn-sm btn-white text-danger me-2 delete" data-id="{{$data->id}}" data-nama="{{ $data->nama_merek }}" ><i
                                                                 class="far fa-trash-altme-1"></i>Hapus</a>
 
                                                     </td>
@@ -216,7 +216,7 @@
         });
     </script>
     <script>
-        $("#delete").click(function() {
+        $(".delete").click(function() {
             var nama = $(this).attr('data-nama');
             var id = $(this).attr('data-id');
             Swal.fire({
