@@ -11,7 +11,7 @@
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
-    <div class="ec-side-cart-overlay"></div>
+    {{-- <div class="ec-side-cart-overlay"></div>
     <div id="ec-side-cart" class="ec-side-cart">
         <div class="ec-cart-inner">
             <div class="ec-cart-top">
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- ekka Cart End -->
 
     <!-- Ec breadcrumb start -->
@@ -122,17 +122,17 @@
                                 <div class="col-md-12">
                                     <div class="ec-vendor-block-profile">
                                         <div class="ec-vendor-block-img space-bottom-30">
-                                            <div class="ec-vendor-block-bg">
+                                            <div class="ec-vendor-block-bg" style="background-image:url({{ asset('/assets/images/banner/8.jpg') }}) !important">
                                                 <a href="#" class="btn btn-lg btn-primary"
                                                     data-link-action="editmodal" title="Edit Detail"
                                                     data-bs-toggle="modal" data-bs-target="#edit_modal">Edit
                                                     Detail</a>
                                             </div>
                                             <div class="ec-vendor-block-detail">
-                                                <img class="v-img" src="assets/images/user/1.jpg"
+                                                <img class="v-img" src="{{ asset('assets/images/user/'.Auth::user()->foto) }}"
                                                     alt="vendor image">
-                                                <h5 class="name">Mariana Johns</h5>
-                                                <p>( Business Man )</p>
+                                                <h5 class="name">{{ Auth::user()->name }}</h5>
+                                                {{-- <p>( Business Man )</p> --}}
                                             </div>
                                             <p>Hello <span>Mariana Johns!</span></p>
                                             <p>From your account you can easily view and track orders. You can manage
@@ -407,7 +407,7 @@
                                     <div class="thumb-edit">
                                         <input type='file' id="thumbUpload02" class="ec-image-upload"
                                             accept=".png, .jpg, .jpeg" />
-                                        <label><img src="assets/images/icons/edit.svg" class="svg_img header_svg"
+                                        <label><img src="{{ ('assets/images/icons/edit.svg') }}" class="svg_img header_svg"
                                                 alt="edit" /></label>
                                     </div>
                                     <div class="thumb-preview ec-preview">
@@ -419,19 +419,20 @@
                                 </div>
                             </div>
                             <div class="ec-vendor-upload-detail">
-                                <form class="row g-3">
+                                <form action="/edit-profile/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data" class="row g-3">
+
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">First name</label>
-                                        <input type="text" value="{{ Auth::user()->name }}" class="form-control">
+                                        <input type="text" value="{{$nama[0]}}" class="form-control">
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Last name</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" value="{{ $nama[1] }}" class="form-control">
                                     </div>
-                                    {{-- <div class="col-md-12 space-t-15">
+                                    <div class="col-md-12 space-t-15">
                                         <label class="form-label">Address</label>
-                                        <input type="text" value="{{ Auth::user()->notelepon }}" class="form-control">
-                                    </div> --}}
+                                        <input type="text" value="{{ Auth::user()->alamat }}" class="form-control">
+                                    </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Region state *</label>
                                         <select id="regionstate" class="form-select"

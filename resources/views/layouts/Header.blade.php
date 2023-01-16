@@ -126,9 +126,11 @@
                                         src="assets/images/icons/user.svg" class="svg_img header_svg"
                                         alt="" /></a>
                                 <ul class="dropdown-menu dropdown-menu-right">
+                                    @if (!Auth::check())
                                     <li><a class="dropdown-item" href="/register">Register</a></li>
-                                    <li><a class="dropdown-item" href="/user-profile">My profile</a></li>
                                     <li><a class="dropdown-item" href="/login">Login</a></li>
+                                    @endif
+                                    <li><a class="dropdown-item" href="/user-profile">My profile</a></li>
                                 </ul>
                             </div>
                             <!-- Header User End -->

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Landing;
 
+use User;
 use App\Models\Datawilayah;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\datawilayahkabupaten;
 use App\Models\datawilayahkecamatan;
+use Illuminate\Support\Facades\Auth;
 use Spatie\FlareClient\Http\Response;
 
 class Userprofilecontroller extends Controller
@@ -15,8 +17,12 @@ class Userprofilecontroller extends Controller
     public function index(){
         $regionstate = Datawilayah::orderBy('provinsi','asc')->get();
         // $city = Datawilayah::get();
-        // $distric = Datawilayah::get();
-        return view('landingpage.user_profile.user_profile',compact('regionstate'));
+        $nama = explode(' ',Auth::user()->name);
+        // dd($nama);
+        return view('landingpage.user_profile.user_profile',compact('regionstate','nama'));
+    }
+    public function edit_profile(Request $request,$id){
+        $user = User::findorfail($id);
     }
     public function getkabupaten(Request $request){
         $rsi = $request->post('rsi');
@@ -36,8 +42,6 @@ class Userprofilecontroller extends Controller
         }
         echo $html;
     }
-
-
     public function history(){
         return view('landingpage.History.history');
     }

@@ -1,4 +1,3 @@
-v
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,6 +51,30 @@ v
                                     <div class="row">
                                         <div class="col-md-6" style="border-right:1px solid #7638ff ">
                                             <div class="form-group row">
+<<<<<<< HEAD
+                                                <div class="col-md-6">
+                                                    <label>Merek</label>
+                                                    <select class="form-select">
+                                                        <option>-- Select --</option>
+                                                        <option>Option 1</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Nama Produk</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Ukuran Produk</label>
+                                                    <select class="form-control tagging" multiple="multiple">
+                                                        <option>orange</option>
+                                                        <option>white</option>
+                                                        <option>purple</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Stock Produk</label>
+                                                    <input type="text" class="form-control">
+=======
                                                 <div class="col-md-6 mb-3">
                                                     <label>Merk</label>
                                                     <select name="merk_produk" class="form-select select">
@@ -72,7 +95,7 @@ v
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Warna Produk</label>
-                                                    <input id="warna_produk" name="warna_produk[]" type="text" class="form-control" value="kuning,biru">
+                                                    <input id="warna_produk" name="warna_produk" type="text" class="form-control" value="kuning,biru">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>
@@ -190,6 +213,10 @@ v
                                                 <div class="col-12 d-flex">
                                                     <button type="submit"
                                                         class="btn btn-rounded btn-primary mx-auto w-50">Submit</button>
+>>>>>>> 644360c3afda9335c4a2c74fc9d90ec5ac13a6eb
+                                                </div>
+                                                <div class="col-md-6">
+
                                                 </div>
                                             </div>
                                         </div>

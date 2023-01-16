@@ -46,7 +46,7 @@ Route::get('/beranda', function () {
 
 //pruduk
 Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
-Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
+Route::get('/detail/{id}', [LandingProdukController::class, 'detail'])->name('detail');
 Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
 // Route::get('/product', [LandingProdukController::class, 'product'])->name('product');
 // Route::get('/tambahproduct', [LandingProdukController::class, 'tambahproduct'])->name('tambahproduct');
@@ -75,6 +75,8 @@ Route::get('/categories', [LandingKategoriController::class, 'index'])->name('in
 
 //user profile
 Route::get('/user-profile', [LandingUserprofilecontroller::class, 'index'])->name('user-profle');
+    //edit profile
+Route::post('/edit-profile/{id}', [LandingUserprofilecontroller::class, 'edit_profile'])->name('edit-profile');
 //get address
 Route::post('/getkabupaten', [LandingUserprofilecontroller::class, 'getkabupaten'])->name('getkabupaten');
 Route::post('/getkecamatan', [LandingUserprofilecontroller::class, 'getkecamatan'])->name('getkecamatan');
