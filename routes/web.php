@@ -163,4 +163,12 @@ Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);
 // Start Promosi
 Route::get('/promosi', [AdminPromosiController::class, 'promosi'])->name('promosi');
 
+
+Route::post('/editpromopost/{id}', [AdminPromosiController::class, 'edit'])->name('editpromopost');
+
+Route::get('/bannerpromosi', [AdminPromosiController::class, 'bannerpromosi'])->name('bannerpromosi');
+
+
+Route::post('/editbannerpromopost/{id}', [AdminPromosiController::class, 'editbanner'])->name('editbannerpromopost');
+
 //End Promosi
