@@ -130,24 +130,27 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ($data as $prom)
+                    
+                
                 <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
                     <div class="ec-offer-coupon">
                         <div class="ec-cpn-brand">
-                            <img class="ec-brand-img" src="assets/images/offer-image/2.jpg" alt="" />
+                            <img class="ec-brand-img" src="{{asset('fotoproduk/'. $prom->foto)}}" alt="" />
                         </div>
                         <div class="ec-cpn-title">
-                            <h2 class="coupon-title">Get 15% off on branded Shoes</h2>
+                            <h2 class="coupon-title">{{$prom->judul}}</h2>
                         </div>
                         <div class="ec-cpn-desc">
-                            <p class="coupon-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry has been.</p>
+                            <p class="coupon-text">{{$prom->deskripsi}}</p>
                         </div>
                         <div class="ec-cpn-code">
                             <a href="/detail" class="btn btn-secondary">Shop Now</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
+                @endforeach
+                {{-- <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
                     <div class="ec-offer-coupon">
                         <div class="ec-cpn-brand">
                             <img class="ec-brand-img" src="assets/images/offer-image/3.jpg" alt="" />
@@ -180,7 +183,7 @@
                             <a href="/detail" class="btn btn-secondary">Shop Now</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -189,15 +192,14 @@
     <!-- Start Offer section -->
     <section class="labels section-space-p">
         <div class="container">
-            <div class="ec-line-offer" style="background-image: url('assets/images/offer-image/offer-banner-06.jpg');">
+            <div class="ec-line-offer" style="background-image: url('{{asset('fotoproduk/'. $banner->foto)}}');">
                 <div class="ec-line-offer-info">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <h6>On Furniture</h6>
-                                <h2 class="offer-upto">Upto <span>45%</span> OFF</h2>
-                                <p class="offer-desc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's.</p>
+                                <h6>{{$banner->judul}}</h6>
+                                <h2 class="offer-upto">{{$banner->subjudul}}</h2>
+                                <p class="offer-desc">{{$banner->deskripsi}}</p>
                                 <div class="offer-btn"><a class="btn-shop-now">SHOP NOW!</a></div>
                             </div>
                         </div>
