@@ -22,6 +22,8 @@ class KategoriController extends Controller
 
     public function kategoripost(Request $request)
     {
+        $validasi = 
+
         $data = kategori::create([
 
             'kategori' =>  $request->kategori,

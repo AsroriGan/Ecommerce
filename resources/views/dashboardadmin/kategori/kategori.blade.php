@@ -85,8 +85,9 @@
                                                                 class="far fa-edit me-1"></i> Edit</a>
 
                                                         <a id="delete" class="btn btn-sm btn-white text-danger me-2"
-                                                            data-kategori="{{ $data->kategori }}" data-id="{{ $data->id }}"><i
-                                                            class="far fa-trash-alt me-1"></i>Hapus</a>
+                                                            data-kategori="{{ $data->kategori }}"
+                                                            data-id="{{ $data->id }}"><i
+                                                                class="far fa-trash-alt me-1"></i>Hapus</a>
 
                                                     </td>
 
@@ -171,7 +172,7 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary waves-effect"
                                 data-bs-dismiss="modal">Kembali</button>
-                            <button class="btn btn-info waves-effect waves-light">Tambah
+                            <button class="btn btn-info waves-effect waves-light" >Tambah
                                 Kategori</button>
                         </div>
                     </form>
@@ -189,6 +190,42 @@
             toastr.success("{{ Session::get('success') }}")
         @endif
     </script>
+
+    {{-- <script>
+        function openmodal() {
+            $('modal-kategori').modal('show')
+        }
+
+        function validasi() {
+            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+            var kategori = $('#kategori').val();
+
+            $('#kategoriError').addClass('d-none');
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('validasikategori') }}",
+                data: {
+                    _token: CSRF_TOKEN,
+                    kategori: kategori,
+                },
+                success: function(data) {
+
+                },
+                error: function(data) {
+
+                    var errors = data.responseJSON;
+                    if ($.isEmptyObject(errors) == false) {
+                        $.each(errors.errors, function (key, value) {
+                            var ErrorID = '#' + key + 'Error';
+                            $(ErrorID).removeClass('d-none');
+                            $(ErrorID).text(value)
+                        })
+                    }
+                }
+            });
+        }
+    </script> --}}
 
     <script>
         $("#delete").click(function() {
