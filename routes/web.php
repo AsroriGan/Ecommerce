@@ -69,11 +69,9 @@ Route::get('/', [LandingpageController::class, 'home'])->name('home');
 Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
 
 //Kategori
-<<<<<<< HEAD
 Route::get('/kategori-landing', [LandingKategoriController::class, 'index'])->name('index.kategori');
-=======
 Route::get('/categories', [LandingKategoriController::class, 'index'])->name('index.kategori');
->>>>>>> 644360c3afda9335c4a2c74fc9d90ec5ac13a6eb
+
 
 //user profile
 Route::get('/user-profile', [LandingUserprofilecontroller::class, 'index'])->name('user-profle');
@@ -95,11 +93,7 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
-<<<<<<< HEAD
-Route::get('/deletekategori', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
-=======
 Route::get('/deletekategori/{id}', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
->>>>>>> 644360c3afda9335c4a2c74fc9d90ec5ac13a6eb
     //SubKategori
 Route::get('/subkategori', [AdminKategoriController::class, 'subkategori'])->name('subkategori');
 Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
