@@ -56,7 +56,8 @@
                                             <div class="form-group row">
                                                 <div class="col-md-6 mb-3">
                                                     <label>Merk</label>
-                                                    <select name="merk_produk" class="form-select @error('merk_produk') is-invalid @enderror">
+                                                    <select name="merk_produk"
+                                                        class="form-select @error('merk_produk') is-invalid @enderror">
                                                         <option value="" disabled selected>-- Select --</option>
                                                         @foreach ($merk as $row)
                                                             <option value="{{ $row->id }}"> {{ $row->nama_merek }}
@@ -64,14 +65,16 @@
                                                         @endforeach
                                                     </select>
                                                     @error('merk_produk')
-                                                    <div class="invalid-feedback">
-                                                        The Merk field is required
-                                                    </div>
+                                                        <div class="invalid-feedback">
+                                                            The Merk field is required
+                                                        </div>
                                                     @enderror
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Nama Produk</label>
-                                                    <input name="nama_produk" class="form-control @error('nama_produk') is-invalid @enderror" type="text">
+                                                    <input name="nama_produk"
+                                                        class="form-control @error('nama_produk') is-invalid @enderror"
+                                                        type="text">
                                                     @error('nama_produk')
                                                         <div class="invalid-feedback">
                                                             Nama Produk Merk wajib diisi
@@ -91,7 +94,8 @@
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>
                                                     <div class="input-group">
-                                                        <input name="berat_produk" type="number" class="form-control @error('berat_produk') is-invalid @enderror">
+                                                        <input name="berat_produk" type="number"
+                                                            class="form-control @error('berat_produk') is-invalid @enderror">
                                                         <span class="input-group-text">Gram</span>
                                                         @error('berat_produk')
                                                             <div class="invalid-feedback">
@@ -102,7 +106,8 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Kategori</label>
-                                                    <select id="kategori" name="kategori" class="form-select @error('kategori') is-invalid  @enderror">
+                                                    <select id="kategori" name="kategori"
+                                                        class="form-select @error('kategori') is-invalid  @enderror">
                                                         <option selected disabled>-- Select --</option>
                                                         @foreach ($kategori as $row)
                                                             <option value="{{ $row->id }}">{{ $row->kategori }}
@@ -128,7 +133,7 @@
                                                 <div class="col-md-6 mb-3">
                                                     <label>Sub-sub Kategori</label>
                                                     <select id="sub_subkategori" name="sub_subkategori"
-                                                        class="form-select select @error('sub_subkategori') is-invalid @enderror">
+                                                        class="form-select @error('sub_subkategori') is-invalid @enderror">
                                                         <option disabled selected>-- Select --</option>
                                                     </select>
                                                     @error('sub_subkategori')
@@ -139,7 +144,9 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Stock Produk</label>
-                                                    <input name="stok_produk" class="form-control @error('stok_produk') is-invalid @enderror" type="number">
+                                                    <input name="stok_produk"
+                                                        class="form-control @error('stok_produk') is-invalid @enderror"
+                                                        type="number">
                                                     <div class="invalid-feedback">
                                                         Stock Produk Wajib Diisi
                                                     </div>
@@ -149,10 +156,11 @@
                                                     <div class="input-group">
                                                         <span class="input-group-text">Rp.</span>
                                                         <input id="harga_asliproduk" name="harga_asliproduk"
-                                                            class="form-control @error('harga_asliproduk') is-invalid @enderror" type="number">
-                                                            <div class="invalid-feedback">
-                                                                Harga Produk Wajib Diisi
-                                                            </div>
+                                                            class="form-control @error('harga_asliproduk') is-invalid @enderror"
+                                                            type="number">
+                                                        <div class="invalid-feedback">
+                                                            Harga Produk Wajib Diisi
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
@@ -173,10 +181,14 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="custom-file-container" data-upload-id="mySecondImage">
-                                                        <label>Upload Foto Produk (Foto Pertama Akan Menjadi thumbnail)
+                                                        <label class="@error('galeri_produk') is-invalid @enderror">Upload Foto Produk (Foto Pertama Akan
+                                                            Menjadi thumbnail)
                                                             <a href="javascript:void(0)"
                                                                 class="custom-file-container__image-clear"
                                                                 title="Clear Image">x</a></label>
+                                                        <div class="invalid-feedback">
+                                                            Galeri Foto Wajib Dilengkapi
+                                                        </div>
                                                         <label class="custom-file-container__custom-file">
                                                             <input name="galeri_produk[]" type="file"
                                                                 class="custom-file-container__custom-file__custom-file-input"
@@ -193,12 +205,14 @@
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <div class="col-12 row">
-                                                    <label class="mb-3">Status Produk</label>
+                                                    <label class="mb-3 @error('status_produk') is-invalid @enderror">Status Produk</label>
+                                                    <div class="invalid-feedback">
+                                                        Status Produk wajib Diisi
+                                                    </div>
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"
-                                                                    value="promo"> Promo
+                                                                <input type="checkbox" name="status_produk[]" value="promo"> Promo
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
@@ -225,11 +239,17 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <label>Deskripsi Pendek</label>
-                                                    <textarea name="deskirpsi_pendek" rows="4" cols="5" class="form-control" placeholder="Enter message"></textarea>
+                                                    <textarea name="deskirpsi_pendek" rows="4" cols="5" class="form-control @error('deskirpsi_pendek') is-invalid @enderror" placeholder="Enter message"></textarea>
+                                                    <div class="invalid-feedback">
+                                                        Deskripsi Pendek Wajib Diisi
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <label>Deskripsi Panjang</label>
-                                                    <textarea name="deskirpsi_panjang" id="summernote"></textarea>
+                                                    <textarea class="form-control @error('deskirpsi_panjang') is-invalid @enderror" name="deskirpsi_panjang" id="summernote"></textarea>
+                                                    <div class="invalid-feedback">
+                                                        Deskripsi Panjang Wajib Diisi
+                                                    </div>
                                                 </div>
                                                 <input type="hidden" name="status" value="aktif">
                                                 <div class="col-12 d-flex">
