@@ -64,81 +64,8 @@
                         <div class="card">
 
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="datatable table table-stripped" id="myTable">
-                                        <thead>
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>Kategori</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($data as $data)
-                                                <tr>
-                                                    <td scope="row">{{ $loop->iteration }}</td>
-                                                    <td>{{ $data->kategori }}</td>
+                                <div class="table-responsive" id="tabel">
 
-                                                    <td><a data-bs-toggle="modal"
-                                                            data-bs-target="#edit-kategori{{ $data->id }}"
-                                                            class="btn btn-sm  btn-white text-success me-2"><i
-                                                                class="far fa-edit me-1"></i> Edit</a>
-
-                                                        <a class="btn btn-sm btn-white text-danger me-2 delete"
-                                                            data-kategori="{{ $data->kategori }}"
-                                                            data-id="{{ $data->id }}"><i
-                                                                class="far fa-trash-alt me-1"></i>Hapus</a>
-
-                                                    </td>
-
-
-                                                    <div id="edit-kategori{{ $data->id }}" class="modal fade"
-                                                        tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                                                        aria-hidden="true" style="display: none;">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h4 class="modal-title">Edit Kategori</h4>
-                                                                    <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal"
-                                                                        aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body p-4">
-                                                                    <form action="/editkategoripost/{{ $data->id }}"
-                                                                        method="POST">
-                                                                        @csrf
-                                                                        <div class="row">
-                                                                            <div class="col-md-12">
-                                                                                <div class="mb-3">
-                                                                                    <label for="field-3"
-                                                                                        class="form-label">Kategori
-                                                                                        :</label>
-                                                                                    <input type="text" id="kategori"
-                                                                                        name="kategori"
-                                                                                        class="form-control"
-                                                                                        value="{{ $data->kategori }}"
-                                                                                        id="field-3"
-                                                                                        placeholder="Masukan Kategori">
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button"
-                                                                                class="btn btn-secondary waves-effect"
-                                                                                data-bs-dismiss="modal">Kembali</button>
-                                                                            <button
-                                                                                class="btn btn-info waves-effect waves-light">Edit
-                                                                                Kategori</button>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -151,6 +78,7 @@
     <div id="modal-kategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
+            <div id="success"></div>
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Tambah Kategori</h4>
@@ -172,7 +100,7 @@
                                             {{ $message }}
                                         @enderror
                                     </label>
-                                    <input type="text" id="kategori" name="kategori" class="form-control kategori"
+                                    <input type="text" id="kategori" name="kategori" class="form-control"
                                         placeholder="Masukan Kategori">
                                 </div>
                                 <ul id="validasi"></ul>
@@ -202,6 +130,21 @@
 
     <script>
         $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            tabel()
+        });
+
+        function tabel() {
+            $.get("{{ url('tabel')}}", {}, function(data, kategori) {
+                $("#tabel").html(data);
+            });
+        }
+        $(document).ready(function() {
             $(document).on('click', '.save_data', function(e) {
                 e.preventDefault();
                 // console.log("hallo");
@@ -224,25 +167,34 @@
                     datatype: 'json',
                     success: function(response) {
                         // console.log(response.errors.kategori);
-                        if(response.status == 400 ){
+                        if (response.status == 400) {
                             $('#validasi').html("");
                             $('#validasi').addClass('alert alert-danger');
-                            $.each(response.errors, function (key, err_values) {
-                                $('#validasi').append('<li>'+err_values+'</li>');
+                            $.each(response.errors, function(key, err_values) {
+                                $('#validasi').append('<li>' + err_values + '</li>');
                             });
-                            console.log(response.status);
+                            // console.log(response.status);
                         } else {
-                            $('#validasi').html("");
-                            // $('#succses').addClass("alert alert-danger")
-                            // $('#success').text(response.massage)
+                            $('#modal-kategori').html('')
                             $('#modal-kategori').modal('hide');
-                            $('#modal-kategori').find('input').val("");
+                            $('#modal-kategori').find('input').val();
+                            tabel()
                         }
                     }
 
                 });
             });
         });
+
+        // function update() {
+        //     $.ajax({
+        //         url: '/kategori',
+        //         type: 'get',
+        //         success: function(response) {
+        //             $('#tavbel').html(response)
+        //         }
+        //     });
+        // }
     </script>
 
     {{-- <script type="text/javascript">
@@ -321,12 +273,6 @@
                 }
             })
         })
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
     </script>
 
     <!-- End Script -->

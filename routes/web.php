@@ -12,6 +12,7 @@ use App\Http\Controllers\Landing\WhislistController as LandingWhislistController
 use App\Http\Controllers\Landing\CartController as LandingCartController;
 
 // Admin
+use App\Http\Controllers\Admin\Logincontroller as AdminLogincontroller;
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
 use App\Http\Controllers\Admin\MerekController as AdminMerekController;
@@ -96,10 +97,16 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 
+// Star Login Admin
+Route::get('/loginadmin', [AdminLogincontroller::class, 'login'])->name('login');
+
+// End Login Admin
+
 // Star kategroi Admin
 
 //Kategori
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
+Route::get('/tabel', [AdminKategoriController::class, 'tabel'])->name('tabel');
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
 Route::get('/deletekategori/{id}', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
