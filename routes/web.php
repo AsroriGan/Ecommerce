@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
 use App\Http\Controllers\Admin\MerekController as AdminMerekController;
 use App\Http\Controllers\Admin\ProdukController as AdminProdukController;
+use App\Http\Controllers\Admin\blogadmin;
+use App\Http\Controllers\Landing\BlogController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,8 +53,8 @@ Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranj
 // Route::get('/tambahproduct', [LandingProdukController::class, 'tambahproduct'])->name('tambahproduct');
 
 // Blog
-Route::get('/blog', [LandingBlogController::class, 'blog']);
-Route::get('/detailblog', [LandingBlogController::class, 'detailblog']);
+Route::get('/blogg', [LandingBlogController::class, 'blog']);
+Route::get('/detailblog/{id}', [LandingBlogController::class, 'detailblog']);
 
 // promo
 Route::get('/promo', [LandingPromoController::class, 'promo']);
@@ -146,3 +148,13 @@ Route::get('/deletemerek/{id}', [AdminMerekController::class, 'delete'])->name('
 ////////Sliders
 Route::get('/sliderr', [SliderController::class, 'slider'])->name('slider');
 Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);
+
+
+//////////
+Route::get('/blogadmin', [blogadmin::class, 'blogg'])->name('blogg');
+Route::get('/tambahblog', [blogadmin::class, 'tambahblog'])->name('tambahblog');
+Route::get('/editblog/{id}', [blogadmin::class, 'editblog'])->name('editblog');
+Route::post('/insertblog', [blogadmin::class, 'insertblog'])->name('insertblog');
+Route::post('/updateblog/{id}', [blogadmin::class, 'updateblog'])->name('updateblog');
+Route::get('/deleteblog/{id}', [blogadmin::class, 'deleteblog'])->name('deleteblog');
+

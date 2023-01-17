@@ -201,7 +201,7 @@
 
                             <li class="dropdown"><a href="/produk">Products</a></li>
 
-                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/blogg">Blog</a></li>
 
                             <li><a href="/promo">Hot Offers</a></li>
 
