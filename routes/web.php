@@ -49,9 +49,10 @@ Route::get('/beranda', function () {
 //pruduk
 Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
 Route::get('/detail/{id}', [LandingProdukController::class, 'detail'])->name('detail');
+Route::get('/detailmodal/{id}', [LandingProdukController::class, 'detailmodal'])->name('detailmodal');
 
 //cart
-Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang');
+Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang')->middleware('auth');
 Route::get('/hapuscart/{id}', [LandingCartController::class, 'hapuscart'])->name('hapuscart');
 Route::post('/cartpost/{id}', [LandingCartController::class, 'cartpost'])->name('cartpost');
 
