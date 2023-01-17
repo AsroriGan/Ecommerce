@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('role');
             $table->string('notelepon');
-            $table->string('fotosampul')->default('defaultsampul.jpgl');
+            $table->string('fotosampul')->default('defaultsampul.jpg');
             $table->string('foto')->default('defaultfoto.jpg');
             $table->string('alamat')->nullable();
             $table->string('provinsi')->nullable();

@@ -9,16 +9,17 @@
                 <li>
                     <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i>
                         <span>Slider</span></a>
+                </li>
                 <li class="active">
                     <a href="/merek"><i data-feather="home"></i> <span>Merk</span></a>
                 </li>
-                <li class="submenu active">
+                <li class="submenu {{ Route::is('kategori', 'subkategori', 'sub_subkategori') ? 'active' : '' }}">
                     <a href="#"><i data-feather="clipboard"></i> <span> Kategori</span> <span
                             class="menu-arrow"></span></a>
                     <ul>
-                        <li><a href="/kategori">Kategori</a></li>
-                        <li><a href="/subkategori">Sub Kategori</a></li>
-                        <li><a href="/sub_subkategori">Sub->SubKategori</a></li>
+                        <li><a {{ Route::is('kategori') ? 'class=active' : '' }} href="/kategori">Kategori</a></li>
+                        <li><a {{ Route::is('subkategori') ? 'class=active' : '' }} href="/subkategori">Sub Kategori</a></li>
+                        <li><a {{ Route::is('sub_subkategori') ? 'class=active' : '' }} href="/sub_subkategori">Sub->SubKategori</a></li>
                     </ul>
                 </li>
                 <li
@@ -44,7 +45,7 @@
                     <a href="estimates.html"><i data-feather="file-text"></i> <span>Estimates</span></a>
                 </li>
                 <li>
-                    <a href="payments.html"><i data-feather="credit-card"></i> <span>Payments</span></a>
+                    <a href="/promosi"><i data-feather="credit-card"></i> <span>Tambah Promo</span></a>
                 </li>
                 <li class="menu-title"><span>Pesanan</span></li>
                 <li>

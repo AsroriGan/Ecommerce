@@ -34,7 +34,7 @@
                 <ul class="eccart-pro-items">
                     <li>
                         <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
+                                src="{{asset('assets/images/product-image/6_1.jpg')}}" alt="product"></a>
                         <div class="ec-pro-content">
                             <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
                             <span class="cart-price"><span>$76.00</span> x 1</span>
@@ -46,7 +46,7 @@
                     </li>
                     <li>
                         <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
+                                src="{{asset('assets/images/product-image/12_1.jpg')}}" alt="product"></a>
                         <div class="ec-pro-content">
                             <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
                             <span class="cart-price"><span>$64.00</span> x 1</span>
@@ -58,7 +58,7 @@
                     </li>
                     <li>
                         <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
+                                src="{{asset('assets/images/product-image/3_1.jpg')}}" alt="product"></a>
                         <div class="ec-pro-content">
                             <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
                             <span class="cart-price"><span>$59.00</span> x 1</span>
@@ -129,60 +129,48 @@
                 <div class="ec-pro-rightside ec-common-rightside col-lg-9 col-md-12">
 
                     <!-- Single product content Start -->
+
                     <div class="single-pro-block">
                         <div class="single-pro-inner">
                             <div class="row">
                                 <div class="single-pro-img">
                                     <div class="single-product-scroll">
                                         <div class="single-product-cover">
+                                            @foreach ($galeri_produk as $foto)
                                             <div class="single-slide zoom-image-hover">
-                                                <img class="img-responsive" src="assets/images/product-image/9_1.jpg"
-                                                    alt="">
+                                                <img class="img-responsive" src="{{ asset('fotoproduk/' . $foto) }}" alt="foto produk"
+                                                    >
                                             </div>
-                                            <div class="single-slide zoom-image-hover">
-                                                <img class="img-responsive" src="assets/images/product-image/9_2.jpg"
-                                                    alt="">
-                                            </div>
-                                            <div class="single-slide zoom-image-hover">
-                                                <img class="img-responsive" src="assets/images/product-image/9_3.jpg"
-                                                    alt="">
-                                            </div>
-                                            <div class="single-slide zoom-image-hover">
-                                                <img class="img-responsive" src="assets/images/product-image/9_4.jpg"
-                                                    alt="">
-                                            </div>
-                                            <div class="single-slide zoom-image-hover">
-                                                <img class="img-responsive" src="assets/images/product-image/9_3.jpg"
-                                                    alt="">
-                                            </div>
+                                            @endforeach
                                         </div>
                                         <div class="single-nav-thumb">
+                                            @foreach ($galeri_produk as $foto)
                                             <div class="single-slide">
-                                                <img class="img-responsive" src="assets/images/product-image/9_1.jpg"
+                                                <img class="img-responsive" src="{{ asset('fotoproduk/' . $foto) }}" alt="foto produk">
+                                            </div>
+                                            @endforeach
+                                            {{-- <div class="single-slide">
+                                                <img class="img-responsive" src="{{asset('assets/images/product-image/9_2.jpg')}}"
                                                     alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img class="img-responsive" src="assets/images/product-image/9_2.jpg"
+                                                <img class="img-responsive" src="{{asset('assets/images/product-image/9_3.jpg')}}"
                                                     alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img class="img-responsive" src="assets/images/product-image/9_3.jpg"
+                                                <img class="img-responsive" src="{{asset('assets/images/product-image/9_4.jpg')}}"
                                                     alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img class="img-responsive" src="assets/images/product-image/9_4.jpg"
+                                                <img class="img-responsive" src="{{asset('assets/images/product-image/9_3.jpg')}}"
                                                     alt="">
-                                            </div>
-                                            <div class="single-slide">
-                                                <img class="img-responsive" src="assets/images/product-image/9_3.jpg"
-                                                    alt="">
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="single-pro-desc">
                                     <div class="single-pro-content">
-                                        <h5 class="ec-single-title">Unisex Cotton Neck Hoodie</h5>
+                                        <h5 class="ec-single-title">{{ $data->nama_produk }}</h5>
                                         <div class="ec-single-rating-wrap">
                                             <div class="ec-single-rating">
                                                 <i class="ecicon eci-star fill"></i>
@@ -194,83 +182,68 @@
                                             <span class="ec-read-review"><a href="#ec-spt-nav-review">Be the first to
                                                     review this product</a></span>
                                         </div>
-                                        <div class="ec-single-desc">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text ever since the 1990</div>
+                                        <div class="ec-single-desc">{{$data->deskirpsi_pendek}}</div>
 
-                                        <div class="ec-single-sales">
-                                            <div class="ec-single-sales-inner">
-                                                <div class="ec-single-sales-title">sales accelerators</div>
-                                                <div class="ec-single-sales-visitor">real time <span>18</span> visitor
-                                                    right now!</div>
-                                                <div class="ec-single-sales-progress">
-                                                    <span class="ec-single-progress-desc">Hurry up!left 17 in
-                                                        stock</span>
-                                                    <span class="ec-single-progressbar"></span>
-                                                </div>
-                                                <div class="ec-single-sales-countdown">
-                                                    <div class="ec-single-countdown"><span
-                                                            id="ec-single-countdown"></span></div>
-                                                    <div class="ec-single-count-desc">Time is Running Out!</div>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <div class="ec-single-price-stoke">
                                             <div class="ec-single-price">
-                                                <span class="ec-single-ps-title">As low as</span>
-                                                <span class="new-price">$68.00</span>
+                                                <span class="ec-single-ps-title">Harga</span>
+                                                <span class="new-price">Rp. {{$data->harga_diskonproduk}}</span>
                                             </div>
                                             <div class="ec-single-stoke">
-                                                <span class="ec-single-ps-title">IN STOCK</span>
-                                                <span class="ec-single-sku">SKU#: WH12</span>
+                                                <span class="ec-single-ps-title">STOCK</span>
+                                                <span class="ec-single-sku">{{$data->stok_produk}}</span>
                                             </div>
                                         </div>
+                                        <form action="/cartpost/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="ec-pro-variation">
+                                                <div class="ec-pro-variation-inner ec-pro-variation-size">
+                                                    <span>SIZE</span>
+                                                    <div class="ec-pro-variation-content">   
+                                                        <select class="form-select" aria-label="Default select example" name="ukuran">       
+                                                            <option disabled selected>Open this select menu</option>
+                                                             @foreach ($ukuran_produk as $ukuran )
+                                                            <option >{{$ukuran}}</option>
+                                                            @endforeach
+                                                          </select>                                      
+                                                      
+                                                    </div>
+                                                </div>
 
-                                        <div class="ec-pro-variation">
-                                            <div class="ec-pro-variation-inner ec-pro-variation-size">
-                                                <span>SIZE</span>
-                                                <div class="ec-pro-variation-content">
-                                                    <ul>
-                                                        <li class="active"><span>S</span></li>
-                                                        <li><span>M</span></li>
-                                                        <li><span>L</span></li>
-                                                        <li><span>XL</span></li>
-                                                    </ul>
+                                                <div class="ec-pro-variation-inner ec-pro-variation-color">
+                                                    <span>Color</span>
+                                                    <div class="ec-pro-variation-content">
+                                                        <select class="form-select" aria-label="Default select example" name="warna">       
+                                                            <option disabled selected>Open this select menu</option>
+                                                             @foreach ($warna_produk as $warna )
+                                                            <option >{{$warna}}</option>
+                                                            @endforeach
+                                                          </select>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="ec-pro-variation-inner ec-pro-variation-color">
-                                                <span>Color</span>
-                                                <div class="ec-pro-variation-content">
-                                                    <ul>
-                                                        <li class="active"><span
-                                                                style="background-color:#1b4a87"></span></li>
-                                                        <li><span style="background-color:#5f94d6"></span></li>
-                                                        <li><span style="background-color:#72aea2"></span></li>
-                                                        <li><span style="background-color:#c79782"></span></li>
-                                                    </ul>
+                                            <div class="ec-single-qty">
+                                                <div class="qty-plus-minus">
+                                                    <input class="qty-input" type="text" name="jumlah" value="1" />
+                                                </div>
+                                                <div class="ec-single-cart ">
+                                                    <button class="btn btn-primary">Add To Cart</button>
+                                                </div>
+                                                <div class="ec-single-wishlist">
+                                                    <a class="ec-btn-group wishlist" title="Wishlist"><img
+                                                            src="{{asset('assets/images/icons/wishlist.svg')}}" class="svg_img fpro_svg"
+                                                            alt="" /></a>
+                                                </div>
+                                                <div class="ec-single-quickview">
+                                                    <a href="#" class="ec-btn-group quickview" data-link-action="quickview"
+                                                        title="Quick view" data-bs-toggle="modal"
+                                                        data-bs-target="#ec_quickview_modal"><img
+                                                            src="{{asset('assets/images/icons/quickview.svg')}}" class="svg_img pro_svg"
+                                                            alt="" /></a>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="ec-single-qty">
-                                            <div class="qty-plus-minus">
-                                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                                            </div>
-                                            <div class="ec-single-cart ">
-                                                <button class="btn btn-primary">Add To Cart</button>
-                                            </div>
-                                            <div class="ec-single-wishlist">
-                                                <a class="ec-btn-group wishlist" title="Wishlist"><img
-                                                        src="assets/images/icons/wishlist.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
-                                            </div>
-                                            <div class="ec-single-quickview">
-                                                <a href="#" class="ec-btn-group quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><img
-                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a>
-                                            </div>
-                                        </div>
+                                        </form>
                                         <div class="ec-single-social">
                                             <ul class="mb-0">
                                                 <li class="list-inline-item facebook"><a href="#"><i
@@ -294,6 +267,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!--Single product content End -->
                     <!-- Single product tab start -->
                     <div class="ec-single-pro-tab">
@@ -317,26 +291,20 @@
                             <div class="tab-content  ec-single-pro-tab-content">
                                 <div id="ec-spt-nav-details" class="tab-pane fade show active">
                                     <div class="ec-single-pro-tab-desc">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                            Lorem Ipsum has been the industry's standard dummy text ever since the
-                                            1500s, when an unknown printer took a galley of type and scrambled it to
-                                            make a type specimen book. It has survived not only five centuries, but also
-                                            the leap into electronic typesetting, remaining essentially unchanged.
-                                        </p>
-                                        <ul>
-                                            <li>Any Product types that You want - Simple, Configurable</li>
-                                            <li>Downloadable/Digital Products, Virtual Products</li>
-                                            <li>Inventory Management with Backordered items</li>
-                                            <li>Flatlock seams throughout.</li>
-                                        </ul>
+                                        {!!$data->deskirpsi_panjang!!}
+
+
                                     </div>
                                 </div>
                                 <div id="ec-spt-nav-info" class="tab-pane fade">
                                     <div class="ec-single-pro-tab-moreinfo">
                                         <ul>
-                                            <li><span>Weight</span> 1000 g</li>
+                                            <li><span>Weight</span> {{$data->berat_produk}} g</li>
                                             <li><span>Dimensions</span> 35 × 30 × 7 cm</li>
-                                            <li><span>Color</span> Black, Pink, Red, White</li>
+                                            @foreach ($ukuran_produk as $ukuran)
+
+                                            <li><span>Color</span> {{$ukuran}}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
@@ -346,7 +314,7 @@
                                         <div class="ec-t-review-wrapper">
                                             <div class="ec-t-review-item">
                                                 <div class="ec-t-review-avtar">
-                                                    <img src="assets/images/review-image/1.jpg" alt="" />
+                                                    <img src="{{asset('assets/images/review-image/1.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="ec-t-review-content">
                                                     <div class="ec-t-review-top">
@@ -371,7 +339,7 @@
                                             </div>
                                             <div class="ec-t-review-item">
                                                 <div class="ec-t-review-avtar">
-                                                    <img src="assets/images/review-image/2.jpg" alt="" />
+                                                    <img src="{{asset('assets/images/review-image/2.jpg')}}" alt="" />
                                                 </div>
                                                 <div class="ec-t-review-content">
                                                     <div class="ec-t-review-top">
@@ -399,7 +367,7 @@
                                         <div class="ec-ratting-content">
                                             <h3>Add a Review</h3>
                                             <div class="ec-ratting-form">
-                                                <form action="#">
+                                                
                                                     <div class="ec-ratting-star">
                                                         <span>Your rating:</span>
                                                         <div class="ec-t-review-rating">
@@ -423,7 +391,7 @@
                                                         <button class="btn btn-primary" type="submit"
                                                             value="Submit">Submit</button>
                                                     </div>
-                                                </form>
+                                              
                                             </div>
                                         </div>
                                     </div>
@@ -625,7 +593,7 @@
                             <div>
                                 <div class="ec-sb-pro-sl-item">
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                            src="assets/images/product-image/1_1.jpg" alt="product" /></a>
+                                            src="{{asset('assets/images/product-image/1_1.jpg')}}" alt="product" /></a>
                                     <div class="ec-pro-content">
                                         <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Beautiful Teddy Bear</a></h5>
                                         <div class="ec-pro-rating">
@@ -645,7 +613,7 @@
                             <div>
                                 <div class="ec-sb-pro-sl-item">
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                            src="assets/images/product-image/2_1.jpg" alt="product" /></a>
+                                            src="{{asset('assets/images/product-image/2_1.jpg')}}" alt="product" /></a>
                                     <div class="ec-pro-content">
                                         <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Gym Backpack</a></h5>
                                         <div class="ec-pro-rating">
@@ -665,7 +633,7 @@
                             <div>
                                 <div class="ec-sb-pro-sl-item">
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                            src="assets/images/product-image/3_1.jpg" alt="product" /></a>
+                                            src="{{asset('assets/images/product-image/3_1.jpg')}}" alt="product" /></a>
                                     <div class="ec-pro-content">
                                         <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Beautiful Purse for Women</a></h5>
                                         <div class="ec-pro-rating">
@@ -685,7 +653,7 @@
                             <div>
                                 <div class="ec-sb-pro-sl-item">
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                            src="assets/images/product-image/4_1.jpg" alt="product" /></a>
+                                            src="{{asset('assets/images/product-image/4_1.jpg')}}" alt="product" /></a>
                                     <div class="ec-pro-content">
                                         <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Wool Felt Long Brim Hat</a></h5>
                                         <div class="ec-pro-rating">
@@ -705,7 +673,7 @@
                             <div>
                                 <div class="ec-sb-pro-sl-item">
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                            src="assets/images/product-image/5_1.jpg" alt="product" /></a>
+                                            src="{{asset('assets/images/product-image/5_1.jpg')}}" alt="product" /></a>
                                     <div class="ec-pro-content">
                                         <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Black Leather Belt</a></h5>
                                         <div class="ec-pro-rating">
@@ -725,7 +693,7 @@
                             <div>
                                 <div class="ec-sb-pro-sl-item">
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                            src="assets/images/product-image/6_2.jpg" alt="product" /></a>
+                                            src="{{asset('assets/images/product-image/6_2.jpg')}}" alt="product" /></a>
                                     <div class="ec-pro-content">
                                         <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Beautiful Tee for Women</a></h5>
                                         <div class="ec-pro-rating">
@@ -745,7 +713,7 @@
                             <div>
                                 <div class="ec-sb-pro-sl-item">
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                            src="assets/images/product-image/7_1.jpg" alt="product" /></a>
+                                            src="{{asset('assets/images/product-image/7_1.jpg')}}" alt="product" /></a>
                                     <div class="ec-pro-content">
                                         <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cotton Shirt for Men</a></h5>
                                         <div class="ec-pro-rating">
@@ -765,7 +733,7 @@
                             <div>
                                 <div class="ec-sb-pro-sl-item">
                                     <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                            src="assets/images/product-image/8_2.jpg" alt="product" /></a>
+                                            src="{{asset('assets/images/product-image/8_2.jpg')}}" alt="product" /></a>
                                     <div class="ec-pro-content">
                                         <h5 class="ec-pro-title"><a href="product-left-sidebar.html">I Watch for Men</a></h5>
                                         <div class="ec-pro-rating">
@@ -811,25 +779,25 @@
                             <div class="ec-pro-image">
                                 <a href="product-left-sidebar.html" class="image">
                                     <img class="main-image"
-                                        src="assets/images/product-image/6_1.jpg" alt="Product" />
+                                        src="{{asset('assets/images/product-image/6_1.jpg')}}" alt="Product" />
                                     <img class="hover-image"
-                                        src="assets/images/product-image/6_2.jpg" alt="Product" />
+                                        src="{{asset('assets/images/product-image/6_2.jpg')}}" alt="Product" />
                                 </a>
                                 <span class="percentage">20%</span>
                                 <a href="#" class="quickview" data-link-action="quickview"
                                     title="Quick view" data-bs-toggle="modal"
                                     data-bs-target="#ec_quickview_modal"><img
-                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                        src="{{asset('assets/images/icons/quickview.svg')}}" class="svg_img pro_svg"
                                         alt="" /></a>
                                 <div class="ec-pro-actions">
                                     <a href="compare.html" class="ec-btn-group compare"
                                         title="Compare"><img src="assets/images/icons/compare.svg"
                                             class="svg_img pro_svg" alt="" /></a>
                                     <button title="Add To Cart" class=" add-to-cart"><img
-                                            src="assets/images/icons/cart.svg" class="svg_img pro_svg"
+                                            src="{{asset('assets/images/icons/cart.svg')}}" class="svg_img pro_svg"
                                             alt="" /> Add To Cart</button>
                                     <a class="ec-btn-group wishlist" title="Wishlist"><img
-                                            src="assets/images/icons/wishlist.svg"
+                                            src="{{asset('assets/images/icons/wishlist.svg')}}"
                                             class="svg_img pro_svg" alt="" /></a>
                                 </div>
                             </div>
@@ -853,13 +821,13 @@
                                     <span class="ec-pro-opt-label">Color</span>
                                     <ul class="ec-opt-swatch ec-change-img">
                                         <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                data-src="assets/images/product-image/6_1.jpg"
-                                                data-src-hover="assets/images/product-image/6_1.jpg"
+                                                data-src="{{asset('assets/images/product-image/6_1.jpg')}}"
+                                                data-src-hover="{{asset('assets/images/product-image/6_1.jpg')}}"
                                                 data-tooltip="Gray"><span
                                                     style="background-color:#e8c2ff;"></span></a></li>
                                         <li><a href="#" class="ec-opt-clr-img"
-                                                data-src="assets/images/product-image/6_2.jpg"
-                                                data-src-hover="assets/images/product-image/6_2.jpg"
+                                                data-src="{{asset('assets/images/product-image/6_2.jpg')}}"
+                                                data-src-hover="{{asset('assets/images/product-image/6_2.jpg')}}"
                                                 data-tooltip="Orange"><span
                                                     style="background-color:#9cfdd5;"></span></a></li>
                                     </ul>
@@ -1470,8 +1438,19 @@
     </div>
     <!-- Feature tools end -->
 
-    @include('layouts.script')
 
+    @include('layouts.script')
+    <script type="text/javascript">
+        @if (Session::has('gagal'))
+            swal({
+                // position: 'top-end',
+                icon: 'warning',
+                title: 'Maaf! Stock Barang Ini Sudah Habis',
+                showConfirmButton: false,
+                timer: 1500
+                        });
+    </script>                    
+                    @endif
 
 </body>
 </html>

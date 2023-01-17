@@ -10,26 +10,20 @@ class ProdukController extends Controller
 {
     public function produk()
     {
-        return view('landingpage.produk.produk');
+        $data = Produk::get();
+        return view('landingpage.produk.produk',compact('data'));
     }
-    public function detail()
+    public function detail($id)
     {
-        return view('landingpage.produk.detail');
+        $data = Produk::findOrFail($id);
+        $galeri_produk = explode(',',$data->galeri_produk);
+        $ukuran_produk = explode(',',$data->ukuran_produk);
+        $warna_produk = explode(',',$data->warna_produk);
+        return view('landingpage.produk.detail',compact('data','galeri_produk','ukuran_produk','warna_produk'));
     }
-     public function keranjang()
-    {
-        return view('landingpage.keranjang.keranjang');
-    }
+    
 
 
     //admin
-    public function product()
-    {
-        $data = Produk::get();
-        return view('dashboardadmin.produk.produk',compact('data'));
-    }
-    public function tambahproduct()
-    {
-        return view('dashboardadmin.produk.tambahproduk');
-    }
+
 }

@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Models\kategori;
 use App\Models\subkategori;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Sub_Subkategori;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\JsonResponse;   
 
 class KategoriController extends Controller
 {
@@ -21,15 +23,42 @@ class KategoriController extends Controller
     }
 
     public function kategoripost(Request $request)
-    {
-        $data = kategori::create([
+    {   
+        // $this->_validation($request);
+        
+        $validator = Validator::make($request->all(),[
+                'kategori' => 'required',
+            ]);
+            
+            if($validator->fails())
+            {
+                return Response()->json([
+                    'status' => 400,
+                    'errors' => $validator->messages(),
+                ]);
+            }
+            else{
+                // kategori::create($request->all());
+                $kategori = new kategori;
+                $kategori->kategori = $request->input('kategori');
+                $kategori->save();
+                return response()->json([
+                    'status' =>200,
+                    'message' => 'success',
+                ]);
+            }
+            // dd($validator);
+        }
 
-            'kategori' =>  $request->kategori,
+    // private function _validation(Request $request){
 
-        ]);
-
-        return Redirect()->route('kategori')->with('success', 'Data Berhasil Ditambahkan');
-    }
+    //     $validation = $request->validate([
+    //         'kategori' => 'required',
+    //     ],
+    //     [    
+    //         'kategori' => 'isi',        
+    //     ]);
+    // }
 
     public function editkategoripost(Request $request, $id)
     {

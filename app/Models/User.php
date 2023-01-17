@@ -49,4 +49,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function user_datawilayah()
+    {
+        return $this->belongsTo(Datawilayah::class, 'provinsi', 'id');
+    }
+    public function user_datawilayahkabupaten()
+    {
+        return $this->belongsTo(datawilayahkabupaten::class, 'kabupaten', 'id');
+    }
+    public function user_datawilayahkecamatan()
+    {
+        return $this->belongsTo(datawilayahkecamatan::class, 'kecamatan', 'id');
+    }
 }

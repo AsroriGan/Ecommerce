@@ -9,6 +9,7 @@ use App\Http\Controllers\Landing\ProdukController as LandingProdukController;
 use App\Http\Controllers\Landing\Userprofilecontroller as LandingUserprofilecontroller;
 use App\Http\Controllers\Landing\TrackorderController as LandingTrackorderController;
 use App\Http\Controllers\Landing\WhislistController as LandingWhislistController;
+use App\Http\Controllers\Landing\CartController as LandingCartController;
 
 // Admin
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\Admin\ProdukController as AdminProdukController;
 use App\Http\Controllers\Admin\blogadmin;
 use App\Http\Controllers\Landing\BlogController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\Admin\PromosiController as AdminPromosiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +41,8 @@ Route::post('/loginpost', [LandingLogincontroller::class, 'loginpost'])->name('l
 //register
 Route::get('/register', [LandingLogincontroller::class, 'register'])->name('register');
 Route::post('/registerpost', [LandingLogincontroller::class, 'registerpost'])->name('registerpost');
-
+//logout
+Route::get('/logout', [LandingLogincontroller::class, 'logout'])->name('logout');
 // berandah admin
 Route::get('/beranda', function () {
     return view('dashboardadmin.beranda');
@@ -47,10 +50,13 @@ Route::get('/beranda', function () {
 
 //pruduk
 Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
-Route::get('/detail', [LandingProdukController::class, 'detail'])->name('detail');
-Route::get('/cart', [LandingProdukController::class, 'keranjang'])->name('keranjang');
-// Route::get('/product', [LandingProdukController::class, 'product'])->name('product');
-// Route::get('/tambahproduct', [LandingProdukController::class, 'tambahproduct'])->name('tambahproduct');
+Route::get('/detail/{id}', [LandingProdukController::class, 'detail'])->name('detail');
+
+//cart
+Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang');
+Route::get('/hapuscart/{id}', [LandingCartController::class, 'hapuscart'])->name('hapuscart');
+Route::post('/cartpost/{id}', [LandingCartController::class, 'cartpost'])->name('cartpost');
+
 
 // Blog
 Route::get('/blogg', [LandingBlogController::class, 'blog']);
@@ -70,10 +76,15 @@ Route::get('/', [LandingpageController::class, 'home'])->name('home');
 Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
 
 //Kategori
+Route::get('/kategori-landing', [LandingKategoriController::class, 'index'])->name('index.kategori');
 Route::get('/categories', [LandingKategoriController::class, 'index'])->name('index.kategori');
+
 
 //user profile
 Route::get('/user-profile', [LandingUserprofilecontroller::class, 'index'])->name('user-profle');
+Route::get('/change-password', [LandingUserprofilecontroller::class, 'change_password'])->name('change_password');
+    //edit profile
+Route::post('/edit-profile/{id}', [LandingUserprofilecontroller::class, 'edit_profile'])->name('edit-profile');
 //get address
 Route::post('/getkabupaten', [LandingUserprofilecontroller::class, 'getkabupaten'])->name('getkabupaten');
 Route::post('/getkecamatan', [LandingUserprofilecontroller::class, 'getkecamatan'])->name('getkecamatan');
@@ -93,6 +104,7 @@ Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kat
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
 Route::get('/deletekategori/{id}', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
+Route::post('/_validation', [AdminKategoriController::class, '_validation'])->name('_validation');
     //SubKategori
 Route::get('/subkategori', [AdminKategoriController::class, 'subkategori'])->name('subkategori');
 Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
@@ -105,8 +117,8 @@ Route::post('/updatesub_subkategori/{id}', [AdminKategoriController::class, 'upd
 Route::get('/deletesub_sub/{id}', [AdminKategoriController::class, 'deletesub_sub'])->name('deletesub_sub');
 
 
-
 // End Kategori Admin
+
 //start data wilayah
 //provinsi
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
@@ -145,6 +157,7 @@ Route::post('/merekpost', [AdminMerekController::class, 'merekpost'])->name('mer
 Route::post('/editmerekpost/{id}', [AdminMerekController::class, 'edit'])->name('editmerekpost');
 Route::get('/deletemerek/{id}', [AdminMerekController::class, 'delete'])->name('deletemerek');
 //end data merek
+
 ////////Sliders
 Route::get('/sliderr', [SliderController::class, 'slider'])->name('slider');
 Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);
@@ -158,3 +171,17 @@ Route::post('/insertblog', [blogadmin::class, 'insertblog'])->name('insertblog')
 Route::post('/updateblog/{id}', [blogadmin::class, 'updateblog'])->name('updateblog');
 Route::get('/deleteblog/{id}', [blogadmin::class, 'deleteblog'])->name('deleteblog');
 
+// End Sliders
+
+// Start Promosi
+Route::get('/promosi', [AdminPromosiController::class, 'promosi'])->name('promosi');
+
+
+Route::post('/editpromopost/{id}', [AdminPromosiController::class, 'edit'])->name('editpromopost');
+
+Route::get('/bannerpromosi', [AdminPromosiController::class, 'bannerpromosi'])->name('bannerpromosi');
+
+
+Route::post('/editbannerpromopost/{id}', [AdminPromosiController::class, 'editbanner'])->name('editbannerpromopost');
+
+//End Promosi

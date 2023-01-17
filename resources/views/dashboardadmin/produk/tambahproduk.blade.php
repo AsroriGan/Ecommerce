@@ -1,4 +1,3 @@
-v
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,7 +71,7 @@ v
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Warna Produk</label>
-                                                    <input id="warna_produk" name="warna_produk[]" type="text" class="form-control" value="kuning,biru">
+                                                    <input id="warna_produk" name="warna_produk" type="text" class="form-control" value="kuning,biru">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>
@@ -190,6 +189,13 @@ v
                                                 <div class="col-12 d-flex">
                                                     <button type="submit"
                                                         class="btn btn-rounded btn-primary mx-auto w-50">Submit</button>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 67afbc11bc7a05a6e92ba8de18bd9e916cab2c3f
+                                                </div>
+                                                <div class="col-md-6">
+
                                                 </div>
                                             </div>
                                         </div>
