@@ -8,7 +8,7 @@ use App\Models\Sub_Subkategori;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\JsonResponse;   
+use Illuminate\Http\JsonResponse;
 
 class KategoriController extends Controller
 {
@@ -22,14 +22,20 @@ class KategoriController extends Controller
         return view('dashboardadmin.kategori.kategori', compact('data'));
     }
 
+    public function tabel() {
+        $data = kategori::all();
+
+        return view('dashboardadmin.kategori.tabelkategori', compact('data'));
+    }
+
     public function kategoripost(Request $request)
-    {   
+    {
         // $this->_validation($request);
-        
+
         $validator = Validator::make($request->all(),[
                 'kategori' => 'required',
             ]);
-            
+
             if($validator->fails())
             {
                 return Response()->json([
@@ -46,8 +52,10 @@ class KategoriController extends Controller
                     'status' =>200,
                     'message' => 'success',
                 ]);
+
             }
             // dd($validator);
+            return redirect()->back();
         }
 
     // private function _validation(Request $request){
@@ -55,8 +63,8 @@ class KategoriController extends Controller
     //     $validation = $request->validate([
     //         'kategori' => 'required',
     //     ],
-    //     [    
-    //         'kategori' => 'isi',        
+    //     [
+    //         'kategori' => 'isi',
     //     ]);
     // }
 
@@ -70,7 +78,7 @@ class KategoriController extends Controller
 
         ]);
 
-        return redirect()->route('kategori')->with('success', 'Data Berhasil DiUpdate');
+        return redirect()->route('tabelkategori')->with('success', 'Data Berhasil DiUpdate');
     }
 
     public function deletekategori($id)

@@ -12,10 +12,13 @@ use App\Http\Controllers\Landing\WhislistController as LandingWhislistController
 use App\Http\Controllers\Landing\CartController as LandingCartController;
 
 // Admin
+use App\Http\Controllers\Admin\Logincontroller as AdminLogincontroller;
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
 use App\Http\Controllers\Admin\MerekController as AdminMerekController;
 use App\Http\Controllers\Admin\ProdukController as AdminProdukController;
+use App\Http\Controllers\Admin\blogadmin;
+use App\Http\Controllers\Landing\BlogController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\Admin\PromosiController as AdminPromosiController;
 use Illuminate\Support\Facades\Route;
@@ -49,16 +52,17 @@ Route::get('/beranda', function () {
 //pruduk
 Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
 Route::get('/detail/{id}', [LandingProdukController::class, 'detail'])->name('detail');
+Route::get('/detailmodal/{id}', [LandingProdukController::class, 'detailmodal'])->name('detailmodal');
 
 //cart
-Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang');
+Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang')->middleware('auth');
 Route::get('/hapuscart/{id}', [LandingCartController::class, 'hapuscart'])->name('hapuscart');
 Route::post('/cartpost/{id}', [LandingCartController::class, 'cartpost'])->name('cartpost');
 
 
 // Blog
-Route::get('/blog', [LandingBlogController::class, 'blog']);
-Route::get('/detailblog', [LandingBlogController::class, 'detailblog']);
+Route::get('/blogg', [LandingBlogController::class, 'blog']);
+Route::get('/detailblog/{id}', [LandingBlogController::class, 'detailblog']);
 
 // promo
 Route::get('/promo', [LandingPromoController::class, 'promo']);
@@ -97,9 +101,16 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 
+// Star Login Admin
+Route::get('/loginadmin', [AdminLogincontroller::class, 'login'])->name('login');
+
+// End Login Admin
+
 // Star kategroi Admin
+
 //Kategori
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
+Route::get('/tabel', [AdminKategoriController::class, 'tabel'])->name('tabel');
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
 Route::get('/deletekategori/{id}', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
@@ -114,7 +125,6 @@ Route::get('/sub_subkategori', [AdminKategoriController::class, 'sub_subkategori
 Route::post('/sub_subkategoripost', [AdminKategoriController::class, 'sub_subkategoripost'])->name('sub_subkategoripost');
 Route::post('/updatesub_subkategori/{id}', [AdminKategoriController::class, 'updatesub_subkategori'])->name('updatesub_subkategori');
 Route::get('/deletesub_sub/{id}', [AdminKategoriController::class, 'deletesub_sub'])->name('deletesub_sub');
-
 
 // End Kategori Admin
 
@@ -138,6 +148,7 @@ Route::post('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecam
 Route::post('/editkecamatan/{id}', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
 Route::get('/deletekecamatan/{id}', [AdminDatawilayahController::class, 'deletekecamatan'])->name('deletekecamatan');
 //end data wilayah
+
 //start add Produk
 Route::get('/produkadmin', [AdminProdukController::class, 'index'])->name('produkadmin');
 Route::get('/addproduk', [AdminProdukController::class, 'addproduct'])->name('addproduk');
@@ -160,6 +171,15 @@ Route::get('/deletemerek/{id}', [AdminMerekController::class, 'delete'])->name('
 ////////Sliders
 Route::get('/sliderr', [SliderController::class, 'slider'])->name('slider');
 Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);
+
+
+//////////
+Route::get('/blogadmin', [blogadmin::class, 'blogg'])->name('blogg');
+Route::get('/tambahblog', [blogadmin::class, 'tambahblog'])->name('tambahblog');
+Route::get('/editblog/{id}', [blogadmin::class, 'editblog'])->name('editblog');
+Route::post('/insertblog', [blogadmin::class, 'insertblog'])->name('insertblog');
+Route::post('/updateblog/{id}', [blogadmin::class, 'updateblog'])->name('updateblog');
+Route::get('/deleteblog/{id}', [blogadmin::class, 'deleteblog'])->name('deleteblog');
 
 // End Sliders
 

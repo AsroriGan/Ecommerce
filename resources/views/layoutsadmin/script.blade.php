@@ -4,6 +4,8 @@
 
 <script src="{{asset('template/assets/js/feather.min.js')}}"></script>
 
+<script src="{{asset ('template/assets/js/ckeditor.js') }}"></script>
+
 <script src="{{asset('template/assets/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 
 <script src="{{asset('template/assets/plugins/apexchart/apexcharts.min.js')}}"></script>
@@ -30,3 +32,19 @@
 
 <script src="{{asset('template/assets/plugins/sweetalert/sweetalert2.all.min.js')}}"></script>
 <script src="{{asset('template/assets/plugins/sweetalert/sweetalerts.min.js')}}"></script>
+
+ <script src="https://cdn.ckeditor.com/ckeditor5/35.3.1/classic/ckeditor.js"></script>
+  <script>
+      ClassicEditor
+          .create(document.querySelector('#masyaallah'))
+          .catch(error => {
+              console.error(error);
+          });
+  </script>
+  <script>
+      ClassicEditor
+          .create(document.querySelector('#editor'))
+          .catch(error => {
+              console.error(error);
+          });
+  </script>
