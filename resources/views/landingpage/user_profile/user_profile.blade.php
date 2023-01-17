@@ -380,7 +380,7 @@
                                         <select name="provinsi" id="regionstate" class="form-select"
                                             aria-label="Default select example">
                                             @if (Auth::user()->provinsi == null)
-                                                <option value="null" selected>-- Region State List --</option>
+                                                <option value="">-- Region State List --</option>
                                                 @foreach ($regionstate as $row)
                                                     <option value="{{ $row->id }}">{{ $row->provinsi }}</option>
                                                 @endforeach

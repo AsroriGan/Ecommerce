@@ -46,6 +46,9 @@
                                 <h5 class="card-title">Tambah Produk</h5>
                             </div> --}}
                             <div class="card-body">
+                                @php
+                                    $null = null;
+                                @endphp
                                 <form action="/insertproduk" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
@@ -53,72 +56,110 @@
                                             <div class="form-group row">
                                                 <div class="col-md-6 mb-3">
                                                     <label>Merk</label>
-                                                    <select name="merk_produk" class="form-select select">
-                                                        <option value="null">-- Select --</option>
+                                                    <select name="merk_produk" class="form-select @error('merk_produk') is-invalid @enderror">
+                                                        <option value="" disabled selected>-- Select --</option>
                                                         @foreach ($merk as $row)
                                                             <option value="{{ $row->id }}"> {{ $row->nama_merek }}
                                                             </option>
                                                         @endforeach
                                                     </select>
+                                                    @error('merk_produk')
+                                                    <div class="invalid-feedback">
+                                                        The Merk field is required
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Nama Produk</label>
-                                                    <input name="nama_produk" class="form-control" type="text">
+                                                    <input name="nama_produk" class="form-control @error('nama_produk') is-invalid @enderror" type="text">
+                                                    @error('nama_produk')
+                                                        <div class="invalid-feedback">
+                                                            Nama Produk Merk wajib diisi
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Ukuran Produk</label>
-                                                    <input id="ukuran_produk" name="ukuran_produk" type="text" class="form-control" value="26,27">
+                                                    <input id="ukuran_produk" name="ukuran_produk" type="text"
+                                                        class="form-control" value="26,27">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Warna Produk</label>
-                                                    <input id="warna_produk" name="warna_produk" type="text" class="form-control" value="kuning,biru">
+                                                    <input id="warna_produk" name="warna_produk" type="text"
+                                                        class="form-control" value="kuning,biru">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>
                                                     <div class="input-group">
-                                                        <input name="berat_produk" type="number" class="form-control">
+                                                        <input name="berat_produk" type="number" class="form-control @error('berat_produk') is-invalid @enderror">
                                                         <span class="input-group-text">Gram</span>
+                                                        @error('berat_produk')
+                                                            <div class="invalid-feedback">
+                                                                Berat Produk Wajib Diisi
+                                                            </div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Kategori</label>
-                                                    <select id="kategori" name="kategori" class="form-select select">
-                                                        <option>-- Select --</option>
+                                                    <select id="kategori" name="kategori" class="form-select @error('kategori') is-invalid  @enderror">
+                                                        <option selected disabled>-- Select --</option>
                                                         @foreach ($kategori as $row)
                                                             <option value="{{ $row->id }}">{{ $row->kategori }}
                                                             </option>
                                                         @endforeach
                                                     </select>
+                                                    @error('kategori')
+                                                        <div class="invalid-feedback">
+                                                            Kategori Wajib Diisi
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Sub Kategori</label>
                                                     <select id="sub_kategori" name="sub_kategori"
-                                                        class="form-select select">
-                                                        <option>-- Select --</option>
+                                                        class="form-select @error('sub_kategori') is-invalid @enderror">
+                                                        <option selected disabled>-- Select --</option>
                                                     </select>
+                                                    <div class="invalid-feedback">
+                                                        Sub Kategori Wajib Diisi
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Sub-sub Kategori</label>
                                                     <select id="sub_subkategori" name="sub_subkategori"
-                                                        class="form-select select">
-                                                        <option>-- Select --</option>
+                                                        class="form-select select @error('sub_subkategori') is-invalid @enderror">
+                                                        <option disabled selected>-- Select --</option>
                                                     </select>
+                                                    @error('sub_subkategori')
+                                                        <div class="invalid-feedback">
+                                                            Sub-sub Kategori Wajib Diisi
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Stock Produk</label>
-                                                    <input name="stok_produk" class="form-control" type="number">
+                                                    <input name="stok_produk" class="form-control @error('stok_produk') is-invalid @enderror" type="number">
+                                                    <div class="invalid-feedback">
+                                                        Stock Produk Wajib Diisi
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Harga Produk</label>
                                                     <div class="input-group">
                                                         <span class="input-group-text">Rp.</span>
-                                                        <input id="harga_asliproduk" name="harga_asliproduk" class="form-control" type="number">
+                                                        <input id="harga_asliproduk" name="harga_asliproduk"
+                                                            class="form-control @error('harga_asliproduk') is-invalid @enderror" type="number">
+                                                            <div class="invalid-feedback">
+                                                                Harga Produk Wajib Diisi
+                                                            </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Diskon</label>
                                                     <div class="input-group">
-                                                        <input id="diskon" name="diskon" class="form-control" type="number" min="0" max="100">
+                                                        <input id="diskon" name="diskon" class="form-control"
+                                                            type="number" min="0" max="100">
                                                         <span class="input-group-text">%</span>
                                                     </div>
                                                 </div>
@@ -126,7 +167,8 @@
                                                     <label>Harga Diskon</label>
                                                     <div class="input-group">
                                                         <span class="input-group-text">Rp.</span>
-                                                        <input id="harga_diskonproduk" name="harga_diskonproduk" class="form-control" type="number" readonly>
+                                                        <input id="harga_diskonproduk" name="harga_diskonproduk"
+                                                            class="form-control" type="number" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -155,24 +197,28 @@
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]" value="promo"> Promo
+                                                                <input type="checkbox" name="status_produk[]"
+                                                                    value="promo"> Promo
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]" value="Produk Baru"> Produk Baru
+                                                                <input type="checkbox" name="status_produk[]"
+                                                                    value="Produk Baru"> Produk Baru
                                                             </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]" value="Baru Datang"> Baru Datang
+                                                                <input type="checkbox" name="status_produk[]"
+                                                                    value="Baru Datang"> Baru Datang
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]" value="Best Seller"> Best Seller
+                                                                <input type="checkbox" name="status_produk[]"
+                                                                    value="Best Seller"> Best Seller
                                                             </label>
                                                         </div>
                                                     </div>
@@ -189,10 +235,6 @@
                                                 <div class="col-12 d-flex">
                                                     <button type="submit"
                                                         class="btn btn-rounded btn-primary mx-auto w-50">Submit</button>
-<<<<<<< HEAD
-=======
-
->>>>>>> 67afbc11bc7a05a6e92ba8de18bd9e916cab2c3f
                                                 </div>
                                                 <div class="col-md-6">
 
@@ -215,7 +257,7 @@
                 $('#diskon').keyup(function() {
                     let hargaasli = $('#harga_asliproduk').val();
                     let diskon = $(this).val();
-                    let harga_diskon = (hargaasli*diskon)/100;
+                    let harga_diskon = (hargaasli * diskon) / 100;
                     let harga_total = hargaasli - harga_diskon;
                     $('#harga_diskonproduk').val(harga_total)
                 });
@@ -249,6 +291,27 @@
                     });
                 });
             });
+        </script>
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+                'use strict'
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.querySelectorAll('.needs-validation')
+
+                // Loop over them and prevent submission
+                Array.prototype.slice.call(forms)
+                    .forEach(function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
+                            form.classList.add('was-validated')
+                        }, false)
+                    })
+            })()
         </script>
         <script>
             var input1 = document.querySelector('#warna_produk');

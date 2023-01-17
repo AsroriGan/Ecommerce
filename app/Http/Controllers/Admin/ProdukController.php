@@ -49,6 +49,26 @@ class ProdukController extends Controller
         // $tes = json_decode($request->ukuran_produk,true);
         // $single = array_column($tes,'value');
         // dd($single);
+        // dd($request->all());
+        $this->validate($request, [
+            'merk_produk' => 'required',
+            'nama_produk' => 'required',
+            'ukuran_produk' => 'required',
+            'warna_produk' => 'required',
+            'berat_produk' => 'required',
+            'kategori' => 'required',
+            'sub_kategori' => 'required',
+            'sub_subkategori' => 'required',
+            'stok_produk' => 'required',
+            'harga_asliproduk' => 'required',
+            'diskon' => 'required',
+            'harga_diskonproduk' => 'required',
+            'status_produk' => 'required',
+            'deskirpsi_pendek' => 'required',
+            'deskirpsi_panjang' => 'required',
+            'galeri_produk' => 'required',
+        ]);
+        dd('p');
         $files = [];
         if ($request->hasfile('galeri_produk')) {
             foreach ($request->galeri_produk as $file) {
@@ -66,7 +86,7 @@ class ProdukController extends Controller
         $model->ukuran_produk = implode(',',$insukuran);
         // dd($request->warna_produk);
         $warna = json_decode($request->warna_produk,true);
-        
+
         $inswarna = array_column($warna,'value');
         $model->warna_produk = implode(',',$inswarna);
         $model->berat_produk = $request->berat_produk;

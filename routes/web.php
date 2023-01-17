@@ -81,6 +81,7 @@ Route::get('/categories', [LandingKategoriController::class, 'index'])->name('in
 //user profile
 Route::get('/user-profile', [LandingUserprofilecontroller::class, 'index'])->name('user-profle');
 Route::get('/change-password', [LandingUserprofilecontroller::class, 'change_password'])->name('change_password');
+Route::post('/postchange-password', [LandingUserprofilecontroller::class, 'postchange_password'])->name('postchange_password');
     //edit profile
 Route::post('/edit-profile/{id}', [LandingUserprofilecontroller::class, 'edit_profile'])->name('edit-profile');
 //get address

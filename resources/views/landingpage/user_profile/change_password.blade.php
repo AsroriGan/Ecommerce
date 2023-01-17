@@ -49,39 +49,53 @@
                                 <div class="col-md-12">
                                     <div class="ec-vendor-block-profile">
                                         <h5>Change password</h5>
-
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 row">
-                                                <div
-                                                    class="ec-vendor-detail-block ec-vendor-block-email space-bottom-30 col-6">
-                                                    <h6>Old Password</h6>
-                                                    <ul>
-                                                        <input type="text" name="fristname" class="form-control" placeholder="Enter Old Password">
-                                                    </ul>
+                                        <form action="/postchange-password" method="POST">
+                                            <div class="row">
+                                                @csrf
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div
+                                                        class="ec-vendor-detail-block ec-vendor-block-email space-bottom-30">
+                                                        <h6>Old Password</h6>
+                                                        <input type="password" placeholder="Enter Old Password" name="oldpassword"
+                                                            class="form-control @error('oldpassword') is-invalid @enderror">
+                                                        <div class="invalid-feedback">
+                                                            Enter Old Password
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div
+                                                        class="ec-vendor-detail-block ec-vendor-block-contact space-bottom-30">
+                                                        <h6>New Password</h6>
+                                                        <input type="password" name="newpassword" class="form-control @error('newpassword') is-invalid @enderror"
+                                                            placeholder="Enter New Password">
+                                                        @error('newpassword')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div
+                                                        class="ec-vendor-detail-block ec-vendor-block-contact space-bottom-30">
+                                                        <h6>Confirm password</h6>
+                                                        <ul>
+                                                            <input type="password" name="newpassword_confirmation"
+                                                                class="form-control"
+                                                                placeholder="Enter Confirm password">
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 d-flex">
+                                                    <span class="ec-check-order-btn ml-auto"
+                                                        style="margin-top: 65px;width:171px">
+                                                        <button class="btn btn-primary" type="submit"
+                                                            style="width: -webkit-fill-available;">Change</button>
+                                                    </span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div
-                                                    class="ec-vendor-detail-block ec-vendor-block-contact space-bottom-30">
-                                                    <h6>New Password</h6>
-                                                    <ul>
-                                                        <input type="text" name="fristname" class="form-control" placeholder="Enter New Password">
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div
-                                                    class="ec-vendor-detail-block ec-vendor-block-contact space-bottom-30">
-                                                    <h6>Confirm password</h6>
-                                                    <ul>
-                                                        <input type="text" name="fristname" class="form-control" placeholder="Enter Confirm password">
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <span class="ec-check-order-btn d-flex">
-                                                <a class="btn btn-primary ml-auto" href="#">Change</a>
-                                            </span>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -145,8 +159,7 @@
                                 <div class="ec-footer-links">
                                     <ul class="align-items-center">
                                         <li class="ec-footer-link">71 Pilgrim Avenue Chevy Chase, east california.</li>
-                                        <li class="ec-footer-link"><span>Call Us:</span><a
-                                                href="tel:+440123456789">+44
+                                        <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">+44
                                                 0123 456 789</a></li>
                                         <li class="ec-footer-link"><span>Email:</span><a
                                                 href="mailto:example@ec-email.com">+example@ec-email.com</a></li>
@@ -519,6 +532,14 @@
 
     <!-- Vendor JS -->
     @include('layouts.script')
+    <script>
+        @if (Session::has('error'))
+            toastr.error("{{ Session::get('error') }}")
+        @endif
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}")
+        @endif
+    </script>
 </body>
 
 </html>
