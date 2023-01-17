@@ -161,6 +161,8 @@
 
                             </ul>
                         </div>
+                        <br/>
+                        <button style="float: right" class="btn btn-primary">Pesanan sudah diterima</button>
                     </div>
                 </div>
             </div>

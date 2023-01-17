@@ -10,8 +10,10 @@ class kategori extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    // protected $guarded = [];
+    protected $fillable = ['kategori'];
     protected $dates = ['created_at'];
+    protected $table = "kategoris";
 
     public function idkategori()
     {
