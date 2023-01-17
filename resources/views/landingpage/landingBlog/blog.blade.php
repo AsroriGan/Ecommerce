@@ -17,84 +17,6 @@
 
     @include('layouts.Header')
 
-    <!-- Header End  -->
-
-    <!-- ekka Cart Start -->
-    {{-- <div class="ec-side-cart-overlay"></div>
-    <div id="ec-side-cart" class="ec-side-cart">
-        <div class="ec-cart-inner">
-            <div class="ec-cart-top">
-                <div class="ec-cart-title">
-                    <span class="cart_title">My Cart</span>
-                    <button class="ec-close">×</button>
-                </div>
-                <ul class="eccart-pro-items">
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
-                            <span class="cart-price"><span>$76.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
-                            <span class="cart-price"><span>$64.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
-                            <span class="cart-price"><span>$59.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="ec-cart-bottom">
-                <div class="cart-sub-total">
-                    <table class="table cart-table">
-                        <tbody>
-                            <tr>
-                                <td class="text-left">Sub-Total :</td>
-                                <td class="text-right">$300.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">VAT (20%) :</td>
-                                <td class="text-right">$60.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Total :</td>
-                                <td class="text-right primary-color">$360.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="cart_btn">
-                    <a href="cart.html" class="btn btn-primary">View Cart</a>
-                    <a href="checkout.html" class="btn btn-secondary">Checkout</a>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- ekka Cart End -->
-
     <!-- Ec breadcrumb start -->
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
         <div class="container">
@@ -129,30 +51,31 @@
                     <div class="ec-blogs-content">
                         <div class="ec-blogs-inner">
                             <div class="row">
+                                @foreach ($data as $blog)
+
                                 <div class="col-md-6 col-sm-12 mb-6 ec-blog-block">
                                     <div class="ec-blog-inner">
                                         <div class="ec-blog-image">
                                             <a href="blog-detail-left-sidebar.html">
-                                                <img class="blog-image bi-rori" src="assets/images/blog-image/batik1.jpg"
+                                                <img class="blog-image bi-rori" src="{{ asset('blog/'. $blog->foto_sampul) }}"
                                                     alt="Blog" />
                                             </a>
                                         </div>
                                         <div class="ec-blog-content">
-                                            <h5 class="ec-blog-title"><a href="blog-detail-left-sidebar.html">Best-selling batik in 2023.</a></h5>
+                                            <h5 class="ec-blog-title"><a href="blog-detail-left-sidebar.html">{{$blog->judul_blog}}</a></h5>
 
-                                            <div class="ec-blog-date">By <span>Mr Admin</span> / January 10, 2023-2024
+                                            <div class="ec-blog-date">By <span>Mr Admin</span> / {{ $blog->created_at }}
                                             </div>
-                                            <div class="ec-blog-desc">Lorem Ipsum is simply dummy text of the printing
-                                                and typesetting industry. Lorem Ipsum has been the industry's standard
-                                                dummy text ever since the 1500s,</div>
+                                            <div class="ec-blog-desc">{!! $blog->deskripsi !!}</div>
 
-                                            <div class="ec-blog-btn"><a href="/detailblog" class="btn btn-primary">Read
+                                                <div class="ec-blog-btn"><a href="/detailblog/{{ $blog->id }}" class="btn btn-primary">Read
                                                     More</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12 mb-6 ec-blog-block">
+                                    @endforeach
+                                {{-- <div class="col-md-6 col-sm-12 mb-6 ec-blog-block">
                                     <div class="ec-blog-inner">
                                         <div class="ec-blog-image">
                                             <a href="blog-detail-left-sidebar.html">
@@ -271,7 +194,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <!-- Ec Pagination Start -->

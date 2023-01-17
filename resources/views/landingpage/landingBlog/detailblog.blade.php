@@ -130,64 +130,44 @@
                 <div class="ec-blogs-rightside col-lg-8 col-md-12">
 
                     <!-- Blog content Start -->
+                    {{-- @foreach ($detailblog as $detail) --}}
+
+
                     <div class="ec-blogs-content">
                         <div class="ec-blogs-inner">
                             <div class="ec-blog-main-img">
-                                <img class="blog-image bi-detail" src="assets/images/blog-image/batik3.jpg"
+                                <img class="blog-image bi-detail" src="{{ asset('blog/'. $detailblog->foto_sampul) }}"
                                     alt="Blog" />
                             </div>
                             <div class="ec-blog-date">
-                                <p class="date">28 JUNE, 2021-2022 - </p><a href="javascript:void(0)">5 Comments</a>
+                                <p class="date">{{ $detailblog->created_at }} - </p><a href="javascript:void(0)">5 Comments</a>
                             </div>
                             <div class="ec-blog-detail">
-                                <h3 class="ec-blog-title">20 Most awerded and trending items 2021-2022</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprhendit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. </p>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qei officia deser
-                                    mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
-                                    voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                                <p class="blockquote">Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do
-                                    eiusmod tempor incididunt labo dolor magna aliqua. Ut enim ad minim veniam quis
-                                    nostrud.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehendrit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur.</p>
+                                <h3 class="ec-blog-title">{{ $detailblog->judul_blog }}</h3>
+                                <p>{!! $detailblog->deskripsi !!}</p>
                                 <div class="ec-blog-sub-imgs">
                                     <div class="row">
+                                        @foreach (json_decode($detailblog->foto_kegiatan) as $foto)
                                         <div class="col-md-6">
-                                            <img class="blog-image" src="assets/images/blog-image/2.jpg"
-                                                alt="Blog" />
+                                            <img class="blog-image" src="{{ asset('fotokegiatan/' . $foto) }}"
+                                            alt="Blog" />
                                         </div>
-                                        <div class="col-md-6">
-                                            <img class="blog-image" src="assets/images/blog-image/3.jpg"
-                                                alt="Blog" />
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehendrit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur.</p>
-                            </div>
-                            <div class="ec-blog-tags">
-                                <a href="blog-left-sidebar.html">lifestyle ,</a>
-                                <a href="blog-left-sidebar.html">Outdoor ,</a>
-                                <a href="blog-left-sidebar.html">interior ,</a>
-                                <a href="blog-left-sidebar.html">sports ,</a>
-                                <a href="blog-left-sidebar.html">bloging ,</a>
-                                <a href="blog-left-sidebar.html">inspiration</a>
+                                <p>{!! $detailblog->deskripsi_produk !!}</p>
                             </div>
                             <div class="ec-blog-arrows">
-                                <a href="blog-detail-left-sidebar.html"><i class="ecicon eci-angle-left"></i> Prev
+                                @if ($min->id == $detailblog->id)
+                                @else
+                                <a href="{{ URL::to('detailblog/' . $previous) }}"><i class="ecicon eci-angle-left"></i> Prev
                                     Post</a>
-                                <a href="blog-detail-left-sidebar.html">Next Post <i
-                                        class="ecicon eci-angle-right"></i></a>
+                                @endif
+                                @if ($max->id == $detailblog->id)
+                                @else
+                                <a href="{{ URL::to('detailblog/' . $next) }}" class="nextpost">Next Post <i
+                                    class="ecicon eci-angle-right"></i></a>
+                                    @endif
                             </div>
                             <div class="ec-blog-comments">
                                 <div class="ec-blog-cmt-preview">
@@ -253,6 +233,7 @@
                             </div>
                         </div>
                     </div>
+                    {{-- @endforeach --}}
                     <!--Blog content End -->
                 </div>
                 <!-- Sidebar Area Start -->
@@ -267,34 +248,17 @@
                         <!-- Sidebar Recent Blog Block -->
                         <div class="ec-sidebar-block ec-sidebar-recent-blog">
                             <div class="ec-sb-title">
-                                <h3 class="ec-sidebar-title">Recent Articles</h3>
+                                <h3 class="ec-sidebar-title">Blog Lainnya</h3>
                             </div>
                             <div class="ec-sb-block-content">
+                                @foreach ($blogside as $side)
+
                                 <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">The best fashion influencers.</a>
+                                    <h5 class="ec-blog-title"><a href="/detailblog/{{ $side->id }}">{{ $side->judul_blog }}</a>
                                     </h5>
-                                    <div class="ec-blog-date">February 10, 2021-2022</div>
+                                    <div class="ec-blog-date">{{ $side->created_at }}</div>
                                 </div>
-                                <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Vogue Shopping Weekend.</a></h5>
-                                    <div class="ec-blog-date">March 14, 2021-2022</div>
-                                </div>
-                                <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Fashion Market Reveals Her
-                                            Jacket.</a></h5>
-                                    <div class="ec-blog-date">June 09, 2021-2022</div>
-                                </div>
-                                <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Summer Trending Fashion
-                                            Market.</a></h5>
-                                    <div class="ec-blog-date">July 17, 2021-2022</div>
-                                </div>
-                                <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Winter 2021 Trending Fashion
-                                            Market</a></h5>
-                                    <div class="ec-blog-date">August 02, 2021-2022</div>
-                                </div>
-                            </div>
+                                @endforeach
                         </div>
                         <!-- Sidebar Recent Blog Block -->
                         <!-- Sidebar Category Block -->

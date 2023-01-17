@@ -17,7 +17,7 @@ class SliderController extends Controller
         // dd($request->all);
         $data =Slider::find($id);
         $data->update([
-            // 'foto1' =>$request->foto1
+               // 'foto1' =>$request->foto1
         ]);
         // $data->update($request->all());
         // dd($data);

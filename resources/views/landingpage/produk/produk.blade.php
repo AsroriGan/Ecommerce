@@ -140,14 +140,15 @@
                         <div class="ec-product-ds">
                             <div class="ec-product-image">
                                 <a href="#" class="image">
-                                    <img class="pic-1" src="{{ asset('fotoproduk/' . $fotoproduk) }}" alt="">
+                                    <img class="pic-1" src="{{ asset('fotoproduk/' . $fotoproduk) }}"
+                                        alt="">
                                 </a>
                                 <span class="ec-product-discount-label">{{ $data->diskon }}%</span>
                                 <ul class="links">
                                     <li><a href="#" data-tip="Add to Wishlist"><img
                                                 src="assets/images/icons/wishlist.svg"
                                                 class="svg_img header_svg pro_svg" alt="wishlist" /></a></li>
-                                    <li><a href="/detail/{{$data->id}}" data-tip="Quick View"><img
+                                    <li><a href="/detail/{{ $data->id }}" data-tip="Quick View"><img
                                                 src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
                                                 alt="quick view" /></a></li>
                                 </ul>
@@ -163,7 +164,11 @@
                                 <h3 class="ec-title"><a href="#">{{ $data->nama_produk }}</a></h3>
                                 <div class="ec-price"><span>Rp.{{ $data->harga_asliproduk }}</span>Rp.
                                     {{ $data->harga_diskonproduk }}</div>
-                                <a class=" ec-add-to-cart" href="#">add to cart</a>
+                                <a href="#" class="ec-add-to-cart quickview" data-link-action="quickview"
+                                    title="Quick view" data-bs-toggle="modal" id="{{ $data->id }}"
+                                    onclick="productView(this.id)" data-bs-target="#ec_quickview_modal">add to
+                                    cart</a>
+                                {{-- <a class=" ec-add-to-cart" href="#">add to cart</a> --}}
                             </div>
                         </div>
                         <!--/END single card -->
@@ -196,53 +201,22 @@
                             <!-- Swiper -->
                             <div class="qty-product-cover">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
-                                        alt="">
+                                    <img class="img-responsive" src="-" alt="" id="gambar">
                                 </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
-                                        alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
-                                        alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
-                                        alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
-                                        alt="">
-                                </div>
+                                {{-- <div class="qty-slide"><img class="img-responsive" src="http://127.0.0.1:8000/fotoproduk/ftku.jpg" alt=""></div>
+                                <div class="qty-slide"><img class="img-responsive" src="http://127.0.0.1:8000/fotoproduk/ftku.jpg" alt=""></div> --}}
                             </div>
-                            <div class="qty-nav-thumb">
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
-                                        alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
-                                        alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
-                                        alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
-                                        alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
-                                        alt="">
-                                </div>
+                            <div class="qty-nav-thumb" id="gambar2" >
+                                {{-- <div class="qty-slide" >
+                                    <img class="img-responsive" src="-" alt="" id="gambar2">
+                                </div> --}}
+
+
                             </div>
                         </div>
                         <div class="col-md-7 col-sm-12 col-xs-12">
                             <div class="quickview-pro-content">
-                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse
-                                        for women</a>
+                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html" id="namaproduk">k</a>
                                 </h5>
                                 <div class="ec-quickview-rating">
                                     <i class="ecicon eci-star fill"></i>
@@ -252,40 +226,32 @@
                                     <i class="ecicon eci-star"></i>
                                 </div>
 
-                                <div class="ec-quickview-desc">Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                    since the 1500s,</div>
+                                <div class="ec-quickview-desc" id="deskripsipendek">l</div>
                                 <div class="ec-quickview-price">
-                                    <span class="old-price">$100.00</span>
-                                    <span class="new-price">$80.00</span>
+                                    <span class="old-price" id="hargaasli">$</span>
+                                    <span class="new-price" id="hargadiskon">$</span>
                                 </div>
 
                                 <div class="ec-pro-variation">
                                     <div class="ec-pro-variation-inner ec-pro-variation-color">
                                         <span>Color</span>
                                         <div class="ec-pro-color">
-                                            <ul class="ec-opt-swatch">
-                                                <li><span style="background-color:#ebbf60;"></span></li>
-                                                <li><span style="background-color:#75e3ff;"></span></li>
-                                                <li><span style="background-color:#11f7d8;"></span></li>
-                                                <li><span style="background-color:#acff7c;"></span></li>
-                                                <li><span style="background-color:#e996fa;"></span></li>
-                                            </ul>
+
+                                            <select class="form-select" aria-label="Default select example"
+                                                id="warna" name="warna">
+
+
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="ec-pro-variation-inner ec-pro-variation-size ec-pro-size">
                                         <span>Size</span>
-                                        <div class="ec-pro-variation-content">
-                                            <ul class="ec-opt-size">
-                                                <li class="active"><a href="#" class="ec-opt-sz"
-                                                        data-tooltip="Small">S</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a>
-                                                </li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a>
-                                                </li>
-                                                <li><a href="#" class="ec-opt-sz"
-                                                        data-tooltip="Extra Large">XL</a></li>
-                                            </ul>
+                                        <div class="ec-pro-variation-content" id="sizeArea">
+                                            <select class="form-select" aria-label="Default select example"
+                                                id="ukuran" name="ukuran">
+
+
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -565,34 +531,66 @@
 
     <!-- Script -->
 
-    <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
-    <script src="assets/js/vendor/popper.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
 
-    <!--Plugins JS-->
-    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-    <script src="assets/js/plugins/countdownTimer.min.js"></script>
-    <script src="assets/js/plugins/scrollup.js"></script>
-    <script src="assets/js/plugins/jquery.zoom.min.js"></script>
-    <script src="assets/js/plugins/slick.min.js"></script>
-    <script src="assets/js/plugins/infiniteslidev2.js"></script>
-    <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/plugins/jquery.sticky-sidebar.js"></script>
-    <!-- Google translate Js -->
-    <script src="assets/js/vendor/google-translate.js"></script>
+
+
+
     <script>
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en'
-            }, 'google_translate_element');
+        function productView(id) {
+            // alert(id)
+            $.ajax({
+                type: 'GET',
+                url: '/detailmodal/' + id,
+                dataType: 'json',
+                success: function(data) {
+
+                    // console.log(data.data.galeri_produk)
+                    // console.log(data.data.deskirpsi_pendek)
+                    $('#namaproduk').text(data.data.nama_produk);
+                    $('#deskripsipendek').text(data.data.deskirpsi_pendek);
+                    $('#hargaasli').text(data.data.harga_asliproduk);
+                    $('#hargadiskon').text(data.data.harga_diskonproduk);
+                    //  $('#pbrand').text(data.product.brand.brand_name);
+                    //  $('#pweight').text(data.product.product_weight);
+
+                    $.each(data.galeri, function(key, value) {
+                        // console.log(value);
+                        // var html = '';
+                        // html += '<div class="qty-slide"><img class="img-responsive" src="http://127.0.0.1:8000/fotoproduk/' + value +'" alt=""></div>';
+                        //  $('#gambar').html(html)
+                        //  $('#gambar2').html(html)
+                        // $('#gambar').append(' <img  src="http://127.0.0.1:8000/fotoproduk/' + value +'" >')
+                        // $('#gambar2').append(' <img class="img-responsive" src="http://127.0.0.1:8000/fotoproduk/' + value +'" >')
+
+                        $('#gambar').attr('src', 'http://127.0.0.1:8000/fotoproduk/' + value);
+                        // $('#gambar2').attr('src', 'http://127.0.0.1:8000/fotoproduk/' + value);
+                    })
+
+                    // Color
+                    $('select[name="warna"]').empty();
+                    $.each(data.warna, function(key, value) {
+
+
+                        $('select[name="warna"]').append('<option value=" ' + value + ' ">' +
+                            value + ' </option>')
+                    }) // end color
+
+                    // // Size
+                    $('select[name="ukuran"]').empty();
+                    $.each(data.ukuran, function(key, value) {
+                        $('select[name="ukuran"]').append('<option value=" ' + value + ' ">' + value +
+                            ' </option>')
+
+                    }) // end size
+                }
+
+            })
+
+
         }
     </script>
-    <!-- Main Js -->
-    <script src="assets/js/vendor/index.js"></script>
-    <script src="assets/js/main.js"></script>
-    @include('layouts.script')
+
+     @include('layouts.script')
 
     <!-- End Script
  </body>
