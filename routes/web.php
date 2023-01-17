@@ -91,6 +91,7 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 
 // Star kategroi Admin
+
 //Kategori
 Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
@@ -107,7 +108,6 @@ Route::get('/sub_subkategori', [AdminKategoriController::class, 'sub_subkategori
 Route::post('/sub_subkategoripost', [AdminKategoriController::class, 'sub_subkategoripost'])->name('sub_subkategoripost');
 Route::post('/updatesub_subkategori/{id}', [AdminKategoriController::class, 'updatesub_subkategori'])->name('updatesub_subkategori');
 Route::get('/deletesub_sub/{id}', [AdminKategoriController::class, 'deletesub_sub'])->name('deletesub_sub');
-
 
 // End Kategori Admin
 
@@ -131,6 +131,7 @@ Route::post('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecam
 Route::post('/editkecamatan/{id}', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
 Route::get('/deletekecamatan/{id}', [AdminDatawilayahController::class, 'deletekecamatan'])->name('deletekecamatan');
 //end data wilayah
+
 //start add Produk
 Route::get('/produkadmin', [AdminProdukController::class, 'index'])->name('produkadmin');
 Route::get('/addproduk', [AdminProdukController::class, 'addproduct'])->name('addproduk');
