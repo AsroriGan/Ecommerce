@@ -1,0 +1,9 @@
+.nextpost {
+    position: sticky !important;
+    left: 870px !important;
+}
+
+.imgdetail {
+    height: 110px;
+    width: 100px;
+}
