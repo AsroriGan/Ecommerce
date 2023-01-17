@@ -109,8 +109,17 @@ Route::get('/loginadmin', [AdminLogincontroller::class, 'login'])->name('login')
 // Star kategroi Admin
 
 //Kategori
-Route::get('/kategori', [AdminKategoriController::class, 'kategori'])->name('kategori');
-Route::get('/tabel', [AdminKategoriController::class, 'tabel'])->name('tabel');
+Route::get('/kategori', [AdminKategoriController::class, 'halamankategori'])->name('kategori');
+Route::get('/create', [AdminKategoriController::class, 'create'])->name('create');
+Route::get('/store', [AdminKategoriController::class, 'store'])->name('store');
+Route::get('/tampilkandata', [AdminKategoriController::class, 'tampilkandata'])->name('tampilkandata');
+Route::get('/show/{id}', [AdminKategoriController::class, 'show'])->name('show');
+Route::get('/update/{id}', [AdminKategoriController::class, 'update'])->name('update');
+Route::get('/destroy/{id}', [AdminKategoriController::class, 'destroy'])->name('destroy');
+// Route::post('/_validation', [AdminKategoriController::class, '_validation'])->name('_validation');
+
+
+
 Route::post('/kategoripost', [AdminKategoriController::class, 'kategoripost'])->name('kategoripost');
 Route::post('/editkategoripost/{id}', [AdminKategoriController::class, 'editkategoripost'])->name('editkategoripost');
 Route::get('/deletekategori/{id}', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');

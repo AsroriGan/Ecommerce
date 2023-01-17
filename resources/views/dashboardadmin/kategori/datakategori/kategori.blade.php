@@ -45,11 +45,7 @@
                                             <div
                                                 class="invoices-settings-btn
                                     invoices-settings-btn-one">
-                                                <a href="#" class="btn" data-bs-toggle="modal"
-                                                    data-bs-target="#modal-kategori">
-                                                    <i data-feather="plus-circle"></i>
-                                                    Tambah Item
-                                                </a>
+                                                <button class="btn" onclick="modaltambah()" ><i data-feather="plus-circle"></i>Tambah Item</button>
                                             </div>
                                         </div>
                                     </div>
@@ -64,8 +60,8 @@
                         <div class="card">
 
                             <div class="card-body">
-                                <div class="table-responsive" id="tabel">
-
+                                <div class="table-responsive" id="tampilkandata">
+                                      
                                 </div>
                             </div>
                         </div>
@@ -75,44 +71,66 @@
         </div>
     </div>
 
-    <div id="modal-kategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    {{-- <div id="edit-kategori{{ $data->id }}" class="modal fade"
+        tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Kategori</h4>
+                    <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form action="/editkategoripost"
+                        method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="field-3"
+                                        class="form-label">Kategori
+                                        :</label>
+                                    <input type="text" name="kategori" id="kategori"
+                                        class="form-control kategori"
+                                        value="{{ $data->kategori }}"
+                                        placeholder="Masukan Kategori">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"
+                                class="btn btn-secondary waves-effect"
+                                data-bs-dismiss="modal">Kembali</button>
+                            <button
+                                class="btn btn-info waves-effect waves-light" >Edit
+                                Kategori</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <!-- Modal Tambah -->
+
+    <div id="modalkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div id="success"></div>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Tambah Kategori</h4>
+                    <h4 class="modal-title" id="labelModal">Tambah Kategori</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div id="tampilkandata">
+
+                    </div>
                 </div>
-                <div class="modal-body p-4">
-                    <form action="/kategoripost" method="POST">
-                        @csrf
-                        <div class="row">
-                            {{-- <ul id="validasi"></ul> --}}
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label
-                                        @error('kategori')
-                                        class="text-danger "
-                                    @enderror
-                                        class="form-label">Kategori
-                                        @error('kategori')
-                                            {{ $message }}
-                                        @enderror
-                                    </label>
-                                    <input type="text" id="kategori" name="kategori" class="form-control"
-                                        placeholder="Masukan Kategori">
-                                </div>
-                                <ul id="validasi"></ul>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary waves-effect"
-                                data-bs-dismiss="modal">Kembali</button>
-                            <button class="btn btn-info waves-effect waves-light save_data">Tambah
-                                Kategori</button>
-                        </div>
-                    </form>
+                <div class="modal-body">
+                    <div id="halcreate" class="p-4">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -122,28 +140,87 @@
 
     @include('layoutsadmin.script')
 
+    
     <script>
-        @if (Session::has('success'))
-            toastr.success("{{ Session::get('success') }}")
-        @endif
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            tabel()
-        });
-
-        function tabel() {
-            $.get("{{ url('tabel')}}", {}, function(data, kategori) {
-                $("#tabel").html(data);
+        // Tampilkan Data
+        $(document).ready(function () {
+            tampilkandata()
+        })
+        function tampilkandata() {
+            $.get("{{ url('tampilkandata') }}", {}, function(data, status) {
+                $("#tampilkandata").html(data);
             });
         }
+
+        // Halaman Create
+        function modaltambah() {
+                $.get("{{ url('create') }}", {}, function(data, status) {
+                $("#halcreate").html(data);
+                $("#modalkategori").modal('show');
+            });
+        }
+
+        // Proses Create Data
+        function store() {
+            var kategori = $("#kategori").val();     
+            $.ajax({
+                type: "get",
+                url: "{{ url('store') }}",
+                data: "kategori=" + kategori,
+                success: function(data) {
+                    $(".btn-close").click();
+                    tampilkandata()
+                },
+                error: function(error) {
+                    console.log(error.responseJSON);
+                    let error_log = error.responseJSON.errors;
+                    if(error.status == 422) {
+                        $('#modalkategori').find('[name="kategori"]').prev().html('<span style="color:red">Kategori | '+error_log.kategori[0]+' </span>');
+                    }
+                }
+            });
+        }
+
+        // Halaman Edit show
+        function show(id) {
+                $.get("{{ url('show') }}/" + id, {}, function(data, status) {
+                $("#halcreate").html(data);
+                $("#modalkategori").modal('show');
+            });
+        }
+
+         // Proses Update Data
+         function update(id) {
+            var kategori = $("#kategori").val();
+            $.ajax({
+                type: "get",
+                url: "{{ url('update') }}/" + id,
+                data: "kategori=" + kategori,
+                success: function(data) {
+                    $(".btn-close").click();
+                    tampilkandata()
+                }
+            });
+        }
+
+        // Proses Delete Data
+        function destroy(id) { 
+            $.ajax({
+                type: "get",
+                url: "{{ url('destroy') }}/" + id,
+                data: "kategori=" + kategori,
+                success: function(data) {
+                    
+                    $(".btn-close").click();
+                    tampilkandata()
+                }
+            });
+        }
+
+    </script>
+
+
+    {{-- <script>
         $(document).ready(function() {
             $(document).on('click', '.save_data', function(e) {
                 e.preventDefault();
@@ -160,42 +237,31 @@
                     }
                 });
 
-                $.ajax({
-                    type: "POST",
-                    url: "/kategoripost",
-                    data: data,
-                    datatype: 'json',
-                    success: function(response) {
-                        // console.log(response.errors.kategori);
-                        if (response.status == 400) {
-                            $('#validasi').html("");
-                            $('#validasi').addClass('alert alert-danger');
-                            $.each(response.errors, function(key, err_values) {
-                                $('#validasi').append('<li>' + err_values + '</li>');
-                            });
-                            // console.log(response.status);
-                        } else {
-                            $('#modal-kategori').html('')
-                            $('#modal-kategori').modal('hide');
-                            $('#modal-kategori').find('input').val();
-                            tabel()
-                        }
-                    }
+                // $.ajax({
+                //     type: "POST",
+                //     url: "/kategoripost",
+                //     data: data,
+                //     datatype: 'json',
+                //     success: function(response) {
+                //         // console.log(response.errors.kategori);
+                //         if (response.status == 400) {
+                //             $('#validasi').html("");
+                //             $('#validasi').addClass('alert alert-danger');
+                //             $.each(response.errors, function(key, err_values) {
+                //                 $('#validasi').append('<li>' + err_values + '</li>');
+                //             });
+                //         } else {
+                //             $('#modal-kategori').html('')
+                //             $('#modal-kategori').modal('hide');
+                //             $('#modal-kategori').find('input').val();
+                //             tabel()
+                //         }
+                //     }
 
-                });
+                // });
             });
         });
-
-        // function update() {
-        //     $.ajax({
-        //         url: '/kategori',
-        //         type: 'get',
-        //         success: function(response) {
-        //             $('#tavbel').html(response)
-        //         }
-        //     });
-        // }
-    </script>
+    </script> --}}
 
     {{-- <script type="text/javascript">
         @if ($errors->any())
@@ -240,6 +306,17 @@
     </script> --}}
 
     <script>
+
+        // Toaster
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}")
+        @endif
+
+        // Data Table
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+
         $('.delete').click(function() {
             var kategori = $(this).attr('data-kategori');
             var id = $(this).attr('data-id');
