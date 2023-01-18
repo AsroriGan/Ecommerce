@@ -3,7 +3,7 @@
 @include('layoutsadmin.head')
 
 <body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme">
-
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"> --}}
     <div class="main-wrapper">
 
         <!-- navbar Star -->
@@ -63,16 +63,8 @@
                 <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog"
                     aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;">
                     <div class="modal-dialog">
-                        <div id="success"></div>
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Tambah provinsi</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div id="halcreate">
-
-                            </div>
+                        {{-- <div id="success"></div> --}}
+                        <div id="halcreate" class="modal-content">
                         </div>
                     </div>
                 </div>
@@ -83,8 +75,8 @@
                                 <h4 class="card-title">Default Datatable</h4>
                             </div> --}}
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="table" class="datatable table table-stripped">
+                                <div class="table-responsive" id="viewdata">
+                                    {{-- <table id="table" class="datatable table table-stripped">
                                         <thead>
                                             <tr>
                                                 <th>N0 .</th>
@@ -100,58 +92,17 @@
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
                                                     <td>{{ $row->provinsi }}</td>
-                                                    <td><a href="javascript:void(0);"
-                                                            class="btn btn-sm btn-white text-success me-2"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#con-close-modal{{ $row->id }}"><i
+                                                    <td><a href="#" onclick="viewprov({{$row->id}})" class="btn btn-sm btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i>Edit</a>
-                                                        <a data-provinsi="{{ $row->provinsi }}"
+                                                        <a onclick="deleteprov({{$row->id}})" data-provinsi="{{ $row->provinsi }}"
                                                             data-id="{{ $row->id }}" href="javascript:void(0);"
-                                                            class="btn btn-sm btn-white text-danger me-2 delete"><i
+                                                            class="btn btn-sm btn-white text-danger me-2"><i
                                                                 class="far fa-trash-alt me-1"></i>Delete</a>
                                                     </td>
                                                 </tr>
-                                                <div id="con-close-modal{{ $row->id }}" class="modal fade"
-                                                    tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                                                    aria-hidden="true" style="display:none;">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Tambah provinsi</h4>
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <form action="/editprovinsi/{{ $row->id }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                <div class="modal-body p-4">
-                                                                    <div class="row">
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label for="field-1"
-                                                                                    class="form-label">Provinsi</label>
-                                                                                <input type="text" name="provinsi"
-                                                                                    class="form-control" id="field-1"
-                                                                                    value="{{ $row->provinsi }}">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button"
-                                                                        class="btn btn-secondary waves-effect"
-                                                                        data-bs-dismiss="modal">Close</button>
-                                                                    <button type="submit"
-                                                                        class="btn btn-info waves-effect waves-light">Save
-                                                                        changes</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             @endforeach
                                         </tbody>
-                                    </table>
+                                    </table> --}}
                                 </div>
                             </div>
                         </div>
@@ -166,16 +117,30 @@
 
     @include('layoutsadmin.script')
     <script>
-        $(document).ready(function() {
-            $('#table').DataTable();
-        });
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}")
+        @endif
+        @if (Session::has('error'))
+            toastr.success("{{ Session::get('error') }}")
+        @endif
     </script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> --}}
     <script>
+        //view data in table
+        $(document).ready(function() {
+            viewdata();
+        })
+
+        function viewdata() {
+            $.get("/viewdataprovinsi", {}, function(data, status) {
+                $("#viewdata").html(data);
+            });
+        }
         // Hal create
         function modaltambah() {
             $.get("/createprovinsi", {}, function(data, status) {
                 $("#halcreate").html(data);
-                $("#modalkategori").modal('show');
+                $("#con-close-modal").modal('show');
             });
         }
 
@@ -185,21 +150,85 @@
             // console.log(provinsi);
             $.ajax({
                 type: "get",
-                url: "{{ url('store') }}",
-                data: "kategori=" + kategori,
+                url: "/insertprovinsi",
+                data: "provinsi=" + provinsi,
                 success: function(data) {
                     $(".btn-close").click();
-                    tampilkandata()
+                    viewdata();
                 },
                 error: function(error) {
                     console.log(error.responseJSON);
                     let error_log = error.responseJSON.errors;
+                    // conole.log(error.responseJSON.errors);
                     if (error.status == 422) {
-                        $('#modalkategori').find('[name="kategori"]').prev().html(
-                            '<span style="color:red">Kategori | ' + error_log.kategori[0] + ' </span>');
+                        $('#valprovinsi').addClass('is-invalid');
+                        $('#feedbackprov').append(error_log.provinsi[0]);
                     }
                 }
             });
+        }
+
+        //view edit prov
+        function viewprov(id) {
+            $.get("/provinsiview/" + id, {}, function(data, status) {
+                $("#halcreate").html(data);
+                $("#con-close-modal").modal('show');
+            });
+        }
+
+        //upadte prov
+        function updateprov(id) {
+            let provinsi = $("#valprovinsi").val();
+            $.ajax({
+                type: "get",
+                url: "/editprovinsi/" + id,
+                data: "provinsi=" + provinsi,
+                success: function(data) {
+                    $(".btn-close").click();
+                    viewdata();
+                }
+            });
+        }
+
+        //delete provinsi
+        function deleteprov(id) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1
+            }).then(function(t) {
+                if (t.value) {
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                    $.ajax({
+                        type: "get",
+                        url: "/deleteprovinsi/" + id,
+                        // data: "kategori=" + kategori,
+                        success: function(data) {
+                            viewdata();
+                            // toastr.success(data.message);
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        type: "error",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                }
+            })
         }
     </script>
     <script>

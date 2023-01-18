@@ -124,7 +124,7 @@ Route::get('/destroy/{id}', [AdminKategoriController::class, 'destroy'])->name('
 // Route::get('/deletekategori/{id}', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
 // Route::post('/_validation', [AdminKategoriController::class, '_validation'])->name('_validation');
     //SubKategori
-Route::get('/subkategori', [AdminKategoriController::class, 'halamanSubKategori'])->name('subkategori');
+Route::get('/subkategori', [AdminKategoriController::class, 'ubKategori'])->name('subkategori');
 Route::get('/createsubkategori', [AdminKategoriController::class, 'createsubkategori'])->name('createsubkategori');
 Route::get('/storesubKategori', [AdminKategoriController::class, 'storesubKategori'])->name('storesubKategori');
 Route::get('/tampilsubkategori', [AdminKategoriController::class, 'tampilsubkategori'])->name('tampilsubkategori');
