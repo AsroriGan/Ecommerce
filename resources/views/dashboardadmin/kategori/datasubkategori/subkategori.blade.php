@@ -202,6 +202,29 @@
                 },
             });
         }
+
+        // Halaman Edit Show Sub-Kategori
+        function showSubkategori(id) {
+            $.get("{{ url('showSubkategori') }}/" + id, {}, function(data, status) {
+                $("#createsubkategori").html(data);
+                $("#modalsubkategori").modal('show');
+            });
+        }
+
+        // Halaman Proses Edit SubKategori
+        function updatesubkategori(id) {
+            var kategori = $("#kategori").val();
+            var sub_kategori = $("#sub_kategori").val();
+            $.ajax({
+                type: "get",
+                url: "{{ url('updatesubkategori') }}/" + id,
+                data: "sub_kategori=" + sub_kategori + "&kategori=" + kategori,
+                success: function(data) {
+                    $(".btn-close").click();
+                    tampilsubkategori()
+                }
+            });
+        }
     </script>
 
 
