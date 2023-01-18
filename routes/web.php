@@ -146,10 +146,12 @@ Route::get('/deletesub_sub/{id}', [AdminKategoriController::class, 'deletesub_su
 //start data wilayah
 //provinsi
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
-Route::get('/createprovinsi', [AdminDatawilayahController::class, 'create'])->name('create');
+Route::get('/viewdataprovinsi', [AdminDatawilayahController::class, 'viewdataprovinsi']);
 //insert & edit & delete provinsi
-Route::post('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');
-Route::post('/editprovinsi/{id}', [AdminDatawilayahController::class, 'editprovinsi'])->name('editprovinsi');
+Route::get('/createprovinsi', [AdminDatawilayahController::class, 'create'])->name('create');
+Route::get('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');
+Route::get('/provinsiview/{id}', [AdminDatawilayahController::class, 'provinsiview']);
+Route::get('/editprovinsi/{id}', [AdminDatawilayahController::class, 'editprovinsi'])->name('editprovinsi');
 Route::get('/deleteprovinsi/{id}', [AdminDatawilayahController::class, 'deleteprovinsi'])->name('deleteprovinsi');
 //kabupaten
 Route::get('/datawilayahkabupaten', [AdminDatawilayahController::class, 'datawilayahkabupaten'])->name('datawilayahkabupaten');
