@@ -58,6 +58,7 @@ Route::get('/detailmodal/{id}', [LandingProdukController::class, 'detailmodal'])
 Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang')->middleware('auth');
 Route::get('/hapuscart/{id}', [LandingCartController::class, 'hapuscart'])->name('hapuscart');
 Route::post('/cartpost/{id}', [LandingCartController::class, 'cartpost'])->name('cartpost');
+Route::post('/postcart', [LandingCartController::class, 'postcart'])->name('postcart');
 
 
 // Blog
