@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{asset('template/assets/css/style.css')}}">
     <!-- Data Table -->
     <link rel="stylesheet" href="{{asset('template/assets/plugins/datatables/datatables.min.css')}}">
-    <link rel="stylesheet" href="{{asset('template/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('zaki.css')}}">
     {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> --}}
 

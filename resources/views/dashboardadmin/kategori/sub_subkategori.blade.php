@@ -133,10 +133,11 @@
                                                                             </select>
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label for="field-3"
-                                                                                class="form-label">Sub Kategori
+                                                                            <label for="field-3" class="form-label">Sub
+                                                                                Kategori
                                                                                 :</label>
-                                                                            <select class="form-control" name="sub_kategori"
+                                                                            <select class="form-control"
+                                                                                name="sub_kategori"
                                                                                 aria-label="Default select example">
                                                                                 <option
                                                                                     value="{{ $row->datasubkategori->id }}">

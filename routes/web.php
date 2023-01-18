@@ -140,6 +140,7 @@ Route::get('/deletesub_sub/{id}', [AdminKategoriController::class, 'deletesub_su
 //start data wilayah
 //provinsi
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
+Route::get('/createprovinsi', [AdminDatawilayahController::class, 'create'])->name('create');
 //insert & edit & delete provinsi
 Route::post('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');
 Route::post('/editprovinsi/{id}', [AdminDatawilayahController::class, 'editprovinsi'])->name('editprovinsi');

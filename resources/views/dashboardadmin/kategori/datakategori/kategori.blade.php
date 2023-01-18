@@ -45,7 +45,8 @@
                                             <div
                                                 class="invoices-settings-btn
                                     invoices-settings-btn-one">
-                                                <button class="btn" onclick="modaltambah()" ><i data-feather="plus-circle"></i>Tambah Item</button>
+                                                <button class="btn" onclick="modaltambah()"><i
+                                                        data-feather="plus-circle"></i>Tambah Item</button>
                                             </div>
                                         </div>
                                     </div>
@@ -61,7 +62,7 @@
 
                             <div class="card-body">
                                 <div class="table-responsive" id="tampilkandata">
-                                      
+
                                 </div>
                             </div>
                         </div>
@@ -140,12 +141,13 @@
 
     @include('layoutsadmin.script')
 
-    
+
     <script>
         // Tampilkan Data
-        $(document).ready(function () {
+        $(document).ready(function() {
             tampilkandata()
         })
+
         function tampilkandata() {
             $.get("{{ url('tampilkandata') }}", {}, function(data, status) {
                 $("#tampilkandata").html(data);
@@ -154,7 +156,7 @@
 
         // Halaman Create
         function modaltambah() {
-                $.get("{{ url('create') }}", {}, function(data, status) {
+            $.get("{{ url('create') }}", {}, function(data, status) {
                 $("#halcreate").html(data);
                 $("#modalkategori").modal('show');
             });
@@ -162,7 +164,7 @@
 
         // Proses Create Data
         function store() {
-            var kategori = $("#kategori").val();     
+            var kategori = $("#kategori").val();
             $.ajax({
                 type: "get",
                 url: "{{ url('store') }}",
@@ -174,8 +176,9 @@
                 error: function(error) {
                     console.log(error.responseJSON);
                     let error_log = error.responseJSON.errors;
-                    if(error.status == 422) {
-                        $('#modalkategori').find('[name="kategori"]').prev().html('<span style="color:red">Kategori | '+error_log.kategori[0]+' </span>');
+                    if (error.status == 422) {
+                        $('#modalkategori').find('[name="kategori"]').prev().html(
+                            '<span style="color:red">Kategori | ' + error_log.kategori[0] + ' </span>');
                     }
                 }
             });
@@ -183,14 +186,14 @@
 
         // Halaman Edit show
         function show(id) {
-                $.get("{{ url('show') }}/" + id, {}, function(data, status) {
+            $.get("{{ url('show') }}/" + id, {}, function(data, status) {
                 $("#halcreate").html(data);
                 $("#modalkategori").modal('show');
             });
         }
 
-         // Proses Update Data
-         function update(id) {
+        // Proses Update Data
+        function update(id) {
             var kategori = $("#kategori").val();
             $.ajax({
                 type: "get",
@@ -204,19 +207,18 @@
         }
 
         // Proses Delete Data
-        function destroy(id) { 
+        function destroy(id) {
             $.ajax({
                 type: "get",
                 url: "{{ url('destroy') }}/" + id,
                 data: "kategori=" + kategori,
                 success: function(data) {
-                    
+
                     $(".btn-close").click();
                     tampilkandata()
                 }
             });
         }
-
     </script>
 
 
@@ -306,7 +308,6 @@
     </script> --}}
 
     <script>
-
         // Toaster
         @if (Session::has('success'))
             toastr.success("{{ Session::get('success') }}")
