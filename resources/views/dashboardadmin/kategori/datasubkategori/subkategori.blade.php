@@ -31,7 +31,7 @@
                         <div class="page-header">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="page-title">Data Kategori / Kategori</h3>
+                                    <h3 class="page-title">Data Kategori / SubKategori</h3>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,10 @@
                                             <div
                                                 class="invoices-settings-btn
                                     invoices-settings-btn-one">
-                                                <button class="btn" onclick="modaltambah()" ><i data-feather="plus-circle"></i>Tambah Item</button>
+                                                <button href="#" class="btn" onclick="modalsubkategori()">
+                                                    <i data-feather="plus-circle"></i>
+                                                    Tambah Item
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -58,9 +61,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-
                             <div class="card-body">
-                                <div class="table-responsive" id="tampilkandata">
+                                <div class="table-responsive" id="tampilsubkategori">
+
 
                                 </div>
                             </div>
@@ -70,8 +73,9 @@
             </div>
         </div>
     </div>
+    </div>
 
-    {{-- <div id="edit-kategori{{ $data->id }}" class="modal fade"
+    {{-- <div id="edit-subkategori{{ $datasub->id }}" class="modal fade"
         tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
@@ -83,7 +87,8 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <form action="/editkategoripost"
+                    <form
+                        action="editsub_kategoripost/{{ $datasub->id }}"
                         method="POST">
                         @csrf
                         <div class="row">
@@ -92,43 +97,64 @@
                                     <label for="field-3"
                                         class="form-label">Kategori
                                         :</label>
-                                    <input type="text" name="kategori" id="kategori"
-                                        class="form-control kategori"
-                                        value="{{ $data->kategori }}"
+                                    <select id="kategori"
+                                        class="form-control"
+                                        name="kategori"
+                                        aria-label="Default select example">
+                                        <option
+                                            value="{{ $datasub->idkategoris->kategori }}" disabled selected>
+                                            {{ $datasub->idkategoris->kategori }}
+                                        </option>
+                                        @foreach ($data as $datakate)
+                                            <option
+                                                value="{{ $datakate->id }}">
+                                                {{ $datakate->kategori }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="field-3"
+                                        class="form-label">Sub Kategori
+                                        :</label>
+                                    <input type="text"
+                                        id="sub_kategori"
+                                        name="sub_kategori"
+                                        class="form-control"
+                                        value="{{ $datasub->sub_kategori }}"
+                                        id="field-3"
                                         placeholder="Masukan Kategori">
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button"
-                                class="btn btn-secondary waves-effect"
-                                data-bs-dismiss="modal">Kembali</button>
-                            <button
-                                class="btn btn-info waves-effect waves-light" >Edit
-                                Kategori</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="button"
+                                    class="btn btn-secondary waves-effect"
+                                    data-bs-dismiss="modal">Kembali</button>
+                                <button
+                                    class="btn btn-info waves-effect waves-light">Edit
+                                    Kategori</button>
+                            </div>
                     </form>
                 </div>
             </div>
         </div>
     </div> --}}
 
-    <!-- Modal Tambah -->
-
-    <div id="modalkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <div id="modalsubkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
-            <div id="success"></div>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="labelModal">Tambah Kategori</h4>
+                    <h4 class="modal-title">Tambah Kategori</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div id="tampilkandata">
+                    <div id="tampilsubkategori">
 
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="halcreate" class="p-4">
+                    <div id="createsubkategori">
 
                     </div>
                 </div>
@@ -136,137 +162,51 @@
         </div>
     </div>
 
+
+
     <!-- Star Script -->
 
     @include('layoutsadmin.script')
 
-
     <script>
-        // Tampilkan Data
-        $(document).ready(function () {
-            tampilkandata()
+        //Tampilkan Data SubKategori
+        $(document).ready(function() {
+            tampilsubkategori()
         })
-        function tampilkandata() {
-            $.get("{{ url('tampilkandata') }}", {}, function(data, status) {
-                $("#tampilkandata").html(data);
+
+        function tampilsubkategori() {
+            $.get("{{ url('tampilsubkategori') }}", {}, function(data, status) {
+                $("#tampilsubkategori").html(data);
             });
         }
 
-        // Halaman Create
-        function modaltambah() {
-                $.get("{{ url('create') }}", {}, function(data, status) {
-                $("#halcreate").html(data);
-                $("#modalkategori").modal('show');
+        // Halaman Create SubKategori
+        function modalsubkategori() {
+            $.get("{{ url('createsubkategori') }}", {}, function(data, status) {
+                $("#createsubkategori").html(data);
+                $("#modalsubkategori").modal('show');
             });
         }
 
-        // Proses Create Data
-        function store() {
+         // Proses Create Data SubKategori
+         function storesubKategori() {
             var kategori = $("#kategori").val();
+            var sub_kategori = $("#sub_kategori").val();
             $.ajax({
                 type: "get",
-                url: "{{ url('store') }}",
-                data: "kategori=" + kategori,
+                url: "{{ url('storesubKategori') }}",
+                data:  "sub_kategori=" + sub_kategori + "&kategori=" + kategori,
                 success: function(data) {
                     $(".btn-close").click();
-                    tampilkandata()
+                    tampilsubkategori()
                 },
-                error: function(error) {
-                    console.log(error.responseJSON);
-                    let error_log = error.responseJSON.errors;
-                    if(error.status == 422) {
-                        $('#modalkategori').find('[name="kategori"]').prev().html('<span style="color:red">Kategori | '+error_log.kategori[0]+' </span>');
-                    }
-                }
             });
         }
-
-        // Halaman Edit show
-        function show(id) {
-                $.get("{{ url('show') }}/" + id, {}, function(data, status) {
-                $("#halcreate").html(data);
-                $("#modalkategori").modal('show');
-            });
-        }
-
-         // Proses Update Data
-         function update(id) {
-            var kategori = $("#kategori").val();
-            $.ajax({
-                type: "get",
-                url: "{{ url('update') }}/" + id,
-                data: "kategori=" + kategori,
-                success: function(data) {
-                    $(".btn-close").click();
-                    tampilkandata()
-                }
-            });
-        }
-
-        // Proses Delete Data
-        function destroy(id) {
-            $.ajax({
-                type: "get",
-                url: "{{ url('destroy') }}/" + id,
-                data: "kategori=" + kategori,
-                success: function(data) {
-                    $(".btn-close").click();
-                    tampilkandata()
-                }
-            });
-        }
-
     </script>
 
-    {{-- <script>
-        function openmodal() {
-            $('modal-kategori').modal('show')
-        }
-
-        function validasi() {
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-            var kategori = $('#kategori').val();
-
-            $('#kategoriError').addClass('d-none');
-
-            $.ajax({
-                type: "POST",
-                url: "{{ route('validasikategori') }}",
-                data: {
-                    _token: CSRF_TOKEN,
-                    kategori: kategori,
-                },
-                success: function(data) {
-
-                },
-                error: function(data) {
-
-                    var errors = data.responseJSON;
-                    if ($.isEmptyObject(errors) == false) {
-                        $.each(errors.errors, function (key, value) {
-                            var ErrorID = '#' + key + 'Error';
-                            $(ErrorID).removeClass('d-none');
-                            $(ErrorID).text(value)
-                        })
-                    }
-                }
-            });
-        }
-    </script> --}}
 
     <script>
-
-        // Toaster
-        @if (Session::has('success'))
-            toastr.success("{{ Session::get('success') }}")
-        @endif
-
-        // Data Table
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
-
-        $('.delete').click(function() {
+        $("#deletesubkategori").click(function() {
             var kategori = $(this).attr('data-kategori');
             var id = $(this).attr('data-id');
             Swal.fire({
@@ -282,7 +222,7 @@
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
-                    window.location = "/deletekategori/" + id;
+                    window.location = "/deletesubkategori/" + id;
                     Swal.fire({
                         type: "success",
                         title: "Deleted!",
@@ -299,6 +239,16 @@
                 }
             })
         })
+    </script>
+
+    <script>
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}")
+        @endif
+
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
     </script>
 
     <!-- End Script -->

@@ -4,10 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\kategori;
+use App\Models\subkategori;
 use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
+
+    // Untuk Kategori
+
     /**
      * Display a listing of the resource.
      *
@@ -109,5 +113,41 @@ class KategoriController extends Controller
     {
         $data =kategori::findOrFail($id);
         $data->delete();
+    }
+
+    // Untuk SubKategori
+
+    public function halamanSubKategori()
+    {
+        $data = subkategori::all();
+        return view('dashboardadmin.kategori.datasubkategori.subkategori', compact('data'));
+    }
+
+    public function tampilsubkategori()
+    {
+        $data = kategori::all();
+        $datas = subkategori::all();
+        return view('dashboardadmin.kategori.datasubkategori.tampilsubkategori')->with([
+            'data' => $data,
+            'datas' => $datas
+        ]);
+    }
+
+    public function createsubkategori()
+    {
+        $data = kategori::all();
+        return view('dashboardadmin.kategori.datasubkategori.createsubkategori', compact('data'));
+    }
+
+    public function storesubKategori(Request $request)
+    {
+        $this->_validation($request);
+        // $data['kategori'] = $request->kategori;
+        // $datas['sub_kategori'] = $request->sub_kategori;
+        // kategori::insert($data);
+        subkategori::insert([
+            'kategori' => $request->kategori,
+            'sub_kategori' => $request->sub_kategori,
+        ]);
     }
 }
