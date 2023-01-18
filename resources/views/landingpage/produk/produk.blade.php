@@ -193,8 +193,7 @@
     <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-xs-12">
@@ -216,7 +215,7 @@
                         </div>
                         <div class="col-md-7 col-sm-12 col-xs-12">
                             <div class="quickview-pro-content">
-                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html" id="namaproduk">k</a>
+                                <h5 class="ec-quick-title"><a href="_" id="namaproduk">k</a>
                                 </h5>
                                 <div class="ec-quickview-rating">
                                     <i class="ecicon eci-star fill"></i>
@@ -231,39 +230,42 @@
                                     <span class="old-price" id="hargaasli">$</span>
                                     <span class="new-price" id="hargadiskon">$</span>
                                 </div>
+                                <form action="/postcart" method="post">
+                                    @csrf
+                                    <div class="ec-pro-variation">
+                                        <div class="ec-pro-variation-inner ec-pro-variation-color">
+                                            <span>Color</span>
+                                            <div class="ec-pro-color">
 
-                                <div class="ec-pro-variation">
-                                    <div class="ec-pro-variation-inner ec-pro-variation-color">
-                                        <span>Color</span>
-                                        <div class="ec-pro-color">
-
-                                            <select class="form-select" aria-label="Default select example"
-                                                id="warna" name="warna">
+                                                <select class="form-select" aria-label="Default select example"
+                                                    id="warna" name="warna">
 
 
-                                            </select>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="ec-pro-variation-inner ec-pro-variation-size ec-pro-size">
+                                            <span>Size</span>
+                                            <div class="ec-pro-variation-content" id="sizeArea">
+                                                <select class="form-select" aria-label="Default select example"
+                                                    id="ukuran" name="ukuran">
+
+
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="ec-pro-variation-inner ec-pro-variation-size ec-pro-size">
-                                        <span>Size</span>
-                                        <div class="ec-pro-variation-content" id="sizeArea">
-                                            <select class="form-select" aria-label="Default select example"
-                                                id="ukuran" name="ukuran">
-
-
-                                            </select>
+                                    <div class="ec-quickview-qty">
+                                        <div class="qty-plus-minus">
+                                            <input class="qty-input" type="text" name="jumlah" value="1" />
+                                            <input class="qty-input" type="hidden" name="id" value="" id="ids" />
+                                        </div>
+                                        <div class="ec-quickview-cart ">
+                                            <button class="btn btn-primary"><img src="{{asset('assets/images/icons/cart.svg')}}"
+                                                    class="svg_img pro_svg" alt="" /> Add To Cart</button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="ec-quickview-qty">
-                                    <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                                    </div>
-                                    <div class="ec-quickview-cart ">
-                                        <button class="btn btn-primary"><img src="assets/images/icons/cart.svg"
-                                                class="svg_img pro_svg" alt="" /> Add To Cart</button>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -350,7 +352,7 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_01.jpg" class="ec-user-img"
+                                    <img src="{{asset('assets/images/whatsapp/profile_01.jpg')}}" class="ec-user-img"
                                         alt="Profile image">
                                     <span class="ec-status-icon"></span>
                                 </div>
@@ -374,7 +376,7 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_02.jpg" class="ec-user-img"
+                                    <img src="{{asset('assets/images/whatsapp/profile_02.jpg')}}" class="ec-user-img"
                                         alt="Profile image">
                                     <span class="ec-status-icon ec-online"></span>
                                 </div>
@@ -398,7 +400,7 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_03.jpg" class="ec-user-img"
+                                    <img src="{{asset('assets/images/whatsapp/profile_03.jpg')}}" class="ec-user-img"
                                         alt="Profile image">
                                     <span class="ec-status-icon ec-offline"></span>
                                 </div>
@@ -422,7 +424,7 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_04.jpg" class="ec-user-img"
+                                    <img src="{{asset('assets/images/whatsapp/profile_04.jpg')}}" class="ec-user-img"
                                         alt="Profile image">
                                     <span class="ec-status-icon ec-offline"></span>
                                 </div>
@@ -447,7 +449,7 @@
         <div class="ec-right-bottom">
             <div class="ec-box">
                 <div class="ec-button rotateBackward">
-                    <img class="whatsapp" src="assets/images/common/whatsapp.png" alt="whatsapp icon">
+                    <img class="whatsapp" src="{{asset('assets/images/common/whatsapp.png')}}" alt="whatsapp icon">
                 </div>
             </div>
         </div>
@@ -546,10 +548,12 @@
 
                     // console.log(data.data.galeri_produk)
                     // console.log(data.data.deskirpsi_pendek)
+                    $('#ids').val(data.data.id);
                     $('#namaproduk').text(data.data.nama_produk);
                     $('#deskripsipendek').text(data.data.deskirpsi_pendek);
                     $('#hargaasli').text(data.data.harga_asliproduk);
                     $('#hargadiskon').text(data.data.harga_diskonproduk);
+                    $('#namaproduk').attr('href','/detail/' + data.data.id );
                     //  $('#pbrand').text(data.product.brand.brand_name);
                     //  $('#pweight').text(data.product.product_weight);
 

@@ -52,5 +52,35 @@ class CartController extends Controller
         \Cart::session($iduser)->remove($id);
         return redirect()->back()->with('success','berhasil menghapus');
     }
-     
+
+    public function postcart(Request $request)
+    {
+        $produk = Produk::where('id',$request->id)->first();
+        // dd($produk);
+        $getfoto = explode(',', $produk->galeri_produk);
+        $fotoproduk = $getfoto[0];
+        // dd($fotoproduk);
+        $hargatotal = $produk->harga_diskonproduk * $request->jumlah;
+        // dd($hargatotal);
+        if($request->jumlah > $produk->stok_produk) {
+            return redirect()->back()->with('error','');
+        } else {
+           $iduser = auth()->user()->id;
+            Cart::session($iduser)->add(array(
+                'id' => $produk->id,
+                'name' => $produk->nama_produk,
+                'price' => $produk->harga_diskonproduk,
+                'quantity' => $request->jumlah,
+                'attributes' => array(
+                'warna' => $request->warna,
+                'ukuran' => $request->ukuran,
+                'foto' => $fotoproduk,
+                'hargatotal' => $hargatotal,
+                )
+
+            ));
+            return redirect()->back()->with('success','Berhasil Menambahkan Produk Ke Keranjanh');
+        }
+    }
+
 }
