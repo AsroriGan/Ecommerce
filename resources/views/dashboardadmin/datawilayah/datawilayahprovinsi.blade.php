@@ -42,7 +42,7 @@
                                                 class="invoices-settings-btn
                                         invoices-settings-btn-one">
                                                 <a href="#" class="btn" data-bs-toggle="modal"
-                                                    data-bs-target="#con-close-modal">
+                                                    data-bs-target="#con-close-modal" onclick="modaltambah()">
                                                     <i data-feather="plus-circle"></i>
                                                     Tambah Data baru
                                                 </a>
@@ -63,32 +63,16 @@
                 <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog"
                     aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;">
                     <div class="modal-dialog">
+                        <div id="success"></div>
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title">Tambah provinsi</h4>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <form action="/insertprovinsi" method="POST">
-                                @csrf
-                                <div class="modal-body p-4">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label for="field-1" class="form-label">Provinsi</label>
-                                                <input type="text" name="provinsi" class="form-control"
-                                                    id="field-1" placeholder="Masukkan provinsi">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary waves-effect"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-info waves-effect waves-light">Save
-                                        changes</button>
-                                </div>
-                            </form>
+                            <div id="halcreate">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -147,8 +131,7 @@
                                                                                 <label for="field-1"
                                                                                     class="form-label">Provinsi</label>
                                                                                 <input type="text" name="provinsi"
-                                                                                    class="form-control"
-                                                                                    id="field-1"
+                                                                                    class="form-control" id="field-1"
                                                                                     value="{{ $row->provinsi }}">
                                                                             </div>
                                                                         </div>
@@ -186,6 +169,38 @@
         $(document).ready(function() {
             $('#table').DataTable();
         });
+    </script>
+    <script>
+        // Hal create
+        function modaltambah() {
+            $.get("/createprovinsi", {}, function(data, status) {
+                $("#halcreate").html(data);
+                $("#modalkategori").modal('show');
+            });
+        }
+
+        // Proses Create provinsi
+        function store() {
+            let provinsi = $("#valprovinsi").val();
+            // console.log(provinsi);
+            $.ajax({
+                type: "get",
+                url: "{{ url('store') }}",
+                data: "kategori=" + kategori,
+                success: function(data) {
+                    $(".btn-close").click();
+                    tampilkandata()
+                },
+                error: function(error) {
+                    console.log(error.responseJSON);
+                    let error_log = error.responseJSON.errors;
+                    if (error.status == 422) {
+                        $('#modalkategori').find('[name="kategori"]').prev().html(
+                            '<span style="color:red">Kategori | ' + error_log.kategori[0] + ' </span>');
+                    }
+                }
+            });
+        }
     </script>
     <script>
         @if (Session::has('success'))

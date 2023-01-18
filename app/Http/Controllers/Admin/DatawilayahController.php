@@ -82,4 +82,10 @@ class DatawilayahController extends Controller
         $data->delete();
         return redirect('/datawilayahkecamatan')->with("success","Data berhasil Dihapus");
     }
+
+    //ajax validation
+    public function create(){
+        
+        return view('dashboardadmin.datawilayah.provinsi.create');
+    }
 }

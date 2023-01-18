@@ -58,6 +58,7 @@ Route::get('/detailmodal/{id}', [LandingProdukController::class, 'detailmodal'])
 Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang')->middleware('auth');
 Route::get('/hapuscart/{id}', [LandingCartController::class, 'hapuscart'])->name('hapuscart');
 Route::post('/cartpost/{id}', [LandingCartController::class, 'cartpost'])->name('cartpost');
+Route::post('/postcart', [LandingCartController::class, 'postcart'])->name('postcart');
 
 
 // Blog
@@ -145,6 +146,7 @@ Route::get('/deletesub_sub/{id}', [AdminKategoriController::class, 'deletesub_su
 //start data wilayah
 //provinsi
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
+Route::get('/createprovinsi', [AdminDatawilayahController::class, 'create'])->name('create');
 //insert & edit & delete provinsi
 Route::post('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');
 Route::post('/editprovinsi/{id}', [AdminDatawilayahController::class, 'editprovinsi'])->name('editprovinsi');

@@ -6,11 +6,11 @@
                 <li class="active">
                     <a href="index.html"><i data-feather="home"></i> <span>Dashboard</span></a>
                 </li>
-                <li>
-                    <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i>
+                <li {{ Route::is('slider') ? 'class=active' : '' }}>
+                    <a href="/sliderr"><i data-feather="users"></i>
                         <span>Slider</span></a>
                 </li>
-                <li class="active">
+                <li {{ Route::is('merek') ? 'class=active' : '' }}>
                     <a href="/merek"><i data-feather="home"></i> <span>Merk</span></a>
                 </li>
                 <li class="submenu {{ Route::is('kategori', 'subkategori', 'sub_subkategori') ? 'active' : '' }}">
@@ -38,13 +38,10 @@
                 <li class="{{Route::is('produkadmin','addproduk','view_produk') ? 'active' : ''}}">
                     <a href="/produkadmin"><i data-feather="credit-card"></i> <span>Produk</span></a>
                 </li>
-                <li>
+                {{-- <li>
                     <a {{ Route::is('/sliderr') ? 'class=active' : '' }} href="/sliderr"><i data-feather="users"></i> <span>Slider</span></a>
-                </li>
-                <li>
-                    <a href="estimates.html"><i data-feather="file-text"></i> <span>Estimates</span></a>
-                </li>
-                <li>
+                </li> --}}
+                <li {{ Route::is('promosi') ? 'class=active' : '' }}>
                     <a href="/promosi"><i data-feather="credit-card"></i> <span>Tambah Promo</span></a>
                 </li>
                 <li class="menu-title"><span>Pesanan</span></li>
