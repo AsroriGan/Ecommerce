@@ -191,7 +191,7 @@
                 $("#modalkategori").modal('show');
             });
         }
-
+        
         // Proses Update Data
         function update(id) {
             var kategori = $("#kategori").val();
@@ -213,10 +213,6 @@
                 url: "{{ url('destroy') }}/" + id,
                 data: "kategori=" + kategori,
                 success: function(data) {
-<<<<<<< HEAD
-=======
-
->>>>>>> 3acf48b14603c9faa1754e5c8be5299b3ae15b17
                     $(".btn-close").click();
                     tampilkandata()
                 }

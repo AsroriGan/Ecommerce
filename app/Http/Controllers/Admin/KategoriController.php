@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\kategori;
 use App\Models\subkategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class KategoriController extends Controller
 {
@@ -120,7 +121,8 @@ class KategoriController extends Controller
     public function halamanSubKategori()
     {
         $data = subkategori::all();
-        return view('dashboardadmin.kategori.datasubkategori.subkategori', compact('data'));
+        $datas = kategori::all();
+        return view('dashboardadmin.kategori.datasubkategori.subkategori', compact('data','datas'));
     }
 
     public function tampilsubkategori()
@@ -146,6 +148,35 @@ class KategoriController extends Controller
         // $datas['sub_kategori'] = $request->sub_kategori;
         // kategori::insert($data);
         subkategori::insert([
+            'kategori' => $request->kategori,
+            'sub_kategori' => $request->sub_kategori,
+        ]);
+    }
+
+    public function showSubkategori($id)
+    {
+        // $datas = kategori::where('kategoris., $id');
+        $datas = DB::table('subkategoris')
+                  // ->form()  
+                  ->join('kategoris','kategoris.id','=','subkategoris.kategori') 
+                  ->where('kategoris.id', $id) 
+                  ->get();
+        // $datas = DB::table('subkategoris')
+        //                 ->join('kategoris', 'subkategoris.kategori','kategoris.id')
+        //                 ->select('subkategoris.*', 'kategoris.kategori')
+        //                 ->get();
+        $data = subkategori::findOrFail($id);
+        return view('dashboardadmin.kategori.datasubkategori.editsubkategori')->with([
+            'data' => $data,
+            'datas' => $datas
+        ]);
+        // dd($data);
+    }
+
+    public function updatesubkategori(Request $request, $id)
+    {
+        $data = subkategori::findOrFail($id);
+        $data->update([
             'kategori' => $request->kategori,
             'sub_kategori' => $request->sub_kategori,
         ]);

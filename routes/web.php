@@ -128,10 +128,13 @@ Route::get('/subkategori', [AdminKategoriController::class, 'halamanSubKategori'
 Route::get('/createsubkategori', [AdminKategoriController::class, 'createsubkategori'])->name('createsubkategori');
 Route::get('/storesubKategori', [AdminKategoriController::class, 'storesubKategori'])->name('storesubKategori');
 Route::get('/tampilsubkategori', [AdminKategoriController::class, 'tampilsubkategori'])->name('tampilsubkategori');
+Route::get('/showSubkategori/{id}', [AdminKategoriController::class, 'showSubkategori'])->name('showSubkategori');
+Route::get('/updatesubkategori/{id}', [AdminKategoriController::class, 'updatesubkategori'])->name('updatesubkategori');
 
 
 
 
+// Cadangan Sementara
 Route::post('/subkategoripost', [AdminKategoriController::class, 'sub_kategoripost'])->name('subkategoripost');
 Route::post('/editsub_kategoripost/{id}', [AdminKategoriController::class, 'editsub_kategoripost'])->name('editsub_kategoripost');
 Route::get('/deletesubkategori/{id}', [AdminKategoriController::class, 'deletesubkategori'])->name('deletesubkategori');
