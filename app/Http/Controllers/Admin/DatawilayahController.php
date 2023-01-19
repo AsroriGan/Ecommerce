@@ -11,11 +11,12 @@ use Symfony\Component\Routing\Matcher\RedirectableUrlMatcherInterface;
 
 class DatawilayahController extends Controller
 {
+    //======== Start data wilayah provinsi ========//
     public function datawilayahprovinsi()
     {
         $data = Datawilayah::all();
         // dd($data);
-        return view('dashboardadmin.datawilayah.datawilayahprovinsi', compact('data'));
+        return view('dashboardadmin\datawilayah\provinsi\datawilayahprovinsi', compact('data'));
     }
     public function viewdataprovinsi()
     {
@@ -29,6 +30,7 @@ class DatawilayahController extends Controller
             'provinsi' => 'required'
         ], ['provinsi.required' => 'Provinsi Wajib Di isi']);
         Datawilayah::create($request->all());
+        return response()->json(['title'=>'Success','message'=>'Data Berhasil Ditambahkan']);
     }
     public function provinsiview($id)
     {
@@ -41,13 +43,14 @@ class DatawilayahController extends Controller
         // dd($request->all());
         $data = Datawilayah::findorfail($id);
         $data->update($request->all());
+        return response()->json(['title'=>'Success','message'=>'Data Berhasil Diedit']);
     }
     public function deleteprovinsi($id)
     {
-        // $relasi = datawilayahkabupaten::where('provinsi', $id)->count();
-        // if ($relasi > 0) {
-        //     return redirect()->back()->with("error", "Data masih digunakan di data kabupaten");
-        // }
+        $relasi = datawilayahkabupaten::where('provinsi', $id)->count();
+        if ($relasi > 0) {
+            dd('p');
+        }
 
         $data = Datawilayah::findorfail($id);
         // dd($data);
@@ -56,7 +59,7 @@ class DatawilayahController extends Controller
         return response()->json();
         // return redirect('/datawilayahprovinsi')->with("success","Data Berhasil Dihapus");
     }
-
+    //======== End data wilayah provinsi ========//
     public function datawilayahkabupaten()
     {
         $provinsi = Datawilayah::all();

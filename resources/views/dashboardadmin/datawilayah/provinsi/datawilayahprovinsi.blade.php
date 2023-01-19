@@ -3,7 +3,6 @@
 @include('layoutsadmin.head')
 
 <body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme">
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"> --}}
     <div class="main-wrapper">
 
         <!-- navbar Star -->
@@ -76,33 +75,6 @@
                             </div> --}}
                             <div class="card-body">
                                 <div class="table-responsive" id="viewdata">
-                                    {{-- <table id="table" class="datatable table table-stripped">
-                                        <thead>
-                                            <tr>
-                                                <th>N0 .</th>
-                                                <th>Provinsi</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php
-                                                $no = 1;
-                                            @endphp
-                                            @foreach ($data as $row)
-                                                <tr>
-                                                    <td>{{ $no++ }}</td>
-                                                    <td>{{ $row->provinsi }}</td>
-                                                    <td><a href="#" onclick="viewprov({{$row->id}})" class="btn btn-sm btn-white text-success me-2"><i
-                                                                class="far fa-edit me-1"></i>Edit</a>
-                                                        <a onclick="deleteprov({{$row->id}})" data-provinsi="{{ $row->provinsi }}"
-                                                            data-id="{{ $row->id }}" href="javascript:void(0);"
-                                                            class="btn btn-sm btn-white text-danger me-2"><i
-                                                                class="far fa-trash-alt me-1"></i>Delete</a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table> --}}
                                 </div>
                             </div>
                         </div>
@@ -116,15 +88,19 @@
     <!-- Scrip Star -->
 
     @include('layoutsadmin.script')
-    <script>
+    {{-- <script>
         @if (Session::has('success'))
             toastr.success("{{ Session::get('success') }}")
         @endif
         @if (Session::has('error'))
             toastr.success("{{ Session::get('error') }}")
         @endif
-    </script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> --}}
+    </script> --}}
+    {{-- <script>
+        $("#target").click(function() {
+            toastr.error("Have fun storming the castle!", "Gae Iki");
+        });
+    </script> --}}
     <script>
         //view data in table
         $(document).ready(function() {
@@ -154,6 +130,7 @@
                 data: "provinsi=" + provinsi,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success(data.message, data.title);
                     viewdata();
                 },
                 error: function(error) {
@@ -185,6 +162,7 @@
                 data: "provinsi=" + provinsi,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success(data.message, data.title);
                     viewdata();
                 }
             });
@@ -206,20 +184,25 @@
             }).then(function(t) {
                 if (t.value) {
                     Swal.fire({
-                        type: "success",
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                    $.ajax({
-                        type: "get",
-                        url: "/deleteprovinsi/" + id,
-                        // data: "kategori=" + kategori,
-                        success: function(data) {
-                            viewdata();
-                            // toastr.success(data.message);
-                        }
-                    });
+                            type: "success",
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            confirmButtonClass: "btn btn-success"
+                        })
+                        .then(function(t) {
+                            // console.log(t.value);
+                            if (t.value) {
+                                $.ajax({
+                                    type: "get",
+                                    url: "/deleteprovinsi/" + id,
+                                    // data: "kategori=" + kategori,
+                                    success: function(data) {
+                                        toastr.success('Data Berhasil Diedit','Success' );
+                                        viewdata();
+                                    }
+                                });
+                            }
+                        });
                 } else {
                     Swal.fire({
                         title: "Cancelled",

@@ -124,7 +124,7 @@ Route::get('/destroy/{id}', [AdminKategoriController::class, 'destroy'])->name('
 // Route::get('/deletekategori/{id}', [AdminKategoriController::class, 'deletekategori'])->name('deletekategori');
 // Route::post('/_validation', [AdminKategoriController::class, '_validation'])->name('_validation');
     //SubKategori
-Route::get('/subkategori', [AdminKategoriController::class, 'subKategori'])->name('subkategori');
+Route::get('/subkategori', [AdminKategoriController::class, 'halamanSubKategori'])->name('subkategori');
 Route::get('/createsubkategori', [AdminKategoriController::class, 'createsubkategori'])->name('createsubkategori');
 Route::get('/storesubKategori', [AdminKategoriController::class, 'storesubKategori'])->name('storesubKategori');
 Route::get('/tampilsubkategori', [AdminKategoriController::class, 'tampilsubkategori'])->name('tampilsubkategori');
@@ -150,7 +150,7 @@ Route::get('/deletesub_sub/{id}', [AdminKategoriController::class, 'deletesub_su
 //provinsi
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
 Route::get('/viewdataprovinsi', [AdminDatawilayahController::class, 'viewdataprovinsi']);
-//insert & edit & delete provinsi
+    //insert & edit & delete provinsi
 Route::get('/createprovinsi', [AdminDatawilayahController::class, 'create'])->name('create');
 Route::get('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');
 Route::get('/provinsiview/{id}', [AdminDatawilayahController::class, 'provinsiview']);
@@ -158,7 +158,7 @@ Route::get('/editprovinsi/{id}', [AdminDatawilayahController::class, 'editprovin
 Route::get('/deleteprovinsi/{id}', [AdminDatawilayahController::class, 'deleteprovinsi'])->name('deleteprovinsi');
 //kabupaten
 Route::get('/datawilayahkabupaten', [AdminDatawilayahController::class, 'datawilayahkabupaten'])->name('datawilayahkabupaten');
-//insert & edit & delete kabupaten
+    //insert & edit & delete kabupaten
 Route::post('/insertkabupaten', [AdminDatawilayahController::class, 'insertkabupaten'])->name('insertkabupaten');
 Route::post('/editkabupaten/{id}', [AdminDatawilayahController::class, 'editkabupaten'])->name('editkabupaten');
 Route::get('/deletekabupaten/{id}', [AdminDatawilayahController::class, 'deletekabupaten'])->name('deletekabupaten');
