@@ -18,12 +18,19 @@ class DatawilayahController extends Controller
         // dd($data);
         return view('dashboardadmin\datawilayah\provinsi\datawilayahprovinsi', compact('data'));
     }
+ 
     public function viewdataprovinsi()
     {
         $data = Datawilayah::all();
         // dd($data);
         return view('dashboardadmin.datawilayah.provinsi.viewdataprovinsi', compact('data'));
     }
+    
+    public function create()
+    {
+        return view('dashboardadmin.datawilayah.provinsi.create');
+    }
+
     public function insertprovinsi(Request $request)
     {
         $validated = $request->validate([
@@ -32,12 +39,14 @@ class DatawilayahController extends Controller
         Datawilayah::create($request->all());
         return response()->json(['title'=>'Success','message'=>'Data Berhasil Ditambahkan']);
     }
+
     public function provinsiview($id)
     {
         // dd($id);
         $data = Datawilayah::findorfail($id);
         return view('dashboardadmin.datawilayah.provinsi.editview', compact('data'));
     }
+
     public function editprovinsi(Request $request, $id)
     {
         // dd($request->all());
@@ -45,6 +54,7 @@ class DatawilayahController extends Controller
         $data->update($request->all());
         return response()->json(['title'=>'Success','message'=>'Data Berhasil Diedit']);
     }
+    
     public function deleteprovinsi($id)
     {
         $relasi = datawilayahkabupaten::where('provinsi', $id)->count();
@@ -60,25 +70,52 @@ class DatawilayahController extends Controller
         // return redirect('/datawilayahprovinsi')->with("success","Data Berhasil Dihapus");
     }
     //======== End data wilayah provinsi ========//
+
+    //======== Star data wilayah Kabupaten ========//
+
     public function datawilayahkabupaten()
     {
         $provinsi = Datawilayah::all();
         $kabupaten = datawilayahkabupaten::all();
-        return view('dashboardadmin.datawilayah.datawilayahkabupaten', compact('provinsi', 'kabupaten'));
+        return view('dashboardadmin.datawilayah.kabupaten.datawilayahkabupaten', compact('provinsi', 'kabupaten'));
     }
+
+    public function viewkabupaten()
+    {
+        $kabupaten = datawilayahkabupaten::all();
+        // dd($data);
+        return view('dashboardadmin.datawilayah.kabupaten.viewkabupaten', compact('kabupaten'));
+    }
+
+    public function createkabupaten()
+    {
+        $provinsi = Datawilayah::all();
+        return view('dashboardadmin.datawilayah.kabupaten.create', compact('provinsi'));
+    }
+
     public function insertkabupaten(Request $request)
     {
         // dd($request->all());
-        $data = datawilayahkabupaten::create($request->all());
-        return redirect('/datawilayahkabupaten')->with("success", "Data berhasil di tambahkan");
+         datawilayahkabupaten::create($request->all());
+        // return redirect('/datawilayahkabupaten')->with("success", "Data berhasil di tambahkan");
     }
+
+    public function ShowKabupaten($id)
+    {
+        // dd($id);
+        $provinsi = Datawilayah::all();
+        $data = datawilayahkabupaten::findorfail($id);
+        return view('dashboardadmin.datawilayah.kabupaten.edit', compact('data','provinsi'));
+    }
+
     public function editkabupaten(Request $request, $id)
     {
         // dd($request->all());
         $data = datawilayahkabupaten::findorfail($id);
         $data->update($request->all());
-        return redirect('/datawilayahkabupaten')->with("sucess", "Data Berhasil di update");
+        // return redirect('/datawilayahkabupaten')->with("sucess", "Data Berhasil di update");
     }
+
     public function deletekabupaten($id)
     {
         $relasi = datawilayahkecamatan::where('kabupaten', $id)->count();
@@ -87,38 +124,66 @@ class DatawilayahController extends Controller
         }
         $data = datawilayahkabupaten::findorfail($id);
         $data->delete();
-        return redirect('/datawilayahkabupaten')->with("success", "Data berhasil dihapus");
+        // return redirect('/datawilayahkabupaten')->with("success", "Data berhasil dihapus");
     }
+
+    //======== End data wilayah Kabupaten ========//
+
+    //======== Star data wilayah Kecamatan ========//
+
 
     public function datawilayahkecamatan()
     {
         $provinsi = Datawilayah::all();
         $kabupaten = datawilayahkabupaten::all();
         $kecamatan = datawilayahkecamatan::with('kprovinsi', 'kkabupaten')->get();
-        return view('dashboardadmin.datawilayah.datawilayahkecamatan', compact('provinsi', 'kabupaten', 'kecamatan'));
+        return view('dashboardadmin.datawilayah.Kecamatan.datawilayahkecamatan', compact('provinsi', 'kabupaten', 'kecamatan'));
     }
+
+    public function createkecamatan()
+    {
+        $provinsi = Datawilayah::all();
+        $kabupaten = datawilayahkabupaten::all();
+        return view('dashboardadmin.datawilayah.Kecamatan.createkecamatan', compact('provinsi','kabupaten'));
+    }
+
+    public function viewkecamatan()
+    {
+        $kecamatan = datawilayahkecamatan::all();
+        // dd($data);
+        return view('dashboardadmin.datawilayah.Kecamatan.viewkecamatan', compact('kecamatan'));
+    }
+
     public function insertkecamatan(Request $request)
     {
         $data = datawilayahkecamatan::create($request->all());
-        return redirect('/datawilayahkecamatan')->with("success", "data berhasil di tambahkan");
+        // return redirect('/datawilayahkecamatan')->with("success", "data berhasil di tambahkan");
     }
+
+    public function Showkecamatan($id)
+    {
+        // dd($id);
+        $provinsi = Datawilayah::all();
+        $kabupaten = datawilayahkabupaten::all();
+        $data = datawilayahkecamatan::findOrFail($id);
+        return view('dashboardadmin.datawilayah.Kecamatan.editkecamatan', compact('provinsi','kabupaten','data'));
+    }
+
     public function editkecamatan(Request $request, $id)
     {
         $data = datawilayahkecamatan::findorfail($id);
         $data->update($request->all());
-        return redirect('/datawilayahkecamatan')->with("success", "data berhasil di edit");
+        // return redirect('/datawilayahkecamatan')->with("success", "data berhasil di edit");
     }
     public function deletekecamatan($id)
     {
         $data = datawilayahkecamatan::findorfail($id);
         $data->delete();
-        return redirect('/datawilayahkecamatan')->with("success", "Data berhasil Dihapus");
+        // return redirect('/datawilayahkecamatan')->with("success", "Data berhasil Dihapus");
     }
+
+    //======== End data wilayah Kecamatan ========//
 
     //ajax validation
-    public function create()
-    {
-
-        return view('dashboardadmin.datawilayah.provinsi.create');
-    }
+    
 }

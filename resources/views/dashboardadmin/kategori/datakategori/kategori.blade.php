@@ -211,7 +211,6 @@
             $.ajax({
                 type: "get",
                 url: "{{ url('destroy') }}/" + id,
-                data: "kategori=" + kategori,
                 success: function(data) {
                     $(".btn-close").click();
                     tampilkandata()
