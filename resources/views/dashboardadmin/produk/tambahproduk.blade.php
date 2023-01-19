@@ -197,28 +197,28 @@
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"
-                                                                    value="promo"> Promo
+                                                                <input type="checkbox" name="promo"
+                                                                    value="yes"> Promo
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"
-                                                                    value="Produk Baru"> Produk Baru
+                                                                <input type="checkbox" name="produk_baru"
+                                                                    value="yes"> Produk Baru
                                                             </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"
-                                                                    value="Baru Datang"> Baru Datang
+                                                                <input type="checkbox" name="baru_datang"
+                                                                    value="yes"> Baru Datang
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"
-                                                                    value="Best Seller"> Best Seller
+                                                                <input type="checkbox" name="best_seller"
+                                                                    value="yes"> Best Seller
                                                             </label>
                                                         </div>
                                                     </div>
