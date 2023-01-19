@@ -63,7 +63,6 @@ class ProdukController extends Controller
             'harga_asliproduk' => 'required',
             'diskon' => 'required',
             'harga_diskonproduk' => 'required',
-            'status_produk' => 'required',
             'deskirpsi_pendek' => 'required',
             'deskirpsi_panjang' => 'required',
             'galeri_produk' => 'required',
@@ -84,9 +83,7 @@ class ProdukController extends Controller
         $ukuran = json_decode($request->ukuran_produk,true);
         $insukuran = array_column($ukuran,'value');
         $model->ukuran_produk = implode(',',$insukuran);
-        // dd($request->warna_produk);
         $warna = json_decode($request->warna_produk,true);
-
         $inswarna = array_column($warna,'value');
         $model->warna_produk = implode(',',$inswarna);
         $model->berat_produk = $request->berat_produk;
@@ -98,10 +95,13 @@ class ProdukController extends Controller
         $model->harga_asliproduk = $request->harga_asliproduk;
         $model->diskon = $request->diskon;
         $model->galeri_produk = implode(',',$files);
-        $model->status_produk = implode(',',$request->status_produk);
         $model->deskirpsi_pendek = $request->deskirpsi_pendek;
         $model->deskirpsi_panjang = $request->deskirpsi_panjang;
         $model->status = $request->status;
+        $model->Promo = $request->promo;
+        $model->Produk_Baru = $request->produk_baru;
+        $model->Baru_Datang = $request->baru_datang;
+        $model->Best_Seller = $request->best_seller;
         $model->save();
         // dd($model->harga_diskonproduk);
         return redirect('/produkadmin')->with('success','Data Berhasil Dihapus');
@@ -146,7 +146,6 @@ class ProdukController extends Controller
         $model->harga_diskonproduk = $request->harga_diskonproduk; //- (($request->harga_asliproduk*$request->diskon)/100);
         $model->harga_asliproduk = $request->harga_asliproduk;
         $model->diskon = $request->diskon;
-        $model->status_produk = implode(',',$request->status_produk);
         $model->deskirpsi_pendek = $request->deskirpsi_pendek;
         $model->deskirpsi_panjang = $request->deskirpsi_panjang;
         $model->status = $request->status;
