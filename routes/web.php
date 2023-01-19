@@ -175,7 +175,7 @@ Route::get('/delete_produk/{id}', [AdminProdukController::class, 'delete_produk'
 //start data merek
 Route::get('/merek', [AdminMerekController::class, 'index'])->name('merek');
 Route::get('/createmerek', [AdminMerekController::class, 'createmerek'])->name('createmerek');
-Route::get('/storemerek', [AdminMerekController::class, 'storemerek'])->name('storemerek');
+Route::post('/storemerek', [AdminMerekController::class, 'storemerek'])->name('storemerek');
 Route::get('/tampilanmerek', [AdminMerekController::class, 'tampilanmerek'])->name('tampilanmerek');
 
 

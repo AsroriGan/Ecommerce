@@ -1,4 +1,5 @@
-<form enctype="multipart/form-data">
+<form id="postmerk" action="{{url('storemerek')}}" method="POST" enctype="multipart/form-data">
+    @csrf
     <div class="row">
         <div class="col-md-12">
             <div class="mb-3">
@@ -16,6 +17,6 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Kembali</button>
-        <button class="btn btn-info waves-effect waves-light" >Tambah Merek</button>
+        <button type="button" class="btn btn-info waves-effect waves-light" onclick="insertdata()">Tambah Merek</button>
     </div>
 </form>

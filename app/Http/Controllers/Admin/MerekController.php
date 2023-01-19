@@ -24,9 +24,7 @@ class MerekController extends Controller
     public function tampilanmerek()
     {
         $data = Merek::all();
-        return view('dashboardadmin.merek.tampilanmerek')->with([
-            'data' => $data
-        ]);
+        return view('dashboardadmin.merek.tampilanmerek', compact('data'));
     }
 
     /**
@@ -47,18 +45,25 @@ class MerekController extends Controller
      */
     public function storemerek(Request $request)
     {
-        
-        dd($request->all());
-        // $data = Merek::insert([
+        // dd($request->all());
+        $validate = $request->validate([
+            'nama_merek' => 'required',
+            'foto_merek' => 'required',
+        ]);
+        if ($request->hasFile('foto_merek')) {
+            $request->file('foto_merek')->move('foto/', $request->file('foto_merek')->getClientOriginalName());
+            // $request->file('foto_merek')->getClientOriginalName();
+        };
+        // $data = Merek::create([
         //     'nama_merek' => $request->nama_merek,
-        //     'foto_merek' => $request->foto_merek,
-            
+        //     'foto_merek' => $request->nama_merek,
         // ]);
-        // if ($request->hasFile('foto_merek')) {
-        //     $request->file('foto_merek')->move('foto/', $request->file('foto_merek')->getClientOriginalName());
-        //     $data->foto_merek = $request->file('foto_merek')->getClientOriginalName();
-        //     $data->save();
-        // }
+        $model  = new merek();
+        $model->nama_merek = $request->nama_merek;
+        $model->foto_merek = $request->file('foto_merek')->getClientOriginalName();
+        $model->save();
+        return response()->json();
+        // dd($data);
     }
 
     /**
@@ -87,13 +92,13 @@ class MerekController extends Controller
             $data->update([
                 'foto_merek' => $namafoto,
                 'nama_merek' => $request->nama_merek,
-                
+
             ]);
         } else {
             $data->update([
                 //'foto' => request->foto
                 'nama_merek' => $request->nama_merek,
-            
+
 
             ]);
         }

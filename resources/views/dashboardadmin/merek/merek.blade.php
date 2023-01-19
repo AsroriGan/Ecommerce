@@ -45,8 +45,10 @@
                                             <div
                                                 class="invoices-settings-btn
                                     invoices-settings-btn-one">
-                                                <button href="#" class="btn" onclick="modaltambahmerek()"><i
+                                                <button href="#" class="btn" data-bs-toggle="modal" data-bs-target="#modalmerek" onclick="showformmodal()"><i
                                                         data-feather="plus-circle"></i> Tambah Item</button>
+                                                {{-- <button href="#" class="btn" data-bs-toggle="modal" data-bs-target="#modalmerek"><i
+                                                        data-feather="plus-circle"></i> Tambah Item</button> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -61,7 +63,7 @@
                         <div class="card">
 
                             <div class="card-body">
-                                <div class="table-responsive" id="tampilanmerek">
+                                <div class="table-responsive" id="tampilanmerk">
 
                                 </div>
                             </div>
@@ -71,8 +73,8 @@
             </div>
         </div>
     </div>
-
-    {{-- <div id="edit-merek{{ $data->id }}" class="modal fade"
+    @foreach ($data as $data )
+    <div id="modaledit{{ $data->id }}" class="modal fade"
         tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
@@ -108,7 +110,7 @@
                                     <input type="file" id="foto_merek"
                                         name="foto_merek"
                                         class="form-control"
-                                        
+
                                         id="field-3"
                                         >
                                         <i style="float: left; font-size: 11px; color:red;">Abaikan jika tidak merubah foto</i>
@@ -127,7 +129,8 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
+    @endforeach
 
     <div id="modalmerek" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
@@ -141,8 +144,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="halcreatemerek" class="p-4">
-
+                    <div class="p-4" id="halcreatemerek">
                     </div>
                 </div>
             </div>
@@ -158,44 +160,54 @@
         $(document).ready(function() {
             tampilanmerek()
         })
-
-        function tampilanmerek() {
+        function tampilanmerek(){
             $.get("{{ url('tampilanmerek') }}", {}, function(data, status) {
-                $("#tampilanmerek").html(data);
+                $("#tampilanmerk").html(data);
             });
         }
-
-        // Halaman Create 
-        function modaltambahmerek() {
+        //form create
+        function showformmodal(){
             $.get("{{ url('createmerek') }}", {}, function(data, status) {
                 $("#halcreatemerek").html(data);
-                $("#modalmerek").modal('show');
+                // $("#modalmerek").modal('show');
             });
         }
 
         // Proses Create Data Merek
-        function storemerek() {
-            // var formData = new FormData();
-            // if ($('#foto_merek')[0].files.length > 0) {
-            //     for (var i = 0; i < $('#foto_merek')[0].files.length; i++)
-            //         formData.append('file[]', $('#foto_merek')[0].files[i]);
-            // }
-            var nama_merek = $("#nama_merek").val();
-            var foto_merek = $("#foto_merek").val();
-            $.ajax({
-                type: "get",
-                url: "{{ url('storemerek') }}",
-                data: "nama_merek=" + nama_merek + "&foto_merek" + foto_merek,
-                success: function(data) {
-                    console.log(data);
-                    $(".btn-close").click();
-                    tampilanmerek()
-                }
-            });
-        }
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        function insertdata() {
+        alert('p');
+        // e.preventDefault();
+        let formid = $('#postmerk');
+        console.log(formid);
+        let formData = new FormData(formid[0]);
+        console.log(formData);
+        // $('#image-input-error').text('');
+        $.ajax({
+            type: 'POST',
+            url: "{{ route('storemerek') }}",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                    toastr.success('Data Berhasil Di Tambahkan');
+                    tampilanmerek();
+                    $('#modalmerek').modal('hide');
+            },
+            error: function(response) {
+                if(response.responseJSON.errors.nama_merek){
+                    console.log('array1')
+                }else if(response.responseJSON.errors.foto_merek){
+                    console.log('array2')
+                };
+            }
+        });
+    };
     </script>
-
-
     <script>
         $(".delete").click(function() {
             var nama = $(this).attr('data-nama');
@@ -231,7 +243,6 @@
             })
         })
     </script>
-
     <script>
         @if (Session::has('success'))
             toastr.success("{{ Session::get('success') }}")

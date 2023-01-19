@@ -171,14 +171,14 @@
                 data: "kategori=" + kategori,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil Ditambahkan", "Success")
                     tampilkandata()
                 },
                 error: function(error) {
                     console.log(error.responseJSON);
                     let error_log = error.responseJSON.errors;
                     if (error.status == 422) {
-                        $('#modalkategori').find('[name="kategori"]').prev().html(
-                            '<span style="color:red">Kategori | ' + error_log.kategori[0] + ' </span>');
+                        $('#kategori').addClass('is-invalid');
                     }
                 }
             });
@@ -201,20 +201,52 @@
                 data: "kategori=" + kategori,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success('Data Berhasil Di upadte', 'success');
                     tampilkandata()
                 }
             });
         }
-
         // Proses Delete Data
         function destroy(id) {
-            $.ajax({
-                type: "get",
-                url: "{{ url('destroy') }}/" + id,
-                data: "kategori=" + kategori,
-                success: function(data) {
-                    $(".btn-close").click();
-                    tampilkandata()
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1
+            }).then(function(t) {
+                if (t.value) {
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success"
+                    }).then(function(t) {
+                        if (t.value) {
+                            $.ajax({
+                                type: "get",
+                                url: "{{ url('destroy') }}/" + id,
+                                // data: "kategori=" + kategori,
+                                success: function(data) {
+                                    $(".btn-close").click();
+                                    toastr.success('Data Berhasil Dihapus', 'success');
+                                    tampilkandata()
+                                }
+                            });
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        type: "error",
+                        confirmButtonClass: "btn btn-success"
+                    })
                 }
             });
         }
@@ -234,35 +266,7 @@
         $('.delete').click(function() {
             var kategori = $(this).attr('data-kategori');
             var id = $(this).attr('data-id');
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                type: "warning",
-                showCancelButton: !0,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
-                confirmButtonClass: "btn btn-primary",
-                cancelButtonClass: "btn btn-danger ml-1",
-                buttonsStyling: !1
-            }).then(function(t) {
-                if (t.value) {
-                    window.location = "/deletekategori/" + id;
-                    Swal.fire({
-                        type: "success",
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                } else {
-                    Swal.fire({
-                        title: "Cancelled",
-                        text: "Your imaginary file is safe :)",
-                        type: "error",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                }
-            })
+
         })
     </script>
 
