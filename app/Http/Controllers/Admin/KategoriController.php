@@ -156,11 +156,11 @@ class KategoriController extends Controller
     public function showSubkategori($id)
     {
         // $datas = kategori::where('kategoris., $id');
-        $datas = DB::table('subkategoris')
-                  // ->form()  
-                  ->join('kategoris','kategoris.id','=','subkategoris.kategori') 
-                  ->where('kategoris.id', $id) 
-                  ->get();
+        // $datas = DB::table('subkategoris')
+        //           // ->form()
+        //           ->join('kategoris','kategoris.id','=','subkategoris.kategori')
+        //           ->where('kategoris.id', $id)
+        //           ->get();
         // $datas = DB::table('subkategoris')
         //                 ->join('kategoris', 'subkategoris.kategori','kategoris.id')
         //                 ->select('subkategoris.*', 'kategoris.kategori')
@@ -168,7 +168,7 @@ class KategoriController extends Controller
         $data = subkategori::findOrFail($id);
         return view('dashboardadmin.kategori.datasubkategori.editsubkategori')->with([
             'data' => $data,
-            'datas' => $datas
+            // 'datas' => $datas
         ]);
         // dd($data);
     }
