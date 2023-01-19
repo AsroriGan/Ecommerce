@@ -97,7 +97,7 @@ class ProdukController extends Controller
         $model->galeri_produk = implode(',',$files);
         $model->deskirpsi_pendek = $request->deskirpsi_pendek;
         $model->deskirpsi_panjang = $request->deskirpsi_panjang;
-        $model->status = $request->status;
+        $model->status = 'aktif';
         $model->Promo = $request->promo;
         $model->Produk_Baru = $request->produk_baru;
         $model->Baru_Datang = $request->baru_datang;
@@ -149,6 +149,10 @@ class ProdukController extends Controller
         $model->deskirpsi_pendek = $request->deskirpsi_pendek;
         $model->deskirpsi_panjang = $request->deskirpsi_panjang;
         $model->status = $request->status;
+        $model->Promo = $request->promo;
+        $model->Produk_Baru = $request->Produk_Baru;
+        $model->Baru_Datang = $request->Baru_Datang;
+        $model->Best_Seller = $request->Best_Seller;
         $model->save();
         return redirect('/produkadmin')->with('success','Data Berhasil Di edit');
     }

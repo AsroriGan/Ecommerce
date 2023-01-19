@@ -17,7 +17,7 @@ class ProdukController extends Controller
     public function detail($id)
     {
         $data = Produk::findOrFail($id);
-        $bestseller = Produk::paginate(5);
+        $bestseller = Produk::where('Best_Seller','yes')->paginate(5);
         $galeri_produk = explode(',',$data->galeri_produk);
         $ukuran_produk = explode(',',$data->ukuran_produk);
         $warna_produk = explode(',',$data->warna_produk);
