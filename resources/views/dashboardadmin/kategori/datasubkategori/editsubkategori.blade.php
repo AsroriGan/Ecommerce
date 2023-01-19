@@ -4,12 +4,12 @@
             <label for="field-3" class="form-label">Kategori
                 :</label>
             <select id="kategori" class="form-control" name="kategori" aria-label="Default select example">
-                 @foreach ($datas as $datas)
-                <option value="{{ $datas->kategori }}" disabled selected>
-                    {{ $datas->kategori }}
+                <option value="{{ $data->kategori }}" disabled selected>
+                    {{ $data->idkategoris->kategori }}
                 </option>
-                    <option value="{{ $datas->kategori }}">{{ $datas->kategori }}</option>
-                @endforeach 
+                @foreach ($datas as $datas)
+                    <option value="{{ $datas->id }}">{{ $datas->kategori }}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -23,7 +23,7 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Kembali</button>
-        <button class="btn btn-info waves-effect waves-light" onclick="updatesubkategori({{ $data->id    }})">Edit
+        <button class="btn btn-info waves-effect waves-light" onclick="updatesubkategori({{ $data->id  }})">Edit
             Kategori</button>
     </div>
 </div>

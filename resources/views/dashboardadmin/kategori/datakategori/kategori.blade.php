@@ -191,7 +191,7 @@
                 $("#modalkategori").modal('show');
             });
         }
-        
+
         // Proses Update Data
         function update(id) {
             var kategori = $("#kategori").val();
@@ -219,42 +219,6 @@
             });
         }
     </script>
-
-    {{-- <script>
-        function openmodal() {
-            $('modal-kategori').modal('show')
-        }
-
-        function validasi() {
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-            var kategori = $('#kategori').val();
-
-            $('#kategoriError').addClass('d-none');
-
-            $.ajax({
-                type: "POST",
-                url: "{{ route('validasikategori') }}",
-                data: {
-                    _token: CSRF_TOKEN,
-                    kategori: kategori,
-                },
-                success: function(data) {
-
-                },
-                error: function(data) {
-
-                    var errors = data.responseJSON;
-                    if ($.isEmptyObject(errors) == false) {
-                        $.each(errors.errors, function (key, value) {
-                            var ErrorID = '#' + key + 'Error';
-                            $(ErrorID).removeClass('d-none');
-                            $(ErrorID).text(value)
-                        })
-                    }
-                }
-            });
-        }
-    </script> --}}
 
     <script>
         // Toaster

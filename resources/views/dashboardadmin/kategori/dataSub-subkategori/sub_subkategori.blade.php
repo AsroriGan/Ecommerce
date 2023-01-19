@@ -31,7 +31,7 @@
                         <div class="page-header">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="page-title">Data Kategori / SubKategori</h3>
+                                    <h3 class="page-title">Data Kategori / Sub->SubKategori</h3>
                                 </div>
                             </div>
                         </div>
@@ -45,10 +45,8 @@
                                             <div
                                                 class="invoices-settings-btn
                                     invoices-settings-btn-one">
-                                                <button href="#" class="btn" onclick="modalsubkategori()">
-                                                    <i data-feather="plus-circle"></i>
-                                                    Tambah Item
-                                                </button>
+                                                <button href="#" class="btn" onclick="modaltambah()"><i
+                                                        data-feather="plus-circle"></i>Tambah Item </button>
                                             </div>
                                         </div>
                                     </div>
@@ -62,8 +60,7 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="table-responsive" id="tampilsubkategori">
-
+                                <div class="table-responsive" id="tampilSub_Subkategori">
 
                                 </div>
                             </div>
@@ -73,176 +70,171 @@
             </div>
         </div>
     </div>
-    </div>
 
-    {{-- <div id="edit-subkategori{{ $datasub->id }}" class="modal fade"
+    {{-- <div id="edit-sub-subkategori{{ $row->id }}" class="modal fade"
         tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Edit Kategori</h4>
+                    <h4 class="modal-title">Edit Sub->SubKategori</h4>
                     <button type="button" class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                        data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <form
-                        action="editsub_kategoripost/{{ $datasub->id }}"
-                        method="POST">
-                        @csrf
-                        <div class="row">
+                    <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="field-3"
                                         class="form-label">Kategori
                                         :</label>
-                                    <select id="kategori"
-                                        class="form-control"
-                                        name="kategori"
+                                    <select class="form-control" name="kategori"
                                         aria-label="Default select example">
                                         <option
-                                            value="{{ $datasub->idkategoris->kategori }}" disabled selected>
-                                            {{ $datasub->idkategoris->kategori }}
+                                            value="{{ $row->datakategori->id }}">
+                                            {{ $row->datakategori->kategori }}
                                         </option>
-                                        @foreach ($data as $datakate)
+                                        @foreach ($kategori as $data)
                                             <option
-                                                value="{{ $datakate->id }}">
-                                                {{ $datakate->kategori }}
+                                                value="{{ $data->id }}">
+                                                {{ $data->kategori }}
                                             </option>
                                         @endforeach
                                     </select>
                                 </div>
-                            </div>
-                            <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="field-3"
-                                        class="form-label">Sub Kategori
+                                    <label for="field-3" class="form-label">Sub
+                                        Kategori
                                         :</label>
-                                    <input type="text"
-                                        id="sub_kategori"
+                                    <select class="form-control"
                                         name="sub_kategori"
-                                        class="form-control"
-                                        value="{{ $datasub->sub_kategori }}"
-                                        id="field-3"
-                                        placeholder="Masukan Kategori">
+                                        aria-label="Default select example">
+                                        <option
+                                            value="{{ $row->datasubkategori->id }}">
+                                            {{ $row->datasubkategori->sub_kategori }}
+                                        </option>
+                                        @foreach ($subkategori as $datas)
+                                            <option
+                                                value="{{ $datas->id }}">
+                                                {{ $datas->sub_kategori }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label for="field-1"
+                                            class="form-label">Sub->SubKategori</label>
+                                        <input type="text"
+                                            name="sub_subkategori"
+                                            class="form-control" id="field-1"
+                                            value="{{ $row->sub_subkategori }}">
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button"
-                                    class="btn btn-secondary waves-effect"
-                                    data-bs-dismiss="modal">Kembali</button>
-                                <button
-                                    class="btn btn-info waves-effect waves-light">Edit
-                                    Kategori</button>
+                                <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close</button>
+                                <button type="submit"
+                                    class="btn btn-primary">Save
+                                    changes</button>
                             </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div> --}}
 
-    <div id="modalsubkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true" style="display: none;">
+    <div id="modalsub_subkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" style="display:none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Tambah Kategori</h4>
+                    <h4 class="modal-title">Tambah Sub->SubKategori</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div id="tampilsubkategori">
+                    <div id="tampilSub_Subkategori">
 
                     </div>
                 </div>
-                <div class="modal-body">
-                    <div id="createsubkategori">
+                    <div class="modal-body">
+                        <div id="halcreate" class="p-4">
 
+
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
-
-
 
     <!-- Star Script -->
 
     @include('layoutsadmin.script')
 
     <script>
-        //Tampilkan Data SubKategori
+
+        // Tampilkan Data Sub-SubKategori
         $(document).ready(function() {
-            tampilsubkategori()
+            tampilSub_Subkategori()
         })
 
-        function tampilsubkategori() {
-            $.get("{{ url('tampilsubkategori') }}", {}, function(data, status) {
-                $("#tampilsubkategori").html(data);
+        function tampilSub_Subkategori() {
+            $.get("{{ url('tampilsub_subkategori') }}", {}, function(data, status) {
+                $("#tampilSub_Subkategori").html(data);
             });
         }
 
-        // Halaman Create SubKategori
-        function modalsubkategori() {
-            $.get("{{ url('createsubkategori') }}", {}, function(data, status) {
-                $("#createsubkategori").html(data);
-                $("#modalsubkategori").modal('show');
+        // Halaman Create Data Sub-SubKategori
+        function modaltambah() {
+            $.get("{{ url('createsub_Subkategori') }}", {}, function(data, status) {
+                $("#halcreate").html(data);
+                $("#modalsub_subkategori").modal('show');
             });
         }
 
-         // Proses Create Data SubKategori
-         function storesubKategori() {
+        // Proses Create Data Sub-SubKategori
+        function storeSub_subKategori() {
             var kategori = $("#kategori").val();
             var sub_kategori = $("#sub_kategori").val();
+            var sub_subkategori = $("#sub_subkategori").val();
             $.ajax({
                 type: "get",
-                url: "{{ url('storesubKategori') }}",
-                data:  "sub_kategori=" + sub_kategori + "&kategori=" + kategori,
+                url: "{{ url('storesub_SubKategori') }}",
+                data: "kategori=" + kategori + "&sub_kategori=" + sub_kategori + "&sub_subkategori=" + sub_subkategori,
                 success: function(data) {
                     $(".btn-close").click();
-                    tampilsubkategori()
-                },
-            });
-        }
-
-        // Halaman Edit Show Sub-Kategori
-        function showSubkategori(id) {
-            $.get("{{ url('showSubkategori') }}/" + id, {}, function(data, status) {
-                $("#createsubkategori").html(data);
-                $("#modalsubkategori").modal('show');
-            });
-        }
-
-        // Halaman Proses Edit SubKategori
-        function updatesubkategori(id) {
-            var kategori = $("#kategori").val();
-            var sub_kategori = $("#sub_kategori").val();
-            $.ajax({
-                type: "get",
-                url: "{{ url('updatesubkategori') }}/" + id,
-                data: "sub_kategori=" + sub_kategori + "&kategori=" + kategori,
-                success: function(data) {
-                    $(".btn-close").click();
-                    tampilsubkategori()
+                    tampilSub_Subkategori()
                 }
             });
         }
 
-        // Proses Delete Data SubKategori
-        function destroySubkategori(id) {
+        // Halaman Edit Data Sub-SubKategori
+        function showSub_Subkategori(id) {
+            $.get("{{ url('showSub_Subkategori') }}/" + id, {}, function(data, status) {
+                $("#halcreate").html(data);
+                $("#modalsub_subkategori").modal('show');
+            });
+        }
+
+         // Proses Update Data Sub-SubKategori
+         function updatesub_Subkategori(id) {
+            var kategori = $("#kategori").val();
+            var sub_kategori = $("#sub_kategori").val();
+            var sub_subkategori = $("#sub_subkategori").val();
             $.ajax({
                 type: "get",
-                url: "{{ url('destroySubkategori') }}/" + id,
-                success: function() {
+                url: "{{ url('updatesub_Subkategori') }}/" + id,
+                data: "kategori=" + kategori + "&sub_kategori=" + sub_kategori + "&sub_subkategori=" + sub_subkategori,
+                success: function(data) {
                     $(".btn-close").click();
-                    tampilsubkategori()
+                    tampilSub_Subkategori()
                 }
             });
         }
     </script>
 
-
     <script>
-        $("#deletesubkategori").click(function() {
-            var kategori = $(this).attr('data-kategori');
+        $("#delete").click(function() {
+            var nama = $(this).attr('data-sub_subkategori');
             var id = $(this).attr('data-id');
             Swal.fire({
                 title: "Are you sure?",
@@ -257,7 +249,7 @@
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
-                    window.location = "/deletesubkategori/" + id;
+                    window.location = "/deletesub_sub/" + id;
                     Swal.fire({
                         type: "success",
                         title: "Deleted!",
@@ -285,7 +277,6 @@
             $('#myTable').DataTable();
         });
     </script>
-
     <!-- End Script -->
 
 </body>
