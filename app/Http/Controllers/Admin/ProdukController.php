@@ -67,7 +67,7 @@ class ProdukController extends Controller
             'deskirpsi_panjang' => 'required',
             'galeri_produk' => 'required',
         ]);
-        dd('p');
+        
         $files = [];
         if ($request->hasfile('galeri_produk')) {
             foreach ($request->galeri_produk as $file) {

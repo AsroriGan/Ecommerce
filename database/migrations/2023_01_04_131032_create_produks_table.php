@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('ukuran_produk');
             $table->string('warna_produk');
             $table->string('berat_produk');
+            $table->string('stok_produk');
             $table->string('kategori');
             $table->string('sub_kategori');
             $table->string('sub_subkategori');
