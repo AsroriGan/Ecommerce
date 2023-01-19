@@ -23,7 +23,6 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Kembali</button>
-        <button class="btn btn-info waves-effect waves-light" onclick="updatesubkategori({{ $data->id  }})">Edit
-            Kategori</button>
+        <button class="btn btn-info waves-effect waves-light" onclick="updatesubkategori({{ $data->id  }})">Edit </button>
     </div>
 </div>

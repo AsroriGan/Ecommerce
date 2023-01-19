@@ -12,7 +12,7 @@ use App\Models\Sub_Subkategori;
 class KategoriController extends Controller
 {
 
-    // Untuk Kategori
+    //-- Untuk Kategori --//
 
     /**
      * Display a listing of the resource.
@@ -117,7 +117,9 @@ class KategoriController extends Controller
         $data->delete();
     }
 
-    // Untuk SubKategori
+    //-- End Kategori --//
+
+    //-- Untuk SubKategori --//
 
     public function halamanSubKategori()
     {
@@ -174,6 +176,8 @@ class KategoriController extends Controller
         $data =subkategori::findOrFail($id);
         $data->delete();
     }
+
+    //-- End subKategori --//
 
     //-- Untuk Sub-SubKategori  --//
 
@@ -236,5 +240,11 @@ class KategoriController extends Controller
             'sub_kategori' => $request->sub_kategori,
             'sub_subkategori' => $request->sub_subkategori,
         ]);
+    }
+
+    public function destroySub_Subkategori($id)
+    {
+        $data =Sub_Subkategori::findOrFail($id);
+        $data->delete();
     }
 }

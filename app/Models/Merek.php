@@ -9,7 +9,12 @@ class Merek extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'nama_merek',
+        'foto_merek '
+    ];
+    protected $table = "mereks";
+    protected $hidden;
 
     public function rmerekhproduk()
     {

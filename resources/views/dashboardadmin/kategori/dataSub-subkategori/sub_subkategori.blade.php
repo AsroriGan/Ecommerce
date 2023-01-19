@@ -230,6 +230,18 @@
                 }
             });
         }
+
+        // Proses Delete Data Sub-SubKategori
+        function destroySub_Subkategori(id) {
+            $.ajax({
+                type: "get",
+                url: "{{ url('destroySub_Subkategori') }}/" + id,
+                success: function() {
+                    $(".btn-close").click();
+                    tampilSub_Subkategori()
+                }
+            });
+        }
     </script>
 
     <script>

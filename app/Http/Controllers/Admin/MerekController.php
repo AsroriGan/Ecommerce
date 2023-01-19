@@ -21,14 +21,22 @@ class MerekController extends Controller
         return view('dashboardadmin.merek.merek', compact('data'));
     }
 
+    public function tampilanmerek()
+    {
+        $data = Merek::all();
+        return view('dashboardadmin.merek.tampilanmerek')->with([
+            'data' => $data
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createmerek()
     {
-        //
+        return view('dashboardadmin.merek.createmerek');
     }
 
     /**
@@ -37,22 +45,20 @@ class MerekController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function merekpost(Request $request)
+    public function storemerek(Request $request)
     {
-        $data = Merek::create([
-
-            'nama_merek' => $request->nama_merek,
-            'foto_merek' => $request->foto_merek,
-            
-        ]);
-        // dd($data);
-        if ($request->hasFile('foto_merek')) {
-            $request->file('foto_merek')->move('foto/', $request->file('foto_merek')->getClientOriginalName());
-            $data->foto_merek = $request->file('foto_merek')->getClientOriginalName();
-            $data->save();
-        }
         
-        return Redirect()->route('merek')->with('success', 'Data Berhasil Ditambahkan');
+        dd($request->all());
+        // $data = Merek::insert([
+        //     'nama_merek' => $request->nama_merek,
+        //     'foto_merek' => $request->foto_merek,
+            
+        // ]);
+        // if ($request->hasFile('foto_merek')) {
+        //     $request->file('foto_merek')->move('foto/', $request->file('foto_merek')->getClientOriginalName());
+        //     $data->foto_merek = $request->file('foto_merek')->getClientOriginalName();
+        //     $data->save();
+        // }
     }
 
     /**
