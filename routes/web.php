@@ -103,8 +103,11 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 
 // Star Login Admin
-Route::get('/loginadmin', [AdminLogincontroller::class, 'login'])->name('login');
+Route::get('/loginadmin', [AdminLogincontroller::class, 'loginadmin'])->name('loginadmin');
+Route::post('/loginadminproses', [AdminLoginController::class, 'loginadminproses'])->name('loginadminproses');
 
+
+Route::get('/logoutadmin', [AdminLoginController::class, 'logoutadmin'])->name('logoutadmin');
 // End Login Admin
 
 // Star kategroi Admin
@@ -148,15 +151,21 @@ Route::get('/editprovinsi/{id}', [AdminDatawilayahController::class, 'editprovin
 Route::get('/deleteprovinsi/{id}', [AdminDatawilayahController::class, 'deleteprovinsi'])->name('deleteprovinsi');
 //kabupaten
 Route::get('/datawilayahkabupaten', [AdminDatawilayahController::class, 'datawilayahkabupaten'])->name('datawilayahkabupaten');
+Route::get('/viewkabupaten', [AdminDatawilayahController::class, 'viewkabupaten']);
     //insert & edit & delete kabupaten
-Route::post('/insertkabupaten', [AdminDatawilayahController::class, 'insertkabupaten'])->name('insertkabupaten');
-Route::post('/editkabupaten/{id}', [AdminDatawilayahController::class, 'editkabupaten'])->name('editkabupaten');
+Route::get('/createkabupaten', [AdminDatawilayahController::class, 'createkabupaten'])->name('createkabupaten');
+Route::get('/insertkabupaten', [AdminDatawilayahController::class, 'insertkabupaten'])->name('insertkabupaten');
+Route::get('/ShowKabupaten/{id}', [AdminDatawilayahController::class, 'ShowKabupaten']);
+Route::get('/editkabupaten/{id}', [AdminDatawilayahController::class, 'editkabupaten'])->name('editkabupaten');
 Route::get('/deletekabupaten/{id}', [AdminDatawilayahController::class, 'deletekabupaten'])->name('deletekabupaten');
 //kecamatan
 Route::get('/datawilayahkecamatan', [AdminDatawilayahController::class, 'datawilayahkecamatan'])->name('datawilayahkecamatan');
+Route::get('/viewkecamatan', [AdminDatawilayahController::class, 'viewkecamatan']);
 //insert & edit & delete kecamatan
-Route::post('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecamatan'])->name('insertkecamatan');
-Route::post('/editkecamatan/{id}', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
+Route::get('/createkecamatan', [AdminDatawilayahController::class, 'createkecamatan'])->name('createkecamatan');
+Route::get('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecamatan'])->name('insertkecamatan');
+Route::get('/Showkecamatan/{id}', [AdminDatawilayahController::class, 'Showkecamatan']);
+Route::get('/editkecamatan/{id}', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
 Route::get('/deletekecamatan/{id}', [AdminDatawilayahController::class, 'deletekecamatan'])->name('deletekecamatan');
 //end data wilayah
 
@@ -190,7 +199,7 @@ Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);
 
 
 //////////
-Route::get('/blogadmin', [blogadmin::class, 'blogg'])->name('blogg');
+Route::get('/blogadmin', [blogadmin::class, 'blogg'])->name('blogad');
 Route::get('/tambahblog', [blogadmin::class, 'tambahblog'])->name('tambahblog');
 Route::get('/editblog/{id}', [blogadmin::class, 'editblog'])->name('editblog');
 Route::post('/insertblog', [blogadmin::class, 'insertblog'])->name('insertblog');
