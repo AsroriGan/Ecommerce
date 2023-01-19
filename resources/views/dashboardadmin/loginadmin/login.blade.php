@@ -27,15 +27,16 @@
                         <div class="login-right-wrap">
                             <h1>Login</h1>
                             <p class="account-subtitle">Access to our dashboard</p>
-                            <form action="https://dreamguystech.com/preadmin/html/invoice/template/index.html">
+                            <form action="/loginadminproses" method="POST">
+                                @csrf
                                 <div class="form-group">
                                     <label class="form-control-label">Email Address</label>
-                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                    <input name="email" type="email" class="form-control" placeholder="Enter your email" autofocus required>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label">Password</label>
                                     <div class="pass-group">
-                                        <input type="password" class="form-control pass-input" placeholder="Enter your password correctly">
+                                        <input name="password" type="password" class="form-control pass-input" placeholder="Enter your password correctly" autofocus required>
                                         <span class="fas fa-eye toggle-password"></span>
                                     </div>
                                 </div>
@@ -53,7 +54,7 @@
                                     </div>
                                 </div>
                                 <button class="btn btn-lg btn-block btn-primary w-100" type="submit">Login</button>
-                                <div class="login-or">
+                                {{-- <div class="login-or">
                                     <span class="or-line"></span>
                                     <span class="span-or">or</span>
                                 </div>
@@ -65,7 +66,7 @@
                                 </div>
 
                                 <div class="text-center dont-have">Don't have an account yet? <a
-                                        href="register.html">Register</a></div>
+                                        href="register.html">Register</a></div> --}}
                             </form>
                         </div>
                     </div>

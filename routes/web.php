@@ -103,8 +103,11 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 
 // Star Login Admin
-Route::get('/loginadmin', [AdminLogincontroller::class, 'login'])->name('login');
+Route::get('/loginadmin', [AdminLogincontroller::class, 'loginadmin'])->name('loginadmin');
+Route::post('/loginadminproses', [AdminLoginController::class, 'loginadminproses'])->name('loginadminproses');
 
+
+Route::get('/logoutadmin', [AdminLoginController::class, 'logoutadmin'])->name('logoutadmin');
 // End Login Admin
 
 // Star kategroi Admin
@@ -196,7 +199,7 @@ Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);
 
 
 //////////
-Route::get('/blogadmin', [blogadmin::class, 'blogg'])->name('blogg');
+Route::get('/blogadmin', [blogadmin::class, 'blogg'])->name('blogad');
 Route::get('/tambahblog', [blogadmin::class, 'tambahblog'])->name('tambahblog');
 Route::get('/editblog/{id}', [blogadmin::class, 'editblog'])->name('editblog');
 Route::post('/insertblog', [blogadmin::class, 'insertblog'])->name('insertblog');
