@@ -132,11 +132,7 @@ Route::get('/storesub_SubKategori', [AdminKategoriController::class, 'storesub_S
 Route::get('/tampilsub_subkategori', [AdminKategoriController::class, 'tampilsub_subkategori'])->name('tampilsub_subkategori');
 Route::get('/showSub_Subkategori/{id}', [AdminKategoriController::class, 'showSub_Subkategori'])->name('showSub_Subkategori');
 Route::get('/updatesub_Subkategori/{id}', [AdminKategoriController::class, 'updatesub_Subkategori'])->name('updatesub_Subkategori');
-
-// Route::get('/sub_subkategori', [AdminKategoriController::class, 'sub_subkategori'])->name('sub_subkategori');
-Route::post('/sub_subkategoripost', [AdminKategoriController::class, 'sub_subkategoripost'])->name('sub_subkategoripost');
-Route::post('/updatesub_subkategori/{id}', [AdminKategoriController::class, 'updatesub_subkategori'])->name('updatesub_subkategori');
-Route::get('/deletesub_sub/{id}', [AdminKategoriController::class, 'deletesub_sub'])->name('deletesub_sub');
+Route::get('/destroySub_Subkategori/{id}', [AdminKategoriController::class, 'destroySub_Subkategori'])->name('destroySub_Subkategori');
 
 // End Kategori Admin
 
@@ -178,6 +174,11 @@ Route::get('/delete_produk/{id}', [AdminProdukController::class, 'delete_produk'
 
 //start data merek
 Route::get('/merek', [AdminMerekController::class, 'index'])->name('merek');
+Route::get('/createmerek', [AdminMerekController::class, 'createmerek'])->name('createmerek');
+Route::get('/storemerek', [AdminMerekController::class, 'storemerek'])->name('storemerek');
+Route::get('/tampilanmerek', [AdminMerekController::class, 'tampilanmerek'])->name('tampilanmerek');
+
+
 Route::post('/merekpost', [AdminMerekController::class, 'merekpost'])->name('merekpost');
 Route::post('/editmerekpost/{id}', [AdminMerekController::class, 'edit'])->name('editmerekpost');
 Route::get('/deletemerek/{id}', [AdminMerekController::class, 'delete'])->name('deletemerek');

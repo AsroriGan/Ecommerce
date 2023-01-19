@@ -3,7 +3,7 @@
         <div class="mb-3">
             <label for="field-3" class="form-label">Kategori
                 :</label>
-            <select class="form-control" name="kategori" aria-label="Default select example">
+            <select class="form-control" id="kategori" name="kategori" aria-label="Default select example">
                 <option value="{{ $datap->kategori }}">
                     {{ $datap->datakategori->kategori }}
                 </option>
@@ -18,7 +18,7 @@
             <label for="field-3" class="form-label">Sub
                 Kategori
                 :</label>
-            <select class="form-control" name="sub_kategori" aria-label="Default select example">
+            <select class="form-control" id="sub_kategori" name="sub_kategori" aria-label="Default select example">
                 <option value="{{ $datap->sub_kategori }}">
                     {{ $datap->datasubkategori->sub_kategori }}
                 </option>
@@ -38,8 +38,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" onclick="updatesub_Subkategori({{ $datap->id }})">Save
-            changes</button>
+        <button type="button" class="btn btn-secondary waves-effect " data-dismiss="modal">Kembali</button>
+        <button type="submit" class="btn btn-info waves-effect" onclick="updatesub_Subkategori({{ $datap->id }})">Edit </button>
     </div>
 </div>
