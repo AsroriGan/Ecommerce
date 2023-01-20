@@ -227,7 +227,7 @@
             toastr.success("{{ Session::get('error') }}")
         @endif
     </script>
-    <script>
+    {{-- <script>
         $(".delete").click(function() {
             var nama = $(this).attr('data-provinsi');
             var id = $(this).attr('data-id');
@@ -261,7 +261,7 @@
                 }
             })
         })
-    </script>
+    </script> --}}
     <!-- End Scrip -->
 
 </body>

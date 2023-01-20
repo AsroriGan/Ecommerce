@@ -9,12 +9,18 @@
                     <option value="{{ $datas->id }}">{{ $datas->kategori }}</option>
                 @endforeach
             </select>
+            <div class="invalid-feedback">
+                Kategori Harus Di Isi
+            </div>
         </div>
     </div>
     <div class="col-md-12">
         <div class="mb-3">
             <label for="field-3" class="form-label">Sub-Kategori :</label>
             <input type="text" id="sub_kategori" name="sub_kategori" class="form-control" placeholder="Masukan Kategori">
+            <div class="invalid-feedback">
+                Sub-Kategori Harus Di Isi
+            </div>
         </div>
     </div>
 </div>

@@ -262,12 +262,6 @@
         $(document).ready(function() {
             $('#myTable').DataTable();
         });
-
-        $('.delete').click(function() {
-            var kategori = $(this).attr('data-kategori');
-            var id = $(this).attr('data-id');
-
-        })
     </script>
 
     <!-- End Script -->

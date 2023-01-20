@@ -119,21 +119,10 @@
                 data: "provinsi=" + provinsi + "&kabupaten=" + kabupaten,
                 success: function(data) {
                     $(".btn-close").click();
-                    toastr.success('Data Berhasil Ditambahkan','Success');
+                    toastr.success("Data Berhasil Di Hapus", "Success")
                     viewkabupaten()
                 },
-                error: function(e){
-                    let error = e.responseJSON.errors;
-                    console.log(error);
-                    if(error.provinsi){
-                        $('#provinsi').addClass('is-invalid');
-                        $('#fb-prov').text(error.provinsi[0]);
-                    }else if(error.kabupaten){
-                        $('#provinsi').removeClass('is-invalid');
-                        $('#kabupaten').addClass('is-invalid');
-                        $('#fb-kab').text(error.kabupaten[0]);
-                    }
-                }
+
             });
         }
 
@@ -155,23 +144,101 @@
                 data: "provinsi=" + provinsi + "&kabupaten=" + kabupaten,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil Di Edit", "Success")
                     viewkabupaten()
                 }
             });
         }
 
         function destroykabupaten(id) {
-            $.ajax({
-                type: "get",
-                url: "{{ url('deletekabupaten') }}/" + id,
-                success: function() {
-                    $(".btn-close").click();
-                    viewkabupaten()
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1
+            }).then(function(t) {
+                if (t.value) {
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success"
+                    }).then(function(t) {
+                        if (t.value) {
+                            $.ajax({
+                                type: "get",
+                                url: "{{ url('deletekabupaten') }}/" + id,
+                                success: function() {
+                                    $(".btn-close").click();
+                                    toastr.success("Data Berhasil Di Hapus", "Success")
+                                    viewkabupaten()
+                                }
+                            });
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        type: "error",
+                        confirmButtonClass: "btn btn-success"
+                    })
                 }
             });
         }
     </script>
 
+    {{-- <script>
+        $(".delete").click(function() {
+            var nama = $(this).attr('data-nama');
+            var id = $(this).attr('data-id');
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1
+            }).then(function(t) {
+                if (t.value) {
+                    window.location = "/deletekabupaten/" + id;
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        type: "error",
+                        confirmButtonClass: "btn btn-success"
+                    })
+                }
+            })
+        })
+    </script> --}}
+
+    <script>
+        $(document).ready(function() {
+            $('#table').DataTable();
+        });
+
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}")
+        @endif
+    </script>
     <!-- End Scrip -->
 
 </body>

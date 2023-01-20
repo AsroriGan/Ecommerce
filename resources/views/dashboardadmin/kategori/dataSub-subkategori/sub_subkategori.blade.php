@@ -156,12 +156,12 @@
 
                     </div>
                 </div>
-                    <div class="modal-body">
-                        <div id="halcreate" class="p-4">
+                <div class="modal-body">
+                    <div id="halcreate" class="p-4">
 
 
-                        </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -171,7 +171,6 @@
     @include('layoutsadmin.script')
 
     <script>
-
         // Tampilkan Data Sub-SubKategori
         $(document).ready(function() {
             tampilSub_Subkategori()
@@ -199,10 +198,21 @@
             $.ajax({
                 type: "get",
                 url: "{{ url('storesub_SubKategori') }}",
-                data: "kategori=" + kategori + "&sub_kategori=" + sub_kategori + "&sub_subkategori=" + sub_subkategori,
+                data: "kategori=" + kategori + "&sub_kategori=" + sub_kategori + "&sub_subkategori=" +
+                    sub_subkategori,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil Ditambahkan", "Success")
                     tampilSub_Subkategori()
+                },
+                error: function(error) {
+                    console.log(error.responseJSON);
+                    let error_log = error.responseJSON.errors;
+                    if (error.status == 422) {
+                        $('#kategori').addClass('is-invalid');
+                        $('#sub_kategori').addClass('is-invalid');
+                        $('#sub_subkategori').addClass('is-invalid');
+                    }
                 }
             });
         }
@@ -215,17 +225,19 @@
             });
         }
 
-         // Proses Update Data Sub-SubKategori
-         function updatesub_Subkategori(id) {
+        // Proses Update Data Sub-SubKategori
+        function updatesub_Subkategori(id) {
             var kategori = $("#kategori").val();
             var sub_kategori = $("#sub_kategori").val();
             var sub_subkategori = $("#sub_subkategori").val();
             $.ajax({
                 type: "get",
                 url: "{{ url('updatesub_Subkategori') }}/" + id,
-                data: "kategori=" + kategori + "&sub_kategori=" + sub_kategori + "&sub_subkategori=" + sub_subkategori,
+                data: "kategori=" + kategori + "&sub_kategori=" + sub_kategori + "&sub_subkategori=" +
+                    sub_subkategori,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil DiEdit", "Success")
                     tampilSub_Subkategori()
                 }
             });
@@ -233,21 +245,6 @@
 
         // Proses Delete Data Sub-SubKategori
         function destroySub_Subkategori(id) {
-            $.ajax({
-                type: "get",
-                url: "{{ url('destroySub_Subkategori') }}/" + id,
-                success: function() {
-                    $(".btn-close").click();
-                    tampilSub_Subkategori()
-                }
-            });
-        }
-    </script>
-
-    <script>
-        $("#delete").click(function() {
-            var nama = $(this).attr('data-sub_subkategori');
-            var id = $(this).attr('data-id');
             Swal.fire({
                 title: "Are you sure?",
                 text: "You won't be able to revert this!",
@@ -261,13 +258,23 @@
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
-                    window.location = "/deletesub_sub/" + id;
                     Swal.fire({
                         type: "success",
                         title: "Deleted!",
                         text: "Your file has been deleted.",
                         confirmButtonClass: "btn btn-success"
-                    })
+                    }).then(function(t) {
+                        if (t.value) {
+                            $.ajax({
+                                type: "get",
+                                url: "{{ url('destroySub_Subkategori') }}/" + id,
+                                success: function() {
+                                    $(".btn-close").click();
+                                    tampilSub_Subkategori()
+                                }
+                            });
+                        }
+                    });
                 } else {
                     Swal.fire({
                         title: "Cancelled",
@@ -276,7 +283,15 @@
                         confirmButtonClass: "btn btn-success"
                     })
                 }
-            })
+            });
+        }
+    </script>
+
+    <script>
+        $("#delete").click(function() {
+            var nama = $(this).attr('data-sub_subkategori');
+            var id = $(this).attr('data-id');
+
         })
     </script>
 

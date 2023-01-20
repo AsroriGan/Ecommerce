@@ -9,6 +9,9 @@
                     </option>
                 @endforeach
             </select>
+            <div class="invalid-feedback">
+                Provinsi Harus Di Isi
+            </div>
         </div>
     </div>
     <div class="col-md-12">
@@ -21,12 +24,18 @@
                     </option>
                 @endforeach
             </select>
+            <div class="invalid-feedback">
+                Kabupaten Harus Di Isi
+            </div>
         </div>
     </div>
     <div class="col-md-12">
         <div class="mb-3">
             <label for="field-1" class="form-label">Kecamatan</label>
             <input type="text" id="kecamatan" name="kecamatan" class="form-control" id="field-1" placeholder="Masukkan Kecamatan">
+        </div>
+        <div class="invalid-feedback">
+            Kecamatan Harus Di Isi
         </div>
     </div>
 </div>
