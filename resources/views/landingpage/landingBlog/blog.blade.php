@@ -8,14 +8,90 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('layouts.Head')
+@include('layouts.head')
 
 <body class="blog_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
     <!-- Header start  -->
+    @include('layouts.header')
+    <!-- Header End  -->
 
-    @include('layouts.Header')
+    <!-- ekka Cart Start -->
+    <div class="ec-side-cart-overlay"></div>
+    <div id="ec-side-cart" class="ec-side-cart">
+        <div class="ec-cart-inner">
+            <div class="ec-cart-top">
+                <div class="ec-cart-title">
+                    <span class="cart_title">My Cart</span>
+                    <button class="ec-close">×</button>
+                </div>
+                <ul class="eccart-pro-items">
+                    <li>
+                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
+                        <div class="ec-pro-content">
+                            <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
+                            <span class="cart-price"><span>$76.00</span> x 1</span>
+                            <div class="qty-plus-minus">
+                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                            </div>
+                            <a href="javascript:void(0)" class="remove">×</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
+                        <div class="ec-pro-content">
+                            <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
+                            <span class="cart-price"><span>$64.00</span> x 1</span>
+                            <div class="qty-plus-minus">
+                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                            </div>
+                            <a href="javascript:void(0)" class="remove">×</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
+                        <div class="ec-pro-content">
+                            <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
+                            <span class="cart-price"><span>$59.00</span> x 1</span>
+                            <div class="qty-plus-minus">
+                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                            </div>
+                            <a href="javascript:void(0)" class="remove">×</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="ec-cart-bottom">
+                <div class="cart-sub-total">
+                    <table class="table cart-table">
+                        <tbody>
+                            <tr>
+                                <td class="text-left">Sub-Total :</td>
+                                <td class="text-right">$300.00</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">VAT (20%) :</td>
+                                <td class="text-right">$60.00</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Total :</td>
+                                <td class="text-right primary-color">$360.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart_btn">
+                    <a href="cart.html" class="btn btn-primary">View Cart</a>
+                    <a href="checkout.html" class="btn btn-secondary">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ekka Cart End -->
 
     <!-- Ec breadcrumb start -->
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
@@ -45,156 +121,33 @@
     <section class="ec-page-content section-space-p">
         <div class="container">
             <div class="row">
-                <div class="ec-blogs-rightside col-lg-8 col-md-12">
+                <div class="ec-blogs-rightside col-lg-12 col-md-12">
 
                     <!-- Blog content Start -->
                     <div class="ec-blogs-content">
                         <div class="ec-blogs-inner">
                             <div class="row">
                                 @foreach ($data as $blog)
-
-                                <div class="col-md-6 col-sm-12 mb-6 ec-blog-block">
+                                <div class="col-lg-4 col-md-6 col-sm-12 mb-6 ec-blog-block">
                                     <div class="ec-blog-inner">
                                         <div class="ec-blog-image">
-                                            <a href="blog-detail-left-sidebar.html">
-                                                <img class="blog-image bi-rori" src="{{ asset('blog/'. $blog->foto_sampul) }}"
+                                            <a href="/detailblog/{{ $blog->id }}">
+                                                <img class="blog-image" src="{{ asset('blog/'. $blog->foto_sampul) }}"
                                                     alt="Blog" />
                                             </a>
                                         </div>
                                         <div class="ec-blog-content">
-                                            <h5 class="ec-blog-title"><a href="blog-detail-left-sidebar.html">{{$blog->judul_blog}}</a></h5>
-
+                                            <h5 class="ec-blog-title"><a href="/detailblog/{{ $blog->id }}">{{ $blog->judul_blog }}</a></h5>
                                             <div class="ec-blog-date">By <span>Mr Admin</span> / {{ $blog->created_at }}
                                             </div>
                                             <div class="ec-blog-desc">{!! $blog->deskripsi !!}</div>
-
-                                                <div class="ec-blog-btn"><a href="/detailblog/{{ $blog->id }}" class="btn btn-primary">Read
-                                                    More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                {{-- <div class="col-md-6 col-sm-12 mb-6 ec-blog-block">
-                                    <div class="ec-blog-inner">
-                                        <div class="ec-blog-image">
-                                            <a href="blog-detail-left-sidebar.html">
-                                                <img class="blog-image bi-rori" src="assets/images/blog-image/batik2.jpg"
-                                                    alt="Blog" />
-                                            </a>
-                                        </div>
-                                        <div class="ec-blog-content">
-                                            <h5 class="ec-blog-title"><a href="blog-detail-left-sidebar.html">Vogue
-                                                    Shopping Weekend 2021.</a></h5>
-
-                                            <div class="ec-blog-date">By <span>Mr Admin</span> / February 10, 2021-2022
-                                            </div>
-                                            <div class="ec-blog-desc">Lorem Ipsum is simply dummy text of the printing
-                                                and typesetting industry. Lorem Ipsum has been the industry's standard
-                                                dummy text ever since the 1500s,</div>
-
-                                            <div class="ec-blog-btn"><a href="/detailblog" class="btn btn-primary">Read
+                                            <div class="ec-blog-btn"><a href="/detailblog/{{ $blog->id }}" class="btn btn-primary">Read
                                                     More</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12 mb-6 ec-blog-block">
-                                    <div class="ec-blog-inner">
-                                        <div class="ec-blog-image">
-                                            <a href="blog-detail-left-sidebar.html">
-                                                <img class="blog-image bi-rori" src="assets/images/blog-image/batik3.jpg"
-                                                    alt="Blog" />
-                                            </a>
-                                        </div>
-                                        <div class="ec-blog-content">
-                                            <h5 class="ec-blog-title"><a href="blog-detail-left-sidebar.html">Winter
-                                                    2021 Trending Fashion Market</a></h5>
-
-                                            <div class="ec-blog-date">By <span>Mr Admin</span> / February 10, 2021-2022
-                                            </div>
-                                            <div class="ec-blog-desc">Lorem Ipsum is simply dummy text of the printing
-                                                and typesetting industry. Lorem Ipsum has been the industry's standard
-                                                dummy text ever since the 1500s,</div>
-
-                                            <div class="ec-blog-btn"><a href="/detailblog" class="btn btn-primary">Read
-                                                    More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12 mb-6 ec-blog-block">
-                                    <div class="ec-blog-inner">
-                                        <div class="ec-blog-image">
-                                            <a href="blog-detail-left-sidebar.html">
-                                                <img class="blog-image bi-rori" src="assets/images/blog-image/batik4.jpg"
-                                                    alt="Blog" />
-                                            </a>
-                                        </div>
-                                        <div class="ec-blog-content">
-                                            <h5 class="ec-blog-title"><a href="blog-detail-left-sidebar.html">Fashion
-                                                    Market Reveals Her Jacket.</a></h5>
-
-                                            <div class="ec-blog-date">By <span>Mr Admin</span> / February 10, 2021-2022
-                                            </div>
-                                            <div class="ec-blog-desc">Lorem Ipsum is simply dummy text of the printing
-                                                and typesetting industry. Lorem Ipsum has been the industry's standard
-                                                dummy text ever since the 1500s,</div>
-
-                                            <div class="ec-blog-btn"><a href="/detailblog" class="btn btn-primary">Read
-                                                    More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12 mb-6 ec-blog-block">
-                                    <div class="ec-blog-inner">
-                                        <div class="ec-blog-image">
-                                            <a href="blog-detail-left-sidebar.html">
-                                                <img class="blog-image bi-rori" src="assets/images/blog-image/batik5.jpg"
-                                                    alt="Blog" />
-                                            </a>
-                                        </div>
-                                        <div class="ec-blog-content">
-                                            <h5 class="ec-blog-title"><a href="blog-detail-left-sidebar.html">Summer
-                                                    Trending Fashion Market.</a></h5>
-
-                                            <div class="ec-blog-date">By <span>Mr Admin</span> / February 10, 2021-2022
-                                            </div>
-                                            <div class="ec-blog-desc">Lorem Ipsum is simply dummy text of the printing
-                                                and typesetting industry. Lorem Ipsum has been the industry's standard
-                                                dummy text ever since the 1500s,</div>
-
-                                            <div class="ec-blog-btn"><a href="/detailblog" class="btn btn-primary">Read
-                                                    More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12 mb-6 ec-blog-block">
-                                    <div class="ec-blog-inner">
-                                        <div class="ec-blog-image">
-                                            <a href="blog-detail-left-sidebar.html">
-                                                <img class="blog-image bi-rori" src="assets/images/blog-image/batik6.jpg"
-                                                    alt="Blog" />
-                                            </a>
-                                        </div>
-                                        <div class="ec-blog-content">
-                                            <h5 class="ec-blog-title"><a href="blog-detail-left-sidebar.html">The best
-                                                    fashion influencers.</a></h5>
-
-                                            <div class="ec-blog-date">By <span>Mr Admin</span> / February 10, 2021-2022
-                                            </div>
-                                            <div class="ec-blog-desc">Lorem Ipsum is simply dummy text of the printing
-                                                and typesetting industry. Lorem Ipsum has been the industry's standard
-                                                dummy text ever since the 1500s,</div>
-
-                                            <div class="ec-blog-btn"><a href="/detailblog" class="btn btn-primary">Read
-                                                    More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
+                                @endforeach
                             </div>
                         </div>
                         <!-- Ec Pagination Start -->
@@ -214,128 +167,12 @@
                     </div>
                     <!--Blog content End -->
                 </div>
-                <!-- Sidebar Area Start -->
-                <div class="ec-blogs-leftside col-lg-4 col-md-12">
-                    <div class="ec-blog-search">
-                        <form class="ec-blog-search-form" action="#">
-                            <input class="form-control" placeholder="Search Our Blog" type="text">
-                            <button class="submit" type="submit"><i class="ecicon eci-search"></i></button>
-                        </form>
-                    </div>
-                    <div class="ec-sidebar-wrap">
-                        <!-- Sidebar Recent Blog Block -->
-                        <div class="ec-sidebar-block ec-sidebar-recent-blog">
-                            <div class="ec-sb-title">
-                                <h3 class="ec-sidebar-title">Recent Articles</h3>
-                            </div>
-                            <div class="ec-sb-block-content">
-                                <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Best-selling batik in 2023.</a></h5>
-                                    <div class="ec-blog-date">February 10, 2021-2022</div>
-                                </div>
-                                <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Vogue Shopping
-                                            Weekend.</a></h5>
-                                    <div class="ec-blog-date">March 14, 2021-2022</div>
-                                </div>
-                                <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Fashion Market
-                                            Reveals Her Jacket.</a></h5>
-                                    <div class="ec-blog-date">June 09, 2021-2022</div>
-                                </div>
-                                <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Summer Trending
-                                            Fashion Market.</a></h5>
-                                    <div class="ec-blog-date">July 17, 2021-2022</div>
-                                </div>
-                                <div class="ec-sidebar-block-item">
-                                    <h5 class="ec-blog-title"><a href="/detailblog">Winter 2021
-                                            Trending Fashion Market</a></h5>
-                                    <div class="ec-blog-date">August 02, 2021-2022</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Sidebar Recent Blog Block -->
-                        <!-- Sidebar Category Block -->
-                        <div class="ec-sidebar-block">
-                            <div class="ec-sb-title">
-                                <h3 class="ec-sidebar-title">Categories</h3>
-                            </div>
-                            <div class="ec-sb-block-content">
-                                <ul>
-                                    <li>
-                                        <div class="ec-sidebar-block-item">
-                                            <input type="checkbox" checked /> <a href="#">clothes</a><span
-                                                class="checked"></span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="ec-sidebar-block-item">
-                                            <input type="checkbox" /> <a href="#">Bags</a><span
-                                                class="checked"></span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="ec-sidebar-block-item">
-                                            <input type="checkbox" /> <a href="#">Shoes</a><span
-                                                class="checked"></span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="ec-sidebar-block-item">
-                                            <input type="checkbox" /> <a href="#">cosmetics</a><span
-                                                class="checked"></span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="ec-sidebar-block-item">
-                                            <input type="checkbox" /> <a href="#">electrics</a><span
-                                                class="checked"></span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="ec-sidebar-block-item">
-                                            <input type="checkbox" /> <a href="#">phone</a><span
-                                                class="checked"></span>
-                                        </div>
-                                    </li>
-                                    <li id="ec-more-toggle-content" style="padding: 0; display: none;">
-                                        <ul>
-                                            <li>
-                                                <div class="ec-sidebar-block-item">
-                                                    <input type="checkbox" /> <a href="#">Watch</a><span
-                                                        class="checked"></span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="ec-sidebar-block-item">
-                                                    <input type="checkbox" /> <a href="#">Cap</a><span
-                                                        class="checked"></span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <div class="ec-sidebar-block-item ec-more-toggle">
-                                            <span class="checked"></span><span id="ec-more-toggle">More
-                                                Categories</span>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Sidebar Category Block -->
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer Start -->
-
     @include('layouts.Footer')
-
     <!-- Footer Area End -->
 
     <!-- Footer navigation panel for responsive display -->
@@ -522,7 +359,7 @@
             <h3>Features</h3>
         </div>
         <a href="#" class="ec-tools-sidebar-toggle in-out">
-            <img alt="icon" src="assets/images/common/settings.png" />
+            <img alt="icon" src="assets/images/common/settings.png">
         </a>
         <div class="ec-tools-detail">
             <div class="ec-tools-sidebar-content ec-change-color ec-color-desc">
@@ -588,11 +425,8 @@
     </div>
     <!-- Feature tools end -->
 
-    <!-- Scrip -->
-
+    <!-- Vendor JS -->
     @include('layouts.script')
-
-    <!-- End Script -->
 
 </body>
 
