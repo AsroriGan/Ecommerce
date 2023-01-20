@@ -139,7 +139,7 @@
                     // conole.log(error.responseJSON.errors);
                     if (error.status == 422) {
                         $('#valprovinsi').addClass('is-invalid');
-                        $('#feedbackprov').append(error_log.provinsi[0]);
+                        $('#feedbackprov').text(error_log.provinsi[0]);
                     }
                 }
             });
@@ -183,6 +183,7 @@
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
+                    // alert('p');
                     Swal.fire({
                             type: "success",
                             title: "Deleted!",
@@ -190,15 +191,19 @@
                             confirmButtonClass: "btn btn-success"
                         })
                         .then(function(t) {
-                            // console.log(t.value);
                             if (t.value) {
                                 $.ajax({
                                     type: "get",
                                     url: "/deleteprovinsi/" + id,
                                     // data: "kategori=" + kategori,
                                     success: function(data) {
-                                        toastr.success('Data Berhasil Diedit','Success' );
-                                        viewdata();
+                                        if(data.messagerelasi){
+                                            toastr.error(data.messagerelasi,"Error");
+                                        }else{
+                                            toastr.success('Data Berhasil Dihapus','Success' );
+                                            viewdata();
+                                        }
+                                        // console.log(data.messagerelasi);
                                     }
                                 });
                             }

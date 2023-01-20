@@ -13,16 +13,14 @@
                 <td scope="row">{{ $loop->iteration }}</td>
                 <td>{{ $data->nama_merek }}</td>
                 <td><img src="{{ asset('foto/' . $data->foto_merek) }}" style="height:80px;"></td>
-
                 <td>
-
-                    <button class="btn btn-sm  btn-white text-success me-2" data-bs-toggle="modal" data-bs-target="#modaledit"><i class="far fa-edit me-1"></i>
+                    <button class="btn btn-sm  btn-white text-success me-2" data-bs-toggle="modal"
+                        data-bs-target="#modalmerek" onclick="editview({{ $data->id }})"><i
+                            class="far fa-edit me-1"></i>
                         Edit</button>
-                    <button class="btn btn-sm btn-white text-danger me-2 " onclick=""><i
+                    <button class="btn btn-sm btn-white text-danger me-2 " onclick="deletemerek({{ $data->id }})"><i
                             class="far fa-trash-altme-1"></i>Hapus</button>
-
                 </td>
-
             </tr>
         @endforeach
     </tbody>

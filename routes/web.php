@@ -183,13 +183,12 @@ Route::get('/delete_produk/{id}', [AdminProdukController::class, 'delete_produk'
 
 //start data merek
 Route::get('/merek', [AdminMerekController::class, 'index'])->name('merek');
+Route::get('/tampilanmerek', [AdminMerekController::class, 'tampilanmerek'])->name('tampilanmerek');
 Route::get('/createmerek', [AdminMerekController::class, 'createmerek'])->name('createmerek');
 Route::post('/storemerek', [AdminMerekController::class, 'storemerek'])->name('storemerek');
-Route::get('/tampilanmerek', [AdminMerekController::class, 'tampilanmerek'])->name('tampilanmerek');
-
-
-Route::post('/merekpost', [AdminMerekController::class, 'merekpost'])->name('merekpost');
+Route::get('/editviewmerk/{id}', [AdminMerekController::class, 'editviewmerk'])->name('editviewmerk');
 Route::post('/editmerekpost/{id}', [AdminMerekController::class, 'edit'])->name('editmerekpost');
+Route::post('/merekpost', [AdminMerekController::class, 'merekpost'])->name('merekpost');
 Route::get('/deletemerek/{id}', [AdminMerekController::class, 'delete'])->name('deletemerek');
 //end data merek
 
@@ -205,7 +204,6 @@ Route::get('/editblog/{id}', [blogadmin::class, 'editblog'])->name('editblog');
 Route::post('/insertblog', [blogadmin::class, 'insertblog'])->name('insertblog');
 Route::post('/updateblog/{id}', [blogadmin::class, 'updateblog'])->name('updateblog');
 Route::get('/deleteblog/{id}', [blogadmin::class, 'deleteblog'])->name('deleteblog');
-
 // End Sliders
 
 // Start Promosi

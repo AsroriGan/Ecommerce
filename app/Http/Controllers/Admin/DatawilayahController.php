@@ -18,14 +18,14 @@ class DatawilayahController extends Controller
         // dd($data);
         return view('dashboardadmin\datawilayah\provinsi\datawilayahprovinsi', compact('data'));
     }
- 
+
     public function viewdataprovinsi()
     {
         $data = Datawilayah::all();
         // dd($data);
         return view('dashboardadmin.datawilayah.provinsi.viewdataprovinsi', compact('data'));
     }
-    
+
     public function create()
     {
         return view('dashboardadmin.datawilayah.provinsi.create');
@@ -37,7 +37,7 @@ class DatawilayahController extends Controller
             'provinsi' => 'required'
         ], ['provinsi.required' => 'Provinsi Wajib Di isi']);
         Datawilayah::create($request->all());
-        return response()->json(['title'=>'Success','message'=>'Data Berhasil Ditambahkan']);
+        return response()->json(['title' => 'Success', 'message' => 'Data Berhasil Ditambahkan']);
     }
 
     public function provinsiview($id)
@@ -52,16 +52,15 @@ class DatawilayahController extends Controller
         // dd($request->all());
         $data = Datawilayah::findorfail($id);
         $data->update($request->all());
-        return response()->json(['title'=>'Success','message'=>'Data Berhasil Diedit']);
+        return response()->json(['title' => 'Success', 'message' => 'Data Berhasil Diedit']);
     }
-    
+
     public function deleteprovinsi($id)
     {
         $relasi = datawilayahkabupaten::where('provinsi', $id)->count();
         if ($relasi > 0) {
-            dd('p');
+            return response()->json(['messagerelasi' => 'Data Provinsi Sedang digunakan']);
         }
-
         $data = Datawilayah::findorfail($id);
         // dd($data);
         $data->delete();
@@ -96,7 +95,11 @@ class DatawilayahController extends Controller
     public function insertkabupaten(Request $request)
     {
         // dd($request->all());
-         datawilayahkabupaten::create($request->all());
+        $validate = $request->validate([
+            'provinsi' => 'required',
+            'kabupaten' => 'required'
+        ]);
+        datawilayahkabupaten::create($request->all());
         // return redirect('/datawilayahkabupaten')->with("success", "Data berhasil di tambahkan");
     }
 
@@ -105,7 +108,7 @@ class DatawilayahController extends Controller
         // dd($id);
         $provinsi = Datawilayah::all();
         $data = datawilayahkabupaten::findorfail($id);
-        return view('dashboardadmin.datawilayah.kabupaten.edit', compact('data','provinsi'));
+        return view('dashboardadmin.datawilayah.kabupaten.edit', compact('data', 'provinsi'));
     }
 
     public function editkabupaten(Request $request, $id)
@@ -144,7 +147,7 @@ class DatawilayahController extends Controller
     {
         $provinsi = Datawilayah::all();
         $kabupaten = datawilayahkabupaten::all();
-        return view('dashboardadmin.datawilayah.Kecamatan.createkecamatan', compact('provinsi','kabupaten'));
+        return view('dashboardadmin.datawilayah.Kecamatan.createkecamatan', compact('provinsi', 'kabupaten'));
     }
 
     public function viewkecamatan()
@@ -166,7 +169,7 @@ class DatawilayahController extends Controller
         $provinsi = Datawilayah::all();
         $kabupaten = datawilayahkabupaten::all();
         $data = datawilayahkecamatan::findOrFail($id);
-        return view('dashboardadmin.datawilayah.Kecamatan.editkecamatan', compact('provinsi','kabupaten','data'));
+        return view('dashboardadmin.datawilayah.Kecamatan.editkecamatan', compact('provinsi', 'kabupaten', 'data'));
     }
 
     public function editkecamatan(Request $request, $id)
@@ -185,5 +188,5 @@ class DatawilayahController extends Controller
     //======== End data wilayah Kecamatan ========//
 
     //ajax validation
-    
+
 }

@@ -84,60 +84,6 @@
         </div>
 
     </div>
-    {{-- <div id="con-close-modal{{ $row->id }}" class="modal fade"
-        tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true" style="display:none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Edit Kabupaten</h4>
-                    <button type="button" class="btn-close"
-                        data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="/editkabupaten/{{ $row->id }}"
-                    method="POST">
-                    @csrf
-                    <div class="modal-body p-4">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="field-1"
-                                        class="form-label">Provinsi</label>
-                                    <select class="form-select" name="provinsi">
-                                        <option value="{{ $row->provinsi }}">
-                                            {{ $row->rprovinsi->provinsi }}
-                                        </option>
-                                        @foreach ($provinsi as $prov)
-                                            <option
-                                                value="{{ $prov->id }}">
-                                                {{ $prov->provinsi }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label class="form-label">Kabupaten</label>
-                                    <input type="text" name="kabupaten"
-                                        class="form-control"
-                                        value="{{ $row->kabupaten }}">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button"
-                            class="btn btn-secondary waves-effect"
-                            data-bs-dismiss="modal">Close</button>
-                        <button type="submit"
-                            class="btn btn-info waves-effect waves-light">Save
-                            changes</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div> --}}
 
     <!-- Scrip Star -->
 
@@ -173,8 +119,21 @@
                 data: "provinsi=" + provinsi + "&kabupaten=" + kabupaten,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success('Data Berhasil Ditambahkan','Success');
                     viewkabupaten()
                 },
+                error: function(e){
+                    let error = e.responseJSON.errors;
+                    console.log(error);
+                    if(error.provinsi){
+                        $('#provinsi').addClass('is-invalid');
+                        $('#fb-prov').text(error.provinsi[0]);
+                    }else if(error.kabupaten){
+                        $('#provinsi').removeClass('is-invalid');
+                        $('#kabupaten').addClass('is-invalid');
+                        $('#fb-kab').text(error.kabupaten[0]);
+                    }
+                }
             });
         }
 
@@ -213,51 +172,6 @@
         }
     </script>
 
-    <script>
-        $(".delete").click(function() {
-            var nama = $(this).attr('data-nama');
-            var id = $(this).attr('data-id');
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                type: "warning",
-                showCancelButton: !0,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
-                confirmButtonClass: "btn btn-primary",
-                cancelButtonClass: "btn btn-danger ml-1",
-                buttonsStyling: !1
-            }).then(function(t) {
-                if (t.value) {
-                    window.location = "/deletekabupaten/" + id;
-                    Swal.fire({
-                        type: "success",
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                } else {
-                    Swal.fire({
-                        title: "Cancelled",
-                        text: "Your imaginary file is safe :)",
-                        type: "error",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                }
-            })
-        })
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('#table').DataTable();
-        });
-
-        @if (Session::has('success'))
-            toastr.success("{{ Session::get('success') }}")
-        @endif
-    </script>
     <!-- End Scrip -->
 
 </body>

@@ -41,7 +41,7 @@
                                             <div
                                                 class="invoices-settings-btn
                                         invoices-settings-btn-one">
-                                                <button href="#" class="btn" ><i data-feather="plus-circle" onclick="modalkecamatan()"></i>Tambah data baru </button>
+                                                <button href="#" class="btn" onclick="modalkecamatan()"><i data-feather="plus-circle"></i>Tambah data baru </button>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                             </div> --}}
                             <div class="card-body">
                                 <div class="table-responsive" id="viewkecamatan">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -184,6 +184,7 @@
 
         // Halaman Create Data Kecamatan
         function modalkecamatan() {
+            alert("P");
             $.get("{{ url('createkecamatan') }}", {}, function(data, status) {
                 $("#halcreatekecamatan").html(data);
                 $("#modalkecamatan").modal('show');
@@ -241,9 +242,9 @@
                 }
             });
         }
-        
+
     </script>
-    
+
     <script>
         $(".delete").click(function() {
             var nama = $(this).attr('data-nama');
@@ -284,7 +285,7 @@
         $(document).ready(function() {
             $('#table').DataTable();
         });
-        
+
         @if (Session::has('error'))
             toastr.success("{{ Session::get('error') }}")
         @endif
