@@ -96,8 +96,21 @@ class DatawilayahController extends Controller
     public function insertkabupaten(Request $request)
     {
         // dd($request->all());
+        $this->_validations($request);
          datawilayahkabupaten::create($request->all());
         // return redirect('/datawilayahkabupaten')->with("success", "Data berhasil di tambahkan");
+    }
+
+    private function _validations(Request $request){
+
+        $validasi = $request->validate([
+            'provinsi' => 'required',
+            'kabupaten' => 'required'
+        ],
+        [
+            'provinsi' => 'Harap Isi provinsi',
+            'kabupaten' => 'Harap Isi kabupaten'
+        ]);
     }
 
     public function ShowKabupaten($id)
@@ -156,8 +169,23 @@ class DatawilayahController extends Controller
 
     public function insertkecamatan(Request $request)
     {
+        $this->_validation($request);
         $data = datawilayahkecamatan::create($request->all());
         // return redirect('/datawilayahkecamatan')->with("success", "data berhasil di tambahkan");
+    }
+
+    private function _validation(Request $request){
+
+        $validasi = $request->validate([
+            'provinsi' => 'required',
+            'kabupaten' => 'required',
+            'kecamatan' => 'required'
+        ],
+        [
+            'provinsi' => 'Harap Isi provinsi',
+            'kabupaten' => 'Harap Isi kabupaten',
+            'kecamatan' => ' Harap Isi Kecamatan'
+        ]);
     }
 
     public function Showkecamatan($id)

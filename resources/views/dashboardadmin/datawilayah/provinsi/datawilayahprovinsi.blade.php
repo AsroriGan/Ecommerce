@@ -197,7 +197,7 @@
                                     url: "/deleteprovinsi/" + id,
                                     // data: "kategori=" + kategori,
                                     success: function(data) {
-                                        toastr.success('Data Berhasil Diedit','Success' );
+                                        toastr.success('Data Berhasil Di Hapus','Success' );
                                         viewdata();
                                     }
                                 });
@@ -222,7 +222,7 @@
             toastr.success("{{ Session::get('error') }}")
         @endif
     </script>
-    <script>
+    {{-- <script>
         $(".delete").click(function() {
             var nama = $(this).attr('data-provinsi');
             var id = $(this).attr('data-id');
@@ -256,7 +256,7 @@
                 }
             })
         })
-    </script>
+    </script> --}}
     <!-- End Scrip -->
 
 </body>

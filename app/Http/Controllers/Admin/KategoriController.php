@@ -146,9 +146,22 @@ class KategoriController extends Controller
 
     public function storesubKategori(Request $request)
     {
+        $this->_validasi($request);
         subkategori::insert([
             'kategori' => $request->kategori,
             'sub_kategori' => $request->sub_kategori,
+        ]);
+    }
+
+    private function _validasi(Request $request){
+
+        $validasi = $request->validate([
+            'kategori' => 'required',
+            'sub_kategori' => 'required'
+        ],
+        [
+            'kategori' => 'Harap Isi Kategori',
+            'sub_kategori' => 'Harap Isi Sub-Kategori'
         ]);
     }
 
@@ -203,6 +216,7 @@ class KategoriController extends Controller
 
     public function createsub_Subkategori()
     {
+
         $datas = kategori::all();
         $data = subkategori::all();
         $datap = Sub_Subkategori::all();
@@ -212,10 +226,25 @@ class KategoriController extends Controller
     public function storesub_SubKategori(Request $request)
     {
         // dd($request->all());
+        $this->_validations($request);
         Sub_Subkategori::insert([
             'kategori' => $request->kategori,
             'sub_kategori' => $request->sub_kategori,
             'sub_subkategori' => $request->sub_subkategori,
+        ]);
+    }
+
+    private function _validations(Request $request){
+
+        $validasi = $request->validate([
+            'kategori' => 'required',
+            'sub_kategori' => 'required',
+            'sub_subkategori' => 'required'
+        ],
+        [
+            'kategori' => 'Harap Isi Kategori',
+            'sub_kategori' => 'Harap Isi Sub-Kategori',
+            'sub_subkategori' => 'Harap Isi Sub-SubKategori'
         ]);
     }
 

@@ -208,7 +208,6 @@
         }
         // Proses Delete Data
         function destroy(id) {
-<<<<<<< HEAD
             Swal.fire({
                 title: "Are you sure?",
                 text: "You won't be able to revert this!",
@@ -248,14 +247,6 @@
                         type: "error",
                         confirmButtonClass: "btn btn-success"
                     })
-=======
-            $.ajax({
-                type: "get",
-                url: "{{ url('destroy') }}/" + id,
-                success: function(data) {
-                    $(".btn-close").click();
-                    tampilkandata()
->>>>>>> db9903b403b0f26702eb01ae7c9b1e7e80c6cb39
                 }
             });
         }
@@ -271,12 +262,6 @@
         $(document).ready(function() {
             $('#myTable').DataTable();
         });
-
-        $('.delete').click(function() {
-            var kategori = $(this).attr('data-kategori');
-            var id = $(this).attr('data-id');
-
-        })
     </script>
 
     <!-- End Script -->

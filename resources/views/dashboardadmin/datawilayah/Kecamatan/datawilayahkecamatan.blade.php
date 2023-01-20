@@ -41,7 +41,8 @@
                                             <div
                                                 class="invoices-settings-btn
                                         invoices-settings-btn-one">
-                                                <button href="#" class="btn" ><i data-feather="plus-circle" onclick="modalkecamatan()"></i>Tambah data baru </button>
+                                                <button href="#" class="btn"><i data-feather="plus-circle"
+                                                        onclick="modalkecamatan()"></i>Tambah data baru </button>
                                             </div>
                                         </div>
                                     </div>
@@ -51,8 +52,8 @@
                     </div>
                 </div>
 
-                <div id="modalkecamatan" class="modal fade" tabindex="-1" role="dialog"
-                    aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;">
+                <div id="modalkecamatan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true" style="display:none;">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -76,7 +77,7 @@
                             </div> --}}
                             <div class="card-body">
                                 <div class="table-responsive" id="viewkecamatan">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -170,7 +171,6 @@
     @include('layoutsadmin.script')
 
     <script>
-
         // View Data Kecamatan
         $(document).ready(function() {
             viewkecamatan()
@@ -201,7 +201,17 @@
                 data: "provinsi=" + provinsi + "&kabupaten=" + kabupaten + "&kecamatan=" + kecamatan,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil Di Tambah", "Success")
                     viewkecamatan()
+                },
+                error: function(error) {
+                    console.log(error.responseJSON);
+                    let error_log = error.responseJSON.errors;
+                    if (error.status == 422) {
+                        $('#provinsi').addClass('is-invalid');
+                        $('#kabupaten').addClass('is-invalid');
+                        $('#kecamatan').addClass('is-invalid');
+                    }
                 }
             });
         }
@@ -225,6 +235,7 @@
                 data: "provinsi=" + provinsi + "&kabupaten=" + kabupaten + "&kecamatan=" + kecamatan,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil Di Edit", "Success")
                     viewkecamatan()
                 }
             });
@@ -232,22 +243,6 @@
 
         // Proses Delete Data Kecamatan
         function Destroykecamatan(id) {
-            $.ajax({
-                type: "get",
-                url: "{{ url('deletekecamatan') }}/" + id,
-                success: function() {
-                    $(".btn-close").click();
-                    viewkecamatan()
-                }
-            });
-        }
-        
-    </script>
-    
-    <script>
-        $(".delete").click(function() {
-            var nama = $(this).attr('data-nama');
-            var id = $(this).attr('data-id');
             Swal.fire({
                 title: "Are you sure?",
                 text: "You won't be able to revert this!",
@@ -261,13 +256,24 @@
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
-                    window.location = "/deletekecamatan/" + id;
                     Swal.fire({
                         type: "success",
                         title: "Deleted!",
                         text: "Your file has been deleted.",
                         confirmButtonClass: "btn btn-success"
-                    })
+                    }).then(function(t) {
+                        if (t.value) {
+                            $.ajax({
+                                type: "get",
+                                url: "{{ url('deletekecamatan') }}/" + id,
+                                success: function() {
+                                    $(".btn-close").click();
+                                    toastr.success("Data Berhasil Di Hapus", "Success")
+                                    viewkecamatan()
+                                }
+                            });
+                        }
+                    });
                 } else {
                     Swal.fire({
                         title: "Cancelled",
@@ -276,7 +282,15 @@
                         confirmButtonClass: "btn btn-success"
                     })
                 }
-            })
+            });
+        }
+    </script>
+
+    <script>
+        $(".delete").click(function() {
+            var nama = $(this).attr('data-nama');
+            var id = $(this).attr('data-id');
+
         })
     </script>
 
@@ -284,7 +298,7 @@
         $(document).ready(function() {
             $('#table').DataTable();
         });
-        
+
         @if (Session::has('error'))
             toastr.success("{{ Session::get('error') }}")
         @endif

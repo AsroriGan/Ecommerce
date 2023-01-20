@@ -173,8 +173,10 @@
                 data: "provinsi=" + provinsi + "&kabupaten=" + kabupaten,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil Di Hapus", "Success")
                     viewkabupaten()
                 },
+               
             });
         }
 
@@ -196,24 +198,57 @@
                 data: "provinsi=" + provinsi + "&kabupaten=" + kabupaten,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil Di Edit", "Success")
                     viewkabupaten()
                 }
             });
         }
 
         function destroykabupaten(id) {
-            $.ajax({
-                type: "get",
-                url: "{{ url('deletekabupaten') }}/" + id,
-                success: function() {
-                    $(".btn-close").click();
-                    viewkabupaten()
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn btn-primary",
+                cancelButtonClass: "btn btn-danger ml-1",
+                buttonsStyling: !1
+            }).then(function(t) {
+                if (t.value) {
+                    Swal.fire({
+                        type: "success",
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        confirmButtonClass: "btn btn-success"
+                    }).then(function(t) {
+                        if (t.value) {
+                            $.ajax({
+                                type: "get",
+                                url: "{{ url('deletekabupaten') }}/" + id,
+                                success: function() {
+                                    $(".btn-close").click();
+                                    toastr.success("Data Berhasil Di Hapus", "Success")
+                                    viewkabupaten()
+                                }
+                            });
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        type: "error",
+                        confirmButtonClass: "btn btn-success"
+                    })
                 }
             });
         }
     </script>
 
-    <script>
+    {{-- <script>
         $(".delete").click(function() {
             var nama = $(this).attr('data-nama');
             var id = $(this).attr('data-id');
@@ -247,7 +282,7 @@
                 }
             })
         })
-    </script>
+    </script> --}}
 
     <script>
         $(document).ready(function() {
