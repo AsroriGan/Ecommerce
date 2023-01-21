@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-
+use App\Models\BannerPromo;
 use App\Models\promo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,7 +18,8 @@ class PromoController extends Controller
     public function index()
     {
         $data = promo::all();
-        return view('dashboardadmin.promo.promo', compact('data'));
+        $banner = BannerPromo::all();
+        return view('dashboardadmin.promo.promo', compact('data', 'banner'));
     }
 
     /**

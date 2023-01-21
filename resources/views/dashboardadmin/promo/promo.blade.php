@@ -31,10 +31,11 @@
                         <div class="page-header">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="page-title">Data Promo / 
+                                    <h3 class="page-title">Data Promo /
                                         Promosi
                                     </h3>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -64,7 +65,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-
+                            
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="datatable table table-stripped" id="myTable">
@@ -81,10 +82,11 @@
                                             @foreach ($data as $promo)
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
-                                                    <td><img src="{{asset('fotoproduk/'. $promo->foto)}}" style="height:80px;"></td>
+                                                    <td><img src="{{ asset('fotoproduk/' . $promo->foto) }}"
+                                                            style="height:80px;"></td>
                                                     <td>{{ $promo->judul }}</td>
                                                     <td>{{ $promo->deskripsi }}</td>
-                                     
+
 
                                                     <td><a data-bs-toggle="modal"
                                                             data-bs-target="#edit-promo{{ $promo->id }}"
@@ -118,17 +120,18 @@
                                                                                 <div class="mb-3">
                                                                                     <label for="field-3"
                                                                                         class="form-label">Foto Produk
-                                                                                        :</label><br/>
-                                                                                        <img src="{{asset('fotoproduk/'. $promo->foto)}}" style="height: 50px;">
+                                                                                        :</label><br />
+                                                                                    <img src="{{ asset('fotoproduk/' . $promo->foto) }}"
+                                                                                        style="height: 50px;">
                                                                                     <input type="file" id="foto"
                                                                                         name="foto"
                                                                                         class="form-control"
-                                                                                        
-                                                                                        id="field-3"
-                                                                                        >
-                                                                                        <i style="float: left; font-size: 11px; color:red;">Abaikan jika tidak merubah foto</i>
+                                                                                        id="field-3">
+                                                                                    <i
+                                                                                        style="float: left; font-size: 11px; color:red;">Abaikan
+                                                                                        jika tidak merubah foto</i>
                                                                                 </div>
-                                                                                <br/>
+                                                                                <br />
                                                                                 <div class="mb-3">
                                                                                     <label for="field-3"
                                                                                         class="form-label">Judul Promo
@@ -175,6 +178,8 @@
                         </div>
                     </div>
                 </div>
+
+                
             </div>
         </div>
     </div>

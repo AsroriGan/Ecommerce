@@ -14,10 +14,7 @@ class LoginController extends Controller
     }
     public function loginadminproses(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email:dns|exists:users,email',
-            'password' => 'required',
-        ]);
+        $this->_validation($request);
         if (Auth::attempt($request->only('email', 'password'))) {
             return redirect('/subkategori');
         } else {
@@ -25,6 +22,20 @@ class LoginController extends Controller
         }
 
         return \redirect('loginadmin');
+    }
+    private function _validation(Request $request)
+    {
+
+        $validation = $request->validate(
+            [
+                'email' => 'required',
+                'password' => 'required'
+            ],
+            [
+                'email' => 'Harap Isi Email',
+                'password' => 'Harap Isi Password'
+            ]
+        );
     }
     public function logoutadmin()
     {
