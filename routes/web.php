@@ -164,6 +164,7 @@ Route::get('/viewkecamatan', [AdminDatawilayahController::class, 'viewkecamatan'
 //insert & edit & delete kecamatan
 Route::get('/createkecamatan', [AdminDatawilayahController::class, 'createkecamatan'])->name('createkecamatan');
 Route::get('/insertkecamatan', [AdminDatawilayahController::class, 'insertkecamatan'])->name('insertkecamatan');
+Route::post('/getkabupatenadmin', [AdminDatawilayahController::class, 'getkabupaten'])->name('getkabupaten');
 Route::get('/Showkecamatan/{id}', [AdminDatawilayahController::class, 'Showkecamatan']);
 Route::get('/editkecamatan/{id}', [AdminDatawilayahController::class, 'editkecamatan'])->name('editkecamatan');
 Route::get('/deletekecamatan/{id}', [AdminDatawilayahController::class, 'deletekecamatan'])->name('deletekecamatan');
@@ -211,6 +212,7 @@ Route::get('/promosi', [AdminPromosiController::class, 'promosi'])->name('promos
 
 
 Route::post('/editpromopost/{id}', [AdminPromosiController::class, 'edit'])->name('editpromopost');
+Route::get('/resetpromo/{id}', [AdminPromosiController::class, 'resetpromo']);
 
 Route::get('/bannerpromosi', [AdminPromosiController::class, 'bannerpromosi'])->name('bannerpromosi');
 

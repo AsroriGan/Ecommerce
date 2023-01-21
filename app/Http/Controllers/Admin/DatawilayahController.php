@@ -187,6 +187,17 @@ class DatawilayahController extends Controller
         ]);
     }
 
+    public function getkabupaten(Request $request){
+        // dd($request->all());
+        $rsi = $request->post('rsi');
+        $kabupaten = datawilayahkabupaten::where('provinsi', $rsi)->orderBy('kabupaten', 'asc')->get();
+        $html = '<option value="">Pilih Kabupaten</option>';
+        foreach ($kabupaten as $row) {
+            $html .= '<option value="' . $row->id . '">' . $row->kabupaten . '</option>';
+        }
+        echo $html;
+    }
+
     public function Showkecamatan($id)
     {
         // dd($id);

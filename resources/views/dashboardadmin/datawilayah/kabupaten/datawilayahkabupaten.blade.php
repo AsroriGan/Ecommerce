@@ -55,17 +55,7 @@
                 <div id="modalkabupaten" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                     aria-hidden="true" style="display:none;">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Kecamatan</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div id="modalcreate" class="p-4">
-
-                                </div>
-                            </div>
+                        <div class="modal-content" id="modalcreate">
                         </div>
                     </div>
                 </div>
@@ -122,7 +112,18 @@
                     toastr.success("Data Berhasil Di Hapus", "Success")
                     viewkabupaten()
                 },
-
+                error: function(e){
+                    let msg = e.responseJSON.errors
+                    if (msg.provinsi) {
+                        $('#kabupaten').removeClass('is-invalid');
+                        $('#provinsi').addClass('is-invalid');
+                        $('#msg-provinsi').text(msg.provinsi[0]);
+                    } else {
+                        $('#provinsi').removeClass('is-invalid');
+                        $('#kabupaten').addClass('is-invalid');
+                        $('#msg-kabupaten').text(msg.kabupaten[0]);
+                    }
+                }
             });
         }
 
@@ -193,43 +194,6 @@
             });
         }
     </script>
-
-    {{-- <script>
-        $(".delete").click(function() {
-            var nama = $(this).attr('data-nama');
-            var id = $(this).attr('data-id');
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                type: "warning",
-                showCancelButton: !0,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
-                confirmButtonClass: "btn btn-primary",
-                cancelButtonClass: "btn btn-danger ml-1",
-                buttonsStyling: !1
-            }).then(function(t) {
-                if (t.value) {
-                    window.location = "/deletekabupaten/" + id;
-                    Swal.fire({
-                        type: "success",
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                } else {
-                    Swal.fire({
-                        title: "Cancelled",
-                        text: "Your imaginary file is safe :)",
-                        type: "error",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                }
-            })
-        })
-    </script> --}}
-
     <script>
         $(document).ready(function() {
             $('#table').DataTable();

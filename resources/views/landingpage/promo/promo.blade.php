@@ -3,11 +3,12 @@
     Author: ashishmaraviya
     Version: 3.3
     Copyright 2022-2023
-	Author URI: https://themeforest.net/user/ashishmaraviya
+ Author URI: https://themeforest.net/user/ashishmaraviya
  ============================================================-->
- <!DOCTYPE html>
- <html lang="en">
- @include('layouts.Head')
+<!DOCTYPE html>
+<html lang="en">
+@include('layouts.Head')
+
 <body>
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
@@ -23,7 +24,7 @@
         <div class="ec-cart-inner">
             <div class="ec-cart-top">
                 <div class="ec-cart-title">
-                    <span class="cart_title">My Cart</span> 
+                    <span class="cart_title">My Cart</span>
                     <button class="ec-close">×</button>
                 </div>
                 <ul class="eccart-pro-items">
@@ -130,26 +131,69 @@
                 </div>
             </div>
             <div class="row">
-                @foreach ($data as $prom)
-                    
-                
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
-                    <div class="ec-offer-coupon">
-                        <div class="ec-cpn-brand">
-                            <img class="ec-brand-img" src="{{asset('fotoproduk/'. $prom->foto)}}" alt="" />
-                        </div>
-                        <div class="ec-cpn-title">
-                            <h2 class="coupon-title">{{$prom->judul}}</h2>
-                        </div>
-                        <div class="ec-cpn-desc">
-                            <p class="coupon-text">{{$prom->deskripsi}}</p>
-                        </div>
-                        <div class="ec-cpn-code">
-                            <a href="/detail" class="btn btn-secondary">Shop Now</a>
+            @if ($data1->judul == null && $data2->judul == null && $data3->judul == null)
+                <h1>Tidak Ada Promo</h1>
+            @endif
+                @if ($data1->judul == null)
+                @else
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
+                        <div class="ec-offer-coupon">
+                            <div class="ec-cpn-brand">
+                                <img class="ec-brand-img" src="{{ asset('fotoproduk/' . $data1->foto) }}"
+                                    alt="" />
+                            </div>
+                            <div class="ec-cpn-title">
+                                <h2 class="coupon-title">{{ $data1->judul }}</h2>
+                            </div>
+                            <div class="ec-cpn-desc">
+                                <p class="coupon-text">{{ $data1->deskripsi }}</p>
+                            </div>
+                            <div class="ec-cpn-code">
+                                <a href="/detail" class="btn btn-secondary">Shop Now</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                @endforeach
+                @endif
+                @if ($data2->judul == null)
+                @else
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
+                        <div class="ec-offer-coupon">
+                            <div class="ec-cpn-brand">
+                                <img class="ec-brand-img" src="{{ asset('fotoproduk/' . $data2->foto) }}"
+                                    alt="" />
+                            </div>
+                            <div class="ec-cpn-title">
+                                <h2 class="coupon-title">{{ $data2->judul }}</h2>
+                            </div>
+                            <div class="ec-cpn-desc">
+                                <p class="coupon-text">{{ $data2->deskripsi }}</p>
+                            </div>
+                            <div class="ec-cpn-code">
+                                <a href="/detail" class="btn btn-secondary">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                @if ($data3->judul == null)
+                @else
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
+                        <div class="ec-offer-coupon">
+                            <div class="ec-cpn-brand">
+                                <img class="ec-brand-img" src="{{ asset('fotoproduk/' . $data3->foto) }}"
+                                    alt="" />
+                            </div>
+                            <div class="ec-cpn-title">
+                                <h2 class="coupon-title">{{ $data3->judul }}</h2>
+                            </div>
+                            <div class="ec-cpn-desc">
+                                <p class="coupon-text">{{ $data3->deskripsi }}</p>
+                            </div>
+                            <div class="ec-cpn-code">
+                                <a href="/detail" class="btn btn-secondary">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 {{-- <div class="col-lg-4 col-md-6 col-sm-12 col-12 margin-b-30">
                     <div class="ec-offer-coupon">
                         <div class="ec-cpn-brand">
@@ -192,14 +236,14 @@
     <!-- Start Offer section -->
     <section class="labels section-space-p">
         <div class="container">
-            <div class="ec-line-offer" style="background-image: url('{{asset('fotoproduk/'. $banner->foto)}}');">
+            <div class="ec-line-offer" style="background-image: url('{{ asset('fotoproduk/' . $banner->foto) }}');">
                 <div class="ec-line-offer-info">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <h6>{{$banner->judul}}</h6>
-                                <h2 class="offer-upto">{{$banner->subjudul}}</h2>
-                                <p class="offer-desc">{{$banner->deskripsi}}</p>
+                                <h6>{{ $banner->judul }}</h6>
+                                <h2 class="offer-upto">{{ $banner->subjudul }}</h2>
+                                <p class="offer-desc">{{ $banner->deskripsi }}</p>
                                 <div class="offer-btn"><a class="btn-shop-now">SHOP NOW!</a></div>
                             </div>
                         </div>
@@ -208,7 +252,7 @@
             </div>
         </div>
     </section>
-     <!-- End Offer section -->
+    <!-- End Offer section -->
 
     <!-- Footer Start -->
     <footer class="ec-footer section-space-mt">
@@ -228,14 +272,16 @@
                     <div class="row">
                         <div class="col-sm-12 col-lg-3 ec-footer-contact">
                             <div class="ec-footer-widget">
-                                <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/footer-logo.png"
-                                            alt=""><img class="dark-footer-logo" src="assets/images/logo/dark-logo.png"
+                                <div class="ec-footer-logo"><a href="#"><img
+                                            src="assets/images/logo/footer-logo.png" alt=""><img
+                                            class="dark-footer-logo" src="assets/images/logo/dark-logo.png"
                                             alt="Site Logo" style="display: none;" /></a></div>
                                 <h4 class="ec-footer-heading">Contact us</h4>
                                 <div class="ec-footer-links">
                                     <ul class="align-items-center">
                                         <li class="ec-footer-link">71 Pilgrim Avenue Chevy Chase, east california.</li>
-                                        <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">+44
+                                        <li class="ec-footer-link"><span>Call Us:</span><a
+                                                href="tel:+440123456789">+44
                                                 0123 456 789</a></li>
                                         <li class="ec-footer-link"><span>Email:</span><a
                                                 href="mailto:example@ec-email.com">+example@ec-email.com</a></li>
@@ -296,9 +342,11 @@
                                             action="#">
                                             <div id="ec_news_signup" class="ec-form">
                                                 <input class="ec-email" type="email" required=""
-                                                    placeholder="Enter your email here..." name="ec-email" value="" />
+                                                    placeholder="Enter your email here..." name="ec-email"
+                                                    value="" />
                                                 <button id="ec-news-btn" class="button btn-primary" type="submit"
-                                                    name="subscribe" value=""><i class="ecicon eci-paper-plane-o"
+                                                    name="subscribe" value=""><i
+                                                        class="ecicon eci-paper-plane-o"
                                                         aria-hidden="true"></i></button>
                                             </div>
                                         </form>
@@ -317,10 +365,14 @@
                             <div class="footer-bottom-social">
                                 <span class="social-text text-upper">Follow us on:</span>
                                 <ul class="mb-0">
-                                    <li class="list-inline-item"><a class="hdr-facebook" href="#"><i class="ecicon eci-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-twitter" href="#"><i class="ecicon eci-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-instagram" href="#"><i class="ecicon eci-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i class="ecicon eci-linkedin"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-facebook" href="#"><i
+                                                class="ecicon eci-facebook"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-twitter" href="#"><i
+                                                class="ecicon eci-twitter"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-instagram" href="#"><i
+                                                class="ecicon eci-instagram"></i></a></li>
+                                    <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i
+                                                class="ecicon eci-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -397,7 +449,8 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
+            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg"
+                    alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -621,7 +674,9 @@
     <script src="assets/js/vendor/google-translate.js"></script>
     <script>
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
         }
     </script>
     <!-- Main Js -->
@@ -629,4 +684,5 @@
     <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>

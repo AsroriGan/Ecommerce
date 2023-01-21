@@ -35,7 +35,7 @@
                                         Promosi
                                     </h3>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-                            
+
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="datatable table table-stripped" id="myTable">
@@ -86,20 +86,15 @@
                                                             style="height:80px;"></td>
                                                     <td>{{ $promo->judul }}</td>
                                                     <td>{{ $promo->deskripsi }}</td>
-
-
                                                     <td><a data-bs-toggle="modal"
                                                             data-bs-target="#edit-promo{{ $promo->id }}"
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
-
-                                                        {{-- <a id="delete"
-                                                            class="btn btn-sm btn-white text-danger me-2 delete" data-id="{{$promo->id}}" data-nama="{{ $promo->judul }}" ><i
-                                                                class="far fa-trash-altme-1"></i>Hapus</a> --}}
-
+                                                        <a class="btn btn-sm btn-white text-danger me-2 delete"
+                                                            data-id="{{ $promo->id }}"
+                                                            data-nama="{{ $promo->judul }}"><i
+                                                                class="far fa-trash-altme-1"></i>Reset</a>
                                                     </td>
-
-
                                                     <div id="edit-promo{{ $promo->id }}" class="modal fade"
                                                         tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                                         aria-hidden="true" style="display: none;">
@@ -112,7 +107,8 @@
                                                                         aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body p-4">
-                                                                    <form action="/editpromopost/{{ $promo->id }}"
+                                                                    <form id="form"
+                                                                        action="/editpromopost/{{ $promo->id }}"
                                                                         method="POST" enctype="multipart/form-data">
                                                                         @csrf
                                                                         <div class="row">
@@ -126,7 +122,7 @@
                                                                                     <input type="file" id="foto"
                                                                                         name="foto"
                                                                                         class="form-control"
-                                                                                        id="field-3">
+                                                                                        id="field-3" required>
                                                                                     <i
                                                                                         style="float: left; font-size: 11px; color:red;">Abaikan
                                                                                         jika tidak merubah foto</i>
@@ -141,7 +137,7 @@
                                                                                         class="form-control"
                                                                                         value="{{ $promo->judul }}"
                                                                                         id="field-3"
-                                                                                        placeholder="Masukan Judul Promo">
+                                                                                        placeholder="Masukan Judul Promo" required>
                                                                                 </div>
                                                                                 <div class="mb-3">
                                                                                     <label for="field-3"
@@ -152,7 +148,7 @@
                                                                                         class="form-control"
                                                                                         value="{{ $promo->deskripsi }}"
                                                                                         id="field-3"
-                                                                                        placeholder="Masukan Deskripsi">
+                                                                                        placeholder="Masukan Deskripsi" required>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -178,12 +174,9 @@
                         </div>
                     </div>
                 </div>
-
-                
             </div>
         </div>
     </div>
-
     {{-- <div id="modal-merek" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
@@ -254,7 +247,7 @@
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
-                    window.location = "/deletemerek/" + id;
+                    window.location = "/resetpromo/" + id;
                     Swal.fire({
                         type: "success",
                         title: "Deleted!",

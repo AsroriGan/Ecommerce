@@ -41,8 +41,8 @@
                                             <div
                                                 class="invoices-settings-btn
                                         invoices-settings-btn-one">
-                                                <button href="#" class="btn"><i data-feather="plus-circle"
-                                                        onclick="modalkecamatan()"></i>Tambah data baru </button>
+                                                <button href="#" class="btn" onclick="modalkecamatan()"><i
+                                                        data-feather="plus-circle"></i>Tambah data baru </button>
                                             </div>
                                         </div>
                                     </div>
@@ -55,17 +55,7 @@
                 <div id="modalkecamatan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                     aria-hidden="true" style="display:none;">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Tambah Kecamatan</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div id="halcreatekecamatan" class="p-4">
-
-                                </div>
-                            </div>
+                        <div class="modal-content" id="halcreatekecamatan">
                         </div>
                     </div>
                 </div>
@@ -86,93 +76,13 @@
             </div>
         </div>
     </div>
-
-    {{-- <div id="con-close-modal{{ $row->id }}" class="modal fade"
-        tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true" style="display:none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Edit Kecamatan</h4>
-                    <button type="button" class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <form action="/editkecamatan/{{$row->id}}" method="POST">
-                    @csrf
-                    <div class="modal-body p-4">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="field-1"
-                                        class="form-label">Provinsi</label>
-                                    <select class="form-select"
-                                        name="provinsi">
-                                        <option
-                                            value="{{ $row->provinsi }}">
-                                            {{ $row->kprovinsi->provinsi }}
-                                        </option>
-                                        @foreach ($provinsi as $prov)
-                                            <option
-                                                value="{{ $prov->id }}">
-                                                {{ $prov->provinsi }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="field-1"
-                                        class="form-label">Kabupaten</label>
-                                    <select class="form-select"
-                                        name="provinsi">
-                                        <option
-                                            value="{{ $row->kabupaten }}">
-                                            {{ $row->kkabupaten->kabupaten }}
-                                        </option>
-                                        @foreach ($kabupaten as $kab)
-                                            <option
-                                                value="{{ $kab->id }}">
-                                                {{ $kab->kabupaten }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="field-1"
-                                        class="form-label">Kecamatan</label>
-                                    <input type="text" name="kecamatan"
-                                        class="form-control"
-                                        id="field-1"
-                                        placeholder="{{ $row->kecamatan }}"
-                                        value="{{ $row->kecamatan }}">
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button"
-                                class="btn btn-secondary waves-effect"
-                                data-bs-dismiss="modal">Close</button>
-                            <button type="submit"
-                                class="btn btn-info waves-effect waves-light">Save
-                                changes</button>
-                        </div>
-                </form>
-            </div>
-        </div>
-    </div> --}}
-
     <!-- Scrip Star -->
-
     @include('layoutsadmin.script')
 
     <script>
         // View Data Kecamatan
         $(document).ready(function() {
+            // alert();
             viewkecamatan()
         })
 
@@ -184,7 +94,6 @@
 
         // Halaman Create Data Kecamatan
         function modalkecamatan() {
-            alert("P");
             $.get("{{ url('createkecamatan') }}", {}, function(data, status) {
                 $("#halcreatekecamatan").html(data);
                 $("#modalkecamatan").modal('show');
@@ -207,11 +116,21 @@
                 },
                 error: function(error) {
                     console.log(error.responseJSON);
-                    let error_log = error.responseJSON.errors;
+                    let msg = error.responseJSON.errors;
                     if (error.status == 422) {
-                        $('#provinsi').addClass('is-invalid');
-                        $('#kabupaten').addClass('is-invalid');
-                        $('#kecamatan').addClass('is-invalid');
+                        if (msg.provinsi) {
+                            $('#provinsi').addClass('is-invalid');
+                            $('#kabupaten').removeClass('is-invalid');
+                            $('#kecamatan').removeClass('is-invalid');
+                        } else if (msg.kabupaten) {
+                            $('#provinsi').removeClass('is-invalid');
+                            $('#kabupaten').addClass('is-invalid');
+                            $('#kecamatan').removeClass('is-invalid');
+                        } else {
+                            $('#provinsi').removeClass('is-invalid');
+                            $('#kabupaten').removeClass('is-invalid');
+                            $('#kecamatan').addClass('is-invalid');
+                        }
                     }
                 }
             });
@@ -285,24 +204,6 @@
                 }
             });
         }
-    </script>
-
-    <script>
-        $(".delete").click(function() {
-            var nama = $(this).attr('data-nama');
-            var id = $(this).attr('data-id');
-
-        })
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('#table').DataTable();
-        });
-
-        @if (Session::has('error'))
-            toastr.success("{{ Session::get('error') }}")
-        @endif
     </script>
     <!-- End Scrip -->
 </body>
