@@ -263,7 +263,7 @@
                                 url: "{{ url('destroySubkategori') }}/" + id,
                                 success: function() {
                                     $(".btn-close").click();
-                                      toastr.success("Data Berhasil Di Hapus", "Success")
+                                    toastr.success("Data Berhasil Di Hapus", "Success");
                                     tampilsubkategori()
                                 }
                             });

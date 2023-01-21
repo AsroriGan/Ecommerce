@@ -122,6 +122,7 @@
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content" id="form_modal">
+
             </div>
         </div>
     </div>
@@ -177,6 +178,7 @@
                     if (response.status == 422) {
                         // console.log(response.responseJSON.errors.nama_merek);
                         if (response.responseJSON.errors.nama_merek) {
+                            $('#foto_merek').removeClass('is-invalid');
                             $('#nama_merek').addClass('is-invalid');
                             $('#msg_merek').text(msg.nama_merek[0]);
                         } else if (response.responseJSON.errors.foto_merek) {
@@ -196,7 +198,7 @@
                 // $("#modalmerek").modal('show');
             });
         }
-
+        //action edit
         function editpostmerk(id) {
             let formid = $('#editform');
             console.log(formid);
@@ -213,9 +215,16 @@
                     tampilanmerek();
                     $('#modalmerek').modal('hide');
                 },
+                error: function(error){
+                    let msg = error.responseJSON.errors;
+                    if(error.status == 422){
+                        $("#nama_merek").addClass('is-invalid');
+                        $("#msg").text(msg.nama_merek[0]);
+                    }
+                }
             });
         };
-
+        //delete merk
         function deletemerek(id) {
             Swal.fire({
                 title: "Are you sure?",
@@ -244,8 +253,8 @@
                                     url: "/deletemerek/" + id,
                                     // data: "kategori=" + kategori,
                                     success: function(data) {
-                                            toastr.success('Data Berhasil Dihapus', 'Success');
-                                            tampilanmerek();
+                                        toastr.success('Data Berhasil Dihapus', 'Success');
+                                        tampilanmerek();
                                         // console.log(data.messagerelasi);
                                     }
                                 });
@@ -263,45 +272,6 @@
         }
     </script>
     <script>
-        $(".delete").click(function() {
-            var nama = $(this).attr('data-nama');
-            var id = $(this).attr('data-id');
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                type: "warning",
-                showCancelButton: !0,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
-                confirmButtonClass: "btn btn-primary",
-                cancelButtonClass: "btn btn-danger ml-1",
-                buttonsStyling: !1
-            }).then(function(t) {
-                if (t.value) {
-                    window.location = "/deletemerek/" + id;
-                    Swal.fire({
-                        type: "success",
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                } else {
-                    Swal.fire({
-                        title: "Cancelled",
-                        text: "Your imaginary file is safe :)",
-                        type: "error",
-                        confirmButtonClass: "btn btn-success"
-                    })
-                }
-            })
-        })
-    </script>
-    <script>
-        @if (Session::has('success'))
-            toastr.success("{{ Session::get('success') }}")
-        @endif
-
         $(document).ready(function() {
             $('#myTable').DataTable();
         });

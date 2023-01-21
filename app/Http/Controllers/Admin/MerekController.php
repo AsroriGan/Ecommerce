@@ -58,6 +58,11 @@ class MerekController extends Controller
 
     public function edit(Request $request, $id)
     {
+        $request->validate([
+            'nama_merek' => 'required'
+        ],[
+            'nama_merek.required' => 'Harap Isi Nama Merek'
+        ]);
         // dd($request->all());
         $data = Merek::find($id);
         if ($request->hasFile('foto_merek')) {

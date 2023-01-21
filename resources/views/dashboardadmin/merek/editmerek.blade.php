@@ -13,6 +13,9 @@
                     <input type="text" id="nama_merek" name="nama_merek" class="form-control"
                         value="{{ $data->nama_merek }}" id="field-3"
                         placeholder="Masukan Nama Merek">
+                    <div class="invalid-feedback" id="msg">
+
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="field-3" class="form-label">Foto
