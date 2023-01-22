@@ -55,6 +55,7 @@ class CartController extends Controller
 
     public function postcart(Request $request)
     {
+        // dd($request->all());
         $produk = Produk::where('id',$request->id)->first();
         // dd($produk);
         $getfoto = explode(',', $produk->galeri_produk);

@@ -22,7 +22,7 @@ class PromosiController extends Controller
     {
         // dd($request->all());
         $validate = $request->validate([
-            'foto' => 'required',
+            // 'foto' => 'required',
             'judul' => 'required',
             'deskripsi' => 'required',
         ]);
@@ -44,7 +44,7 @@ class PromosiController extends Controller
 
             ]);
         }
-        return redirect()->route('promosi')->with('success', 'Berhasil Di Update');
+        return redirect("promosi")->with("success","Data Berhasil Di edit");
     }
     public function resetpromo($id){
         $data =  promo::findorfail($id);

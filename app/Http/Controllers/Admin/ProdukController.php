@@ -67,7 +67,7 @@ class ProdukController extends Controller
             'deskirpsi_panjang' => 'required',
             'galeri_produk' => 'required',
         ]);
-        
+
         $files = [];
         if ($request->hasfile('galeri_produk')) {
             foreach ($request->galeri_produk as $file) {
@@ -104,7 +104,7 @@ class ProdukController extends Controller
         $model->Best_Seller = $request->best_seller;
         $model->save();
         // dd($model->harga_diskonproduk);
-        return redirect('/produkadmin')->with('success','Data Berhasil Dihapus');
+        return redirect('/produkadmin')->with('success','Data Berhasil Ditambahkan');
     }
     public function view_produk($id){
         $produk = Produk::with('rproduktmerk','rkategoritkategori','rsub_kategoritkategori','rsub_subkategoritkategori')->findorfail($id);
