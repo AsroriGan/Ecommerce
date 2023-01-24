@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\BannerPromo;
 use App\Models\promo;
 use App\Http\Controllers\Controller;
+use App\Models\Produk;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Queue\Connectors\NullConnector;
@@ -13,10 +14,11 @@ class PromosiController extends Controller
 {
     public function promosi()
     {
+        $produk = Produk::all();
         $data = promo::all();
         $data1 = promo::all()->first();
         $tes  = promo::where('id','>',$data1->id)->first();
-        return view('dashboardadmin.promo.promo', compact('data'));
+        return view('dashboardadmin.promo.promo', compact('data','produk'));
     }
     public function edit(Request $request, $id)
     {
@@ -31,6 +33,7 @@ class PromosiController extends Controller
             $request->file('foto')->move('fotoproduk/', $request->file('foto')->getClientOriginalName());
             $namafoto = $request->file('foto')->getClientOriginalName();
             $data->update([
+                'nama_produk' => $request->nama_produk,
                 'foto' => $namafoto,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
@@ -38,6 +41,7 @@ class PromosiController extends Controller
             ]);
         } else {
             $data->update([
+                'nama_produk' => $request->nama_produk,
                 //'foto' => request->foto
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
@@ -49,6 +53,8 @@ class PromosiController extends Controller
     public function resetpromo($id){
         $data =  promo::findorfail($id);
         $data->update([
+            'nama_produk' => null,
+
             // "id" => null,
             "foto" => null,
             "judul" => null,

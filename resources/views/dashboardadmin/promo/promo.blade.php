@@ -72,6 +72,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
+                                                <th>Nama Produk</th>
                                                 <th>Foto Produk</th>
                                                 <th>Judul Promo</th>
                                                 <th>Deskripsi</th>
@@ -82,6 +83,15 @@
                                             @foreach ($data as $promo)
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
+                                                    <td>@php echo $promo->nama_produk != null ? $promo->promoid->nama_produk : $promo->nama_produk @endphp</td>
+                                                    {{-- <td> @php
+                                                        if (5 > 1) {
+                                                           echo $promo->promoid->nama_produk;
+                                                    } else {
+                                                        echo "salah";
+                                                    }
+                                                    @endphp
+                                                    </td> --}}
                                                     <td><img src="{{ asset('fotoproduk/' . $promo->foto) }}"
                                                             style="height:80px;"></td>
                                                     <td>{{ $promo->judul }}</td>
@@ -113,7 +123,18 @@
                                                                         @csrf
                                                                         <div class="row">
                                                                             <div class="col-md-12">
-                                                                                <div class="mb-3">
+                                                                                 <div class="mb-3">
+                                                                                    <label for="field-3" class="form-label">Nama Produk
+                                                                                        :</label>
+                                                                                    <select id="nama_produk" class="form-control" name="nama_produk" aria-label="Default select example">
+                                                                                        <option value="@php echo $promo->nama_produk != null ? $promo->promoid->nama_produk : $promo->nama_produk @endphp" selected>
+                                                                                            @php echo $promo->nama_produk != null ? $promo->promoid->nama_produk : $promo->nama_produk @endphp
+                                                                                        </option>
+                                                                                        @foreach ($produk as $datas)
+                                                                                            <option value="{{ $datas->id }}">{{ $datas->nama_produk }}</option>
+                                                                                        @endforeach
+                                                                                    </select>
+                                                                                </div>
                                                                                     <label for="field-3"
                                                                                         class="form-label">Foto Produk
                                                                                         :</label><br />

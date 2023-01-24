@@ -15,7 +15,7 @@ class PromoController extends Controller
         // dd($data1);
         $data2 = promo::where('id','>',$data1->id)->first();
         $data3 = promo::all()->last();
-        $banner = BannerPromo::where('id', '=', 1)->firstOrFail();
+        $banner = BannerPromo::all()->first();
         return view('landingpage.promo.promo', compact('data', 'banner','data1','data2','data3'));
     }
 }

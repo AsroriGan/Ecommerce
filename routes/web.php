@@ -216,7 +216,6 @@ Route::get('/resetpromo/{id}', [AdminPromosiController::class, 'resetpromo']);
 
 Route::get('/bannerpromosi', [AdminPromosiController::class, 'bannerpromosi'])->name('bannerpromosi');
 
-
 Route::post('/editbannerpromopost/{id}', [AdminPromosiController::class, 'editbanner'])->name('editbannerpromopost');
 
 //End Promosi

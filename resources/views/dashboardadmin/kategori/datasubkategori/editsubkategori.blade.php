@@ -4,7 +4,7 @@
             <label for="field-3" class="form-label">Kategori
                 :</label>
             <select id="kategori" class="form-control" name="kategori" aria-label="Default select example">
-                <option value="{{ $data->kategori }}" disabled selected>
+                <option value="{{ $data->kategori }}" selected>
                     {{ $data->idkategoris->kategori }}
                 </option>
                 @foreach ($datas as $datas)

@@ -71,79 +71,7 @@
         </div>
     </div>
 
-    {{-- <div id="edit-sub-subkategori{{ $row->id }}" class="modal fade"
-        tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Edit Sub->SubKategori</h4>
-                    <button type="button" class="btn-close"
-                        data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="field-3"
-                                        class="form-label">Kategori
-                                        :</label>
-                                    <select class="form-control" name="kategori"
-                                        aria-label="Default select example">
-                                        <option
-                                            value="{{ $row->datakategori->id }}">
-                                            {{ $row->datakategori->kategori }}
-                                        </option>
-                                        @foreach ($kategori as $data)
-                                            <option
-                                                value="{{ $data->id }}">
-                                                {{ $data->kategori }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="field-3" class="form-label">Sub
-                                        Kategori
-                                        :</label>
-                                    <select class="form-control"
-                                        name="sub_kategori"
-                                        aria-label="Default select example">
-                                        <option
-                                            value="{{ $row->datasubkategori->id }}">
-                                            {{ $row->datasubkategori->sub_kategori }}
-                                        </option>
-                                        @foreach ($subkategori as $datas)
-                                            <option
-                                                value="{{ $datas->id }}">
-                                                {{ $datas->sub_kategori }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="mb-3">
-                                        <label for="field-1"
-                                            class="form-label">Sub->SubKategori</label>
-                                        <input type="text"
-                                            name="sub_subkategori"
-                                            class="form-control" id="field-1"
-                                            value="{{ $row->sub_subkategori }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">Close</button>
-                                <button type="submit"
-                                    class="btn btn-primary">Save
-                                    changes</button>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+    <!-- Modal Tambha -->
 
     <div id="modalsub_subkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display:none;">
@@ -159,6 +87,27 @@
                 <div class="modal-body">
                     <div id="halcreate" class="p-4">
 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOdal Edit -->
+
+    <div id="editsub-subkategori" class="modal fade"
+        tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Sub-SubKategori</h4>
+                    <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="haledit">
 
                     </div>
                 </div>
@@ -205,12 +154,19 @@
                     toastr.success("Data Berhasil Ditambahkan", "Success")
                     tampilSub_Subkategori()
                 },
-                error: function(error) {
-                    console.log(error.responseJSON);
-                    let error_log = error.responseJSON.errors;
-                    if (error.status == 422) {
+                error: function(e) {
+                    let msg = e.responseJSON.errors
+                    if (msg.kategori) {
                         $('#kategori').addClass('is-invalid');
+                        $('#sub_kategori').removeClass('is-invalid');
+                        $('#sub_subkategori').removeClass('is-invalid');
+                    } else if (msg.sub_kategori) {
+                        $('#kategori').removeClass('is-invalid');
                         $('#sub_kategori').addClass('is-invalid');
+                        $('#sub_subkategori').removeClass('is-invalid');
+                    } else {
+                        $('#kategori').removeClass('is-invalid');
+                        $('#sub_kategori').removeClass('is-invalid');
                         $('#sub_subkategori').addClass('is-invalid');
                     }
                 }
@@ -220,8 +176,8 @@
         // Halaman Edit Data Sub-SubKategori
         function showSub_Subkategori(id) {
             $.get("{{ url('showSub_Subkategori') }}/" + id, {}, function(data, status) {
-                $("#halcreate").html(data);
-                $("#modalsub_subkategori").modal('show');
+                $("#haledit").html(data);
+                $("#editsub-subkategori").modal('show');
             });
         }
 

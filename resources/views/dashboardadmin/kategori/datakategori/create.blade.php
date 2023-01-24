@@ -1,5 +1,4 @@
 <div class="row">
-    {{-- <ul id="validasi"></ul> --}}
     <div class="col-md-12">
         <div class="mb-3">
             <label class="form-label">Kategori
@@ -9,7 +8,6 @@
                 Data Kategori wajib Diisi
             </div>
         </div>
-        {{-- <ul id="validasi"></ul> --}}
     </div>
 </div>
 <div class="modal-footer">

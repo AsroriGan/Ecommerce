@@ -113,8 +113,15 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        $data =kategori::findOrFail($id);
+        $relasi = subkategori::where('kategori', $id)->count();
+        if ($relasi > 0) {
+            return response()->json(['messagerelasi' => 'Data katgeori Sedang digunakan']);
+        }
+        $data = kategori::findOrFail($id);
         $data->delete();
+
+        return response()->json();
+
     }
 
     //-- End Kategori --//
@@ -186,8 +193,14 @@ class KategoriController extends Controller
 
     public function destroySubkategori($id)
     {
+        $relasi = Sub_Subkategori::where('sub_kategori', $id)->count();
+        if ($relasi > 0) {
+            return response()->json(['messagerelasi' => 'Data Sub-Kategori Sedang digunakan']);
+        }
         $data =subkategori::findOrFail($id);
         $data->delete();
+
+        return response()->json();
     }
 
     //-- End subKategori --//
@@ -231,6 +244,7 @@ class KategoriController extends Controller
             'kategori' => $request->kategori,
             'sub_kategori' => $request->sub_kategori,
             'sub_subkategori' => $request->sub_subkategori,
+
         ]);
     }
 
