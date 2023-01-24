@@ -123,7 +123,7 @@
                                                     <label>Kategori</label>
                                                     <select id="kategori" name="kategori"
                                                         class="form-select @error('kategori') is-invalid  @enderror">
-                                                        <option value="" disabled {{ old("kategori") ? '' : 'selected' ; }}>-- Select --</option>
+                                                        <option value="" {{ old("kategori") ? '' : 'selected' ; }}>-- Select --</option>
                                                         @foreach ($kategori as $row)
                                                             <option value="{{ $row->id }}" {{ old("kategori") == $row->id ? 'selected' : '' ; }} >{{ $row->kategori }}
                                                             </option>
@@ -139,7 +139,7 @@
                                                     <label>Sub Kategori</label>
                                                     <select id="sub_kategori" name="sub_kategori"
                                                         class="form-select @error('sub_kategori') is-invalid @enderror">
-                                                        <option value="{{old("sub_kategori")}}" selected disabled><?php if (old('sub_kategori')) {
+                                                        <option value="{{old('sub_kategori')}}" selected><?php if (old('sub_kategori')) {
                                                             $data = App\Models\subkategori::where("id",old("sub_kategori"))->first();
                                                             echo $data->sub_kategori;
                                                         }else {
@@ -154,7 +154,7 @@
                                                     <label>Sub-sub Kategori</label>
                                                     <select id="sub_subkategori" name="sub_subkategori"
                                                         class="form-select select @error('sub_subkategori') is-invalid @enderror">
-                                                        <option value="{{old('sub_subkategori')}}" disabled selected><?php if (old('sub_subkategori')) {
+                                                        <option value="{{old('sub_subkategori')}}" selected><?php if (old('sub_subkategori')) {
                                                             $data = App\Models\Sub_Subkategori::where("id",old("sub_subkategori"))->first();
                                                             echo $data->sub_subkategori;
                                                         }else {
