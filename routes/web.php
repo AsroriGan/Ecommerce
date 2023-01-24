@@ -88,7 +88,7 @@ Route::get('/categories', [LandingKategoriController::class, 'index'])->name('in
 Route::get('/user-profile', [LandingUserprofilecontroller::class, 'index'])->name('user-profle');
 Route::get('/change-password', [LandingUserprofilecontroller::class, 'change_password'])->name('change_password');
 Route::post('/postchange-password', [LandingUserprofilecontroller::class, 'postchange_password'])->name('postchange_password');
-    //edit profile
+//edit profile
 Route::post('/edit-profile/{id}', [LandingUserprofilecontroller::class, 'edit_profile'])->name('edit-profile');
 //get address
 Route::post('/getkabupaten', [LandingUserprofilecontroller::class, 'getkabupaten'])->name('getkabupaten');
@@ -113,7 +113,7 @@ Route::get('/logoutadmin', [AdminLoginController::class, 'logoutadmin'])->name('
 
 // Star kategroi Admin
 
-    //Kategori
+//Kategori
 Route::get('/kategori', [AdminKategoriController::class, 'halamankategori'])->name('kategori');
 Route::get('/create', [AdminKategoriController::class, 'create'])->name('create');
 Route::get('/store', [AdminKategoriController::class, 'store'])->name('store');
@@ -121,7 +121,7 @@ Route::get('/tampilkandata', [AdminKategoriController::class, 'tampilkandata'])-
 Route::get('/show/{id}', [AdminKategoriController::class, 'show'])->name('show');
 Route::get('/update/{id}', [AdminKategoriController::class, 'update'])->name('update');
 Route::get('/destroy/{id}', [AdminKategoriController::class, 'destroy'])->name('destroy');
-    //SubKategori
+//SubKategori
 Route::get('/subkategori', [AdminKategoriController::class, 'halamanSubKategori'])->name('subkategori');
 Route::get('/createsubkategori', [AdminKategoriController::class, 'createsubkategori'])->name('createsubkategori');
 Route::get('/storesubKategori', [AdminKategoriController::class, 'storesubKategori'])->name('storesubKategori');
@@ -129,7 +129,7 @@ Route::get('/tampilsubkategori', [AdminKategoriController::class, 'tampilsubkate
 Route::get('/showSubkategori/{id}', [AdminKategoriController::class, 'showSubkategori'])->name('showSubkategori');
 Route::get('/updatesubkategori/{id}', [AdminKategoriController::class, 'updatesubkategori'])->name('updatesubkategori');
 Route::get('/destroySubkategori/{id}', [AdminKategoriController::class, 'destroySubkategori'])->name('destroySubkategori');
-    //Sub_Subkategori
+//Sub_Subkategori
 Route::get('/sub_subkategori', [AdminKategoriController::class, 'halamanSub_SubKategori'])->name('sub_subkategori');
 Route::get('/createsub_Subkategori', [AdminKategoriController::class, 'createsub_Subkategori'])->name('createsub_Subkategori');
 Route::get('/storesub_SubKategori', [AdminKategoriController::class, 'storesub_SubKategori'])->name('storesub_SubKategori');
@@ -144,7 +144,7 @@ Route::get('/destroySub_Subkategori/{id}', [AdminKategoriController::class, 'des
 //provinsi
 Route::get('/datawilayahprovinsi', [AdminDatawilayahController::class, 'datawilayahprovinsi'])->name('datawilayahprovinsi');
 Route::get('/viewdataprovinsi', [AdminDatawilayahController::class, 'viewdataprovinsi']);
-    //insert & edit & delete provinsi
+//insert & edit & delete provinsi
 Route::get('/createprovinsi', [AdminDatawilayahController::class, 'create'])->name('create');
 Route::get('/insertprovinsi', [AdminDatawilayahController::class, 'insertprovinsi'])->name('insertprovinsi');
 Route::get('/provinsiview/{id}', [AdminDatawilayahController::class, 'provinsiview']);
@@ -153,7 +153,7 @@ Route::get('/deleteprovinsi/{id}', [AdminDatawilayahController::class, 'deletepr
 //kabupaten
 Route::get('/datawilayahkabupaten', [AdminDatawilayahController::class, 'datawilayahkabupaten'])->name('datawilayahkabupaten');
 Route::get('/viewkabupaten', [AdminDatawilayahController::class, 'viewkabupaten']);
-    //insert & edit & delete kabupaten
+//insert & edit & delete kabupaten
 Route::get('/createkabupaten', [AdminDatawilayahController::class, 'createkabupaten'])->name('createkabupaten');
 Route::get('/insertkabupaten', [AdminDatawilayahController::class, 'insertkabupaten'])->name('insertkabupaten');
 Route::get('/ShowKabupaten/{id}', [AdminDatawilayahController::class, 'ShowKabupaten']);
@@ -224,4 +224,4 @@ Route::get('/bannerpromosi', [AdminPromosiController::class, 'bannerpromosi'])->
 
 Route::post('/editbannerpromopost/{id}', [AdminPromosiController::class, 'editbanner'])->name('editbannerpromopost');
 
-//End Promosi
+// old('subkategoris') ? $old = DB::table('subkategoris')->where('kategori',old('kategori'))->first(); echo $old->sub_kategori; : '-- Pilih --';

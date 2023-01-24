@@ -58,9 +58,9 @@
                                                     <label>Merk</label>
                                                     <select name="merk_produk"
                                                         class="form-select @error('merk_produk') is-invalid @enderror">
-                                                        <option value="" disabled selected>-- Select --</option>
+                                                        <option value="" disabled <?php echo old("merk_produk") ? '' : 'selected' ; ?>>-- Pilih --</option>
                                                         @foreach ($merk as $row)
-                                                            <option value="{{ $row->id }}"> {{ $row->nama_merek }}
+                                                            <option value="{{ $row->id }}" <?php echo old('merk_produk') == $row->id ? 'selected' : '' ; ?>> {{ $row->nama_merek }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -84,18 +84,33 @@
                                                 <div class="col-md-6 mb-3">
                                                     <label>Ukuran Produk</label>
                                                     <input id="ukuran_produk" name="ukuran_produk" type="text"
-                                                        class="form-control" value="26,27">
+                                                        class="form-control" value="<?php if (old('ukuran_produk')) {
+                                                            $ukuran = json_decode(old('ukuran_produk'), true);
+                                                            $insukuran = array_column($ukuran, 'value');
+                                                            $value = implode(',', $insukuran);
+                                                            echo $value;
+                                                        }else {
+                                                            echo "26,28";
+                                                        } ?>">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Warna Produk</label>
                                                     <input id="warna_produk" name="warna_produk" type="text"
-                                                        class="form-control" value="kuning,biru">
+                                                        class="form-control" value="<?php if (old('warna_produk')) {
+                                                            $ukuran = json_decode(old('warna_produk'), true);
+                                                            $insukuran = array_column($ukuran, 'value');
+                                                            $value = implode(',', $insukuran);
+                                                            echo $value;
+                                                        }else {
+                                                            echo "kuning,biru";
+                                                        } ?>">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>
                                                     <div class="input-group">
                                                         <input name="berat_produk" type="number"
-                                                            class="form-control @error('berat_produk') is-invalid @enderror" value="{{ old('berat_produk') }}">
+                                                            class="form-control @error('berat_produk') is-invalid @enderror"
+                                                            value="{{ old('berat_produk') }}">
                                                         <span class="input-group-text">Gram</span>
                                                         @error('berat_produk')
                                                             <div class="invalid-feedback">
@@ -108,9 +123,9 @@
                                                     <label>Kategori</label>
                                                     <select id="kategori" name="kategori"
                                                         class="form-select @error('kategori') is-invalid  @enderror">
-                                                        <option selected disabled>-- Select --</option>
+                                                        <option value="" disabled {{ old("kategori") ? '' : 'selected' ; }}>-- Select --</option>
                                                         @foreach ($kategori as $row)
-                                                            <option value="{{ $row->id }}">{{ $row->kategori }}
+                                                            <option value="{{ $row->id }}" {{ old("kategori") == $row->id ? 'selected' : '' ; }} >{{ $row->kategori }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -124,7 +139,12 @@
                                                     <label>Sub Kategori</label>
                                                     <select id="sub_kategori" name="sub_kategori"
                                                         class="form-select @error('sub_kategori') is-invalid @enderror">
-                                                        <option selected disabled>-- Select --</option>
+                                                        <option value="{{old("sub_kategori")}}" selected disabled><?php if (old('sub_kategori')) {
+                                                            $data = App\Models\subkategori::where("id",old("sub_kategori"))->first();
+                                                            echo $data->sub_kategori;
+                                                        }else {
+                                                            echo "-- Pilih --";
+                                                        } ?></option>
                                                     </select>
                                                     <div class="invalid-feedback">
                                                         Sub Kategori Wajib Diisi
@@ -134,7 +154,12 @@
                                                     <label>Sub-sub Kategori</label>
                                                     <select id="sub_subkategori" name="sub_subkategori"
                                                         class="form-select select @error('sub_subkategori') is-invalid @enderror">
-                                                        <option disabled selected>-- Select --</option>
+                                                        <option value="{{old('sub_subkategori')}}" disabled selected><?php if (old('sub_subkategori')) {
+                                                            $data = App\Models\Sub_Subkategori::where("id",old("sub_subkategori"))->first();
+                                                            echo $data->sub_subkategori;
+                                                        }else {
+                                                            echo "-- Pilih --";
+                                                        } ?></option>
                                                     </select>
                                                     @error('sub_subkategori')
                                                         <div class="invalid-feedback">
@@ -146,7 +171,7 @@
                                                     <label>Stock Produk</label>
                                                     <input name="stok_produk"
                                                         class="form-control @error('stok_produk') is-invalid @enderror"
-                                                        type="number" value="{{ old("stok_produk") }}">
+                                                        type="number" value="{{ old('stok_produk') }}">
                                                     <div class="invalid-feedback">
                                                         Stock Produk Wajib Diisi
                                                     </div>
@@ -157,7 +182,7 @@
                                                         <span class="input-group-text">Rp.</span>
                                                         <input id="harga_asliproduk" name="harga_asliproduk"
                                                             class="form-control @error('harga_asliproduk') is-invalid @enderror"
-                                                            type="number" value="{{ old("harga_asliproduk") }}">
+                                                            type="number" value="{{ old('harga_asliproduk') }}">
                                                         <div class="invalid-feedback">
                                                             Harga Produk Wajib Diisi
                                                         </div>
@@ -167,7 +192,8 @@
                                                     <label>Diskon</label>
                                                     <div class="input-group">
                                                         <input id="diskon" name="diskon" class="form-control"
-                                                            type="number" min="0" max="100" value="{{ old("diskon") }}">
+                                                            type="number" min="0" max="100"
+                                                            value="{{ old('diskon') }}">
                                                         <span class="input-group-text">%</span>
                                                     </div>
                                                 </div>
@@ -176,18 +202,21 @@
                                                     <div class="input-group">
                                                         <span class="input-group-text">Rp.</span>
                                                         <input id="harga_diskonproduk" name="harga_diskonproduk"
-                                                            class="form-control" type="number" readonly>
+                                                            class="form-control" type="number" readonly
+                                                            value="{{ old('harga_diskonproduk') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="custom-file-container" data-upload-id="mySecondImage">
-                                                        <label class="@error('galeri_produk') is-invalid @enderror">Upload Foto Produk (Foto Pertama Akan Menjadi thumbnail)
+                                                        <label
+                                                            class="@error('galeri_produk') is-invalid @enderror">Upload
+                                                            Foto Produk (Foto Pertama Akan Menjadi thumbnail)
                                                             <a href="javascript:void(0)"
                                                                 class="custom-file-container__image-clear"
                                                                 title="Clear Image">x</a></label>
-                                                                <div class="invalid-feedback">
-                                                                    Galeri Produk Wajib Diisi
-                                                                </div>
+                                                        <div class="invalid-feedback">
+                                                            Galeri Produk Wajib Diisi
+                                                        </div>
                                                         <label class="custom-file-container__custom-file">
                                                             <input name="galeri_produk[]" type="file"
                                                                 class="custom-file-container__custom-file__custom-file-input"
@@ -208,14 +237,15 @@
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="promo" value="yes" <?php  ?>>
+                                                                <input type="checkbox" name="promo" value="yes"
+                                                                    <?php echo old('promo') == 'yes' ? 'checked' : ''; ?>>
                                                                 Promo
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input type="checkbox" name="produk_baru"
-                                                                    value="yes"> Produk Baru
+                                                                    value="yes" <?php echo old('promo') == 'yes' ? 'checked' : ''; ?>> Produk Baru
                                                             </label>
                                                         </div>
                                                     </div>
@@ -223,28 +253,33 @@
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input type="checkbox" name="baru_datang"
-                                                                    value="yes"> Baru Datang
+                                                                    value="yes" <?php echo old('promo') == 'yes' ? 'checked' : ''; ?>> Baru Datang
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input type="checkbox" name="best_seller"
-                                                                    value="yes"> Best Seller
+                                                                    value="yes" <?php echo old('promo') == 'yes' ? 'checked' : ''; ?>> Best Seller
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
-                                                    <label class="@error('deskirpsi_pendek') is-invalid @enderror">Deskripsi Pendek</label>
+                                                    <label
+                                                        class="@error('deskirpsi_pendek') is-invalid @enderror">Deskripsi
+                                                        Pendek</label>
                                                     <div class="invalid-feedback">Deskripsi pendek Wajib Diisi</div>
-                                                    <textarea name="deskirpsi_pendek" rows="4" cols="5" class="form-control @error('deskirpsi_pendek') is-invalid @enderror" placeholder="Enter message"></textarea>
+                                                    <textarea name="deskirpsi_pendek" rows="4" cols="5"
+                                                        class="form-control @error('deskirpsi_pendek') is-invalid @enderror" placeholder="Enter message">{{ old('deskirpsi_pendek') }}</textarea>
                                                 </div>
                                                 <div class="col-md-12">
-                                                    <label class="@error('deskirpsi_panjang') is-invalid @enderror">Deskripsi Panjang</label>
+                                                    <label
+                                                        class="@error('deskirpsi_panjang') is-invalid @enderror">Deskripsi
+                                                        Panjang</label>
                                                     <div class="invalid-feedback">
                                                         Deskripsi Panjang wajib Diisi
                                                     </div>
-                                                    <textarea name="deskirpsi_panjang" id="summernote"></textarea>
+                                                    <textarea name="deskirpsi_panjang" id="summernote">{!! old('deskirpsi_panjang') !!}</textarea>
                                                 </div>
                                                 <button type="submit"
                                                     class="btn btn-rounded btn-primary mx-auto w-50">Submit</button>
@@ -265,12 +300,12 @@
     <!-- Star Script -->
     @include('layoutsadmin.script')
     <!-- End Script -->
-@error('deskirpsi_panjang')
-    <script>
-    // $(document)
-    $(".note-editor").addClass("b-red");
-    </script>
-@enderror
+    @error('deskirpsi_panjang')
+        <script>
+            // $(document)
+            $(".note-editor").addClass("b-red");
+        </script>
+    @enderror
     <script>
         $(document).ready(function() {
             $('#diskon').keyup(function() {
@@ -278,7 +313,7 @@
                 let diskon = $(this).val();
                 let harga_diskon = (hargaasli * diskon) / 100;
                 let harga_total = hargaasli - harga_diskon;
-                $('#harga_diskonproduk').val(harga_total)
+                $('#harga_diskonproduk').val(harga_total);
             });
         });
         $(document).ready(function() {
