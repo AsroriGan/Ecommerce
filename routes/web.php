@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahControll
 use App\Http\Controllers\Admin\MerekController as AdminMerekController;
 use App\Http\Controllers\Admin\ProdukController as AdminProdukController;
 use App\Http\Controllers\Admin\blogadmin;
+use App\Http\Controllers\Admin\KategoriblogController;
 use App\Http\Controllers\Landing\BlogController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\Admin\PromosiController as AdminPromosiController;
@@ -207,6 +208,10 @@ Route::post('/insertblog', [blogadmin::class, 'insertblog'])->name('insertblog')
 Route::post('/updateblog/{id}', [blogadmin::class, 'updateblog'])->name('updateblog');
 Route::get('/deleteblog/{id}', [blogadmin::class, 'deleteblog'])->name('deleteblog');
 ////////EndBlog
+//////KategoriBlog
+Route::get('/kategoriblog', [KategoriblogController::class, 'kategoriblog'])->name('kategoriblog');
+Route::post('/insertkategoriblog', [KategoriblogController::class, 'insertkategoriblog'])->name('insertkategoriblog');
+
 
 // Start Promosi
 Route::get('/promosi', [AdminPromosiController::class, 'promosi'])->name('promosi');
