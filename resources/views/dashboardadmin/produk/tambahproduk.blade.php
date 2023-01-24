@@ -56,7 +56,8 @@
                                             <div class="form-group row">
                                                 <div class="col-md-6 mb-3">
                                                     <label>Merk</label>
-                                                    <select name="merk_produk" class="form-select @error('merk_produk') is-invalid @enderror">
+                                                    <select name="merk_produk"
+                                                        class="form-select @error('merk_produk') is-invalid @enderror">
                                                         <option value="" disabled selected>-- Select --</option>
                                                         @foreach ($merk as $row)
                                                             <option value="{{ $row->id }}"> {{ $row->nama_merek }}
@@ -64,14 +65,16 @@
                                                         @endforeach
                                                     </select>
                                                     @error('merk_produk')
-                                                    <div class="invalid-feedback">
-                                                        The Merk field is required
-                                                    </div>
+                                                        <div class="invalid-feedback">
+                                                            The Merk field is required
+                                                        </div>
                                                     @enderror
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Nama Produk</label>
-                                                    <input name="nama_produk" class="form-control @error('nama_produk') is-invalid @enderror" type="text">
+                                                    <input name="nama_produk"
+                                                        class="form-control @error('nama_produk') is-invalid @enderror"
+                                                        type="text" value="{{ old('nama_produk') }}">
                                                     @error('nama_produk')
                                                         <div class="invalid-feedback">
                                                             Nama Produk Merk wajib diisi
@@ -91,7 +94,8 @@
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>
                                                     <div class="input-group">
-                                                        <input name="berat_produk" type="number" class="form-control @error('berat_produk') is-invalid @enderror">
+                                                        <input name="berat_produk" type="number"
+                                                            class="form-control @error('berat_produk') is-invalid @enderror" value="{{ old('berat_produk') }}">
                                                         <span class="input-group-text">Gram</span>
                                                         @error('berat_produk')
                                                             <div class="invalid-feedback">
@@ -102,7 +106,8 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Kategori</label>
-                                                    <select id="kategori" name="kategori" class="form-select @error('kategori') is-invalid  @enderror">
+                                                    <select id="kategori" name="kategori"
+                                                        class="form-select @error('kategori') is-invalid  @enderror">
                                                         <option selected disabled>-- Select --</option>
                                                         @foreach ($kategori as $row)
                                                             <option value="{{ $row->id }}">{{ $row->kategori }}
@@ -139,7 +144,12 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label>Stock Produk</label>
-                                                    <input name="stok_produk" class="form-control @error('stok_produk') is-invalid @enderror" type="number">
+                                                    <input name="stok_produk"
+                                                        class="form-control @error('stok_produk') is-invalid @enderror"
+                                                        type="number" value="{{ old("
+
+
+                                                        ") }}">
                                                     <div class="invalid-feedback">
                                                         Stock Produk Wajib Diisi
                                                     </div>
@@ -149,10 +159,11 @@
                                                     <div class="input-group">
                                                         <span class="input-group-text">Rp.</span>
                                                         <input id="harga_asliproduk" name="harga_asliproduk"
-                                                            class="form-control @error('harga_asliproduk') is-invalid @enderror" type="number">
-                                                            <div class="invalid-feedback">
-                                                                Harga Produk Wajib Diisi
-                                                            </div>
+                                                            class="form-control @error('harga_asliproduk') is-invalid @enderror"
+                                                            type="number">
+                                                        <div class="invalid-feedback">
+                                                            Harga Produk Wajib Diisi
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
@@ -173,17 +184,20 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="custom-file-container" data-upload-id="mySecondImage">
-                                                        <label>Upload Foto Produk (Foto Pertama Akan Menjadi thumbnail)
+                                                        <label class="@error('galeri_produk') is-invalid @enderror">Upload Foto Produk (Foto Pertama Akan Menjadi thumbnail)
                                                             <a href="javascript:void(0)"
                                                                 class="custom-file-container__image-clear"
                                                                 title="Clear Image">x</a></label>
+                                                                <div class="invalid-feedback">
+                                                                    Galeri Produk Wajib Diisi
+                                                                </div>
                                                         <label class="custom-file-container__custom-file">
                                                             <input name="galeri_produk[]" type="file"
                                                                 class="custom-file-container__custom-file__custom-file-input"
                                                                 multiple>
                                                             <input type="hidden" value="10485760" />
                                                             <span
-                                                                class="custom-file-container__custom-file__custom-file-control"></span>
+                                                                class="custom-file-container__custom-file__custom-file-control @error('galeri_produk') b-red @enderror"></span>
                                                         </label>
                                                         <div class="custom-file-container__image-preview"></div>
                                                     </div>
@@ -193,12 +207,12 @@
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <div class="col-12 row">
-                                                    <label class="mb-3">Status Produk</label>
+                                                    <label class="mb-3">Status Produk (opsional)</label>
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="promo"
-                                                                    value="yes"> Promo
+                                                                <input type="checkbox" name="promo" value="yes">
+                                                                Promo
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
@@ -224,100 +238,110 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
-                                                    <label>Deskripsi Pendek</label>
-                                                    <textarea name="deskirpsi_pendek" rows="4" cols="5" class="form-control" placeholder="Enter message"></textarea>
+                                                    <label class="@error('deskirpsi_pendek') is-invalid @enderror">Deskripsi Pendek</label>
+                                                    <div class="invalid-feedback">Deskripsi pendek Wajib Diisi</div>
+                                                    <textarea name="deskirpsi_pendek" rows="4" cols="5" class="form-control @error('deskirpsi_pendek') is-invalid @enderror" placeholder="Enter message"></textarea>
                                                 </div>
                                                 <div class="col-md-12">
-                                                    <label>Deskripsi Panjang</label>
+                                                    <label class="@error('deskirpsi_panjang') is-invalid @enderror">Deskripsi Panjang</label>
+                                                    <div class="invalid-feedback">
+                                                        Deskripsi Panjang wajib Diisi
+                                                    </div>
                                                     <textarea name="deskirpsi_panjang" id="summernote"></textarea>
-                                                  </div>
-                                                 <button type="submit"
-                                                        class="btn btn-rounded btn-primary mx-auto w-50">Submit</button>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <button type="submit"
+                                                    class="btn btn-rounded btn-primary mx-auto w-50">Submit</button>
+                                            </div>
+                                            <div class="col-md-6">
 
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Star Script -->
-        @include('layoutsadmin.script')
-        <!-- End Script -->
-        <script>
-            $(document).ready(function() {
-                $('#diskon').keyup(function() {
-                    let hargaasli = $('#harga_asliproduk').val();
-                    let diskon = $(this).val();
-                    let harga_diskon = (hargaasli * diskon) / 100;
-                    let harga_total = hargaasli - harga_diskon;
-                    $('#harga_diskonproduk').val(harga_total)
+    </div>
+    <!-- Star Script -->
+    @include('layoutsadmin.script')
+    <!-- End Script -->
+@error('deskirpsi_panjang')
+    <script>
+    // $(document)
+    $(".note-editor").addClass("b-red");
+    </script>
+@enderror
+    <script>
+        $(document).ready(function() {
+            $('#diskon').keyup(function() {
+                let hargaasli = $('#harga_asliproduk').val();
+                let diskon = $(this).val();
+                let harga_diskon = (hargaasli * diskon) / 100;
+                let harga_total = hargaasli - harga_diskon;
+                $('#harga_diskonproduk').val(harga_total)
+            });
+        });
+        $(document).ready(function() {
+            $('#kategori').change(function() {
+                let ik = $(this).val();
+                $.ajax({
+                    url: '/get_subkategori',
+                    type: 'post',
+                    data: 'ik=' + ik + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#sub_kategori').html(result);
+                        // $('#sub_kategori').removeAttr('disabled');
+                    }
                 });
             });
-            $(document).ready(function() {
-                $('#kategori').change(function() {
-                    let ik = $(this).val();
-                    $.ajax({
-                        url: '/get_subkategori',
-                        type: 'post',
-                        data: 'ik=' + ik + '&_token={{ csrf_token() }}',
-                        success: function(result) {
-                            $('#sub_kategori').html(result);
-                            // $('#sub_kategori').removeAttr('disabled');
+        });
+
+        $(document).ready(function() {
+            $('#sub_kategori').change(function() {
+                let isk = $(this).val();
+                $.ajax({
+                    url: '/get_sub_subkategori',
+                    type: 'post',
+                    data: 'isk=' + isk + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#sub_subkategori').html(result);
+                        // $('#sub_kategori').removeAttr('disabled');
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
                         }
-                    });
-                });
-            });
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+    <script>
+        var input1 = document.querySelector('#warna_produk');
+        var input2 = document.querySelector('#ukuran_produk');
 
-            $(document).ready(function() {
-                $('#sub_kategori').change(function() {
-                    let isk = $(this).val();
-                    $.ajax({
-                        url: '/get_sub_subkategori',
-                        type: 'post',
-                        data: 'isk=' + isk + '&_token={{ csrf_token() }}',
-                        success: function(result) {
-                            $('#sub_subkategori').html(result);
-                            // $('#sub_kategori').removeAttr('disabled');
-                        }
-                    });
-                });
-            });
-        </script>
-        <script>
-            // Example starter JavaScript for disabling form submissions if there are invalid fields
-            (function() {
-                'use strict'
-
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.querySelectorAll('.needs-validation')
-
-                // Loop over them and prevent submission
-                Array.prototype.slice.call(forms)
-                    .forEach(function(form) {
-                        form.addEventListener('submit', function(event) {
-                            if (!form.checkValidity()) {
-                                event.preventDefault()
-                                event.stopPropagation()
-                            }
-                            form.classList.add('was-validated')
-                        }, false)
-                    })
-            })()
-        </script>
-        <script>
-            var input1 = document.querySelector('#warna_produk');
-            var input2 = document.querySelector('#ukuran_produk');
-
-            new Tagify(input1);
-            new Tagify(input2);
-        </script>
+        new Tagify(input1);
+        new Tagify(input2);
+    </script>
 </body>
 
 </html>

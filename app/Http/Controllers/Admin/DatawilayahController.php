@@ -42,7 +42,6 @@ class DatawilayahController extends Controller
 
     public function provinsiview($id)
     {
-        // dd($id);
         $data = Datawilayah::findorfail($id);
         return view('dashboardadmin.datawilayah.provinsi.editview', compact('data'));
     }
@@ -50,6 +49,9 @@ class DatawilayahController extends Controller
     public function editprovinsi(Request $request, $id)
     {
         // dd($request->all());
+        $validated = $request->validate([
+            'provinsi' => 'required'
+        ], ['provinsi.required' => 'Provinsi Wajib Di isi']);
         $data = Datawilayah::findorfail($id);
         $data->update($request->all());
         return response()->json(['title' => 'Success', 'message' => 'Data Berhasil Diedit']);
@@ -132,7 +134,8 @@ class DatawilayahController extends Controller
     {
         $relasi = datawilayahkecamatan::where('kabupaten', $id)->count();
         if ($relasi > 0) {
-            return redirect()->back()->with("error", "Data masih digunakan di data kecamatan");
+            return response()->json(['title'=>'Error','msg'=>'Data masih Digunakan Dikecamatan']);
+            // return redirect()->back()->with("error", "Data masih digunakan di data kecamatan");
         }
         $data = datawilayahkabupaten::findorfail($id);
         $data->delete();
