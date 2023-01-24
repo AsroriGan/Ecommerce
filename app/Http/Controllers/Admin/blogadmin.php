@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 
 use App\Models\blog;
+use App\Models\kategoriblog;
 use Illuminate\Http\Request;
 
 class blogadmin extends Controller
@@ -111,6 +112,26 @@ class blogadmin extends Controller
         $data->delete();
         return redirect()->route('blogad')->with('success', 'Data Berhasil Didelete');
 
+    }
+
+
+    public function kategoriblog(){
+        $data=kategoriblog::all();
+        return view('dashboardadmin.kategoriblog.kategoriblog', compact('data'));
+    }
+
+    public function insertkategoriblog(request $request){
+        $data = kategoriblog::create([
+            'kategoriblog' => $request->kategoriblog
+        ]);
+        return redirect()->route('kategoriblog')->with('succes', 'Berhasil Menambahkan Kategori blog');
+    }
+    public function updatekategoriblog(request $request, $id){
+       $data=kategoriblog::find($id);
+       $data->update([
+        'kategoriblog'=>$request->kategoriblog
+       ]);
+        return redirect()->route('kategoriblog')->with('succes', 'Data Berhasil Di Update');
     }
 }
 

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class kategoriblog extends Model
 {
     use HasFactory;
+    protected $primaryKey = "id";
+    protected $guarded = [];
 }

@@ -33,10 +33,9 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">KategoriBlog</h4>
-                                {{-- <p class="card-text">
-                                    This is the most basic example of the datatables with zero configuration. Use the
-                                    <code>.datatable</code> class to initialize datatables.
-                                </p> --}}
+                                <button type="button" class="btn btn-success waves-effect waves-light mt-1"
+                                    data-bs-toggle="modal" data-bs-target="#con-close-modal">Responsive
+                                    Modal</button>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -53,7 +52,7 @@
                                             @foreach ($data as $kategoriblog)
                                                 <tr>
                                                     <td>{{ $no }}</td>
-                                                    <td> {{ $kategoriblog->kategori }}
+                                                    <td> {{ $kategoriblog->kategoriblog }}
                                                     </td>
                                                     <td> <button type="button"
                                                             class="btn btn-success waves-effect waves-light mt-1"
@@ -63,36 +62,43 @@
                                                         </button></td>
                                                 </tr>
                                                 <!-- Modal -->
-                                                <div id="con-close-modal{{ $kategoriblog->id }}" class="modal fade"
-                                                    tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                                                    aria-hidden="true" style="display: none;">
+                                                <div id="con-close-modal{{ $kategoriblog->id }}" class="modal fade" tabindex="-1"
+                                                    role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+                                                    style="display: none;">
                                                     <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Modal Content is Responsive</h4>
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body p-4">
-                                                                <div class="row">
-                                                                    <form action="/updatekategoriblog/{{ $kategoriblog->id }}"
-                                                                        method="post" enctype="multipart/form-data">
-                                                                        @csrf
+                                                        <form action="/updatekategoriblog/{{ $kategoriblog->id }}" method="post">
+                                                            @csrf
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Update Kategori Blog</h4>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body p-4">
+                                                                    <div class="row">
                                                                         <div class="col-md-12">
                                                                             <div class="mb-3">
+                                                                                <label for="field-3"
+                                                                                    class="form-label">Kategori
+                                                                                    Blog</label>
+                                                                                <input type="text"
+                                                                                    name="kategoriblog"
+                                                                                    class="form-control" id="field-3"
+                                                                                    placeholder="Masukkan Kategori Blog" value="{{ $kategoriblog->kategoriblog }}">
                                                                             </div>
                                                                         </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button"
-                                                                                class="btn btn-secondary"
-                                                                                data-dismiss="modal">Close</button>
-                                                                            <button type="submit"
-                                                                                class="btn btn-primary">Save
-                                                                                changes</button>
-                                                                    </form>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary waves-effect"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                    <button type="sumbit"
+                                                                        class="btn btn-info waves-effect waves-light">Save
+                                                                        changes</button>
+                                                                </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                                 <?php $no++; ?>
@@ -101,15 +107,51 @@
                                     </table>
                                 </div>
                             </div>
-                            <!-- Button trigger modal -->
+                            <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog"
+                                aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <form action="/insertkategoriblog" method="post">
+                                        @csrf
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Tambah Kategori Blog</h4>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body p-4">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label for="field-3" class="form-label">Kategori
+                                                                Blog</label>
+                                                            <input type="text" name="kategoriblog"
+                                                                class="form-control" id="field-3"
+                                                                placeholder="Masukkan Kategori Blog">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary waves-effect"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="sumbit"
+                                                    class="btn btn-info waves-effect waves-light">Save
+                                                    changes</button>
+                                            </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Button trigger modal -->
                 </div>
             </div>
-
         </div>
+    </div>
 
-        @include('layoutsadmin.script')
+    </div>
+
+    @include('layoutsadmin.script')
 </body>
 
 </html>

@@ -70,9 +70,9 @@ Route::get('/detailblog/{id}', [LandingBlogController::class, 'detailblog']);
 Route::get('/promo', [LandingPromoController::class, 'promo']);
 
 
-// Route::get('/test', function () {
-//     return view('landingpage.testsofyan');
-// });
+Route::get('/test', function () {
+    return view('landingpage.testsofyan');
+});
 
 Route::get('/', [LandingpageController::class, 'home'])->name('home');
 
@@ -209,8 +209,9 @@ Route::post('/updateblog/{id}', [blogadmin::class, 'updateblog'])->name('updateb
 Route::get('/deleteblog/{id}', [blogadmin::class, 'deleteblog'])->name('deleteblog');
 ////////EndBlog
 //////KategoriBlog
-Route::get('/kategoriblog', [KategoriblogController::class, 'kategoriblog'])->name('kategoriblog');
-Route::post('/insertkategoriblog', [KategoriblogController::class, 'insertkategoriblog'])->name('insertkategoriblog');
+Route::get('/kategoriblog', [blogadmin::class, 'kategoriblog'])->name('kategoriblog');
+Route::post('/insertkategoriblog', [blogadmin::class, 'insertkategoriblog'])->name('insertkategoriblog');
+Route::post('/updatekategoriblog/{id}', [blogadmin::class, 'updatekategoriblog'])->name('updatekategoriblog');
 
 
 // Start Promosi
