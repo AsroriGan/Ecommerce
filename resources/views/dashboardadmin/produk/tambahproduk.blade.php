@@ -146,10 +146,7 @@
                                                     <label>Stock Produk</label>
                                                     <input name="stok_produk"
                                                         class="form-control @error('stok_produk') is-invalid @enderror"
-                                                        type="number" value="{{ old("
-
-
-                                                        ") }}">
+                                                        type="number" value="{{ old("stok_produk") }}">
                                                     <div class="invalid-feedback">
                                                         Stock Produk Wajib Diisi
                                                     </div>
@@ -160,7 +157,7 @@
                                                         <span class="input-group-text">Rp.</span>
                                                         <input id="harga_asliproduk" name="harga_asliproduk"
                                                             class="form-control @error('harga_asliproduk') is-invalid @enderror"
-                                                            type="number">
+                                                            type="number" value="{{ old("harga_asliproduk") }}">
                                                         <div class="invalid-feedback">
                                                             Harga Produk Wajib Diisi
                                                         </div>
@@ -170,7 +167,7 @@
                                                     <label>Diskon</label>
                                                     <div class="input-group">
                                                         <input id="diskon" name="diskon" class="form-control"
-                                                            type="number" min="0" max="100">
+                                                            type="number" min="0" max="100" value="{{ old("diskon") }}">
                                                         <span class="input-group-text">%</span>
                                                     </div>
                                                 </div>
@@ -211,7 +208,7 @@
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="promo" value="yes">
+                                                                <input type="checkbox" name="promo" value="yes" <?php  ?>>
                                                                 Promo
                                                             </label>
                                                         </div>
