@@ -164,6 +164,14 @@
                     $(".btn-close").click();
                     toastr.success(data.message, data.title);
                     viewdata();
+                },
+                error: function(error){
+                    let error_log = error.responseJSON.errors;
+                    // conole.log(error.responseJSON.errors);
+                    if (error.status == 422) {
+                        $('#valprovinsi').addClass('is-invalid');
+                        $('#feedbackprov').text(error_log.provinsi[0]);
+                    }
                 }
             });
         }

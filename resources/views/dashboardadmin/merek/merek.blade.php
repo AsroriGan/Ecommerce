@@ -31,7 +31,7 @@
                         <div class="page-header">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="page-title">Data Merek / Merek</h3>
+                                    <h3 class="page-title">Merek</h3>
                                 </div>
                             </div>
                         </div>

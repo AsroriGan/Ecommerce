@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('berat_produk');
             $table->string('stok_produk');
             $table->string('kategori');
-            $table->string('sub_kategori');
-            $table->string('sub_subkategori');
+            $table->string('sub_kategori')->nullable();
+            $table->string('sub_subkategori')->nullable();
             $table->string('harga_diskonproduk')->nullable();
             $table->string('harga_asliproduk');
             $table->integer('diskon')->nullable();

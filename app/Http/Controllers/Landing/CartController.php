@@ -28,7 +28,7 @@ class CartController extends Controller
         $hargatotal = $produk->harga_diskonproduk * $request->jumlah;
         // dd($hargatotal);
         if($request->jumlah > $produk->stok_produk) {
-            return redirect()->back()->with('error','');
+            return redirect()->back()->with('error','jumlah melebihi stock');
         } else {
            $iduser = auth()->user()->id;
             Cart::session($iduser)->add(array(
@@ -44,7 +44,7 @@ class CartController extends Controller
                 )
 
             ));
-            return redirect()->back()->with('success','Berhasil Menambahkan Produk Ke Keranjanh');
+            return redirect()->back()->with('success','Berhasil Menambahkan Produk Ke Keranjang');
         }
     }
      public function hapuscart($id){
@@ -64,7 +64,7 @@ class CartController extends Controller
         $hargatotal = $produk->harga_diskonproduk * $request->jumlah;
         // dd($hargatotal);
         if($request->jumlah > $produk->stok_produk) {
-            return redirect()->back()->with('error','');
+            return redirect()->back()->with('error','jumlah melebihi stock');
         } else {
            $iduser = auth()->user()->id;
             Cart::session($iduser)->add(array(
@@ -80,7 +80,7 @@ class CartController extends Controller
                 )
 
             ));
-            return redirect()->back()->with('success','Berhasil Menambahkan Produk Ke Keranjanh');
+            return redirect()->back()->with('success','Berhasil Menambahkan Produk Ke Keranjang');
         }
     }
 

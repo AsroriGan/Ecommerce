@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahControll
 use App\Http\Controllers\Admin\MerekController as AdminMerekController;
 use App\Http\Controllers\Admin\ProdukController as AdminProdukController;
 use App\Http\Controllers\Admin\blogadmin;
+use App\Http\Controllers\Admin\KategoriblogController;
 use App\Http\Controllers\Landing\BlogController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\Admin\PromosiController as AdminPromosiController;
@@ -54,7 +55,7 @@ Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk'
 Route::get('/detail/{id}', [LandingProdukController::class, 'detail'])->name('detail');
 Route::get('/detailmodal/{id}', [LandingProdukController::class, 'detailmodal'])->name('detailmodal');
 
-//cart
+//cartt
 Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang')->middleware('auth');
 Route::get('/hapuscart/{id}', [LandingCartController::class, 'hapuscart'])->name('hapuscart');
 Route::post('/cartpost/{id}', [LandingCartController::class, 'cartpost'])->name('cartpost');
@@ -69,9 +70,9 @@ Route::get('/detailblog/{id}', [LandingBlogController::class, 'detailblog']);
 Route::get('/promo', [LandingPromoController::class, 'promo']);
 
 
-Route::get('/test', function () {
-    return view('landingpage.testsofyan');
-});
+// Route::get('/test', function () {
+//     return view('landingpage.testsofyan');
+// });
 
 Route::get('/', [LandingpageController::class, 'home'])->name('home');
 
@@ -197,19 +198,23 @@ Route::get('/deletemerek/{id}', [AdminMerekController::class, 'delete'])->name('
 Route::get('/sliderr', [SliderController::class, 'slider'])->name('slider');
 Route::post('/updateslider/{id}', [SliderController::class, 'updateslider']);
 
+// End Sliders
 
-//////////
+//////////Blog
 Route::get('/blogadmin', [blogadmin::class, 'blogg'])->name('blogad');
 Route::get('/tambahblog', [blogadmin::class, 'tambahblog'])->name('tambahblog');
 Route::get('/editblog/{id}', [blogadmin::class, 'editblog'])->name('editblog');
 Route::post('/insertblog', [blogadmin::class, 'insertblog'])->name('insertblog');
 Route::post('/updateblog/{id}', [blogadmin::class, 'updateblog'])->name('updateblog');
 Route::get('/deleteblog/{id}', [blogadmin::class, 'deleteblog'])->name('deleteblog');
-// End Sliders
+////////EndBlog
+//////KategoriBlog
+Route::get('/kategoriblog', [KategoriblogController::class, 'kategoriblog'])->name('kategoriblog');
+Route::post('/insertkategoriblog', [KategoriblogController::class, 'insertkategoriblog'])->name('insertkategoriblog');
+
 
 // Start Promosi
 Route::get('/promosi', [AdminPromosiController::class, 'promosi'])->name('promosi');
-
 
 Route::post('/editpromopost/{id}', [AdminPromosiController::class, 'edit'])->name('editpromopost');
 Route::get('/resetpromo/{id}', [AdminPromosiController::class, 'resetpromo']);

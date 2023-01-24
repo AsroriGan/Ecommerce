@@ -227,8 +227,8 @@
 
                                 <div class="ec-quickview-desc" id="deskripsipendek">l</div>
                                 <div class="ec-quickview-price">
-                                    <span class="old-price" id="hargaasli">$</span>
-                                    <span class="new-price" id="hargadiskon">$</span>
+                                    <span class="old-price" id="hargaasli">Rp. </span>
+                                    <span class="new-price" id="hargadiskon">Rp.</span>
                                 </div>
                                 <form action="/postcart" method="post">
                                     @csrf
@@ -551,8 +551,8 @@
                     $('#ids').val(data.data.id);
                     $('#namaproduk').text(data.data.nama_produk);
                     $('#deskripsipendek').text(data.data.deskirpsi_pendek);
-                    $('#hargaasli').text(data.data.harga_asliproduk);
-                    $('#hargadiskon').text(data.data.harga_diskonproduk);
+                    $('#hargaasli').text( 'Rp. ' + data.data.harga_asliproduk);
+                    $('#hargadiskon').text('Rp. ' + data.data.harga_diskonproduk);
                     $('#namaproduk').attr('href','/detail/' + data.data.id );
                     //  $('#pbrand').text(data.product.brand.brand_name);
                     //  $('#pweight').text(data.product.product_weight);

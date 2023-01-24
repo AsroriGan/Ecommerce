@@ -69,3 +69,6 @@
 .edit-delete-img a:hover{
     color: #183153 !important;
 }
+.b-red{
+    border: 1px solid #dc3545 !important;
+}

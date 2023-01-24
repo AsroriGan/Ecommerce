@@ -26,11 +26,11 @@
                     <option value="{{ $data->kabupaten }}">
                         {{ $data->kkabupaten->kabupaten }}
                     </option>
-                    @foreach ($kabupaten as $kab)
+                    {{-- @foreach ($kabupaten as $kab)
                         <option value="{{ $kab->id }}">
                             {{ $kab->kabupaten }}
                         </option>
-                    @endforeach
+                    @endforeach --}}
                 </select>
             </div>
         </div>
@@ -49,3 +49,27 @@
         onclick="updatekecamatan({{ $data->id }})">Save
         changes</button>
 </div>
+<script>
+    //depended dropdown
+    $(document).ready(function() {
+        $('#provinsi').change(function() {
+            // alert();
+            let rsi = $(this).val();
+            // let ci = rsi;
+            // alert(rsi);
+            $.ajax({
+                url: '/getkabupatenadmin',
+                type: 'post',
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    rsi: rsi
+                },
+                success: function(result) {
+                    console.log(result);
+                    $('#kabupaten').html(result);
+                    // $('#city').removeAttr('disabled');
+                }
+            });
+        });
+    });
+</script>

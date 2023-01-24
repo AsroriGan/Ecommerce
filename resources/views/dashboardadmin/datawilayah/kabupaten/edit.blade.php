@@ -8,7 +8,7 @@
             <div class="mb-3">
                 <label for="field-1" class="form-label">Provinsi</label>
                 <select class="form-select" id="provinsi" name="provinsi">
-                    <option value="{{ $data->provinsi }}" disabled selected>
+                    <option value="{{ $data->provinsi }}" selected>
                         {{ $data->rprovinsi->provinsi }}
                     </option>
                     @foreach ($provinsi as $prov)

@@ -67,7 +67,6 @@
                                                 <div class="form-group">
                                                     <label>Description Blog</label>
                                                     <textarea id="editor" name="deskripsi"></textarea>
-                                                    {{-- <div id="editor"></div> --}}
                                                     {{-- @error('deskripsi')
                                                     <div class="alert text-danger">{{ $message }}</div>
                                                     @enderror --}}
@@ -76,7 +75,6 @@
                                             <div class="col-md-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        {{-- <h5 class="card-title">Multiple File Upload</h5> --}}
                                                     </div>
                                                     <div class="card-body">
                                                         <div class="custom-file-container"
