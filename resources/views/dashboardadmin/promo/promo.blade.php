@@ -31,10 +31,11 @@
                         <div class="page-header">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="page-title">Data Promo / 
+                                    <h3 class="page-title">Data Promo /
                                         Promosi
                                     </h3>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -81,23 +82,19 @@
                                             @foreach ($data as $promo)
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
-                                                    <td><img src="{{asset('fotoproduk/'. $promo->foto)}}" style="height:80px;"></td>
+                                                    <td><img src="{{ asset('fotoproduk/' . $promo->foto) }}"
+                                                            style="height:80px;"></td>
                                                     <td>{{ $promo->judul }}</td>
                                                     <td>{{ $promo->deskripsi }}</td>
-                                     
-
                                                     <td><a data-bs-toggle="modal"
                                                             data-bs-target="#edit-promo{{ $promo->id }}"
                                                             class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
-
-                                                        {{-- <a id="delete"
-                                                            class="btn btn-sm btn-white text-danger me-2 delete" data-id="{{$promo->id}}" data-nama="{{ $promo->judul }}" ><i
-                                                                class="far fa-trash-altme-1"></i>Hapus</a> --}}
-
+                                                        <a class="btn btn-sm btn-white text-danger me-2 delete"
+                                                            data-id="{{ $promo->id }}"
+                                                            data-nama="{{ $promo->judul }}"><i
+                                                                class="far fa-trash-altme-1"></i>Reset</a>
                                                     </td>
-
-
                                                     <div id="edit-promo{{ $promo->id }}" class="modal fade"
                                                         tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                                         aria-hidden="true" style="display: none;">
@@ -110,7 +107,8 @@
                                                                         aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body p-4">
-                                                                    <form action="/editpromopost/{{ $promo->id }}"
+                                                                    <form id="form{{$promo->id}}"
+                                                                        action="/editpromopost/{{ $promo->id }}"
                                                                         method="POST" enctype="multipart/form-data">
                                                                         @csrf
                                                                         <div class="row">
@@ -118,38 +116,40 @@
                                                                                 <div class="mb-3">
                                                                                     <label for="field-3"
                                                                                         class="form-label">Foto Produk
-                                                                                        :</label><br/>
-                                                                                        <img src="{{asset('fotoproduk/'. $promo->foto)}}" style="height: 50px;">
+                                                                                        :</label><br />
+                                                                                    <img src="{{ asset('fotoproduk/' . $promo->foto) }}"
+                                                                                        style="height: 50px;">
                                                                                     <input type="file" id="foto"
                                                                                         name="foto"
                                                                                         class="form-control"
-                                                                                        
-                                                                                        id="field-3"
-                                                                                        >
-                                                                                        <i style="float: left; font-size: 11px; color:red;">Abaikan jika tidak merubah foto</i>
+                                                                                        id="field-3">
+                                                                                    <i
+                                                                                        style="float: left; font-size: 11px; color:red;">Abaikan
+                                                                                        jika tidak merubah foto</i>
                                                                                 </div>
-                                                                                <br/>
+                                                                                <br />
                                                                                 <div class="mb-3">
                                                                                     <label for="field-3"
                                                                                         class="form-label">Judul Promo
                                                                                         :</label>
-                                                                                    <input type="text" id="judul"
+                                                                                    <input type="text" id="judul{{$promo->id}}"
                                                                                         name="judul"
                                                                                         class="form-control"
                                                                                         value="{{ $promo->judul }}"
                                                                                         id="field-3"
                                                                                         placeholder="Masukan Judul Promo">
+                                                                                    <div class="invalid-feedback" id="msgjudul{{$promo->id}}"></div>
                                                                                 </div>
                                                                                 <div class="mb-3">
                                                                                     <label for="field-3"
                                                                                         class="form-label">Deskripsi
                                                                                         :</label>
-                                                                                    <input type="text" id="deskripsi"
+                                                                                    <input type="text" id="deskripsi{{$promo->id}}"
                                                                                         name="deskripsi"
                                                                                         class="form-control"
                                                                                         value="{{ $promo->deskripsi }}"
-                                                                                        id="field-3"
                                                                                         placeholder="Masukan Deskripsi">
+                                                                                    <div class="invalid-feedback" id="msgdesc{{$promo->id}}"></div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -157,7 +157,7 @@
                                                                             <button type="button"
                                                                                 class="btn btn-secondary waves-effect"
                                                                                 data-bs-dismiss="modal">Kembali</button>
-                                                                            <button
+                                                                            <button type="button" onclick="editpromo({{$promo->id}})"
                                                                                 class="btn btn-info waves-effect waves-light">Edit
                                                                                 Promo</button>
                                                                         </div>
@@ -178,7 +178,6 @@
             </div>
         </div>
     </div>
-
     {{-- <div id="modal-merek" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
@@ -231,35 +230,67 @@
         $(document).ready(function() {
             $('#myTable').DataTable();
         });
+
+        //edit action ajax
+        function editpromo(id) {
+            let formid = $('#form'+id);
+            // console.log(formid);
+            let formData = new FormData(formid[0]);
+            // console.log(formData);
+            $.ajax({
+                type: 'POST',
+                url: "/editpromopost/" + id,
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    location.reload(true);
+                    // $('#modalmerek').modal('hide');
+                    // toastr.success('Data Berhasil Di Edit');
+                },
+                error: function(error){
+                    let msg = error.responseJSON.errors;
+                    if(msg.judul){
+                        $("#deskripsi"+id).removeClass('is-invalid');
+                        $("#judul"+id).addClass('is-invalid');
+                        $("#msgjudul"+id).text(msg.judul[0]);
+                    }else{
+                        $("#judul"+id).removeClass('is-invalid');
+                        $("#deskripsi"+id).addClass('is-invalid');
+                        $("#msgdesc"+id).text(msg.deskripsi[0]);
+                    }
+                }
+            });
+        };
     </script>
     <script>
         $(".delete").click(function() {
             var nama = $(this).attr('data-nama');
             var id = $(this).attr('data-id');
             Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
+                title: "Apa kamu yakin?",
+                text: "Anda akan mereset data ini!",
                 type: "warning",
                 showCancelButton: !0,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
+                confirmButtonText: "Ya, Reset!",
                 confirmButtonClass: "btn btn-primary",
                 cancelButtonClass: "btn btn-danger ml-1",
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
-                    window.location = "/deletemerek/" + id;
+                    window.location = "/resetpromo/" + id;
                     Swal.fire({
                         type: "success",
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
+                        title: "Direset!",
+                        text: "Data Anda telah direset.",
                         confirmButtonClass: "btn btn-success"
                     })
                 } else {
                     Swal.fire({
-                        title: "Cancelled",
-                        text: "Your imaginary file is safe :)",
+                        title: "Dibatalkan",
+                        text: "Data Promosi Anda aman :)",
                         type: "error",
                         confirmButtonClass: "btn btn-success"
                     })

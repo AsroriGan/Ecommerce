@@ -17,6 +17,8 @@
     <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('template/assets/plugins/summernote/summernote-bs4.min.css')}}">
     <link rel="stylesheet" href="{{asset('template/assets/css/style.css')}}">
+    {{-- css toastr --}}
+    <link rel="stylesheet" href="{{ asset('template/assets/plugins/toastr/toatr.css') }}">
     <!-- Data Table -->
     <link rel="stylesheet" href="{{asset('template/assets/plugins/datatables/datatables.min.css')}}">
     <link rel="stylesheet" href="{{asset('zaki.css')}}">

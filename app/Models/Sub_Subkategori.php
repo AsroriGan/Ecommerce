@@ -9,8 +9,13 @@ class Sub_Subkategori extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
-    protected $dates = ['created_at'];
+    protected $fillable = [
+        'kategori',
+        'sub_kategori',
+        'sub_subkategori',
+    ];
+    protected $table = "sub__subkategoris";
+    protected $hidden;
 
 
     public function datakategori()

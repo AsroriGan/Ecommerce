@@ -171,14 +171,14 @@
                 data: "kategori=" + kategori,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil Ditambahkan", "Success")
                     tampilkandata()
                 },
                 error: function(error) {
                     console.log(error.responseJSON);
                     let error_log = error.responseJSON.errors;
                     if (error.status == 422) {
-                        $('#modalkategori').find('[name="kategori"]').prev().html(
-                            '<span style="color:red">Kategori | ' + error_log.kategori[0] + ' </span>');
+                        $('#kategori').addClass('is-invalid');
                     }
                 }
             });
@@ -191,7 +191,7 @@
                 $("#modalkategori").modal('show');
             });
         }
-        
+
         // Proses Update Data
         function update(id) {
             var kategori = $("#kategori").val();
@@ -201,75 +201,13 @@
                 data: "kategori=" + kategori,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success('Data Berhasil Di upadte', 'success');
                     tampilkandata()
                 }
             });
         }
-
         // Proses Delete Data
         function destroy(id) {
-            $.ajax({
-                type: "get",
-                url: "{{ url('destroy') }}/" + id,
-                data: "kategori=" + kategori,
-                success: function(data) {
-                    $(".btn-close").click();
-                    tampilkandata()
-                }
-            });
-        }
-    </script>
-
-    {{-- <script>
-        function openmodal() {
-            $('modal-kategori').modal('show')
-        }
-
-        function validasi() {
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-            var kategori = $('#kategori').val();
-
-            $('#kategoriError').addClass('d-none');
-
-            $.ajax({
-                type: "POST",
-                url: "{{ route('validasikategori') }}",
-                data: {
-                    _token: CSRF_TOKEN,
-                    kategori: kategori,
-                },
-                success: function(data) {
-
-                },
-                error: function(data) {
-
-                    var errors = data.responseJSON;
-                    if ($.isEmptyObject(errors) == false) {
-                        $.each(errors.errors, function (key, value) {
-                            var ErrorID = '#' + key + 'Error';
-                            $(ErrorID).removeClass('d-none');
-                            $(ErrorID).text(value)
-                        })
-                    }
-                }
-            });
-        }
-    </script> --}}
-
-    <script>
-        // Toaster
-        @if (Session::has('success'))
-            toastr.success("{{ Session::get('success') }}")
-        @endif
-
-        // Data Table
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
-
-        $('.delete').click(function() {
-            var kategori = $(this).attr('data-kategori');
-            var id = $(this).attr('data-id');
             Swal.fire({
                 title: "Are you sure?",
                 text: "You won't be able to revert this!",
@@ -283,13 +221,25 @@
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
-                    window.location = "/deletekategori/" + id;
                     Swal.fire({
                         type: "success",
                         title: "Deleted!",
                         text: "Your file has been deleted.",
                         confirmButtonClass: "btn btn-success"
-                    })
+                    }).then(function(t) {
+                        if (t.value) {
+                            $.ajax({
+                                type: "get",
+                                url: "{{ url('destroy') }}/" + id,
+                                // data: "kategori=" + kategori,
+                                success: function(data) {
+                                    $(".btn-close").click();
+                                    toastr.success('Data Berhasil Dihapus', 'success');
+                                    tampilkandata()
+                                }
+                            });
+                        }
+                    });
                 } else {
                     Swal.fire({
                         title: "Cancelled",
@@ -298,8 +248,20 @@
                         confirmButtonClass: "btn btn-success"
                     })
                 }
-            })
-        })
+            });
+        }
+    </script>
+
+    <script>
+        // Toaster
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}")
+        @endif
+
+        // Data Table
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
     </script>
 
     <!-- End Script -->

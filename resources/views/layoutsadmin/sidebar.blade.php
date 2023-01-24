@@ -44,6 +44,10 @@
                 <li {{ Route::is('promosi') ? 'class=active' : '' }}>
                     <a href="/promosi"><i data-feather="credit-card"></i> <span>Tambah Promo</span></a>
                 </li>
+                <li {{ Route::is('blogadmin') ? 'class=active' : '' }}>
+                    <a href="/blogadmin"><i data-feather="credit-card"></i>
+                        <span>blogadmin</span></a>
+                </li>
                 <li class="menu-title"><span>Pesanan</span></li>
                 <li>
                     <a href="expenses.html"><i data-feather="package"></i> <span>Expenses</span></a>

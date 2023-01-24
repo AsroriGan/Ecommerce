@@ -134,7 +134,8 @@
                                                                 class="far
                                                         fa-edit me-1"></i>
                                                             Edit</a>
-                                                        <a data-id="{{ $row->id }}" data-nama="{{ $row->kabupaten }}" href="javascript:void(0);"
+                                                        <a data-id="{{ $row->id }}"
+                                                            data-nama="{{ $row->kabupaten }}" href="javascript:void(0);"
                                                             class="btn btn-sm
                                                     btn-white
                                                     text-danger me-2 delete"><i
@@ -151,10 +152,10 @@
                                                             <div class="modal-header">
                                                                 <h4 class="modal-title">Edit Kabupaten</h4>
                                                                 <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal"
-                                                                    aria-label="Close"></button>
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
-                                                            <form action="/editkabupaten/{{ $row->id }}" method="POST">
+                                                            <form action="/editkabupaten/{{ $row->id }}"
+                                                                method="POST">
                                                                 @csrf
                                                                 <div class="modal-body p-4">
                                                                     <div class="row">
@@ -181,8 +182,7 @@
                                                                             <div class="mb-3">
                                                                                 <label
                                                                                     class="form-label">Kabupaten</label>
-                                                                                <input type="text"
-                                                                                    name="kabupaten"
+                                                                                <input type="text" name="kabupaten"
                                                                                     class="form-control"
                                                                                     value="{{ $row->kabupaten }}">
                                                                             </div>

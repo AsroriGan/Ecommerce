@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role');
-            $table->string('notelepon');
+            $table->string('notelepon')->nullable();
             $table->string('fotosampul')->default('defaultsampul.jpg');
             $table->string('foto')->default('defaultfoto.jpg');
             $table->string('alamat')->nullable();

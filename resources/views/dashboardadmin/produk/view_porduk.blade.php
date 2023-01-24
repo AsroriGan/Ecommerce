@@ -176,22 +176,28 @@ v
                                             <div class="form-group row">
                                                 <div class="col-12 row">
                                                     <label class="mb-3">Status Produk</label>
-                                                    @php
+                                                    <!-- @php
                                                         $status = explode(',', $produk->status_produk);
-                                                    @endphp
+                                                    @endphp -->
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"
-                                                                    value="promo" <?php if (in_array('promo', $status)) {
+                                                                <input type="checkbox" name="promo"
+                                                                    value="yes" <?php if (is_null($produk->Promo)){
+                                                                        echo '';
+                                                                    } else {
                                                                         echo 'checked';
                                                                     } ?>> Promo
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"
-                                                                    value="Produk Baru" <?php echo in_array('Produk Baru', $status) ? 'checked' : ''; ?>> Produk
+                                                                <input type="checkbox" name="Produk_Baru"
+                                                                    value="yes" <?php if (is_null($produk->Produk_Baru)){
+                                                                        echo '';
+                                                                    } else {
+                                                                        echo 'checked';
+                                                                    } ?>> Produk
                                                                 Baru
                                                             </label>
                                                         </div>
@@ -199,15 +205,23 @@ v
                                                     <div class="col-6">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"
-                                                                    value="Baru Datang" <?php echo in_array('Baru Datang', $status) ? 'checked' : ''; ?>> Baru
+                                                                <input type="checkbox" name="Baru_Datang"
+                                                                    value="yes"  <?php if (is_null($produk->Baru_Datang)){
+                                                                        echo '';
+                                                                    } else {
+                                                                        echo 'checked';
+                                                                    } ?>> Baru
                                                                 Datang
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="status_produk[]"
-                                                                    value="Best Seller" <?php echo in_array('Best Seller', $status) ? 'checked' : ''; ?>> Best
+                                                                <input type="checkbox" name="Best_Seller"
+                                                                    value="yes" <?php if (is_null($produk->Best_Seller)){
+                                                                        echo '';
+                                                                    } else {
+                                                                        echo 'checked';
+                                                                    } ?>> Best
                                                                 Seller
                                                             </label>
                                                         </div>

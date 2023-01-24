@@ -188,18 +188,27 @@
             });
         }
 
-         // Proses Create Data SubKategori
-         function storesubKategori() {
+        // Proses Create Data SubKategori
+        function storesubKategori() {
             var kategori = $("#kategori").val();
             var sub_kategori = $("#sub_kategori").val();
             $.ajax({
                 type: "get",
                 url: "{{ url('storesubKategori') }}",
-                data:  "sub_kategori=" + sub_kategori + "&kategori=" + kategori,
+                data: "sub_kategori=" + sub_kategori + "&kategori=" + kategori,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil Ditambahkan", "Success")
                     tampilsubkategori()
                 },
+                error: function(error) {
+                    console.log(error.responseJSON);
+                    let error_log = error.responseJSON.errors;
+                    if (error.status == 422) {
+                        $('#kategori').addClass('is-invalid');
+                        $('#sub_kategori').addClass('is-invalid');
+                    }
+                }
             });
         }
 
@@ -221,17 +230,14 @@
                 data: "sub_kategori=" + sub_kategori + "&kategori=" + kategori,
                 success: function(data) {
                     $(".btn-close").click();
+                    toastr.success("Data Berhasil DiEdit", "Success")
                     tampilsubkategori()
                 }
             });
         }
-    </script>
 
-
-    <script>
-        $("#deletesubkategori").click(function() {
-            var kategori = $(this).attr('data-kategori');
-            var id = $(this).attr('data-id');
+        // Proses Delete Data SubKategori
+        function destroySubkategori(id) {
             Swal.fire({
                 title: "Are you sure?",
                 text: "You won't be able to revert this!",
@@ -245,13 +251,24 @@
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
-                    window.location = "/deletesubkategori/" + id;
                     Swal.fire({
                         type: "success",
                         title: "Deleted!",
                         text: "Your file has been deleted.",
                         confirmButtonClass: "btn btn-success"
-                    })
+                    }).then(function(t) {
+                        if (t.value) {
+                            $.ajax({
+                                type: "get",
+                                url: "{{ url('destroySubkategori') }}/" + id,
+                                success: function() {
+                                    $(".btn-close").click();
+                                    toastr.success("Data Berhasil Di Hapus", "Success");
+                                    tampilsubkategori()
+                                }
+                            });
+                        }
+                    });
                 } else {
                     Swal.fire({
                         title: "Cancelled",
@@ -260,8 +277,9 @@
                         confirmButtonClass: "btn btn-success"
                     })
                 }
-            })
-        })
+            });
+
+        }
     </script>
 
     <script>

@@ -36,12 +36,15 @@
                                                 <div class="form-group">
                                                     <label>Judul Blog<span class="text-danger">*</span></label>
                                                     <input name="judul_blog" type="text" class="form-control">
+                                                    @error('judul_blog')
+                                                    <div class="alert text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="card">
                                                 <div class="card-body">
                                                     <div class="custom-file-container" data-upload-id="myFirstImage">
-                                                        <label>Upload Foto Blog <a href="javascript:void(0)"
+                                                        <label>Upload Foto Blog(Foto Tumbnail)<a href="javascript:void(0)"
                                                                 class="custom-file-container__image-clear"
                                                                 title="Clear Image">x</a></label>
                                                         <label class="custom-file-container__custom-file">
@@ -55,6 +58,9 @@
                                                         </label>
                                                         <div class="custom-file-container__image-preview"></div>
                                                     </div>
+                                                    @error('foto_sampul')
+                                                    <div class="alert text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-md-12">
@@ -62,6 +68,9 @@
                                                     <label>Description Blog</label>
                                                     <textarea id="editor" name="deskripsi"></textarea>
                                                     {{-- <div id="editor"></div> --}}
+                                                    {{-- @error('deskripsi')
+                                                    <div class="alert text-danger">{{ $message }}</div>
+                                                    @enderror --}}
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -81,18 +90,24 @@
                                                                     multiple name="foto_kegiatan[]">
                                                                 <input type="hidden" name="MAX_FILE_SIZE"
                                                                     value="10485760" />
-                                                                <span
+                                                                <spanj
                                                                     class="custom-file-container__custom-file__custom-file-control"></span>
                                                             </label>
                                                             <div class="custom-file-container__image-preview"></div>
                                                         </div>
                                                     </div>
+                                                    @error('foto_kegiatan')
+                                                    <div class="alert text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-md-12">
                                                 <div class="form-group">
                                                     <label>Description Produk</label>
                                                     <textarea id="masyaallah" name="deskripsi_produk"></textarea>
+                                                    {{-- @error('deskripsi_produk')
+                                                    <div class="alert text-danger">{{ $message }}</div>
+                                                    @enderror --}}
                                                 </div>
                                             </div>
                                             <div class=" blog-categories-btn pt-0">

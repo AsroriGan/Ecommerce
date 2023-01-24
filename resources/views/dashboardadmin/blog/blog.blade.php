@@ -71,7 +71,7 @@
                                                 <th>Judul Blog</th>
                                                 <th>Foto Blog</th>
                                                 <th>Deskripsi</th>
-                                                <th>Foto Kegiatan</th>
+                                                <th>Foto Produk</th>
                                                 <th>Deskripsi Produk</th>
                                                 <th>Aksi</th>
                                             </tr>

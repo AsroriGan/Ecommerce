@@ -21,6 +21,21 @@ class blogadmin extends Controller
     public function insertblog(Request $request)
     {
         // dd($request->all());
+        $this->validate($request,[
+            'judul_blog' => 'required|',
+            'deskripsi' => 'required|' ,
+            'deskripsi_produk' => 'required|',
+            'foto_sampul' => 'required|mimes:png,jpg,jpeg,webp,jfif',
+            // 'foto_kegiatan' => 'required|mimes:png,jpg,jpeg,webp,jfif'
+        ],[
+            'judul_blog.required' => 'Judul Blog Wajib diisi',
+            'deskripsi.required' => 'Deskripsi Wajid diisi',
+            'deskripsi_produk.required' => 'Deskripsi Produk Wajib Diisi',
+            'foto_sampul.required' => 'Foto Blog Wajib Diisi',
+            'foto_sampul.mimes' => 'Foto Harus Berupa Jpg, Jpeg, Png, Webp, Jfif',
+            // 'foto_kegiatan.required' => 'Foto Produk Wajib Diisi',
+            // 'foto_kegiatan.mimes' => 'Foto Harus Berupa Jpg, Jpeg, Png, Webp, Jfif '
+        ]);
         $files = [];
         if ($request->hasfile('foto_kegiatan')) {
             foreach ($request->foto_kegiatan as $file) {
@@ -46,7 +61,7 @@ class blogadmin extends Controller
         // dd($file->foto_kegiatan );
         $file->save();
 
-        return Redirect()->route('blogg')->with('success', 'Data Berhasil Ditambahkan');
+        return Redirect()->route('blogad')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     public function editblog($id){
@@ -62,7 +77,7 @@ class blogadmin extends Controller
             'judul_blog' => $request->judul_blog,
             'deskripsi' => $request->deskripsi,
         ]);
-        // dd($data);   
+        // dd($data);
         if ($request->hasFile('foto_sampul')) {
             $request->file('foto_sampul')->move('blog/', $request->file('foto_sampul')->getClientOriginalName());
             $data->foto_sampul = $request->file('foto_sampul')->getClientOriginalName();
@@ -88,13 +103,13 @@ class blogadmin extends Controller
             $data->foto_kegiatan = $fotoin;
             $data->save();
         }
-        return redirect()->route('blogg')->with('success', 'Berhasil Di Update');
+        return redirect()->route('blogad')->with('success', 'Berhasil Di Update');
     }
 
     public function deleteblog($id){
         $data=blog::findOrFail($id);
         $data->delete();
-        return redirect('blogg')->with('success', 'Data Berhasil Didelete');
+        return redirect()->route('blogad')->with('success', 'Data Berhasil Didelete');
 
     }
 }

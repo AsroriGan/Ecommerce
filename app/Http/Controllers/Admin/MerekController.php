@@ -10,112 +10,91 @@ use App\Http\Controllers\Controller;
 
 class MerekController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $data = Merek::all();
         return view('dashboardadmin.merek.merek', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function tampilanmerek()
     {
-        //
+        $data = Merek::all();
+        return view('dashboardadmin.merek.tampilanmerek', compact('data'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function merekpost(Request $request)
+    public function createmerek()
     {
-        $data = Merek::create([
+        return view('dashboardadmin.merek.createmerek');
+    }
 
-            'nama_merek' => $request->nama_merek,
-            'foto_merek' => $request->foto_merek,
-            
+    public function storemerek(Request $request)
+    {
+        // dd($request->all());
+        $validate = $request->validate([
+            'nama_merek' => 'required',
+            'foto_merek' => 'required',
+        ], [
+            'nama_merek.required' => 'Merk Wajib Diisi',
+            'foto_merek.required' => 'Foto Wajib Diisi',
         ]);
-        // dd($data);
         if ($request->hasFile('foto_merek')) {
             $request->file('foto_merek')->move('foto/', $request->file('foto_merek')->getClientOriginalName());
-            $data->foto_merek = $request->file('foto_merek')->getClientOriginalName();
-            $data->save();
-        }
-        
-        return Redirect()->route('merek')->with('success', 'Data Berhasil Ditambahkan');
+            // $request->file('foto_merek')->getClientOriginalName();
+        };
+        $model  = new merek();
+        $model->nama_merek = $request->nama_merek;
+        $model->foto_merek = $request->file('foto_merek')->getClientOriginalName();
+        $model->save();
+        return response()->json();
+        // dd($data);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Merek  $merek
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Merek $merek)
+    public function editviewmerk($id)
     {
-        //
+        $data = Merek::findorfail($id);
+        return view('dashboardadmin.merek.editmerek', compact('data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Merek  $merek
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Request $request, $id)
     {
+        $request->validate([
+            'nama_merek' => 'required'
+        ],[
+            'nama_merek.required' => 'Harap Isi Nama Merek'
+        ]);
+        // dd($request->all());
         $data = Merek::find($id);
         if ($request->hasFile('foto_merek')) {
+            // dd('p');
             $request->file('foto_merek')->move('foto/', $request->file('foto_merek')->getClientOriginalName());
             $namafoto = $request->file('foto_merek')->getClientOriginalName();
-            $data->update([
-                'foto_merek' => $namafoto,
-                'nama_merek' => $request->nama_merek,
-                
-            ]);
+            $data->nama_merek = $request->nama_merek;
+            $data->foto_merek = $namafoto;
+            $data->save();
+            // dd($data);
         } else {
-            $data->update([
-                //'foto' => request->foto
-                'nama_merek' => $request->nama_merek,
-            
-
-            ]);
+            // if ($request->nama_merek == null) {
+            //     return response()->json();
+            // } else {
+                $data->update([
+                    //'foto' => request->foto
+                    'nama_merek' => $request->nama_merek,
+                ]);
+            // }
         }
-        return redirect()->route('merek')->with('success', 'Berhasil Di Update');
+        return response()->json();
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Merek  $merek
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Merek $merek)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Merek  $merek
-     * @return \Illuminate\Http\Response
-     */
     public function delete(Merek $merek, $id)
     {
         $data = Merek::find($id);
         $data->delete();
-        return redirect()->route('merek')->with('success', 'Data Berhasil DiHapus');
+        // return redirect()->route('merek')->with('success', 'Data Berhasil DiHapus');
     }
 }

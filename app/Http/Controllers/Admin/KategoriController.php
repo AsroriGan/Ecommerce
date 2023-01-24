@@ -7,11 +7,12 @@ use App\Models\subkategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Sub_Subkategori;
 
 class KategoriController extends Controller
 {
 
-    // Untuk Kategori
+    //-- Untuk Kategori --//
 
     /**
      * Display a listing of the resource.
@@ -116,7 +117,9 @@ class KategoriController extends Controller
         $data->delete();
     }
 
-    // Untuk SubKategori
+    //-- End Kategori --//
+
+    //-- Untuk SubKategori --//
 
     public function halamanSubKategori()
     {
@@ -143,34 +146,33 @@ class KategoriController extends Controller
 
     public function storesubKategori(Request $request)
     {
-        $this->_validation($request);
-        // $data['kategori'] = $request->kategori;
-        // $datas['sub_kategori'] = $request->sub_kategori;
-        // kategori::insert($data);
+        $this->_validasi($request);
         subkategori::insert([
             'kategori' => $request->kategori,
             'sub_kategori' => $request->sub_kategori,
         ]);
     }
 
+    private function _validasi(Request $request){
+
+        $validasi = $request->validate([
+            'kategori' => 'required',
+            'sub_kategori' => 'required'
+        ],
+        [
+            'kategori' => 'Harap Isi Kategori',
+            'sub_kategori' => 'Harap Isi Sub-Kategori'
+        ]);
+    }
+
     public function showSubkategori($id)
     {
-        // $datas = kategori::where('kategoris., $id');
-        // $datas = DB::table('subkategoris')
-        //           // ->form()
-        //           ->join('kategoris','kategoris.id','=','subkategoris.kategori')
-        //           ->where('kategoris.id', $id)
-        //           ->get();
-        // $datas = DB::table('subkategoris')
-        //                 ->join('kategoris', 'subkategoris.kategori','kategoris.id')
-        //                 ->select('subkategoris.*', 'kategoris.kategori')
-        //                 ->get();
+        $datas = kategori::all();
         $data = subkategori::findOrFail($id);
         return view('dashboardadmin.kategori.datasubkategori.editsubkategori')->with([
             'data' => $data,
-            // 'datas' => $datas
+            'datas' => $datas
         ]);
-        // dd($data);
     }
 
     public function updatesubkategori(Request $request, $id)
@@ -180,5 +182,98 @@ class KategoriController extends Controller
             'kategori' => $request->kategori,
             'sub_kategori' => $request->sub_kategori,
         ]);
+    }
+
+    public function destroySubkategori($id)
+    {
+        $data =subkategori::findOrFail($id);
+        $data->delete();
+    }
+
+    //-- End subKategori --//
+
+    //-- Untuk Sub-SubKategori  --//
+
+    public function halamanSub_SubKategori()
+    {
+        $datas = kategori::all();
+        $data = subkategori::all();
+        $datap = Sub_Subkategori::all();
+        return view('dashboardadmin.kategori.dataSub-subkategori.sub_subkategori', compact('data','datas', 'datap'));
+    }
+
+    public function tampilsub_subkategori()
+    {
+        $datas = kategori::all();
+        $data = subkategori::all();
+        $datap = Sub_Subkategori::with('datakategori','datasubkategori')->get();
+        return view('dashboardadmin.kategori.dataSub-subkategori.tampilsub_subkategori')->with([
+            'data' => $data,
+            'datas' => $datas,
+            'datap' => $datap
+        ]);
+    }
+
+    public function createsub_Subkategori()
+    {
+
+        $datas = kategori::all();
+        $data = subkategori::all();
+        $datap = Sub_Subkategori::all();
+        return view('dashboardadmin.kategori.dataSub-subkategori.createsub_subkategori', compact('data','datas','datap'));
+    }
+
+    public function storesub_SubKategori(Request $request)
+    {
+        // dd($request->all());
+        $this->_validations($request);
+        Sub_Subkategori::insert([
+            'kategori' => $request->kategori,
+            'sub_kategori' => $request->sub_kategori,
+            'sub_subkategori' => $request->sub_subkategori,
+        ]);
+    }
+
+    private function _validations(Request $request){
+
+        $validasi = $request->validate([
+            'kategori' => 'required',
+            'sub_kategori' => 'required',
+            'sub_subkategori' => 'required'
+        ],
+        [
+            'kategori' => 'Harap Isi Kategori',
+            'sub_kategori' => 'Harap Isi Sub-Kategori',
+            'sub_subkategori' => 'Harap Isi Sub-SubKategori'
+        ]);
+    }
+
+    public function showSub_Subkategori($id)
+    {
+        $datas = kategori::all();
+        $data = subkategori::all();
+        $datap = Sub_Subkategori::findOrFail($id);
+        // dd($data);
+        return view('dashboardadmin.kategori.dataSub-subkategori.editsub_subkategori')->with([
+            'data' => $data,
+            'datas' => $datas,
+            'datap' => $datap
+        ]);
+    }
+
+    public function updatesub_Subkategori(Request $request, $id)
+    {
+        $data = Sub_Subkategori::findOrFail($id);
+        $data->update([
+            'kategori' => $request->kategori,
+            'sub_kategori' => $request->sub_kategori,
+            'sub_subkategori' => $request->sub_subkategori,
+        ]);
+    }
+
+    public function destroySub_Subkategori($id)
+    {
+        $data =Sub_Subkategori::findOrFail($id);
+        $data->delete();
     }
 }

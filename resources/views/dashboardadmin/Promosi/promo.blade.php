@@ -45,11 +45,8 @@
                                             <div
                                                 class="invoices-settings-btn
                                     invoices-settings-btn-one">
-                                                <a href="#" class="btn" data-bs-toggle="modal"
-                                                data-bs-target="#modal-kategori">
-                                                    <i data-feather="plus-circle"></i>
-                                                    Tambah Item
-                                                </a>
+                                                <button class="btn" onclick="modaltambah()"><i
+                                                        data-feather="plus-circle"></i>Tambah Promo</button>
                                             </div>
                                         </div>
                                     </div>
