@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    {{-- <div id="edit-kategori{{ $data->id }}" class="modal fade"
+    <div id="editkategori" class="modal fade"
         tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
@@ -83,36 +83,15 @@
                         data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body p-4">
-                    <form action="/editkategoripost"
-                        method="POST">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="field-3"
-                                        class="form-label">Kategori
-                                        :</label>
-                                    <input type="text" name="kategori" id="kategori"
-                                        class="form-control kategori"
-                                        value="{{ $data->kategori }}"
-                                        placeholder="Masukan Kategori">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button"
-                                class="btn btn-secondary waves-effect"
-                                data-bs-dismiss="modal">Kembali</button>
-                            <button
-                                class="btn btn-info waves-effect waves-light" >Edit
-                                Kategori</button>
-                        </div>
-                    </form>
+                <div class="modal-body">
+                    <div id="haledit">
+
+                    </div>
+                    
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     <!-- Modal Tambah -->
 
@@ -187,8 +166,8 @@
         // Halaman Edit show
         function show(id) {
             $.get("{{ url('show') }}/" + id, {}, function(data, status) {
-                $("#halcreate").html(data);
-                $("#modalkategori").modal('show');
+                $("#haledit").html(data);
+                $("#editkategori").modal('show');
             });
         }
 
