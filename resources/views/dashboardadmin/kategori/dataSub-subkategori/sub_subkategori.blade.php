@@ -195,6 +195,22 @@
                     $(".btn-close").click();
                     toastr.success("Data Berhasil DiEdit", "Success")
                     tampilSub_Subkategori()
+                },
+                error: function(e) {
+                    let msg = e.responseJSON.errors
+                    if (msg.kategori) {
+                        $('#kategori').addClass('is-invalid');
+                        $('#sub_kategori').removeClass('is-invalid');
+                        $('#sub_subkategori').removeClass('is-invalid');
+                    } else if (msg.sub_kategori) {
+                        $('#kategori').removeClass('is-invalid');
+                        $('#sub_kategori').addClass('is-invalid');
+                        $('#sub_subkategori').removeClass('is-invalid');
+                    } else {
+                        $('#kategori').removeClass('is-invalid');
+                        $('#sub_kategori').removeClass('is-invalid');
+                        $('#sub_subkategori').addClass('is-invalid');
+                    }
                 }
             });
         }

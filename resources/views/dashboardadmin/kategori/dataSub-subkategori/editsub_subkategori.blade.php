@@ -13,6 +13,9 @@
                     </option>
                 @endforeach
             </select>
+            <div class="invalid-feedback">
+                Kategori Harus Di Isi
+            </div>
         </div>
         <div class="mb-3">
             <label for="field-3" class="form-label">Sub
@@ -28,12 +31,18 @@
                     </option>
                 @endforeach
             </select>
+            <div class="invalid-feedback">
+                Sub-Kategori Harus Di Isi
+            </div>
         </div>
         <div class="col-md-12">
             <div class="mb-3">
                 <label for="field-1" class="form-label">Sub-SubKategori</label>
                 <input type="text" id="sub_subkategori" name="sub_subkategori" class="form-control" id="field-1"
                     value="{{ $datap->sub_subkategori }}">
+                    <div class="invalid-feedback">
+                        Sub-SubKategori Harus Di Isi
+                    </div>
             </div>
         </div>
     </div>

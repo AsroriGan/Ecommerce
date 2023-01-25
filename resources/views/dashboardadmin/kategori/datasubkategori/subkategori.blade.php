@@ -193,6 +193,18 @@
                     $(".btn-close").click();
                     toastr.success("Data Berhasil DiEdit", "Success")
                     tampilsubkategori()
+                },
+                error: function(e) {
+                    let msg = e.responseJSON.errors
+                    if (msg.kategori) {
+                        $('#sub_kategori').removeClass('is-invalid');
+                        $('#kategori').addClass('is-invalid');
+                        $('#msg-kategori').text(msg.kategori[0]);
+                    } else {
+                        $('#kategori').removeClass('is-invalid');
+                        $('#sub_kategori').addClass('is-invalid');
+                        $('#msg-sub_kategori').text(msg.sub_kategori[0]);
+                    }
                 }
             });
         }

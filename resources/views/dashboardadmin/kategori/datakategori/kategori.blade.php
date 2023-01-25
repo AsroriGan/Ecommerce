@@ -180,6 +180,13 @@
                     $(".btn-close").click();
                     toastr.success('Data Berhasil Di upadte', 'success');
                     tampilkandata()
+                },
+                error: function(error) {
+                    console.log(error.responseJSON);
+                    let error_log = error.responseJSON.errors;
+                    if (error.status == 422) {
+                        $('#kategori').addClass('is-invalid');
+                    }
                 }
             });
         }

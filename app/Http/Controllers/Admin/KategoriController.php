@@ -100,9 +100,20 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validation($request);
         $data = kategori::findOrFail($id);
         $data->kategori = $request->kategori;
         $data->save();
+    }
+
+    private function validation(Request $request){
+
+        $validation = $request->validate([
+            'kategori' => 'required'
+        ],
+        [
+            'kategori' => 'Harap Isi Kategori',
+        ]);
     }
 
     /**
@@ -184,10 +195,23 @@ class KategoriController extends Controller
 
     public function updatesubkategori(Request $request, $id)
     {
+        $this->validasi($request);
         $data = subkategori::findOrFail($id);
         $data->update([
             'kategori' => $request->kategori,
             'sub_kategori' => $request->sub_kategori,
+        ]);
+    }
+
+    private function validasi(Request $request){
+
+        $validasi = $request->validate([
+            'kategori' => 'required',
+            'sub_kategori' => 'required'
+        ],
+        [
+            'kategori' => 'Harap Isi Kategori',
+            'sub_kategori' => 'Harap Isi Sub-Kategori'
         ]);
     }
 
@@ -277,11 +301,26 @@ class KategoriController extends Controller
 
     public function updatesub_Subkategori(Request $request, $id)
     {
+        $this->validations($request);
         $data = Sub_Subkategori::findOrFail($id);
         $data->update([
             'kategori' => $request->kategori,
             'sub_kategori' => $request->sub_kategori,
             'sub_subkategori' => $request->sub_subkategori,
+        ]);
+    }
+
+    private function validations(Request $request){
+
+        $validasi = $request->validate([
+            'kategori' => 'required',
+            'sub_kategori' => 'required',
+            'sub_subkategori' => 'required'
+        ],
+        [
+            'kategori' => 'Harap Isi Kategori',
+            'sub_kategori' => 'Harap Isi Sub-Kategori',
+            'sub_subkategori' => 'Harap Isi Sub-SubKategori'
         ]);
     }
 
