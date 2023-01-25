@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class blogadmin extends Controller
 {
     public function blogg (){
-        $data=blog::all();
+        $data=blog::with('idkategoris')->get();
         return view('dashboardadmin.blog.blog', compact('data'));
     }
     public function tambahblog(){
