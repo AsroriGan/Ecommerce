@@ -9,6 +9,7 @@ use App\Models\kategori;
 use App\Models\Merek;
 use App\Models\Sub_Subkategori;
 use App\Models\subkategori;
+use App\Models\Variant;
 
 class ProdukController extends Controller
 {
@@ -165,4 +166,31 @@ class ProdukController extends Controller
         $data->delete();
         return redirect('/produkadmin')->with("success","Data berhasil Dihapus");
     }
+
+
+    //Variant 
+    public function variant($id){
+        $data = Variant::where('produk_id',$id)->get();
+        // dd($data);
+        $produk = Produk::find($id);
+        return view('dashboardadmin.produk.variant.variant',compact('data','produk'));
+    }
+     public function tambahvariant(Request $request,$id){
+          $this->validate($request, [
+            'harga' => 'required',
+            'ukuran' => 'required',
+            'warna' => 'required',
+        ]);
+
+        $model = new Variant();
+        $model->produk_id = $id;
+        $model->warna_produk = $request->warna;
+        $model->ukuran_produk = $request->ukuran;
+        $model->harga_produk = $request->harga;
+        $model->stok_produk = $request->stok;
+        $model->save();
+        return redirect()->back()->with('success','Data Berhasil Ditambahkan');
+    }
+
+
 }
