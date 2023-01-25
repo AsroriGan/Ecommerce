@@ -11,4 +11,9 @@ class blog extends Model
     protected $guarded = [];
     protected $table = "blogs";
     protected $primaryKey = "id";
+
+    public function idblog()
+    {
+        return $this->hasMany(kategoriblog::class);
+    }
 }
