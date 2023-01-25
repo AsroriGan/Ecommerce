@@ -13,6 +13,7 @@ use App\Http\Controllers\Landing\CartController as LandingCartController;
 
 // Admin
 use App\Http\Controllers\Admin\Logincontroller as AdminLogincontroller;
+use App\Http\Controllers\Admin\AdminProfailController as AdminAdminProfailController;
 use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
 use App\Http\Controllers\Admin\MerekController as AdminMerekController;
@@ -106,10 +107,14 @@ Route::get('/wishlist', [LandingWhislistController::class, 'daftarkeinginan'])->
 // Star Login Admin
 Route::get('/loginadmin', [AdminLogincontroller::class, 'loginadmin'])->name('loginadmin');
 Route::post('/loginadminproses', [AdminLoginController::class, 'loginadminproses'])->name('loginadminproses');
-
-
 Route::get('/logoutadmin', [AdminLoginController::class, 'logoutadmin'])->name('logoutadmin');
 // End Login Admin
+
+// Profail Admin Start //
+Route::get('/User_Admin', [AdminAdminProfailController::class, 'viewprofail'])->name('User_Admin');
+Route::get('/Edit_Admin', [AdminAdminProfailController::class, 'hal_edit'])->name('Edit_Admin');
+Route::post('/editadminpost/{id}', [AdminAdminProfailController::class, 'editfoto'])->name('editadminpost');
+// Profail Admin End //
 
 // Star kategroi Admin
 

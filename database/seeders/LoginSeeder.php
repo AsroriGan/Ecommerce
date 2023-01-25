@@ -18,6 +18,8 @@ class LoginSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
+            'foto' => 'defaultfoto.jpg',
+            'notelepon' => '087665443212',
             'password' => bcrypt('12345678'),
             'role' => 'admin'
         ]);

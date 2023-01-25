@@ -80,12 +80,9 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Tambah Sub->SubKategori</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div id="tampilSub_Subkategori">
-
-                    </div>
                 </div>
-                <div class="modal-body">
-                    <div id="halcreate" class="p-4">
+                <div class="modal-body" class="p-4">
+                    <div id="halcreate" >
 
 
                     </div>
