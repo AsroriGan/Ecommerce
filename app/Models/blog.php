@@ -14,6 +14,6 @@ class blog extends Model
 
     public function idblog()
     {
-        return $this->hasMany(kategoriblog::class);
+        return $this->belongsTo(kategoriblog::class, 'kategoriblog', 'id');
     }
 }

@@ -18,6 +18,6 @@ class kategoriblog extends Model
 
     public function idkategoris()
     {
-        return $this->belongsTo(blog::class, 'kategoriblog', 'id');
+        return $this->hasMany(blog::class);
 }
 }

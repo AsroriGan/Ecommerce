@@ -41,6 +41,17 @@
                                                     @enderror
                                                 </div>
                                             </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label>Kategori Blog<span class="text-danger">*</span></label>
+                                                <select class="form-control" name="kategoriblog" id="">
+                                                    <option>---Pilih Kategori Blog---</option>
+                                                    @foreach ($relasi as $relasi)
+                                                    <option value="{{ $relasi->id }}">{{ $relasi->kategoriblog }}</option>
+                                                    @endforeach
+                                                </select>
+                                                </div>
+                                            </div>
                                             <div class="card">
                                                 <div class="card-body">
                                                     <div class="custom-file-container" data-upload-id="myFirstImage">

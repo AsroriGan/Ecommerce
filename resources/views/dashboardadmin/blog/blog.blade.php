@@ -57,11 +57,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="datatable table table-stripped" id="myTable">
@@ -69,6 +67,7 @@
                                             <tr>
                                                 <th>No.</th>
                                                 <th>Judul Blog</th>
+                                                <th>Kategori</th>
                                                 <th>Foto Blog</th>
                                                 <th>Deskripsi</th>
                                                 <th>Foto Produk</th>
@@ -81,6 +80,7 @@
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
                                                     <td>{{ $blog->judul_blog }}</td>
+                                                    <td>{{ $blog->idblog->kategoriblog }}</td>
                                                     <td>
                                                         <img src="{{ asset('blog/' . $blog->foto_sampul) }}"
                                                             height="100px" width="100px" alt="">

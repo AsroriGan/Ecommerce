@@ -13,11 +13,13 @@ use Illuminate\Http\Request;
 class blogadmin extends Controller
 {
     public function blogg (){
-        $data=blog::with('idkategoris')->get();
+        $data=blog::with('idblog')->get();
         return view('dashboardadmin.blog.blog', compact('data'));
     }
     public function tambahblog(){
-        return view('dashboardadmin.blog.tambahblog');
+        $relasi=kategoriblog::all();
+        $data = blog::all();
+        return view('dashboardadmin.blog.tambahblog', compact('data','relasi'));
     }
     public function insertblog(Request $request)
     {
@@ -49,6 +51,7 @@ class blogadmin extends Controller
         $file = implode(',',$files);
         $file  = new blog();
         $file->judul_blog = $request->judul_blog;
+        $file->kategoriblog = $request->kategoriblog;
         $file->deskripsi = $request->deskripsi;
         $file->deskripsi_produk = $request->deskripsi_produk;
         $file->foto_sampul = $request->foto_sampul;
