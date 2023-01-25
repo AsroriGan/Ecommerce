@@ -16,19 +16,23 @@ class PromoSeeder extends Seeder
     public function run()
     {
         DB::table('promos')->insert([
-            'foto' => '2.jpg',
-            'judul' => 'Get 15% off on branded shoes',
-            'deskripsi' => 'Promo besar besaran 15% hanya untuk pengguna baru'
+            'nama_produk' => null,
+            'foto' => null,
+            'judul' => null,
+            'deskripsi' => null
         ]);
         DB::table('promos')->insert([
-            'foto' => '3.jpg',
-            'judul' => 'Get 30% off on branded chair',
-            'deskripsi' => 'Promo besar besaran 30% hanya untuk pengguna baru'
+            'nama_produk' => null,
+            'foto' => null,
+            'judul' => null,
+            'deskripsi' => null
         ]);
         DB::table('promos')->insert([
-            'foto' => '4.jpg',
-            'judul' => 'Get 50% off on branded hand bags',
-            'deskripsi' => 'Promo besar besaran 50% hanya untuk pengguna baru'
+            'nama_produk' => null,
+            'foto' => null,
+            'judul' => null,
+            'deskripsi' => null
         ]);
     }
 }
+

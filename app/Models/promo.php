@@ -9,4 +9,10 @@ class promo extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function promoid()
+    {
+        return $this->belongsTo(Produk::class, 'nama_produk', 'id');
+    }
 }
+

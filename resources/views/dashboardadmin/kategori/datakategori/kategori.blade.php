@@ -72,27 +72,6 @@
         </div>
     </div>
 
-    <div id="editkategori" class="modal fade"
-        tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Edit Kategori</h4>
-                    <button type="button" class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="haledit">
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal Tambah -->
 
     <div id="modalkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -107,8 +86,27 @@
 
                     </div>
                 </div>
-                <div class="modal-body">
-                    <div id="halcreate" class="p-4">
+                <div class="modal-body" class="p-4">
+                    <div id="halcreate">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit -->
+
+    <div id="editkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Kategori</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" class="p-4">
+                    <div id="haledit">
 
                     </div>
                 </div>
@@ -182,6 +180,13 @@
                     $(".btn-close").click();
                     toastr.success('Data Berhasil Di upadte', 'success');
                     tampilkandata()
+                },
+                error: function(error) {
+                    console.log(error.responseJSON);
+                    let error_log = error.responseJSON.errors;
+                    if (error.status == 422) {
+                        $('#kategori').addClass('is-invalid');
+                    }
                 }
             });
         }
@@ -212,9 +217,12 @@
                                 url: "{{ url('destroy') }}/" + id,
                                 // data: "kategori=" + kategori,
                                 success: function(data) {
-                                    $(".btn-close").click();
-                                    toastr.success('Data Berhasil Dihapus', 'success');
-                                    tampilkandata()
+                                    if (data.messagerelasi) {
+                                        toastr.error(data.messagerelasi,"Error");
+                                    } else {
+                                        toastr.success('Data Berhasil Dihapus', 'success');
+                                        tampilkandata();
+                                    }
                                 }
                             });
                         }

@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('promos', function (Blueprint $table) {
+        Schema::create('kategoriblogs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_produk')->nullable();
-            $table->string('foto')->nullable();
-            $table->string('judul')->nullable();
-            $table->string('deskripsi')->nullable();
+            $table->string('kategoriblog');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('promos');
+        Schema::dropIfExists('kategoriblogs');
     }
 };

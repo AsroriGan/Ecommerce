@@ -57,8 +57,8 @@ class ProdukController extends Controller
             'warna_produk' => 'required',
             'berat_produk' => 'required',
             'kategori' => 'required',
-            'sub_kategori' => 'required',
-            'sub_subkategori' => 'required',
+            // 'sub_kategori' => 'required',
+            // 'sub_subkategori' => 'required',
             'stok_produk' => 'required',
             'harga_asliproduk' => 'required',
             'diskon' => 'required',
@@ -66,6 +66,10 @@ class ProdukController extends Controller
             'deskirpsi_pendek' => 'required',
             'deskirpsi_panjang' => 'required',
             'galeri_produk' => 'required',
+            // 'promo' => 'required',
+            // 'produk_baru' => 'required',
+            // 'baru_datang' => 'required',
+            // 'best_seller' => 'required',
         ]);
 
         $files = [];

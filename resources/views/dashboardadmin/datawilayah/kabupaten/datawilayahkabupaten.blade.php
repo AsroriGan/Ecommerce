@@ -175,10 +175,15 @@
                             $.ajax({
                                 type: "get",
                                 url: "{{ url('deletekabupaten') }}/" + id,
-                                success: function() {
+                                success: function(data) {
+                                    // console.log(data.msg);
+                                    if(data.title){
+                                        toastr.error(data.msg,data.title);
+                                    }else{
                                     $(".btn-close").click();
                                     toastr.success("Data Berhasil Di Hapus", "Success")
-                                    viewkabupaten()
+                                    viewkabupaten();
+                                    }
                                 }
                             });
                         }

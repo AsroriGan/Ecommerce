@@ -27,4 +27,8 @@ class Produk extends Model
     {
         return $this->belongsTo(Sub_Subkategori::class, 'sub_subkategori', 'id');
     }
+    public function promoid()
+    {
+        return $this->hasMany(promo::class);
+    }
 }

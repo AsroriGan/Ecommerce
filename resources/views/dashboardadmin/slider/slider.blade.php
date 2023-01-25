@@ -40,7 +40,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="datatable table table-stripped">
+                                    <table class="table table-stripped">
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
@@ -91,21 +91,23 @@
                                                                             <div class="mb-3">
                                                                                 <label for="exampleInputEmail1"
                                                                                     class="form-label">Update
-                                                                                    Foto 1</label>
+                                                                                    Slider 1</label>
                                                                                 <br />
                                                                                 <img class="img mb-3"
                                                                                     src="{{ asset('slider/' . $slider->foto1) }}"
                                                                                     alt=""
-                                                                                    style="width: 100px;">
+                                                                                    style="width: 100px;" >
                                                                                 <input type="file" name="foto1"
                                                                                     class="form-control"
                                                                                     id="exampleInputEmail1"
                                                                                     aria-describedby="emailHelp">
+                                                                                    <i style="float: left;font-size: 11px;color: red">Foto Harus Berukuran </i>
                                                                             </div>
+                                                                            <br>
                                                                             <div class="mb-3">
                                                                                 <label for="exampleInputEmail1"
                                                                                     class="form-label">Update
-                                                                                    Foto 2</label>
+                                                                                    Slider 2</label>
                                                                                 <br />
                                                                                 <img class="img mb-3"
                                                                                     src="{{ asset('slider/' . $slider->foto2) }}"
@@ -115,11 +117,13 @@
                                                                                     class="form-control"
                                                                                     id="exampleInputEmail1"
                                                                                     aria-describedby="emailHelp">
+                                                                                    <i style="float: left;font-size: 11px;color: red">Foto Harus Berukuran </i>
                                                                             </div>
+                                                                            <br>
                                                                             <div class="mb-3">
                                                                                 <label for="exampleInputEmail1"
                                                                                     class="form-label">Update
-                                                                                    Foto 3</label>
+                                                                                    Slider 3</label>
                                                                                 <br />
                                                                                 <img class="img mb-3"
                                                                                     src="{{ asset('slider/' . $slider->foto3) }}"
@@ -129,6 +133,7 @@
                                                                                     class="form-control"
                                                                                     id="exampleInputEmail1"
                                                                                     aria-describedby="emailHelp">
+                                                                                    <i style="float: left;font-size: 11px;color: red">Foto Harus Berukuran </i>
                                                                             </div>
                                                                         </div>
                                                                         <div class="modal-footer">

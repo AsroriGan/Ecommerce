@@ -4,7 +4,7 @@
             <ul>
                 <li class="menu-title"><span>Main</span></li>
                 <li class="active">
-                    <a href="index.html"><i data-feather="home"></i> <span>Dashboard</span></a>
+                    <a href="/beranda"><i data-feather="home"></i> <span>Dashboard</span></a>
                 </li>
                 <li {{ Route::is('slider') ? 'class=active' : '' }}>
                     <a href="/sliderr"><i data-feather="users"></i>
@@ -44,9 +44,17 @@
                 <li {{ Route::is('promosi') ? 'class=active' : '' }}>
                     <a href="/promosi"><i data-feather="credit-card"></i> <span>Tambah Promo</span></a>
                 </li>
-                <li {{ Route::is('blogadmin') ? 'class=active' : '' }}>
-                    <a href="/blogadmin"><i data-feather="credit-card"></i>
-                        <span>blogadmin</span></a>
+                <li {{ Route::is('bannerpromosi') ? 'class=active' : '' }}>
+                    <a href="/bannerpromosi"><i data-feather="credit-card"></i> <span>Banner Promo</span></a>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i data-feather="grid"></i> <span> Blogs</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li><a href="/kategoriblog">Kategori Blog</a></li>
+                        <li><a href="/blogadmin">Blog</a></li>
+                    </ul>
                 </li>
                 <li class="menu-title"><span>Pesanan</span></li>
                 <li>

@@ -75,72 +75,7 @@
     </div>
     </div>
 
-    {{-- <div id="edit-subkategori{{ $datasub->id }}" class="modal fade"
-        tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Edit Kategori</h4>
-                    <button type="button" class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <form
-                        action="editsub_kategoripost/{{ $datasub->id }}"
-                        method="POST">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="field-3"
-                                        class="form-label">Kategori
-                                        :</label>
-                                    <select id="kategori"
-                                        class="form-control"
-                                        name="kategori"
-                                        aria-label="Default select example">
-                                        <option
-                                            value="{{ $datasub->idkategoris->kategori }}" disabled selected>
-                                            {{ $datasub->idkategoris->kategori }}
-                                        </option>
-                                        @foreach ($data as $datakate)
-                                            <option
-                                                value="{{ $datakate->id }}">
-                                                {{ $datakate->kategori }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="field-3"
-                                        class="form-label">Sub Kategori
-                                        :</label>
-                                    <input type="text"
-                                        id="sub_kategori"
-                                        name="sub_kategori"
-                                        class="form-control"
-                                        value="{{ $datasub->sub_kategori }}"
-                                        id="field-3"
-                                        placeholder="Masukan Kategori">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button"
-                                    class="btn btn-secondary waves-effect"
-                                    data-bs-dismiss="modal">Kembali</button>
-                                <button
-                                    class="btn btn-info waves-effect waves-light">Edit
-                                    Kategori</button>
-                            </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+    <!-- Modal Tambah -->
 
     <div id="modalsubkategori" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="display: none;">
@@ -155,6 +90,28 @@
                 </div>
                 <div class="modal-body">
                     <div id="createsubkategori">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit -->
+
+    <div id="editsubkategori" class="modal fade"
+        tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Sub-Kategori</h4>
+                    <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="haledit">
 
                     </div>
                 </div>
@@ -198,15 +155,19 @@
                 data: "sub_kategori=" + sub_kategori + "&kategori=" + kategori,
                 success: function(data) {
                     $(".btn-close").click();
-                    toastr.success("Data Berhasil Ditambahkan", "Success")
-                    tampilsubkategori()
+                    toastr.success("Data Berhasil Ditambahkan", "Success");
+                    tampilsubkategori();
                 },
-                error: function(error) {
-                    console.log(error.responseJSON);
-                    let error_log = error.responseJSON.errors;
-                    if (error.status == 422) {
+                error: function(e) {
+                    let msg = e.responseJSON.errors
+                    if (msg.kategori) {
+                        $('#sub_kategori').removeClass('is-invalid');
                         $('#kategori').addClass('is-invalid');
+                        $('#msg-kategori').text(msg.kategori[0]);
+                    } else {
+                        $('#kategori').removeClass('is-invalid');
                         $('#sub_kategori').addClass('is-invalid');
+                        $('#msg-sub_kategori').text(msg.sub_kategori[0]);
                     }
                 }
             });
@@ -215,8 +176,8 @@
         // Halaman Edit Show Sub-Kategori
         function showSubkategori(id) {
             $.get("{{ url('showSubkategori') }}/" + id, {}, function(data, status) {
-                $("#createsubkategori").html(data);
-                $("#modalsubkategori").modal('show');
+                $("#haledit").html(data);
+                $("#editsubkategori").modal('show');
             });
         }
 
@@ -232,6 +193,18 @@
                     $(".btn-close").click();
                     toastr.success("Data Berhasil DiEdit", "Success")
                     tampilsubkategori()
+                },
+                error: function(e) {
+                    let msg = e.responseJSON.errors
+                    if (msg.kategori) {
+                        $('#sub_kategori').removeClass('is-invalid');
+                        $('#kategori').addClass('is-invalid');
+                        $('#msg-kategori').text(msg.kategori[0]);
+                    } else {
+                        $('#kategori').removeClass('is-invalid');
+                        $('#sub_kategori').addClass('is-invalid');
+                        $('#msg-sub_kategori').text(msg.sub_kategori[0]);
+                    }
                 }
             });
         }
@@ -261,10 +234,13 @@
                             $.ajax({
                                 type: "get",
                                 url: "{{ url('destroySubkategori') }}/" + id,
-                                success: function() {
-                                    $(".btn-close").click();
-                                    toastr.success("Data Berhasil Di Hapus", "Success");
-                                    tampilsubkategori()
+                                success: function(data) {
+                                    if (data.messagerelasi) {
+                                        toastr.error(data.messagerelasi,"Error");
+                                    } else {
+                                        toastr.success('Data Berhasil Dihapus', 'success');
+                                        tampilsubkategori();
+                                    }
                                 }
                             });
                         }

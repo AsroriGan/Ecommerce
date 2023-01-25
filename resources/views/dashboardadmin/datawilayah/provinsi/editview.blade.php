@@ -9,6 +9,7 @@
                 <label for="field-1" class="form-label">Provinsi</label>
                 <input type="text" name="provinsi" class="form-control" id="valprovinsi"
                     placeholder="Masukkan provinsi" value="{{$data->provinsi}}">
+                <div class="invalid-feedback" id="feedbackprov"></div>
             </div>
         </div>
     </div>

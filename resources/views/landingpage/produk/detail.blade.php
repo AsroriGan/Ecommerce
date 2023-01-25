@@ -204,13 +204,12 @@
                                                     <span>SIZE</span>
                                                     <div class="ec-pro-variation-content">
                                                         <select class="form-select"
-                                                            aria-label="Default select example" name="ukuran">
+                                                            aria-label="Default select example" name="ukuran" required>
                                                             <option disabled selected>Open this select menu</option>
                                                             @foreach ($ukuran_produk as $ukuran)
                                                                 <option>{{ $ukuran }}</option>
                                                             @endforeach
                                                         </select>
-
                                                     </div>
                                                 </div>
 
@@ -218,7 +217,7 @@
                                                     <span>Color</span>
                                                     <div class="ec-pro-variation-content">
                                                         <select class="form-select"
-                                                            aria-label="Default select example" name="warna">
+                                                            aria-label="Default select example" name="warna" required>
                                                             <option disabled selected>Open this select menu</option>
                                                             @foreach ($warna_produk as $warna)
                                                                 <option>{{ $warna }}</option>
@@ -299,9 +298,8 @@
                                     <div class="ec-single-pro-tab-moreinfo">
                                         <ul>
                                             <li><span>Weight</span> {{ $data->berat_produk }} g</li>
-                                            <li><span>Dimensions</span> 35 × 30 × 7 cm</li>
-
-                                            <li><span>Color</span> {{ $data->ukuran_produk }}</li>
+                                            <li><span>Ukuran</span> {{ $data->ukuran_produk }}</li>
+                                            <li><span>Color</span> {{ $data->warna_produk }}</li>
 
                                         </ul>
                                     </div>
