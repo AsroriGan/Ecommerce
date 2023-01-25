@@ -108,6 +108,9 @@ v
                                                     <td>{{ $data->stok_produk }}</td>
                                                     <td>{{ $data->status }}</td>
                                                     <td><a class="btn btn-sm  btn-white text-success me-2"
+                                                            href="/variant/{{ $data->id }}"><i
+                                                                class="far fa-edit me-1"></i>Variant</a>
+                                                        <a class="btn btn-sm  btn-white text-success me-2"
                                                             href="/view_produk/{{ $data->id }}"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
                                                         <a class="btn btn-sm btn-white text-danger me-2 delete"

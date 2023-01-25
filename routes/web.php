@@ -183,6 +183,12 @@ Route::post('/edit_produk/{id}', [AdminProdukController::class, 'edit_produk'])-
 Route::get('/delete_produk/{id}', [AdminProdukController::class, 'delete_produk'])->name('delete_produk');
 //end add Produk
 
+//start variant
+Route::get('/variant/{id}', [AdminProdukController::class, 'variant'])->name('variant');
+Route::post('/tambahvariant/{id}', [AdminProdukController::class, 'tambahvariant'])->name('tambahvariant');
+
+//end variant
+
 //start data merek
 Route::get('/merek', [AdminMerekController::class, 'index'])->name('merek');
 Route::get('/tampilanmerek', [AdminMerekController::class, 'tampilanmerek'])->name('tampilanmerek');
