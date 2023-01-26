@@ -114,6 +114,8 @@ Route::get('/logoutadmin', [AdminLoginController::class, 'logoutadmin'])->name('
 Route::get('/User_Admin', [AdminAdminProfailController::class, 'viewprofail'])->name('User_Admin');
 Route::get('/Edit_Admin', [AdminAdminProfailController::class, 'hal_edit'])->name('Edit_Admin');
 Route::post('/editadminpost/{id}', [AdminAdminProfailController::class, 'editfoto'])->name('editadminpost');
+Route::get('/GantiPasword', [AdminAdminProfailController::class, 'viewganti'])->name('editadminpost');
+Route::post('/gantipasswordpost', [AdminAdminProfailController::class, 'gantipasswordpost'])->name('gantipasswordpost');
 // Profail Admin End //
 
 // Star kategroi Admin

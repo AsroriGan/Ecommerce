@@ -39,7 +39,7 @@
 
                             <div class="profile-cover">
                                 <div class="profile-cover-wrap">
-                                    <img class="profile-cover-img" src="{{asset( 'template/assets/img/profiles/avatar-02.jpg') }}"
+                                    <img class="profile-cover-img" src="{{ asset('assets/images/admin/' . Auth::user()->foto) }}"
                                         alt="Profile Cover">
 
                                     <div class="cover-content">
@@ -65,7 +65,7 @@
                                         <i data-feather="edit-2" class="avatar-uploader-icon shadow-soft"></i>
                                     </span>
                                 </label>
-                                <h2>Charles Hafner <i class="fas fa-certificate text-primary small"
+                                <h2>{{Auth::user()->name}} <i class="fas fa-certificate text-primary small"
                                         data-toggle="tooltip" data-placement="top" title=""
                                         data-original-title="Verified"></i></h2>
                                 <ul class="list-inline">
@@ -82,19 +82,6 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <div class="card card-body">
-                                        <h5>Complete your profile</h5>
-
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="progress progress-md flex-grow-1">
-                                                <div class="progress-bar bg-primary" role="progressbar"
-                                                    style="width: 30%" aria-valuenow="30" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="ms-4">30%</span>
-                                        </div>
-
-                                    </div>
                                     <div class="card">
                                         <div class="card-header">
                                             <h5 class="card-title d-flex justify-content-between">
@@ -105,33 +92,22 @@
                                         <div class="card-body">
                                             <ul class="list-unstyled mb-0">
                                                 <li class="py-0">
-                                                    <h6>About</h6>
+                                                    <h5>Nama</h5>
                                                 </li>
                                                 <li>
-                                                    Charles Hafner
-                                                </li>
-                                                <li>
-                                                    Hafner Pvt Ltd.
+                                                    <h6>{{Auth::user()->name}}</h6>
                                                 </li>
                                                 <li class="pt-2 pb-0">
-                                                    <h6>Contacts</h6>
+                                                    <h5>No.Telepon</h5>
                                                 </li>
                                                 <li>
-                                                    <a href="https://dreamguystech.com/cdn-cgi/l/email-protection"
-                                                        class="__cf_email__"
-                                                        data-cfemail="482b20293a242d3b20292e262d3a082d30292538242d662b2725">[email&#160;protected]</a>
-                                                </li>
-                                                <li>
-                                                    +1 (304) 499-13-66
+                                                    <h6>{{Auth::user()->notelepon}}</h6>
                                                 </li>
                                                 <li class="pt-2 pb-0">
-                                                    <h6>Address</h6>
+                                                    <h5>Sebagai</h5>
                                                 </li>
                                                 <li>
-                                                    4663 Agriculture Lane,<br>
-                                                    Miami,<br>
-                                                    Florida - 33165,<br>
-                                                    United States.
+                                                    <h6>{{Auth::user()->role}}</h6>
                                                 </li>
                                             </ul>
                                         </div>

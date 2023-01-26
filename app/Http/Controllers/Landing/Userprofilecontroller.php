@@ -101,7 +101,7 @@ class Userprofilecontroller extends Controller
         User::whereId(auth()->user()->id)->update([
             'password' => Hash::make($request->newpassword)
         ]);
-
+ 
         return back()->with("success", "Password changed successfully!");
     }
 }

@@ -158,18 +158,18 @@
         <li class="nav-item dropdown has-arrow main-drop">
             <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                 <span class="user-img">
-                    <img src="{{asset('template/assets/img/profiles/avatar-01.jpg')}}" alt="">
+                    <img src="{{ asset('assets/images/admin/' . Auth::user()->foto) }}" alt="">
                     <span class="status online"></span>
                 </span>
-                <span>Admin</span>
+                <span>{{Auth::user()->name}}</span>
             </a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/User_Admin"><i data-feather="user" class="me-1"></i>
-                    Profile</a>
+                    Profail</a>
                 <a class="dropdown-item" href="/Edit_Admin"><i data-feather="settings" class="me-1"></i>
-                    Settings</a>
+                    Peraturan</a>
                 <a class="dropdown-item" href="login.html"><i data-feather="log-out" class="me-1"></i>
-                    Logout</a>
+                    Keluar</a>
             </div>
         </li>
 

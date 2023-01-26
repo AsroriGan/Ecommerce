@@ -28,18 +28,13 @@
                         <div class="widget settings-menu">
                             <ul>
                                 <li class="nav-item">
-                                    <a href="settings.html" class="nav-link active">
-                                        <i class="far fa-user"></i> <span>Profile Settings</span>
+                                    <a href="/Edit_Admin" class="nav-link active">
+                                        <i class="far fa-user"></i> <span>Peraturan Profail</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="change-password.html" class="nav-link">
+                                    <a href="/GantiPasword" class="nav-link">
                                         <i class="fas fa-unlock-alt"></i> <span>Ganti Pasword</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="delete-account.html" class="nav-link">
-                                        <i class="fas fa-ban"></i> <span>Delete Account</span>
                                     </a>
                                 </li>
                             </ul>
@@ -87,14 +82,14 @@
                                                 placeholder="Email" value="{{ Auth::user()->email }}">
                                         </div>
                                     </div>
-                                    {{-- <div class="row form-group">
-                                        <label for="phone" class="col-sm-3 col-form-label input-label">Phone <span
+                                    <div class="row form-group">
+                                        <label for="phone" class="col-sm-3 col-form-label input-label">No.Telepone <span
                                                 class="text-muted">(Optional)</span></label>
                                         <div class="col-sm-9">
                                             <input name="notelepon" type="text" class="form-control" id="phone"
                                                 placeholder="+x(xxx)xxx-xx-xx" value="{{ Auth::user()->notelepon }}">
                                         </div>
-                                     </div> --}}
+                                    </div>
                                      {{--<div class="row form-group">
                                         <label for="location"
                                             class="col-sm-3 col-form-label input-label">Location</label>
@@ -136,7 +131,7 @@
                                         </div>
                                     </div> --}}
                                     <div class="text-end">
-                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                                     </div>
                                 </form>
 
