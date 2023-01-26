@@ -9,11 +9,9 @@ class kategoriblog extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'kategoriblog'
-    ];
-    protected $primaryKey = "id";
     protected $guarded = [];
+    protected $table = "kategoriblogs";
+    protected $primaryKey = "id";
 
 
     public function idkategoris()

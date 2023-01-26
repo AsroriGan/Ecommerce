@@ -132,7 +132,7 @@
                                     <div class="ec-blog-inner">
                                         <div class="ec-blog-image">
                                             <a href="/detailblog/{{ $blog->id }}">
-                                                <img class="blog-image" src="{{ asset('blog/'. $blog->foto_sampul) }}"
+                                                <img class="imgblog" src="{{ asset('blog/'. $blog->foto_sampul) }}"
                                                     alt="Blog" />
                                             </a>
                                         </div>

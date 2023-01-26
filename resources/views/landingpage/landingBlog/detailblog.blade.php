@@ -147,9 +147,9 @@
                                 <p>{!! $detailblog->deskripsi !!}</p>
                                 <div class="ec-blog-sub-imgs">
                                     <div class="row">
-                                        @foreach (json_decode($detailblog->foto_kegiatan) as $foto)
+                                        @foreach (json_decode($detailblog->foto_produk) as $foto)
                                         <div class="col-md-6">
-                                            <img class="blog-image" src="{{ asset('fotokegiatan/' . $foto) }}"
+                                            <img class="blog-image" src="{{ asset('fotoprodukblog/' . $foto) }}"
                                             alt="Blog" />
                                         </div>
                                         @endforeach

@@ -96,7 +96,7 @@
                                                             <label class="custom-file-container__custom-file">
                                                                 <input type="file"
                                                                     class="custom-file-container__custom-file__custom-file-input"
-                                                                    multiple name="foto_kegiatan[]">
+                                                                    multiple name="foto_produk[]">
                                                                 <input type="hidden" name="MAX_FILE_SIZE"
                                                                     value="10485760" />
                                                                 <spanj
@@ -105,7 +105,7 @@
                                                             <div class="custom-file-container__image-preview"></div>
                                                         </div>
                                                     </div>
-                                                    @error('foto_kegiatan')
+                                                    @error('foto_produk')
                                                     <div class="alert text-danger">{{ $message }}</div>
                                                     @enderror
                                                 </div>

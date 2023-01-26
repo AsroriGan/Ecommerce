@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->text('deskripsi_produk');
             $table->string('foto_sampul');
-            $table->string('foto_kegiatan');
+            $table->string('foto_produk');
             $table->timestamps();
         });
     }

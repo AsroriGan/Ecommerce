@@ -40,10 +40,10 @@ class blogadmin extends Controller
             // 'foto_kegiatan.mimes' => 'Foto Harus Berupa Jpg, Jpeg, Png, Webp, Jfif '
         ]);
         $files = [];
-        if ($request->hasfile('foto_kegiatan')) {
-            foreach ($request->foto_kegiatan as $file) {
+        if ($request->hasfile('foto_produk')) {
+            foreach ($request->foto_produk as $file) {
                 $name = $file->getClientOriginalName();
-                $file->move(public_path('fotokegiatan/'), $name);
+                $file->move(public_path('fotoprodukblog/'), $name);
                 $files[] = $name;
             }
         }
@@ -55,7 +55,7 @@ class blogadmin extends Controller
         $file->deskripsi = $request->deskripsi;
         $file->deskripsi_produk = $request->deskripsi_produk;
         $file->foto_sampul = $request->foto_sampul;
-        $file->foto_kegiatan = json_encode($files);
+        $file->foto_produk = json_encode($files);
         if ($request->hasFile('foto_sampul')) {
             $request->file('foto_sampul')->move('blog/', $request->file('foto_sampul')->getClientOriginalName());
             $file->foto_sampul = $request->file('foto_sampul')->getClientOriginalName();
@@ -70,7 +70,10 @@ class blogadmin extends Controller
 
     public function editblog($id){
         $data=blog::findOrFail($id);
-        return view('dashboardadmin.blog.editblog', compact('data'));
+        $relasi=kategoriblog::with('idkategoris')->get();
+        // dd($relasi);
+        // $relasi=blog::with('idblog')->get();
+        return view('dashboardadmin.blog.editblog', compact('data','relasi'));
     }
 
     public function updateblog(Request $request, $id)
@@ -87,24 +90,24 @@ class blogadmin extends Controller
             $data->foto_sampul = $request->file('foto_sampul')->getClientOriginalName();
             $data->save();
         }
-        if ($request->hasfile('foto_kegiatan')) {
-            $keyarray1 =  array_keys($request->foto_kegiatan);
+        if ($request->hasfile('foto_produk')) {
+            $keyarray1 =  array_keys($request->foto_produk);
             $foto = [];
             // dd($keyarray1);
             // $hasil = array_combine($tes,$foto);
             $i = 0;
-            foreach ($request->foto_kegiatan as $file) {
+            foreach ($request->foto_produk as $file) {
                 $name = $file->getClientOriginalName();
-                $file->move(public_path('foto_kegiatan/'), $name);
+                $file->move(public_path('fotoprodukblog/'), $name);
                 $foto[$keyarray1[$i]] = $name;
                 $i++;
             }
-            $fotoin = json_decode($data->foto_kegiatan);
+            $fotoin = json_decode($data->foto_produk);
             // dd($foto);
             foreach ($keyarray1 as $key) {
                 $fotoin[$key] = $foto[$key];
             }
-            $data->foto_kegiatan = $fotoin;
+            $data->foto_produk = $fotoin;
             $data->save();
         }
         return redirect()->route('blogad')->with('success', 'Berhasil Di Update');

@@ -87,9 +87,9 @@
                                                     </td>
                                                     <td>{!! $blog->deskripsi !!}</td>
                                                     <td>
-                                                        @foreach (json_decode($blog->foto_kegiatan) as $foto)
+                                                        @foreach (json_decode($blog->foto_produk) as $foto)
                                                             <img class="mx-1 my-1"
-                                                                src="{{ asset('fotokegiatan/' . $foto) }}"
+                                                                src="{{ asset('fotoprodukblog/' . $foto) }}"
                                                                 alt="" width="80px" height="80px">
                                                         @endforeach
                                                     </td>

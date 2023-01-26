@@ -38,6 +38,17 @@
                                                     <input name="judul_blog" type="text" class="form-control" value="{{ $data->judul_blog }}">
                                                 </div>
                                             </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label>Kategori Blog<span class="text-danger">*</span></label>
+                                                <select class="form-control" name="kategoriblog" id="">
+                                                    <option value="{{ $data->idblog->id }}">{{ $data->idblog->kategoriblog }}</option>
+                                                    @foreach ($relasi as $relasiii)
+                                                    <option value="{{ $relasiii->id }}">{{ $relasiii->idblog->kategoriblog }}</option>
+                                                    @endforeach
+                                                </select>
+                                                </div>
+                                            </div>
                                             <div class="card">
                                                 <div class="card-body">
                                                     <div class="custom-file-container" data-upload-id="myFirstImage">
@@ -76,15 +87,15 @@
                                                             <label>Upload Foto Produk <a href="javascript:void(0)"
                                                                     class="custom-file-container__image-clear"
                                                                     title="Clear Image">x</a></label>
-                                                                    @foreach (json_decode($data->foto_kegiatan) as $foto)
+                                                                    @foreach (json_decode($data->foto_produk) as $foto)
                                                                 <img class="mx-1 my-1"
-                                                                    src="{{ asset('fotokegiatan/' . $foto) }}"
+                                                                    src="{{ asset('fotoprodukblog/' . $foto) }}"
                                                                     alt="" width="80px" height="80px">
                                                             @endforeach
                                                             <label class="custom-file-container__custom-file">
                                                                 <input type="file"
                                                                     class="custom-file-container__custom-file__custom-file-input"
-                                                                    multiple name="foto_kegiatan[]">
+                                                                    multiple name="foto_produk[]">
                                                                 <input type="hidden" name="MAX_FILE_SIZE"
                                                                     value="10485760" />
                                                                 <span
