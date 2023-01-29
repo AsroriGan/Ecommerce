@@ -81,7 +81,7 @@
                                                         </div>
                                                     @enderror
                                                 </div>
-                                                <div class="col-md-6 mb-3">
+                                               <!--  <div class="col-md-6 mb-3">
                                                     <label>Ukuran Produk</label>
                                                     <input id="ukuran_produk" name="ukuran_produk" type="text"
                                                         class="form-control" value="<?php if (old('ukuran_produk')) {
@@ -104,7 +104,7 @@
                                                         }else {
                                                             echo "kuning,biru";
                                                         } ?>">
-                                                </div>
+                                                </div> -->
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>
                                                     <div class="input-group">
