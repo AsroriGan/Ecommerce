@@ -18,7 +18,7 @@
     </div>
     <div class="col-md-12">
         <div class="mb-3">
-            <label for="field-3" class="form-label">Sub Kategori
+            <label for="field-3" class="form-label">SubKategori
                 :</label>
             <input type="text" id="sub_kategori" name="sub_kategori" class="form-control"
                 value="{{ $data->sub_kategori }}" id="field-3" placeholder="Masukan Kategori">

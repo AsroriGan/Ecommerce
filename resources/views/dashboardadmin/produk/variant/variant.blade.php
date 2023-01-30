@@ -89,6 +89,7 @@ v
                                             @foreach ($data as $variant)
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
+<<<<<<< HEAD
                                                     <td>{{ $variant->warna_produk }}</td>
                                                     <td>{{ $variant->ukuran_produk }}</td>
                                                     <td>{{ $variant->harga_produk }}</td>
@@ -98,6 +99,20 @@ v
                                                             Edit</a>
                                                         <a class="btn btn-sm btn-white text-danger me-2 delete"
                                                             data-id="" data-nama=""><i
+=======
+                                                    <td>{{$variant->warna_produk}}</td>
+                                                    <td>{{$variant->ukuran_produk}}</td>
+                                                    <td>{{$variant->harga_produk}}</td>
+                                                    <td>{{$variant->stok_produk}}</td>
+                                                    <td><a class="btn btn-sm  btn-white text-success me-2" data-bs-toggle="modal"
+                                                    data-bs-target="#standard-modal2" id="{{ $variant->id }}"
+                                                    onclick="Edit(this.id)"
+                                                            href="/view_produk/"><i
+                                                                class="far fa-edit me-1"></i> Edit</a>
+                                                        <a class="btn btn-sm btn-white text-danger me-2 delete"
+                                                             data-id="{{ $variant->id }}"
+                                                            data-nama="{{ $variant->warna_produk }}"><i
+>>>>>>> 235237c21c5d8cb3e1f6ea7a7e719d8028f219d9
                                                                 class="far fa-trash-altme-1"></i>Hapus</a>
                                                     </td>
                                                 </tr>
@@ -113,6 +128,7 @@ v
         </div>
     </div>
 
+<<<<<<< HEAD
     <div id="standard-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -154,6 +170,91 @@ v
             </div>
         </div>
     </div>
+=======
+                        <div id="standard-modal" class="modal fade" tabindex="-1" role="dialog"
+                                    aria-labelledby="standard-modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="standard-modalLabel">Tambah Variant</h4>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                 <form class="px-3" action="/tambahvariant/{{$produk->id}}" method="post">
+                                                    @csrf
+                                                    <div class="mb-3">
+                                                        <label for="warna" class="form-label">Warna</label>
+                                                        <input class="form-control" type="text" id="warna" required="" name="warna" placeholder="Merah,Kuning">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="ukuran" class="form-label">Ukuran</label>
+                                                        <input class="form-control" type="text" id="ukuran" name="ukuran" 
+                                                            required="" placeholder="X,XL,S,M">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="harga" class="form-label">harga</label>
+                                                        <input class="form-control" type="number" required="" name="harga" id="harga" placeholder="20000">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="stok" class="form-label">Stok</label>
+                                                        <input class="form-control" type="number" required="" name="stok" id="stok" placeholder="10">
+                                                    </div>
+                                                    
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-primary" type="submit">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+>>>>>>> 235237c21c5d8cb3e1f6ea7a7e719d8028f219d9
+
+
+
+    <div id="standard-modal2" class="modal fade" tabindex="-1" role="dialog"
+                                    aria-labelledby="standard-modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="standard-modalLabel">Tambah Variant</h4>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                 <form class="px-3" action="/editvariantprost" method="post">
+                                                    @csrf
+                                                    <div class="mb-3">
+                                                        <label for="warna" class="form-label">Warna</label>
+                                                        <input class="form-control" type="text" id="warnaedit" required="" name="warna" >
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="ukuran" class="form-label">Ukuran</label>
+                                                        <input class="form-control" type="text" id="ukuranedit" name="ukuran" 
+                                                            required="">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="harga" class="form-label">harga</label>
+                                                        <input class="form-control" type="number" required="" name="harga" id="hargaedit" >
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="stok" class="form-label">Stok</label>
+                                                        <input class="form-control" type="number" required="" name="stok" id="stokedit" >
+
+                                                        <input  type="hidden" name="idvariant" id="idvariant" >
+                                                    </div>
+                                                    
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-primary" type="submit">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
 
 
     <!-- Star Script -->
@@ -182,7 +283,7 @@ v
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
-                    window.location = "/delete_produk/" + id;
+                    window.location = "/delete_variant/" + id;
                     Swal.fire({
                         type: "success",
                         title: "Deleted!",
@@ -199,6 +300,29 @@ v
                 }
             })
         })
+    </script>
+    <script>
+        function Edit(id) {
+            // alert(id)
+            $.ajax({
+                type: 'GET',
+                url: '/editvariant/' + id,
+                dataType: 'json',
+                success: function(data) {
+
+                    $('#idvariant').val(data.data.id)
+                    $('#warnaedit').val(data.data.warna_produk);
+                    $('#ukuranedit').val(data.data.ukuran_produk);
+                    $('#hargaedit').val(data.data.harga_produk);
+                    $('#stokedit').val(data.data.stok_produk);
+
+                
+                }
+
+            })
+warna
+
+        }
     </script>
     <script>
         $(document).ready(function() {

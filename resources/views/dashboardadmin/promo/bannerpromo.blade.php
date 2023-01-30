@@ -173,7 +173,7 @@
                                                                                 data-bs-dismiss="modal">Kembali</button>
                                                                             <button
                                                                                 class="btn btn-info waves-effect waves-light">Edit
-                                                                                Promo</button>
+                                                                                </button>
                                                                         </div>
                                                                     </form>
                                                                 </div>

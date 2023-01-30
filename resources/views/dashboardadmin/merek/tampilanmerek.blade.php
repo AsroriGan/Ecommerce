@@ -18,8 +18,7 @@
                         data-bs-target="#modalmerek" onclick="editview({{ $data->id }})"><i
                             class="far fa-edit me-1"></i>
                         Edit</button>
-                    <button class="btn btn-sm btn-white text-danger me-2 " onclick="deletemerek({{ $data->id }})"><i
-                            class="far fa-trash-altme-1"></i>Hapus</button>
+                    <button class="btn btn-sm btn-white text-danger me-2 " onclick="deletemerek({{ $data->id }})"><i class="far fa-trash-alt me-1"></i>Hapus</button>
                 </td>
             </tr>
         @endforeach
@@ -31,3 +30,4 @@
         $('#myTable').DataTable();
     });
 </script>
+ 
