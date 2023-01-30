@@ -3,7 +3,7 @@
         <tr>
             <th>No.</th>
             <th>Kategori</th>
-            <th>Sub</th>
+            <th>SubKategori</th>
             <th>Aksi</th>
         </tr>
     </thead>

@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="mb-3">
-            <label for="field-1" class="form-label">Kategori*</label>
+            <label for="field-1" class="form-label">Kategori</label>
             <select class="form-select" name="kategori" id="kategori">
                 <option value="" selected>Pilih Kategori</option>
                 @foreach ($datas as $row)
@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-12">
         <div class="mb-3">
-            <label for="field-1" class="form-label">Sub-Kategori*</label>
+            <label for="field-1" class="form-label">SubKategori</label>
             <select class="form-select" name="sub_kategori" id="sub_kategori">
                 <option value="" selected>Pilih Sub-Kategori</option>
                 @foreach ($data as $row)
@@ -30,16 +30,15 @@
         </div>
     </div>
     <div class="col-md-12">
-        <label for="">Sub Subkategori*</label>
+        <label for="">Sub-Subkategori</label>
         <input type="text" id="sub_subkategori" name="sub_subkategori" class="form-control"
             placeholder="Masukkan Sub SubKategori">
-            <div class="invalid-feedback">
-                Sub-SubKategori Harus Di Isi
-            </div>
+        <div class="invalid-feedback">
+            Sub-SubKategori Harus Di Isi
+        </div>
     </div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary" onclick="storeSub_subKategori()">Save
-        changes</button>
+    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Kembali</button>
+    <button class="btn btn-primary waves-effect waves-light" onclick="storeSub_subKategori()">Tambah</button>
 </div>
