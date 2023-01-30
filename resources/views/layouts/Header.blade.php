@@ -123,7 +123,7 @@
                             <!-- Header User Start -->
                             <div class="ec-header-user dropdown">
                                 <a href="/user-profile" class="dropdown-toggle mt-22px" data-bs-toggle="dropdown"><img
-                                        src="{{asset('assets/images/icons/user.svg" class="svg_img header_svg')}}"
+                                        src="{{asset('assets/images/icons/user.svg')}}" class="svg_img header_svg"
                                         alt="" /></a>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     @if (!Auth::check())

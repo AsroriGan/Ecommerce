@@ -1,5 +1,5 @@
 
-<!--========================================================= 
+<!--=========================================================
     Item Name: Ekka - Ecommerce HTML Template.
     Author: ashishmaraviya
     Version: 3.3
@@ -11,7 +11,7 @@
 
  <head>
      @include('layouts.head')
-    
+
 </head>
 <body class="cart_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
@@ -128,14 +128,14 @@
                     <div class="section-title">
                         <h2 class="ec-bg-title">Log In</h2>
                         <h2 class="ec-title">Log In</h2>
-                        <p class="sub-title mb-3">Best place to buy and sell digital products</p>
+                        <p class="sub-title mb-3">Please login to be able to buy products in this figure</p>
                     </div>
                 </div>
                 <div class="ec-login-wrapper">
                     <div class="ec-login-container">
                         <div class="ec-login-form">
                             <form action="loginpost" method="post">
-                               @csrf 
+                               @csrf
                                 <span class="ec-login-wrap">
                                     <label>Email Address*</label>
                                     <input type="text" name="email" placeholder="Enter your email add..." required />
@@ -158,7 +158,7 @@
             </div>
         </div>
     </section>
-    
+
 
     <!-- Footer Start -->
     @include('layouts.footer')

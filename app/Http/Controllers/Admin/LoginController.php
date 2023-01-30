@@ -16,7 +16,7 @@ class LoginController extends Controller
     {
         $this->_validation($request);
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect('/subkategori');
+            return redirect('/beranda');
         } else {
             return redirect()->back()->with('password', 'password salah');
         }

@@ -45,22 +45,22 @@ class Logincontroller extends Controller
     }
     public function registerpost(Request $request)
     {
-        $this->validate($request, [
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'phonenumber' => 'required',
-            'email' => 'required|unique:users',
-            'password' => 'required|min:8',
-        ], [
-            'username.required' => 'Username Harus Di isi',
-            'name.required' => 'Nama Harus Di isi',
-            'notelepon.required' => 'No Telepon Harus Di Isi',
-            'email.required' => 'Email Harus Diisi',
-            'email' => 'Email Yang Anda Masukan Tidak Benar',
-            'unique' => 'Email Ini Sudah Digunakan',
-            'password.required' => 'Password Harus Diisi',
-            'password.min' => 'Password harus minimal 8 karakter',
-        ]);
+        // $this->validate($request, [
+        //     'firstname' => 'required',
+        //     'lastname' => 'required',
+        //     'phonenumber' => 'required',
+        //     'email' => 'required|unique:users',
+        //     'password' => 'required|min:8',
+        // ], [
+        //     'username.required' => 'Username Harus Di isi',
+        //     'name.required' => 'Nama Harus Di isi',
+        //     'notelepon.required' => 'No Telepon Harus Di Isi',
+        //     'email.required' => 'Email Harus Diisi',
+        //     'email' => 'Email Yang Anda Masukan Tidak Benar',
+        //     'unique' => 'Email Ini Sudah Digunakan',
+        //     'password.required' => 'Password Harus Diisi',
+        //     'password.min' => 'Password harus minimal 8 karakter',
+        // ]);
         $data = User::create([
             'name' => $request->firstname . ' ' . $request->lastname,
             'notelepon' => $request->phonenumber,
