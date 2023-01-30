@@ -162,8 +162,14 @@
                                     <li class="ecicon eci-star"></li>
                                 </ul>
                                 <h3 class="ec-title"><a href="#">{{ $data->nama_produk }}</a></h3>
-                                <div class="ec-price"><span>Rp.{{ $data->harga_asliproduk }}</span>Rp.
-                                    {{ $data->harga_diskonproduk }}</div>
+                                @if ($data->harga_diskonproduk == null)
+                                    <div class="ec-price"><span>Rp.{{ $data->harga_asliproduk }}</span></div>
+                                @else
+                                    <div class="ec-price"><span>Rp.{{ $data->harga_asliproduk }}</span>
+                                        Rp. {{ $data->harga_diskonproduk }}</div>
+                                @endif
+                                {{-- <div class="ec-price"><span>Rp.{{ $data->harga_asliproduk }}</span><span id="harga_barang">
+                                    {{ $data->harga_diskonproduk }}</span></div> --}}
                                 <a href="#" class="ec-add-to-cart quickview" data-link-action="quickview"
                                     title="Quick view" data-bs-toggle="modal" id="{{ $data->id }}"
                                     onclick="productView(this.id)" data-bs-target="#ec_quickview_modal">add to
@@ -193,7 +199,8 @@
     <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-xs-12">
@@ -205,7 +212,7 @@
                                 {{-- <div class="qty-slide"><img class="img-responsive" src="http://127.0.0.1:8000/fotoproduk/ftku.jpg" alt=""></div>
                                 <div class="qty-slide"><img class="img-responsive" src="http://127.0.0.1:8000/fotoproduk/ftku.jpg" alt=""></div> --}}
                             </div>
-                            <div class="qty-nav-thumb" id="gambar2" >
+                            <div class="qty-nav-thumb" id="gambar2">
                                 {{-- <div class="qty-slide" >
                                     <img class="img-responsive" src="-" alt="" id="gambar2">
                                 </div> --}}
@@ -227,12 +234,22 @@
 
                                 <div class="ec-quickview-desc" id="deskripsipendek">l</div>
                                 <div class="ec-quickview-price">
+
                                     <span class="old-price" id="hargaasli">Rp. </span>
                                     <span class="new-price" id="hargadiskon">Rp.</span>
                                 </div>
                                 <form action="/postcart" method="post">
                                     @csrf
                                     <div class="ec-pro-variation">
+                                        <div class="ec-pro-variation-inner ec-pro-variation-size ec-pro-size">
+                                            <span>Size</span>
+                                            <div class="ec-pro-variation-content" id="sizeArea">
+                                                <select class="form-select" aria-label="Default select example"
+                                                    id="ukuran" name="ukuran">
+                                                  <option value="" selected>Silahkan Pilih</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="ec-pro-variation-inner ec-pro-variation-color">
                                             <span>Color</span>
                                             <div class="ec-pro-color">
@@ -244,24 +261,16 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="ec-pro-variation-inner ec-pro-variation-size ec-pro-size">
-                                            <span>Size</span>
-                                            <div class="ec-pro-variation-content" id="sizeArea">
-                                                <select class="form-select" aria-label="Default select example"
-                                                    id="ukuran" name="ukuran">
-
-
-                                                </select>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="ec-quickview-qty">
                                         <div class="qty-plus-minus">
                                             <input class="qty-input" type="text" name="jumlah" value="1" />
-                                            <input class="qty-input" type="hidden" name="id" value="" id="ids" />
+                                            <input class="qty-input" type="hidden" name="id" value=""
+                                                id="ids" />
                                         </div>
                                         <div class="ec-quickview-cart ">
-                                            <button class="btn btn-primary"><img src="{{asset('assets/images/icons/cart.svg')}}"
+                                            <button class="btn btn-primary"><img
+                                                    src="{{ asset('assets/images/icons/cart.svg') }}"
                                                     class="svg_img pro_svg" alt="" /> Add To Cart</button>
                                         </div>
                                     </div>
@@ -275,9 +284,6 @@
     </div>
     <!-- Modal end -->
 
-    <!-- Newsletter Modal Start -->
-
-    <!-- Newsletter Modal end -->
 
     <!-- Footer navigation panel for responsive display -->
     <div class="ec-nav-toolbar">
@@ -352,8 +358,8 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="{{asset('assets/images/whatsapp/profile_01.jpg')}}" class="ec-user-img"
-                                        alt="Profile image">
+                                    <img src="{{ asset('assets/images/whatsapp/profile_01.jpg') }}"
+                                        class="ec-user-img" alt="Profile image">
                                     <span class="ec-status-icon"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -376,8 +382,8 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="{{asset('assets/images/whatsapp/profile_02.jpg')}}" class="ec-user-img"
-                                        alt="Profile image">
+                                    <img src="{{ asset('assets/images/whatsapp/profile_02.jpg') }}"
+                                        class="ec-user-img" alt="Profile image">
                                     <span class="ec-status-icon ec-online"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -400,8 +406,8 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="{{asset('assets/images/whatsapp/profile_03.jpg')}}" class="ec-user-img"
-                                        alt="Profile image">
+                                    <img src="{{ asset('assets/images/whatsapp/profile_03.jpg') }}"
+                                        class="ec-user-img" alt="Profile image">
                                     <span class="ec-status-icon ec-offline"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -424,8 +430,8 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="{{asset('assets/images/whatsapp/profile_04.jpg')}}" class="ec-user-img"
-                                        alt="Profile image">
+                                    <img src="{{ asset('assets/images/whatsapp/profile_04.jpg') }}"
+                                        class="ec-user-img" alt="Profile image">
                                     <span class="ec-status-icon ec-offline"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -449,7 +455,8 @@
         <div class="ec-right-bottom">
             <div class="ec-box">
                 <div class="ec-button rotateBackward">
-                    <img class="whatsapp" src="{{asset('assets/images/common/whatsapp.png')}}" alt="whatsapp icon">
+                    <img class="whatsapp" src="{{ asset('assets/images/common/whatsapp.png') }}"
+                        alt="whatsapp icon">
                 </div>
             </div>
         </div>
@@ -534,7 +541,7 @@
     <!-- Script -->
 
 
-
+    @include('layouts.script')
 
 
     <script>
@@ -544,23 +551,32 @@
                 type: 'GET',
                 url: '/detailmodal/' + id,
                 dataType: 'json',
+                processData: false,
+                contentType: false,
+                cache: false,
                 success: function(data) {
 
-                    // console.log(data.data.galeri_produk)
-                    // console.log(data.data.deskirpsi_pendek)
                     $('#ids').val(data.data.id);
                     $('#namaproduk').text(data.data.nama_produk);
                     $('#deskripsipendek').text(data.data.deskirpsi_pendek);
-                    $('#hargaasli').text( 'Rp. ' + data.data.harga_asliproduk);
-                    $('#hargadiskon').text('Rp. ' + data.data.harga_diskonproduk);
-                    $('#namaproduk').attr('href','/detail/' + data.data.id );
-                    //  $('#pbrand').text(data.product.brand.brand_name);
-                    //  $('#pweight').text(data.product.product_weight);
+                    // if (is_null(data.data.harga_diskonproduk)) {
+
+                        // $('#hargaasli').text('Rp. ' + data.data.harga_asliproduk);
+                    // } else {
+                        $('#hargadiskon').text('Rp. ' + data.data.harga_diskonproduk);
+                        $('#hargaasli').text('Rp. ' + data.data.harga_asliproduk);
+
+                    // }
+                    $('#namaproduk').attr('href', '/detail/' + data.data.id);
+                    // $('select[name="ukuran"]').append('<option value=" "> Silahkan Pilih </option>')
+
 
                     $.each(data.galeri, function(key, value) {
+
                         // console.log(value);
                         // var html = '';
                         // html += '<div class="qty-slide"><img class="img-responsive" src="http://127.0.0.1:8000/fotoproduk/' + value +'" alt=""></div>';
+
                         //  $('#gambar').html(html)
                         //  $('#gambar2').html(html)
                         // $('#gambar').append(' <img  src="http://127.0.0.1:8000/fotoproduk/' + value +'" >')
@@ -571,21 +587,28 @@
                     })
 
                     // Color
-                    $('select[name="warna"]').empty();
-                    $.each(data.warna, function(key, value) {
 
+                    // console.log(data.datas.warna_produk);
+                    $('select[name="ukuran"]').empty();
+                    $('select[name="ukuran"]').append('<option value="" selected> pilih</option>')
+                    $.each(data.datas, function(key, value) {
+                        // console.log(value.warna_produk);
+                        // let html = ''
+                        // html += `<option value=" ' + value + ' " > ${value.warna_produk}   </option>`
 
-                        $('select[name="warna"]').append('<option value=" ' + value + ' ">' +
-                            value + ' </option>')
+                        $('select[name="ukuran"]').append('<option value=" ' + value.ukuran_produk +
+                            ' ">' +
+                            value.ukuran_produk + ' </option>')
+
                     }) // end color
 
                     // // Size
-                    $('select[name="ukuran"]').empty();
-                    $.each(data.ukuran, function(key, value) {
-                        $('select[name="ukuran"]').append('<option value=" ' + value + ' ">' + value +
-                            ' </option>')
+                    // $('select[name="ukuran"]').empty();
+                    // $.each(data.datas, function(key, value) {
+                    //     $('select[name="ukuran"]').append('<option value=" ' + value + ' ">' + value.ukura +
+                    //         ' </option>')
 
-                    }) // end size
+                    // }) // end size
                 }
 
             })
@@ -594,8 +617,50 @@
         }
     </script>
 
-     @include('layouts.script')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#ukuran').change(function() {
+                // alert('berhasil');
+                let ik = $(this).val();
+                let id = $('#ids').val();
+                $.ajax({
+                    url: '/get_warna',
+                    type: 'post',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        'ik': ik,
+                        'id': id
+                    },
+                    success: function(result) {
+                        $('#warna').html(result);
+                        // $('#sub_kategori').removeAttr('disabled');
+                    }
+                });
+            });
+        })
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+           $('#warna').change(function() {
+            //  alert('berhasil');
+                let ik = $(this).val();
+                let id = $('#ids').val();
+                let il = $('#ukuran').val();
+                console.log(il);
+                $.ajax({
+                    url: '/get_price',
+                    type: 'post',
+                    data: { "_token": "{{ csrf_token() }}",'ik': ik , 'id': id, 'il': il },
+                    success: function(result) {
+                        console.log(result);
+                        $('#hargadiskon').text('Rp.' + result.data.harga_produk);
 
-    <!-- End Script
- </body>
- </html>
+                    }
+                });
+            });
+        })
+    </script>
+
+</body>
+
+</html>

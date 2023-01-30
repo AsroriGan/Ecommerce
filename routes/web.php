@@ -56,6 +56,7 @@ Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk'
 Route::get('/detail/{id}', [LandingProdukController::class, 'detail'])->name('detail');
 Route::get('/detailmodal/{id}', [LandingProdukController::class, 'detailmodal'])->name('detailmodal');
 Route::post('/get_warna', [LandingProdukController::class, 'get_warna'])->name('get_warna');
+Route::post('/get_price', [LandingProdukController::class, 'get_price'])->name('get_price');
 
 //cartt
 Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang')->middleware('auth');
