@@ -195,6 +195,9 @@ Route::get('/delete_produk/{id}', [AdminProdukController::class, 'delete_produk'
 //start variant
 Route::get('/variant/{id}', [AdminProdukController::class, 'variant'])->name('variant');
 Route::post('/tambahvariant/{id}', [AdminProdukController::class, 'tambahvariant'])->name('tambahvariant');
+Route::get('/editvariant/{id}', [AdminProdukController::class, 'editvariant'])->name('editvariant');
+Route::post('/editvariantprost', [AdminProdukController::class, 'editvariantprost'])->name('editvariantprost');
+Route::get('/delete_variant/{id}', [AdminProdukController::class, 'delete_variant'])->name('delete_variant');
 
 //end variant
 
