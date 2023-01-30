@@ -34,7 +34,7 @@ class AdminProfailController extends Controller
         ]);
         // dd($user);
 
-        return redirect()->route('Edit_Admin')->with("success", "Your profile has been successfully updated");
+        return redirect()->route('Edit_Admin')->with("success", "Profil Anda Berhasil Di Edit!");
 
     }
 
@@ -44,10 +44,14 @@ class AdminProfailController extends Controller
 
     public function gantipasswordpost(Request $request) {
 
+        $request->validate([
+            'oldpassword' => 'required',
+            'newpassword' => 'min:8|required|confirmed',
+        ]);
 
         #Match The Old Password
         if (!Hash::check($request->oldpassword, auth()->user()->password)) {
-            return back()->with("error", "Old Password Doesn't match!");
+            return back()->with("error", "Kata Sandi Lama Tidak Cocok!");
         }
 
 
@@ -56,6 +60,6 @@ class AdminProfailController extends Controller
             'password' => Hash::make($request->newpassword)
         ]);
 
-        return back()->with("success", "Password changed successfully!");
+        return back()->with("success", "Password Berhasil DiGanti!");
     }
 }
