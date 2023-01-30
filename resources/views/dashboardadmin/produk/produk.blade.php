@@ -81,7 +81,7 @@ v
                                                 <th>Nama Produk</th>
                                                 <th>Harga</th>
                                                 <th>Diskon</th>
-                                                <th>Stock</th>
+                                                <!-- <th>Stock</th> -->
                                                 <th>Status</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -105,7 +105,7 @@ v
                                                     }
                                                     ?></td>
                                                     <td>{{ $data->diskon }}%</td>
-                                                    <td>{{ $data->stok_produk }}</td>
+                                                    <!-- <td>{{ $data->stok_produk }}</td> -->
                                                     <td>{{ $data->status }}</td>
                                                     <td><a class="btn btn-sm  btn-white text-success me-2"
                                                             href="/variant/{{ $data->id }}"><i
