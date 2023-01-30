@@ -246,7 +246,7 @@
                                             <div class="ec-pro-variation-content" id="sizeArea">
                                                 <select class="form-select" aria-label="Default select example"
                                                     id="ukuran" name="ukuran">
-                                                  <option value="" selected>Silahkan Pilih</option>
+                                                    <option value="" selected>Silahkan Pilih</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -561,10 +561,10 @@
                     $('#deskripsipendek').text(data.data.deskirpsi_pendek);
                     // if (is_null(data.data.harga_diskonproduk)) {
 
-                        // $('#hargaasli').text('Rp. ' + data.data.harga_asliproduk);
+                    // $('#hargaasli').text('Rp. ' + data.data.harga_asliproduk);
                     // } else {
-                        $('#hargadiskon').text('Rp. ' + data.data.harga_diskonproduk);
-                        $('#hargaasli').text('Rp. ' + data.data.harga_asliproduk);
+                    $('#hargadiskon').text('Rp. ' + data.data.harga_diskonproduk);
+                    $('#hargaasli').text('Rp. ' + data.data.harga_asliproduk);
 
                     // }
                     $('#namaproduk').attr('href', '/detail/' + data.data.id);
@@ -641,8 +641,8 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function() {
-           $('#warna').change(function() {
-            //  alert('berhasil');
+            $('#warna').change(function() {
+                //  alert('berhasil');
                 let ik = $(this).val();
                 let id = $('#ids').val();
                 let il = $('#ukuran').val();
@@ -650,7 +650,12 @@
                 $.ajax({
                     url: '/get_price',
                     type: 'post',
-                    data: { "_token": "{{ csrf_token() }}",'ik': ik , 'id': id, 'il': il },
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        'ik': ik,
+                        'id': id,
+                        'il': il
+                    },
                     success: function(result) {
                         console.log(result);
                         $('#hargadiskon').text('Rp.' + result.data.harga_produk);

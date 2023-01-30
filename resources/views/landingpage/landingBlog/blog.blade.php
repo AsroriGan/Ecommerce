@@ -128,41 +128,34 @@
                         <div class="ec-blogs-inner">
                             <div class="row">
                                 @foreach ($data as $blog)
-                                <div class="col-lg-4 col-md-6 col-sm-12 mb-6 ec-blog-block">
-                                    <div class="ec-blog-inner">
-                                        <div class="ec-blog-image">
-                                            <a href="/detailblog/{{ $blog->id }}">
-                                                <img class="imgblog" src="{{ asset('blog/'. $blog->foto_sampul) }}"
-                                                    alt="Blog" />
-                                            </a>
-                                        </div>
-                                        <div class="ec-blog-content">
-                                            <h5 class="ec-blog-title"><a href="/detailblog/{{ $blog->id }}">{{ $blog->judul_blog }}</a></h5>
-                                            <div class="ec-blog-date">By <span>Mr Admin</span> / {{ $blog->created_at }}
+                                    <div class="col-lg-4 col-md-6 col-sm-12 mb-6 ec-blog-block">
+                                        <div class="ec-blog-inner">
+                                            <div class="ec-blog-image">
+                                                <a href="/detailblog/{{ $blog->id }}">
+                                                    <img class="imgblog" src="{{ asset('blog/' . $blog->foto_sampul) }}"
+                                                        alt="Blog" />
+                                                </a>
                                             </div>
-                                            <div class="ec-blog-desc">{!! $blog->deskripsi !!}</div>
-                                            <div class="ec-blog-btn"><a href="/detailblog/{{ $blog->id }}" class="btn btn-primary">Read
-                                                    More</a>
+                                            <div class="ec-blog-content">
+                                                <h5 class="ec-blog-title"><a
+                                                        href="/detailblog/{{ $blog->id }}">{{ $blog->judul_blog }}</a>
+                                                </h5>
+                                                <div class="ec-blog-date">By <span>Mr Admin</span> /
+                                                    {{ $blog->created_at }}
+                                                </div>
+                                                <div class="ec-blog-desc">{!! $blog->deskripsi !!}</div>
+                                                <div class="ec-blog-btn"><a href="/detailblog/{{ $blog->id }}"
+                                                        class="btn btn-primary">Read
+                                                        More</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endforeach
                             </div>
                         </div>
                         <!-- Ec Pagination Start -->
-                        <div class="ec-pro-pagination">
-                            <span>Showing 1-12 of 21 item(s)</span>
-                            <ul class="ec-pro-pagination-inner">
-                                <li><a class="active" href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a class="next" href="#">Next <i class="ecicon eci-angle-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                        {{$data->links('vendor.pagination.default')}}
                         <!-- Ec Pagination End -->
                     </div>
                     <!--Blog content End -->

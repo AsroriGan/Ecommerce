@@ -44,14 +44,16 @@ v
                                             <div
                                                 class="invoices-settings-btn
                                             invoices-settings-btn-one">
-                                               <!--  <a href="/tambahvariant" class="btn">
+                                                <!--  <a href="/tambahvariant" class="btn">
                                                     <i data-feather="plus-circle"></i>
                                                     Tambah Variant Baru
                                                 </a> -->
-                                                <button type="button" class="btn
+                                                <button type="button"
+                                                    class="btn
                                                 btn-success waves-effect waves-light
-                                                mt-1" data-bs-toggle="modal"
-                                                data-bs-target="#standard-modal"><i data-feather="plus-circle"></i> Tambah Variant Baru</button>
+                                                mt-1"
+                                                    data-bs-toggle="modal" data-bs-target="#standard-modal"><i
+                                                        data-feather="plus-circle"></i> Tambah Variant Baru</button>
                                             </div>
                                         </div>
                                     </div>
@@ -85,19 +87,17 @@ v
                                         </thead>
                                         <tbody>
                                             @foreach ($data as $variant)
-                                              
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
-                                                    <td>{{$variant->warna_produk}}</td>
-                                                    <td>{{$variant->ukuran_produk}}</td>
-                                                    <td>{{$variant->harga_produk}}</td>
-                                                    <td>{{$variant->stok_produk}}</td>
+                                                    <td>{{ $variant->warna_produk }}</td>
+                                                    <td>{{ $variant->ukuran_produk }}</td>
+                                                    <td>{{ $variant->harga_produk }}</td>
+                                                    <td>{{ $variant->stok_produk }}</td>
                                                     <td><a class="btn btn-sm  btn-white text-success me-2"
-                                                            href="/view_produk/"><i
-                                                                class="far fa-edit me-1"></i> Edit</a>
+                                                            href="/view_produk/"><i class="far fa-edit me-1"></i>
+                                                            Edit</a>
                                                         <a class="btn btn-sm btn-white text-danger me-2 delete"
-                                                            data-id=""
-                                                            data-nama=""><i
+                                                            data-id="" data-nama=""><i
                                                                 class="far fa-trash-altme-1"></i>Hapus</a>
                                                     </td>
                                                 </tr>
@@ -113,45 +113,47 @@ v
         </div>
     </div>
 
-    <div id="standard-modal" class="modal fade" tabindex="-1" role="dialog"
-                                    aria-labelledby="standard-modalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title" id="standard-modalLabel">Tambah Variant</h4>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                 <form class="px-3" action="/tambahvariant/{{$produk->id}}" method="post">
-                                                    @csrf
-                                                    <div class="mb-3">
-                                                        <label for="warna" class="form-label">Warna</label>
-                                                        <input class="form-control" type="text" id="warna" required="" name="warna" placeholder="Merah,Kuning">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="ukuran" class="form-label">Ukuran</label>
-                                                        <input class="form-control" type="text" id="ukuran" name="ukuran" 
-                                                            required="" placeholder="X,XL,S,M">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="harga" class="form-label">harga</label>
-                                                        <input class="form-control" type="number" required="" name="harga" id="harga" placeholder="20000">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="stok" class="form-label">Stok</label>
-                                                        <input class="form-control" type="number" required="" name="stok" id="stok" placeholder="10">
-                                                    </div>
-                                                    
-                                                    <div class="mb-3 text-center">
-                                                        <button class="btn btn-primary" type="submit">Simpan</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                           
-                                        </div>
-                                    </div>
-                                </div>
+    <div id="standard-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="standard-modalLabel">Tambah Variant</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="px-3" action="/tambahvariant/{{ $produk->id }}" method="post">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="warna" class="form-label">Warna</label>
+                            <input class="form-control" type="text" id="warna" required="" name="warna"
+                                placeholder="Merah,Kuning">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ukuran" class="form-label">Ukuran</label>
+                            <input class="form-control" type="text" id="ukuran" name="ukuran" required=""
+                                placeholder="X,XL,S,M">
+                        </div>
+                        <div class="mb-3">
+                            <label for="harga" class="form-label">harga</label>
+                            <input class="form-control" type="number" required="" name="harga" id="harga"
+                                placeholder="20000">
+                        </div>
+                        <div class="mb-3">
+                            <label for="stok" class="form-label">Stok</label>
+                            <input class="form-control" type="number" required="" name="stok" id="stok"
+                                placeholder="10">
+                        </div>
+
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-primary" type="submit">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
     <!-- Star Script -->
