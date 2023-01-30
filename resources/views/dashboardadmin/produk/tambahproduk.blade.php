@@ -123,9 +123,9 @@
                                                     <label>Kategori</label>
                                                     <select id="kategori" name="kategori"
                                                         class="form-select @error('kategori') is-invalid  @enderror">
-                                                        <option value="" {{ old("kategori") ? '' : 'selected' ; }}>-- Select --</option>
+                                                        <option value="" {{ old("kategori") ? '' : 'selected'  }}>-- Select --</option>
                                                         @foreach ($kategori as $row)
-                                                            <option value="{{ $row->id }}" {{ old("kategori") == $row->id ? 'selected' : '' ; }} >{{ $row->kategori }}
+                                                            <option value="{{ $row->id }}" {{ old("kategori") == $row->id ? 'selected' : '' }} >{{ $row->kategori }}
                                                             </option>
                                                         @endforeach
                                                     </select>

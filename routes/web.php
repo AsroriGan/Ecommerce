@@ -238,4 +238,18 @@ Route::get('/bannerpromosi', [AdminPromosiController::class, 'bannerpromosi'])->
 
 Route::post('/editbannerpromopost/{id}', [AdminPromosiController::class, 'editbanner'])->name('editbannerpromopost');
 
-// old('subkategoris') ? $old = DB::table('subkategoris')->where('kategori',old('kategori'))->first(); echo $old->sub_kategori; : '-- Pilih --';
+
+//Route group user
+Route::group(['middleware' => ['auth', 'CekRole:admin,user']],function () {
+    Route::get('/user', function () {
+        return view('');
+    });
+});
+
+//Route group Admin
+Route::group(['middleware' => ['auth', 'CekRole:admin']],function () {
+    Route::get('/admin', function () {
+        return view('');
+    });
+});
+
