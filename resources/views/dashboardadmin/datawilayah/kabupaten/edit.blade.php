@@ -29,8 +29,8 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Kembali</button>
     <button type="submit" class="btn btn-info waves-effect waves-light"
-        onclick="editkabupaten({{ $data->id }})">Save
-        changes</button>
+        onclick="editkabupaten({{ $data->id }})">Edit
+        </button>
 </div>

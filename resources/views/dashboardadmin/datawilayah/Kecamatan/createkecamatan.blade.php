@@ -47,9 +47,8 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-info waves-effect waves-light" onclick="storekecamatan()">Save
-        changes</button>
+    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Kembali</button>
+    <button type="submit" class="btn btn-info waves-effect waves-light" onclick="storekecamatan()">Tambah</button>
 </div>
 <script>
     //depended dropdown

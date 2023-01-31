@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Landing;
 
-use App\Http\Controllers\Controller;
+use App\Models\Produk;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class KategoriController extends Controller
 {
     public function index(){
-        return view('landingpage.Categories.categori');
+        $data = Produk::get();
+        return view('landingpage.Categories.categori',compact('data'));
     }
 }

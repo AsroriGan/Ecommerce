@@ -9,9 +9,15 @@ use App\Http\Controllers\Controller;
 class BlogController extends Controller
 {
     public function blog(){
+<<<<<<< HEAD
         $data=blog::latest()->get();
         $dataa=blog::paginate(3);
         return view('landingpage.landingBlog.blog', compact('data','dataa'));
+=======
+        $data=blog::latest()->paginate(2);
+        // dd($data);
+        return view('landingpage.landingBlog.blog', compact('data'));
+>>>>>>> cc969161a1f62cd94a9f1d091ca4fd85c9b78f75
     }
 
     public function detailblog($id){
