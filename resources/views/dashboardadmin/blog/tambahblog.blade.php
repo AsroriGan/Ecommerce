@@ -21,11 +21,10 @@
                         <div class="page-header">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <h3 class="page-title">Add Post</h3>
+                                    <h3 class="page-title">Tambah Blog</h3>
                                 </div>
                             </div>
                         </div>
-
                         <div class="card">
                             <form action="/insertblog" method="post" enctype="multipart/form-data">
                                 @csrf
@@ -128,7 +127,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </form>
                         </div>
                     </div>

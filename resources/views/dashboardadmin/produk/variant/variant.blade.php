@@ -30,7 +30,7 @@ v
 
                 <div class="row">
                     <div class="col-6">
-                        <h3 class="page-title">Variant</h3>
+                        <h3 class="page-title">Variant {{$produk->nama_produk}}</h3>
                         {{-- <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Kategori</a></li>
                             </ul> --}}
@@ -89,17 +89,6 @@ v
                                             @foreach ($data as $variant)
                                                 <tr>
                                                     <td scope="row">{{ $loop->iteration }}</td>
-<<<<<<< HEAD
-                                                    <td>{{ $variant->warna_produk }}</td>
-                                                    <td>{{ $variant->ukuran_produk }}</td>
-                                                    <td>{{ $variant->harga_produk }}</td>
-                                                    <td>{{ $variant->stok_produk }}</td>
-                                                    <td><a class="btn btn-sm  btn-white text-success me-2"
-                                                            href="/view_produk/"><i class="far fa-edit me-1"></i>
-                                                            Edit</a>
-                                                        <a class="btn btn-sm btn-white text-danger me-2 delete"
-                                                            data-id="" data-nama=""><i
-=======
                                                     <td>{{$variant->warna_produk}}</td>
                                                     <td>{{$variant->ukuran_produk}}</td>
                                                     <td>{{$variant->harga_produk}}</td>
@@ -112,7 +101,6 @@ v
                                                         <a class="btn btn-sm btn-white text-danger me-2 delete"
                                                              data-id="{{ $variant->id }}"
                                                             data-nama="{{ $variant->warna_produk }}"><i
->>>>>>> 235237c21c5d8cb3e1f6ea7a7e719d8028f219d9
                                                                 class="far fa-trash-altme-1"></i>Hapus</a>
                                                     </td>
                                                 </tr>
@@ -128,49 +116,6 @@ v
         </div>
     </div>
 
-<<<<<<< HEAD
-    <div id="standard-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="standard-modalLabel">Tambah Variant</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="px-3" action="/tambahvariant/{{ $produk->id }}" method="post">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="warna" class="form-label">Warna</label>
-                            <input class="form-control" type="text" id="warna" required="" name="warna"
-                                placeholder="Merah,Kuning">
-                        </div>
-                        <div class="mb-3">
-                            <label for="ukuran" class="form-label">Ukuran</label>
-                            <input class="form-control" type="text" id="ukuran" name="ukuran" required=""
-                                placeholder="X,XL,S,M">
-                        </div>
-                        <div class="mb-3">
-                            <label for="harga" class="form-label">harga</label>
-                            <input class="form-control" type="number" required="" name="harga" id="harga"
-                                placeholder="20000">
-                        </div>
-                        <div class="mb-3">
-                            <label for="stok" class="form-label">Stok</label>
-                            <input class="form-control" type="number" required="" name="stok" id="stok"
-                                placeholder="10">
-                        </div>
-
-                        <div class="mb-3 text-center">
-                            <button class="btn btn-primary" type="submit">Simpan</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-=======
                         <div id="standard-modal" class="modal fade" tabindex="-1" role="dialog"
                                     aria-labelledby="standard-modalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -189,7 +134,7 @@ v
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="ukuran" class="form-label">Ukuran</label>
-                                                        <input class="form-control" type="text" id="ukuran" name="ukuran" 
+                                                        <input class="form-control" type="text" id="ukuran" name="ukuran"
                                                             required="" placeholder="X,XL,S,M">
                                                     </div>
                                                     <div class="mb-3">
@@ -200,17 +145,16 @@ v
                                                         <label for="stok" class="form-label">Stok</label>
                                                         <input class="form-control" type="number" required="" name="stok" id="stok" placeholder="10">
                                                     </div>
-                                                    
+
                                                     <div class="mb-3 text-center">
                                                         <button class="btn btn-primary" type="submit">Simpan</button>
                                                     </div>
                                                 </form>
                                             </div>
-                                           
+
                                         </div>
                                     </div>
                                 </div>
->>>>>>> 235237c21c5d8cb3e1f6ea7a7e719d8028f219d9
 
 
 
@@ -232,7 +176,7 @@ v
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="ukuran" class="form-label">Ukuran</label>
-                                                        <input class="form-control" type="text" id="ukuranedit" name="ukuran" 
+                                                        <input class="form-control" type="text" id="ukuranedit" name="ukuran"
                                                             required="">
                                                     </div>
                                                     <div class="mb-3">
@@ -245,13 +189,13 @@ v
 
                                                         <input  type="hidden" name="idvariant" id="idvariant" >
                                                     </div>
-                                                    
+
                                                     <div class="mb-3 text-center">
                                                         <button class="btn btn-primary" type="submit">Simpan</button>
                                                     </div>
                                                 </form>
                                             </div>
-                                           
+
                                         </div>
                                     </div>
                                 </div>
@@ -316,7 +260,7 @@ v
                     $('#hargaedit').val(data.data.harga_produk);
                     $('#stokedit').val(data.data.stok_produk);
 
-                
+
                 }
 
             })

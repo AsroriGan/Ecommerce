@@ -97,7 +97,7 @@
                                                     <td><a href="/editblog/{{ $blog->id }}" class="btn btn-sm  btn-white text-success me-2"><i
                                                                 class="far fa-edit me-1"></i> Edit</a>
 
-                                                        <a id="delete" class="btn btn-sm btn-white text-danger me-2"
+                                                        <a class="btn btn-sm btn-white text-danger me-2 delete"
                                                             data-kategori="{{ $blog->judul_blog }}"
                                                             data-id="{{ $blog->id }}"><i
                                                                 class="far fa-trash-alt me-1"></i>Hapus</a>
@@ -126,7 +126,7 @@
     </script>
 
     <script>
-        $("#delete").click(function() {
+        $(".delete").click(function() {
             var blog = $(this).attr('data-blog');
             var id = $(this).attr('data-id');
             Swal.fire({
