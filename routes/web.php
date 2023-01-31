@@ -76,7 +76,7 @@ Route::get('/test', function () {
     return view('landingpage.testsofyan');
 });
 
-Route::get('/', [LandingpageController::class, 'home'])->name('home');
+Route::get('/', [LandingpageController::class, 'hom e'])->name('home');
 
 ////////CHECKOUT
 Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
