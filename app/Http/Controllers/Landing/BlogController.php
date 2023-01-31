@@ -10,7 +10,8 @@ class BlogController extends Controller
 {
     public function blog(){
         $data=blog::latest()->get();
-        return view('landingpage.landingBlog.blog', compact('data'));
+        $dataa=blog::paginate(3);
+        return view('landingpage.landingBlog.blog', compact('data','dataa'));
     }
 
     public function detailblog($id){
