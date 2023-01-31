@@ -45,33 +45,6 @@ Route::get('/test', function () {
     return view('landingpage.testsofyan');
 });
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
-<<<<<<< HEAD
-//Start Route guest
-Route::group(['middleware' => []], function () {
-    //Home
-    Route::get('/', [LandingpageController::class, 'home'])->name('home');
-    //Categories
-    Route::get('/categories', [LandingKategoriController::class, 'index'])->name('index.kategori');
-    //Produk
-    Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk');
-    Route::get('/detail/{id}', [LandingProdukController::class, 'detail'])->name('detail');
-    Route::get('/detailmodal/{id}', [LandingProdukController::class, 'detailmodal'])->name('detailmodal');
-    Route::post('/get_warna', [LandingProdukController::class, 'get_warna'])->name('get_warna');
-    Route::post('/get_price', [LandingProdukController::class, 'get_price'])->name('get_price');
-    // Blog
-    Route::get('/blogg', [LandingBlogController::class, 'blog']);
-    Route::get('/detailblog/{id}', [LandingBlogController::class, 'detailblog']);
-    // promo
-    Route::get('/promo', [LandingPromoController::class, 'promo']);
-    //login
-    Route::get('/login', [LandingLogincontroller::class, 'login'])->name('login')->middleware('guest');
-    Route::post('/loginpost', [LandingLogincontroller::class, 'loginpost'])->name('loginpost');
-    //register
-    Route::get('/register', [LandingLogincontroller::class, 'register'])->name('register')->middleware('guest');
-    Route::post('/registerpost', [LandingLogincontroller::class, 'registerpost'])->name('registerpost');
-});
-//End Route guest
-=======
 
 // Star Login Admin
 Route::get('/loginadmin', [AdminLogincontroller::class, 'loginadmin'])->name('loginadmin');
@@ -210,7 +183,6 @@ Route::get('/bannerpromosi', [AdminPromosiController::class, 'bannerpromosi'])->
 Route::post('/editbannerpromopost/{id}', [AdminPromosiController::class, 'editbanner'])->name('editbannerpromopost');
 
 
->>>>>>> 5e6a57a4ad30db287609ba3809d61a9bd176f579
 //Route group user
 Route::group(['middleware' => ['auth', 'CekRole:admin,user']], function () {
     //user profile
