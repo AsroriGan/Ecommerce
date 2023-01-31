@@ -4,7 +4,7 @@
             <th>N0 .</th>
             <th>Provinsi</th>
             <th>Kabupaten / Kota</th>
-            <th>Action</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>

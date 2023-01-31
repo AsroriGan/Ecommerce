@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Landing;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Produk;
+use App\Models\Variant;
 use Cart;
 
 class CartController extends Controller
@@ -24,17 +25,18 @@ class CartController extends Controller
         // dd($produk);
         $getfoto = explode(',', $produk->galeri_produk);
         $fotoproduk = $getfoto[0];
+        $variant = Variant::where('produk_id',$produk->id)->where('ukuran_produk',$request->ukuran)->where('warna_produk',$request->warna)->first();
         // dd($fotoproduk);
-        $hargatotal = $produk->harga_diskonproduk * $request->jumlah;
+        $hargatotal = $variant->harga_produk * $request->jumlah;
         // dd($hargatotal);
-        if($request->jumlah > $produk->stok_produk) {
+        if($request->jumlah > $variant->stok_produk) {
             return redirect()->back()->with('error','jumlah melebihi stock');
         } else {
            $iduser = auth()->user()->id;
             Cart::session($iduser)->add(array(
                 'id' => $produk->id,
                 'name' => $produk->nama_produk,
-                'price' => $produk->harga_diskonproduk,
+                'price' => $variant->harga_produk,
                 'quantity' => $request->jumlah,
                 'attributes' => array(
                 'warna' => $request->warna,
@@ -57,20 +59,21 @@ class CartController extends Controller
     {
         // dd($request->all());
         $produk = Produk::where('id',$request->id)->first();
+        $variant = Variant::where('produk_id',$produk->id)->where('ukuran_produk',$request->ukuran)->where('warna_produk',$request->warna)->first();
         // dd($produk);
         $getfoto = explode(',', $produk->galeri_produk);
         $fotoproduk = $getfoto[0];
         // dd($fotoproduk);
-        $hargatotal = $produk->harga_diskonproduk * $request->jumlah;
+        $hargatotal = $variant->harga_produk * $request->jumlah;
         // dd($hargatotal);
-        if($request->jumlah > $produk->stok_produk) {
+        if($request->jumlah > $variant->stok_produk) {
             return redirect()->back()->with('error','jumlah melebihi stock');
         } else {
            $iduser = auth()->user()->id;
             Cart::session($iduser)->add(array(
                 'id' => $produk->id,
                 'name' => $produk->nama_produk,
-                'price' => $produk->harga_diskonproduk,
+                'price' => $variant->harga_produk,
                 'quantity' => $request->jumlah,
                 'attributes' => array(
                 'warna' => $request->warna,

@@ -56,6 +56,7 @@ Route::get('/produk', [LandingProdukController::class, 'produk'])->name('produk'
 Route::get('/detail/{id}', [LandingProdukController::class, 'detail'])->name('detail');
 Route::get('/detailmodal/{id}', [LandingProdukController::class, 'detailmodal'])->name('detailmodal');
 Route::post('/get_warna', [LandingProdukController::class, 'get_warna'])->name('get_warna');
+Route::post('/get_price', [LandingProdukController::class, 'get_price'])->name('get_price');
 
 //cartt
 Route::get('/cart', [LandingCartController::class, 'keranjang'])->name('keranjang')->middleware('auth');
@@ -194,6 +195,9 @@ Route::get('/delete_produk/{id}', [AdminProdukController::class, 'delete_produk'
 //start variant
 Route::get('/variant/{id}', [AdminProdukController::class, 'variant'])->name('variant');
 Route::post('/tambahvariant/{id}', [AdminProdukController::class, 'tambahvariant'])->name('tambahvariant');
+Route::get('/editvariant/{id}', [AdminProdukController::class, 'editvariant'])->name('editvariant');
+Route::post('/editvariantprost', [AdminProdukController::class, 'editvariantprost'])->name('editvariantprost');
+Route::get('/delete_variant/{id}', [AdminProdukController::class, 'delete_variant'])->name('delete_variant');
 
 //end variant
 

@@ -167,7 +167,7 @@
                                                         </div>
                                                     @enderror
                                                 </div>
-                                                <div class="col-md-6 mb-3">
+                                                {{-- <div class="col-md-6 mb-3">
                                                     <label>Stock Produk</label>
                                                     <input name="stok_produk"
                                                         class="form-control @error('stok_produk') is-invalid @enderror"
@@ -175,7 +175,7 @@
                                                     <div class="invalid-feedback">
                                                         Stock Produk Wajib Diisi
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 <div class="col-md-6 mb-3">
                                                     <label>Harga Produk</label>
                                                     <div class="input-group">

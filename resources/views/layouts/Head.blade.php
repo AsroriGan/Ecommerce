@@ -15,7 +15,6 @@
 
     <!-- css Icon Font -->
     <link rel="stylesheet" href="{{asset('assets/css/vendor/ecicons.min.css')}}" />
-
     <!-- css All Plugins Files -->
     <link rel="stylesheet" href="{{asset('assets/css/plugins/animate.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/plugins/swiper-bundle.min.css')}}" />

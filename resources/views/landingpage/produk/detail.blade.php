@@ -189,11 +189,11 @@
                                         <div class="ec-single-price-stoke">
                                             <div class="ec-single-price">
                                                 <span class="ec-single-ps-title">Harga</span>
-                                                <span class="new-price">Rp. {{ $data->harga_diskonproduk }}</span>
+                                                <span class="new-price" id="harga_barang">Rp. {{$data->harga_diskonproduk}}</span>
                                             </div>
                                             <div class="ec-single-stoke">
                                                 <span class="ec-single-ps-title">STOCK</span>
-                                                <span class="ec-single-sku">{{ $data->stok_produk }}</span>
+                                                <span class="ec-single-sku" id="stock_barang"></span>
                                             </div>
                                         </div>
                                         <form action="/cartpost/{{ $data->id }}" method="POST"
@@ -218,10 +218,7 @@
                                                     <div class="ec-pro-variation-content">
                                                         <select class="form-select"
                                                             aria-label="Default select example" name="warna" id="warna"  required>
-                                                            <!-- <option disabled selected>Open this select menu</option>
-                                                            @foreach ($datas as $warna)
-                                                                <option>{{ $warna->warna_produk }}</option>
-                                                            @endforeach -->
+
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1061,10 +1058,28 @@
                 });
             });
         })
-        //  $(document).ready(function() {
-        //     // alert('berhasil');
-        //     
-        // });
+    </script>
+     <script type="text/javascript">
+        $(document).ready(function() {
+           $('#warna').change(function() {
+            //  alert('berhasil')
+                let ik = $(this).val();
+                let id = $('#id_produk').val();
+                let il = $('#ukuran').val();
+                console.log(il);
+                $.ajax({
+                    url: '/get_price',
+                    type: 'post',
+                    data: { "_token": "{{ csrf_token() }}",'ik': ik , 'id': id, 'il': il },
+                    success: function(result) {
+                        // console.log(result.data.harga_produk);
+                        $('#harga_barang').text(result.data.harga_produk);
+                        $('#stock_barang').text(result.data.stok_produk);
+                        // $('#sub_kategori').removeAttr('disabled');
+                    }
+                });
+            });
+        })
     </script>
 
     <script type="text/javascript">
@@ -1078,7 +1093,7 @@
             });
             }
 
-       
+
 
 
 

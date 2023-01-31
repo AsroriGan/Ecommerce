@@ -27,7 +27,7 @@
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Kembali</button>
         <button type="button" class="btn btn-info waves-effect waves-light" onclick="insertdata()">Tambah
-            Merek</button>
+            </button>
         </form>
     </div>
 </div>

@@ -27,16 +27,15 @@ class ProdukController extends Controller
     }
     public function detailmodal($id){
         $detail= Produk::findOrFail($id);
-        $warna_produk = explode(',',$detail->warna_produk);
-        $ukuran_produk = explode(',',$detail->ukuran_produk);
+        $variant = Variant::where('produk_id',$id)->get();
+      
         $tes = explode(',',$detail->galeri_produk);
         $tes2 = $tes[0];
         $galeri_produk = explode(',',$tes2);
         return response()->json([
             'data' => $detail,
-            'warna' => $warna_produk,
-            'ukuran' => $ukuran_produk,
-            'galeri' => $galeri_produk
+            'galeri' => $galeri_produk,
+            'datas' => $variant,
         ]);
     }
 
@@ -52,6 +51,15 @@ class ProdukController extends Controller
             $html.= '<option value="'.$row->warna_produk.'">'.$row->warna_produk.'</option>';
         }
         echo $html;
+    }
+    public function get_price(Request $request){
+        $ik = $request->post('ik');
+        // dd($ik);
+        $id = $request->post('id');
+        $il = $request->post('il');
+        $subkategori = Variant::where('produk_id',$id)->where('ukuran_produk',$il)->where('warna_produk',$ik)->first();
+        // dd( $subkategori);
+        return response()->json([ 'data' => $subkategori]);
     }
 
 
