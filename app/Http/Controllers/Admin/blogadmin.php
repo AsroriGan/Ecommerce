@@ -70,7 +70,7 @@ class blogadmin extends Controller
 
     public function editblog($id){
         $data=blog::findOrFail($id);
-        $relasi=kategoriblog::with('idkategoris')->get();
+        $relasi=kategoriblog::all();
         // dd($relasi);
         // $relasi=blog::with('idblog')->get();
         return view('dashboardadmin.blog.editblog', compact('data','relasi'));

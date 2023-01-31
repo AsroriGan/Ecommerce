@@ -155,7 +155,16 @@
                             </div>
                         </div>
                         <!-- Ec Pagination Start -->
+<<<<<<< HEAD
+                        <div class="ec-pro-pagination">
+                            <span>Showing 1-12 of 21 item(s)</span>
+                            <ul class="ec-pro-pagination-inner">
+                            {{ $dataa->links('vendor.pagination.bootstrap-4') }}
+                            </ul>
+                        </div>
+=======
                         {{$data->links('vendor.pagination.default')}}
+>>>>>>> cc969161a1f62cd94a9f1d091ca4fd85c9b78f75
                         <!-- Ec Pagination End -->
                     </div>
                     <!--Blog content End -->
