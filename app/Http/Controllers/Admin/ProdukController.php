@@ -168,8 +168,9 @@ class ProdukController extends Controller
     }
 
 
-    //Variant 
+    //Variant
     public function variant($id){
+        // $data = Produk::findorfail($id);
         $data = Variant::where('produk_id',$id)->get();
         // dd($data);
         $produk = Produk::find($id);
@@ -208,12 +209,12 @@ class ProdukController extends Controller
         $model->stok_produk = $request->stok;
         $model->save();
         return redirect()->back()->with('success','Data Berhasil Di edit');
-    }   
+    }
     public function delete_variant($id){
         $data = Variant::findorfail($id);
         $data->delete();
         return redirect()->back()->with("success","Data berhasil Dihapus");
-    }    
+    }
 
 
 }
