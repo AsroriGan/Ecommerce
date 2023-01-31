@@ -31,7 +31,7 @@
                         <div class="page-header">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="page-title">Data Kategori / Sub->SubKategori</h3>
+                                    <h3 class="page-title">Data Kategori / Sub-SubKategori</h3>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                                                 class="invoices-settings-btn
                                     invoices-settings-btn-one">
                                                 <button href="#" class="btn" onclick="modaltambah()"><i
-                                                        data-feather="plus-circle"></i>Tambah Item </button>
+                                                        data-feather="plus-circle"></i>Tambah Data </button>
                                             </div>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Tambah Sub->SubKategori</h4>
+                    <h4 class="modal-title">Tambah Sub-SubKategori</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" class="p-4">
@@ -215,22 +215,23 @@
         // Proses Delete Data Sub-SubKategori
         function destroySub_Subkategori(id) {
             Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
+                title: "Apa anda yakin?",
+                text: "Akan menghapus data ini!",
                 type: "warning",
                 showCancelButton: !0,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
+                confirmButtonText: "Ya, Hapus!",
                 confirmButtonClass: "btn btn-primary",
                 cancelButtonClass: "btn btn-danger ml-1",
+                cancelButtonText: "Batal",
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
                     Swal.fire({
                         type: "success",
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
+                        title: "Hapus!",
+                        text: "Anda berhasil menghapus data ini.",
                         confirmButtonClass: "btn btn-success"
                     }).then(function(t) {
                         if (t.value) {
@@ -246,8 +247,8 @@
                     });
                 } else {
                     Swal.fire({
-                        title: "Cancelled",
-                        text: "Your imaginary file is safe :)",
+                        title: "Batal",
+                        text: "Anda batal menghapus data ini :)",
                         type: "error",
                         confirmButtonClass: "btn btn-success"
                     })

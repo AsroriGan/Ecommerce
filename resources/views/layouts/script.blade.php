@@ -5,7 +5,6 @@
 <script src="{{ asset('assets/js/vendor/jquery-migrate-3.3.0.min.js') }}"></script>
 <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
 {{-- <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script> --}}
-
 <!--Plugins JS-->
 <script src="{{ asset('assets/js/plugins/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/nouislider.js') }}"></script>

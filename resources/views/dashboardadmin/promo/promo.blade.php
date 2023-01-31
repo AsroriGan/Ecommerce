@@ -180,7 +180,7 @@
                                                                                 data-bs-dismiss="modal">Kembali</button>
                                                                             <button type="button" onclick="editpromo({{$promo->id}})"
                                                                                 class="btn btn-info waves-effect waves-light">Edit
-                                                                                Promo</button>
+                                                                                </button>
                                                                         </div>
                                                                     </form>
                                                                 </div>

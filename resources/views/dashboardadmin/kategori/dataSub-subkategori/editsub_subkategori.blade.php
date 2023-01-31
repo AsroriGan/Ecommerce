@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="mb-3">
             <label for="field-3" class="form-label">Kategori
-                :</label>
+                </label>
             <select class="form-control" id="kategori" name="kategori" aria-label="Default select example">
                 <option value="{{ $datap->kategori }}" selected>
                     {{ $datap->datakategori->kategori }}
@@ -18,9 +18,8 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="field-3" class="form-label">Sub
-                Kategori
-                :</label>
+            <label for="field-3" class="form-label">SubKategori
+                </label>
             <select class="form-control" id="sub_kategori" name="sub_kategori" aria-label="Default select example">
                 <option value="{{ $datap->sub_kategori }}" selected>
                     {{ $datap->datasubkategori->sub_kategori }}
