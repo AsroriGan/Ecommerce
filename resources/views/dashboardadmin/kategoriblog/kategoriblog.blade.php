@@ -103,6 +103,7 @@
                                                                         class="btn btn-info waves-effect waves-light">Save
                                                                         changes</button>
                                                                 </div>
+                                                            </div>
                                                         </form>
                                                     </div>
                                                 </div>

@@ -77,9 +77,6 @@
                                                 <div class="form-group">
                                                     <label>Description Blog</label>
                                                     <textarea id="editor" name="deskripsi"></textarea>
-                                                    {{-- @error('deskripsi')
-                                                    <div class="alert text-danger">{{ $message }}</div>
-                                                    @enderror --}}
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
