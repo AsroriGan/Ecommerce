@@ -70,9 +70,11 @@
                                     <div class="row form-group">
                                         <label for="name" class="col-sm-3 col-form-label input-label">Name</label>
                                         <div class="col-sm-9">
-                                            <input name="name" type="text" class="form-control" id="name"
+                                            <input name="name" type="text" class="form-control @error('name')
+                                            is-invalid  @enderror" id="name"
                                                 placeholder="Your Name" value="{{ Auth::user()->name }}" >
                                         </div>
+                                    
                                     </div>
                                     <div class="row form-group">
                                         <label for="email"

@@ -15,7 +15,6 @@
 
         <div class="page-wrapper">
             <div class="content container-fluid">
-
                 <div class="page-header">
                     <div class="row">
                         <div class="col">
@@ -27,7 +26,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
@@ -54,12 +52,19 @@
                                                     <td>{{ $no }}</td>
                                                     <td> {{ $kategoriblog->kategoriblog }}
                                                     </td>
-                                                    <td> <button type="button"
+                                                    <td>
+                                                        <button class="btn btn-sm  btn-white text-success me-2" data-bs-toggle="modal"
+                                                            data-bs-target="#con-close-modal{{ $kategoriblog->id }}"><i
+                            class="far fa-edit me-1"></i> Edit</button>
+                                                        {{-- <button type="button"
                                                             class="btn btn-success waves-effect waves-light mt-1"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#con-close-modal{{ $kategoriblog->id }}">
                                                             <i class="fa-solid fa-pen-to-square"></i>
-                                                        </button></td>
+                                                        </button> --}}
+                                                         <button class="btn btn-sm btn-white text-danger me-2 delete" onclick="destroy({{ $kategoriblog->id }})"><i
+                            class="far fa-trash-alt me-1"></i>Hapus</button>
+                                                    </td>
                                                 </tr>
                                                 <!-- Modal -->
                                                 <div id="con-close-modal{{ $kategoriblog->id }}" class="modal fade" tabindex="-1"

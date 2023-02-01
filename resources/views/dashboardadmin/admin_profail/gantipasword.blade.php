@@ -54,24 +54,31 @@
                                         <label for="current_password"
                                             class="col-sm-3 col-form-label input-label">Password Lama</label>
                                         <div class="col-sm-9">
-                                            <input type="password" name="oldpassword" class="form-control" id="current_password"
-                                                placeholder="Masukan Password Lama" >
+                                            <input type="password" name="oldpassword"
+                                                class="form-control @error('oldpassword') is-invalid @enderror "
+                                                id="current_password" placeholder="Masukan Password Lama">
                                         </div>
+
                                     </div>
                                     <div class="row form-group">
-                                        <label for="new_password" class="col-sm-3 col-form-label input-label">Password Baru</label>
+                                        <label for="new_password" class="col-sm-3 col-form-label input-label">Password
+                                            Baru</label>
                                         <div class="col-sm-9">
-                                            <input type="password" name="newpassword" class="form-control" id="new_password"
-                                                placeholder="Masukan Password Baru">
+                                            <input type="password" name="newpassword"
+                                                class="form-control @error('newpassword') is-invalid @enderror"
+                                                id="new_password" placeholder="Masukan Password Baru">
                                         </div>
+                                        @error('newpassword')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                         @enderror
                                     </div>
                                     <div class="row form-group">
                                         <label for="confirm_password"
                                             class="col-sm-3 col-form-label input-label">Confirmasi Password Baru</label>
                                         <div class="col-sm-9">
                                             <div class="mb-3">
-                                                <input type="password" name="newpassword" class="form-control" id="confirm_password"
-                                                    placeholder="Confirmasi Password Baru">
+                                                <input type="password" name="newpassword" class="form-control"
+                                                    id="confirm_password" placeholder="Confirmasi Password Baru">
                                             </div>
                                         </div>
                                     </div>

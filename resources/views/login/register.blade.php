@@ -1,23 +1,23 @@
-
-<!--========================================================= 
+<!--=========================================================
     Item Name: Ekka - Ecommerce HTML Template.
     Author: ashishmaraviya
     Version: 3.3
     Copyright 2022-2023
     Author URI: https://themeforest.net/user/ashishmaraviya
  ============================================================-->
- <!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
- <head>
-     @include('layouts.head')
-    
+<head>
+    @include('layouts.head')
+
 </head>
+
 <body class="cart_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
     <!-- Header start  -->
-   @include('layouts.header')
+    @include('layouts.header')
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
@@ -128,34 +128,49 @@
                     <div class="section-title">
                         <h2 class="ec-bg-title">Register</h2>
                         <h2 class="ec-title">Register</h2>
-                        <p class="sub-title mb-3">Best place to buy and sell digital products</p>
+                        <p class="sub-title mb-3">Please register to be able to buy products in this figure </p>
                     </div>
                 </div>
                 <div class="ec-register-wrapper">
                     <div class="ec-register-container">
                         <div class="ec-register-form">
-                            <form action="registerpost" method="post">
+                            <form action="registerpost" method="post" class="g-3 needs-validation" novalidate>
                                 @csrf
-                                <span class="ec-register-wrap ec-register-half">
+                                <span class="ec-register-wrap ec-register-half mb-26px">
                                     <label>First Name*</label>
-                                    <input type="text" name="firstname" placeholder="Enter your first name" required />
+                                    <input class="form-control mb-0" type="text" name="firstname" placeholder="Enter your first name" required>
+                                    <div class="invalid-feedback">
+                                        Please Enter your First name !
+                                    </div>
                                 </span>
-                                <span class="ec-register-wrap ec-register-half">
+                                <span class="ec-register-wrap ec-register-half mb-26px">
                                     <label>Last Name*</label>
-                                    <input type="text" name="lastname" placeholder="Enter your last name" required />
+                                    <input class="form-control mb-0" type="text" name="lastname" placeholder="Enter your last name" required>
+                                    <div class="invalid-feedback">
+                                        Please Enter your Last name !
+                                    </div>
                                 </span>
-                                <span class="ec-register-wrap ec-register-half">
+                                <span class="ec-register-wrap ec-register-half mb-26px">
                                     <label>Email*</label>
-                                    <input type="email" name="email" placeholder="Silahkan Isi Email" required />
+                                    <input class="form-control mb-0" type="email" name="email" placeholder="Enter your email" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your email !
+                                    </div>
                                 </span>
-                                <span class="ec-register-wrap ec-register-half">
+                                <span class="ec-register-wrap ec-register-half mb-26px">
                                     <label>Phone Number*</label>
-                                    <input type="text" name="phonenumber" placeholder="Silahakan Isi  Nomer Telepon"
-                                        required />
+                                    <input class="form-control mb-0" type="text" name="phonenumber"
+                                        placeholder="Enter your phone number" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your phone number !
+                                    </div>
                                 </span>
                                 <span class="ec-register-wrap">
-                                    <label>Password</label>
-                                    <input type="password" name="password" placeholder="Silahkan Isi Password Anda" />
+                                    <label>Password*</label>
+                                    <input class="form-control mb-0" type="password" name="password" placeholder="Enter your password" required>
+                                    <div class="invalid-feedback">
+                                        please enter your password !
+                                    </div>
                                 </span>
                                 <button class="btn btn-primary">Simpan</button>
                             </form>
@@ -164,7 +179,7 @@
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
 
     <!-- Footer Start -->
     @include('layouts.footer')
@@ -174,49 +189,61 @@
     <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-xs-12">
                             <!-- Swiper -->
                             <div class="qty-product-cover">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
+                                        alt="">
                                 </div>
                             </div>
                             <div class="qty-nav-thumb">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg"
+                                        alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
+                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg"
+                                        alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-7 col-sm-12 col-xs-12">
                             <div class="quickview-pro-content">
-                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse for women</a>
+                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse
+                                        for women</a>
                                 </h5>
                                 <div class="ec-quickview-rating">
                                     <i class="ecicon eci-star fill"></i>
@@ -252,9 +279,12 @@
                                             <ul class="ec-opt-size">
                                                 <li class="active"><a href="#" class="ec-opt-sz"
                                                         data-tooltip="Small">S</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Extra Large">XL</a></li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a>
+                                                </li>
+                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a>
+                                                </li>
+                                                <li><a href="#" class="ec-opt-sz"
+                                                        data-tooltip="Extra Large">XL</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -323,7 +353,8 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
+            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg"
+                    alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -527,6 +558,29 @@
     <!-- Feature tools end -->
 
     @include('layouts.script')
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 
 </body>
 

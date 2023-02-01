@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-12">
         <div class="mb-3">
-            <label for="field-3" class="form-label">Sub-Kategori :</label>
+            <label for="field-3" class="form-label">SubKategori :</label>
             <input type="text" id="sub_kategori" name="sub_kategori" class="form-control" placeholder="Masukan Kategori">
             <div class="invalid-feedback" id="msg-sub_kategori">
                 SubKategori Harus Di Isi
@@ -27,5 +27,5 @@
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary waves-effect"
         data-bs-dismiss="modal">Kembali</button>
-    <button class="btn btn-info waves-effect waves-light" onclick="storesubKategori()">Tambah Kategori</button>
+    <button class="btn btn-info waves-effect waves-light" onclick="storesubKategori()">Tambah</button>
 </div>

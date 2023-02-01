@@ -81,7 +81,7 @@
                                                         </div>
                                                     @enderror
                                                 </div>
-                                                <div class="col-md-6 mb-3">
+                                               <!--  <div class="col-md-6 mb-3">
                                                     <label>Ukuran Produk</label>
                                                     <input id="ukuran_produk" name="ukuran_produk" type="text"
                                                         class="form-control" value="<?php if (old('ukuran_produk')) {
@@ -104,7 +104,7 @@
                                                         }else {
                                                             echo "kuning,biru";
                                                         } ?>">
-                                                </div>
+                                                </div> -->
                                                 <div class="col-md-6 mb-3">
                                                     <label>Berat Produk</label>
                                                     <div class="input-group">
@@ -123,9 +123,9 @@
                                                     <label>Kategori</label>
                                                     <select id="kategori" name="kategori"
                                                         class="form-select @error('kategori') is-invalid  @enderror">
-                                                        <option value="" {{ old("kategori") ? '' : 'selected' ; }}>-- Select --</option>
+                                                        <option value="" {{ old("kategori") ? '' : 'selected'  }}>-- Select --</option>
                                                         @foreach ($kategori as $row)
-                                                            <option value="{{ $row->id }}" {{ old("kategori") == $row->id ? 'selected' : '' ; }} >{{ $row->kategori }}
+                                                            <option value="{{ $row->id }}" {{ old("kategori") == $row->id ? 'selected' : '' }} >{{ $row->kategori }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -167,7 +167,7 @@
                                                         </div>
                                                     @enderror
                                                 </div>
-                                                <div class="col-md-6 mb-3">
+                                                {{-- <div class="col-md-6 mb-3">
                                                     <label>Stock Produk</label>
                                                     <input name="stok_produk"
                                                         class="form-control @error('stok_produk') is-invalid @enderror"
@@ -175,7 +175,7 @@
                                                     <div class="invalid-feedback">
                                                         Stock Produk Wajib Diisi
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 <div class="col-md-6 mb-3">
                                                     <label>Harga Produk</label>
                                                     <div class="input-group">

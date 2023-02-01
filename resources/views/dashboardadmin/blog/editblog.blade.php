@@ -17,7 +17,6 @@
             <div class="content container-fluid">
                 <div class="row">
                     <div class="col-xl-8 offset-xl-2">
-
                         <div class="page-header">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -25,7 +24,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="card">
                             <form action="/updateblog/{{ $data->id }}" method="post" enctype="multipart/form-data">
                                 @csrf
@@ -35,18 +33,21 @@
                                             <div class="col-lg-12 col-md-12">
                                                 <div class="form-group">
                                                     <label>Judul Blog<span class="text-danger">*</span></label>
-                                                    <input name="judul_blog" type="text" class="form-control" value="{{ $data->judul_blog }}">
+                                                    <input name="judul_blog" type="text" class="form-control"
+                                                        value="{{ $data->judul_blog }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-md-12">
                                                 <div class="form-group">
                                                     <label>Kategori Blog<span class="text-danger">*</span></label>
-                                                <select class="form-control" name="kategoriblog" id="">
-                                                    <option value="{{ $data->idblog->id }}">{{ $data->idblog->kategoriblog }}</option>
-                                                    @foreach ($relasi as $relasiii)
-                                                    <option value="{{ $relasiii->id }}">{{ $relasiii->idblog->kategoriblog }}</option>
-                                                    @endforeach
-                                                </select>
+                                                    <select class="form-control" name="kategoriblog" id="">
+                                                        <option value="{{ $data->idblog->id }}">
+                                                            {{ $data->idblog->kategoriblog }}</option>
+                                                        @foreach ($relasi as $kategori)
+                                                            <option value="{{ $kategori->id }}">
+                                                                {{ $kategori->kategoriblog }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="card">
@@ -55,7 +56,8 @@
                                                         <label>Upload Foto Blog <a href="javascript:void(0)"
                                                                 class="custom-file-container__image-clear"
                                                                 title="Clear Image">x</a></label>
-                                                                <img src="{{ asset('blog/'. $data->foto_sampul) }}" height="80px" width="80px" alt="" srcset="">
+                                                        <img src="{{ asset('blog/' . $data->foto_sampul) }}"
+                                                            height="80px" width="80px" alt="" srcset="">
                                                         <label class="custom-file-container__custom-file">
                                                             <input type="file"
                                                                 class="custom-file-container__custom-file__custom-file-input"
@@ -87,7 +89,7 @@
                                                             <label>Upload Foto Produk <a href="javascript:void(0)"
                                                                     class="custom-file-container__image-clear"
                                                                     title="Clear Image">x</a></label>
-                                                                    @foreach (json_decode($data->foto_produk) as $foto)
+                                                            @foreach (json_decode($data->foto_produk) as $foto)
                                                                 <img class="mx-1 my-1"
                                                                     src="{{ asset('fotoprodukblog/' . $foto) }}"
                                                                     alt="" width="80px" height="80px">
@@ -121,7 +123,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </form>
                         </div>
                     </div>

@@ -26,13 +26,13 @@
                     <div class="login-right">
                         <div class="login-right-wrap">
                             <h1>Login</h1>
-                            <p class="account-subtitle">Access to our dashboard</p>
+                            <p class="account-subtitle">Admin</p>
                             <form action="/loginadminproses" method="POST">
                                 {{ csrf_field() }}
                                 <div class="form-group">
-                                    <label class="form-control-label">Email Address</label>
+                                    <label class="form-control-label">Email </label>
                                     <input class="form-control @error('email') is-invalid @enderror" name="email" type="email"
-                                        placeholder="Enter your email" value="{{old('email')}}" autofocus>
+                                        placeholder="Masukan Email Anda" value="{{old('email')}}" autofocus>
                                    @error('email')
                                         <div class="invalid-feedback">Harap Isi Email Dengan Benar</div>
                                     @enderror
@@ -42,7 +42,7 @@
                                     <label class="form-control-label">Password</label>
                                     <div class="pass-group">
                                         <input name="password" id="myInput" type="password" class="form-control pass-input @error('password') is-invalid @enderror "
-                                            placeholder="Enter your password correctly" autofocus>
+                                            placeholder="Masukan Password Anda" autofocus>
                                          
                                         @error('password')
                                         <div class="invalid-feedback">Harap Isi Password</div>
@@ -63,15 +63,15 @@
                                         <div class="col-6">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="cb1">
-                                                <label class="custom-control-label" for="cb1">Remember me</label>
+                                                <label class="custom-control-label" for="cb1">Ingat Saya</label>
                                             </div>
                                         </div>
                                         <div class="col-6 text-end">
-                                            <a class="forgot-link" href="forgot-password.html">Forgot Password ?</a>
+                                            <a class="forgot-link" href="forgot-password.html">Lupa Password ?</a>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-lg btn-block btn-primary w-100" type="submit">Login</button>
+                                <button class="btn btn-lg btn-block btn-primary w-100" type="submit">Masuk</button>
                                 {{-- <div class="login-or">
                                     <span class="or-line"></span>
                                     <span class="span-or">or</span>

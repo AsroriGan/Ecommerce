@@ -13,5 +13,5 @@
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Kembali</button>
     <button class="btn btn-info waves-effect waves-light save_data" onclick="store()">Tambah
-        Kategori</button>
+        </button>
 </div>

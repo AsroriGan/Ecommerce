@@ -43,7 +43,7 @@
                                                 <a href="#" class="btn" data-bs-toggle="modal"
                                                     data-bs-target="#con-close-modal" onclick="modaltambah()">
                                                     <i data-feather="plus-circle"></i>
-                                                    Tambah Data baru
+                                                    Tambah Data
                                                 </a>
                                                 {{-- <button type="button" class="btn
                                             btn-success waves-effect waves-light
@@ -179,23 +179,24 @@
         //delete provinsi
         function deleteprov(id) {
             Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
+                title: "Apa anda yakin?",
+                text: "Akan menghapus data ini!",
                 type: "warning",
                 showCancelButton: !0,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
+                confirmButtonText: "Ya, Hapus!",
                 confirmButtonClass: "btn btn-primary",
                 cancelButtonClass: "btn btn-danger ml-1",
+                cancelButtonText: "Batal",
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
                     // alert('p');
                     Swal.fire({
                             type: "success",
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
+                            title: "Hapus!",
+                            text: "Anda berhasil menghapus data ini.",
                             confirmButtonClass: "btn btn-success"
                         })
                         .then(function(t) {
@@ -218,8 +219,8 @@
                         });
                 } else {
                     Swal.fire({
-                        title: "Cancelled",
-                        text: "Your imaginary file is safe :)",
+                        title: "Batal",
+                        text: "Anda batal menghapus data ini :)",
                         type: "error",
                         confirmButtonClass: "btn btn-success"
                     })

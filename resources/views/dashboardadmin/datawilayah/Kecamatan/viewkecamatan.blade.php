@@ -5,7 +5,7 @@
             <th>Provinsi</th>
             <th>Kabupaten / Kota</th>
             <th>Kecamatan</th>
-            <th>Action</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>

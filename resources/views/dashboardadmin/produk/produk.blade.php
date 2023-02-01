@@ -46,7 +46,7 @@ v
                                             invoices-settings-btn-one">
                                                 <a href="/addproduk" class="btn">
                                                     <i data-feather="plus-circle"></i>
-                                                    Tambah Produk Baru
+                                                    Tambah Produk
                                                 </a>
                                                 {{-- <button type="button" class="btn
                                                 btn-success waves-effect waves-light
@@ -81,7 +81,7 @@ v
                                                 <th>Nama Produk</th>
                                                 <th>Harga</th>
                                                 <th>Diskon</th>
-                                                <th>Stock</th>
+                                                <!-- <th>Stock</th> -->
                                                 <th>Status</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -105,7 +105,7 @@ v
                                                     }
                                                     ?></td>
                                                     <td>{{ $data->diskon }}%</td>
-                                                    <td>{{ $data->stok_produk }}</td>
+                                                    <!-- <td>{{ $data->stok_produk }}</td> -->
                                                     <td>{{ $data->status }}</td>
                                                     <td><a class="btn btn-sm  btn-white text-success me-2"
                                                             href="/variant/{{ $data->id }}"><i
@@ -193,29 +193,30 @@ v
             var nama = $(this).attr('data-nama');
             var id = $(this).attr('data-id');
             Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
+                title: "Apa kamu yakin?",
+                text: "Akan menghapus data ini!",
                 type: "warning",
                 showCancelButton: !0,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
+                confirmButtonText: "Ya, Hapus!",
                 confirmButtonClass: "btn btn-primary",
                 cancelButtonClass: "btn btn-danger ml-1",
+                cancelButtonText: "Batal",
                 buttonsStyling: !1
             }).then(function(t) {
                 if (t.value) {
                     window.location = "/delete_produk/" + id;
                     Swal.fire({
                         type: "success",
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
+                        title: "Hapus!",
+                        text: "Anda berhasil menghapus data ini.",
                         confirmButtonClass: "btn btn-success"
                     })
                 } else {
                     Swal.fire({
-                        title: "Cancelled",
-                        text: "Your imaginary file is safe :)",
+                        title: "Batal",
+                        text: "Anda batal menghapus data ini :)",
                         type: "error",
                         confirmButtonClass: "btn btn-success"
                     })
