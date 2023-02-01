@@ -42,9 +42,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/beranda', function () {
     return view('dashboardadmin.beranda');
 });
-// Route::get('/test', function () {
-//     return view('landingpage.testsofyan');
-// });
+Route::get('/test', function () {
+    return view('landingpage.testsofyan');
+});
 
 Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
 
