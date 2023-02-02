@@ -47,6 +47,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
+Route::get('/loginpayment', [PaymentController::class, 'loginpayment'])->name('loginpayment');
 
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 //Start Route guest

@@ -18,3 +18,35 @@
     width: 350px;
     height: 250px;
 }
+
+/*
+///////////search ////////////////*/
+
+  /* The point of this tutorial is here */
+  .form {
+    display: flex;
+    flex-direction: row;
+  }
+  .search-field {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    border: none;
+    border-radius: 100px;
+    outline: none;
+  }
+
+  .search-button {
+    padding: 0 10px;
+    background: #ccc;
+    border: none;
+    outline: none;
+    margin-left: -33px;
+    border-radius: 0 100px 100px 0;
+  }
+
+  .search-button:hover{
+    cursor:pointer;
+    background:#aaa;
+  }
+
+
