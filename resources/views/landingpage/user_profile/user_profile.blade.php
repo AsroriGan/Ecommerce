@@ -378,7 +378,7 @@
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Region state *</label>
                                         <select name="provinsi" id="regionstate" class="form-select"
-                                            aria-label="Default select example">
+                                            aria-label="Default select example" data-show-subtext="false" data-live-search="true">
                                             @if (Auth::user()->provinsi == null)
                                                 <option value="">-- Region State List --</option>
                                                 @foreach ($regionstate as $row)
@@ -745,6 +745,8 @@
                 });
             });
         });
+    </script>
+    <script>
     </script>
 </body>
 

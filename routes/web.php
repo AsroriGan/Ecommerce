@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\KategoriblogController;
 use App\Http\Controllers\Landing\BlogController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\Admin\PromosiController as AdminPromosiController;
+use App\Http\Controllers\PaymentController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,9 @@ Route::get('/beranda', function () {
 Route::get('/test', function () {
     return view('landingpage.testsofyan');
 });
+
+Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
+
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 //Start Route guest
 Route::group(['middleware' => []], function () {

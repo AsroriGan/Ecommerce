@@ -132,7 +132,7 @@
             </div>
             <div class="row">
             @if ($data1->judul == null && $data2->judul == null && $data3->judul == null)
-                <h1>Tidak Ada Promo</h1>
+                {{-- <h1>Tidak Ada Promo</h1> --}}
             @endif
                 @if ($data1->judul == null)
                 @else

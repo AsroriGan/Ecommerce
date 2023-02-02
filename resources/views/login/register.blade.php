@@ -136,30 +136,30 @@
                         <div class="ec-register-form">
                             <form action="registerpost" method="post" class="g-3 needs-validation" novalidate>
                                 @csrf
-                                <span class="ec-register-wrap ec-register-half">
+                                <span class="ec-register-wrap ec-register-half mb-26px">
                                     <label>First Name*</label>
-                                    <input class="form-control" type="text" name="firstname" placeholder="Enter your first name" required>
+                                    <input class="form-control mb-0" type="text" name="firstname" placeholder="Enter your first name" required>
                                     <div class="invalid-feedback">
                                         Please Enter your First name !
                                     </div>
                                 </span>
-                                <span class="ec-register-wrap ec-register-half">
+                                <span class="ec-register-wrap ec-register-half mb-26px">
                                     <label>Last Name*</label>
-                                    <input class="form-control" type="text" name="lastname" placeholder="Enter your last name" required>
+                                    <input class="form-control mb-0" type="text" name="lastname" placeholder="Enter your last name" required>
                                     <div class="invalid-feedback">
                                         Please Enter your Last name !
                                     </div>
                                 </span>
-                                <span class="ec-register-wrap ec-register-half">
+                                <span class="ec-register-wrap ec-register-half mb-26px">
                                     <label>Email*</label>
-                                    <input class="form-control" type="email" name="email" placeholder="Enter your email" required>
+                                    <input class="form-control mb-0" type="email" name="email" placeholder="Enter your email" required>
                                     <div class="invalid-feedback">
                                         Please enter your email !
                                     </div>
                                 </span>
-                                <span class="ec-register-wrap ec-register-half">
+                                <span class="ec-register-wrap ec-register-half mb-26px">
                                     <label>Phone Number*</label>
-                                    <input class="form-control" type="text" name="phonenumber"
+                                    <input class="form-control mb-0" type="text" name="phonenumber"
                                         placeholder="Enter your phone number" required>
                                     <div class="invalid-feedback">
                                         Please enter your phone number !
@@ -167,7 +167,7 @@
                                 </span>
                                 <span class="ec-register-wrap">
                                     <label>Password*</label>
-                                    <input class="form-control" type="password" name="password" placeholder="Enter your password" required>
+                                    <input class="form-control mb-0" type="password" name="password" placeholder="Enter your password" required>
                                     <div class="invalid-feedback">
                                         please enter your password !
                                     </div>
