@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('datawilayahkecamatan', function (Blueprint $table) {
             $table->id();
-            $table->string('provinsi');
             $table->string('kabupaten');
             $table->string('kecamatan');
             $table->timestamps();

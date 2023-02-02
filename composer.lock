@@ -960,22 +960,6 @@
             "time": "2022-10-26T14:07:24+00:00"
         },
         {
-<<<<<<< HEAD
-            "name": "laravel/framework",
-            "version": "v9.50.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "3b400f76619cd5257a69fdd6b897043b6522a89a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/3b400f76619cd5257a69fdd6b897043b6522a89a",
-                "reference": "3b400f76619cd5257a69fdd6b897043b6522a89a",
-                "shasum": ""
-            },
-            "require": {
-=======
             "name": "kavist/rajaongkir",
             "version": "v1.1.0",
             "source": {
@@ -1041,20 +1025,19 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.50.0",
+            "version": "v9.50.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2ec7083834563e2bb1003ab50d2b6071f3418e75"
+                "reference": "3b400f76619cd5257a69fdd6b897043b6522a89a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2ec7083834563e2bb1003ab50d2b6071f3418e75",
-                "reference": "2ec7083834563e2bb1003ab50d2b6071f3418e75",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3b400f76619cd5257a69fdd6b897043b6522a89a",
+                "reference": "3b400f76619cd5257a69fdd6b897043b6522a89a",
                 "shasum": ""
             },
             "require": {
->>>>>>> b57225902b6a67192410eba71109b9c8ec3b1fc3
                 "brick/math": "^0.9.3|^0.10.2|^0.11",
                 "doctrine/inflector": "^2.0.5",
                 "dragonmantank/cron-expression": "^3.3.2",
@@ -1226,11 +1209,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-<<<<<<< HEAD
             "time": "2023-02-01T17:36:26+00:00"
-=======
-            "time": "2023-02-01T14:04:34+00:00"
->>>>>>> b57225902b6a67192410eba71109b9c8ec3b1fc3
         },
         {
             "name": "laravel/sanctum",

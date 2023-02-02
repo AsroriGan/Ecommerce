@@ -207,51 +207,41 @@
                                                         placeholder="Address Line 1" />
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>City *</label>
+                                                    <label>Province *</label>
                                                     <span class="ec-bl-select-inner">
-                                                        <select name="ec_select_city" id="ec-select-city"
+                                                        <select name="ec_select_city" id="province"
                                                             class="ec-bill-select">
-                                                            <option selected disabled>City</option>
-                                                            <option value="1">City 1</option>
-                                                            <option value="2">City 2</option>
-                                                            <option value="3">City 3</option>
-                                                            <option value="4">City 4</option>
-                                                            <option value="5">City 5</option>
+                                                            <option selected value="null">-- Select Province --
+                                                            </option>
+                                                            @foreach ($provinsi as $prov)
+                                                                <option value="{{ $prov['province_id'] }}">
+                                                                    {{ $prov['province'] }}</option>
+                                                            @endforeach
                                                         </select>
                                                     </span>
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Post Code</label>
+                                                    <label>Distric *</label>
+                                                    <span class="ec-bl-select-inner">
+                                                        <select name="ec_select_country" id="distric"
+                                                            class="ec-bill-select">
+                                                            <option selected>-- Select Distric --</option>
+                                                        </select>
+                                                    </span>
+                                                </span>
+                                                <span class="ec-bill-wrap ec-bill-half">
+                                                    <label>SubDistric *</label>
+                                                    <span class="ec-bl-select-inner">
+                                                        <select name="ec_select_state" id="subdistric"
+                                                            class="ec-bill-select">
+                                                            <option selected>-- Select SubDistric --</option>
+                                                        </select>
+                                                    </span>
+                                                </span>
+                                                <span class="ec-bill-wrap ec-bill-half">
+                                                    <label></label>
                                                     <input type="text" name="postalcode"
                                                         placeholder="Post Code" />
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Country *</label>
-                                                    <span class="ec-bl-select-inner">
-                                                        <select name="ec_select_country" id="ec-select-country"
-                                                            class="ec-bill-select">
-                                                            <option selected disabled>Country</option>
-                                                            <option value="1">Country 1</option>
-                                                            <option value="2">Country 2</option>
-                                                            <option value="3">Country 3</option>
-                                                            <option value="4">Country 4</option>
-                                                            <option value="5">Country 5</option>
-                                                        </select>
-                                                    </span>
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Region State</label>
-                                                    <span class="ec-bl-select-inner">
-                                                        <select name="ec_select_state" id="ec-select-state"
-                                                            class="ec-bill-select">
-                                                            <option selected disabled>Region/State</option>
-                                                            <option value="1">Region/State 1</option>
-                                                            <option value="2">Region/State 2</option>
-                                                            <option value="3">Region/State 3</option>
-                                                            <option value="4">Region/State 4</option>
-                                                            <option value="5">Region/State 5</option>
-                                                        </select>
-                                                    </span>
                                                 </span>
                                             </form>
                                         </div>
@@ -1124,7 +1114,51 @@
 
     <!-- Vendor JS -->
     @include('layouts.script')
+    <script>
+        $(document).ready(function() {
+            $('#province').change(function() {
+                let rsi = $(this).val();
+                let ci = null;
+                alert(ci);
+                $.ajax({
+                    url: '/getkabupaten',
+                    type: 'post',
+                    data: 'rsi=' + rsi + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#distric').html(result);
+                        // $('#distric').removeAttr('disabled');
+                    }
+                });
+                $.ajax({
+                    url: '/getkecamatan',
+                    type: 'post',
+                    data: 'ci=' + ci + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#subdistric').html(result);
+                        // $('#distric').removeAttr('disabled');
+                    }
+                });
 
+            });
+        });
+
+        $(document).ready(function() {
+            $('#distric').change(function() {
+                // alert("p");
+                let ci = $(this).val();
+                // console.log(ci);
+                $.ajax({
+                    url: '/getkecamatan',
+                    type: 'post',
+                    data: 'ci=' + ci + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#subdistric').html(result);
+                        // $('#distric').removeAttr('disabled');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

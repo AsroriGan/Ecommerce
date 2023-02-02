@@ -39,6 +39,7 @@ class CartController extends Controller
                 'price' => $variant->harga_produk,
                 'quantity' => $request->jumlah,
                 'attributes' => array(
+
                 'warna' => $request->warna,
                 'ukuran' => $request->ukuran,
                 'foto' => $fotoproduk,
@@ -76,6 +77,7 @@ class CartController extends Controller
                 'price' => $variant->harga_produk,
                 'quantity' => $request->jumlah,
                 'attributes' => array(
+                    // 'weight' => 
                 'warna' => $request->warna,
                 'ukuran' => $request->ukuran,
                 'foto' => $fotoproduk,
