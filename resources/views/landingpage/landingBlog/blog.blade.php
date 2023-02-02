@@ -120,6 +120,12 @@
     <!-- Ec Blog page -->
     <section class="ec-page-content section-space-p">
         <div class="container">
+
+                <form action="/" method="GET" class="form">
+                  <input type="search" placeholder="Search" class="search-field" />
+                  <button type="submit" class="search-button">Search</button>
+                </form>
+            
             <div class="row">
                 <div class="ec-blogs-rightside col-lg-12 col-md-12">
 
