@@ -267,6 +267,8 @@
                                             <input class="qty-input" type="text" name="jumlah" value="1" />
                                             <input class="qty-input" type="hidden" name="id" value=""
                                                 id="ids" />
+                                            <input class="qty-input" type="hidden" name="weight" value=""
+                                                id="wgt" />
                                         </div>
                                         <div class="ec-quickview-cart ">
                                             <button class="btn btn-primary"><img
@@ -557,6 +559,7 @@
                 success: function(data) {
 
                     $('#ids').val(data.data.id);
+                    $('#wgt').val(data.data.berat_produk);
                     $('#namaproduk').text(data.data.nama_produk);
                     $('#deskripsipendek').text(data.data.deskirpsi_pendek);
                     // if (is_null(data.data.harga_diskonproduk)) {

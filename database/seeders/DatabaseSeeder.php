@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
             PromoSeeder::class,
             BannerpromoSeeder::class,
             sliders::class,
+            Distric::class,
+            LoginSeeder::class,
         ]);
     }
 }
