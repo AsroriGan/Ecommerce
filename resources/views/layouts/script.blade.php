@@ -15,6 +15,9 @@
 <script src="{{ asset('assets/js/plugins/infiniteslidev2.js') }}"></script>
 <script src="{{ asset('assets/js/vendor/jquery.magnific-popup.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/jquery.sticky-sidebar.js') }}"></script>
+{{-- select search css --}}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 <!-- Google translate Js -->
 <script src="{{ asset('assets/js/vendor/google-translate.js') }}"></script>
 <script>

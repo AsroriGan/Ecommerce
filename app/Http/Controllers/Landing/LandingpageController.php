@@ -14,6 +14,7 @@ class LandingpageController extends Controller
     }
 
     public function checkout(){
+        $rajaOngkir = new RajaOngkir('isi_API_key_Anda_disini');
         return view('landingpage.checkout.checkout');
     }
 }
