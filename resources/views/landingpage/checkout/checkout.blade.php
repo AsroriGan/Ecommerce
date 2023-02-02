@@ -445,17 +445,24 @@
                                 <div class="ec-checkout-del">
                                     <div class="ec-del-desc">Please select the preferred shipping method to use on this
                                         order.</div>
-                                    <form action="#">
-                                        <span class="ec-del-option">
+                                    <form action="#" class="row">
+                                        <span class="ec-del-option col-6">
                                             <span>
                                                 <span class="ec-del-opt-head">Free Shipping</span>
                                                 <input type="radio" id="del1" name="radio-group" checked>
                                                 <label for="del1">Rate - $0 .00</label>
                                             </span>
-                                            <span>
+                                            {{-- <span>
                                                 <span class="ec-del-opt-head">Flat Rate</span>
                                                 <input type="radio" id="del2" name="radio-group">
                                                 <label for="del2">Rate - $5.00</label>
+                                            </span> --}}
+                                        </span>
+                                        <span class="ec-del-option col-6">
+                                            <span>
+                                                <span class="ec-del-opt-head">Free Shipping</span>
+                                                <input type="radio" id="del1" name="radio-group" checked>
+                                                <label for="del1">Rate - $0 .00</label>
                                             </span>
                                         </span>
                                     </form>
@@ -537,7 +544,7 @@
                 </div>
                 <div class="ec-checkout-rightside col-lg-12 col-md-12">
                     <div class="ec-sidebar-wrap">
-                       <div class="ec-sidebar-block">
+                        <div class="ec-sidebar-block">
                             <div class="ec-sb-block-content">
                                 <div class="ec-checkout-pay">
                                     <form action="#">
@@ -588,9 +595,9 @@
                     </div>
                     <span class="ec-check-order-btn">
                         <span style="float: right">
-                                <a class="btn btn-primary" href="#">Checkout</a>
-                                </span>
-                            </span>
+                            <a class="btn btn-primary" href="#">Checkout</a>
+                        </span>
+                    </span>
                 </div>
 
     </section>
