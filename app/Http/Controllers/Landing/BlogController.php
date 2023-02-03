@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Landing;
 
+
 use App\Models\blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,8 +10,7 @@ use App\Http\Controllers\Controller;
 class BlogController extends Controller
 {
     public function blog(){
-        $data=blog::latest()->paginate(2);
-        // dd($data);
+        $data=blog::latest()->paginate(3);
         return view('landingpage.landingBlog.blog', compact('data'));
     }
 

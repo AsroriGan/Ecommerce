@@ -207,51 +207,41 @@
                                                         placeholder="Address Line 1" />
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>City *</label>
+                                                    <label>Province *</label>
                                                     <span class="ec-bl-select-inner">
-                                                        <select name="ec_select_city" id="ec-select-city"
+                                                        <select name="ec_select_city" id="province"
                                                             class="ec-bill-select">
-                                                            <option selected disabled>City</option>
-                                                            <option value="1">City 1</option>
-                                                            <option value="2">City 2</option>
-                                                            <option value="3">City 3</option>
-                                                            <option value="4">City 4</option>
-                                                            <option value="5">City 5</option>
+                                                            <option selected value="null">-- Select Province --
+                                                            </option>
+                                                            @foreach ($provinsi as $prov)
+                                                                <option value="{{ $prov['province_id'] }}">
+                                                                    {{ $prov['province'] }}</option>
+                                                            @endforeach
                                                         </select>
                                                     </span>
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Post Code</label>
+                                                    <label>Distric *</label>
+                                                    <span class="ec-bl-select-inner">
+                                                        <select name="ec_select_country" id="distric"
+                                                            class="ec-bill-select">
+                                                            <option selected>-- Select Distric --</option>
+                                                        </select>
+                                                    </span>
+                                                </span>
+                                                <span class="ec-bill-wrap ec-bill-half">
+                                                    <label>SubDistric *</label>
+                                                    <span class="ec-bl-select-inner">
+                                                        <select name="ec_select_state" id="subdistric"
+                                                            class="ec-bill-select">
+                                                            <option selected>-- Select SubDistric --</option>
+                                                        </select>
+                                                    </span>
+                                                </span>
+                                                <span class="ec-bill-wrap ec-bill-half">
+                                                    <label></label>
                                                     <input type="text" name="postalcode"
                                                         placeholder="Post Code" />
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Country *</label>
-                                                    <span class="ec-bl-select-inner">
-                                                        <select name="ec_select_country" id="ec-select-country"
-                                                            class="ec-bill-select">
-                                                            <option selected disabled>Country</option>
-                                                            <option value="1">Country 1</option>
-                                                            <option value="2">Country 2</option>
-                                                            <option value="3">Country 3</option>
-                                                            <option value="4">Country 4</option>
-                                                            <option value="5">Country 5</option>
-                                                        </select>
-                                                    </span>
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Region State</label>
-                                                    <span class="ec-bl-select-inner">
-                                                        <select name="ec_select_state" id="ec-select-state"
-                                                            class="ec-bill-select">
-                                                            <option selected disabled>Region/State</option>
-                                                            <option value="1">Region/State 1</option>
-                                                            <option value="2">Region/State 2</option>
-                                                            <option value="3">Region/State 3</option>
-                                                            <option value="4">Region/State 4</option>
-                                                            <option value="5">Region/State 5</option>
-                                                        </select>
-                                                    </span>
                                                 </span>
                                             </form>
                                         </div>
@@ -273,27 +263,27 @@
                         <!-- Sidebar Summary Block -->
                         <div class="ec-sidebar-block">
                             <div class="ec-sb-title">
-                                <h3 class="ec-sidebar-title">Produk</h3>
+                                <h3 class="ec-sidebar-title title">Product</h3>
                             </div>
                             <div class="ec-sb-block-content">
                                 <div class="ec-checkout-pro">
+                                    @foreach ($data as $produk)
                                     <div class="col-sm-12 mb-6">
                                         <div class="ec-product-inner">
                                             <div class="ec-pro-image-outer">
                                                 <div class="ec-pro-image">
                                                     <a href="product-left-sidebar.html" class="image">
                                                         <img class="main-image"
-                                                            src="assets/images/product-image/1_1.jpg"
+                                                            src="{{asset('fotoproduk/'.$produk->attributes->foto)}}"
                                                             alt="Product" />
-                                                        <img class="hover-image"
+                                                        {{-- <img class="hover-image"
                                                             src="assets/images/product-image/1_2.jpg"
-                                                            alt="Product" />
+                                                            alt="Product" /> --}}
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="ec-pro-content">
-                                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Baby toy
-                                                        teddy bear</a></h5>
+                                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">{{$produk->name}}</a></h5>
                                                 <div class="ec-pro-rating">
                                                     <i class="ecicon eci-star fill"></i>
                                                     <i class="ecicon eci-star fill"></i>
@@ -302,133 +292,26 @@
                                                     <i class="ecicon eci-star"></i>
                                                 </div>
                                                 <span class="ec-price">
-                                                    <span class="old-price">$95.00</span>
-                                                    <span class="new-price">$79.00</span>
+                                                    {{-- @if ()
+                                                    <span class="old-price"></span>
+                                                    @endif --}}
+                                                    <span class="new-price">Rp.{{$produk->attributes->hargatotal}}</span>
                                                 </span>
                                                 <div class="ec-pro-option">
                                                     <div class="ec-pro-color">
                                                         <span class="ec-pro-opt-label">Color</span>
-                                                        <ul class="ec-opt-swatch ec-change-img">
-                                                            <li class="active"><a href="#"
-                                                                    class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/1_1.jpg"
-                                                                    data-src-hover="assets/images/product-image/1_1.jpg"
-                                                                    data-tooltip="Gray"><span
-                                                                        style="background-color:#6d4c36;"></span></a>
-                                                            </li>
-                                                            <li><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/1_2.jpg"
-                                                                    data-src-hover="assets/images/product-image/1_2.jpg"
-                                                                    data-tooltip="Orange"><span
-                                                                        style="background-color:#ffb0e1;"></span></a>
-                                                            </li>
-                                                            <li><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/1_3.jpg"
-                                                                    data-src-hover="assets/images/product-image/1_3.jpg"
-                                                                    data-tooltip="Green"><span
-                                                                        style="background-color:#8beeff;"></span></a>
-                                                            </li>
-                                                            <li><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/1_4.jpg"
-                                                                    data-src-hover="assets/images/product-image/1_4.jpg"
-                                                                    data-tooltip="Sky Blue"><span
-                                                                        style="background-color:#74f8d1;"></span></a>
-                                                            </li>
-                                                        </ul>
+                                                        <span class="ec-del-opt-head">Warna : {{$produk->attributes->warna}}</span>
                                                     </div>
                                                     <div class="ec-pro-size">
                                                         <span class="ec-pro-opt-label">Size</span>
-                                                        <ul class="ec-opt-size">
-                                                            <li class="active"><a href="#" class="ec-opt-sz"
-                                                                    data-old="$95.00" data-new="$79.00"
-                                                                    data-tooltip="Small">S</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$90.00"
-                                                                    data-new="$70.00" data-tooltip="Medium">M</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$80.00"
-                                                                    data-new="$60.00" data-tooltip="Large">X</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$70.00"
-                                                                    data-new="$50.00"
-                                                                    data-tooltip="Extra Large">XL</a>
-                                                            </li>
-                                                        </ul>
+                                                        {{-- <label for="">Ukuran  : {{$produk->attributes->ukuran}}</label> --}}
+                                                        <span class="ec-del-opt-head">Ukuran  : {{$produk->attributes->ukuran}}</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 mb-0">
-                                        <div class="ec-product-inner">
-                                            <div class="ec-pro-image-outer">
-                                                <div class="ec-pro-image">
-                                                    <a href="product-left-sidebar.html" class="image">
-                                                        <img class="main-image"
-                                                            src="assets/images/product-image/8_1.jpg"
-                                                            alt="Product" />
-                                                        <img class="hover-image"
-                                                            src="assets/images/product-image/8_2.jpg"
-                                                            alt="Product" />
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="ec-pro-content">
-                                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Smart I
-                                                        watch 2GB</a></h5>
-                                                <div class="ec-pro-rating">
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star"></i>
-                                                </div>
-                                                <span class="ec-price">
-                                                    <span class="old-price">$58.00</span>
-                                                    <span class="new-price">$45.00</span>
-                                                </span>
-                                                <div class="ec-pro-option">
-                                                    <div class="ec-pro-color">
-                                                        <span class="ec-pro-opt-label">Color</span>
-                                                        <ul class="ec-opt-swatch ec-change-img">
-                                                            <li class="active"><a href="#"
-                                                                    class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/8_2.jpg"
-                                                                    data-src-hover="assets/images/product-image/8_2.jpg"
-                                                                    data-tooltip="Gray"><span
-                                                                        style="background-color:#f3f3f3;"></span></a>
-                                                            </li>
-                                                            <li><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/8_3.jpg"
-                                                                    data-src-hover="assets/images/product-image/8_3.jpg"
-                                                                    data-tooltip="Orange"><span
-                                                                        style="background-color:#fac7f3;"></span></a>
-                                                            </li>
-                                                            <li><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/8_4.jpg"
-                                                                    data-src-hover="assets/images/product-image/8_4.jpg"
-                                                                    data-tooltip="Green"><span
-                                                                        style="background-color:#c5f1ff;"></span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="ec-pro-size">
-                                                        <span class="ec-pro-opt-label">Size</span>
-                                                        <ul class="ec-opt-size">
-                                                            <li class="active"><a href="#" class="ec-opt-sz"
-                                                                    data-old="$48.00" data-new="$45.00"
-                                                                    data-tooltip="Small">S</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$90.00"
-                                                                    data-new="$70.00" data-tooltip="Medium">M</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$80.00"
-                                                                    data-new="$60.00" data-tooltip="Large">X</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$70.00"
-                                                                    data-new="$50.00"
-                                                                    data-tooltip="Extra Large">XL</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -445,6 +328,17 @@
                                 <div class="ec-checkout-del">
                                     <div class="ec-del-desc">Please select the preferred shipping method to use on this
                                         order.</div>
+                                        <span class="ec-bill-wrap ec-bill-half">
+                                            <span class="ec-bl-select-inner">
+                                                <select name="ec_select_country" id="delivery"
+                                                    class="ec-bill-select">
+                                                    <option value="">-- Choose Delivery --</option>
+                                                    <option value="jne">JNE</option>
+                                                    <option value="pos">Pos Indonesia</option>
+                                                    <option value="tiki">TIKI</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                     <form action="#" class="row">
                                         <span class="ec-del-option col-6">
                                             <span>
@@ -1124,7 +1018,70 @@
 
     <!-- Vendor JS -->
     @include('layouts.script')
+    <script>
+        $(document).ready(function() {
+            $('#province').change(function() {
+                let rsi = $(this).val();
+                let ci = null;
+                // alert(ci);
+                $.ajax({
+                    url: '/getkabupaten',
+                    type: 'post',
+                    data: 'rsi=' + rsi + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#distric').html(result);
+                        // $('#distric').removeAttr('disabled');
+                    }
+                });
+                $.ajax({
+                    url: '/getkecamatan',
+                    type: 'post',
+                    data: 'ci=' + ci + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#subdistric').html(result);
+                        // $('#distric').removeAttr('disabled');
+                    }
+                });
 
+            });
+        });
+
+        $(document).ready(function() {
+            $('#distric').change(function() {
+                // alert("p");
+                let ci = $(this).val();
+                // console.log(ci);
+                $.ajax({
+                    url: '/getkecamatan',
+                    type: 'post',
+                    data: 'ci=' + ci + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#subdistric').html(result);
+                        // $('#distric').removeAttr('disabled');
+                    }
+                });
+            });
+        });
+        $(document).ready(function () {
+            $("#delivery").change(function (e) { 
+                e.preventDefault();
+                alert('p');
+                let prov = $("#province").val();
+                let dis = $("#distric").val();
+                // let subdis = $("#subdistric").val();
+                let dev = $(this).val();
+                $.ajax({
+                    type: "get",
+                    url: "/getongkir",
+                    data: {prov:prov,dis:dis,dev:dev},
+                    // dataType: "dataType",
+                    success: function (response) {
+                        
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

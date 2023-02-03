@@ -11,6 +11,7 @@ use App\Models\datawilayahkabupaten;
 use App\Models\datawilayahkecamatan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Kavist\RajaOngkir\Facades\RajaOngkir;
 use Spatie\FlareClient\Http\Response;
 
 class Userprofilecontroller extends Controller
@@ -53,10 +54,12 @@ class Userprofilecontroller extends Controller
     public function getkabupaten(Request $request)
     {
         $rsi = $request->post('rsi');
-        $kabupaten = datawilayahkabupaten::where('provinsi', $rsi)->orderBy('kabupaten', 'asc')->get();
-        $html = '<option value="">-- City List --</option>';
+
+        // $kabupaten = RajaOngkir::where('provinsi', $rsi)->orderBy('kabupaten', 'asc')->get();
+        $kabupaten = RajaOngkir::kota()->dariProvinsi($rsi)->get();
+        $html = '<option value="">-- Select Distric --</option>';
         foreach ($kabupaten as $row) {
-            $html .= '<option value="' . $row->id . '">' . $row->kabupaten . '</option>';
+            $html .= '<option value="' . $row['city_id'] . '">'.$row['type'].' '.$row['city_name'].'</option>';
         }
         echo $html;
     }
@@ -64,7 +67,7 @@ class Userprofilecontroller extends Controller
     {
         $ci = $request->post('ci');
         $Kecamatan = datawilayahkecamatan::where('kabupaten', $ci)->orderBy('kecamatan', 'asc')->get();
-        $html = '<option value="">-- Districs List --</option>';
+        $html = '<option value="">-- Select SubDistric --</option>';
         foreach ($Kecamatan as $row) {
             $html .= '<option value="' . $row->id . '">' . $row->kecamatan . '</option>';
         }
@@ -101,7 +104,7 @@ class Userprofilecontroller extends Controller
         User::whereId(auth()->user()->id)->update([
             'password' => Hash::make($request->newpassword)
         ]);
- 
+
         return back()->with("success", "Password changed successfully!");
     }
 }
