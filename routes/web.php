@@ -10,6 +10,8 @@ use App\Http\Controllers\Landing\Userprofilecontroller as LandingUserprofilecont
 use App\Http\Controllers\Landing\TrackorderController as LandingTrackorderController;
 use App\Http\Controllers\Landing\WhislistController as LandingWhislistController;
 use App\Http\Controllers\Landing\CartController as LandingCartController;
+use App\Http\Controllers\Landing\PaymentController as LandingPaymentController;
+
 
 // Admin
 use App\Http\Controllers\Admin\Logincontroller as AdminLogincontroller;
@@ -46,9 +48,9 @@ Route::get('/test', function () {
     return view('landingpage.testsofyan');
 });
 
-Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
-Route::post('/payment', [PaymentController::class, 'payment_post'])->name('payment_post');
-Route::get('/loginpayment', [PaymentController::class, 'loginpayment'])->name('loginpayment');
+// Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
+// Route::post('/payment', [PaymentController::class, 'payment_post'])->name('payment_post');
+// Route::get('/loginpayment', [PaymentController::class, 'loginpayment'])->name('loginpayment');
 
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
 //Start Route guest
@@ -96,6 +98,8 @@ Route::group(['middleware' => ['auth', 'CekRole:admin,user']], function () {
     //checkout
     Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
     Route::get('/getongkir', [LandingpageController::class, 'getongkir'])->name('getongkir');
+    // Payment
+    Route::get('/payment', [LandingPaymentController::class, 'payment'])->name('payment');
     //Trackorder
     Route::get('/trackorder', [LandingTrackorderController::class, 'indextrack'])->name('trackorder');
     //whislist

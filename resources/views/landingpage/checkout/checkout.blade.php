@@ -363,7 +363,7 @@
                         <!-- Sidebar Summary Block -->
                     </div>
                 </div>
-                <div class="ec-checkout-rightside col-lg-6 col-md-12" style="margin-bottom: 20px;">
+                {{-- <div class="ec-checkout-rightside col-lg-6 col-md-12" style="margin-bottom: 20px;">
                     <div class="ec-sidebar-wrap ec-checkout-pay-wrap">
                         <!-- Sidebar Payment Block -->
                         <div class="ec-sidebar-block">
@@ -431,7 +431,7 @@
                         </div>
                         <!-- Sidebar Payment Block -->
                     </div>
-                </div>
+                </div> --}}
                 <div class="ec-checkout-rightside col-lg-12 col-md-12">
                     <div class="ec-sidebar-wrap">
                         <div class="ec-sidebar-block">
@@ -484,9 +484,12 @@
                         <!-- Sidebar Summary Block -->
                     </div>
                     <span class="ec-check-order-btn">
-                        <span style="float: right">
-                            <a class="btn btn-primary" href="#">Checkout</a>
-                        </span>
+                        <form action="/payment" method="get">
+                            <input type="hidden" name="subtotal" id="subtotal" value="100000">
+                            <span style="float: right">
+                                <button type="submit" class="btn btn-primary" href="#">Checkout</button>
+                            </span>
+                        </form>
                     </span>
                 </div>
 
