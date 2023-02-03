@@ -32,7 +32,19 @@ class LandingpageController extends Controller
             'weight'        => $weight,    // berat barang dalam gram
             'courier'       => $request->dev,    // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
         ])->get();
-        dd($ongkir);
-        return response()->json($ongkir[0]);
+        // dd($ongkir[0]['costs']);
+        $name = $ongkir[0]["name"];
+        // dd($name);
+        $html ="";
+        foreach($ongkir[0]["costs"] as $value){
+            // dd($value);
+            $service = 'service';
+            $OK = 'description';
+            $val = 'value';
+            $etd = 'etd';
+            $cost = 'cost';
+            $html.='<span class="ec-del-option col-12"><span class="w-100"><span class="ec-del-opt-head">'.$name.'</span><input type="radio" id="del1" value="'.$value[$cost][0][$val].'" name="radio-group"><label for="del1" class="f-w500">'.$value[$service].''.' '.''.'('.$value[$OK] .') : '.'Rp. '.''.$value[$cost][0][$val] .''.'('.''.($value[$cost][0][$etd]) .''.' days'.''.')'.'</label></span></span>';
+        }
+        echo $html;
     }
 }

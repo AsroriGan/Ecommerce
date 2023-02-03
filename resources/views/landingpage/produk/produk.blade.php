@@ -557,7 +557,7 @@
                 contentType: false,
                 cache: false,
                 success: function(data) {
-
+                    // console.log(data.datas);
                     $('#ids').val(data.data.id);
                     $('#wgt').val(data.data.berat_produk);
                     $('#namaproduk').text(data.data.nama_produk);

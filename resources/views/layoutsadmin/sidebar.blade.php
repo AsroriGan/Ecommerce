@@ -23,7 +23,7 @@
                     </ul>
                 </li>
                 <li
-                    class="submenu {{ Route::is('datawilayahprovinsi', 'datawilayahkabupaten', 'datawilayahkecamatan') ? 'active' : '' }}">
+                    class="submenu d-none {{ Route::is('datawilayahprovinsi', 'datawilayahkabupaten', 'datawilayahkecamatan') ? 'active' : '' }}">
                     <a href="#"><i data-feather="clipboard"></i> <span>Data wilayah</span> <span
                             class="menu-arrow"></span></a>
                     <ul>
