@@ -340,21 +340,14 @@
                                                 </select>
                                             </span>
                                         </span>
-                                    <div action="#" class="row">
-                                        <span class="ec-del-option col-12">
+                                    <div id="methoddev" class="row">
+                                        {{-- <span class="ec-del-option col-12">
                                             <span class="w-100">
                                                 <span class="ec-del-opt-head">Jalur Nugraha Ekakurir (JNE)</span>
                                                 <input type="radio" id="del1" name="radio-group" checked>
                                                 <label for="del1" class="f-w500">OKE(Ongkos Kirim Ekonomis):20000(2-3 days)</label>
                                             </span>
-                                        </span>
-                                        <span class="ec-del-option col-12">
-                                            <span>
-                                                <span class="ec-del-opt-head">Free Shipping</span>
-                                                <input type="radio" id="del1" name="radio-group" checked>
-                                                <label for="del1">Rate - $0 .00</label>
-                                            </span>
-                                        </span>
+                                        </span> --}}
                                     </div>
                                 </div>
                             </div>
@@ -1079,8 +1072,8 @@
                     url: "/getongkir",
                     data: {prov:prov,dis:dis,dev:dev,wgt:wgt},
                     // dataType: "dataType",
-                    success: function (response) {
-                        console.log(response);
+                    success: function (data) {
+                        $('#methoddev').html(data);
                     }
                 });
             });

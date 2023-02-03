@@ -28,10 +28,11 @@ class ProdukController extends Controller
     public function detailmodal($id){
         $detail= Produk::findOrFail($id);
         $variant = Variant::where('produk_id',$id)->get();
-      
+
         $tes = explode(',',$detail->galeri_produk);
         $tes2 = $tes[0];
         $galeri_produk = explode(',',$tes2);
+        // dd($variant);
         return response()->json([
             'data' => $detail,
             'galeri' => $galeri_produk,
