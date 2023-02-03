@@ -3,10 +3,11 @@
 
 namespace App\Http\Controllers\Landing;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\Variant;
+// use Darryldecode\Cart\Cart;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Cart;
 
 class CartController extends Controller
@@ -33,7 +34,7 @@ class CartController extends Controller
             return redirect()->back()->with('error','jumlah melebihi stock');
         } else {
            $iduser = auth()->user()->id;
-            Cart::session($iduser)->add(array(
+            \Cart::session($iduser)->add(array(
                 'id' => $produk->id,
                 'name' => $produk->nama_produk,
                 'price' => $variant->harga_produk,
