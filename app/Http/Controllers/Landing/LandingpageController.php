@@ -46,5 +46,6 @@ class LandingpageController extends Controller
             $html.='<span class="ec-del-option col-12"><span class="w-100"><span class="ec-del-opt-head">'.$name.'</span><input type="radio" id="del1" value="'.$value[$cost][0][$val].'" name="radio-group"><label for="del1" class="f-w500">'.$value[$service].''.' '.''.'('.$value[$OK] .') : '.'Rp. '.''.$value[$cost][0][$val] .''.'('.''.($value[$cost][0][$etd]) .''.' days'.''.')'.'</label></span></span>';
         }
         echo $html;
+        //j
     }
 }
