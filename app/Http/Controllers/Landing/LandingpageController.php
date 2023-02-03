@@ -20,16 +20,19 @@ class LandingpageController extends Controller
         $userId = auth()->user()->id;
         $data =  \Cart::session($userId)->getContent();
         $subtotal = \Cart::getSubTotal();
+        // dd($data);
         return view('landingpage.checkout.checkout',compact('provinsi','data','subtotal'));
     }
     public function getongkir(Request $request){
-        dd($request->all());
+        // dd($request->all());
+        $weight = array_sum($request->wgt);
         $ongkir = RajaOngkir::ongkosKirim([
             'origin'        => 342,     // ID kota/kabupaten asal
-            'destination'   => 255,      // ID kota/kabupaten tujuan
-            'weight'        => 1000,    // berat barang dalam gram
-            'courier'       => 'jne'    // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
+            'destination'   => $request->dis,      // ID kota/kabupaten tujuan
+            'weight'        => $weight,    // berat barang dalam gram
+            'courier'       => $request->dev,    // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
         ])->get();
         dd($ongkir);
+        return response()->json($ongkir[0]);
     }
 }

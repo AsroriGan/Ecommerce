@@ -307,6 +307,7 @@
                                                         {{-- <label for="">Ukuran  : {{$produk->attributes->ukuran}}</label> --}}
                                                         <span class="ec-del-opt-head">Ukuran  : {{$produk->attributes->ukuran}}</span>
                                                     </div>
+                                                    <input type="hidden" id="weight" value="{{$produk->attributes->weight}}" name="weight[]">
                                                 </div>
                                             </div>
                                         </div>
@@ -339,27 +340,22 @@
                                                 </select>
                                             </span>
                                         </span>
-                                    <form action="#" class="row">
-                                        <span class="ec-del-option col-6">
-                                            <span>
-                                                <span class="ec-del-opt-head">Free Shipping</span>
+                                    <div action="#" class="row">
+                                        <span class="ec-del-option col-12">
+                                            <span class="w-100">
+                                                <span class="ec-del-opt-head">Jalur Nugraha Ekakurir (JNE)</span>
                                                 <input type="radio" id="del1" name="radio-group" checked>
-                                                <label for="del1">Rate - $0 .00</label>
+                                                <label for="del1" class="f-w500">OKE(Ongkos Kirim Ekonomis):20000(2-3 days)</label>
                                             </span>
-                                            {{-- <span>
-                                                <span class="ec-del-opt-head">Flat Rate</span>
-                                                <input type="radio" id="del2" name="radio-group">
-                                                <label for="del2">Rate - $5.00</label>
-                                            </span> --}}
                                         </span>
-                                        <span class="ec-del-option col-6">
+                                        <span class="ec-del-option col-12">
                                             <span>
                                                 <span class="ec-del-opt-head">Free Shipping</span>
                                                 <input type="radio" id="del1" name="radio-group" checked>
                                                 <label for="del1">Rate - $0 .00</label>
                                             </span>
                                         </span>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1063,20 +1059,25 @@
             });
         });
         $(document).ready(function () {
-            $("#delivery").change(function (e) { 
+            $("#delivery").change(function (e) {
                 e.preventDefault();
-                alert('p');
+                // alert('p');
                 let prov = $("#province").val();
                 let dis = $("#distric").val();
+                let wgt = [];
+                $("input[name^='weight']").each(function() {
+                    wgt.push($(this).val());
+                });
+                console.log(wgt);
                 // let subdis = $("#subdistric").val();
                 let dev = $(this).val();
                 $.ajax({
                     type: "get",
                     url: "/getongkir",
-                    data: {prov:prov,dis:dis,dev:dev},
+                    data: {prov:prov,dis:dis,dev:dev,wgt:wgt},
                     // dataType: "dataType",
                     success: function (response) {
-                        
+                        console.log(response);
                     }
                 });
             });
