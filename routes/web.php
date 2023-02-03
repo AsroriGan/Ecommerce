@@ -47,6 +47,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
+Route::post('/payment', [PaymentController::class, 'payment_post'])->name('payment_post');
 Route::get('/loginpayment', [PaymentController::class, 'loginpayment'])->name('loginpayment');
 
 /////////////////////////// END ROUTE LANDING PAGE /////////////////////
@@ -94,6 +95,7 @@ Route::group(['middleware' => ['auth', 'CekRole:admin,user']], function () {
     Route::post('/postcart', [LandingCartController::class, 'postcart'])->name('postcart');
     //checkout
     Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
+    Route::get('/getongkir', [LandingpageController::class, 'getongkir'])->name('getongkir');
     //Trackorder
     Route::get('/trackorder', [LandingTrackorderController::class, 'indextrack'])->name('trackorder');
     //whislist

@@ -22,28 +22,33 @@
     color: #777777;
 }
 
-.mt-22px{
+.mt-22px {
     margin-top: 17px !important;
 }
-.h-55px{
+
+.h-55px {
     height: 55px !important;
 }
-.p-trackorder{
+
+.p-trackorder {
     position: relative;
     top: 6px;
 }
 
-.custom-file-container__image-multi-preview__single-image-clear{
+.custom-file-container__image-multi-preview__single-image-clear {
     display: none !important;
 }
-.tagify{
+
+.tagify {
     height: auto !important;
     padding: 5px !important;
 }
-.img-vproduk{
+
+.img-vproduk {
     /* position: absolute; */
 }
-.edit-delete-img{
+
+.edit-delete-img {
     position: absolute;
     /* left: 142px; */
     /* transform: translate(-50%, -50%); */
@@ -51,27 +56,82 @@
     /* bottom: 224px; */
     z-index: 1;
 }
-.btn-aksi-edit,.btn-aksi-delete{
+
+.btn-aksi-edit,
+.btn-aksi-delete {
     margin-right: 7px;
 }
-.btn-aksi-delete{
+
+.btn-aksi-delete {
     padding: 7px;
-    background-color:#377dff;
+    background-color: #377dff;
     border-radius: 50%;
-    color:#183153;
+    color: #183153;
 }
-.btn-aksi-edit{
+
+.btn-aksi-edit {
     padding: 7px;
-    background-color:#377dff;
+    background-color: #377dff;
     border-radius: 50%;
-    color:#183153;
+    color: #183153;
 }
-.edit-delete-img a:hover{
+
+.edit-delete-img a:hover {
     color: #183153 !important;
 }
-.b-red{
+
+.b-red {
     border: 1px solid #dc3545 !important;
 }
-.mb-26px{
+
+.mb-26px {
     margin-bottom: 26px;
+}
+
+.ec-bl-select-inner {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    border-radius: 0;
+    border: 1px solid #ededed;
+    font-size: 14px;
+    padding: 0;
+    margin-bottom: 27px;
+}
+
+.ec-bl-select-inner::after {
+    content: "\f107";
+    position: absolute;
+    font-family: "EcIcons";
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+    cursor: pointer;
+    pointer-events: none;
+    font-size: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 50px;
+    line-height: 1;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #777777;
+}
+.title{
+    font-size: 20px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0 !important;
+    margin-bottom: 13px !important;
+    text-align: left;
+}
+.f-w500{
+    font-weight: 500;
 }
