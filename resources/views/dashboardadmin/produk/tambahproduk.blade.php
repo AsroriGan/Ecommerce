@@ -58,9 +58,11 @@
                                                     <label>Merk</label>
                                                     <select name="merk_produk"
                                                         class="form-select @error('merk_produk') is-invalid @enderror">
-                                                        <option value="" disabled <?php echo old("merk_produk") ? '' : 'selected' ; ?>>-- Pilih --</option>
+                                                        <option value="" disabled <?php echo old('merk_produk') ? '' : 'selected'; ?>>-- Pilih --
+                                                        </option>
                                                         @foreach ($merk as $row)
-                                                            <option value="{{ $row->id }}" <?php echo old('merk_produk') == $row->id ? 'selected' : '' ; ?>> {{ $row->nama_merek }}
+                                                            <option value="{{ $row->id }}" <?php echo old('merk_produk') == $row->id ? 'selected' : ''; ?>>
+                                                                {{ $row->nama_merek }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -81,7 +83,7 @@
                                                         </div>
                                                     @enderror
                                                 </div>
-                                               <!--  <div class="col-md-6 mb-3">
+                                                <!--  <div class="col-md-6 mb-3">
                                                     <label>Ukuran Produk</label>
                                                     <input id="ukuran_produk" name="ukuran_produk" type="text"
                                                         class="form-control" value="<?php if (old('ukuran_produk')) {
@@ -89,8 +91,8 @@
                                                             $insukuran = array_column($ukuran, 'value');
                                                             $value = implode(',', $insukuran);
                                                             echo $value;
-                                                        }else {
-                                                            echo "26,28";
+                                                        } else {
+                                                            echo '26,28';
                                                         } ?>">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
@@ -101,8 +103,8 @@
                                                             $insukuran = array_column($ukuran, 'value');
                                                             $value = implode(',', $insukuran);
                                                             echo $value;
-                                                        }else {
-                                                            echo "kuning,biru";
+                                                        } else {
+                                                            echo 'kuning,biru';
                                                         } ?>">
                                                 </div> -->
                                                 <div class="col-md-6 mb-3">
@@ -123,9 +125,12 @@
                                                     <label>Kategori</label>
                                                     <select id="kategori" name="kategori"
                                                         class="form-select @error('kategori') is-invalid  @enderror">
-                                                        <option value="" {{ old("kategori") ? '' : 'selected'  }}>-- Select --</option>
+                                                        <option value="" {{ old('kategori') ? '' : 'selected' }}>
+                                                            -- Select --</option>
                                                         @foreach ($kategori as $row)
-                                                            <option value="{{ $row->id }}" {{ old("kategori") == $row->id ? 'selected' : '' }} >{{ $row->kategori }}
+                                                            <option value="{{ $row->id }}"
+                                                                {{ old('kategori') == $row->id ? 'selected' : '' }}>
+                                                                {{ $row->kategori }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -139,12 +144,13 @@
                                                     <label>Sub Kategori</label>
                                                     <select id="sub_kategori" name="sub_kategori"
                                                         class="form-select @error('sub_kategori') is-invalid @enderror">
-                                                        <option value="{{old('sub_kategori')}}" selected><?php if (old('sub_kategori')) {
-                                                            $data = App\Models\subkategori::where("id",old("sub_kategori"))->first();
-                                                            echo $data->sub_kategori;
-                                                        }else {
-                                                            echo "-- Pilih --";
-                                                        } ?></option>
+                                                        <option value="{{ old('sub_kategori') }}" selected>
+                                                            <?php if (old('sub_kategori')) {
+                                                                $data = App\Models\subkategori::where('id', old('sub_kategori'))->first();
+                                                                echo $data->sub_kategori;
+                                                            } else {
+                                                                echo '-- Pilih --';
+                                                            } ?></option>
                                                     </select>
                                                     <div class="invalid-feedback">
                                                         Sub Kategori Wajib Diisi
@@ -153,13 +159,14 @@
                                                 <div class="col-md-6 mb-3">
                                                     <label>Sub-sub Kategori</label>
                                                     <select id="sub_subkategori" name="sub_subkategori"
-                                                        class="form-select select @error('sub_subkategori') is-invalid @enderror">
-                                                        <option value="{{old('sub_subkategori')}}" selected><?php if (old('sub_subkategori')) {
-                                                            $data = App\Models\Sub_Subkategori::where("id",old("sub_subkategori"))->first();
-                                                            echo $data->sub_subkategori;
-                                                        }else {
-                                                            echo "-- Pilih --";
-                                                        } ?></option>
+                                                        class="form-select @error('sub_subkategori') is-invalid @enderror">
+                                                        <option value="{{ old('sub_subkategori') }}" selected>
+                                                            <?php if (old('sub_subkategori')) {
+                                                                $data = App\Models\Sub_Subkategori::where('id', old('sub_subkategori'))->first();
+                                                                echo $data->sub_subkategori;
+                                                            } else {
+                                                                echo '-- Pilih --';
+                                                            } ?></option>
                                                     </select>
                                                     @error('sub_subkategori')
                                                         <div class="invalid-feedback">
@@ -302,7 +309,6 @@
     <!-- End Script -->
     @error('deskirpsi_panjang')
         <script>
-            // $(document)
             $(".note-editor").addClass("b-red");
         </script>
     @enderror
@@ -330,7 +336,6 @@
                 });
             });
         });
-
         $(document).ready(function() {
             $('#sub_kategori').change(function() {
                 let isk = $(this).val();
@@ -345,16 +350,22 @@
                 });
             });
         });
+        $(document).ready(function() {
+            $('input[type="number"]').each(function() {
+                $(this).keyup(function() {
+                    if ($(this).val() > Number($(this).attr("max"))) {
+                        $(this).val(100);
+                    }
+                });
+            });
+        });
     </script>
     <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {
             'use strict'
 
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.querySelectorAll('.needs-validation')
 
-            // Loop over them and prevent submission
             Array.prototype.slice.call(forms)
                 .forEach(function(form) {
                     form.addEventListener('submit', function(event) {
@@ -366,13 +377,6 @@
                     }, false)
                 })
         })()
-    </script>
-    <script>
-        var input1 = document.querySelector('#warna_produk');
-        var input2 = document.querySelector('#ukuran_produk');
-
-        new Tagify(input1);
-        new Tagify(input2);
     </script>
 </body>
 

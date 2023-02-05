@@ -189,7 +189,8 @@
                                         <div class="ec-single-price-stoke">
                                             <div class="ec-single-price">
                                                 <span class="ec-single-ps-title">Harga</span>
-                                                <span class="new-price" id="harga_barang">Rp. {{$data->harga_diskonproduk}}</span>
+                                                <span class="new-price" id="harga_barang">Rp.
+                                                    {{ $data->harga_diskonproduk }}</span>
                                             </div>
                                             <div class="ec-single-stoke">
                                                 <span class="ec-single-ps-title">STOCK</span>
@@ -203,13 +204,16 @@
                                                 <div class="ec-pro-variation-inner ec-pro-variation-size">
                                                     <span>SIZE</span>
                                                     <div class="ec-pro-variation-content">
-                                                        <select name="ukuran" id="ukuran" class="form-select @error('ukuran') is-invalid  @enderror">
+                                                        <select name="ukuran" id="ukuran"
+                                                            class="form-select @error('ukuran') is-invalid  @enderror">
                                                             <option disabled selected>Open this select menu</option>
                                                             @foreach ($datas as $ukuran)
-                                                                <option value="{{$ukuran->ukuran_produk}}">{{ $ukuran->ukuran_produk }}</option>
+                                                                <option value="{{ $ukuran->ukuran_produk }}">
+                                                                    {{ $ukuran->ukuran_produk }}</option>
                                                             @endforeach
                                                         </select>
-                                                        <input type="hidden" name="id_produk" value="{{$data->id}}" id="id_produk">
+                                                        <input type="hidden" name="id_produk"
+                                                            value="{{ $data->id }}" id="id_produk">
                                                     </div>
                                                 </div>
 
@@ -217,7 +221,8 @@
                                                     <span>Color</span>
                                                     <div class="ec-pro-variation-content">
                                                         <select class="form-select"
-                                                            aria-label="Default select example" name="warna" id="warna"  required>
+                                                            aria-label="Default select example" name="warna"
+                                                            id="warna" required>
 
                                                         </select>
                                                     </div>
@@ -619,30 +624,29 @@
 
                                 @endphp
 
-                                    <div>
-                                        <div class="ec-sb-pro-sl-item">
-                                            <a href="/detail/{{$produk->id}}" class="sidekka_pro_img"><img
-                                                src="{{ asset('fotoproduk/' . $fotoproduk) }}""
-                                                    alt="product" /></a>
-                                            <div class="ec-pro-content">
-                                                <h5 class="ec-pro-title"><a
-                                                        href="product-left-sidebar.html">{{ $produk->nama_produk }}</a>
-                                                </h5>
-                                                <div class="ec-pro-rating">
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star"></i>
-                                                </div>
-                                                <span class="ec-price">
-                                                    <span class="old-price">Rp. {{ $produk->harga_asliproduk }}</span>
-                                                    <span class="new-price">Rp. {{ $produk->harga_diskonproduk }}</</span>
-                                                </span>
+                                <div>
+                                    <div class="ec-sb-pro-sl-item">
+                                        <a href="/detail/{{ $produk->id }}" class="sidekka_pro_img"><img
+                                                src="{{ asset('fotoproduk/' . $fotoproduk) }}"" alt="product" /></a>
+                                        <div class="ec-pro-content">
+                                            <h5 class="ec-pro-title"><a
+                                                    href="product-left-sidebar.html">{{ $produk->nama_produk }}</a>
+                                            </h5>
+                                            <div class="ec-pro-rating">
+                                                <i class="ecicon eci-star fill"></i>
+                                                <i class="ecicon eci-star fill"></i>
+                                                <i class="ecicon eci-star fill"></i>
+                                                <i class="ecicon eci-star fill"></i>
+                                                <i class="ecicon eci-star"></i>
                                             </div>
+                                            <span class="ec-price">
+                                                <span class="old-price">Rp. {{ $produk->harga_asliproduk }}</span>
+                                                <span class="new-price">Rp. {{ $produk->harga_diskonproduk }}</<
+                                                        /span>
+                                                </span>
                                         </div>
                                     </div>
-
+                                </div>
                             @endforeach
 
                         </div>
@@ -674,49 +678,46 @@
                             <!-- Swiper -->
                             <div class="qty-product-cover">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="{{asset('assets/images/product-image/3_1.jpg')}}"
-                                        alt="">
+                                    <img class="img-responsive"
+                                        src="{{ asset('assets/images/product-image/3_1.jpg') }}" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="{{asset
-                                    ('assets/images/product-image/3_2.jpg')}}"
-                                        alt="">
+                                    <img class="img-responsive"
+                                        src="{{ asset('assets/images/product-image/3_2.jpg') }}" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="{{asset('assets/images/product-image/3_3.jpg')}}"
-                                        alt="">
+                                    <img class="img-responsive"
+                                        src="{{ asset('assets/images/product-image/3_3.jpg') }}" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="{{asset
-                                    ('assets/images/product-image/3_4.jpg')}}"
-                                        alt="">
+                                    <img class="img-responsive"
+                                        src="{{ asset('assets/images/product-image/3_4.jpg') }}" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="{{asset('assets/images/product-image/3_5.jpg')}}"
-                                        alt="">
+                                    <img class="img-responsive"
+                                        src="{{ asset('assets/images/product-image/3_5.jpg') }}" alt="">
                                 </div>
                             </div>
                             <div class="qty-nav-thumb">
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="{{asset('assets/images/product-image/3_1.jpg')}}"
-                                        alt="">
+                                    <img class="img-responsive"
+                                        src="{{ asset('assets/images/product-image/3_1.jpg') }}" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="{{asset
-                                    ('assets/images/product-image/3_2.jpg')}}"
-                                        alt="">
+                                    <img class="img-responsive"
+                                        src="{{ asset('assets/images/product-image/3_2.jpg') }}" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="{{asset('assets/images/product-image/3_3.jpg')}}"
-                                        alt="">
+                                    <img class="img-responsive"
+                                        src="{{ asset('assets/images/product-image/3_3.jpg') }}" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="{{asset('assets/images/product-image/3_4.jpg')}}"
-                                        alt="">
+                                    <img class="img-responsive"
+                                        src="{{ asset('assets/images/product-image/3_4.jpg') }}" alt="">
                                 </div>
                                 <div class="qty-slide">
-                                    <img class="img-responsive" src="{{asset('assets/images/product-image/3_5.jpg')}}"
-                                        alt="">
+                                    <img class="img-responsive"
+                                        src="{{ asset('assets/images/product-image/3_5.jpg') }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -774,7 +775,8 @@
                                         <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
                                     </div>
                                     <div class="ec-quickview-cart ">
-                                        <button class="btn btn-primary"><img src="{{asset('assets/images/icons/cart.svg')}}"
+                                        <button class="btn btn-primary"><img
+                                                src="{{ asset('assets/images/icons/cart.svg') }}"
                                                 class="svg_img pro_svg" alt="" /> Add To Cart</button>
                                     </div>
                                 </div>
@@ -793,24 +795,28 @@
             <div class="ec-nav-panel">
                 <div class="ec-nav-panel-icons">
                     <a href="#ec-mobile-menu" class="navbar-toggler-btn ec-header-btn ec-side-toggle"><img
-                            src="{{asset('assets/images/icons/menu.svg')}}" class="svg_img header_svg" alt="" /></a>
+                            src="{{ asset('assets/images/icons/menu.svg') }}" class="svg_img header_svg"
+                            alt="" /></a>
                 </div>
                 <div class="ec-nav-panel-icons">
                     <a href="#ec-side-cart" class="toggle-cart ec-header-btn ec-side-toggle"><img
-                            src="{{asset('assets/images/icons/cart.svg')}}" class="svg_img header_svg" alt="" /><span
-                            class="ec-cart-noti ec-header-count cart-count-lable">3</span></a>
+                            src="{{ asset('assets/images/icons/cart.svg') }}" class="svg_img header_svg"
+                            alt="" /><span class="ec-cart-noti ec-header-count cart-count-lable">3</span></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="index.html" class="ec-header-btn"><img src="{{asset('assets/images/icons/home.svg')}}"
-                            class="svg_img header_svg" alt="icon" /></a>
+                    <a href="index.html" class="ec-header-btn"><img
+                            src="{{ asset('assets/images/icons/home.svg') }}" class="svg_img header_svg"
+                            alt="icon" /></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="wishlist.html" class="ec-header-btn"><img src="{{asset('assets/images/icons/wishlist.svg')}}"
-                            class="svg_img header_svg" alt="icon" /><span class="ec-cart-noti">4</span></a>
+                    <a href="wishlist.html" class="ec-header-btn"><img
+                            src="{{ asset('assets/images/icons/wishlist.svg') }}" class="svg_img header_svg"
+                            alt="icon" /><span class="ec-cart-noti">4</span></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="login.html" class="ec-header-btn"><img src="{{asset('assets/images/icons/user.svg')}}"
-                            class="svg_img header_svg" alt="icon" /></a>
+                    <a href="login.html" class="ec-header-btn"><img
+                            src="{{ asset('assets/images/icons/user.svg') }}" class="svg_img header_svg"
+                            alt="icon" /></a>
                 </div>
 
             </div>
@@ -820,7 +826,7 @@
 
     <!-- Recent Purchase Popup  -->
     <div class="recent-purchase">
-        <img src="{{asset('assets/images/product-image/1.jpg')}}" alt="payment image">
+        <img src="{{ asset('assets/images/product-image/1.jpg') }}" alt="payment image">
         <div class="detail">
             <p>Someone in new just bought</p>
             <h6>stylish baby shoes</h6>
@@ -833,8 +839,8 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="{{asset('assets/images/icons/cart.svg')}}" class="svg_img header_svg"
-                    alt="" /></div>
+            <div class="header-icon"><img src="{{ asset('assets/images/icons/cart.svg') }}"
+                    class="svg_img header_svg" alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -859,8 +865,8 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="{{asset('assets/images/whatsapp/profile_01.jpg')}}" class="ec-user-img"
-                                        alt="Profile image">
+                                    <img src="{{ asset('assets/images/whatsapp/profile_01.jpg') }}"
+                                        class="ec-user-img" alt="Profile image">
                                     <span class="ec-status-icon"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -883,8 +889,8 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="{{asset('assets/images/whatsapp/profile_02.jpg')}}" class="ec-user-img"
-                                        alt="Profile image">
+                                    <img src="{{ asset('assets/images/whatsapp/profile_02.jpg') }}"
+                                        class="ec-user-img" alt="Profile image">
                                     <span class="ec-status-icon ec-online"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -907,8 +913,8 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="{{asset('assets/images/whatsapp/profile_03.jpg')}}" class="ec-user-img"
-                                        alt="Profile image">
+                                    <img src="{{ asset('assets/images/whatsapp/profile_03.jpg') }}"
+                                        class="ec-user-img" alt="Profile image">
                                     <span class="ec-status-icon ec-offline"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -931,8 +937,8 @@
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="{{asset('assets/images/whatsapp/profile_04.jpg')}}" class="ec-user-img"
-                                        alt="Profile image">
+                                    <img src="{{ asset('assets/images/whatsapp/profile_04.jpg') }}"
+                                        class="ec-user-img" alt="Profile image">
                                     <span class="ec-status-icon ec-offline"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -956,7 +962,8 @@
         <div class="ec-right-bottom">
             <div class="ec-box">
                 <div class="ec-button rotateBackward">
-                    <img class="whatsapp" src="{{asset('assets/images/common/whatsapp.png')}}" alt="whatsapp icon" />
+                    <img class="whatsapp" src="{{ asset('assets/images/common/whatsapp.png') }}"
+                        alt="whatsapp icon" />
                 </div>
             </div>
         </div>
@@ -1043,14 +1050,18 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-           $('#ukuran').change(function() {
+            $('#ukuran').change(function() {
                 // alert('berhasil');
                 let ik = $(this).val();
                 let id = $('#id_produk').val();
                 $.ajax({
                     url: '/get_warna',
                     type: 'post',
-                    data: { "_token": "{{ csrf_token() }}",'ik': ik , 'id': id },
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        'ik': ik,
+                        'id': id
+                    },
                     success: function(result) {
                         $('#warna').html(result);
                         // $('#sub_kategori').removeAttr('disabled');
@@ -1059,10 +1070,10 @@
             });
         })
     </script>
-     <script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function() {
-           $('#warna').change(function() {
-            //  alert('berhasil')
+            $('#warna').change(function() {
+                //  alert('berhasil')
                 let ik = $(this).val();
                 let id = $('#id_produk').val();
                 let il = $('#ukuran').val();
@@ -1070,7 +1081,12 @@
                 $.ajax({
                     url: '/get_price',
                     type: 'post',
-                    data: { "_token": "{{ csrf_token() }}",'ik': ik , 'id': id, 'il': il },
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        'ik': ik,
+                        'id': id,
+                        'il': il
+                    },
                     success: function(result) {
                         // console.log(result.data.harga_produk);
                         $('#harga_barang').text(result.data.harga_produk);
@@ -1083,20 +1099,16 @@
     </script>
 
     <script type="text/javascript">
-        @if (Session::has('gagal')) {
-            swal({
-                // position: 'top-end',
-                icon: 'warning',
-                title: 'Maaf! Stock Barang Ini Sudah Habis',
-                showConfirmButton: false,
-                timer: 1500
-            });
+        @if (Session::has('gagal'))
+            {
+                swal({
+                    // position: 'top-end',
+                    icon: 'warning',
+                    title: 'Maaf! Stock Barang Ini Sudah Habis',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             }
-
-
-
-
-
     </script>
     <!-- @endif -->
 

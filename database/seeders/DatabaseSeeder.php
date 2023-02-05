@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             sliders::class,
             Distric::class,
             LoginSeeder::class,
+            city::class,
         ]);
     }
 }

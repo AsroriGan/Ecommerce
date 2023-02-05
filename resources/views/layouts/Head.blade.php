@@ -30,8 +30,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
     {{-- css select --}}
-    {{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> --}}
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+    {{-- <link rel="stylesheet" href="{{asset('assets/css/plugins/select2.css')}}"> --}}
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/select22.css')}}">
     <!-- Background css -->
     <link rel="stylesheet" id="bg-switcher-css" href="{{ asset('assets/css/backgrounds/bg-4.css') }}">
 

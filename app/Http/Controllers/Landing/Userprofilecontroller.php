@@ -55,8 +55,9 @@ class Userprofilecontroller extends Controller
     {
         $rsi = $request->post('rsi');
 
-        // $kabupaten = RajaOngkir::where('provinsi', $rsi)->orderBy('kabupaten', 'asc')->get();
-        $kabupaten = RajaOngkir::kota()->dariProvinsi($rsi)->get();
+        $kabupaten = datawilayahkabupaten::where('province_id', $rsi)->orderBy('province_id', 'asc')->get();
+        // $kabupaten = RajaOngkir::kota()->dariProvinsi($rsi)->get();
+        // dd($kabupaten);
         $html = '<option value="">-- Select Distric --</option>';
         foreach ($kabupaten as $row) {
             $html .= '<option value="' . $row['city_id'] . '">'.$row['type'].' '.$row['city_name'].'</option>';

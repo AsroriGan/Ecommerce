@@ -14,9 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('datawilayahkabupaten', function (Blueprint $table) {
-            $table->id();
-            $table->string('provinsi');
-            $table->string('kabupaten');
+            $table->id("city_id");
+            $table->string('province_id');
+            $table->string('province');
+            $table->string('type');
+            $table->string('city_name');
+            $table->string('postal_code');
             $table->timestamps();
         });
     }

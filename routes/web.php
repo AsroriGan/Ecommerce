@@ -47,6 +47,9 @@ Route::get('/beranda', function () {
 Route::get('/test', function () {
     return view('landingpage.testsofyan');
 });
+Route::get('/tz', function () {
+    return view('TZ');
+});
 
 // Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
 // Route::post('/payment', [PaymentController::class, 'payment_post'])->name('payment_post');
