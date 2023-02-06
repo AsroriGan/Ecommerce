@@ -184,23 +184,23 @@
                             <div class="ec-sb-title">
                                 <h3 class="ec-sidebar-title">Summary</h3>
                             </div>
-
-
                             <div class="ec-sb-block-content">
                                 <div class="ec-cart-summary-bottom">
                                     <div class="ec-cart-summary">
                                         <div>
-                                            <span class="text-left">Sub-Total</span>
-                                            <span class="text-right">Rp. {{$subtotal}}</span>
+                                            <span class="text-left">number of products</span>
+                                            <span class="text-right">{{ $total_produk }} Product</span>
                                         </div>
                                         <div>
-                                            <span class="text-left">Delivery Charges</span>
-                                            <span class="text-right">$80.00</span>
+                                            <span class="text-left">total product amount</span>
+                                            <span class="text-right">{{ $total_quantity }} Quantity</span>
                                         </div>
+                                        @foreach ($data as $produk)
                                         <div>
-                                            <span class="text-left">Coupan Discount</span>
-                                            <span class="text-right"><a class="ec-cart-coupan">Apply Coupan</a></span>
+                                            <span class="text-left">Total price of {{ $produk->name }} Products</span>
+                                            <span class="text-right">Rp.{{ $produk->attributes->hargatotal }}</span>
                                         </div>
+                                        @endforeach
                                         <div class="ec-cart-coupan-content">
                                             <form class="ec-cart-coupan-form" name="ec-cart-coupan-form" method="post"
                                                 action="#">
@@ -212,7 +212,7 @@
                                         </div>
                                         <div class="ec-cart-summary-total">
                                             <span class="text-left">Total Amount</span>
-                                            <span class="text-right">$80.00</span>
+                                            <span class="text-right">Rp. {{$subtotal}}</span>
                                         </div>
                                     </div>
 
@@ -237,7 +237,7 @@
     <!-- Footer Area End -->
 
     <!-- Modal -->
-    
+
     <!-- Modal end -->
 
     <!-- Footer navigation panel for responsive display -->

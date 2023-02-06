@@ -16,8 +16,15 @@ class CartController extends Controller
     {
         $userId = auth()->user()->id;
         $data =  Cart::session($userId)->getContent();
+        $total_produk =  Cart::session($userId)->getContent()->count();
+        $quantity = [];
+        foreach ($data as $value) {
+            array_push($quantity, $value->quantity);
+        }
+        $total_quantity = array_sum($quantity);
         $subtotal = \Cart::getSubTotal();
-        return view('landingpage.keranjang.keranjang', compact('data', 'subtotal'));
+        // dd($data);
+        return view('landingpage.keranjang.keranjang', compact('data', 'subtotal','total_produk','total_quantity'));
     }
 
     public function cartpost(Request $request, $id)
