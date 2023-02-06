@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Landing;
 
+use Cart;
 use App\Models\payment;
+use App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -14,6 +17,8 @@ class PaymentController extends Controller
     }
     public function payment(Request $request)
     {
+        $userId = auth()->user()->id;
+        $data =  \Cart::session($userId)->getContent();
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -22,39 +27,25 @@ class PaymentController extends Controller
         \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
-
+        
         $params = array(
             'transaction_details' => array(
                 'order_id' => rand(),
-                'gross_amount' => 10000,
-            ),
-            'item_details' => array(
-                [
-                    "id" => "a01",
-                    "price" => 7000,
-                    "quantity" => 2,
-                    "name" => "Apple"
-                ],
-                [
-                    "id" => "b02",
-                    "price" => 3000,
-                    "quantity" => 2,
-                    "name" => "Orange"
-                ]
+                'gross_amount' => $request->get('subtotal'),
             ),
             'customer_details' => array(
 
-                'first_name' => $request->get('username'),
+                'first_name' => Auth::user()->name,
                 'last_name' => '',
-                'email' => $request->get('email'),
-                'phone' => $request->get('Nohp'),
+                'email' => Auth::user()->email,
+                'phone' => Auth::user()->notelepon,
             ),
         );
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
         // return $snapToken;
-        return view('cobapayment', ['snap_token' => $snapToken]);
+        return view('landingpage.payment.payment', compact('data'), ['snap_token' => $snapToken]);
     }
 
     public function payment_post(request $request){

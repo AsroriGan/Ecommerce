@@ -1,10 +1,3 @@
-<!--=========================================================
-    Item Name: Ekka - Ecommerce HTML Template.
-    Author: ashishmaraviya
-    Version: 3.3
-    Copyright 2022-2023
- Author URI: https://themeforest.net/user/ashishmaraviya
- ============================================================-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -172,7 +165,6 @@
                                         </form>
                                     </div>
                                 </div>
-
                             </div> --}}
                             <div class="ec-checkout-wrap margin-bottom-30 padding-bottom-3">
                                 <div class="ec-checkout-block ec-check-bill">
@@ -208,7 +200,7 @@
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>Province *</label>
-                                                    <span class="ec-bl-select-inner">
+                                                    <span class="ec-bl-select-inner d-flex align-items-center">
                                                         <select name="ec_select_city" id="province"
                                                             class="ec-bill-select">
                                                             <option selected value="null">-- Select Province --
@@ -222,7 +214,7 @@
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>Distric *</label>
-                                                    <span class="ec-bl-select-inner">
+                                                    <span class="ec-bl-select-inner d-flex align-items-center">
                                                         <select name="ec_select_country" id="distric"
                                                             class="ec-bill-select">
                                                             <option selected>-- Select Distric --</option>
@@ -231,7 +223,7 @@
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>SubDistric *</label>
-                                                    <span class="ec-bl-select-inner">
+                                                    <span class="ec-bl-select-inner d-flex align-items-center">
                                                         <select name="ec_select_state" id="subdistric"
                                                             class="ec-bill-select">
                                                             <option selected>-- Select SubDistric --</option>
@@ -251,7 +243,7 @@
 
                             </div>
                             <span class="ec-check-order-btn">
-                                <a class="btn btn-primary" href="#">Place Order</a>
+                                <input type="radio" name="" id="">
                             </span>
                         </div>
                     </div>
@@ -259,7 +251,7 @@
                 </div>
                 <!-- Sidebar Area Start -->
                 <div class="ec-checkout-rightside col-lg-6 col-md-12" style="margin-bottom: 20px;">
-                    <div class="ec-sidebar-wrap">
+                    <div class="ec-sidebar-wrap overflow-auto" style="height:372px">
                         <!-- Sidebar Summary Block -->
                         <div class="ec-sidebar-block">
                             <div class="ec-sb-title">
@@ -268,49 +260,56 @@
                             <div class="ec-sb-block-content">
                                 <div class="ec-checkout-pro">
                                     @foreach ($data as $produk)
-                                    <div class="col-sm-12 mb-6">
-                                        <div class="ec-product-inner">
-                                            <div class="ec-pro-image-outer">
-                                                <div class="ec-pro-image">
-                                                    <a href="product-left-sidebar.html" class="image">
-                                                        <img class="main-image"
-                                                            src="{{asset('fotoproduk/'.$produk->attributes->foto)}}"
-                                                            alt="Product" />
-                                                        {{-- <img class="hover-image"
+                                        <div class="col-sm-12 mb-6">
+                                            <div class="ec-product-inner">
+                                                <div class="ec-pro-image-outer">
+                                                    <div class="ec-pro-image">
+                                                        <a href="product-left-sidebar.html" class="image">
+                                                            <img class="main-image"
+                                                                src="{{ asset('fotoproduk/' . $produk->attributes->foto) }}"
+                                                                alt="Product" />
+                                                            {{-- <img class="hover-image"
                                                             src="assets/images/product-image/1_2.jpg"
                                                             alt="Product" /> --}}
-                                                    </a>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="ec-pro-content">
-                                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">{{$produk->name}}</a></h5>
-                                                <div class="ec-pro-rating">
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star"></i>
-                                                </div>
-                                                <span class="ec-price">
-                                                    {{-- @if ()
+                                                <div class="ec-pro-content">
+                                                    <h5 class="ec-pro-title"><a
+                                                            href="product-left-sidebar.html">{{ $produk->name }}</a>
+                                                    </h5>
+                                                    <div class="ec-pro-rating">
+                                                        <i class="ecicon eci-star fill"></i>
+                                                        <i class="ecicon eci-star fill"></i>
+                                                        <i class="ecicon eci-star fill"></i>
+                                                        <i class="ecicon eci-star fill"></i>
+                                                        <i class="ecicon eci-star"></i>
+                                                    </div>
+                                                    <span class="ec-price">
+                                                        {{-- @if (1 == 1)
                                                     <span class="old-price"></span>
                                                     @endif --}}
-                                                    <span class="new-price">Rp.{{$produk->attributes->hargatotal}}</span>
-                                                </span>
-                                                <div class="ec-pro-option">
-                                                    <div class="ec-pro-color">
-                                                        <span class="ec-pro-opt-label">Color</span>
-                                                        <span class="ec-del-opt-head">Warna : {{$produk->attributes->warna}}</span>
-                                                    </div>
-                                                    <div class="ec-pro-size">
-                                                        <span class="ec-pro-opt-label">Size</span>
-                                                        {{-- <label for="">Ukuran  : {{$produk->attributes->ukuran}}</label> --}}
-                                                        <span class="ec-del-opt-head">Ukuran  : {{$produk->attributes->ukuran}}</span>
+                                                        <span
+                                                            class="new-price">Rp.{{ $produk->attributes->hargatotal }}</span>
+                                                    </span>
+                                                    <div class="ec-pro-option">
+                                                        <div class="ec-pro-color">
+                                                            <span class="ec-pro-opt-label">Color</span>
+                                                            <span class="ec-del-opt-head">Warna :
+                                                                {{ $produk->attributes->warna }}</span>
+                                                        </div>
+                                                        <div class="ec-pro-size">
+                                                            <span class="ec-pro-opt-label">Size</span>
+                                                            {{-- <label for="">Ukuran  : {{$produk->attributes->ukuran}}</label> --}}
+                                                            <span class="ec-del-opt-head">Ukuran :
+                                                                {{ $produk->attributes->ukuran }}</span>
+                                                        </div>
+                                                        <input type="hidden" id="weight"
+                                                            value="{{ $produk->attributes->weight }}" name="weight[]">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -318,7 +317,7 @@
                         <!-- Sidebar Summary Block -->
                     </div>
                 </div>
-                <div class="ec-checkout-rightside col-lg-6 col-md-12">
+                <div class="ec-checkout-rightside col-lg-6 col-md-12" style="margin-bottom: 20px;">
                     <div class="ec-sidebar-wrap ec-checkout-del-wrap">
                         <div class="ec-sidebar-block">
                             <div class="ec-sb-title">
@@ -328,37 +327,18 @@
                                 <div class="ec-checkout-del">
                                     <div class="ec-del-desc">Please select the preferred shipping method to use on this
                                         order.</div>
-                                        <span class="ec-bill-wrap ec-bill-half">
-                                            <span class="ec-bl-select-inner">
-                                                <select name="ec_select_country" id="delivery"
-                                                    class="ec-bill-select">
-                                                    <option value="">-- Choose Delivery --</option>
-                                                    <option value="jne">JNE</option>
-                                                    <option value="pos">Pos Indonesia</option>
-                                                    <option value="tiki">TIKI</option>
-                                                </select>
-                                            </span>
+                                    <span class="ec-bill-wrap ec-bill-half">
+                                        <span class="ec-bl-select-inner">
+                                            <select name="ec_select_country" id="delivery" class="ec-bill-select">
+                                                <option value="">-- Choose Delivery --</option>
+                                                <option value="jne">JNE</option>
+                                                <option value="pos">Pos Indonesia</option>
+                                                <option value="tiki">TIKI</option>
+                                            </select>
                                         </span>
-                                    <form action="#" class="row">
-                                        <span class="ec-del-option col-6">
-                                            <span>
-                                                <span class="ec-del-opt-head">Free Shipping</span>
-                                                <input type="radio" id="del1" name="radio-group" checked>
-                                                <label for="del1">Rate - $0 .00</label>
-                                            </span>
-                                            {{-- <span>
-                                                <span class="ec-del-opt-head">Flat Rate</span>
-                                                <input type="radio" id="del2" name="radio-group">
-                                                <label for="del2">Rate - $5.00</label>
-                                            </span> --}}
-                                        </span>
-                                        <span class="ec-del-option col-6">
-                                            <span>
-                                                <span class="ec-del-opt-head">Free Shipping</span>
-                                                <input type="radio" id="del1" name="radio-group" checked>
-                                                <label for="del1">Rate - $0 .00</label>
-                                            </span>
-                                        </span>
+                                    </span>
+                                    <form id="methoddev" class="row">
+
                                     </form>
                                 </div>
                             </div>
@@ -367,7 +347,7 @@
                         <!-- Sidebar Summary Block -->
                     </div>
                 </div>
-                <div class="ec-checkout-rightside col-lg-6 col-md-12" style="margin-bottom: 20px;">
+                {{-- <div class="ec-checkout-rightside col-lg-6 col-md-12" style="margin-bottom: 20px;">
                     <div class="ec-sidebar-wrap ec-checkout-pay-wrap">
                         <!-- Sidebar Payment Block -->
                         <div class="ec-sidebar-block">
@@ -435,7 +415,7 @@
                         </div>
                         <!-- Sidebar Payment Block -->
                     </div>
-                </div>
+                </div> --}}
                 <div class="ec-checkout-rightside col-lg-12 col-md-12">
                     <div class="ec-sidebar-wrap">
                         <div class="ec-sidebar-block">
@@ -459,11 +439,12 @@
                                 <div class="ec-checkout-summary">
                                     <div>
                                         <span class="text-left">Sub-Total</span>
-                                        <span class="text-right">$80.00</span>
+                                        <span class="text-right" id="subtotal"
+                                            data-subtotal="{{ $subtotal }}">Rp.{{ $subtotal }}</span>
                                     </div>
                                     <div>
                                         <span class="text-left">Delivery Charges</span>
-                                        <span class="text-right">$80.00</span>
+                                        <span class="text-right" id="DeliveryCharges">Rp.0</span>
                                     </div>
                                     <div>
                                         <span class="text-left">Coupan Discount</span>
@@ -480,7 +461,7 @@
                                     </div>
                                     <div class="ec-checkout-summary-total">
                                         <span class="text-left">Total Amount</span>
-                                        <span class="text-right">$80.00</span>
+                                        <span class="text-right" id="total">Rp.{{ $subtotal }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -488,9 +469,12 @@
                         <!-- Sidebar Summary Block -->
                     </div>
                     <span class="ec-check-order-btn">
-                        <span style="float: right">
-                            <a class="btn btn-primary" href="#">Checkout</a>
-                        </span>
+                        <form action="/payment" method="get">
+                            <input type="hidden" name="subtotal" id="subtotal" value="100000">
+                            <span style="float: right">
+                                <button type="submit" class="btn btn-primary" href="#">Checkout</button>
+                            </span>
+                        </form>
                     </span>
                 </div>
 
@@ -1018,6 +1002,9 @@
 
     <!-- Vendor JS -->
     @include('layouts.script')
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#province').change(function() {
@@ -1062,25 +1049,60 @@
                 });
             });
         });
-        $(document).ready(function () {
-            $("#delivery").change(function (e) { 
+        $(document).ready(function() {
+            $("#delivery").change(function(e) {
                 e.preventDefault();
-                alert('p');
+                // alert('p');
                 let prov = $("#province").val();
                 let dis = $("#distric").val();
+                let wgt = [];
+                $("input[name^='weight']").each(function() {
+                    wgt.push($(this).val());
+                });
+                console.log(wgt);
                 // let subdis = $("#subdistric").val();
                 let dev = $(this).val();
                 $.ajax({
                     type: "get",
                     url: "/getongkir",
-                    data: {prov:prov,dis:dis,dev:dev},
+                    data: {
+                        prov: prov,
+                        dis: dis,
+                        dev: dev,
+                        wgt: wgt
+                    },
                     // dataType: "dataType",
-                    success: function (response) {
-                        
+                    success: function(data) {
+                        $('#methoddev').html(data);
+                        $(document).ready(function() {
+                            $(".ongkir").change(function(e) {
+                                e.preventDefault();
+                                let val = $(this).val();
+                                let subtotal = $("#subtotal").attr(
+                                    "data-subtotal");
+                                $("#DeliveryCharges").text("Rp." + val);
+                                let total = parseInt(subtotal) + parseInt(val);
+                                $("#total").text("Rp." + total);
+                            });
+                        });
                     }
                 });
             });
         });
+    </script>
+    <script>
+        $(".ec-bill-select:eq(0),.ec-bill-select:eq(1),.ec-bill-select:eq(2)").select2({
+            // placeholder: "Select a programming language",
+            // allowClear: true
+            // tags: true,
+            // dropdownParent: $('#modal), // if select in modal
+            // theme: "bootstrap",
+            // theme: "bootstrap-5",
+            // width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+            // placeholder: $(this).data('placeholder'),
+            // closeOnSelect: false,
+        });
+        $("#tes").select2();
     </script>
 </body>
 
