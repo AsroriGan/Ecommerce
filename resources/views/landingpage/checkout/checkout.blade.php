@@ -1091,17 +1091,7 @@
         });
     </script>
     <script>
-        $(".ec-bill-select:eq(0),.ec-bill-select:eq(1),.ec-bill-select:eq(2)").select2({
-            // placeholder: "Select a programming language",
-            // allowClear: true
-            // tags: true,
-            // dropdownParent: $('#modal), // if select in modal
-            // theme: "bootstrap",
-            // theme: "bootstrap-5",
-            // width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
-            // placeholder: $(this).data('placeholder'),
-            // closeOnSelect: false,
-        });
+        $(".ec-bill-select:eq(0),.ec-bill-select:eq(1),.ec-bill-select:eq(2)").select2({});
         $("#tes").select2();
     </script>
 </body>
