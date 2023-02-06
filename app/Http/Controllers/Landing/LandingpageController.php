@@ -22,7 +22,9 @@ class LandingpageController extends Controller
         $provinsi = RajaOngkir::provinsi()->all();
         $userId = auth()->user()->id;
         $data =  \Cart::session($userId)->getContent();
+        // dd($data);
         $subtotal = \Cart::getSubTotal();
+        // dd($data);
         if ($subtotal == null) {
             return redirect('/')->with("error", "Keranjang Anda kosong");
         } else {

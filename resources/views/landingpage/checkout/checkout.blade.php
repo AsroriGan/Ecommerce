@@ -423,7 +423,7 @@
                     </div>
                     <span class="ec-check-order-btn">
                         <form action="/payment" method="get">
-                            <input type="hidden" name="subtotal" id="subtotal" value="">
+                            <input type="hidden" name="subtotal" id="hargatotal" value="">
                             <span style="float: right">
                                 <button type="submit" class="btn btn-primary" href="#">Checkout</button>
                             </span>
@@ -1030,6 +1030,7 @@
                                     "data-subtotal");
                                 $("#DeliveryCharges").text("Rp." + val);
                                 let total = parseInt(subtotal) + parseInt(val);
+                                $("#hargatotal").val(total);
                                 $("#total").text("Rp." + total);
                             });
                         });

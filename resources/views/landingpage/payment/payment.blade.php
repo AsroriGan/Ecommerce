@@ -114,93 +114,6 @@
     <section class="ec-page-content section-space-p">
         <div class="container">
             <div class="row">
-                <div class="ec-checkout-leftside col-lg-6 col-md-12 ">
-                    <!-- checkout content Start -->
-                    <div class="ec-checkout-content">
-                        <div class="ec-checkout-inner">
-                            <div class="ec-checkout-wrap margin-bottom-30 padding-bottom-3">
-                                <div class="ec-checkout-block ec-check-bill">
-                                    <h3 class="ec-checkout-title">Billing Details</h3>
-                                    <div class="ec-bl-block-content">
-                                        <div class="ec-check-subtitle">Checkout Options</div>
-                                        <span class="ec-bill-option">
-                                            <span>
-                                                <input type="radio" id="bill1" name="radio-group">
-                                                <label for="bill1">I want to use an existing address</label>
-                                            </span>
-                                            <span>
-                                                <input type="radio" id="bill2" name="radio-group" checked>
-                                                <label for="bill2">I want to use new address</label>
-                                            </span>
-                                        </span>
-                                        <div class="ec-check-bill-form">
-                                            <form action="#" method="post">
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>First Name*</label>
-                                                    <input type="text" name="firstname"
-                                                        placeholder="Enter your first name" required />
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Last Name*</label>
-                                                    <input type="text" name="lastname"
-                                                        placeholder="Enter your last name" required />
-                                                </span>
-                                                <span class="ec-bill-wrap">
-                                                    <label>Address</label>
-                                                    <input type="text" name="address"
-                                                        placeholder="Address Line 1" />
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Province *</label>
-                                                    <span class="ec-bl-select-inner d-flex align-items-center">
-                                                        <select name="ec_select_city" id="province"
-                                                            class="ec-bill-select">
-                                                            <option selected value="null">-- Select Province --
-                                                            </option>
-                                                            @foreach ($provinsi as $prov)
-                                                                <option value="{{ $prov['province_id'] }}">
-                                                                    {{ $prov['province'] }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </span>
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Distric *</label>
-                                                    <span class="ec-bl-select-inner d-flex align-items-center">
-                                                        <select name="ec_select_country" id="distric"
-                                                            class="ec-bill-select">
-                                                            <option selected>-- Select Distric --</option>
-                                                        </select>
-                                                    </span>
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>SubDistric *</label>
-                                                    <span class="ec-bl-select-inner d-flex align-items-center">
-                                                        <select name="ec_select_state" id="subdistric"
-                                                            class="ec-bill-select">
-                                                            <option selected>-- Select SubDistric --</option>
-                                                        </select>
-                                                    </span>
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label></label>
-                                                    <input type="text" name="postalcode"
-                                                        placeholder="Post Code" />
-                                                </span>
-                                            </form>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <span class="ec-check-order-btn">
-                                <input type="radio" name="" id="">
-                            </span>
-                        </div>
-                    </div>
-                    <!--cart content End -->
-                </div>
                 <div class="ec-checkout-rightside col-lg-6 col-md-12" style="margin-bottom: 20px;">
                     <div class="ec-sidebar-wrap overflow-auto" style="height:372px">
                         <!-- Sidebar Summary Block -->
@@ -267,6 +180,31 @@
                         </div>
                         <!-- Sidebar Summary Block -->
                     </div>
+
+
+                </div>
+                <div class="ec-checkout-leftside col-lg-6 col-md-12 ">
+                    <!-- checkout content Start -->
+                    <div class="ec-checkout-content">
+                        <div class="ec-checkout-inner">
+                            <div class="ec-checkout-wrap margin-bottom-30 padding-bottom-3">
+                                <div class="ec-checkout-block ec-check-bill">
+                                    <h3 class="ec-checkout-title">Details Costumer</h3>
+                                    <div class="ec-bl-block-content">
+                                        <div class="ec-check-subtitle">Checkout Options</div>
+                                        <span class="ec-bill-option">
+                                            <span>{{ Auth::user()->name }}</span> <br>
+                                            <span>{{ Auth::user()->alamat }}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="ec-check-order-btn">
+                                <input type="radio" name="" id="">
+                            </span>
+                        </div>
+                    </div>
+                    <!--cart content End -->
                     <div class="ec-sidebar-wrap">
                         <!-- Sidebar Summary Block -->
                         <div class="ec-sidebar-block">
@@ -277,16 +215,18 @@
                                 <div class="ec-checkout-summary">
                                     <div class="ec-checkout-summary-total">
                                         <span class="text-left">Total Bayar</span>
-                                        <span class="text-right" id="total">Rp.{{ $subtotal }}</span>
+                                        <span class="text-right" id="total">Rp.{{ $total }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Sidebar Summary Block -->
                     </div>
-                    <button class="btn btn-primary" style="position: sticky; left:1360px" id="pay-button">Checkout</button>
-
+                    <button class="btn btn-primary" style="position: sticky; left:1360px"
+                    id="pay-button">Checkout</button>
                 </div>
+
+
                 {{-- <span class="button">
                     <button class="btn btn-primary" style="position: sticky; left:1360px" id="pay-button">Checkout</button>
                 </span> --}}

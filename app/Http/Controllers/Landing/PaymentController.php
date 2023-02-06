@@ -22,6 +22,7 @@ class PaymentController extends Controller
         $subtotal = \Cart::getSubTotal();
         $userId = auth()->user()->id;
         $data =  \Cart::session($userId)->getContent();
+        $total = $request->get('subtotal');
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -47,7 +48,7 @@ class PaymentController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
         // return $snapToken;
-        return view('landingpage.payment.payment', compact('data','provinsi','subtotal'), ['snap_token' => $snapToken]);
+        return view('landingpage.payment.payment', compact('data','provinsi','subtotal', 'total'), ['snap_token' => $snapToken]);
     }
 
     public function payment_post(request $request){
