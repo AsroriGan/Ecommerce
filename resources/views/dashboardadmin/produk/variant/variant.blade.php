@@ -30,7 +30,7 @@ v
 
                 <div class="row">
                     <div class="col-6">
-                        <h3 class="page-title">Variant {{$produk->nama_produk}}</h3>
+                        <h3 class="page-title">Variant Produk {{$produk->nama_produk}}</h3>
                         {{-- <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Kategori</a></li>
                             </ul> --}}
