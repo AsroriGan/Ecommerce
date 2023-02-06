@@ -23,6 +23,7 @@ class LandingpageController extends Controller
         $userId = auth()->user()->id;
         $data =  \Cart::session($userId)->getContent();
         $subtotal = \Cart::getSubTotal();
+        // dd($data);
         if ($subtotal == null) {
             return redirect('/')->with("error", "Keranjang Anda kosong");
         } else {
