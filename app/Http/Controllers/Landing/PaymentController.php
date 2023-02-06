@@ -8,6 +8,7 @@ use App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Kavist\RajaOngkir\Facades\RajaOngkir;
 
 class PaymentController extends Controller
 {
@@ -17,6 +18,8 @@ class PaymentController extends Controller
     }
     public function payment(Request $request)
     {
+        $provinsi = RajaOngkir::provinsi()->all();
+        $subtotal = \Cart::getSubTotal();
         $userId = auth()->user()->id;
         $data =  \Cart::session($userId)->getContent();
         // Set your Merchant Server Key
@@ -27,7 +30,6 @@ class PaymentController extends Controller
         \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
-        
         $params = array(
             'transaction_details' => array(
                 'order_id' => rand(),
@@ -45,7 +47,7 @@ class PaymentController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
         // return $snapToken;
-        return view('landingpage.payment.payment', compact('data'), ['snap_token' => $snapToken]);
+        return view('landingpage.payment.payment', compact('data','provinsi','subtotal'), ['snap_token' => $snapToken]);
     }
 
     public function payment_post(request $request){

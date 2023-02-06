@@ -28,7 +28,7 @@ class LandingpageController extends Controller
         }
     }
     public function getongkir(Request $request){
-        // dd($request->all());
+        dd($request->all());
         $weight = array_sum($request->wgt);
         $ongkir = RajaOngkir::ongkosKirim([
             'origin'        => 342,     // ID kota/kabupaten asal
