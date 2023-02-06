@@ -423,7 +423,11 @@
                     </div>
                     <span class="ec-check-order-btn">
                         <form action="/payment" method="get">
+<<<<<<< HEAD
                             <input type="hidden" name="subtotal" id="hargatotal" value="">
+=======
+                            <input type="hidden" name="subtotal" id="subtol" value="100000">
+>>>>>>> 43f95994e04986812385304d6416645c15e7d01a
                             <span style="float: right">
                                 <button type="submit" class="btn btn-primary" href="#">Checkout</button>
                             </span>
@@ -974,10 +978,13 @@
                     }
                 });
                 //validasi
+                let subtotal = $("#subtotal").attr("data-subtotal");
                 $("#methoddev").empty();
                 $('#subdistric').html('<option value="">-- Select SubDistric --</option>');
                 $("#delivery option[value='']").removeAttr("selected", "selected");
                 $("#delivery option[value='']").attr("selected", "selected");
+                $("#DeliveryCharges").text("Rp.0");
+                $("#total").text("Rp."+subtotal);
             });
         });
 
@@ -995,6 +1002,26 @@
                         // $('#distric').removeAttr('disabled');
                     }
                 });
+                //validasi
+                let subtotal = $("#subtotal").attr("data-subtotal");
+                $("#methoddev").empty();
+                // $('#subdistric').html('<option value="">-- Select SubDistric --</option>');
+                $("#delivery option[value='']").removeAttr("selected", "selected");
+                $("#delivery option[value='']").attr("selected", "selected");
+                $("#DeliveryCharges").text("Rp.0");
+                $("#total").text("Rp."+subtotal);
+            });
+        });
+        $(document).ready(function () {
+            $("#subdistric").change(function (e) {
+                e.preventDefault();
+                //validasi
+                let subtotal = $("#subtotal").attr("data-subtotal");
+                $("#methoddev").empty();
+                $("#delivery option[value='']").removeAttr("selected", "selected");
+                $("#delivery option[value='']").attr("selected", "selected");
+                $("#DeliveryCharges").text("Rp.0");
+                $("#total").text("Rp."+subtotal);
             });
         });
         $(document).ready(function() {
