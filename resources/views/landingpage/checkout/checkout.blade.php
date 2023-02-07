@@ -423,11 +423,7 @@
                     </div>
                     <span class="ec-check-order-btn">
                         <form action="/payment" method="get">
-<<<<<<< HEAD
                             <input type="hidden" name="subtotal" id="hargatotal" value="">
-=======
-                            <input type="hidden" name="subtotal" id="subtol" value="100000">
->>>>>>> 43f95994e04986812385304d6416645c15e7d01a
                             <span style="float: right">
                                 <button type="submit" class="btn btn-primary" href="#">Checkout</button>
                             </span>
