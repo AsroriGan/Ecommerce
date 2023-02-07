@@ -108,9 +108,9 @@
                                                     <ul>
                                                         <li><strong>Home : </strong>
                                                             @if (Auth::user()->provinsi != null)
-                                                                {{ Auth::user()->user_datawilayah->provinsi }},
-                                                                {{ Auth::user()->user_datawilayahkabupaten->kabupaten }},
-                                                                {{ Auth::user()->user_datawilayahkecamatan->kecamatan }},
+                                                                {{ $province_user['province'] }},
+                                                                {{ $Distric_user['type'] }} {{ $Distric_user['city_name'] }},
+                                                                {{ $SubDistric_user->kecamatan }},
                                                                 67171
                                                             @endif
                                                         </li>
@@ -316,7 +316,7 @@
     <!-- Footer Area End -->
 
     <!-- Modal -->
-    <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog">
+    <div class="modal fade show" id="edit_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -376,43 +376,43 @@
                                             class="form-control" placeholder="Street Name, Building, No. Home">
                                     </div>
                                     <div class="col-md-6 space-t-15">
-                                        <label class="form-label">Region state *</label>
+                                        <label class="form-label">Province *</label>
                                         <select name="provinsi" id="regionstate" class="form-select"
                                             aria-label="Default select example" data-show-subtext="false"
                                             data-live-search="true">
                                             @if (Auth::user()->provinsi == null)
-                                                <option value="">-- Region State List --</option>
+                                                <option value="">-- Select Province --</option>
                                                 @foreach ($regionstate as $row)
-                                                    <option value="{{ $row->id }}">{{ $row->provinsi }}</option>
+                                                    <option value="{{ $row['province_id'] }}">{{ $row['province'] }}</option>
                                                 @endforeach
                                             @else
-                                                <option value="{{ Auth::user()->provinsi }}" selected>
-                                                    {{ Auth::user()->user_datawilayah->provinsi }}</option>
+                                                <option value="{{ $province_user['province_id'] }}" selected>
+                                                    {{ $province_user['province'] }}</option>
                                                 @foreach ($regionstate as $row)
-                                                    <option value="{{ $row->id }}">{{ $row->provinsi }}</option>
+                                                    <option value="{{ $row['province_id'] }}">{{ $row['province'] }}</option>
                                                 @endforeach
                                             @endif
 
                                         </select>
                                     </div>
                                     <div class="col-md-6 space-t-15">
-                                        <label class="form-label">City *</label>
+                                        <label class="form-label">Distric *</label>
                                         <select name="kabupaten" id="city" class="form-select"
                                             aria-label="Default select example">
                                             @if (Auth::user()->kabupaten == null)
-                                                <option value="">-- City List --</option>
+                                                <option value="">-- Select Distric --</option>
                                             @else
-                                                <option value="{{ Auth::user()->kabupaten }}" selected>
+                                                <option value="{{ $Distric_user[''] }}" selected>
                                                     {{ Auth::user()->user_datawilayahkabupaten->kabupaten }}</option>
                                             @endif
                                         </select>
                                     </div>
                                     <div class="col-md-6 space-t-15">
-                                        <label class="form-label">Districts *</label>
+                                        <label class="form-label">SubDistric *</label>
                                         <select name="kecamatan" id="distric" class="form-select"
                                             aria-label="Default select example">
                                             @if (Auth::user()->kecamatan == null)
-                                                <option value="">-- Districs List --</option>
+                                                <option value="">-- Select SubDistric--</option>
                                             @else
                                                 <option value="{{ Auth::user()->kecamatan }}" selected>
                                                     {{ Auth::user()->user_datawilayahkecamatan->kecamatan }}</option>
@@ -747,7 +747,11 @@
             });
         });
     </script>
-    <script></script>
+    <script>
+        $(".form-select:eq(0),.form-select:eq(1),.form-select:eq(2)").select2({
+            theme: 'bootstrap-5'
+        });
+    </script>
 </body>
 
 </html>

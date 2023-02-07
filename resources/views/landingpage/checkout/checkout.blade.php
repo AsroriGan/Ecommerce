@@ -183,9 +183,9 @@
                                                     </span>
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
-                                                    <label></label>
+                                                    <label>District Postal Code *</label>
                                                     <input type="text" name="postalcode"
-                                                        placeholder="Post Code" />
+                                                        placeholder="Enter the district postal code" />
                                                 </span>
                                             </form>
                                         </div>
@@ -399,10 +399,10 @@
                                         <span class="text-left">Delivery Charges</span>
                                         <span class="text-right" id="DeliveryCharges">Rp.0</span>
                                     </div>
-                                    <div>
+                                    {{-- <div>
                                         <span class="text-left">Coupan Discount</span>
                                         <span class="text-right"><a class="ec-checkout-coupan">Apply Coupan</a></span>
-                                    </div>
+                                    </div> --}}
                                     <div class="ec-checkout-coupan-content">
                                         <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form"
                                             method="post" action="#">
@@ -955,9 +955,6 @@
 
     <!-- Vendor JS -->
     @include('layouts.script')
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#province').change(function() {
@@ -1063,8 +1060,10 @@
         });
     </script>
     <script>
-        $(".ec-bill-select:eq(0),.ec-bill-select:eq(1),.ec-bill-select:eq(2)").select2({});
-        $("#tes").select2();
+        $(".ec-bill-select:eq(0),.ec-bill-select:eq(1),.ec-bill-select:eq(2)").select2({
+            // theme: 'bootstrap-5'
+        });
+        // $("#tes").select2();
     </script>
 </body>
 
