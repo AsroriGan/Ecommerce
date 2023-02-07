@@ -18,11 +18,17 @@ class Userprofilecontroller extends Controller
 {
     public function index()
     {
-        $regionstate = Datawilayah::orderBy('provinsi', 'asc')->get();
+        $ProvinsiId = Auth::user()->provinsi;
+        $KabupatenId = Auth::user()->kabupaten;
+        $KecamatanId = Auth::user()->kecamatan;
+        $regionstate = RajaOngkir::provinsi()->all();
+        $province_user = RajaOngkir::provinsi()->find($ProvinsiId);
+        $Distric_user = RajaOngkir::kota()->dariprovinsi($ProvinsiId)->find($KabupatenId);
+        $SubDistric_user = datawilayahkecamatan::find($KecamatanId);
         // $city = Datawilayah::get();
         $nama = explode(' ', Auth::user()->name);
-        // dd($nama);
-        return view('landingpage.user_profile.user_profile', compact('regionstate', 'nama'));
+        // dd($Distric_user);
+        return view('landingpage.user_profile.user_profile', compact('regionstate', 'nama','province_user','Distric_user','SubDistric_user'));
     }
     public function edit_profile(Request $request, $id)
     {

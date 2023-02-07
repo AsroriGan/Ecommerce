@@ -224,7 +224,7 @@
                         <!-- Sidebar Summary Block -->
                     </div>
 
-                    <center><button class="btn btn-primary">Check Out</button></center>
+                    <center><a href="/checkout" class="btn btn-primary">Check Out</a></center>
                 </div>
 
             </div>

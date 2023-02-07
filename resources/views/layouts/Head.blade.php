@@ -31,7 +31,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
     {{-- css select --}}
     {{-- <link rel="stylesheet" href="{{asset('assets/css/plugins/select2.css')}}"> --}}
-    <link rel="stylesheet" href="{{asset('assets/css/plugins/select22.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/select22.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/select2bs.css') }}">
     <!-- Background css -->
     <link rel="stylesheet" id="bg-switcher-css" href="{{ asset('assets/css/backgrounds/bg-4.css') }}">
 
@@ -43,7 +44,6 @@
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     @endif
 
-    <script type="text/javascript"
-    src="https://app.sandbox.midtrans.com/snap/snap.js"
-    data-client-key="SB-Mid-client-INCFfVsZPIcqghRS"></script>
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="SB-Mid-client-INCFfVsZPIcqghRS"></script>
 </head>
