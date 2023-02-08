@@ -21,7 +21,7 @@
     <!-- Header End  -->
 
     <!-- ekka Cart Start -->
-    <div class="ec-side-cart-overlay"></div>
+    {{-- <div class="ec-side-cart-overlay"></div>
     <div id="ec-side-cart" class="ec-side-cart">
         <div class="ec-cart-inner">
             <div class="ec-cart-top">
@@ -93,11 +93,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- ekka Cart End -->
 
     <!-- Ec breadcrumb start -->
-    <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
+    {{-- <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -117,7 +117,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Ec breadcrumb end -->
 
     <!-- Ec cart page -->
@@ -129,11 +129,13 @@
                     <div class="ec-cart-content">
                         <div class="ec-cart-inner">
                             <div class="row">
-                                <form action="#">
+                                <form action="/cartcheckout" method="post">
+                                    @csrf
                                     <div class="table-content cart-table-content">
                                         <table>
                                             <thead>
                                                 <tr>
+                                                    <td><input type="checkbox" onchange="checkAll(this)"></td>
                                                     <th>Product</th>
                                                     <th>Price</th>
                                                     <th style="text-align: center;">Quantity</th>
@@ -145,10 +147,15 @@
                                                 @foreach($data as $cart)
 
                                                 <tr>
+                                                    <td><input type="checkbox" name="ids[]"  id="chk" value="{{$cart->id}}" required></td>
                                                     <td data-label="Product" class="ec-cart-pro-name"><a href="product-left-sidebar.html"><img class="ec-cart-pro-img mr-4" src="{{ asset('fotoproduk/' . $cart->attributes->foto) }}"
-                                                                alt="" />{{$cart->name}}</a></td>
+                                                                alt="" />{{$cart->name}}</a>
+
+                                                    </td>
                                                     <td data-label="Price" class="ec-cart-pro-price"><span
-                                                            class="amount">Rp. {{$cart->price}}</span></td>
+                                                            class="amount">Rp. {{$cart->price}}</span>
+
+                                                    </td>
                                                     <td data-label="Quantity" class="ec-cart-pro-qty"
                                                         style="text-align: center;">
                                                        {{$cart->quantity}}
@@ -170,7 +177,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+
                             </div>
                         </div>
                     </div>
@@ -201,7 +208,7 @@
                                             <span class="text-right">Rp.{{ $produk->attributes->hargatotal }}</span>
                                         </div>
                                         @endforeach
-                                        <div class="ec-cart-coupan-content">
+                                        {{-- <div class="ec-cart-coupan-content">
                                             <form class="ec-cart-coupan-form" name="ec-cart-coupan-form" method="post"
                                                 action="#">
                                                 <input class="ec-coupan" type="text" required=""
@@ -209,7 +216,7 @@
                                                 <button class="ec-coupan-btn button btn-primary" type="submit"
                                                     name="subscribe" value="">Apply</button>
                                             </form>
-                                        </div>
+                                        </div> --}}
                                         <div class="ec-cart-summary-total">
                                             <span class="text-left">Total Amount</span>
                                             <span class="text-right">Rp. {{$subtotal}}</span>
@@ -224,8 +231,10 @@
                         <!-- Sidebar Summary Block -->
                     </div>
 
-                    <center><a href="/checkout" class="btn btn-primary">Check Out</a></center>
+                    <center><button type="submit" class="btn btn-primary">Check Out</button></center>
+                    {{-- <center><a href="/checkout" class="btn btn-primary">Check Out</a></center> --}}
                 </div>
+                </form>
 
             </div>
         </div>
@@ -490,6 +499,24 @@
     <!-- Feature tools end -->
 
     @include('layouts.script')
+    <script type="text/javascript">
+        function checkAll(ele) {
+            var checkboxes = document.getElementsByTagName('input');
+            if (ele.checked) {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].type == 'checkbox') {
+                        checkboxes[i].checked = true;
+                    }
+                }
+            } else {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].type == 'checkbox') {
+                        checkboxes[i].checked = false;
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 

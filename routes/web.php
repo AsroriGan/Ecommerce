@@ -98,6 +98,7 @@ Route::group(['middleware' => ['auth', 'CekRole:admin,user']], function () {
     Route::get('/hapuscart/{id}', [LandingCartController::class, 'hapuscart'])->name('hapuscart');
     Route::post('/cartpost/{id}', [LandingCartController::class, 'cartpost'])->name('cartpost');
     Route::post('/postcart', [LandingCartController::class, 'postcart'])->name('postcart');
+    Route::post('/cartcheckout', [LandingCartController::class, 'cartcheckout'])->name('cartcheckout');
     //checkout
     Route::get('/checkout', [LandingpageController::class, 'checkout'])->name('checkout');
     Route::get('/getongkir', [LandingpageController::class, 'getongkir'])->name('getongkir');

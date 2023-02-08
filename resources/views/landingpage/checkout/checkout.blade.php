@@ -211,8 +211,8 @@
                             </div>
                             <div class="ec-sb-block-content">
                                 <div class="ec-checkout-pro">
-                                    @foreach ($data as $produk)
-                                    {{ $produk->attributes->weight }}
+                                    @foreach ($datacart as $produk)
+                                    {{-- {{ $produk->attributes->weight }} --}}
                                         <div class="col-sm-12 mb-6">
                                             <div class="ec-product-inner">
                                                 <div class="ec-pro-image-outer">
