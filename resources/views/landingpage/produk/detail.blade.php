@@ -188,7 +188,7 @@
 
                                         <div class="ec-single-price-stoke">
                                             <div class="ec-single-price">
-                                                <span class="ec-single-ps-title">Harga</span>
+                                                <span class="ec-single-ps-title">Price</span>
                                                 <span class="new-price" id="harga_barang">Rp.
                                                     {{ $data->harga_diskonproduk }}</span>
                                             </div>

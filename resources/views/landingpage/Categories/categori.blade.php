@@ -97,7 +97,7 @@
                                                         src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
                                                         alt="" /></a> --}}
                                                     <div class="ec-pro-actions">
-                                                        <a href="/detail" class="ec-btn-group compare"
+                                                        <a href="/detail/{{ $produk->id }}" class="ec-btn-group compare"
                                                             title="Quickview"><img
                                                                 src="assets/images/icons/quickview.svg"
                                                                 class="svg_img pro_svg" alt="" /></a>

@@ -425,7 +425,7 @@
                         <form action="/payment" method="get">
                             <input type="hidden" name="subtotal" id="hargatotal" value="">
                             <span style="float: right">
-                                <button type="submit" class="btn btn-primary" href="#">Checkout</button>
+                                <button type="submit" class="btn btn-primary" href="#">Pay Now</button>
                             </span>
                         </form>
                     </span>

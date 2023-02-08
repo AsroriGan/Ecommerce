@@ -60,17 +60,15 @@
                         </div>
                         <!-- Header User End -->
                         <!-- Header Cart Start -->
-                        <a href="wishlist.html" class="ec-header-btn ec-header-wishlist">
+                        <a href="/wishlist" class="ec-header-btn ec-header-wishlist">
                             <div class="header-icon"><img src="{{asset('assets/images/icons/wishlist.svg')}}"
                                     class="svg_img header_svg" alt="" /></div>
-                            <span class="ec-header-count">4</span>
                         </a>
                         <!-- Header Cart End -->
                         <!-- Header Cart Start -->
-                        <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
+                        <a href="/cart" class="ec-header-btn ec-side-toggle">
                             <div class="header-icon"><img src="{{asset('assets/images/icons/cart.svg')}}" class="svg_img header_svg"
                                     alt="" /></div>
-                            <span class="ec-header-count cart-count-lable">3</span>
                         </a>
                         <!-- Header Cart End -->
                         <a href="javascript:void(0)" class="ec-header-btn ec-sidebar-toggle">

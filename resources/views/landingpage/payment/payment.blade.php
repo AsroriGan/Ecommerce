@@ -191,9 +191,10 @@
                                 <div class="ec-checkout-block ec-check-bill">
                                     <h3 class="ec-checkout-title">Details Costumer</h3>
                                     <div class="ec-bl-block-content">
-                                        <div class="ec-check-subtitle">Checkout Options</div>
                                         <span class="ec-bill-option">
+                                            <ul>
                                             <span>{{ Auth::user()->name }}</span> <br>
+                                        </ul>
                                             <span>{{ Auth::user()->alamat }}</span>
                                         </span>
                                     </div>
@@ -214,7 +215,7 @@
                             <div class="ec-sb-block-content">
                                 <div class="ec-checkout-summary">
                                     <div class="ec-checkout-summary-total">
-                                        <span class="text-left">Total Bayar</span>
+                                        <span class="text-left">Total Amaount</span>
                                         <span class="text-right" id="total">Rp.{{ $total }}</span>
                                     </div>
                                 </div>
