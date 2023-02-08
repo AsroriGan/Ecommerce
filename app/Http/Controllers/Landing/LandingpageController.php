@@ -57,7 +57,7 @@ class LandingpageController extends Controller
                 $etd = 'etd';
                 $cost = 'cost';
                 $no++;
-                $html .= '<span class="ec-del-option col-12"><span class="w-100"><span class="ec-del-opt-head">' . $name . '</span><input class="ongkir" type="radio" id="del' . $no . '" value="' . $value[$cost][0][$val] . '" name="radio-group"><label for="del' . $no . '" class="f-w500">' . $value[$service] . '' . ' ' . '' . '(' . $value[$OK] . ') : ' . 'Rp. ' . '' . $value[$cost][0][$val] . '' . '(' . '' . ($value[$cost][0][$etd]) . '' . ' days' . '' . ')' . '</label></span></span>';
+                $html .= '<span class="ec-del-option col-12"><span class="w-100"><span class="ec-del-opt-head">' . $name . '</span><input class="ongkir" type="radio" id="del' . $no . '" value="' . $value[$cost][0][$val] . '" name="delivery-method"><label for="del' . $no . '" class="f-w500">' . $value[$service] . '' . ' ' . '' . '(' . $value[$OK] . ') : ' . 'Rp. ' . '' . $value[$cost][0][$val] . '' . '(' . '' . ($value[$cost][0][$etd]) . '' . ' days' . '' . ')' . '</label></span></span>';
             }
             echo $html;
         }

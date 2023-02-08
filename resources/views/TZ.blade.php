@@ -31,6 +31,21 @@
             </div> --}}
         </div>
     </div>
+    <form action="/tes">
+        <div>
+            <input type="radio" name="tes" value="" required>
+        </div>
+        <div>
+            <input type="radio" name="hkjhkh" value="" required>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Default radio
+            </label>
+        </div>
+        <button type="submit">button</button>
+    </form>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Select2 -->
