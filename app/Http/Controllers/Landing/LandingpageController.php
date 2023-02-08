@@ -21,14 +21,24 @@ class LandingpageController extends Controller
     {
         $provinsi = RajaOngkir::provinsi()->all();
         $userId = auth()->user()->id;
-        $data =  \Cart::session($userId)->getContent();
-        // dd($data);
+        $datas =  \Cart::session($userId)->getContent();
         $subtotal = \Cart::getSubTotal();
+        foreach ($datas as $cart) {
+            $ids = $cart->attributes->ids;
+            $data =  Cart::session($userId)->get($cart->attributes->ids);
+            $datacart[] = $data;
+            if ($data == null) {
+                    return redirect('/')->with("error", "Keranjang Anda kosong");
+            } else {
+                return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal','datacart'));
+            }
+        }
+
         // dd($data);
         if ($subtotal == null) {
-            return redirect('/')->with("error", "Keranjang Anda kosong");
+                return redirect('/')->with("error", "Keranjang Anda kosong");
         } else {
-            return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal'));
+            return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal','datacart'));
         }
     }
     public function getongkir(Request $request)

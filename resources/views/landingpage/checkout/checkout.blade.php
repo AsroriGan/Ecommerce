@@ -212,8 +212,13 @@
                             </div>
                             <div class="ec-sb-block-content">
                                 <div class="ec-checkout-pro">
+<<<<<<< HEAD
                                     @foreach ($data as $produk)
                                         {{ $produk->attributes->weight }}
+=======
+                                    @foreach ($datacart as $produk)
+                                    {{-- {{ $produk->attributes->weight }} --}}
+>>>>>>> 9bec84e02c383b25c93dc220a40c9d6e52ceaaca
                                         <div class="col-sm-12 mb-6">
                                             <div class="ec-product-inner">
                                                 <div class="ec-pro-image-outer">
@@ -338,7 +343,7 @@
                         <form action="/payment" method="get">
                             <input type="hidden" name="subtotal" id="hargatotal" value="">
                             <span style="float: right">
-                                <button type="submit" class="btn btn-primary" href="#">Checkout</button>
+                                <button type="submit" class="btn btn-primary" href="#">Pay Now</button>
                             </span>
                         </form>
                     </span>

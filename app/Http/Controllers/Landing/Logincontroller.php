@@ -29,14 +29,14 @@ class Logincontroller extends Controller
         ]);
         if (Auth::attempt($request->only('email', 'password'))) {
             if (auth()->user()->role == 'user') {
-                return redirect('/')->with('success', 'Berhasil Login');;
+                return redirect('/')->with('success', 'Successfully logged in');;
             } else {
                 return redirect('beranda');
             }
         }
         //  dd($request);
 
-        return redirect('login')->with('error', 'Email atau Password Salah!');
+        return redirect('login')->with('error', 'incorrect email or password!');
     }
 
     public function register()
@@ -70,7 +70,7 @@ class Logincontroller extends Controller
             'remember_token' => Str::random(60),
         ]);
         // dd($data);
-        return redirect('/login')->with('success', 'Berhasil Membuat Akun');
+        return redirect('/login')->with('success', 'successfully created an account');
     }
     public function logout(){
         Auth::logout();
