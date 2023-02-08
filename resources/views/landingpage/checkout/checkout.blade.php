@@ -154,21 +154,24 @@
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>Province *</label>
-                                                    <span class="ec-bl-select-inner d-flex align-items-center">
+                                                    <span
+                                                        class="ec-bl-select-inner d-flex align-items-center border-0">
                                                         <select name="ec_select_city" id="province"
                                                             class="ec-bill-select">
                                                             <option selected value="null">-- Select Province --
                                                             </option>
                                                             @foreach ($provinsi as $prov)
                                                                 <option value="{{ $prov['province_id'] }}">
-                                                                    {{ $prov['province'] }}</option>
+                                                                    {{ $prov['province'] }}
+                                                                </option>
                                                             @endforeach
                                                         </select>
                                                     </span>
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>Distric *</label>
-                                                    <span class="ec-bl-select-inner d-flex align-items-center">
+                                                    <span
+                                                        class="ec-bl-select-inner d-flex align-items-center border-0">
                                                         <select name="ec_select_country" id="distric"
                                                             class="ec-bill-select">
                                                             <option selected>-- Select Distric --</option>
@@ -177,7 +180,8 @@
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>SubDistric *</label>
-                                                    <span class="ec-bl-select-inner d-flex align-items-center">
+                                                    <span
+                                                        class="ec-bl-select-inner d-flex align-items-center border-0">
                                                         <select name="ec_select_state" id="subdistric"
                                                             class="ec-bill-select">
                                                             <option selected>-- Select SubDistric --</option>
@@ -212,13 +216,8 @@
                             </div>
                             <div class="ec-sb-block-content">
                                 <div class="ec-checkout-pro">
-<<<<<<< HEAD
-                                    @foreach ($data as $produk)
-                                        {{ $produk->attributes->weight }}
-=======
                                     @foreach ($datacart as $produk)
-                                    {{-- {{ $produk->attributes->weight }} --}}
->>>>>>> 9bec84e02c383b25c93dc220a40c9d6e52ceaaca
+                                        {{-- {{ $produk->attributes->weight }} --}}
                                         <div class="col-sm-12 mb-6">
                                             <div class="ec-product-inner">
                                                 <div class="ec-pro-image-outer">
@@ -291,7 +290,11 @@
                                         </span>
                                     </span>
                                     <div id="methoddev" class="row">
-
+                                        <button class="btn btn-primary" type="button" disabled>
+                                            <span class="spinner-border spinner-border-sm" role="status"
+                                                aria-hidden="true"></span>
+                                            Loading...
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -977,7 +980,7 @@
     </script>
     <script>
         $(".ec-bill-select:eq(0),.ec-bill-select:eq(1),.ec-bill-select:eq(2)").select2({
-            // theme: 'bootstrap-5'
+            theme: 'bootstrap-5'
         });
     </script>
 </body>

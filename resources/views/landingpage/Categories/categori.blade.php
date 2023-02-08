@@ -90,29 +90,11 @@
                                                 {{-- <a href="/detail" class="quickview"><img
                                                         src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
                                                         alt="" /></a> --}}
-<<<<<<< HEAD
                                                 <div class="ec-pro-actions">
                                                     <a href="/detail" class="ec-btn-group compare" title="Quickview"><img src="assets/images/icons/quickview.svg" class="svg_img pro_svg" alt="" /></a>
                                                     <button title="Add To Cart" class="add-to-cart" data-bs-toggle="modal" data-bs-target="#addtocart"><img src="assets/images/icons/cart.svg" class="svg_img pro_svg" alt="" onclick="produkview({{ $produk->id }})" /> Add To
                                                         Cart</button>
                                                     <a class="ec-btn-group wishlist" title="Wishlist"><img src="assets/images/icons/wishlist.svg" class="svg_img pro_svg" alt="" /></a>
-=======
-                                                    <div class="ec-pro-actions">
-                                                        <a href="/detail/{{ $produk->id }}" class="ec-btn-group compare"
-                                                            title="Quickview"><img
-                                                                src="assets/images/icons/quickview.svg"
-                                                                class="svg_img pro_svg" alt="" /></a>
-                                                        <button title="Add To Cart" class="add-to-cart"
-                                                            data-bs-toggle="modal" data-bs-target="#addtocart"><img
-                                                                src="assets/images/icons/cart.svg"
-                                                                class="svg_img pro_svg" alt=""
-                                                                onclick="produkview({{ $produk->id }})" /> Add To
-                                                            Cart</button>
-                                                        <a class="ec-btn-group wishlist" title="Wishlist"><img
-                                                                src="assets/images/icons/wishlist.svg"
-                                                                class="svg_img pro_svg" alt="" /></a>
-                                                    </div>
->>>>>>> 9bec84e02c383b25c93dc220a40c9d6e52ceaaca
                                                 </div>
                                             </div>
                                         </div>

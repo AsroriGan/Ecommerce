@@ -1,8 +1,16 @@
+[
 <!DOCTYPE html>
 <html lang="en">
 
 @include('layouts.Head')
-
+<style>
+    .form-control.is-invalid {
+        border-color: #050505 !important;
+    }
+    .was-validated .form-control:valid{
+        background-image: none !important;
+    }
+</style>
 <body class="shop_page">
     <div id="ec-overlay"><span class="loader_img"></span></div>
 
@@ -109,7 +117,8 @@
                                                         <li><strong>Home : </strong>
                                                             @if (Auth::user()->provinsi != null)
                                                                 {{ $province_user['province'] }},
-                                                                {{ $Distric_user['type'] }} {{ $Distric_user['city_name'] }},
+                                                                {{ $Distric_user['type'] }}
+                                                                {{ $Distric_user['city_name'] }},
                                                                 {{ $SubDistric_user->kecamatan }},
                                                                 67171
                                                             @endif
@@ -316,20 +325,20 @@
     <!-- Footer Area End -->
 
     <!-- Modal -->
-    <div class="modal fade show" id="edit_modal" tabindex="-1" role="dialog">
+    <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="row">
                         <div class="ec-vendor-block-img space-bottom-30">
                             <form action="/edit-profile/{{ Auth::user()->id }}" method="POST"
-                                enctype="multipart/form-data">
+                                enctype="multipart/form-data" class="needs-validation" novalidate>
                                 @csrf
                                 <div class="ec-vendor-block-bg cover-upload">
                                     <div class="thumb-upload">
                                         <div class="thumb-edit">
                                             <input type='file' name="fotosampul" id="thumbUpload01"
-                                                class="ec-image-upload" accept=".png, .jpg, .jpeg" />
+                                                class="ec-image-upload" accept=".png, .jpg, .jpeg"/>
                                             <label><img src="{{ asset('assets/images/icons/edit.svg') }}"
                                                     class="svg_img header_svg" alt="edit" /></label>
                                         </div>
@@ -373,51 +382,66 @@
                                     <div class="col-md-12 space-t-15">
                                         <label class="form-label">Address</label>
                                         <input type="text" name="alamat" value="{{ Auth::user()->alamat }}"
-                                            class="form-control" placeholder="Street Name, Building, No. Home">
+                                            class="form-control" placeholder="Street Name, Building, No. Home" required>
+                                            <div class="invalid-feedback">
+                                                Address is required
+                                            </div>
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Province *</label>
                                         <select name="provinsi" id="regionstate" class="form-select"
                                             aria-label="Default select example" data-show-subtext="false"
-                                            data-live-search="true">
+                                            data-live-search="true" required>
                                             @if (Auth::user()->provinsi == null)
                                                 <option value="">-- Select Province --</option>
                                                 @foreach ($regionstate as $row)
-                                                    <option value="{{ $row['province_id'] }}">{{ $row['province'] }}</option>
+                                                    <option value="{{ $row['province_id'] }}">{{ $row['province'] }}
+                                                    </option>
                                                 @endforeach
                                             @else
                                                 <option value="{{ $province_user['province_id'] }}" selected>
                                                     {{ $province_user['province'] }}</option>
                                                 @foreach ($regionstate as $row)
-                                                    <option value="{{ $row['province_id'] }}">{{ $row['province'] }}</option>
+                                                    <option value="{{ $row['province_id'] }}">{{ $row['province'] }}
+                                                    </option>
                                                 @endforeach
                                             @endif
 
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Please Choose Province
+                                        </div>
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Distric *</label>
                                         <select name="kabupaten" id="city" class="form-select"
-                                            aria-label="Default select example">
+                                            aria-label="Default select example" required>
                                             @if (Auth::user()->kabupaten == null)
                                                 <option value="">-- Select Distric --</option>
                                             @else
-                                                <option value="{{ $Distric_user[''] }}" selected>
-                                                    {{ Auth::user()->user_datawilayahkabupaten->kabupaten }}</option>
+                                                <option value="{{ $Distric_user['city_id'] }}" selected>
+                                                    {{ $Distric_user['type'] }} {{ $Distric_user['city_name'] }}
+                                                </option>
                                             @endif
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Please Choose Distric
+                                        </div>
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">SubDistric *</label>
                                         <select name="kecamatan" id="distric" class="form-select"
-                                            aria-label="Default select example">
+                                            aria-label="Default select example" required>
                                             @if (Auth::user()->kecamatan == null)
                                                 <option value="">-- Select SubDistric--</option>
                                             @else
-                                                <option value="{{ Auth::user()->kecamatan }}" selected>
-                                                    {{ Auth::user()->user_datawilayahkecamatan->kecamatan }}</option>
+                                                <option value="{{ $SubDistric_user['id'] }}" selected>
+                                                    {{ $SubDistric_user['kecamatan'] }}</option>
                                             @endif
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Please Choose SubDistric
+                                        </div>
                                     </div>
                                     <div class="col-md-6 space-t-15">
                                         <label class="form-label">Post Code *</label>
@@ -705,8 +729,6 @@
         $(document).ready(function() {
             $('#regionstate').change(function() {
                 let rsi = $(this).val();
-                let ci = rsi;
-                // alert(ci);
                 $.ajax({
                     url: '/getkabupaten',
                     type: 'post',
@@ -716,25 +738,21 @@
                         $('#city').removeAttr('disabled');
                     }
                 });
-                if (ci == 'null') {
-                    $.ajax({
-                        url: '/getkecamatan',
-                        type: 'post',
-                        data: 'ci=' + ci + '&_token={{ csrf_token() }}',
-                        success: function(result) {
-                            $('#distric').html(result);
-                            $('#distric').removeAttr('disabled');
-                        }
-                    });
-                }
+                $.ajax({
+                    url: '/getkecamatan',
+                    type: 'post',
+                    data: 'ci=' + null + '&_token={{ csrf_token() }}',
+                    success: function(result) {
+                        $('#distric').html(result);
+                        $('#distric').removeAttr('disabled');
+                    }
+                });
             });
         });
 
         $(document).ready(function() {
             $('#city').change(function() {
-                // alert("p");
                 let ci = $(this).val();
-                // console.log(ci);
                 $.ajax({
                     url: '/getkecamatan',
                     type: 'post',
@@ -751,6 +769,27 @@
         $(".form-select:eq(0),.form-select:eq(1),.form-select:eq(2)").select2({
             theme: 'bootstrap-5'
         });
+    </script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
     </script>
 </body>
 

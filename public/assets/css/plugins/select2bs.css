@@ -41,7 +41,7 @@ select+.select2-container--bootstrap-5 {
 .select2-container--bootstrap-5.select2-container--focus .select2-selection,
 .select2-container--bootstrap-5.select2-container--open .select2-selection {
     border-color: #86b7fe;
-    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
+    /* box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25) */
 }
 
 .select2-container--bootstrap-5.select2-container--open.select2-container--below .select2-selection {
@@ -196,7 +196,7 @@ select+.select2-container--bootstrap-5 {
 }
 
 .select2-container--bootstrap-5 .select2-selection--single {
-    height: 45px;
+    height: 47.5px;
     padding: .375rem 2.25rem .375rem .75rem;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
@@ -212,6 +212,8 @@ select+.select2-container--bootstrap-5 {
     line-height: 1.5;
     /* color: #212529 */
     color: #6c757d;
+    /* cus */
+    font-size: 14px;
 }
 
 .select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered .select2-selection__placeholder {
@@ -344,15 +346,15 @@ select+.select2-container--bootstrap-5 {
 
 .is-valid+.select2-container--bootstrap-5 .select2-selection,
 .was-validated select:valid+.select2-container--bootstrap-5 .select2-selection {
-    border-color: #198754
+    /* border-color: #198754 */
 }
 
 .is-valid+.select2-container--bootstrap-5.select2-container--focus .select2-selection,
 .is-valid+.select2-container--bootstrap-5.select2-container--open .select2-selection,
 .was-validated select:valid+.select2-container--bootstrap-5.select2-container--focus .select2-selection,
 .was-validated select:valid+.select2-container--bootstrap-5.select2-container--open .select2-selection {
-    border-color: #198754;
-    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, .25)
+    /* border-color: #198754;
+    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, .25) */
 }
 
 .is-valid+.select2-container--bootstrap-5.select2-container--open.select2-container--below .select2-selection,
@@ -369,15 +371,15 @@ select+.select2-container--bootstrap-5 {
 
 .is-invalid+.select2-container--bootstrap-5 .select2-selection,
 .was-validated select:invalid+.select2-container--bootstrap-5 .select2-selection {
-    border-color: #dc3545
+    border-color: #050505;
 }
 
 .is-invalid+.select2-container--bootstrap-5.select2-container--focus .select2-selection,
 .is-invalid+.select2-container--bootstrap-5.select2-container--open .select2-selection,
 .was-validated select:invalid+.select2-container--bootstrap-5.select2-container--focus .select2-selection,
 .was-validated select:invalid+.select2-container--bootstrap-5.select2-container--open .select2-selection {
-    border-color: #dc3545;
-    box-shadow: 0 0 0 .25rem rgba(220, 53, 69, .25)
+    /* border-color: #dc3545;
+    box-shadow: 0 0 0 .25rem rgba(220, 53, 69, .25) */
 }
 
 .is-invalid+.select2-container--bootstrap-5.select2-container--open.select2-container--below .select2-selection,

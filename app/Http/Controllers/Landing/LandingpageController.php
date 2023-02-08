@@ -28,18 +28,18 @@ class LandingpageController extends Controller
             $data =  Cart::session($userId)->get($cart->attributes->ids);
             $datacart[] = $data;
             if ($data == null) {
-                    return redirect('/')->with("error", "Keranjang Anda kosong");
+                return redirect('/')->with("error", "Keranjang Anda kosong");
             } else {
+                // dd($datacart);
                 return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal','datacart'));
             }
         }
 
-        // dd($data);
-        if ($subtotal == null) {
-                return redirect('/')->with("error", "Keranjang Anda kosong");
-        } else {
-            return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal','datacart'));
-        }
+        // if ($subtotal == null) {
+        //         return redirect('/')->with("error", "Keranjang Anda kosong");
+        // } else {
+        //     return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal','datacart'));
+        // }
     }
     public function getongkir(Request $request)
     {

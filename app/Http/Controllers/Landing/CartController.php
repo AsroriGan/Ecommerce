@@ -123,9 +123,6 @@ class CartController extends Controller
                 )
             ]);
         }
-
-
         return redirect()->route('checkout');
-
     }
 }
