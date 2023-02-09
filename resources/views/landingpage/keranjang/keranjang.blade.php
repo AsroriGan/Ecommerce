@@ -3,7 +3,7 @@
     Author: ashishmaraviya
     Version: 3.3
     Copyright 2022-2023
-	Author URI: https://themeforest.net/user/ashishmaraviya
+ Author URI: https://themeforest.net/user/ashishmaraviya
  ============================================================-->
 <!DOCTYPE html>
 <html lang="en">
@@ -134,7 +134,8 @@
                                         <table>
                                             <thead>
                                                 <tr>
-                                                    <td><input type="checkbox" onchange="checkAll(this)"></td>
+                                                    <td class="d-flex justify-content-center"><input style="width: 50%"
+                                                            type="checkbox" onchange="checkAll(this)"></td>
                                                     <th>Product</th>
                                                     <th>Price</th>
                                                     <th style="text-align: center;">Quantity</th>
@@ -143,23 +144,30 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($data as $cart)
-                                                <tr>
-                                                    <td><input type="checkbox" name="ids[]" id="chk" value="{{$cart->id}}" required></td>
-                                                    <td data-label="Product" class="ec-cart-pro-name"><a href="product-left-sidebar.html"><img class="ec-cart-pro-img mr-4" src="{{ asset('fotoproduk/' . $cart->attributes->foto) }}" alt="" />{{$cart->name}}</a>
-
-                                                    </td>
-                                                    <td data-label="Price" class="ec-cart-pro-price"><span class="amount">Rp. {{$cart->price}}</span>
-
-                                                    </td>
-                                                    <td data-label="Quantity" class="ec-cart-pro-qty" style="text-align: center;">
-                                                        {{$cart->quantity}}
-                                                    </td>
-                                                    <td data-label="Total" class="ec-cart-pro-subtotal">Rp. {{$cart->attributes->hargatotal}}</td>
-                                                    <td class="ec-cart-pro-remove">
-                                                        <a href="/hapuscart/{{$cart->id}}"><i class="ecicon eci-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
+                                                @foreach ($data as $cart)
+                                                    <tr>
+                                                        <td><input type="checkbox" name="ids[]" id="chk"
+                                                                value="{{ $cart->id }}"></td>
+                                                        <td data-label="Product" class="ec-cart-pro-name"><a
+                                                                href="product-left-sidebar.html"><img
+                                                                    class="ec-cart-pro-img mr-4"
+                                                                    src="{{ asset('fotoproduk/' . $cart->attributes->foto) }}"
+                                                                    alt="" />{{ $cart->name }}</a>
+                                                        </td>
+                                                        <td data-label="Price" class="ec-cart-pro-price"><span
+                                                                class="amount">Rp. {{ $cart->price }}</span>
+                                                        </td>
+                                                        <td data-label="Quantity" class="ec-cart-pro-qty"
+                                                            style="text-align: center;">
+                                                            {{ $cart->quantity }}
+                                                        </td>
+                                                        <td data-label="Total" class="ec-cart-pro-subtotal">Rp.
+                                                            {{ $cart->attributes->hargatotal }}</td>
+                                                        <td class="ec-cart-pro-remove">
+                                                            <a href="/hapuscart/{{ $cart->id }}"><i
+                                                                    class="ecicon eci-trash-o"></i></a>
+                                                        </td>
+                                                    </tr>
                                                 @endforeach
                                             </tbody>
                                         </table>
@@ -198,10 +206,12 @@
                                             <span class="text-right">{{ $total_quantity }} Quantity</span>
                                         </div>
                                         @foreach ($data as $produk)
-                                        <div>
-                                            <span class="text-left">Total price of {{ $produk->name }} Products</span>
-                                            <span class="text-right">Rp.{{ $produk->attributes->hargatotal }}</span>
-                                        </div>
+                                            <div>
+                                                <span class="text-left">Total price of {{ $produk->name }}
+                                                    Products</span>
+                                                <span
+                                                    class="text-right">Rp.{{ $produk->attributes->hargatotal }}</span>
+                                            </div>
                                         @endforeach
                                         {{-- <div class="ec-cart-coupan-content">
                                             <form class="ec-cart-coupan-form" name="ec-cart-coupan-form" method="post"
@@ -214,7 +224,7 @@
                                         </div> --}}
                                         <div class="ec-cart-summary-total">
                                             <span class="text-left">Total Amount</span>
-                                            <span class="text-right">Rp. {{$subtotal}}</span>
+                                            <span class="text-right">Rp. {{ $subtotal }}</span>
                                         </div>
                                     </div>
 
@@ -249,19 +259,25 @@
         <div class="container">
             <div class="ec-nav-panel">
                 <div class="ec-nav-panel-icons">
-                    <a href="#ec-mobile-menu" class="navbar-toggler-btn ec-header-btn ec-side-toggle"><img src="assets/images/icons/menu.svg" class="svg_img header_svg" alt="" /></a>
+                    <a href="#ec-mobile-menu" class="navbar-toggler-btn ec-header-btn ec-side-toggle"><img
+                            src="assets/images/icons/menu.svg" class="svg_img header_svg" alt="" /></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="#ec-side-cart" class="toggle-cart ec-header-btn ec-side-toggle"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /><span class="ec-cart-noti ec-header-count cart-count-lable">3</span></a>
+                    <a href="#ec-side-cart" class="toggle-cart ec-header-btn ec-side-toggle"><img
+                            src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /><span
+                            class="ec-cart-noti ec-header-count cart-count-lable">3</span></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="index.html" class="ec-header-btn"><img src="assets/images/icons/home.svg" class="svg_img header_svg" alt="icon" /></a>
+                    <a href="index.html" class="ec-header-btn"><img src="assets/images/icons/home.svg"
+                            class="svg_img header_svg" alt="icon" /></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="wishlist.html" class="ec-header-btn"><img src="assets/images/icons/wishlist.svg" class="svg_img header_svg" alt="icon" /><span class="ec-cart-noti">4</span></a>
+                    <a href="wishlist.html" class="ec-header-btn"><img src="assets/images/icons/wishlist.svg"
+                            class="svg_img header_svg" alt="icon" /><span class="ec-cart-noti">4</span></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="login.html" class="ec-header-btn"><img src="assets/images/icons/user.svg" class="svg_img header_svg" alt="icon" /></a>
+                    <a href="login.html" class="ec-header-btn"><img src="assets/images/icons/user.svg"
+                            class="svg_img header_svg" alt="icon" /></a>
                 </div>
 
             </div>
@@ -284,7 +300,8 @@
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg" alt="" /></div>
+            <div class="header-icon"><img src="assets/images/icons/cart.svg" class="svg_img header_svg"
+                    alt="" /></div>
             <span class="ec-cart-count cart-count-lable">3</span>
         </a>
     </div>
@@ -304,11 +321,13 @@
                 <ul>
                     <!-- Start Single Contact List -->
                     <li>
-                        <a class="ec-list" data-number="918866774266" data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
+                        <a class="ec-list" data-number="918866774266"
+                            data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_01.jpg" class="ec-user-img" alt="Profile image">
+                                    <img src="assets/images/whatsapp/profile_01.jpg" class="ec-user-img"
+                                        alt="Profile image">
                                     <span class="ec-status-icon"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -326,11 +345,13 @@
                     <!--/ End Single Contact List -->
                     <!-- Start Single Contact List -->
                     <li>
-                        <a class="ec-list" data-number="918866774266" data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
+                        <a class="ec-list" data-number="918866774266"
+                            data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_02.jpg" class="ec-user-img" alt="Profile image">
+                                    <img src="assets/images/whatsapp/profile_02.jpg" class="ec-user-img"
+                                        alt="Profile image">
                                     <span class="ec-status-icon ec-online"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -348,11 +369,13 @@
                     <!--/ End Single Contact List -->
                     <!-- Start Single Contact List -->
                     <li>
-                        <a class="ec-list" data-number="918866774266" data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
+                        <a class="ec-list" data-number="918866774266"
+                            data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_03.jpg" class="ec-user-img" alt="Profile image">
+                                    <img src="assets/images/whatsapp/profile_03.jpg" class="ec-user-img"
+                                        alt="Profile image">
                                     <span class="ec-status-icon ec-offline"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->
@@ -370,11 +393,13 @@
                     <!--/ End Single Contact List -->
                     <!-- Start Single Contact List -->
                     <li>
-                        <a class="ec-list" data-number="918866774266" data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
+                        <a class="ec-list" data-number="918866774266"
+                            data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_04.jpg" class="ec-user-img" alt="Profile image">
+                                    <img src="assets/images/whatsapp/profile_04.jpg" class="ec-user-img"
+                                        alt="Profile image">
                                     <span class="ec-status-icon ec-offline"></span>
                                 </div>
                                 <!-- Display Name & Last Seen -->

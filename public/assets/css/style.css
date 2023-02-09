@@ -6402,7 +6402,8 @@ textarea.form-control.is-invalid {
   width: 32px;
   height: 32px;
   vertical-align: text-bottom;
-  border: 4px solid #ffffff;
+  /* border: 4px solid #ffffff; */
+  border: 4px solid;
   border-right-color: transparent;
   border-radius: 50%;
   -webkit-animation: spinner-border 0.75s linear infinite;

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Landing;
 
-use App\Models\Slider;
 use Cart;
+use App\Models\Slider;
+use Faker\Guesser\Name;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Faker\Guesser\Name;
+use App\Models\datawilayahkecamatan;
+use Illuminate\Support\Facades\Auth;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 
 class LandingpageController extends Controller
@@ -23,23 +25,31 @@ class LandingpageController extends Controller
         $userId = auth()->user()->id;
         $datas =  \Cart::session($userId)->getContent();
         $subtotal = \Cart::getSubTotal();
+        //data exiting adress
+        $ProvinsiId = Auth::user()->provinsi;
+        $KabupatenId = Auth::user()->kabupaten;
+        $KecamatanId = Auth::user()->kecamatan;
+        $province_user = RajaOngkir::provinsi()->find($ProvinsiId);
+        $Distric_user = RajaOngkir::kota()->dariprovinsi($ProvinsiId)->find($KabupatenId);
+        $SubDistric_user = datawilayahkecamatan::find($KecamatanId);
+        // dd($province_user);
         foreach ($datas as $cart) {
             $ids = $cart->attributes->ids;
             $data =  Cart::session($userId)->get($cart->attributes->ids);
             $datacart[] = $data;
+            //khusus buat cart
             if ($data == null) {
                 return redirect('/')->with("error", "Keranjang Anda kosong");
             } else {
-                // dd($datacart);
-                return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal','datacart'));
+                return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal','datacart','province_user','Distric_user','SubDistric_user'));
             }
         }
-
-        // if ($subtotal == null) {
-        //         return redirect('/')->with("error", "Keranjang Anda kosong");
-        // } else {
-        //     return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal','datacart'));
-        // }
+        //untuk universal
+        if ($subtotal == null) {
+                return redirect('/')->with("error", "Keranjang Anda kosong");
+        } else {
+            return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal','datacart','province_user','Distric_user','SubDistric_user'));
+        }
     }
     public function getongkir(Request $request)
     {

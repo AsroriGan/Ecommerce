@@ -130,13 +130,29 @@
                                                     <label for="bill1">I want to use an existing address</label>
                                                 </span>
                                                 <span>
-                                                    <input type="radio" id="bill2" name="radio-group" checked>
+                                                    <input type="radio" id="bill2" name="radio-group" checked="checked">
                                                     <label for="bill2">I want to use new address</label>
                                                 </span>
                                             </span>
                                         </div>
                                         <div class="ec-check-bill-form">
-                                            <form action="#" method="post">
+                                            {{-- <p>tes</p> --}}
+                                            {{-- <i class="fa-solid fa-location-dot" style="font-size:30px;"></i>
+                                            shipping address --}}
+                                            <div class="row mb-10" id="existingaddress">
+                                                <div class="col-12">
+                                                    <label class="d-flex align-items-center"
+                                                        style="font-size: 15px;"><i
+                                                            class="fa-solid fa-location-dot mr-2"
+                                                            style="font-size:22px;"></i> Shipping Address</label>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label class="ml-8">{{ Auth::user()->name }}</label><br>
+                                                    <span class="ml-8">{{ Auth::user()->alamat }}</span><br>
+                                                    <span class="ml-8">{{ $SubDistric_user->kecamatan }}, {{ $Distric_user['type'] }}.{{ $Distric_user['city_name'] }}, {{ $province_user['province'] }}</span>
+                                                </div>
+                                            </div>
+                                            <form action="#" method="post" id="newaddress">
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>First Name*</label>
                                                     <input type="text" name="firstname"
@@ -289,12 +305,13 @@
                                             </select>
                                         </span>
                                     </span>
+                                    <button id="loading" class="btn d-flex align-items-center d-none"
+                                        type="button" disabled>
+                                        <span class="spinner-border spinner-border-sm mr-2" role="status"
+                                            aria-hidden="true"></span>
+                                        Loading...
+                                    </button>
                                     <div id="methoddev" class="row">
-                                        <button class="btn btn-primary" type="button" disabled>
-                                            <span class="spinner-border spinner-border-sm" role="status"
-                                                aria-hidden="true"></span>
-                                            Loading...
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -875,6 +892,20 @@
     <!-- Vendor JS -->
     @include('layouts.script')
     <script>
+        //show and hide address
+        $(document).ready(function() {
+            $("#existingaddress").addClass('d-none');
+            $("#bill1,#bill2").change(function(e) {
+                e.preventDefault();
+                if ($("#bill1").is(':checked')) {
+                    $("#existingaddress").removeClass('d-none');
+                    $("#newaddress").addClass('d-none');
+                }else{
+                    $("#existingaddress").addClass('d-none');
+                    $("#newaddress").removeClass('d-none');
+                }
+            });
+        });
         $(document).ready(function() {
             $('#province').change(function() {
                 let rsi = $(this).val();
@@ -899,7 +930,6 @@
                 $("#total").text("Rp." + subtotal);
             });
         });
-
         $(document).ready(function() {
             $('#distric').change(function() {
                 // alert("p");
@@ -959,6 +989,10 @@
                         wgt: wgt
                     },
                     // dataType: "dataType",
+                    beforeSend: function() {
+                        $('#loading').removeClass('d-none');
+                        $('#methoddev').html('');
+                    },
                     success: function(data) {
                         $('#methoddev').html(data);
                         $(document).ready(function() {
@@ -973,7 +1007,10 @@
                                 $("#total").text("Rp." + total);
                             });
                         });
-                    }
+                    },
+                    complete: function() {
+                        $('#loading').addClass('d-none');
+                    },
                 });
             });
         });
