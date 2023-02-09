@@ -27,7 +27,7 @@ class Userprofilecontroller extends Controller
         $SubDistric_user = datawilayahkecamatan::find($KecamatanId);
         // $city = Datawilayah::get();
         $nama = explode(' ', Auth::user()->name);
-        // dd($Distric_user);
+        // dd($SubDistric_user);
         return view('landingpage.user_profile.user_profile', compact('regionstate', 'nama','province_user','Distric_user','SubDistric_user'));
     }
     public function edit_profile(Request $request, $id)

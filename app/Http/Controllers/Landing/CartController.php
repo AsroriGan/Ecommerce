@@ -43,7 +43,7 @@ class CartController extends Controller
         $hargatotal = $variant->harga_produk * $request->jumlah;
         // dd($hargatotal);
         if ($request->jumlah > $variant->stok_produk) {
-            return redirect()->back()->with('error', 'jumlah melebihi stock');
+            return redirect()->back()->with('error', 'Amount Exceeds Stock');
         } else {
            $iduser = auth()->user()->id;
             \Cart::session($iduser)->add(array(
@@ -60,14 +60,14 @@ class CartController extends Controller
                 )
 
             ));
-            return redirect()->back()->with('success', 'Berhasil Menambahkan Produk Ke Keranjang');
+            return redirect()->back()->with('success', 'Successfully added products to cart');
         }
     }
     public function hapuscart($id)
     {
         $iduser = auth()->user()->id;
         \Cart::session($iduser)->remove($id);
-        return redirect()->back()->with('success', 'berhasil menghapus');
+        return redirect()->back()->with('success', 'successfully delete');
     }
 
     public function postcart(Request $request)
@@ -83,7 +83,7 @@ class CartController extends Controller
         $hargatotal = $variant->harga_produk * $request->jumlah;
         // dd($hargatotal);
         if ($request->jumlah > $variant->stok_produk) {
-            return redirect()->back()->with('error', 'jumlah melebihi stock');
+            return redirect()->back()->with('error', 'Amount Exceeds Stock');
         } else {
             $iduser = auth()->user()->id;
             Cart::session($iduser)->add(array(
@@ -100,7 +100,7 @@ class CartController extends Controller
                 )
 
             ));
-            return redirect()->back()->with('success', 'Berhasil Menambahkan Produk Ke Keranjang');
+            return redirect()->back()->with('success', 'Successfully added products to cart');
         }
     }
     public function cartcheckout(Request $request){
@@ -126,9 +126,6 @@ class CartController extends Controller
                 )
             ]);
         }
-
-
         return redirect()->route('checkout');
-
     }
 }

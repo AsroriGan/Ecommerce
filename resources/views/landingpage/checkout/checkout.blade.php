@@ -123,16 +123,18 @@
                                     <h3 class="ec-checkout-title">Billing Details</h3>
                                     <div class="ec-bl-block-content">
                                         <div class="ec-check-subtitle">Checkout Options</div>
-                                        <span class="ec-bill-option">
-                                            <span>
-                                                <input type="radio" id="bill1" name="radio-group">
-                                                <label for="bill1">I want to use an existing address</label>
+                                        <div>
+                                            <span class="ec-bill-option">
+                                                <span>
+                                                    <input type="radio" id="bill1" name="radio-group">
+                                                    <label for="bill1">I want to use an existing address</label>
+                                                </span>
+                                                <span>
+                                                    <input type="radio" id="bill2" name="radio-group" checked>
+                                                    <label for="bill2">I want to use new address</label>
+                                                </span>
                                             </span>
-                                            <span>
-                                                <input type="radio" id="bill2" name="radio-group" checked>
-                                                <label for="bill2">I want to use new address</label>
-                                            </span>
-                                        </span>
+                                        </div>
                                         <div class="ec-check-bill-form">
                                             <form action="#" method="post">
                                                 <span class="ec-bill-wrap ec-bill-half">
@@ -152,21 +154,24 @@
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>Province *</label>
-                                                    <span class="ec-bl-select-inner d-flex align-items-center">
+                                                    <span
+                                                        class="ec-bl-select-inner d-flex align-items-center border-0">
                                                         <select name="ec_select_city" id="province"
                                                             class="ec-bill-select">
                                                             <option selected value="null">-- Select Province --
                                                             </option>
                                                             @foreach ($provinsi as $prov)
                                                                 <option value="{{ $prov['province_id'] }}">
-                                                                    {{ $prov['province'] }}</option>
+                                                                    {{ $prov['province'] }}
+                                                                </option>
                                                             @endforeach
                                                         </select>
                                                     </span>
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>Distric *</label>
-                                                    <span class="ec-bl-select-inner d-flex align-items-center">
+                                                    <span
+                                                        class="ec-bl-select-inner d-flex align-items-center border-0">
                                                         <select name="ec_select_country" id="distric"
                                                             class="ec-bill-select">
                                                             <option selected>-- Select Distric --</option>
@@ -175,7 +180,8 @@
                                                 </span>
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>SubDistric *</label>
-                                                    <span class="ec-bl-select-inner d-flex align-items-center">
+                                                    <span
+                                                        class="ec-bl-select-inner d-flex align-items-center border-0">
                                                         <select name="ec_select_state" id="subdistric"
                                                             class="ec-bill-select">
                                                             <option selected>-- Select SubDistric --</option>
@@ -189,7 +195,6 @@
                                                 </span>
                                             </form>
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -212,7 +217,7 @@
                             <div class="ec-sb-block-content">
                                 <div class="ec-checkout-pro">
                                     @foreach ($datacart as $produk)
-                                    {{-- {{ $produk->attributes->weight }} --}}
+                                        {{-- {{ $produk->attributes->weight }} --}}
                                         <div class="col-sm-12 mb-6">
                                             <div class="ec-product-inner">
                                                 <div class="ec-pro-image-outer">
@@ -221,9 +226,6 @@
                                                             <img class="main-image"
                                                                 src="{{ asset('fotoproduk/' . $produk->attributes->foto) }}"
                                                                 alt="Product" />
-                                                            {{-- <img class="hover-image"
-                                                            src="assets/images/product-image/1_2.jpg"
-                                                            alt="Product" /> --}}
                                                         </a>
                                                     </div>
                                                 </div>
@@ -239,9 +241,6 @@
                                                         <i class="ecicon eci-star"></i>
                                                     </div>
                                                     <span class="ec-price">
-                                                        {{-- @if (1 == 1)
-                                                    <span class="old-price"></span>
-                                                    @endif --}}
                                                         <span
                                                             class="new-price">Rp.{{ $produk->attributes->hargatotal }}</span>
                                                     </span>
@@ -290,9 +289,13 @@
                                             </select>
                                         </span>
                                     </span>
-                                    <form id="methoddev" class="row">
-
-                                    </form>
+                                    <div id="methoddev" class="row">
+                                        <button class="btn btn-primary" type="button" disabled>
+                                            <span class="spinner-border spinner-border-sm" role="status"
+                                                aria-hidden="true"></span>
+                                            Loading...
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -300,75 +303,6 @@
                         <!-- Sidebar Summary Block -->
                     </div>
                 </div>
-                {{-- <div class="ec-checkout-rightside col-lg-6 col-md-12" style="margin-bottom: 20px;">
-                    <div class="ec-sidebar-wrap ec-checkout-pay-wrap">
-                        <!-- Sidebar Payment Block -->
-                        <div class="ec-sidebar-block">
-                            <div class="ec-sb-title">
-                                <h3 class="ec-sidebar-title">Payment Method</h3>
-                            </div>
-                            <div class="ec-sb-block-content">
-                                <div class="ec-checkout-pay">
-                                    <div class="ec-pay-desc">Please select the preferred payment method to use on this
-                                        order.</div>
-                                    <form action="#">
-                                        <span class="ec-pay-option">
-                                            <span>
-                                                <input type="radio" id="pay1" name="radio-group" checked>
-                                                <label for="pay1">Cash On Delivery</label>
-                                            </span>
-                                        </span>
-                                        <span class="ec-pay-commemt">
-                                            <span class="ec-pay-opt-head">Add Comments About Your Order</span>
-                                            <textarea name="your-commemt" placeholder="Comments"></textarea>
-                                        </span>
-                                        <span class="ec-pay-agree"><input type="checkbox" value=""><a
-                                                href="#">I have
-                                                read and agree to the <span>Terms & Conditions</span></a><span
-                                                class="checked"></span></span>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Sidebar Payment Block -->
-                    </div>
-                </div>
-                <div class="ec-checkout-rightside col-lg-6 col-md-12">
-                    <div class="ec-sidebar-wrap ec-check-pay-img-wrap">
-                        <!-- Sidebar Payment Block -->
-                        <div class="ec-sidebar-block">
-                            <div class="ec-sb-title">
-                                <h3 class="ec-sidebar-title">Payment Method</h3>
-                            </div>
-                            <div class="ec-sb-block-content">
-                                <div class="ec-check-pay-img-inner">
-                                    <div class="ec-check-pay-img">
-                                        <img src="assets/images/icons/payment1.png" alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="assets/images/icons/payment2.png" alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="assets/images/icons/payment3.png" alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="assets/images/icons/payment4.png" alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="assets/images/icons/payment5.png" alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="assets/images/icons/payment6.png" alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="assets/images/icons/payment7.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Sidebar Payment Block -->
-                    </div>
-                </div> --}}
                 <div class="ec-checkout-rightside col-lg-12 col-md-12">
                     <div class="ec-sidebar-wrap">
                         <div class="ec-sidebar-block">
@@ -399,19 +333,6 @@
                                         <span class="text-left">Delivery Charges</span>
                                         <span class="text-right" id="DeliveryCharges">Rp.0</span>
                                     </div>
-                                    {{-- <div>
-                                        <span class="text-left">Coupan Discount</span>
-                                        <span class="text-right"><a class="ec-checkout-coupan">Apply Coupan</a></span>
-                                    </div> --}}
-                                    <div class="ec-checkout-coupan-content">
-                                        <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form"
-                                            method="post" action="#">
-                                            <input class="ec-coupan" type="text" required=""
-                                                placeholder="Enter Your Coupan Code" name="ec-coupan" value="">
-                                            <button class="ec-coupan-btn button btn-primary" type="submit"
-                                                name="subscribe" value="">Apply</button>
-                                        </form>
-                                    </div>
                                     <div class="ec-checkout-summary-total">
                                         <span class="text-left">Total Amount</span>
                                         <span class="text-right" id="total">Rp.{{ $subtotal }}</span>
@@ -425,14 +346,12 @@
                         <form action="/payment" method="get">
                             <input type="hidden" name="subtotal" id="hargatotal" value="">
                             <span style="float: right">
-                                <button type="submit" class="btn btn-primary" href="#">Checkout</button>
+                                <button type="submit" class="btn btn-primary" href="#">Pay Now</button>
                             </span>
                         </form>
                     </span>
                 </div>
-
     </section>
-
     <!-- New Product Start -->
     <!-- New Product end -->
 
@@ -977,7 +896,7 @@
                 $("#delivery option[value='']").removeAttr("selected", "selected");
                 $("#delivery option[value='']").attr("selected", "selected");
                 $("#DeliveryCharges").text("Rp.0");
-                $("#total").text("Rp."+subtotal);
+                $("#total").text("Rp." + subtotal);
             });
         });
 
@@ -1002,11 +921,11 @@
                 $("#delivery option[value='']").removeAttr("selected", "selected");
                 $("#delivery option[value='']").attr("selected", "selected");
                 $("#DeliveryCharges").text("Rp.0");
-                $("#total").text("Rp."+subtotal);
+                $("#total").text("Rp." + subtotal);
             });
         });
-        $(document).ready(function () {
-            $("#subdistric").change(function (e) {
+        $(document).ready(function() {
+            $("#subdistric").change(function(e) {
                 e.preventDefault();
                 //validasi
                 let subtotal = $("#subtotal").attr("data-subtotal");
@@ -1014,7 +933,7 @@
                 $("#delivery option[value='']").removeAttr("selected", "selected");
                 $("#delivery option[value='']").attr("selected", "selected");
                 $("#DeliveryCharges").text("Rp.0");
-                $("#total").text("Rp."+subtotal);
+                $("#total").text("Rp." + subtotal);
             });
         });
         $(document).ready(function() {
@@ -1061,9 +980,8 @@
     </script>
     <script>
         $(".ec-bill-select:eq(0),.ec-bill-select:eq(1),.ec-bill-select:eq(2)").select2({
-            // theme: 'bootstrap-5'
+            theme: 'bootstrap-5'
         });
-        // $("#tes").select2();
     </script>
 </body>
 

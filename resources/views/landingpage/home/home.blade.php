@@ -63,8 +63,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">Produk Terlaris</h2>
-                        <h2 class="ec-title">Produk Terlaris</h2>
+                        {{-- <h2 class="ec-bg-title">Produk Terlaris</h2> --}}
+                        <h2 class="ec-title">Best Selling Products</h2>
                         <p class="sub-title">Browse The Collection of Top Products</p>
                     </div>
                 </div>
@@ -3310,8 +3310,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">Produk Terbaru</h2>
-                        <h2 class="ec-title">Produk Terbaru</h2>
+                        {{-- <h2 class="ec-bg-title">Produk Terbaru</h2> --}}
+                        <h2 class="ec-title">Latest Products</h2>
                         <p class="sub-title">Browse The Collection of Top Products</p>
                     </div>
                 </div>
@@ -3801,8 +3801,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">Toko</h2>
-                        <h2 class="ec-title">Toko</h2>
+                        {{-- <h2 class="ec-bg-title">Toko</h2> --}}
+                        <h2 class="ec-title">Shop</h2>
                         <p class="sub-title">Share your store with us</p>
                     </div>
                 </div>
