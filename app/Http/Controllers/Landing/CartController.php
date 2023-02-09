@@ -104,6 +104,9 @@ class CartController extends Controller
         }
     }
     public function cartcheckout(Request $request){
+        $this->validate($request,[
+            'ids' => 'required',
+        ]);
         $userId = auth()->user()->id;
         $datacart = array();
         foreach($request->ids as $ids){
