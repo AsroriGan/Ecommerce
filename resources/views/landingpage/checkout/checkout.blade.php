@@ -126,8 +126,13 @@
                                         <div>
                                             <span class="ec-bill-option">
                                                 <span>
-                                                    <input type="radio" id="bill1" name="radio-group">
+                                                    @if($province_user != null && $Distric_user != null && $SubDistric_user != null)
+                                                    <input type="radio" id="bill1" name="radio-group" value="true">
                                                     <label for="bill1">I want to use an existing address</label>
+                                                    @else
+                                                    <input type="radio" id="bill3" name="radio-group">
+                                                    <label for="bill3">I want to use an existing address</label>
+                                                    @endif
                                                 </span>
                                                 <span>
                                                     <input type="radio" id="bill2" name="radio-group" checked="checked">
@@ -136,9 +141,7 @@
                                             </span>
                                         </div>
                                         <div class="ec-check-bill-form">
-                                            {{-- <p>tes</p> --}}
-                                            {{-- <i class="fa-solid fa-location-dot" style="font-size:30px;"></i>
-                                            shipping address --}}
+                                            @if ($province_user != null && $Distric_user != null && $SubDistric_user != null)
                                             <div class="row mb-10" id="existingaddress">
                                                 <div class="col-12">
                                                     <label class="d-flex align-items-center"
@@ -152,6 +155,7 @@
                                                     <span class="ml-8">{{ $SubDistric_user->kecamatan }}, {{ $Distric_user['type'] }}.{{ $Distric_user['city_name'] }}, {{ $province_user['province'] }}</span>
                                                 </div>
                                             </div>
+                                            @endif
                                             <form action="#" method="post" id="newaddress">
                                                 <span class="ec-bill-wrap ec-bill-half">
                                                     <label>First Name*</label>
@@ -895,6 +899,10 @@
         //show and hide address
         $(document).ready(function() {
             $("#existingaddress").addClass('d-none');
+            $("#bill3").click(function (e) {
+                e.preventDefault();
+                alert("Untuk menggunakan fitur ini lengkapi dulu alamat di profile")
+            });
             $("#bill1,#bill2").change(function(e) {
                 e.preventDefault();
                 if ($("#bill1").is(':checked')) {
@@ -979,10 +987,19 @@
                 console.log(wgt);
                 // let subdis = $("#subdistric").val();
                 let dev = $(this).val();
+                var ExistingAddress="";
+                if ($("#bill1").is(":checked")) {
+                    var ExistingAddress = $("#bill1").val();
+                    // alert("true");
+                } else {
+                    var ExistingAddress = null;
+                }
+                // alert(ExistingAddress);
                 $.ajax({
                     type: "get",
                     url: "/getongkir",
                     data: {
+                        ea:ExistingAddress,
                         prov: prov,
                         dis: dis,
                         dev: dev,

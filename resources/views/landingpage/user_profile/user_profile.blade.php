@@ -767,7 +767,8 @@
     </script>
     <script>
         $(".form-select:eq(0),.form-select:eq(1),.form-select:eq(2)").select2({
-            theme: 'bootstrap-5'
+            theme: 'bootstrap-5',
+            dropdownParent: $("#edit_modal")
         });
     </script>
     <script>
