@@ -114,6 +114,7 @@ class CartController extends Controller
             $data =  Cart::session($userId)->get($ids2);
             $datacart[] = $data;
         }
+        // dd($datacart);
         foreach ($datacart as $cart) {
             \Cart::session($userId)->update($cart->id,[
                 'attributes' => array(

@@ -125,18 +125,7 @@
                             </div>
                         </div>
                         <!-- Ec Pagination Start -->
-                        <div class="ec-pro-pagination">
-                            <span>Showing 1-12 of 21 item(s)</span>
-                            <ul class="ec-pro-pagination-inner">
-                                <li><a class="active" href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a class="next" href="#">Next <i class="ecicon eci-angle-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                        {{$data->links('vendor.pagination.default')}}
                         <!-- Ec Pagination End -->
                     </div>
                     <!--Shop content End -->
@@ -325,14 +314,8 @@
                                 <div class="qty-slide">
                                     <img class="img-responsive" src="-" alt="" id="gambar">
                                 </div>
-                                {{-- <div class="qty-slide"><img class="img-responsive" src="http://127.0.0.1:8000/fotoproduk/ftku.jpg" alt=""></div>
-                                    <div class="qty-slide"><img class="img-responsive" src="http://127.0.0.1:8000/fotoproduk/ftku.jpg" alt=""></div> --}}
-                            </div>
+                                </div>
                             <div class="qty-nav-thumb" id="gambar2">
-                                {{-- <div class="qty-slide" >
-                                        <img class="img-responsive" src="-" alt="" id="gambar2">
-                                    </div> --}}
-
 
                             </div>
                         </div>
@@ -370,8 +353,7 @@
                                             <div class="ec-pro-color">
 
                                                 <select class="form-select" aria-label="Default select example" id="warna" name="warna">
-
-
+                                                    <option value="">-- Select --</option>
                                                 </select>
                                             </div>
                                         </div>

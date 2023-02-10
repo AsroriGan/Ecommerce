@@ -178,7 +178,7 @@
                                                         class="ec-bl-select-inner d-flex align-items-center border-0">
                                                         <select name="ec_select_city" id="province"
                                                             class="ec-bill-select">
-                                                            <option selected value="null">-- Select Province --
+                                                            <option selected value="">-- Select Province --
                                                             </option>
                                                             @foreach ($provinsi as $prov)
                                                                 <option value="{{ $prov['province_id'] }}">
@@ -194,7 +194,7 @@
                                                         class="ec-bl-select-inner d-flex align-items-center border-0">
                                                         <select name="ec_select_country" id="distric"
                                                             class="ec-bill-select">
-                                                            <option selected>-- Select Distric --</option>
+                                                            <option selected value="">-- Select Distric --</option>
                                                         </select>
                                                     </span>
                                                 </span>
@@ -204,7 +204,7 @@
                                                         class="ec-bl-select-inner d-flex align-items-center border-0">
                                                         <select name="ec_select_state" id="subdistric"
                                                             class="ec-bill-select">
-                                                            <option selected>-- Select SubDistric --</option>
+                                                            <option selected value="">-- Select SubDistric --</option>
                                                         </select>
                                                     </span>
                                                 </span>
@@ -902,6 +902,7 @@
             $("#bill3").click(function (e) {
                 e.preventDefault();
                 alert("Untuk menggunakan fitur ini lengkapi dulu alamat di profile")
+                $("#methoddev").empty();
             });
             $("#bill1,#bill2").change(function(e) {
                 e.preventDefault();
@@ -912,12 +913,16 @@
                     $("#existingaddress").addClass('d-none');
                     $("#newaddress").removeClass('d-none');
                 }
+                // $("#methoddev").empty();
+                $("#delivery option[value='']").removeAttr("selected", "selected");
+                $("#delivery option[value='']").attr("selected", "selected");
+                $("#methoddev").empty();
             });
         });
         $(document).ready(function() {
             $('#province').change(function() {
-                let rsi = $(this).val();
-                let ci = null;
+                var rsi = $(this).val();
+                var ci = null;
                 // alert(ci);
                 $.ajax({
                     url: '/getkabupaten',
@@ -929,7 +934,7 @@
                     }
                 });
                 //validasi
-                let subtotal = $("#subtotal").attr("data-subtotal");
+                var subtotal = $("#subtotal").attr("data-subtotal");
                 $("#methoddev").empty();
                 $('#subdistric').html('<option value="">-- Select SubDistric --</option>');
                 $("#delivery option[value='']").removeAttr("selected", "selected");
@@ -941,7 +946,7 @@
         $(document).ready(function() {
             $('#distric').change(function() {
                 // alert("p");
-                let ci = $(this).val();
+                var ci = $(this).val();
                 // console.log(ci);
                 $.ajax({
                     url: '/getkecamatan',
@@ -953,7 +958,7 @@
                     }
                 });
                 //validasi
-                let subtotal = $("#subtotal").attr("data-subtotal");
+                var subtotal = $("#subtotal").attr("data-subtotal");
                 $("#methoddev").empty();
                 // $('#subdistric').html('<option value="">-- Select SubDistric --</option>');
                 $("#delivery option[value='']").removeAttr("selected", "selected");
@@ -966,7 +971,7 @@
             $("#subdistric").change(function(e) {
                 e.preventDefault();
                 //validasi
-                let subtotal = $("#subtotal").attr("data-subtotal");
+                var subtotal = $("#subtotal").attr("data-subtotal");
                 $("#methoddev").empty();
                 $("#delivery option[value='']").removeAttr("selected", "selected");
                 $("#delivery option[value='']").attr("selected", "selected");
@@ -977,24 +982,20 @@
         $(document).ready(function() {
             $("#delivery").change(function(e) {
                 e.preventDefault();
-                // alert('p');
-                let prov = $("#province").val();
-                let dis = $("#distric").val();
-                let wgt = [];
+                var prov = $("#province").val();
+                var dis = $("#distric").val();
+                var wgt = [];
                 $("input[name^='weight']").each(function() {
                     wgt.push($(this).val());
                 });
-                console.log(wgt);
-                // let subdis = $("#subdistric").val();
-                let dev = $(this).val();
+                var dev = $(this).val();
+                console.log(null);
                 var ExistingAddress="";
                 if ($("#bill1").is(":checked")) {
                     var ExistingAddress = $("#bill1").val();
-                    // alert("true");
                 } else {
                     var ExistingAddress = null;
                 }
-                // alert(ExistingAddress);
                 $.ajax({
                     type: "get",
                     url: "/getongkir",
@@ -1025,6 +1026,9 @@
                             });
                         });
                     },
+                    error:function(){
+                        alert("Tolong Lengkapi Alamat Untuk Menilih Delivery");
+                    },
                     complete: function() {
                         $('#loading').addClass('d-none');
                     },
@@ -1038,5 +1042,4 @@
         });
     </script>
 </body>
-
 </html>

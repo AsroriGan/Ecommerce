@@ -8,6 +8,7 @@ use Faker\Guesser\Name;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\datawilayahkecamatan;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\Auth;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 
@@ -21,8 +22,8 @@ class LandingpageController extends Controller
 
     public function checkout()
     {
-        $provinsi = RajaOngkir::provinsi()->all();
         $userId = auth()->user()->id;
+        $provinsi = RajaOngkir::provinsi()->all();
         $datas =  \Cart::session($userId)->getContent();
         $subtotal = \Cart::getSubTotal();
         //data exiting adress
@@ -54,11 +55,19 @@ class LandingpageController extends Controller
     public function getongkir(Request $request)
     {
         // dd($request->all());
-        if ($request->ea == "true" && $request->prov == "null") {
+        // if ($request->ea == null) {
+        //     $request->validate([
+        //         'prov'=>'required',
+        //         'dis'=>'required',
+        //         'dev'=>'required'
+        //     ]);
+        // }
+        if ($request->ea == "true" && $request->prov == null) {
+            // dd("tes");
             $weight = array_sum($request->wgt);
             $ongkir = RajaOngkir::ongkosKirim([
                 'origin' => 342, // ID kota/kabupaten asal
-                'destination' => 42, // ID kota/kabupaten tujuan
+                'destination' => Auth::user()->kabupaten, // ID kota/kabupaten tujuan
                 'weight' => $weight, // berat barang dalam gram
                 'courier' => $request->dev, // kode kurir pengiriman
             ])->get();
