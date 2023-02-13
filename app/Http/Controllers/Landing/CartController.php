@@ -16,6 +16,7 @@ class CartController extends Controller
     {
         $userId = auth()->user()->id;
         $data =  Cart::session($userId)->getContent();
+        // dd($data);
         foreach ($data as $cart){
             $ids = $cart->attributes->ids;
             // $datas = Cart::session($userId)->get($ids);
@@ -104,8 +105,8 @@ class CartController extends Controller
         }
     }
     public function cartcheckout(Request $request){
-        if ($request->id == null) {
-            return redirect()->back()->with('error','Silahkan pilih produk yang akan dichekout');
+        if ($request->ids == null) {
+            return redirect()->back()->with('error','Silahkan pilih produk yang akan dicheckout');
         } else {
             $userId = auth()->user()->id;
             $datacart = array();
