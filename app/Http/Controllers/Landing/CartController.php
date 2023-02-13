@@ -16,6 +16,7 @@ class CartController extends Controller
     {
         $userId = auth()->user()->id;
         $data =  Cart::session($userId)->getContent();
+        // dd($data);
         foreach ($data as $cart){
             $ids = $cart->attributes->ids;
             // $datas = Cart::session($userId)->get($ids);
@@ -104,29 +105,31 @@ class CartController extends Controller
         }
     }
     public function cartcheckout(Request $request){
-        $this->validate($request,[
-            'ids' => 'required',
-        ]);
-        $userId = auth()->user()->id;
-        $datacart = array();
-        foreach($request->ids as $ids){
-            $ids2 = $ids;
-            $data =  Cart::session($userId)->get($ids2);
-            $datacart[] = $data;
+        if ($request->ids == null) {
+            return redirect()->back()->with('error','Silahkan pilih produk yang akan dicheckout');
+        } else {
+            $userId = auth()->user()->id;
+            $datacart = array();
+            foreach($request->ids as $ids){
+                $ids2 = $ids;
+                $data =  Cart::session($userId)->get($ids2);
+                $datacart[] = $data;
+            }
+            // dd($datacart);
+            foreach ($datacart as $cart) {
+                \Cart::session($userId)->update($cart->id,[
+                    'attributes' => array(
+                        'ids' => $cart->id,
+                        'weight' => $cart->attributes->weight,
+                        'warna' =>  $cart->attributes->warna,
+                        'ukuran' => $cart->attributes->ukuran,
+                        'foto' =>  $cart->attributes->foto,
+                        'hargatotal' => $cart->attributes->hargatotal,
+                    )
+                ]);
+            }
+            return redirect()->route('checkout');
         }
-        // dd($datacart);
-        foreach ($datacart as $cart) {
-            \Cart::session($userId)->update($cart->id,[
-                'attributes' => array(
-                    'ids' => $cart->id,
-                    'weight' => $cart->attributes->weight,
-                    'warna' =>  $cart->attributes->warna,
-                    'ukuran' => $cart->attributes->ukuran,
-                    'foto' =>  $cart->attributes->foto,
-                    'hargatotal' => $cart->attributes->hargatotal,
-                )
-            ]);
-        }
-        return redirect()->route('checkout');
+
     }
 }

@@ -25,6 +25,7 @@ class LandingpageController extends Controller
         $userId = auth()->user()->id;
         $provinsi = RajaOngkir::provinsi()->all();
         $datas =  \Cart::session($userId)->getContent();
+
         $subtotal = \Cart::getSubTotal();
         //data exiting adress
         $ProvinsiId = Auth::user()->provinsi;
@@ -34,15 +35,14 @@ class LandingpageController extends Controller
         $Distric_user = RajaOngkir::kota()->dariprovinsi($ProvinsiId)->find($KabupatenId);
         $SubDistric_user = datawilayahkecamatan::find($KecamatanId);
         // dd($SubDistric_user);
+        $datacart = array();
         foreach ($datas as $cart) {
             $ids = $cart->attributes->ids;
             $data =  Cart::session($userId)->get($cart->attributes->ids);
             $datacart[] = $data;
             //khusus buat cart
             if ($data == null) {
-                return redirect('/')->with("error", "Keranjang Anda kosong");
-            } else {
-                return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal', 'datacart', 'province_user', 'Distric_user', 'SubDistric_user'));
+                return redirect('/')->with("error", "Anda Belum memilih produk yang akan dicheckout");
             }
         }
         //untuk universal
@@ -52,6 +52,7 @@ class LandingpageController extends Controller
             return view('landingpage.checkout.checkout', compact('provinsi', 'data', 'subtotal', 'datacart', 'province_user', 'Distric_user', 'SubDistric_user'));
         }
     }
+
     public function getongkir(Request $request)
     {
         // dd($request->all());
