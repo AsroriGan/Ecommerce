@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\KategoriController as AdminKategoriController;
 use App\Http\Controllers\Admin\DatawilayahController as AdminDatawilayahController;
 use App\Http\Controllers\Admin\MerekController as AdminMerekController;
 use App\Http\Controllers\Admin\ProdukController as AdminProdukController;
+use App\Http\Controllers\Admin\PesananmasukController as AdminPesananmasukcontroller;
 use App\Http\Controllers\Admin\blogadmin;
 use App\Http\Controllers\Admin\KategoriblogController;
 use App\Http\Controllers\Landing\BlogController;
@@ -238,4 +239,7 @@ Route::group(['middleware' => ['auth', 'CekRole:admin']], function () {
     Route::get('/resetpromo/{id}', [AdminPromosiController::class, 'resetpromo']);
     Route::get('/bannerpromosi', [AdminPromosiController::class, 'bannerpromosi'])->name('bannerpromosi');
     Route::post('/editbannerpromopost/{id}', [AdminPromosiController::class, 'editbanner'])->name('editbannerpromopost');
+
+    //pesanan masuk
+    Route::get('/pesananmasuk', [AdminPesananmasukcontroller::class, 'index'])->name('index.pesananmasuk');
 });

@@ -58,7 +58,7 @@
                 </li>
                 <li class="menu-title"><span>Pesanan</span></li>
                 <li>
-                    <a href="expenses.html"><i data-feather="package"></i> <span>Expenses</span></a>
+                    <a href="expenses.html"><i data-feather="package"></i> <span>Pesanan Masuk</span></a>
                 </li>
                 <li class="submenu">
                     <a href="#"><i data-feather="pie-chart"></i> <span> Reports</span> <span
