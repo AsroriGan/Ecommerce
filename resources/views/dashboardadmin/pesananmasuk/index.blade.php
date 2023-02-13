@@ -48,24 +48,26 @@
                                             <tr>
                                                 <th>No.</th>
                                                 <th>Tanggal Pesanan</th>
-                                                <th>Foto</th>
+                                                <th>Id Pesanan</th>
+                                                <th>Total Harga</th>
+                                                <th>Status Pembayaran</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             {{-- @foreach ($data as $data) --}}
-                                                <tr>
-                                                    <td scope="row"></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <button class="btn btn-sm  btn-white text-success me-2"
-                                                            data-bs-toggle="modal" data-bs-target="#modalmerek"
-                                                            onclick="editview()"><i
-                                                                class="far fa-edit me-1"></i>
-                                                            Edit</button>
-                                                    </td>
-                                                </tr>
+                                            <tr>
+                                                <td scope="row"></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <a class="btn btn-sm btn-white" href="view-invoice.html">
+                                                        <i class="far fa-eye me-1"></i> Lihat Detail
+                                                    </a>
+                                                </td>
+                                            </tr>
                                             {{-- @endforeach --}}
                                         </tbody>
                                     </table>

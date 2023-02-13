@@ -136,3 +136,19 @@
 .f-w500{
     font-weight: 500;
 }
+.fblack{
+    color: #212529;
+}
+.msg-buyer{
+    padding: 13px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.t2{
+    margin-left: auto;
+    margin-right: 17pc;
+}
+.t1{
+    margin-left: auto;
+    margin-right: 22pc;
+}

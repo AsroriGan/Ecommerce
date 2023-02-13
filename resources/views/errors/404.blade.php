@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-md-6 disp-768">
                     <div class="under-maintenance">
-                        <img class="maintenance-img" src="assets/images/common/404.png" alt="maintenance">
+                        <img class="maintenance-img" src="{{asset('assets/images/common/404.png')}}" alt="maintenance">
                     </div>
                 </div>
             </div>

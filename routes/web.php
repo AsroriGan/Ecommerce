@@ -242,4 +242,5 @@ Route::group(['middleware' => ['auth', 'CekRole:admin']], function () {
 
     //pesanan masuk
     Route::get('/pesananmasuk', [AdminPesananmasukcontroller::class, 'index'])->name('index.pesananmasuk');
+    Route::get('/detailpesananmasuk/{id}', [AdminPesananmasukcontroller::class, 'detail'])->name('detail.pesananmasuk');
 });
