@@ -39,13 +39,29 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="page-title">Alamat Pengiriman</h5>
-                                <ul class="list-group list-group-flush mb-3">
-                                    <li class="list-group-item d-flex">Nama <span class="t1">:</span> dkhadha</li>
-                                    <li class="list-group-item d-flex">No.telp <span class="t1">:</span></li>
-                                    <li class="list-group-item d-flex">Alamat <span class="t1">:</span></li>
-                                    <li class="list-group-item d-flex">Ekspedisi <span class="t1">:</span></li>
-                                </ul>
-                                <label for="" class="fblack">Pesan Dari Pembeli</label>
+                                <table class="shipping-address">
+                                    <tr>
+                                        <td>Nama</td>
+                                        <td>:</td>
+                                        <td class="w-100">zaki</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No.telp</td>
+                                        <td>:</td>
+                                        <td class="w-100">zaki</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alamat</td>
+                                        <td>:</td>
+                                        <td class="w-100">zaki</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ekspedisi</td>
+                                        <td>:</td>
+                                        <td class="w-100">zaki</td>
+                                    </tr>
+                                </table>
+                                <label for="" class="fblack mt-3">Pesan Dari Pembeli</label>
                                 <div class="msg-buyer fblack">
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet reiciendis nulla at
                                     quae laudantium suscipit debitis consequatur quis, recusandae, architecto doloremque
@@ -58,19 +74,38 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="page-title">Detail Pembayaran</h5>
-                                <ul class="list-group list-group-flush mb-3">
-                                    <li class="list-group-item d-flex">Metode Pembayaran<span class="t2 ml-auto">:</span></li>
-                                    <li class="list-group-item d-flex">Status Pembayaran<span class="t2 ml-auto">:</span></li>
-                                    <li class="list-group-item d-flex">Harga Produk<span class="t2 ml-auto">:</span></li>
-                                    <li class="list-group-item d-flex">Ongkos Kirim<span class="t2 ml-auto">:</span></li>
-                                    <li class="list-group-item d-flex">Jumlah Pembayaran<span class="t2 ml-auto">:</span></li>
-                                </ul>
+                                <table class="shipping-address">
+                                    <tr>
+                                        <td>Metod Pembayaran</td>
+                                        <td>:</td>
+                                        <td class="w-100">zaki</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Status Pembayaran</td>
+                                        <td>:</td>
+                                        <td class="w-100">zaki</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Harga Produk</td>
+                                        <td>:</td>
+                                        <td class="w-100">zaki</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ongkos Kirim</td>
+                                        <td>:</td>
+                                        <td class="w-100">zaki</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jumlah Pembayaran</td>
+                                        <td>:</td>
+                                        <td class="w-100">zaki</td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="card">
-
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="datatable table table-stripped" id="myTable">

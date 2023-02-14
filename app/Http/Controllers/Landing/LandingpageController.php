@@ -45,6 +45,7 @@ class LandingpageController extends Controller
                 return redirect('/')->with("error", "Anda Belum memilih produk yang akan dicheckout");
             }
         }
+        // dd($datacart);
         //untuk universal
         if ($subtotal == null) {
             return redirect('/')->with("error", "Keranjang Anda kosong");

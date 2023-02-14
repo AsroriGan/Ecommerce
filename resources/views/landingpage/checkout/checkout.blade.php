@@ -265,16 +265,17 @@
                                                             class="new-price">Rp.{{ $produk->attributes->hargatotal }}</span>
                                                     </span>
                                                     <div class="ec-pro-option">
-                                                        <div class="ec-pro-color">
-                                                            <span class="ec-pro-opt-label">Color</span>
+                                                        <div class="ec-pro-size">
                                                             <span class="ec-del-opt-head">Warna :
                                                                 {{ $produk->attributes->warna }}</span>
                                                         </div>
                                                         <div class="ec-pro-size">
-                                                            <span class="ec-pro-opt-label">Size</span>
-                                                            {{-- <label for="">Ukuran  : {{$produk->attributes->ukuran}}</label> --}}
                                                             <span class="ec-del-opt-head">Ukuran :
                                                                 {{ $produk->attributes->ukuran }}</span>
+                                                        </div>
+                                                        <div class="ec-pro-size">
+                                                            <span class="ec-del-opt-head">Quantity :
+                                                                {{ $produk->quantity }}</span>
                                                         </div>
                                                         <input type="hidden" id="weight"
                                                             value="{{ $produk->attributes->weight }}" name="weight[]">

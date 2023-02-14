@@ -141,7 +141,7 @@
 }
 .msg-buyer{
     padding: 13px;
-    border: 1px solid black;
+    border: 1px solid  rgba(0, 0, 0, .125)  ;
     border-radius: 10px;
 }
 .t2{
@@ -151,4 +151,17 @@
 .t1{
     margin-left: auto;
     margin-right: 22pc;
+}
+.shipping-address tr{
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+.shipping-address tr td{
+    padding: 7px 7px 10px 10px;
+}
+
+.w-61{
+    width: 61% !important;
+}
+.w-39{
+    width: 39% !important;
 }

@@ -56,7 +56,7 @@ class PaymentController extends Controller
         $json =json_decode($request->get('json'));
         $order = new payment();
         $order->status = $json->transaction_status;
-        // dd($json->transaction_status);
+        dd($json->transaction_status);
         $order->username = $request->get('username');
         $order->Email = $request->get('Email');
         $order->Nohp = $request->get('Nohp');
