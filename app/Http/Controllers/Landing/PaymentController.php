@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Landing;
 use Cart;
 use App\Models\payment;
 use App\Http\Controllers;
+use App\Models\Pesananmasuk;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Models\datawilayahkecamatan;
 use Illuminate\Support\Facades\Auth;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 
@@ -16,8 +18,42 @@ class PaymentController extends Controller
     {
         return view('loginpayment');
     }
+    private function create_pesananmasuk($datapesanan)
+    {
+        // dd($datapesanan->all());
+        do {
+            $idpesanan = random_int(100000, 999999);
+        } while (Pesananmasuk::where("idpesanan", "=", $idpesanan)->first());
+        //find wilayah
+        $ProvinsiId = $datapesanan->province;
+        $KabupatenId = $datapesanan->distric;
+        $KecamatanId = $datapesanan->subdistric;
+        $province = RajaOngkir::provinsi()->find($ProvinsiId);
+        $Distric = RajaOngkir::kota()->dariprovinsi($ProvinsiId)->find($KabupatenId);
+        $SubDistric = datawilayahkecamatan::find($KecamatanId);
+        // dd($Distric);
+        //alamat lengkap
+        $alamatlengkap = $datapesanan->address.',Kecamatan '.$SubDistric->kecamatan.','.$Distric['type'].' '.$Distric['city_name'].','.$Distric['province'].',Kode Pos '.$datapesanan->postalcode;
+        // dd($alamatlengkap);
+        $pesananmasuk = Pesananmasuk::create([
+            "user_id" => Auth::user()->id,
+            "payment_id" => 1,
+            "idpesanan" => $idpesanan,
+            "TotalHarga" => $datapesanan->subtotal,
+            "NamaPenerima" => $datapesanan->firstname.' '.$datapesanan->firstname,
+            "NoTelp" => 842387462,
+            "Alamat_lengkap" => $alamatlengkap,
+            "ekspedisi" => $datapesanan->ekspedisi,
+            "PesanDariPembeli" => $datapesanan->Comment,
+            "OngkosKirim" => $datapesanan->shipping_cost,
+            "HargaProdukPembayaran" => $datapesanan->subtotal,
+        ]);
+        dd($pesananmasuk);
+    }
     public function payment(Request $request)
     {
+        //create pesanan masuk to admin
+        $this->create_pesananmasuk($request);
         $provinsi = RajaOngkir::provinsi()->all();
         $subtotal = \Cart::getSubTotal();
         $userId = auth()->user()->id;

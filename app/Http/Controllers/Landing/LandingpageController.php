@@ -56,14 +56,6 @@ class LandingpageController extends Controller
 
     public function getongkir(Request $request)
     {
-        // dd($request->all());
-        // if ($request->ea == null) {
-        //     $request->validate([
-        //         'prov'=>'required',
-        //         'dis'=>'required',
-        //         'dev'=>'required'
-        //     ]);
-        // }
         if ($request->ea == "true" && $request->prov == null) {
             // dd("tes");
             $weight = array_sum($request->wgt);
@@ -86,7 +78,7 @@ class LandingpageController extends Controller
                 $etd = 'etd';
                 $cost = 'cost';
                 $no++;
-                $html .= '<span class="ec-del-option col-12"><span class="w-100"><span class="ec-del-opt-head">' . $name . '</span><input class="ongkir" type="radio" id="del' . $no . '" value="' . $value[$cost][0][$val] . '" name="delivery-method"><label for="del' . $no . '" class="f-w500">' . $value[$service] . '' . ' ' . '' . '(' . $value[$OK] . ') : ' . 'Rp. ' . '' . $value[$cost][0][$val] . '' . '(' . '' . ($value[$cost][0][$etd]) . '' . ' days' . '' . ')' . '</label></span></span>';
+                $html .= '<span class="ec-del-option col-12"><span class="w-100"><span class="ec-del-opt-head">' . $name . '</span><input class="ongkir" type="radio" id="del' . $no . '" value="' . $value[$cost][0][$val] . '" name="shipping_cost"><label for="del' . $no . '" class="f-w500">' . $value[$service] . '' . ' ' . '' . '(' . $value[$OK] . ') : ' . 'Rp. ' . '' . $value[$cost][0][$val] . '' . '(' . '' . ($value[$cost][0][$etd]) . '' . ' days' . '' . ')' . '</label></span></span>';
             }
             echo $html;
         } else {
@@ -114,7 +106,7 @@ class LandingpageController extends Controller
                     $etd = 'etd';
                     $cost = 'cost';
                     $no++;
-                    $html .= '<span class="ec-del-option col-12"><span class="w-100"><span class="ec-del-opt-head">' . $name . '</span><input class="ongkir" type="radio" id="del' . $no . '" value="' . $value[$cost][0][$val] . '" name="delivery-method"><label for="del' . $no . '" class="f-w500">' . $value[$service] . '' . ' ' . '' . '(' . $value[$OK] . ') : ' . 'Rp. ' . '' . $value[$cost][0][$val] . '' . '(' . '' . ($value[$cost][0][$etd]) . '' . ' days' . '' . ')' . '</label></span></span>';
+                    $html .= '<span class="ec-del-option col-12"><span class="w-100"><span class="ec-del-opt-head">' . $name . '</span><input class="ongkir" type="radio" id="del' . $no . '" value="' . $value[$cost][0][$val] . '" name="shipping_cost"><label for="del' . $no . '" class="f-w500">' . $value[$service] . '' . ' ' . '' . '(' . $value[$OK] . ') : ' . 'Rp. ' . '' . $value[$cost][0][$val] . '' . '(' . '' . ($value[$cost][0][$etd]) . '' . ' days' . '' . ')' . '</label></span></span>';
                 }
                 echo $html;
             }

@@ -10,4 +10,7 @@ class payment extends Model
     use HasFactory;
     protected $guarded = [];
 
+    public function by_pesananmasuk(){
+        return $this->hasMany(Pesananmasuk::class);
+    }
 }
