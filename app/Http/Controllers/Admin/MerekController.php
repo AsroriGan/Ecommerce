@@ -30,7 +30,7 @@ class MerekController extends Controller
 
     public function storemerek(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
         $validate = $request->validate([
             'nama_merek' => 'required',
             'foto_merek' => 'required',

@@ -55,20 +55,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- @foreach ($data as $data) --}}
+                                            @foreach ($pesananmasuk as $data)
                                             <tr>
-                                                <td scope="row"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td scope="row">{{ $loop->iteration }}</td>
+                                                <td>{{ $data->created_at }}</td>
+                                                <td>{{ $data->idpesanan }}</td>
+                                                <td>{{ $data->TotalHarga }}</td>
+                                                <td>Belum Bayar</td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-white" href="view-invoice.html">
+                                                    <a href="/detailpesananmasuk/{{ $data->id }}" class="btn btn-sm btn-white" href="view-invoice.html">
                                                         <i class="far fa-eye me-1"></i> Lihat Detail
                                                     </a>
+                                                    <a class="btn btn-block btn-outline-secondary btn-sm">Konfirm Pesanan</a>
                                                 </td>
                                             </tr>
-                                            {{-- @endforeach --}}
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

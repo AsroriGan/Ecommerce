@@ -9,6 +9,7 @@ use App\Models\Pesananmasuk;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\datawilayahkecamatan;
+use App\Models\RincianPesanan;
 use Illuminate\Support\Facades\Auth;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 
@@ -33,22 +34,42 @@ class PaymentController extends Controller
         $SubDistric = datawilayahkecamatan::find($KecamatanId);
         // dd($Distric);
         //alamat lengkap
-        $alamatlengkap = $datapesanan->address.',Kecamatan '.$SubDistric->kecamatan.','.$Distric['type'].' '.$Distric['city_name'].','.$Distric['province'].',Kode Pos '.$datapesanan->postalcode;
+        $alamatlengkap = $datapesanan->address . ',Kecamatan ' . $SubDistric->kecamatan . ',' . $Distric['type'] . ' ' . $Distric['city_name'] . ',' . $Distric['province'] . ',Kode Pos ' . $datapesanan->postalcode;
         // dd($alamatlengkap);
         $pesananmasuk = Pesananmasuk::create([
             "user_id" => Auth::user()->id,
             "payment_id" => 1,
             "idpesanan" => $idpesanan,
             "TotalHarga" => $datapesanan->subtotal,
-            "NamaPenerima" => $datapesanan->firstname.' '.$datapesanan->firstname,
+            "NamaPenerima" => $datapesanan->firstname . ' ' . $datapesanan->firstname,
             "NoTelp" => 842387462,
             "Alamat_lengkap" => $alamatlengkap,
             "ekspedisi" => $datapesanan->ekspedisi,
             "PesanDariPembeli" => $datapesanan->Comment,
             "OngkosKirim" => $datapesanan->shipping_cost,
-            "HargaProdukPembayaran" => $datapesanan->subtotal,
+            "HargaProdukPembayaran" => $datapesanan->harga_produk
         ]);
-        dd($pesananmasuk);
+        // dd($pesananmasuk->id);
+        $userId = auth()->user()->id;
+        $datas =  \Cart::session($userId)->getContent();
+        $datacart = array();
+        foreach ($datas as $cart) {
+            // $ids = $cart->attributes->ids;
+            $data =  Cart::session($userId)->get($cart->attributes->ids);
+            $datacart[] = $data;
+        }
+        foreach ($datacart as $value) {
+            $Rincianpesanan = RincianPesanan::create([
+                "pesanan_id" => $pesananmasuk->id,
+                "FotoProduk" => $value->attributes->foto,
+                "NamaProduk" => $value->name,
+                "UkuranProduk" => $value->attributes->ukuran,
+                "WarnaProduk" => $value->attributes->warna,
+                "BeratProduk" => $value->attributes->weight,
+                "QuantityProduk" => $value->quantity,
+                "TotalHargaProduk" => $value->price
+            ]);
+        }
     }
     public function payment(Request $request)
     {
@@ -84,12 +105,13 @@ class PaymentController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
         // return $snapToken;
-        return view('landingpage.payment.payment', compact('data','provinsi','subtotal', 'total'), ['snap_token' => $snapToken]);
+        return view('landingpage.payment.payment', compact('data', 'provinsi', 'subtotal', 'total'), ['snap_token' => $snapToken]);
     }
 
-    public function payment_post(request $request){
+    public function payment_post(request $request)
+    {
         // return $request;
-        $json =json_decode($request->get('json'));
+        $json = json_decode($request->get('json'));
         $order = new payment();
         $order->status = $json->transaction_status;
         dd($json->transaction_status);
