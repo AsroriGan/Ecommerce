@@ -86,7 +86,7 @@
                                     <tr>
                                         <td>Harga Produk</td>
                                         <td>:</td>
-                                        <td class="w-100"></td>
+                                        <td class="w-100">Rp.{{ $pesananmasuk->HargaProdukPembayaran }}</td>
                                     </tr>
                                     <tr>
                                         <td>Ongkos Kirim</td>
