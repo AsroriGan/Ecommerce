@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('pesananmasuk', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('payment_id')->references('id')->on('payments');
+            $table->foreignId('user_id');
+            $table->foreignId('payment_id');
             //intabel
             $table->bigInteger('idpesanan');
             $table->string('TotalHarga');
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('ekspedisi');
             $table->string('PesanDariPembeli')->nullable();
             $table->string('OngkosKirim');
+            $table->string('HargaProdukPembayaran');
             $table->timestamps();
         });
     }

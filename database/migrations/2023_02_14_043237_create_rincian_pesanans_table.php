@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('rincian_pesanan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pesanan_id')->references('id')->on('pesananmasuk');
+            $table->foreignId('pesanan_id');
             $table->string('FotoProduk');
             $table->string('NamaProduk');
             $table->string('UkuranProduk');

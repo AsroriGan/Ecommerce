@@ -361,6 +361,7 @@
                                             <span class="text-left">Sub-Total</span>
                                             <span class="text-right" id="subtotal"
                                                 data-subtotal="{{ $subtotal }}">Rp.{{ $subtotal }}</span>
+                                            <input type="hidden" name="harga_produk" value="{{ $subtotal }}">
                                         </div>
                                         <div>
                                             <span class="text-left">Delivery Charges</span>
