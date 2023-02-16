@@ -82,14 +82,13 @@
                                                 </a>
                                                 @if ($produk->diskon == '0')
                                                 @else
-                                                <span class="percentage">20%</span>
+                                                <span class="percentage">{{$produk->diskon}}%</span>
                                                 @endif
+                                                @if ($produk->Produk_Baru == "yes")
                                                 <span class="flags">
                                                     <span class="new">New</span>
                                                 </span>
-                                                {{-- <a href="/detail" class="quickview"><img
-                                                        src="assets/images/icons/quickview.svg" class="svg_img pro_svg"
-                                                        alt="" /></a> --}}
+                                                @endif
                                                 <div class="ec-pro-actions">
                                                     <a href="/detail" class="ec-btn-group compare" title="Quickview"><img src="assets/images/icons/quickview.svg" class="svg_img pro_svg" alt="" /></a>
                                                     <button title="Add To Cart" class="add-to-cart" data-bs-toggle="modal" data-bs-target="#addtocart"><img src="assets/images/icons/cart.svg" class="svg_img pro_svg" alt="" onclick="produkview({{ $produk->id }})" /> Add To
@@ -108,9 +107,7 @@
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star"></i>
                                             </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <div class="ec-pro-list-desc">{!! $produk->deskirpsi_panjang !!}</div>
                                             <span class="ec-price">
                                                 @if ($produk->diskon != '0')
                                                 <span class="old-price">Rp.{{ $produk->harga_diskonproduk }}</span>

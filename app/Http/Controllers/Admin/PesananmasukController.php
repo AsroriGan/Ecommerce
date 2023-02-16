@@ -16,8 +16,8 @@ class PesananmasukController extends Controller
 
     public function detail($id){
         $rincianproduk = RincianPesanan::where("pesanan_id",$id)->get();
-        $pesananmasuk = Pesananmasuk::findorfail($id);
-        // dd($rincianproduk);
+        $pesananmasuk = Pesananmasuk::with('to_user')->findorfail($id);
+        // dd($pesananmasuk->NamaPenerima==" ");
         return view('dashboardadmin.pesananmasuk.detail',compact('rincianproduk','pesananmasuk'));
     }
 }

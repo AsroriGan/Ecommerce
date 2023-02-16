@@ -157,9 +157,9 @@
                                                         </div>
                                                         <div class="col-12">
                                                             <label class="ml-8">{{ Auth::user()->name }}</label><br>
-                                                            <span class="ml-8">{{ Auth::user()->alamat }}</span><br>
+                                                            <span class="ml-8">{{ Auth::user()->alamat }},</span><br>
                                                             <span class="ml-8">{{ $SubDistric_user->kecamatan }},
-                                                                {{ $Distric_user['type'] }}.{{ $Distric_user['city_name'] }},
+                                                                {{ $Distric_user['type'] }} {{ $Distric_user['city_name'] }},
                                                                 {{ $province_user['province'] }}</span>
                                                         </div>
                                                     </div>
@@ -168,17 +168,17 @@
                                                     <span class="ec-bill-wrap ec-bill-half">
                                                         <label>First Name*</label>
                                                         <input type="text" name="firstname"
-                                                            placeholder="Enter your first name" required />
+                                                            placeholder="Enter your first name"/>
                                                     </span>
                                                     <span class="ec-bill-wrap ec-bill-half">
                                                         <label>Last Name*</label>
                                                         <input type="text" name="lastname"
-                                                            placeholder="Enter your last name" required />
+                                                            placeholder="Enter your last name"/>
                                                     </span>
                                                     <span class="ec-bill-wrap mb-4">
                                                         <label>Address</label>
                                                         <input type="text" name="address"
-                                                            placeholder="Address Line 1" class="mb-0"/>
+                                                            placeholder="Enter your full address as in the example below" class="mb-0"/>
                                                         <i>Example : Jl.Kenari No 37, RT 004, RW 036, Desa Arjosari</i>
                                                     </span>
                                                     <span class="ec-bill-wrap ec-bill-half">

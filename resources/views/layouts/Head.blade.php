@@ -16,7 +16,8 @@
 
     <!-- css Icon Font -->
     <link rel="stylesheet" href="{{ asset('assets/css/vendor/ecicons.min.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/fontawesome.min.css') }}" />
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/> --}}
     <!-- css All Plugins Files -->
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/animate.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css') }}" />

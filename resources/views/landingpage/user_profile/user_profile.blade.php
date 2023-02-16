@@ -382,7 +382,8 @@
                                     <div class="col-md-12 space-t-15">
                                         <label class="form-label">Address</label>
                                         <input type="text" name="alamat" value="{{ Auth::user()->alamat }}"
-                                            class="form-control" placeholder="Street Name, Building, No. Home" required>
+                                            class="form-control" placeholder="Enter your full address as in the example below" required>
+                                            <i>Example : Jl.Kenari No 37, RT 004, RW 036, Desa Arjosari</i>
                                             <div class="invalid-feedback">
                                                 Address is required
                                             </div>

@@ -43,7 +43,11 @@
                                     <tr>
                                         <td>Nama</td>
                                         <td>:</td>
+                                        @if ($pesananmasuk->NamaPenerima != " ")
                                         <td class="w-100">{{ $pesananmasuk->NamaPenerima }}</td>
+                                        @else
+                                        <td class="w-100">{{ $pesananmasuk->to_user->name }}</td>
+                                        @endif
                                     </tr>
                                     <tr>
                                         <td>No.telp</td>

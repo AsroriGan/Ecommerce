@@ -34,7 +34,16 @@ class PaymentController extends Controller
         $SubDistric = datawilayahkecamatan::find($KecamatanId);
         // dd($Distric);
         //alamat lengkap
-        $alamatlengkap = $datapesanan->address . ',Kecamatan ' . $SubDistric->kecamatan . ',' . $Distric['type'] . ' ' . $Distric['city_name'] . ',' . $Distric['province'] . ',Kode Pos ' . $datapesanan->postalcode;
+        if ($datapesanan->subdistric || $datapesanan->distric || $datapesanan->province) {
+            $alamatlengkap = $datapesanan->address . ',Kecamatan ' . $SubDistric->kecamatan . ',' . $Distric['type'] . ' ' . $Distric['city_name'] . ',' . $Distric['province'] . ',Kode Pos ' . $datapesanan->postalcode;
+        } else {
+            $KabupatenId = Auth::user()->kabupaten;
+            $KecamatanId = Auth::user()->kecamatan;
+            $address = RajaOngkir::kota()->dariprovinsi($ProvinsiId)->find($KabupatenId);
+            $SubDistric_user = datawilayahkecamatan::find($KecamatanId);
+            $alamat = Auth::user()->alamat;
+            $alamatlengkap = $alamat.', Kecamatan '.$SubDistric_user->kecamatan.','.$address['type'].' '.$address['city_name'].','.$address['province'];
+        }
         // dd($alamatlengkap);
         $pesananmasuk = Pesananmasuk::create([
             "user_id" => Auth::user()->id,
